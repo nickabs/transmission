@@ -1,5 +1,5 @@
 {
-    "name": "Transmission",
+    "name": "transmission",
     "description": "transmission Ghost theme",
     "version": "1.0.0",
     "private": true,
@@ -9,7 +9,7 @@
     "license": "MIT",
     "author": {
         "name": "Nick",
-        "email": "",
+        "email": "nabs@gmail.com",
         "url": "https://smallworkshop.co.uk"
     },
     "keywords": [
@@ -19,7 +19,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/nickabs/Transmission.git"
+        "url": "https://github.com/nickabs/transmission.git"
     },
     "config": {
         "posts_per_page": 10,
@@ -49,11 +49,6 @@
                 "type": "boolean",
                 "default": true,
                 "group": "homepage"
-            },
-            "show_related_posts": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
             }
         }
     },
