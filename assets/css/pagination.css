@@ -1,0 +1,28 @@
+/* ---------------------- */
+/* "load more" pagination */
+/* ---------------------- */
+
+.load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-bottom: 5rem;
+}
+.load-more {
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--title-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1.1rem;
+    font-weight: 800;
+    height: 3.6rem;
+    justify-content: center;
+    letter-spacing: .05rem;
+    outline: none;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+

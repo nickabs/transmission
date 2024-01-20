@@ -1,0 +1,314 @@
+/*
+/* set the styles shared by all pages and posts:
+/* 1. default text styles for the site 
+/* 2. photoswipe lightbox adjustments 
+/* 3. site header 
+/* 4. menu                               
+/* 5. site footer
+*/
+
+/* ------------------------------------*/
+/* 1. default text styles for the site */
+/* ------------------------------------*/
+
+/*
+ * font sizes are expressed as rems (the pixel size are calculated relative to browser root font size, which can be set by the user)
+ * by default 1rem = 16px.  
+ * this statement simplifies the sums:
+ * 0.625 * 16px = 10 (i.e. 1rem = 10px)
+ */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--content-font-size);
+    letter-spacing: -0.018em;
+    line-height: 1.5rem;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3 {
+  color: var(--heading-color);
+}
+h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+sup {
+    font-size: var(--content-sup-font-size);
+}
+
+img {
+    height: auto;
+}
+
+/* hyperlinks in menus default to no text decoration/color - see article.css for hyperlinks in the text content */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+.main-article,
+.latest-articles,
+.featured-articles,
+.previous-articles {
+     padding: 0 max(4vmin, 20px);
+}
+.latest-articles-title,
+.featured-articles-title,
+.main-article {
+    margin-top: var(--top-gap);
+}
+
+/* ---------------------------------- */
+/* 2. photoswipe lightbox adjustments */
+/* ---------------------------------- */
+.pswp__counter {
+    height: 20px;
+    line-height: 20px;
+}
+.pswp__button--arrow .pswp__icn ,
+.pswp__button--close .pswp__icn {
+    width: 20px;
+    height: 20px;
+}
+
+.pswp__button--arrow > svg {
+    color: var(--text-color);
+    fill: var(--background-color);
+    stroke: var(--text-color);
+    stroke-width: 1px;
+}
+
+/* -------------------------------------- */
+/* 3. site header bar                     */
+/* -------------------------------------- */
+.site-header {
+
+  background-color: var(--background-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav{
+  background-color: var(--background-color);
+  padding:0;
+  display: flex;
+  height:var(--nav-bar-height); 
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.search, .logo, #dark-mode-toggle, .open-menu, .close-menu {
+  flex-basis: 30px;
+  flex-shrink: 0;
+}
+
+.close-menu svg,
+.open-menu svg{
+  height:20px;
+  width:20px;
+}
+.logo img{
+  height:20px;
+  width:20px;
+  margin-left:10px;
+}
+
+/* -------------------------------------- */
+/* 4. menu                                */
+/* -------------------------------------- */
+.menu {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+}
+
+/* default display for mobile devices - hide menu and show a hamburger menu instead */
+.item {
+  display: none;
+}
+.logo {
+  margin-right: auto;
+}
+.open-menu {
+  display: block;
+}
+.close-menu {
+  display: none;
+}
+.menu-open #dark-mode-toggle,
+.menu-open .search ,
+.menu-open .open-menu {
+  display: none;
+}
+.menu-open .close-menu {
+  display: block;
+}
+
+.menu, .submenu {
+  list-style: none;
+}
+
+@keyframes showMenu {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.menu-open .item {
+  animation: showMenu 450ms ease-in-out both;
+  border-bottom: 1px solid var(--border-color);
+  display: block;
+  padding-bottom: 1.8rem;
+  padding-left: 0.75rem;
+  padding-top: 0.8rem;
+}
+.submenu-open .submenu {
+  position:initial;
+}
+.item {
+  display: none;
+}
+.subitem {
+  padding: 0.5rem 1.5rem;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.close-menu {
+    margin-left: auto;
+}
+.site.menu-open .site-content {
+  filter: blur(5px);
+}
+
+.item:hover,
+li.item a:hover{
+  color: var(--link-color);
+}
+.subitem:hover {
+  color: var(--link-color);
+}
+
+/* hide submenu when not active */
+.submenu {
+  display: none;
+}
+.submenu-open .submenu {
+  display: block;
+}
+
+.submenu-dropdown-icon {
+  padding-top: 4px;
+}
+
+/* larger screens - show menu in nav bar*/
+@media (min-width: 768px) {
+
+  .menu {
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap:wrap;
+    position:initial;
+    justify-content: center;
+    column-gap: 25px; /* todo shrink gap */
+  }
+  /* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
+  .menu:not(.menu-ready){
+    opacity:0;
+  }
+  .menu.menu-ready {
+    opacity:1;
+  }
+
+@keyframes showSubmenu {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.submenu-open .submenu {
+  animation: showSubmenu 300ms ease-in-out both;
+  z-index: 3;
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: var(--background-color);
+  border-style: solid;
+  border-radius: 2%;
+  box-shadow: 0 4px 20px 0 rgba(76, 137, 251, 0.15), 0 6px 20px 0 rgba(76, 137, 251, 0.10);
+  padding-left: 0;
+}
+
+.item {
+  display: block;
+  position: relative;
+  width: auto;
+}
+
+.subitem {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.50rem;
+  padding-right: 1.50rem;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.close-menu, .open-menu{
+  display: none ;
+}
+
+}
+/* -------------------------------------- */
+/* 5. site footer (privacy and copyright) */
+/* -------------------------------------- */
+
+.site-footer {
+    display:flex;
+    flex-wrap: wrap;
+    font-size:1.2rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.privacy-policy {
+  margin-left: auto;
+  padding-right: 2rem;
+}
+
+.copyright {
+  padding-left: 2rem;
+}
+
+.site-footer a {
+  color: var(--secondary-text-color);
+}
+.site-footer a:hover {
+  color: var(--title-color);
+  opacity: 1;
+}

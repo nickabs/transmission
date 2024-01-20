@@ -1,0 +1,15 @@
+*.gz
+*.zip
+*.db
+
+yarn.lock
+
+todo
+npm-debug.log
+node_modules/
+package-lock.json
+
+.DS_Store
+.idea
+
+dist/

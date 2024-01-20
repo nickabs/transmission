@@ -1,0 +1,52 @@
+/* --------------------------------------------------------------- */
+/* table of contents show on the top of the post for small screens */
+/* and on the left hand size on larger screens                     */
+/* --------------------------------------------------------------- */
+
+/* override tocbot defaults */
+.toc-list {
+    padding-left: 20px;
+}
+
+.table-of-contents {
+    padding-top:var(--top-gap);
+    padding-left: 20px;
+    font-size: 1.6rem;
+    width: 95%;
+    line-height: 1.8;
+}
+
+/* floating menu when on a small screen */
+.toc {
+    display: none;
+}
+
+.active .toc {
+    display: block;
+    margin-top: 10px;
+}
+
+.toc-button { 
+    margin-right: 6px;
+}
+.toc-toggle {
+    display:flex;
+    flex-direction: row;
+}
+
+/* larger screens */
+@media (min-width: 1100px) {
+    .toc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .toc-toggle {
+        display: none
+    }
+     .table-of-contents {
+        top: 57px;
+        height: 0;
+        position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
+     }
+}

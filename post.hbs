@@ -1,0 +1,28 @@
+{{!< default}}
+
+{{#post}}
+    {{> "hero-header"}}
+    {{!-- toc and social icons --}}
+    {{> asides}}
+    {{!-- outputting post or page content --}}
+    <article class="article-content">
+        {{content}}
+    </article>
+{{/post}}
+    {{!-- the get below only works outside of the post context 
+
+    {{#if @custom.show_related_posts}}
+        {{#get "posts" limit="10" filter="tags:[{{post.tags}}]+id:-{{post.id}}" as |related|}}
+        {{#if related}}
+            <aside class="related-posts">
+                <h3 class="related-posts-title">READ MORE</h3>
+                <div class="related-posts">
+                    {{#foreach posts}}
+                        {{> "article-card"}}
+                    {{/foreach}}
+                </div>
+            </aside>
+        {{/if}}
+        {{/get}}
+    {{/if}}
+    --}}

@@ -1,0 +1,59 @@
+/* -------------------------------------------------- */
+/* provide local copies of the fonts used by the site */
+/* 400	Normal
+/* 700	Bold
+/* 800	Extra Bold 
+/* -------------------------------------------------- */
+
+/* https://github.com/rsms/inter */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(""), url("../fonts/Inter-Regular.woff2") format("woff2")
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: local(""), url("../fonts/Inter-Bold.woff2") format("woff2")
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: local(""), url("../fonts/Inter-ExtraBold.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 400;
+    src: local(""), url("../fonts/Inter-Italic.woff2") format("woff2")
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    src: local(""), url("../fonts/Inter-BoldItalic.woff2") format("woff2")
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 800;
+    src: local(""), url("../fonts/Inter-ExtraBoldItalic.woff2") format("woff2")
+}
+@font-face {
+    font-family: 'Menlo';
+    font-style: normal;
+    font-weight: 400;
+    src: local(""), url("../fonts/menlo-regular.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: 'Inter-fallback';
+    letter-spacing: 0.3px;
+    word-spacing: -0.1px;
+    size-adjust: 104.04%;
+    src: local("Arial");
+}

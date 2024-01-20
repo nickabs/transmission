@@ -1,0 +1,277 @@
+/*debug */
+.Xhome-template .site {
+
+    .latest-articles,
+    .previous-articles,
+    .featured-articles,
+    .site-footer {
+        display:none;
+    }
+}
+/* ---------------------------------------------------------------- */
+/* layout grids for home page, article (post), page and tag summary */
+/* ---------------------------------------------------------------- */
+
+/* map html elements to the grid areas used in the grids below */
+.site-header { grid-area: SiteHeader; }
+.hero-header { grid-area: HeroHeader; }
+.site-footer { grid-area: SiteFooter; }
+
+.home-template .site { /* these components are only shown in the home-page layout */
+    .main-article { grid-area: MainArticle; }
+    .featured-articles { grid-area: FeaturedArticles; }
+    .latest-articles { grid-area: LatestArticles; }
+    .previous-articles { grid-area: PreviousArticles; }
+    .load-more { grid-area: LoadMore; }
+}
+
+.post-template .site, .page-template .site { /* post/page only */
+    .article-content { grid-area: ArticleContent; }
+    .table-of-contents { grid-area: TableOfContents; }
+    .social-links { grid-area: SocialLinks; } 
+}
+
+.tag-template .site { /* tag view only */
+    .tagged-articles { grid-area: TaggedArticles; }
+    .load-more { grid-area: LoadMore; }
+}
+
+/*------------------------*/
+/* home-page mobile view  */
+/*------------------------*/
+.home-template .site {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto auto;
+    grid-template-areas:
+        "SiteHeader"
+        "HeroHeader"
+        "MainArticle"
+        "LatestArticles"
+        "FeaturedArticles"
+        "PreviousArticles"
+        "LoadMore"
+        "SiteFooter";
+}
+/*------------------------*/
+/* post/page mobile view */
+/*------------------------*/
+.post-template .site, .page-template .site {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto var(--hero-header-height) auto auto auto auto;
+    grid-template-areas:
+        "SiteHeader"
+        "HeroHeader"
+        "TableOfContents"
+        "ArticleContent"
+        "SiteFooter"
+        "SocialLinks";
+}
+
+/*------------------------*/
+/* tag collection         */ 
+/* all screen sizes view  */
+/*------------------------*/
+.tag-template .site {
+    display:grid;
+    grid-column: content;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto var(--hero-header-height) auto auto;
+    grid-template-areas:
+        "SiteHeader" 
+        "HeroHeader"
+        "TaggedArticles"
+        "LoadMore"
+        "SiteFooter";
+}
+
+/* tagged article layout (flexible grid of articles) */
+.tag-template .site .tagged-articles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
+    overflow: hidden;
+    row-gap: calc(var(--grid-gap)*1.5); /*todo*/
+    gap: 47px;
+    margin:47px;
+}
+.tag-template .site .tagged-articles img {
+    max-height: 700px;
+    aspect-ratio: 4/3;
+}
+
+.latest-articles,
+.previous-articles-list {
+    display:flex;
+    flex-direction: column;
+    gap: 40px;
+}
+/* -------------- */
+/* tablet screens */
+/* -------------- */
+@media (min-width: 768px) { 
+    /* home page tablet */
+    .home-template .site {
+        grid-template-columns: 1.5fr 1fr; 
+        grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto auto;
+        grid-template-areas:
+            "SiteHeader SiteHeader"
+            "HeroHeader HeroHeader"
+            "MainArticle FeaturedArticles"
+            "LatestArticles LatestArticles"
+            "PreviousArticles PreviousArticles"
+            "LoadMore LoadMore"
+            "SiteFooter SiteFooter";
+    }
+
+    /* page & post view tablet  - todo menu and social position */
+    .page-template .site , .post-template .site {
+        grid-template-columns: 6fr 1fr; 
+        grid-template-rows: auto var(--hero-header-height) auto auto auto auto;
+        grid-template-areas:
+            "SiteHeader SiteHeader"
+            "HeroHeader HeroHeader"
+            "TableOfContents TableOfContents"
+            "ArticleContent SocialLinks"
+            "LoadMore LoadMore"
+            "SiteFooter SiteFooter";
+    }
+    .page-template .site aticle-content, 
+    .post-template .site .article-content {
+        max-width: 720px; 
+    }
+    .main-article .article-card img {
+        aspect-ratio: 4/3;
+    }
+}
+/* ------------- */
+/* large screens */
+/* ------------- */
+@media (min-width: 1100px) { 
+    /* home page layout */
+    .home-template .site {
+        grid-template-columns: 1.5fr 1fr 1fr; 
+        grid-template-rows: auto var(--hero-header-height) auto auto auto auto;
+        grid-template-areas:
+            "SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader"
+            "MainArticle LatestArticles FeaturedArticles"
+            "PreviousArticles PreviousArticles PreviousArticles"
+            "LoadMore LoadMore LoadMore"
+            "SiteFooter SiteFooter SiteFooter";
+    }
+    /* page and post layout */
+    .page-template .site , .post-template .site {
+        grid-template-columns: 1fr 2.5fr 1fr; 
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader"
+            "TableOfContents ArticleContent SocialLinks"
+            "SiteFooter SiteFooter SiteFooter";
+    }
+    
+    .latest-articles {
+        gap:20px;
+    }
+}
+
+/* ------------------------------------------------------------------------------ */
+/* container settings are used to control the size of elements in the grids above */
+/* CSS container queries allow the application of styles based on the container   */
+/* size where media queries target the viewport size                              */
+/* ------------------------------------------------------------------------------ */
+
+.featured-articles .article-card {
+    display:grid;
+    grid-template-columns: 2fr 0.5fr;
+    grid-template-rows: auto auto ;
+    grid-template-areas:
+        "Text Image"
+        "Metadata Image"
+}
+.featured-articles .article-card-image {
+    grid-area: Image;
+}
+.featured-articles .article-card-text {
+    grid-area: Text;
+    align-self: end;
+}
+.featured-articles .article-card-metadata {
+    grid-area: Metadata;
+}
+.featured-articles .article-card-excerpt {
+    display:none;
+}
+/* debug -todo */
+.site .hero-header .hero-image {
+    display:none;
+}
+.main-article {
+    container-type: inline-size;
+    container-name: MainArticleContainer
+}
+@container MainArticleContainer (width > 560px) {
+    img{
+       max-width: 900px;
+    }
+}
+@media (min-width: 760px) {
+    .featured-articles .article-card {
+        padding-top: 25px;
+    }
+    .previous-articles .article-card-image,
+    .latest-articles .article-card-image {
+        padding: 20px;
+        grid-area: Image;
+    }
+    .previous-articles .article-card-text,
+    .latest-articles .article-card-text {
+        grid-area: Text;
+        align-self: end;
+    }
+    .previous-articles .article-card-metadata,
+    .latest-articles .article-card-metadata {
+        grid-area: Metadata;
+    }
+    .previous-articles .article-card-excerpt.short,
+    .latest-articles .article-card-excerpt.short {
+        display: block;
+        grid-area: Excerpt;
+    }
+    .previous-articles .article-card,
+    .latest-articles .article-card {
+        display:grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "Image Text RightSidebar"
+            "Image Metadata RightSidebar";
+    }
+}
+/*todo*/
+@media (min-width: 1110px) {
+    .latest-articles .article-card {
+        display: block; 
+        .article-card-excerpt {
+            display:none;
+        }
+    }
+        
+    .latest-articles .article-card-image {
+        padding: 0px;
+    }
+    .latest-articles {
+        container-type: inline-size;
+        container-name: LatestArticlesContainer
+    }
+    
+    @container LatestArticlesContainer (width > 258px) {
+        img {
+        max-height: 130px;
+        }
+    }
+    .previous-articles .article-card img {
+        max-height:180px;
+    }
+}
