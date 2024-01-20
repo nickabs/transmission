@@ -1,5 +1,7 @@
 # transmission
 
+A simple ghost theme
+
 # Development
 
 ```bash
