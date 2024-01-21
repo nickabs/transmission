@@ -1,9 +1,9 @@
 {{!-- outputs menu items defined in the Ghost admin panel (Settings > Design > Navigation) 
   the html defined in this custom template is expected by dropdown-menu.js --}}
-<div class="menu">   
+<menu class="menu">   
   {{#foreach navigation}}
       <li class="item">
         <a href="{{url absolute="true"}}">{{label}}</a>
       </li>
   {{/foreach}}
-</div>
+</menu>
