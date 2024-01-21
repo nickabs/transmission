@@ -109,7 +109,7 @@
 /* -------------- */
 /* tablet screens */
 /* -------------- */
-@media (min-width: 768px) { 
+@media (min-width: 760px) { 
     /* home page tablet */
     .home-template .site {
         grid-template-columns: 1.5fr 1fr; 
@@ -138,7 +138,7 @@
     }
     .page-template .site aticle-content, 
     .post-template .site .article-content {
-        max-width: 720px; 
+        max-width: var(--max-content-width)
     }
     .main-article .article-card img {
         aspect-ratio: 4/3;

@@ -227,7 +227,7 @@ li.item a:hover{
 }
 
 /* larger screens - show menu in nav bar*/
-@media (min-width: 768px) {
+@media (min-width: 760px) {
 
   .menu {
     flex-direction: row;
@@ -309,6 +309,8 @@ li.item a:hover{
   color: var(--secondary-text-color);
 }
 .site-footer a:hover {
-  color: var(--title-color);
-  opacity: 1;
+    text-decoration: underline;
+    text-decoration-color: var(--link-color);
+    color: var(--link-color);
+    opacity: 0.8;
 }
