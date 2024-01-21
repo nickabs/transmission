@@ -1,0 +1,16 @@
+{{!-- overide the default The default template for a tag page (index.hbs) --}}
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{#tag}}
+    {{> "hero-header"}}
+{{/tag}}
+
+{{!-- a list of posts for this tag--}}
+<section class="tagged-articles with-pagination ">
+    {{#foreach posts}}
+        {{> "article-card"}}
+    {{/foreach}}
+</section>
+
+{{pagination}}

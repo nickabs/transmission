@@ -1,0 +1,47 @@
+
+/* ------------------------------------------------------------------- */
+/* social links are show at the bottom of the screen for small screens */
+/* for larger screens they are shown on the right hand side        */
+/* ------------------------------------------------------------------- */
+
+.social-links {
+    position: sticky;
+    bottom: 0;
+    z-index: 4;
+    background-color: var(--background-color);
+    box-shadow: 0 -4px 10px rgba(0,0,0,.1), 0 0 0 transparent;
+    display:flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.social-links svg {
+    height: 40px;
+    padding: 10px;
+    width: 40px;
+    fill: var(--title-color);
+    box-shadow: 0 2px 4px var(--border-color), 0 0 0 transparent;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    cursor: pointer;
+}
+
+@media (min-width:760px) {
+    .social-links {
+        bottom: unset;
+        box-shadow: unset;
+        top: 57px;
+        height:0;
+        position:sticky;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    .social-links svg {
+        height: 50px;
+        padding: 15px;
+        width: 50px;
+    }
+}

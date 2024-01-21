@@ -1,0 +1,198 @@
+/* ------------------------------- */
+/* styling for all article content */
+/* ------------------------------- */
+.article-content > * + * {
+  margin-top:28px;
+  font-size: var(--content-font-size);
+}
+
+
+/* margin for headings */
+.article-content > [id]:not(:first-child) {
+  margin-top: 56px;
+}
+.site {
+  .article-content h1, .article-content.h2, .article-content.h3 {
+    color: var(--heading-color);
+    margin-block:0 0;
+  }
+  h1 {
+      font-size: var(--h1-font-size);
+  }
+
+  h2 {
+      font-size: var(--h2-font-size);
+  }
+
+  h3 {
+      font-size: var(--h3-font-size);
+  }
+
+  sup {
+      font-size: var(--content-sup-font-size);
+  }
+}
+/* A margin before/after HRs and blockquotes */
+.article-content hr,
+.article-content ul,
+.article-content blockquote {
+    margin-top: 2rem; 
+}
+
+.article-content blockquote {
+    font-style: italic;
+    padding: 0 2rem;
+    border-left: 0.3rem solid var(--accent-color);
+}
+
+/* figure captions */
+.article-content figcaption ,
+.article-content figcaption * {
+    font-size: var(--content-fig-font-size);
+    line-height: 1.5;
+    color: var(--secondary-text-color);
+    margin-top: 1.0rem;
+    text-align: center;
+}
+
+.article-content li + li {
+    margin-top: 0.8rem;
+}
+
+.article-content a {
+  color: var(--link-color);
+  opacity: 0.8;
+}
+.article-content a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--link-color);
+    opacity: 1;
+}
+
+/*----------------------*/
+/* tables               */
+/*----------------------*/
+
+/* flex table when on a mobile */
+@media(max-width:480px) {
+    .article-content table{
+      table-layout:auto !important;
+     }
+ }
+
+ /* override the style settings in tables copied from google sheets */
+.article-content table * {
+  font-family: var(--font-sans) !important;
+  font-size: var(--content-font-size) !important;
+}
+
+.article-content table {
+  font-family: var(--font-sans) !important;
+  font-size: var(--content-font-size) !important;
+  border-collapse: collapse;
+  margin-top: 28px;
+}
+.article-content table tr {
+  width: 100%;
+}
+.article-content table td {
+  padding-top:0.7rem;
+  padding-bottom:0.7rem;
+}
+
+.article-content table tbody tr:nth-child(odd) {
+  background-color: var(--secondary-background-color);
+}
+.article-content table tbody tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+.article-content table tbody td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.article-content table thead, tfoot tr {
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.article-content tr td:first-child {
+    min-width: 1%;
+    max-width: 25%;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+/* ----------------- */
+/* code highlighting */
+/* ----------------- */
+pre {
+    padding: 1.6rem 2.4rem;
+    overflow-x: scroll;
+    hyphens: none;
+    line-height: 1.5;
+    white-space: pre;
+    background-color: var(--secondary-background-color);
+    -webkit-overflow-scrolling: touch;
+}
+code[class*="language-"],
+pre[class*="language-"] {
+	font-size: 1.4rem;
+  font-family: var(--font-mono);
+}
+
+/* make output lines in code blocks not selectable */
+.command-line span.token.output {
+	user-select: none;
+}
+/* inline code */
+:not(pre) > code {
+	font-size: 1.4rem;
+  font-family: var(--font-mono);
+  padding: 0.4rem;
+	border-radius: .3em;
+  color: var(--accent-color);
+  background-color: var(--backgrond-color);
+  border-radius: 3px;
+}
+/* ------------------------------------------------------------- */
+/* Cards are dynamic blocks of content which appear within Ghost */
+/* posts, for example: embedded videos, tweets, galleries, or    */
+/* specially styled bookmark links.                              */
+/* ------------------------------------------------------------- */
+
+/*todo This keeps small embeds centered */
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* This keeps small images centered */
+.kg-image,
+.kg-image-card img {
+    margin: auto;
+}
+
+/* all images can be opened by photoswipe - show pointer */
+.kg-image, .kg-gallery-image {
+    cursor: pointer;
+}
+
+.kg-width-wide img {
+  max-width: 85vw;
+}
+
+.kg-width-full img {
+  max-width: 100vw;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border: 0;
+}

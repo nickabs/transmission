@@ -1,0 +1,87 @@
+/* --------------------------- */
+/* variables used in the theme */
+/* --------------------------- */
+
+/* 
+ screen sizes:
+ mobile: 500px
+ tablet: 760px
+ laptop: 992px
+ desktop: 1200px
+ widescreen: 1400px
+*/
+
+:root {
+    --hero-background-color: #333;
+    --accent-color: #95878e;
+    --hero-title-color: #fff;
+    --hero-description-color: #ccc;
+    --font-sans: 'Inter', 'Inter-fallback', 'Trebuchet MS', sans-serif;
+    --font-mono: 'Menlo', 'Courier New', monospace;
+    --content-font-size: 1.6rem;
+    --content-sup-font-size: 1.2rem;
+    --content-fig-font-size: 1.4rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2.0rem;
+    --h3-font-size: 1.8rem;
+    --max-content-width: 720px;
+    --site-padding: max(4vmin, 20px); 
+    --top-margin: max(1.5vw,24px);
+    --nav-bar-height: 50px; /* height of top nav bar */
+    --hero-header-height: 160px ;
+    --grid-gap: 47px;
+    --container-gap: clamp(24px, 1.7032rem + 1.9355vw, 48px); /* gap responds to screen size (within bounds of 24/48px)*/
+}
+
+/* font sizes on larger screens */
+@media (min-width: 480px) {
+    :root {
+        --content-font-size: 1.8rem;
+        --content-sup-font-size: 1.3rem;
+        --content-fig-font-size: 1.5rem;
+        --h1-font-size: 3.2rem;
+        --h2-font-size: 2.5rem;
+        --h3-font-size: 2.0rem;
+    }
+}
+
+/* light mode */
+html[data-theme='light'] {
+    --background-color: #fff;
+    --secondary-background-color: #f6f6f6;
+    --title-color: #444;
+    --heading-color: #444;
+    --secondary-title-color: #1a1a1a;
+    --text-color: #333;
+    --secondary-text-color: #404245;
+    --secondary-text-color: #4f5153;
+    --border-color: #e6e6e6;
+    --disabled-button-color: #ccc;
+    --link-color: #1a73e8;
+}
+/* dark mode */
+html[data-theme='dark'] {
+    --hero-background-color: rgb(22, 27, 34);
+    --background-color: #141414;
+    --secondary-background-color: #302f3c;
+    --secondary-background-color: rgb(22, 27, 34);
+    --title-color:  #f0f6fc;
+    --heading-color: rgb(230, 237, 243);
+    --secondary-title-color: #ccc;
+    --text-color: rgb(230, 237, 243);
+    --text-color:#b0b2b4;
+    --secondary-text-color:  #8b949e;
+    --border-color: #564d4d;
+    --border-color: rgba(56,139,253,0.4);
+    --disabled-button-color: #575050;
+    --link-color: #1158c7;
+    --link-color: rgb(9, 105, 218);
+}
+
+.show-dark-mode-icon,
+.show-light-mode-icon {
+    display: none!important;
+}
+[data-theme=dark] .show-light-mode-icon, [data-theme=light] .show-dark-mode-icon { 
+    display: block!important;
+}

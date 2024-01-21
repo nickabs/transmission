@@ -1,0 +1,38 @@
+https://stackoverflow.com/questions/50794795/sticky-position-on-css-grid-items
+done tags 
+done previous/load more 
+done related docs
+done fix href links in darkmode
+done fix load more
+done sort out very large screens
+done rename and version theme (transmission)
+done add home.css to site
+
+# aesthetics
+clean up redundant css
+reorg index.hbs
+improve home page
+check social position on mobile
+move all padding and margin and gaps to variables and layout
+move the flexbox controls from social to layout
+move location of mobile toc
+photoswipe site.css
+change fixed heights to variables in layout
+copy git hub menu style
+related articles
+move line-height from reset.
+header image
+make load more a better button style
+improve tag page elements
+improve drop down menu item
+improve button styles
+get rid of pagination-list 
+package-json version number
+
+# performanc3
+create dist file
+minify
+srsset
+change to latest pagination js
+performance layout shift ; image sizes
+stop menu/social scrolling outside of grid

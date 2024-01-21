@@ -1,0 +1,22 @@
+/* ------------------------------------ */
+/* icon buttons (search, dark-mode etc) */
+/* ------------------------------------ */
+.icon-button {
+    width: 20px;
+    height: 20px;
+    color: var(--secondary-title-color);
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    text-align:left;
+}
+
+.icon-button:hover .icon {
+    opacity: 0.8;
+}
+
+symbol {
+    fill: currentColor;
+}
+

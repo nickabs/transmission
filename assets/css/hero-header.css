@@ -1,0 +1,65 @@
+/* ------------------------------------------------------------------------------------------------------ */
+/* the hero header is a page banner that shows under the site navigation bar                              */
+/* for posts the post title and metadata are shown over a partially greyed out copy of the featured image */
+/* for the index page, tag lists and other pages titles are shown over a solid color background           */
+/* ------------------------------------------------------------------------------------------------------ */
+
+.hero-header {
+    background-color: var(--hero-background-color);
+    width: 100%;
+    height: var(--hero-header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    color: var(--hero-title-color);
+    z-index: 2;
+}
+
+.hero-description {
+    color: var(--hero-description-color);
+    font-size: 1.7rem;
+    z-index: 2;
+}
+
+/* metadata items:  date, tags and reading times */
+.hero-date, .hero-tags {
+    z-index: 2;
+    font-size: 1.5rem;
+    color: var(--hero-description-color);
+}
+
+.hero-tags a {
+    color: var(--link-color);
+}
+
+/* small screens */
+@media (max-width: 760px) {
+    .hero-title {
+        font-size: 2.6rem;
+    }
+}
+
+/* hero images (show in letter-box format with a gradient */
+.hero-image img {
+  left: 0;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero-image::after {
+  content: '';
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  backdrop-filter: blur(3px);
+  background: linear-gradient(180deg,hsla(0,0%,9%,.75) 0,hsla(0,0%,11%,1));
+}
