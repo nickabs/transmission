@@ -5,8 +5,8 @@
         {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
     {{/foreach}}
 </section>
-<section class="latest-articles">
-    <h2 class="latest-articles-title" >LATEST</h2>
+<section class="recent-articles">
+    <h2 class="recent-articles-title" >RECENT</h2>
     {{#foreach posts from="2" limit="3"}}
         {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
     {{/foreach}}
@@ -28,7 +28,7 @@
     {{/if}}
 </section>
 <section class="previous-articles">
-    <h2 class="previous-articles-title" >MORE ARTICLES</h2>
+    <h2 class="previous-articles-title" >MORE</h2>
     <div class="previous-articles-list with-pagination">
         {{#if @custom.show_featured_posts}}
             {{!-- {{#get "posts" include="tags" limit=@config.posts_per_page as |recent|}} --}}

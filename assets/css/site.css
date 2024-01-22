@@ -52,7 +52,7 @@ a:hover {
 
 /* default margins and padding */
 .main-article,
-.latest-articles,
+.recent-articles,
 .featured-articles,
 .previous-articles {
     padding-left: var(--site-padding);

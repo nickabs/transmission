@@ -10,7 +10,7 @@
 .home-template .site { /* these components are only shown in the home-page layout */
     .main-article { grid-area: MainArticle; }
     .featured-articles { grid-area: FeaturedArticles; }
-    .latest-articles { grid-area: LatestArticles; }
+    .recent-articles { grid-area: RecentArticles; }
     .previous-articles { grid-area: PreviousArticles; }
     .pagination { grid-area: Pagination; }
 }
@@ -37,7 +37,7 @@
         "SiteHeader"
         "HeroHeader"
         "MainArticle"
-        "LatestArticles"
+        "RecentArticles"
         "FeaturedArticles"
         "PreviousArticles"
         "Pagination"
@@ -89,7 +89,7 @@
     aspect-ratio: 4/3;
 }
 
-.latest-articles,
+.recent-articles,
 .previous-articles-list {
     display:flex;
     flex-direction: column;
@@ -107,7 +107,7 @@
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
-            "LatestArticles LatestArticles"
+            "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -144,7 +144,7 @@
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
-            "MainArticle LatestArticles FeaturedArticles"
+            "MainArticle RecentArticles FeaturedArticles"
             "PreviousArticles PreviousArticles PreviousArticles"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
@@ -160,7 +160,7 @@
             "SiteFooter SiteFooter SiteFooter";
     }
     
-    .latest-articles {
+    .recent-articles {
         Xgap:20px;
     }
 }
@@ -207,21 +207,21 @@
 }
 @media (min-width: 760px) {
     .previous-articles .article-card-image,
-    .latest-articles .article-card-image {
+    .recent-articles .article-card-image {
         grid-area: Image;
         display: flex;
     }
     .previous-articles .article-card-text,
-    .latest-articles .article-card-text {
+    .recent-articles .article-card-text {
         grid-area: Text;
         align-self: end;
     }
     .previous-articles .article-card-metadata,
-    .latest-articles .article-card-metadata {
+    .recent-articles .article-card-metadata {
         grid-area: Metadata;
     }
     .previous-articles .article-card,
-    .latest-articles .article-card {
+    .recent-articles .article-card {
         display:grid;
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: auto auto;
@@ -235,19 +235,19 @@
 }
 /*todo*/
 @media (min-width: 1110px) {
-    .latest-articles .article-card {
+    .recent-articles .article-card {
         display: block; 
         .article-card-excerpt {
             display:none;
         }
     }
         
-    .latest-articles {
+    .recent-articles {
         container-type: inline-size;
-        container-name: LatestArticlesContainer
+        container-name: RecentArticlesContainer
     }
     
-    @container LatestArticlesContainer (width > 258px) {
+    @container RecentArticlesContainer (width > 258px) {
         img {
         max-height: 130px;
         }
