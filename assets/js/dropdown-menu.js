@@ -1,41 +1,53 @@
 /* 
  * create sub menu structure
 
-    ghost menu              rendered html 
+   ghost menu              rendered html
   --------------          ------------------
-    Home                    <li>Home<li>
-    About                   <li>About<li>
-    -submenu 1              <li class="item has-submenu">submenu 1 <ul submenu>
+    Home                    <li class="item">Home<li>
+    About                   <li class="item">About<li>
+    -submenu 1              <li class="item has-submenu">submenu 1 <ul class="submenu">
     --subitem 1               <li class="subitem">subitem 1</li> <ul>
     --subitem 2               <li class="subitem">subitem 2</li> </ul></li>
+
+    * note the actual html contains <a> anchors for each item on the menu
 */
 
 (function () {
-  // this regex matches the -submenu --subitem  navigation entries
-  const regex= /(^-{1,})(.*)/;
-  const submenuIcon = "<svg class='submenu-dropdown-icon' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'> \
+  const menuIndent= /(^-{1,})(.*)/; // this regex matches the -submenu --subitem navigation entries
+  const submenuIcon = "<svg class='dropdown-icon' xmlns='http://www.w3.org/2000/svg' width='10' height='16' fill='currentColor' viewBox='4 -4 4 16'> \
     <path d='M4.5 3.62251L1.11184 0L0 1.18875L4.5 6L9 1.18875L7.88816 0L4.5 3.62251Z'></path> \
   </svg>";
-  // get all the the nav items
-  //body > div.site > header > nav > ul > ul > li:nth-child(1)
-  let menuItems = document.querySelectorAll('.item');
+  let menuItems = document.querySelectorAll('.menu .item'); // get all the the menu items
   let i, match, submenu;
+  let newElement, menuName
 
+  /*use a superscript unicode down arrow as a drop down indicator */
+  let dropdownSymbol= document.createElement("sup"); 
+  dropdownSymbol.textContent=""
+
+  /*
+  go throught the menu items and create the html structure shown above
+  the code expects the following html for each item:
+  */
   for (i = 0; i < menuItems.length; ++i) {
 
-    match = menuItems[i].lastElementChild.innerText.match(regex);
+    match = menuItems[i].lastElementChild.innerText.match(menuIndent);
 
     if (match) {
-      //remove the submenu & subitem flags
-      menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(regex,"$2");
+      /* remove the submenu & subitem indent indicators (- --) */
+      menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(menuIndent,"$2");
+      menuName=menuItems[i].lastElementChild.innerText;
 
       if (match[1].length == 1) {
         menuItems[i].classList.add("has-submenu");
-        menuItems[i].innerHTML += submenuIcon;
+        menuItems[i].replaceChildren(document.createElement("a"));
+        menuItems[i].querySelector('a').setAttribute("href","#");
+        menuItems[i].querySelector('a').appendChild(document.createTextNode(menuName));
+        menuItems[i].querySelector('a').appendChild(document.createElement('sup'));
+        menuItems[i].querySelector('sup').appendChild(document.createTextNode('⌄'));
         menuItems[i].appendChild(document.createElement('ul'));
         menuItems[i].querySelector('ul').classList="submenu";
-        menuItems[i].querySelector('a').removeAttribute("href");
-        menuItems[i].querySelector('a').classList.add('tabindex="0"');
+        menuItems[i].querySelector('a').classList.add('tabindex=0');
         submenu=menuItems[i];
       }
       else if (submenu) {

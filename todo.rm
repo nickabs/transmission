@@ -15,19 +15,18 @@ done check social position on mobile
 done stop menu/social scrolling outside of grid
 done change fixed heights to variables in layout
 done move line-height from reset.
+done fix hamburger and drop down
 
 # aesthetics
-fix hamburger and drop down
-CLS fixes
-sort out yarn install
-related articles
-minify
 copy git hub menu style
-improve button styles
-get rid of pagination-list 
+related articles
+sort out yarn install
 move location of mobile toc
+CLS fixes on front page
+get rid of pagination-list 
+minify
+package-json version number; automate releases https://github.com/tscanlin/tocbot/commit/d2e111e5e5a9e6ea9c8b37f9d6e89d2ed9fe0dab'
 gradient header image
-package-json version number
 change to latest pagination js
 reorg index.hbs
 fix SEO

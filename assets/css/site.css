@@ -29,6 +29,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     margin:0;
+    scroll-margin-top: var(--nav-bar-height);
 }
 
 .article-content :first-child {
@@ -47,7 +48,7 @@ a {
 }
 
 a:hover {
-    opacity: 1.0;
+    opacity: 0.8;
 }
 
 /* default margins and padding */
@@ -138,12 +139,15 @@ nav{
 /* -------------------------------------- */
 /* 4. menu                                */
 /* -------------------------------------- */
+/*
+
+/* mobile view */
 .menu {
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 40px;
+  top: 50px;
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -155,6 +159,9 @@ nav{
 }
 .logo {
   margin-right: auto;
+}
+.logo img {
+  width:20px;
 }
 .open-menu {
   display: block;
@@ -188,16 +195,11 @@ nav{
   padding-left: 0.75rem;
   padding-top: 0.8rem;
 }
-.submenu-open .submenu {
-  position:initial;
-}
 .item {
   display: none;
 }
 .subitem {
-  padding: 0.5rem 1.5rem;
-  white-space: nowrap;
-  width: 100%;
+  padding-top: 5px;
 }
 
 .close-menu {
@@ -207,36 +209,27 @@ nav{
   filter: blur(5px);
 }
 
-.item:hover,
-li.item a:hover{
-  color: var(--link-color);
-}
-.subitem:hover {
-  color: var(--link-color);
-}
-
 /* hide submenu when not active */
 .submenu {
   display: none;
 }
 .submenu-open .submenu {
+  padding-left:25px;
   display: block;
-}
-
-.submenu-dropdown-icon {
-  padding-top: 4px;
 }
 
 /* larger screens - show menu in nav bar*/
 @media (min-width: 760px) {
 
   .menu {
+    position:unset;
+    display:flex;
     flex-direction: row;
-    flex-grow: 1;
-    flex-wrap:wrap;
-    position:initial;
+    flex: 1;
+    align-items: center;
     justify-content: center;
-    column-gap: 25px; /* todo shrink gap */
+    column-gap: 25px;
+    flex-wrap: wrap;
   }
   /* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
   .menu:not(.menu-ready){
@@ -258,8 +251,9 @@ li.item a:hover{
   left: 0;
   background-color: var(--background-color);
   border-style: solid;
+  border-color: var(--secondary-background-color);
   border-radius: 2%;
-  box-shadow: 0 4px 20px 0 rgba(76, 137, 251, 0.15), 0 6px 20px 0 rgba(76, 137, 251, 0.10);
+  box-shadow: 0 1px 3px 0 rgba(76, 137, 251, 0.15), 0 1px 5px 0 rgba(76, 137, 251, 0.10);
   padding-left: 0;
 }
 
@@ -268,7 +262,15 @@ li.item a:hover{
   position: relative;
   width: auto;
 }
-
+.item a {
+  padding: 0px 10px 0px 10px;
+}
+.menu .item a:hover {
+  border-radius: 0.375rem;
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+  opacity: 1;
+}
 .subitem {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -288,6 +290,9 @@ li.item a:hover{
 /* -------------------------------------- */
 
 .site-footer {
+    font-size: 1.4re;
+    line-height: 2.1rem;
+    font-weight: 600;
     display:flex;
     flex-wrap: wrap;
     font-size:1.2rem;
