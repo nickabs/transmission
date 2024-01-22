@@ -3,7 +3,7 @@
 {{!-- The TOC will be inserted here --}}
 <aside class="table-of-contents">
     <div class="toc-toggle">
-        <button class="toc-button icon-button" >{{> "icons/toc"}}</button>
+        <button class="toc-button icon-button" aria-label="table of contents">{{> "icons/toc"}}</button>
         <p> ← table of contents</p>
     </div>
     <div class="toc"></div>
@@ -12,15 +12,15 @@
 {{!-- share buttons inserted here --}}
 <aside class="social-links">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
-    class="social-link-icon" target="_blank" rel="noopener" >
+    class="social-link-icon" aria-label="share on facebook" target="_blank" rel="noopener" >
         {{> "icons/facebook"}}
     </a>
     <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
-        class="social-link-icon" target="_blank" rel="noopener" aria-label="Twitter">
+        class="social-link-icon" aria-label="share on twitter" target="_blank" rel="noopener" aria-label="Twitter">
         {{> "icons/twitter"}}
     </a>
     {{!-- cf copy-link.js --}}
-    <a class="social-link-icon social-link-icon-copy" target="_blank">
+    <a class="social-link-icon social-link-icon-copy" arial-label="copy link" target="_blank">
         {{> "icons/link"}}
     </a>
 </aside>

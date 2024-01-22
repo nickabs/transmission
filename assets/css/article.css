@@ -61,12 +61,12 @@
 
 .article-content a {
   color: var(--link-color);
-  opacity: 0.8;
+  opacity: 1;
 }
 .article-content a:hover {
     text-decoration: underline;
     text-decoration-color: var(--link-color);
-    opacity: 1;
+    opacity: 0.8;
 }
 
 /*----------------------*/

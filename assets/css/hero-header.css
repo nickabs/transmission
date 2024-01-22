@@ -37,6 +37,10 @@
 
 .hero-tags a {
     color: var(--link-color);
+    color: #0069ff ;/* a11y todo */
+}
+.hero-tags a:hover {
+    opacity: 0.8;
 }
 
 /* small screens */

@@ -63,19 +63,15 @@ html[data-theme='light'] {
 html[data-theme='dark'] {
     --hero-background-color: rgb(22, 27, 34);
     --background-color: #141414;
-    --secondary-background-color: #302f3c;
     --secondary-background-color: rgb(22, 27, 34);
     --title-color:  #f0f6fc;
     --heading-color: rgb(230, 237, 243);
     --secondary-title-color: #ccc;
-    --text-color: rgb(230, 237, 243);
     --text-color:#b0b2b4;
     --secondary-text-color:  #8b949e;
-    --border-color: #564d4d;
     --border-color: rgba(56,139,253,0.4);
     --disabled-button-color: #575050;
-    --link-color: #1158c7;
-    --link-color: rgb(9, 105, 218);
+    --link-color: rgb(47, 129, 247);
 }
 
 .show-dark-mode-icon,
