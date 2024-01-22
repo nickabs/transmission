@@ -7,32 +7,29 @@ done fix load more
 done sort out very large screens
 done rename and version theme (transmission)
 done add home.css to site
+done clean up redundant css
+done improve home page
+done move all padding and margin and gaps to variables and layout
+done move the flexbox controls from social to layout
+done check social position on mobile
+done stop menu/social scrolling outside of grid
+done change fixed heights to variables in layout
+done move line-height from reset.
 
 # aesthetics
-clean up redundant css
-reorg index.hbs
-improve home page
-check social position on mobile
-move all padding and margin and gaps to variables and layout
-move the flexbox controls from social to layout
-move location of mobile toc
-photoswipe site.css
-change fixed heights to variables in layout
-copy git hub menu style
+fix hamburger and drop down
+CLS fixes
+sort out yarn install
 related articles
-move line-height from reset.
-header image
-make load more a better button style
-improve tag page elements
-improve drop down menu item
+minify
+copy git hub menu style
 improve button styles
 get rid of pagination-list 
+move location of mobile toc
+gradient header image
 package-json version number
-
-# performanc3
-create dist file
-minify
-srsset
 change to latest pagination js
-performance layout shift ; image sizes
-stop menu/social scrolling outside of grid
+reorg index.hbs
+fix SEO
+improve tag page elements
+srsset
