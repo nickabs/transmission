@@ -9,20 +9,15 @@
         {{content}}
     </article>
 {{/post}}
-    {{!-- the get below only works outside of the post context 
-
-    {{#if @custom.show_related_posts}}
-        {{#get "posts" limit="10" filter="tags:[{{post.tags}}]+id:-{{post.id}}" as |related|}}
-        {{#if related}}
-            <aside class="related-posts">
-                <h3 class="related-posts-title">READ MORE</h3>
-                <div class="related-posts">
-                    {{#foreach posts}}
-                        {{> "article-card"}}
-                    {{/foreach}}
-                </div>
-            </aside>
-        {{/if}}
-        {{/get}}
+{{#if @custom.show_related_posts}}
+    {{#get "posts" limit=@config.posts_per_page filter="tags:[{{post.tags}}]+id:-{{post.id}}" as |related|}}
+    {{#if related}}
+        <aside class="related-articles">
+            <h3 class="related-articles-title">READ MORE</h3>
+            {{#foreach posts}}
+                {{> "article-card"}}
+            {{/foreach}}
+        </aside>
     {{/if}}
-    --}}
+    {{/get}}
+{{/if}}

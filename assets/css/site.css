@@ -55,7 +55,8 @@ a:hover {
 .main-article,
 .recent-articles,
 .featured-articles,
-.previous-articles {
+.previous-articles ,
+.related-articles {
     padding-left: var(--site-padding);
     padding-right: var(--site-padding);
     margin-top: var(--top-margin);

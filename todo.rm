@@ -17,15 +17,25 @@ done change fixed heights to variables in layout
 done move line-height from reset.
 done fix hamburger and drop down
 done copy git hub menu style
+done related articles
 
 # aesthetics
-related articles
+footer color on light mode
+footer spacer 
+create a common class accross releated, featured etc to combine the styles: two vies "article-list" and "narrow-view-card (ala featured)
+"" for article-card section - titles
+pagination on related articles
 sort out yarn install ; gulp alternative; minify
 package-json version number; automate releases https://github.com/tscanlin/tocbot/commit/d2e111e5e5a9e6ea9c8b37f9d6e89d2ed9fe0dab'
 move location of mobile toc
 CLS fixes on front page
 get rid of pagination-list 
 gradient header image
+fix feature toggle
+comments
+authors
+colors based on accent
+https://blog.hubspot.com/website/css-transition-vs-animation
 change to latest pagination js
 reorg index.hbs
 fix SEO

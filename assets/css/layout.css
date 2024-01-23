@@ -19,9 +19,11 @@
     .article-content { grid-area: ArticleContent; }
     .table-of-contents { grid-area: TableOfContents; }
     .social-links { grid-area: SocialLinks; } 
+    .related-articles { grid-area:RelatedArticles}
 }
 
-.tag-template .site { /* tag view only */
+.related-articles .site,
+.tag-template .site { /* tag and related view only */
     .tagged-articles { grid-area: TaggedArticles; }
     .pagination { grid-area: Pagination; }
 }
@@ -55,6 +57,8 @@
         "HeroHeader"
         "TableOfContents"
         "ArticleContent"
+        "RelatedArticles"
+        "Pagination"
         "SiteFooter"
         "SocialLinks";
 }
@@ -93,7 +97,6 @@
 .previous-articles-list {
     display:flex;
     flex-direction: column;
-    Xgap: 40px;
 }
 /* -------------- */
 /* tablet screens */
@@ -102,7 +105,7 @@
     /* home page tablet */
     .home-template .site {
         grid-template-columns: 1.5fr 1fr; 
-        grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto auto;
+        grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto;
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
@@ -113,15 +116,16 @@
             "SiteFooter SiteFooter";
     }
 
-    /* page & post view tablet  - todo menu and social position */
+    /* page & post view tablet  */
     .page-template .site , .post-template .site {
         grid-template-columns: 6fr 1fr; 
-        grid-template-rows: auto var(--hero-header-height) auto auto auto auto;
+        grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto;
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
             "TableOfContents TableOfContents"
             "ArticleContent SocialLinks"
+            "RelatedArticles RelatedArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
     }
@@ -152,11 +156,13 @@
     /* page and post layout */
     .page-template .site , .post-template .site {
         grid-template-columns: 1fr 2.5fr 1fr; 
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto auto;
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
             "TableOfContents ArticleContent SocialLinks"
+            "TableOfContents RelatedArticles SocialLinks"
+            "TableOfContents Pagination SocialLinks"
             "SiteFooter SiteFooter SiteFooter";
     }
     
@@ -171,6 +177,7 @@
 /* size where media queries target the viewport size                              */
 /* ------------------------------------------------------------------------------ */
 
+.related-articles .article-card,
 .featured-articles .article-card {
     display:grid;
     grid-template-columns: 2fr 0.5fr;
@@ -179,16 +186,20 @@
         "Text Image"
         "Metadata Image"
 }
+.related-articles .article-card-image,
 .featured-articles .article-card-image {
     grid-area: Image;
 }
+.related-articles .article-card-text,
 .featured-articles .article-card-text {
     grid-area: Text;
     align-self: end;
 }
+.related-articles .article-card-metadata,
 .featured-articles .article-card-metadata {
     grid-area: Metadata;
 }
+.related-articles .article-card-excerpt,
 .featured-articles .article-card-excerpt {
     display:none;
 }

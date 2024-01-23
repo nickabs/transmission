@@ -12,29 +12,27 @@
     {{/foreach}}
 </section>
 <section class="featured-articles">
-    <h2 class="featured-articles-title" >FEATURED</h2>
     {{#if @custom.show_featured_posts}}
+        <h2 class="featured-articles-title" >FEATURED</h2>
         {{#get "posts" filter="featured:true" include="tags" limit=6 as |featured|}}
             {{#foreach featured}}
                 {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
             {{/foreach}}
         {{/get}}
     {{else}}
-        <div class="featured-feed">
-            {{#foreach posts from="3" limit="6"}}
-                {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
-            {{/foreach}}
-        </div>
+        <h2 class="featured-articles-title" >MORE</h2>
+        {{#foreach posts from="4" limit="6"}}
+            {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
+        {{/foreach}}
     {{/if}}
 </section>
 <section class="previous-articles">
     <h2 class="previous-articles-title" >MORE</h2>
     <div class="previous-articles-list with-pagination">
         {{#if @custom.show_featured_posts}}
-            {{!-- {{#get "posts" include="tags" limit=@config.posts_per_page as |recent|}} --}}
-                {{#foreach posts from="5"}}
-                    {{> "article-card"}}
-                {{/foreach}}
+            {{#foreach posts from="5"}}
+                {{> "article-card"}}
+            {{/foreach}}
         {{else}}
             {{#get "posts" include="tags" }}
                 {{#foreach posts from="11" }}
