@@ -10,8 +10,8 @@
     }
 
     // post list element
-    var listElement = document.querySelector('.with-pagination:not(.featured):not(.related)');
-    if (!listElement) {
+    var currentArticleList = document.querySelector('.paginated');
+    if (!currentArticleList) {
         return;
     }
 
@@ -32,15 +32,15 @@
             return;
         }
 
-        // append contents
-        var postElements = this.response.querySelectorAll('.with-pagination:not(.featured):not(.related) > *');
+        // append next page of article-cards
+        var nextPageArticleList = this.response.querySelectorAll('.paginated > .article-card');
         var fragment = document.createDocumentFragment();
         var elems = [];
-
-        postElements.forEach(function (item) {
+        nextPageArticleList.forEach(function (item) {
             // document.importNode is important, without it the item's owner
             // document will be different which can break resizing of
             // `object-fit: cover` images in Safari
+
             var clonedItem = document.importNode(item, true);
 
             if (callback) {
@@ -52,7 +52,7 @@
             fragment.appendChild(clonedItem);
         });
 
-        listElement.appendChild(fragment);
+        currentArticleList.appendChild(fragment);
 
         if (callback) {
             callback(elems);
@@ -76,9 +76,9 @@
         loading = false;
 
         if (isInfinite) {
-            imagesLoaded(listElement, function () {
-                if (listElement.getBoundingClientRect().bottom <= lastWindowHeight) {
-                    console.log(listElement.getBoundingClientRect().bottom, lastWindowHeight)
+            imagesLoaded(currentArticleList, function () {
+                if (currentArticleList.getBoundingClientRect().bottom <= lastWindowHeight) {
+                    console.log(currentArticleList.getBoundingClientRect().bottom, lastWindowHeight)
                     requestTick();
                 }
             });

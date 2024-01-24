@@ -22,8 +22,10 @@ done related articles
 # aesthetics
 footer color on light mode
 footer spacer 
+fix http://localhost:2368/tag/website-hosting/
 create a common class accross releated, featured etc to combine the styles: two vies "article-list" and "narrow-view-card (ala featured)
 "" for article-card section - titles
+subgrid 
 pagination on related articles
 sort out yarn install ; gulp alternative; minify
 package-json version number; automate releases https://github.com/tscanlin/tocbot/commit/d2e111e5e5a9e6ea9c8b37f9d6e89d2ed9fe0dab'
@@ -32,6 +34,7 @@ CLS fixes on front page
 get rid of pagination-list 
 gradient header image
 fix feature toggle
+lint and css reduce
 comments
 authors
 colors based on accent

@@ -2,7 +2,9 @@
 /* layout grids for home page, article (post), page and tag summary */
 /* ---------------------------------------------------------------- */
 
+/*------------------------------------------------------------ */
 /* map html elements to the grid areas used in the grids below */
+/*------------------------------------------------------------ */
 .site-header { grid-area: SiteHeader; }
 .hero-header { grid-area: HeroHeader; }
 .site-footer { grid-area: SiteFooter; }
@@ -34,7 +36,6 @@
 .home-template .site {
     display: grid;
     grid-template-columns: 1fr; 
-    grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto auto;
     grid-template-areas:
         "SiteHeader"
         "HeroHeader"
@@ -50,8 +51,6 @@
 /*------------------------*/
 .post-template .site, .page-template .site {
     display: grid;
-    grid-template-columns: 1fr; 
-    grid-template-rows: auto var(--hero-header-height) auto auto auto auto;
     grid-template-areas:
         "SiteHeader"
         "HeroHeader"
@@ -70,8 +69,6 @@
 .tag-template .site {
     display:grid;
     grid-column: content;
-    grid-template-columns: 1fr; 
-    grid-template-rows: auto var(--hero-header-height) auto auto;
     grid-template-areas:
         "SiteHeader" 
         "HeroHeader"
@@ -93,11 +90,6 @@
     aspect-ratio: 4/3;
 }
 
-.recent-articles,
-.previous-articles-list {
-    display:flex;
-    flex-direction: column;
-}
 /* -------------- */
 /* tablet screens */
 /* -------------- */
@@ -105,7 +97,6 @@
     /* home page tablet */
     .home-template .site {
         grid-template-columns: 1.5fr 1fr; 
-        grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto;
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
@@ -119,7 +110,6 @@
     /* page & post view tablet  */
     .page-template .site , .post-template .site {
         grid-template-columns: 6fr 1fr; 
-        grid-template-rows: auto var(--hero-header-height) auto auto auto auto auto;
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
@@ -129,12 +119,9 @@
             "Pagination Pagination"
             "SiteFooter SiteFooter";
     }
-    .page-template .site aticle-content, 
+    .page-template .site .article-content, 
     .post-template .site .article-content {
         max-width: var(--max-content-width)
-    }
-    .main-article .article-card img {
-        aspect-ratio: 4/3;
     }
 }
 /* ------------- */
@@ -144,7 +131,6 @@
     /* home page layout */
     .home-template .site {
         grid-template-columns: 1.5fr 1fr 1fr; 
-        grid-template-rows: auto var(--hero-header-height) auto auto auto auto;
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
@@ -156,7 +142,6 @@
     /* page and post layout */
     .page-template .site , .post-template .site {
         grid-template-columns: 1fr 2.5fr 1fr; 
-        grid-template-rows: auto auto auto auto auto auto;
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
@@ -164,10 +149,6 @@
             "TableOfContents RelatedArticles SocialLinks"
             "TableOfContents Pagination SocialLinks"
             "SiteFooter SiteFooter SiteFooter";
-    }
-    
-    .recent-articles {
-        Xgap:20px;
     }
 }
 
@@ -177,93 +158,86 @@
 /* size where media queries target the viewport size                              */
 /* ------------------------------------------------------------------------------ */
 
-.related-articles .article-card,
-.featured-articles .article-card {
-    display:grid;
-    grid-template-columns: 2fr 0.5fr;
-    grid-template-rows: auto auto ;
-    grid-template-areas:
-        "Text Image"
-        "Metadata Image"
-}
-.related-articles .article-card-image,
-.featured-articles .article-card-image {
-    grid-area: Image;
-}
-.related-articles .article-card-text,
-.featured-articles .article-card-text {
-    grid-area: Text;
-    align-self: end;
-}
-.related-articles .article-card-metadata,
-.featured-articles .article-card-metadata {
-    grid-area: Metadata;
-}
-.related-articles .article-card-excerpt,
-.featured-articles .article-card-excerpt {
-    display:none;
-}
 /* debug -todo */
 .site .hero-header .hero-image {
     display:none;
 }
-.main-article {
-    container-type: inline-size;
-    container-name: MainArticleContainer
-}
-@container MainArticleContainer (width > 560px) {
-    img{
-       max-width: 900px;
+
+/* ------------------------------------------------------------------------------- */
+/* article-card layout                                                             */
+/* each card is arranged as a grid (column or row based on position on the screen) */
+/* ------------------------------------------------------------------------------- */
+
+/* in mobile view display article-cards as a flex column */
+.previous-articles,
+.recent-articles,
+.featured-articles {
+    display: flex;
+    flex-direction: column;
+    
+    .article-card {
+        flex: 1;
     }
 }
-@media (min-width: 760px) {
-    .previous-articles .article-card-image,
-    .recent-articles .article-card-image {
-        grid-area: Image;
-        display: flex;
-    }
-    .previous-articles .article-card-text,
-    .recent-articles .article-card-text {
-        grid-area: Text;
-        align-self: end;
-    }
-    .previous-articles .article-card-metadata,
-    .recent-articles .article-card-metadata {
-        grid-area: Metadata;
-    }
-    .previous-articles .article-card,
-    .recent-articles .article-card {
-        display:grid;
-        grid-template-columns: 1fr 2fr 1fr;
+.article-card-image {
+    grid-area: Image;
+}
+.article-card-text {
+    grid-area: Text;
+}
+.article-card-metadata {
+    grid-area: Metadata;
+}
+
+.article-card {
+    display:grid;
+    grid-template-areas:
+        "Image"
+        "Text"
+        "Metadata";
+}
+
+/* row view - image on right */
+.featured-articles {
+    .article-card {
+        grid-template-columns: 2fr 0.5fr;
         grid-template-rows: auto auto;
         grid-template-areas:
-            "Image Text RightSidebar"
-            "Image Metadata RightSidebar";
+            "Text Image"
+            "Metadata Image"
     }
-    .previous-articles .article-card-excerpt.short {
-        display:block;
+    .article-card-image {
+        align-self: center;
     }
+
 }
-/*todo*/
-@media (min-width: 1110px) {
-    .recent-articles .article-card {
-        display: block; 
-        .article-card-excerpt {
-            display:none;
+
+/* row view - image on left 
+@media (min-width:760px) {
+    .recent-articles,
+    .previous-articles {
+        display: flex;
+        flex-direction: column;
+        .article-card {
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "Image Text"
+                "Image Metadata"
+            }
         }
-    }
-        
-    .recent-articles {
-        container-type: inline-size;
-        container-name: RecentArticlesContainer
-    }
-    
-    @container RecentArticlesContainer (width > 258px) {
-        img {
-        max-height: 130px;
-        }
-    }
-    .previous-articles .article-card img {
-        max-height:180px;
-    }
+ }
+
+ */
+/* todo - should reflect height of container 
+/* todo max height of article-card for paginated views. 
+.related-articles .article-card-excerpt,
+.featured-articles .article-card-excerpt {
+    display:none;
 }
+*/
+
+.article-card-image img { 
+    object-fit: cover;
+}
+

@@ -26,21 +26,19 @@
         {{/foreach}}
     {{/if}}
 </section>
-<section class="previous-articles">
+<section class="previous-articles paginated">
     <h2 class="previous-articles-title" >MORE</h2>
-    <div class="previous-articles-list with-pagination">
-        {{#if @custom.show_featured_posts}}
-            {{#foreach posts from="5"}}
+    {{#if @custom.show_featured_posts}}
+        {{#foreach posts from="5"}}
+            {{> "article-card"}}
+        {{/foreach}}
+    {{else}}
+        {{#get "posts" include="tags" }}
+            {{#foreach posts from="11" }}
                 {{> "article-card"}}
             {{/foreach}}
-        {{else}}
-            {{#get "posts" include="tags" }}
-                {{#foreach posts from="11" }}
-                    {{> "article-card"}}
-                {{/foreach}}
-            {{/get}}
-        {{/if}}
-    </div>
+        {{/get}}
+    {{/if}}
 </section>
 {{pagination}}
 
