@@ -38,9 +38,6 @@
 .article-card-image {
     align-self: center;
 }
-img{
-    aspect-ratio: 1;
-}
 /* featured articles are shown as a row with image on the right and text/metadata on left */
 /* this view is used no matter the size of the screen */
 .featured-articles .article-card {

@@ -18,18 +18,17 @@ done move line-height from reset.
 done fix hamburger and drop down
 done copy git hub menu style
 done related articles
+done create a common class accross releated, featured etc to combine the styles: two vies "article-list" and "narrow-view-card (ala featured)
 
 # aesthetics
+pagination on related articles
 footer color on light mode
 footer spacer 
-fix http://localhost:2368/tag/website-hosting/
-create a common class accross releated, featured etc to combine the styles: two vies "article-list" and "narrow-view-card (ala featured)
-"" for article-card section - titles
-subgrid 
-pagination on related articles
 sort out yarn install ; gulp alternative; minify
+fix http://localhost:2368/tag/website-hosting/
 package-json version number; automate releases https://github.com/tscanlin/tocbot/commit/d2e111e5e5a9e6ea9c8b37f9d6e89d2ed9fe0dab'
 move location of mobile toc
+subgrid 
 CLS fixes on front page
 get rid of pagination-list 
 gradient header image
