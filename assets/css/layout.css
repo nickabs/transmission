@@ -9,7 +9,7 @@
 .hero-header { grid-area: HeroHeader; }
 .site-footer { grid-area: SiteFooter; }
 
-.home-template .site { /* these components are only shown in the home-page layout */
+.home-template .site {
     .main-article { grid-area: MainArticle; }
     .featured-articles { grid-area: FeaturedArticles; }
     .recent-articles { grid-area: RecentArticles; }
@@ -17,7 +17,7 @@
     .pagination { grid-area: Pagination; }
 }
 
-.post-template .site, .page-template .site { /* post/page only */
+.post-template .site, .page-template {
     .article-content { grid-area: ArticleContent; }
     .table-of-contents { grid-area: TableOfContents; }
     .social-links { grid-area: SocialLinks; } 
@@ -152,23 +152,15 @@
     }
 }
 
-/* ------------------------------------------------------------------------------ */
-/* container settings are used to control the size of elements in the grids above */
-/* CSS container queries allow the application of styles based on the container   */
-/* size where media queries target the viewport size                              */
-/* ------------------------------------------------------------------------------ */
-
 /* debug -todo */
 .site .hero-header .hero-image {
     display:none;
 }
 
 /* ------------------------------------------------------------------------------- */
-/* article-card layout                                                             */
-/* each card is arranged as a grid (column or row based on position on the screen) */
+/* article-card list layout                                                        */
+/* in mobile view display the list of article-cards as a column                    */
 /* ------------------------------------------------------------------------------- */
-
-/* in mobile view display article-cards as a flex column */
 .previous-articles,
 .recent-articles,
 .featured-articles {
@@ -178,66 +170,14 @@
     .article-card {
         flex: 1;
     }
-}
-.article-card-image {
-    grid-area: Image;
-}
-.article-card-text {
-    grid-area: Text;
-}
-.article-card-metadata {
-    grid-area: Metadata;
+    gap: 10px;
 }
 
-.article-card {
-    display:grid;
-    grid-template-areas:
-        "Image"
-        "Text"
-        "Metadata";
+/* divider between article-cards */
+.related-articles .article-card:not(:last-child),
+.featured-articles .article-card:not(:last-child),
+.previous-articles .article-card:not(:last-child),
+.recent-articles .article-card:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
 }
-
-/* row view - image on right */
-.featured-articles {
-    .article-card {
-        grid-template-columns: 2fr 0.5fr;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-            "Text Image"
-            "Metadata Image"
-    }
-    .article-card-image {
-        align-self: center;
-    }
-
-}
-
-/* row view - image on left 
-@media (min-width:760px) {
-    .recent-articles,
-    .previous-articles {
-        display: flex;
-        flex-direction: column;
-        .article-card {
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: auto auto;
-            grid-template-areas:
-                "Image Text"
-                "Image Metadata"
-            }
-        }
- }
-
- */
-/* todo - should reflect height of container 
-/* todo max height of article-card for paginated views. 
-.related-articles .article-card-excerpt,
-.featured-articles .article-card-excerpt {
-    display:none;
-}
-*/
-
-.article-card-image img { 
-    object-fit: cover;
-}
-
