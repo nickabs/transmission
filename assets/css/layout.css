@@ -17,7 +17,7 @@
     .pagination { grid-area: Pagination; }
 }
 
-.post-template .site, .page-template {
+.post-template .site, .page-template .site {
     .article-content { grid-area: ArticleContent; }
     .table-of-contents { grid-area: TableOfContents; }
     .social-links { grid-area: SocialLinks; } 
@@ -35,7 +35,6 @@
 /*------------------------*/
 .home-template .site {
     display: grid;
-    grid-template-columns: 1fr; 
     grid-template-areas:
         "SiteHeader"
         "HeroHeader"

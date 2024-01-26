@@ -32,7 +32,7 @@ body {
     scroll-margin-top: var(--nav-bar-height);
 }
 
-.article-content :first-child {
+.article-content:first-child {
   margin-top: 0;
 }
 

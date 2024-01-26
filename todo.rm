@@ -1,4 +1,3 @@
-https://stackoverflow.com/questions/50794795/sticky-position-on-css-grid-items
 done tags 
 done previous/load more 
 done related docs
@@ -21,6 +20,8 @@ done related articles
 done create a common class accross releated, featured etc to combine the styles: two vies "article-list" and "narrow-view-card (ala featured)
 
 # aesthetics
+fix overflow on code posts
+fix table colors
 pagination on related articles
 footer color on light mode
 footer spacer 
@@ -28,6 +29,7 @@ sort out yarn install ; gulp alternative; minify
 fix http://localhost:2368/tag/website-hosting/
 package-json version number; automate releases https://github.com/tscanlin/tocbot/commit/d2e111e5e5a9e6ea9c8b37f9d6e89d2ed9fe0dab'
 move location of mobile toc
+larger close window on photoswipe
 subgrid 
 CLS fixes on front page
 get rid of pagination-list 
