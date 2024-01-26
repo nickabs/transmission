@@ -18,7 +18,11 @@
 }
 
 .post-template .site, .page-template .site {
-    .article-content { grid-area: ArticleContent; }
+    .article-content { 
+        grid-area: ArticleContent; 
+        max-width: 100vw;
+        justify-self: center;
+    }
     .table-of-contents { grid-area: TableOfContents; }
     .social-links { grid-area: SocialLinks; } 
     .related-articles { grid-area:RelatedArticles}
@@ -50,15 +54,16 @@
 /*------------------------*/
 .post-template .site, .page-template .site {
     display: grid;
+    
     grid-template-areas:
-        "SiteHeader"
-        "HeroHeader"
-        "TableOfContents"
-        "ArticleContent"
-        "RelatedArticles"
-        "Pagination"
-        "SiteFooter"
-        "SocialLinks";
+    "SiteHeader"
+    "HeroHeader"
+    "TableOfContents"
+    "ArticleContent"
+    "RelatedArticles"
+    "Pagination"
+    "SiteFooter"
+    "SocialLinks";
 }
 
 /*------------------------*/
@@ -89,6 +94,11 @@
     aspect-ratio: 4/3;
 }
 
+/* fix to prevent code blocks overspilling grid-area in mobile mode */
+/* don't know why it is needed, but it works */
+.article pre[class*=language-] {
+    max-width: 759px
+}
 /* -------------- */
 /* tablet screens */
 /* -------------- */
@@ -117,10 +127,9 @@
             "RelatedArticles RelatedArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
-    }
-    .page-template .site .article-content, 
-    .post-template .site .article-content {
-        max-width: var(--max-content-width)
+        .article-content { 
+            max-width: var(--max-content-width);
+        }
     }
 }
 /* ------------- */

@@ -72,16 +72,14 @@
     }
 }
 
-.site {
-    .related-articles-title,
-    .recent-articles-title,
-    .featured-articles-title,
-    .previous-articles-title {
-        border-bottom: 1px solid var(--border-color);
-        font-size: 1.6rem;
-        font-weight: 550;
-        letter-spacing: .025em;
-    }
+.site .related-articles-title,
+.site .recent-articles-title,
+.site .featured-articles-title,
+.site .previous-articles-title {
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.6rem;
+    font-weight: 550;
+    letter-spacing: .025em;
 }
 .main-article .article-card h2 {
     line-height: 1.1;

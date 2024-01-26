@@ -44,7 +44,6 @@ function css(done) {
         ], {sourcemaps: true}),
         postcss([
             easyimport,
-            cssnano,
             autoprefixer(),
         ]),
         concat('all.css'),
