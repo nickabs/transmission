@@ -128,7 +128,6 @@
 /* ----------------- */
 pre[class*="language-"] ,
 code[class*="language-"] {
-    padding: 1.6rem 2.4rem;
     hyphens: none;
     line-height: 1.5;
     white-space: pre;
