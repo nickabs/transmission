@@ -82,6 +82,19 @@ a:hover {
 
 }
 
+/* all images can be opened by photoswipe - show pointer */
+.kg-image, .kg-gallery-image {
+  cursor: pointer;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 0;
+}
+
+
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */
@@ -290,7 +303,6 @@ nav{
 /* -------------------------------------- */
 
 .site-footer {
-    font-size: 1.4re;
     line-height: 2.1rem;
     font-weight: 600;
     display:flex;
@@ -300,6 +312,7 @@ nav{
     margin-bottom: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--border-color);
+    margin-top: 20px;
 }
 
 .privacy-policy {

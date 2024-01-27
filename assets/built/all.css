@@ -659,6 +659,16 @@ a:hover {
   }
 
 }
+/* all images can be opened by photoswipe - show pointer */
+.kg-image, .kg-gallery-image {
+  cursor: pointer;
+}
+iframe {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 0;
+}
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */
@@ -855,7 +865,6 @@ nav{
 /* 5. site footer (privacy and copyright) */
 /* -------------------------------------- */
 .site-footer {
-    font-size: 1.4re;
     line-height: 2.1rem;
     font-weight: 600;
     display:flex;
@@ -865,6 +874,7 @@ nav{
     margin-bottom: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--border-color);
+    margin-top: 20px;
 }
 .privacy-policy {
   margin-left: auto;
@@ -1023,11 +1033,6 @@ nav{
     max-height: 700px;
     aspect-ratio: 4/3;
 }
-/* fix to prevent code blocks overspilling grid-area in mobile mode */
-/* don't know why it is needed, but it works */
-.article pre[class*=language-] {
-    max-width: 759px
-}
 /* -------------- */
 /* tablet screens */
 /* -------------- */
@@ -1094,7 +1099,6 @@ nav{
 }
 /* ------------------------------------------------------------------------------- */
 /* article-card list layout                                                        */
-/* in mobile view display the list of article-cards as a column                    */
 /* ------------------------------------------------------------------------------- */
 .related-articles,
 .previous-articles,
@@ -1107,6 +1111,9 @@ nav{
         flex: 1;
     }
     gap: 10px;
+}
+.related-articles {
+    padding: 100px;
 }
 /* divider between article-cards */
 .related-articles .article-card:not(:last-child),
@@ -1167,7 +1174,7 @@ html[data-theme='light'] {
     --heading-color: #444;
     --secondary-title-color: #1a1a1a;
     --text-color: #333;
-    --secondary-text-color: #49494b;
+    --secondary-text-color: #5a5a5a;
     --border-color: #e6e6e6;
     --disabled-button-color: #ccc;
     --link-color: #1a73e8;
@@ -1360,47 +1367,9 @@ code[class*="language-"] {
   background-color: var(--backgrond-color);
   border-radius: 3px;
 }
-/* ------------------------------------------------------------- */
-/* Cards are dynamic blocks of content which appear within Ghost */
-/* posts, for example: embedded videos, tweets, galleries, or    */
-/* specially styled bookmark links.                              */
-/* ------------------------------------------------------------- */
-/*todo This keeps small embeds centered */
-.kg-embed-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-/* This keeps small images centered */
-.kg-image,
-.kg-image-card img {
-    margin: auto;
-}
-/* all images can be opened by photoswipe - show pointer */
-.kg-image, .kg-gallery-image {
-    cursor: pointer;
-}
-.kg-width-wide img {
-  max-width: 85vw;
-}
-.kg-width-full img {
-  max-width: 100vw;
-}
-iframe {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    border: 0;
-}
 /* -------------------------------------------------------- */
 /* article-card content is shown in the grids defined below */
 /* cards are shown in row or column layouts                 */
-/* This size of the card is determined by                   */
-/* - the aspect ratio of the image +                        */
-/* - the container width defined in layouts.css (column)    */
-/* or                                                       */
-/* - the width of the Image grid-area defined below (row)   */
 /* -------------------------------------------------------- */
 .article-card-image {
     grid-area: Image;

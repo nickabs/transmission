@@ -91,11 +91,6 @@
     aspect-ratio: 4/3;
 }
 
-/* fix to prevent code blocks overspilling grid-area in mobile mode */
-/* don't know why it is needed, but it works */
-.article pre[class*=language-] {
-    max-width: 759px
-}
 /* -------------- */
 /* tablet screens */
 /* -------------- */
@@ -164,7 +159,6 @@
 
 /* ------------------------------------------------------------------------------- */
 /* article-card list layout                                                        */
-/* in mobile view display the list of article-cards as a column                    */
 /* ------------------------------------------------------------------------------- */
 .related-articles,
 .previous-articles,
@@ -179,6 +173,9 @@
     gap: 10px;
 }
 
+.related-articles {
+    padding: 100px;
+}
 /* divider between article-cards */
 .related-articles .article-card:not(:last-child),
 .featured-articles .article-card:not(:last-child),

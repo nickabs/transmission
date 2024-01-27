@@ -1,11 +1,6 @@
 /* -------------------------------------------------------- */
 /* article-card content is shown in the grids defined below */
 /* cards are shown in row or column layouts                 */
-/* This size of the card is determined by                   */
-/* - the aspect ratio of the image +                        */
-/* - the container width defined in layouts.css (column)    */
-/* or                                                       */
-/* - the width of the Image grid-area defined below (row)   */
 /* -------------------------------------------------------- */
 .article-card-image {
     grid-area: Image;
