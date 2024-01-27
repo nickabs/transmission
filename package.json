@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"

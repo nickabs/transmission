@@ -27,9 +27,7 @@
 
 </head>
 
-<body class='{{body_class}}'>
-<main class="site">
-
+<body class='site {{body_class}}'>
     <header class="site-header">
         <nav>
             <div class="logo">
@@ -69,15 +67,13 @@
         </div>
     </footer>
 
-</main>
+    {{!-- load the third party libraries and then the theme javascript
+        the theme javascript code is added as a module type to allow the import of libaries created as ES modules
+        e.g Photoswipe5 --}}
+    <script src='{{asset "built/vendor.min.js"}}'></script>
+    <script type='module' src='{{asset "built/theme.min.js"}}'></script>
 
-{{!-- load the third party libraries and then the theme javascript
-    the theme javascript code is added as a module type to allow the import of libaries created as ES modules
-    e.g Photoswipe5 --}}
-<script src='{{asset "built/vendor.min.js"}}'></script>
-<script type='module' src='{{asset "built/theme.min.js"}}'></script>
-
-{{ghost_foot}}
+    {{ghost_foot}}
 
 </body>
 </html>

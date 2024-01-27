@@ -18,10 +18,11 @@ done fix hamburger and drop down
 done copy git hub menu style
 done related articles
 done create a common class accross releated, featured etc to combine the styles: two vies "article-list" and "narrow-view-card (ala featured)
+done fix overflow on code posts
+done fix table colors
 
 # aesthetics
-fix overflow on code posts
-fix table colors
+fix layout of related articles - c.f webhosting
 pagination on related articles
 footer color on light mode
 footer spacer 

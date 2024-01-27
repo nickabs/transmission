@@ -1,17 +1,17 @@
 {{!< default}}
 {{> "hero-header"}}
-<section class="main-article">
+<article class="main-article">
     {{#foreach posts limit="1"}}
         {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
     {{/foreach}}
-</section>
-<section class="recent-articles">
+</article>
+<aside class="recent-articles">
     <h2 class="recent-articles-title" >RECENT</h2>
     {{#foreach posts from="2" limit="3"}}
         {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
     {{/foreach}}
-</section>
-<section class="featured-articles">
+</aside>
+<aside class="featured-articles">
     {{#if @custom.show_featured_posts}}
         <h2 class="featured-articles-title" >FEATURED</h2>
         {{#get "posts" filter="featured:true" include="tags" limit=6 as |featured|}}
@@ -25,8 +25,8 @@
             {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
         {{/foreach}}
     {{/if}}
-</section>
-<section class="previous-articles paginated">
+</aside>
+<aside class="previous-articles paginated">
     <h2 class="previous-articles-title" >MORE</h2>
     {{#if @custom.show_featured_posts}}
         {{#foreach posts from="5"}}
@@ -39,6 +39,6 @@
             {{/foreach}}
         {{/get}}
     {{/if}}
-</section>
+</aside>
 {{pagination}}
 
