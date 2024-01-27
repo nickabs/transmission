@@ -956,11 +956,7 @@ nav{
     .pagination { grid-area: Pagination; }
 }
 .site.post-template, .site.page-template {
-    .article-content { 
-        grid-area: ArticleContent; 
-        max-width: 100vw;
-        justify-self: center;
-    }
+    .article-content { grid-area: ArticleContent; }
     .table-of-contents { grid-area: TableOfContents; }
     .social-links { grid-area: SocialLinks; } 
     .related-articles { grid-area:RelatedArticles}
@@ -1093,7 +1089,7 @@ nav{
     }
 }
 /* debug -todo */
-.site.hero-header .hero-image {
+.site .hero-header .hero-image {
     display:none;
 }
 /* ------------------------------------------------------------------------------- */
@@ -1220,6 +1216,10 @@ symbol {
 /* ------------------------------- */
 /* styling for all article content */
 /* ------------------------------- */
+.article-content {
+    max-width: 100vw;
+    justify-self: center;
+}
 .article-content > * + * {
   margin-top:28px;
   font-size: var(--content-font-size);
