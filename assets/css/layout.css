@@ -121,8 +121,8 @@
             "HeroHeader HeroHeader"
             "TableOfContents TableOfContents"
             "ArticleContent SocialLinks"
-            "RelatedArticles RelatedArticles"
-            "Pagination Pagination"
+            "RelatedArticles SocialLinks"
+            "Pagination SocialLinks"
             "SiteFooter SiteFooter";
         .article-content { 
             max-width: var(--max-content-width);
@@ -166,6 +166,7 @@
 /* article-card list layout                                                        */
 /* in mobile view display the list of article-cards as a column                    */
 /* ------------------------------------------------------------------------------- */
+.related-articles,
 .previous-articles,
 .recent-articles,
 .featured-articles {

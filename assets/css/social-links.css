@@ -14,8 +14,6 @@
     flex-direction: row;
     gap: 12px;
     justify-content: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 .social-links svg {
     height: 40px;

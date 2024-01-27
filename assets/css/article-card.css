@@ -106,7 +106,6 @@
 .main-article .article-card-excerpt.short {
     display:block;
 }
-/* img */
 .article-card-tag  {
     background-color: var(--background-color);
     color: var(--title-color);
@@ -116,10 +115,9 @@
     display: inline-flex;
     font-size: 1.1rem;
     font-weight: 800;
-    height: 2.5rem;
     letter-spacing: .05rem;
     outline: none;
-    padding: 0 8px;
+    padding: 3px 6px;
     margin-left: 15px;
     text-transform: uppercase;
 }
