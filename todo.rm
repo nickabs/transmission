@@ -46,3 +46,28 @@ reorg index.hbs
 fix SEO
 improve tag page elements
 srsset
+
+
+better tag page https://ryanfeigenbaum.com/tag/code/
+increase close window size on small screens
+
+https://github.com/royalfig/smart/
+https://ryanfeigenbaum.com/share/
+references table update
+border radisus and blur on menu\1:w
+https://ryanfeigenbaum.com/toc/
+https://github.com/apps/renovate
+
+
+change the name of theme from dawn to something else
+https://github.com/TryGhost/action-deploy-theme#getting-started
+change readme
+
+remove build files from github https://ryanfeigenbaum.com/build-and-deploy-with-github-actions/
+
+
+https://blog.somewhatabstract.com/2021/10/11/setting-up-dependabot-with-github-actions-to-approve-and-merge/
+
+better latest https://source.ghost.io/
+
+better media settings https://github.com/royalfig/smart/blob/main/assets/css/abstracts/variables.css

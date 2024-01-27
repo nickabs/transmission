@@ -50,11 +50,6 @@
                 "default": true,
                 "group": "homepage"
             },
-            "show_author": {
-                "type": "boolean",
-                "default": false,
-                "group": "post"
-            },
             "show_related_posts": {
                 "type": "boolean",
                 "default": true,

@@ -162,7 +162,7 @@
 }
 
 /* debug -todo */
-.site .hero-header .hero-image {
+.site.hero-header .hero-image {
     display:none;
 }
 
