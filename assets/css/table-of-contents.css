@@ -4,6 +4,9 @@
 /* --------------------------------------------------------------- */
 
 /* override tocbot defaults */
+.toc .is-active-link::before {
+    background-color: var(--link-color);
+}
 .toc-list {
     padding-left: 20px;
 }

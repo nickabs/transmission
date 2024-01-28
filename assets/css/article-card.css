@@ -161,4 +161,13 @@
 .article-card .article-card-title {
     color: var(--heading-color); 
     font-weight: 600;
+    margin: 10px 0 10px;
 }
+.article-card .article-card-title:after {
+    display: grid;
+    content: '';
+    padding-top: 3px;
+    width: 1em;
+    border-bottom: 4px solid var(--link-color)
+}
+    

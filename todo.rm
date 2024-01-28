@@ -26,6 +26,8 @@ done footer color on light mode
 done footer spacer 
 
 # aesthetics
+sort out table colours
+change dark mode link text to orange underline
 sort out yarn install ; gulp alternative; minify
 fix http://localhost:2368/tag/website-hosting/
 package-json version number; automate releases https://github.com/tscanlin/tocbot/commit/d2e111e5e5a9e6ea9c8b37f9d6e89d2ed9fe0dab'
@@ -36,7 +38,7 @@ check card_assets
 create a demo site
 move location of mobile toc
 better tag page - https://bleak.peteramende.de/ https://github.com/zutrinken/bleak?tab=readme-ov-file
-
+automate webp
 larger close window on photoswipe
 subgrid 
 CLS fixes on front page
