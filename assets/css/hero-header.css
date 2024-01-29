@@ -28,8 +28,8 @@
     z-index: 2;
 }
 .hero-header {
-    border-top: 1px solid var(--link-color);
-    border-bottom: 1px solid var(--link-color);
+    border-top: 0.25px solid var(--link-color);
+    border-bottom: 0.25px solid var(--link-color);
 }
 
 /* metadata items:  date, tags and reading times */

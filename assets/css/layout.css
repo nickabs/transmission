@@ -25,7 +25,6 @@
     .related-articles { grid-area:RelatedArticles}
 }
 
-.site.related-articles,
 .site.tag-template { /* tag and related view only */
     .tagged-articles { grid-area: TaggedArticles; }
     .pagination { grid-area: Pagination; }
@@ -160,8 +159,20 @@
 /* ------------------------------------------------------------------------------- */
 /* article-card list layout                                                        */
 /* ------------------------------------------------------------------------------- */
-.related-articles,
+@media (min-width:760px) {
+    .recent-articles,
+    .previous-articles {
+        margin:0 20vw 0 20vw;
+    }
+}
+@media (min-width:1100px) {
+    .recent-articles {
+        margin:0;
+    }
+}
+
 .previous-articles,
+.related-articles,
 .recent-articles,
 .featured-articles {
     display: flex;
@@ -171,10 +182,6 @@
         flex: 1;
     }
     gap: 10px;
-}
-
-.related-articles {
-    padding: 100px;
 }
 /* divider between article-cards */
 .related-articles .article-card:not(:last-child),
