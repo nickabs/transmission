@@ -663,6 +663,10 @@ a:hover {
 .kg-image, .kg-gallery-image {
   cursor: pointer;
 }
+.kg-width-full img,
+.kg-width-wide img {
+}
+/* required by gscan */
 iframe {
   display: block;
   width: 100%;

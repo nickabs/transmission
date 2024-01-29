@@ -1,6 +1,8 @@
 {{!< default}}
 {{#page}}
-    {{> "hero-header"}}
+    {{#match @page.show_title_and_feature_image}}
+        {{> "hero-header"}}
+    {{/match}}
     {{!-- toc and social icons --}}
     {{> asides}}
     {{!-- outputting post or page content --}}
