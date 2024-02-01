@@ -4,9 +4,11 @@
 /* -------------------------------------------------------- */
 .article-card-image {
     grid-area: Image;
+    align-self: center;
 }
 .article-card-text {
     grid-area: Text;
+    align-self: end; 
 }
 .article-card-metadata {
     grid-area: Metadata;
@@ -27,12 +29,6 @@
     width: 100%;
 }
 
-.article-card-text {
-    align-self: end; 
-}
-.article-card-image {
-    align-self: center;
-}
 /* featured articles are shown as a row with image on the right and text/metadata on left */
 /* this view is used no matter the size of the screen */
 .featured-articles .article-card {
@@ -143,17 +139,12 @@
     .main-article img {
         height: 500px;
     }
-    .recent-articles-title {
-        display:none;
-    }
     .recent-articles {
+        margin-top:28px;
         .article-card-text,
         .article-card-metadata {
             padding-left: 0px;
         }
-    }
-    .recent-articles {
-        margin-top:28px;
     }
     .main-article .article-card-title {
         font-size: 3rem;

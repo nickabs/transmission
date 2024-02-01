@@ -76,7 +76,8 @@
         "gulp-zip": "6.0.0",
         "postcss": "8.4.33",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0"
+        "pump": "3.0.0",
+        "stylelint": "^16.2.1"
     },
     "dependencies": {
         "photoswipe": "^5.4.3",
@@ -84,6 +85,7 @@
         "prism-themes": "^1.9.0",
         "prismjs": "1.29.0",
         "reframe.js": "^4.0.2",
+        "stylelint-config-recommended": "^14.0.0",
         "tocbot": "^4.25.0"
     }
 }

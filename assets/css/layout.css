@@ -10,7 +10,7 @@
 .site-footer { grid-area: SiteFooter; }
 
 
-.site.home-template {
+.home-template {
     .main-article { grid-area: MainArticle; }
     .featured-articles { grid-area: FeaturedArticles; }
     .recent-articles { grid-area: RecentArticles; }
@@ -18,14 +18,15 @@
     .pagination { grid-area: Pagination; }
 }
 
-.site.post-template, .site.page-template {
+.post-template, 
+.page-template {
     .article-content { grid-area: ArticleContent; }
     .table-of-contents { grid-area: TableOfContents; }
     .social-links { grid-area: SocialLinks; } 
     .related-articles { grid-area:RelatedArticles}
 }
 
-.site.tag-template { /* tag and related view only */
+.tag-template { /* tag and related view only */
     .tagged-articles { grid-area: TaggedArticles; }
     .pagination { grid-area: Pagination; }
 }
@@ -171,10 +172,10 @@
     }
 }
 
-.previous-articles,
-.related-articles,
-.recent-articles,
-.featured-articles {
+.site .previous-articles,
+.site .related-articles,
+.site .recent-articles,
+.site .featured-articles {
     display: flex;
     flex-direction: column;
     

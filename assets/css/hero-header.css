@@ -13,6 +13,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-top: 0.25px solid var(--link-color);
+    border-bottom: 0.25px solid var(--link-color);
 }
 
 .hero-title {
@@ -26,10 +28,6 @@
     color: var(--hero-description-color);
     font-size: 1.7rem;
     z-index: 2;
-}
-.hero-header {
-    border-top: 0.25px solid var(--link-color);
-    border-bottom: 0.25px solid var(--link-color);
 }
 
 /* metadata items:  date, tags and reading times */
