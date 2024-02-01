@@ -90,6 +90,11 @@ a:hover {
 .kg-width-wide img {
 } /* required by gscan */
 
+/* This keeps small images centered */
+.kg-image,
+.kg-image-card img {
+    margin: auto;
+}
 iframe {
   display: block;
   width: 100%;
