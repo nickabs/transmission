@@ -12,6 +12,7 @@
 */
 
 :root {
+    --background-color: #141414; /* reduce screen flash */
     --hero-background-color: #333;
     --accent-color: #95878e;
     --hero-title-color: #fff;
