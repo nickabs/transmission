@@ -69,7 +69,6 @@ function js(done) {
     pump([
         src([
             'node_modules/tocbot/dist/tocbot.js',
-            'node_modules/reframe.js/dist/reframe.js',
             'node_modules/prismjs/prism.js',
             'node_modules/prismjs/components/prism-nginx.js',
             'node_modules/prismjs/components/prism-json.js',
