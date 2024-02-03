@@ -9,7 +9,6 @@
 .hero-header { grid-area: HeroHeader; }
 .site-footer { grid-area: SiteFooter; }
 
-
 .home-template {
     .main-article { grid-area: MainArticle; }
     .featured-articles { grid-area: FeaturedArticles; }
