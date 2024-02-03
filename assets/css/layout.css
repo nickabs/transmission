@@ -160,6 +160,7 @@
 /* ------------------------------------------------------------------------------- */
 /* article-card list layout                                                        */
 /* ------------------------------------------------------------------------------- */
+/* todo
 @media (min-width:760px) {
     .recent-articles,
     .previous-articles {
@@ -171,6 +172,7 @@
         margin:0;
     }
 }
+*/
 
 .site .previous-articles,
 .site .related-articles,

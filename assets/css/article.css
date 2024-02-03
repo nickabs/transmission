@@ -7,7 +7,7 @@
 }
 
 .article-content > * + * {
-  margin-top:28px;
+  margin-top:var(--top-margin);
   font-size: var(--content-font-size);
 }
 /* margin for headings - todo*/
@@ -93,7 +93,7 @@
   font-family: var(--font-sans) !important;
   font-size: var(--content-font-size) !important;
   border-collapse: collapse;
-  margin-top: 28px;
+  margin-top: var(--top-margin);
 }
 
 .article-content table thead, tfoot tr {

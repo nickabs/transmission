@@ -140,7 +140,7 @@
         height: 500px;
     }
     .recent-articles {
-        margin-top:28px;
+        margin-top: var(--top-margin);
         .article-card-text,
         .article-card-metadata {
             padding-left: 0px;
@@ -154,6 +154,9 @@
     }
     .main-article .article-card-excerpt.long {
         display:block;
+    }
+    .recent-articles .recent-articles-title {
+        margin-top:0;
     }
 }
 .article-card .article-card-title {
