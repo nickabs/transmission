@@ -1108,19 +1108,6 @@ nav{
 /* ------------------------------------------------------------------------------- */
 /* article-card list layout                                                        */
 /* ------------------------------------------------------------------------------- */
-/* todo
-@media (min-width:760px) {
-    .recent-articles,
-    .previous-articles {
-        margin:0 20vw 0 20vw;
-    }
-}
-@media (min-width:1100px) {
-    .recent-articles {
-        margin:0;
-    }
-}
-*/
 .site .previous-articles,
 .site .related-articles,
 .site .recent-articles,

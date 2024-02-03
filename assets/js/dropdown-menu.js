@@ -14,14 +14,11 @@
 
 (function () {
   const menuIndent= /(^-{1,})(.*)/; // this regex matches the -submenu --subitem navigation entries
-  const submenuIcon = "<svg class='dropdown-icon' xmlns='http://www.w3.org/2000/svg' width='10' height='16' fill='currentColor' viewBox='4 -4 4 16'> \
-    <path d='M4.5 3.62251L1.11184 0L0 1.18875L4.5 6L9 1.18875L7.88816 0L4.5 3.62251Z'></path> \
-  </svg>";
   let menuItems = document.querySelectorAll('.menu .item'); // get all the the menu items
   let i, match, submenu;
   let newElement, menuName
 
-  /*use a superscript unicode down arrow as a drop down indicator */
+  // use a superscript unicode down arrow as a drop down indicator 
   let dropdownSymbol= document.createElement("sup"); 
   dropdownSymbol.textContent=""
 
@@ -34,7 +31,7 @@
     match = menuItems[i].lastElementChild.innerText.match(menuIndent);
 
     if (match) {
-      /* remove the submenu & subitem indent indicators (- --) */
+      // remove the submenu & subitem indent indicators (- --) 
       menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(menuIndent,"$2");
       menuName=menuItems[i].lastElementChild.innerText;
 
@@ -91,7 +88,7 @@
 
   /* close menus on click */
   window.addEventListener('click', function(e){
-    /* close submenu when clicking anywhere on the menu */
+    // close submenu when clicking anywhere on the menu 
     if (site.querySelector(".submenu-open")) {
       let isClickInside = site.querySelector(".submenu-open").contains(e.target);
 
@@ -99,7 +96,7 @@
         site.querySelector(".submenu-open").classList.remove("submenu-open");
       }
     }
-    /* close menu when clicking ouside the menu */
+    // close menu when clicking ouside the menu 
     if (!site.contains(e.target) && !openMenuButton.contains(e.target) &&
        site.classList.contains("menu-open")) {
           toggleMenu();

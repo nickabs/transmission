@@ -87,7 +87,6 @@ function js(done) {
             'assets/js/dark-mode-toggle.js',
             'assets/js/dropdown-menu.js',
             'assets/js/pagination.js',
-            'assets/js/responsive-video.js',
             'assets/js/copy-link.js',
             'assets/js/table-of-contents.js',
             'assets/js/lightbox.js'
