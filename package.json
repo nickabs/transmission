@@ -82,7 +82,7 @@
         "photoswipe": "^5.4.3",
         "prism-components": "^1.0.0",
         "prism-themes": "^1.9.0",
-        "prismjs": "1.29.0",
+        "prismjs": "^1.29.0",
         "tocbot": "^4.25.0"
     }
 }
