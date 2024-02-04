@@ -1,12 +1,16 @@
 import gulp from 'gulp';
 const {series, watch, src, dest, parallel, task} = gulp;
 
-import pump from 'pump';
 import livereload from 'gulp-livereload';
 import postcss from 'gulp-postcss';
 import easyimport from 'postcss-easy-import';
 import zip from 'gulp-zip';
 import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import beeper from 'beeper';
+import pump from 'pump';
 
 // esm import
 //import pkg from './package.json' with { "type": "json" };
@@ -19,8 +23,12 @@ function serve(done) {
     done();
 }
 
+//const handleError = (done) => {
 function handleError(done) {
     return function (err) {
+        if (err) {
+            beeper();
+        }
         return done(err);
     };
 };
@@ -40,12 +48,14 @@ function css(done) {
             'node_modules/tocbot/dist/tocbot.css',
             'node_modules/photoswipe/dist/photoswipe.css',
             'assets/css/import-all.css'
-        ]),
+        ], {sourcemaps: true}),
         postcss([
-            easyimport
+            easyimport,
+            autoprefixer(),
+            cssnano()
         ]),
-        concat('site.css'),
-        dest('assets/built/'),
+        concat('site.min.css'),
+        dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
 }
@@ -55,8 +65,8 @@ function js(done) {
     //external esm packages
     pump(
         src([
-            'node_modules/photoswipe/dist/photoswipe-lightbox.esm.js',
-            'node_modules/photoswipe/dist/photoswipe.esm.js'
+            'node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js',
+            'node_modules/photoswipe/dist/photoswipe.esm.min.js'
         ]),
         dest('assets/built/'),
         livereload(),
@@ -71,11 +81,12 @@ function js(done) {
             'node_modules/prismjs/components/prism-nginx.js',
             'node_modules/prismjs/components/prism-bash.js',
             'node_modules/prismjs/plugins/command-line/prism-command-line.js'
-        ]),
-        concat('external.js'),
-        dest('assets/built/'),
-        livereload() ],
-        handleError(done)
+        ], {sourcemaps: true}),
+        concat('external.min.js'),
+        uglify(),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload() 
+        ], handleError(done)
     );
     //theme js
     pump([
@@ -86,9 +97,10 @@ function js(done) {
             'assets/js/copy-link.js',
             'assets/js/table-of-contents.js',
             'assets/js/lightbox.js'
-        ]),
-        concat('theme.js'),
-        dest('assets/built/'),
+        ], {sourcemaps: true}),
+        concat('theme.min.js'),
+        uglify(),
+        dest('assets/built/', {sourcemaps: '.'}),
         livereload() ],
         handleError(done)
     );
@@ -117,5 +129,5 @@ const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
 const build = series(css, js);
 
 task('dev', series(build, serve, watcher) );
-task('dist', series(build, zipper) );
+task('zip', series(build, zipper) );
 
