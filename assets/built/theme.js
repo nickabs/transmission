@@ -349,7 +349,7 @@ the web page using
 <script type="module" >
 </scipt>
 */
-import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
 (function () {
   const arrow =  ' <svg aria-hidden="true" class="pswp__icn" viewBox="0 0 32 30" width="32" height="30">\
     <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"> \
@@ -364,7 +364,7 @@ import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
     bgOpacity: 0.8,
     closeOnScroll: true,
     Xpadding: { top: 40, bottom: 40, left: 0, right: 0 },
-    pswpModule: () => import('./photoswipe.esm.min.js')
+    pswpModule: () => import('./photoswipe.esm.js')
   };
 
   const lightbox = new PhotoSwipeLightbox(options);
@@ -392,4 +392,3 @@ import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
     return itemData;
   });
 })();
-//# sourceMappingURL=theme.min.js.map

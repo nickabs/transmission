@@ -1,16 +1,18 @@
-import {series, parallel, watch, src, dest}  from 'gulp';
-import pump from 'pump';
+import gulp from 'gulp';
+const {series, watch, src, dest, parallel, task} = gulp;
 
-/* plugins and utils */
+import pump from 'pump';
 import livereload from 'gulp-livereload';
-import postcss from 'gulp-postcss'; // gulp plugin to pipe CSS through several plugins, but parse CSS only once.
-import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
+import postcss from 'gulp-postcss';
+import easyimport from 'postcss-easy-import';
 import zip from 'gulp-zip';
-import beeper from 'beeper';
-import easyimport from 'postcss-easy-import'; // enable @import in css files
-import autoprefixer from 'autoprefixer'; // automatically add vendor prefixes to css properties
-import cssnano from 'cssnano'; // minifier
+import concat from 'gulp-concat';
+
+// esm import
+//import pkg from './package.json' with { "type": "json" };
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const pkg = require("./package.json");
 
 function serve(done) {
     livereload.listen();
@@ -19,9 +21,6 @@ function serve(done) {
 
 function handleError(done) {
     return function (err) {
-        if (err) {
-            beeper();
-        }
         return done(err);
     };
 };
@@ -41,43 +40,40 @@ function css(done) {
             'node_modules/tocbot/dist/tocbot.css',
             'node_modules/photoswipe/dist/photoswipe.css',
             'assets/css/import-all.css'
-        ], {sourcemaps: true}),
-        postcss([
-            easyimport,
-            autoprefixer(),
         ]),
-        concat('all.css'),
-        dest('assets/built/', {sourcemaps: '.'}),
+        postcss([
+            easyimport
+        ]),
+        concat('site.css'),
+        dest('assets/built/'),
         livereload()
     ], handleError(done));
 }
 
 function js(done) {
-    // es modules
+
+    //external esm packages
     pump(
-        src([ 
-            'node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js',
-            'node_modules/photoswipe/dist/photoswipe.esm.min.js'
+        src([
+            'node_modules/photoswipe/dist/photoswipe-lightbox.esm.js',
+            'node_modules/photoswipe/dist/photoswipe.esm.js'
         ]),
-        uglify(),
         dest('assets/built/'),
         livereload(),
         handleError(done)
     );
 
-    // vendor js
+    // external packages
     pump([
         src([
             'node_modules/tocbot/dist/tocbot.js',
             'node_modules/prismjs/prism.js',
             'node_modules/prismjs/components/prism-nginx.js',
-            'node_modules/prismjs/components/prism-json.js',
-            'node_modules/prismjs/components/prism-systemd.js',
             'node_modules/prismjs/components/prism-bash.js',
             'node_modules/prismjs/plugins/command-line/prism-command-line.js'
-        ], {sourcemaps: true}),
-        concat('vendor.min.js'),
-        dest('assets/built/', {sourcemaps: '.'}),
+        ]),
+        concat('external.js'),
+        dest('assets/built/'),
         livereload() ],
         handleError(done)
     );
@@ -90,24 +86,23 @@ function js(done) {
             'assets/js/copy-link.js',
             'assets/js/table-of-contents.js',
             'assets/js/lightbox.js'
-        ], {sourcemaps: true}),
-        concat('theme.min.js'),
-        dest('assets/built/', {sourcemaps: '.'}),
+        ]),
+        concat('theme.js'),
+        dest('assets/built/'),
         livereload() ],
         handleError(done)
     );
 }
 
 function zipper(done) {
-    const filename = require('./package.json').name + '.zip';
+    const filename = pkg.name+'_v'+pkg.version+'.zip';
 
     pump([
         src([
             '**',
             '!node_modules', '!node_modules/**',
             '!dist', '!dist/**',
-            '!yarn-error.log',
-            '!yarn.lock'
+            '!package-lock.json'
         ]),
         zip(filename),
         dest('dist/')
@@ -121,10 +116,6 @@ const jsWatcher = () => watch('assets/js/**/*.js', js);
 const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
 const build = series(css, js);
 
-/*
- * The function below are exported so they are public and can be run with the `gulp` command.
- * they can also be used within the `series()` composition.
- */
-exports.build = build;
-exports.zip = series(build, zipper);
-exports.default = series(build, serve, watcher);
+task('dev', series(build, serve, watcher) );
+task('dist', series(build, zipper) );
+

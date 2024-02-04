@@ -13,7 +13,7 @@
 </aside>
 <aside class="featured-articles">
     {{#if @custom.show_featured_posts}}
-        <h2 class="featured-articles-title" >FEATURED</h2>
+        <h2 class="featured-articles-title" >WTF</h2>
         {{#get "posts" filter="featured:true" include="tags" limit=6 as |featured|}}
             {{#foreach featured}}
                 {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
