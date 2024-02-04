@@ -4,6 +4,21 @@ Transmission is a theme for the open-source publishing platform [Ghost](https://
 
 For instructions on how to install Ghost, see the [official documentation](https://ghost.org/help/).
 
+## Features
+Features:
+
+- minimal dependencies
+    - image gallery (photowsipe v5.4)
+    - code syntax highlighting (prism)
+    - responsive table of content (tocbot)
+- Search
+- Tags page
+- dark mode toggle
+- dropdown menus
+- sharing icons (facebook, twitter, copy-kink)
+- responsive layouts for mobile, tablet, laptops and desktop screens
+- Inter and Menelo font families are installed with the theme
+
 ## Demo
 
 [See the theme in action](https://smallworkshop.co.uk).
@@ -20,8 +35,8 @@ You can then install the dependencies and start making changes:
 
 ```bash
 # Install
-yarn
+npm instsall
 
 # Run build & watch for changes
-yarn dev
+npm run dev
 ```
