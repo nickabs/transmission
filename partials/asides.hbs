@@ -2,10 +2,10 @@
 
 {{!-- The TOC will be inserted here --}}
 <aside class="table-of-contents">
-    <div class="toc-toggle">
-        <button class="toc-button icon-button" aria-label="table of contents">{{> "icons/toc"}}</button>
-        <p> ← table of contents</p>
-    </div>
+    <button id="toc-toggle" aria-label="table-of-contents-mode" class="icon-button">
+            <span class="toc-open-icon ">{{> "icons/toc-open"}}</span>
+            <span class="toc-close-icon ">{{> "icons/toc-close"}}</span>
+    </button>
     <div class="toc"></div>
 </aside> 
 

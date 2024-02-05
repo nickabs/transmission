@@ -74,10 +74,10 @@ html[data-theme='dark'] {
     --link-color: #D95736;
 }
 
-.show-dark-mode-icon,
-.show-light-mode-icon {
+.dark-mode,
+.light-mode {
     display: none!important;
 }
-[data-theme=dark] .show-light-mode-icon, [data-theme=light] .show-dark-mode-icon { 
+[data-theme=dark] .light-mode, [data-theme=light] .dark-mode { 
     display: block!important;
 }

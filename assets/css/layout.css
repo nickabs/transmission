@@ -54,10 +54,10 @@
     grid-template-areas:
     "SiteHeader"
     "HeroHeader"
-    "TableOfContents"
     "ArticleContent"
     "RelatedArticles"
     "Pagination"
+    "TableOfContents"
     "SiteFooter"
     "SocialLinks";
 }

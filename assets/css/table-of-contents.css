@@ -2,7 +2,28 @@
 /* table of contents show on the top of the post for small screens */
 /* and on the left hand size on larger screens                     */
 /* --------------------------------------------------------------- */
+.table-of-contents {
+    z-index: 5;
+    bottom: 38px;
+    position: fixed;
+    left: 28px;
+    display: flex;
+    flex-direction: column-reverse;
+}
 
+#toc-toggle {
+    display: flex;
+    flex-direction: row;
+}
+#toc-toggle svg {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding: 0.75rem;
+    fill: currentcolor;
+    background-color: var(--background-color);
+    position: relative;
+}
 /* override tocbot defaults */
 .toc .is-active-link::before {
     background-color: var(--link-color);
@@ -18,26 +39,43 @@
 }
 
 /* floating menu when on a small screen */
+@keyframes showToc {
+    from {
+        opacity: 0; 
+        scale: 0;
+
+    }
+    to {
+        opacity: 1; 
+        scale: 1;
+    }
+}
 .toc {
     display: none;
 }
 
-.active .toc {
+.toc-open .toc {
+    animation: showToc 300ms ease-in-out both;
     display: block;
-    margin-top: 10px;
+    position:relative;
+    border-radius: 1.5rem;
+    margin-right: 20vw;
+    background-color: var(--background-color);
+    padding:20px;
 }
 
-.toc-button { 
-    margin-right: 6px;
+.toc-open-icon {
+    display: block;
 }
-.toc-toggle {
-    display:flex;
-    flex-direction: row;
-    padding-left: 20px;
-    padding-bottom: 10px;
-    .toc-button {
-        padding-right:30px;
-    }
+
+.toc-close-icon {
+    display: none;
+}
+.toc-open .toc-close-icon {
+    display: block;
+}
+.toc-open .toc-open-icon {
+    display: none;
 }
 
 /* larger screens */
@@ -47,10 +85,11 @@
         flex-direction: column;
         align-items: center;
     }
-    .toc-toggle {
+    .toc-open-icon {
         display: none
     }
      .table-of-contents {
+        display:block;
         top: 57px;
         height: 0;
         position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
