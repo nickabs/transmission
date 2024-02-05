@@ -41,20 +41,30 @@ function hbs(done) {
 }
 
 function css(done) {
+    //external package css
     pump([
         src([
             'node_modules/prismjs/themes/prism-tomorrow.css',
-            'node_modules/prismjs/plugins/command-line/prism-command-line.min.css',
+            'node_modules/prismjs/plugins/command-line/prism-command-line.css',
             'node_modules/tocbot/dist/tocbot.css',
             'node_modules/photoswipe/dist/photoswipe.css',
             'assets/css/import-all.css'
         ], {sourcemaps: true}),
+        postcss([cssnano()]),
+        concat('lib.min.css'),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+
+    // theme css
+    pump([
+        src( 'assets/css/import-all.css' , {sourcemaps: true}),
         postcss([
             easyimport,
             autoprefixer(),
             cssnano()
         ]),
-        concat('site.min.css'),
+        concat('theme.min.css'),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
@@ -82,7 +92,7 @@ function js(done) {
             'node_modules/prismjs/components/prism-bash.js',
             'node_modules/prismjs/plugins/command-line/prism-command-line.js'
         ], {sourcemaps: true}),
-        concat('external.min.js'),
+        concat('lib.min.js'),
         uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload() 

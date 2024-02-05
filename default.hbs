@@ -10,7 +10,8 @@
     <script>document.documentElement.setAttribute('data-theme',localStorage.getItem("theme"))||""</script>
     {{!-- Theme and vendor css assets - the {asset} helper will handle caching and cache-busting automatically --}}
     
-    <link rel="stylesheet" type="text/css" href="{{asset "built/site.min.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "built/lib.min.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "built/theme.min.css"}}">
 
      {{!-- google analytics --}}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTQ8QD028C"></script>
@@ -67,10 +68,8 @@
         </div>
     </footer>
 
-    {{!-- load the third party libraries and then the theme javascript
-        the theme javascript code is added as a module type to allow the import of libaries created as ES modules
-        e.g Photoswipe5 --}}
-    <script src='{{asset "built/external.min.js"}}'></script>
+    {{!-- load the third party libraries and then the theme javascript --}}
+    <script src='{{asset "built/lib.min.js"}}'></script>
     <script type='module' src='{{asset "built/theme.min.js"}}'></script>
 
     {{ghost_foot}}
