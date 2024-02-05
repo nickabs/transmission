@@ -15,9 +15,10 @@ Features:
 - Tags page
 - dark mode toggle
 - dropdown menus
-- sharing icons (facebook, twitter, copy-kink)
+- sharing icons (facebook, twitter, copy link)
 - responsive layouts for mobile, tablet, laptops and desktop screens
 - Inter and Menelo font families are installed with the theme
+- simple html & css, minimal js
 
 ## Demo
 
