@@ -1,20 +1,20 @@
-/* --------------------------------------------------------------- */
-/* table of contents show on the top of the post for small screens */
-/* and on the left hand size on larger screens                     */
-/* --------------------------------------------------------------- */
+/* ----------------- */
+/* table of contents */
+/* ----------------- */
+
+/* default view = small screens (table of contents show on bottom left */
 .table-of-contents {
     z-index: 5;
-    bottom: 38px;
     position: fixed;
+    bottom: 38px;
     left: 28px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    font-size: 1.6rem;
+    line-height: 1.8;
 }
 
-#toc-toggle {
-    display: flex;
-    flex-direction: row;
-}
+/* toc toggle button */
 #toc-toggle svg {
     height: 50px;
     width: 50px;
@@ -24,44 +24,23 @@
     background-color: var(--background-color);
     position: relative;
 }
-/* override tocbot defaults */
+
+/* hide the toc content on small screens until button is clicked */
+.toc {
+    display: none;
+    position:relative;
+    border-radius: 1.5rem;
+    background-color: var(--background-color);
+    padding:20px;
+}
+
+/* override tocbot color defaults */
 .toc .is-active-link::before {
     background-color: var(--link-color);
 }
+
 .toc-list {
-    padding-left: 20px;
-}
-
-.table-of-contents {
-    font-size: 1.6rem;
-    width: 95%;
-    line-height: 1.8;
-}
-
-/* floating menu when on a small screen */
-@keyframes showToc {
-    from {
-        opacity: 0; 
-        scale: 0;
-
-    }
-    to {
-        opacity: 1; 
-        scale: 1;
-    }
-}
-.toc {
-    display: none;
-}
-
-.toc-open .toc {
-    animation: showToc 300ms ease-in-out both;
-    display: block;
-    position:relative;
-    border-radius: 1.5rem;
-    margin-right: 20vw;
-    background-color: var(--background-color);
-    padding:20px;
+    padding-left: 10px;
 }
 
 .toc-open-icon {
@@ -71,11 +50,36 @@
 .toc-close-icon {
     display: none;
 }
-.toc-open .toc-close-icon {
-    display: block;
+
+@keyframes showToc {
+    from {
+        opacity: 0; 
+        scale: 0;
+    }
+    to {
+        opacity: 1; 
+        scale: 1;
+    }
 }
-.toc-open .toc-open-icon {
-    display: none;
+
+.toc-open {
+    /* animate toc open */
+    .toc {
+        display: block;
+        animation: showToc 300ms ease-in-out both;
+    }
+    /* toggle open/close icon */
+    .toc-close-icon {
+        display: block;
+    }
+    .toc-open-icon {
+        display: none;
+    }
+}
+
+/* hide the toc toggle button if there is no toc */
+.toc:empty + #toc-toggle .toc-open-icon {
+    display:none;
 }
 
 /* larger screens */
@@ -84,6 +88,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-right: 10px;
     }
     .toc-open-icon {
         display: none
@@ -92,6 +97,7 @@
         display:block;
         top: 57px;
         height: 0;
+        left:0;
         position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
      }
 }
