@@ -40,8 +40,7 @@ function hbs(done) {
     ], handleError(done));
 }
 
-function css(done) {
-    //external package css
+function cssExternal(done) {
     pump([
         src([
             'node_modules/prismjs/themes/prism-tomorrow.css',
@@ -55,8 +54,9 @@ function css(done) {
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
+}
 
-    // theme css
+function cssTheme(done) {
     pump([
         src( 'assets/css/import-all.css' , {sourcemaps: true}),
         postcss([
@@ -70,9 +70,7 @@ function css(done) {
     ], handleError(done));
 }
 
-function js(done) {
-
-    //external esm packages
+function jsESM(done) {
     pump(
         src([
             'node_modules/photoswipe/dist/photoswipe-lightbox.esm.min.js',
@@ -83,7 +81,8 @@ function js(done) {
         handleError(done)
     );
 
-    // external packages
+}
+function jsExternal(done) {
     pump([
         src([
             'node_modules/tocbot/dist/tocbot.js',
@@ -98,7 +97,8 @@ function js(done) {
         livereload() 
         ], handleError(done)
     );
-    //theme js
+}
+function jsTheme(done) {
     pump([
         src([
             'assets/js/dark-mode-toggle.js',
@@ -136,6 +136,8 @@ const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
 const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
+const css = series(cssExternal, cssTheme);
+const js = series(jsESM, jsExternal, jsTheme);
 const build = series(css, js);
 
 task('dev', series(build, serve, watcher) );
