@@ -32,16 +32,6 @@ body {
     scroll-margin-top: var(--nav-bar-height);
 }
 
-.article-content {
-    padding-left: var(--site-padding);
-    padding-right: var(--site-padding);
-}
-
-.article-content:first-child {
-  margin-top: 0;
-}
-
-
 img {
     height: auto;
 }

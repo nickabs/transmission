@@ -4,6 +4,18 @@
 .article-content {
     max-width: 100vw;
     justify-self: center;
+  padding-left: var(--site-padding);
+  padding-right: var(--site-padding);
+}
+
+.article-content > :first-child{
+  padding-top:15px;
+}
+
+@media screen and (min-width: 760px) {
+  .site .article-content :first-child{
+    padding-top:0px;
+  }
 }
 
 .article-content > * + * {

@@ -30,9 +30,7 @@
     .social-links {
         bottom: unset;
         box-shadow: unset;
-        top: 57px;
         height:0;
-        position:sticky;
         flex-direction: column;
         justify-content:flex-start;
         align-items: center;

@@ -2,6 +2,21 @@
 /* article-card content is shown in the grids defined below */
 /* cards are shown in row or column layouts                 */
 /* -------------------------------------------------------- */
+
+
+.article-card .article-card-title {
+    color: var(--heading-color); 
+    font-weight: 600;
+    margin: 10px 0 10px;
+}
+.article-card .article-card-title:after {
+    display: grid;
+    content: '';
+    padding-top: 3px;
+    width: 1em;
+    border-bottom: 4px solid var(--link-color)
+}
+
 .article-card-image {
     grid-area: Image;
     align-self: center;
@@ -158,17 +173,5 @@
     .recent-articles .recent-articles-title {
         margin-top:0;
     }
-}
-.article-card .article-card-title {
-    color: var(--heading-color); 
-    font-weight: 600;
-    margin: 10px 0 10px;
-}
-.article-card .article-card-title:after {
-    display: grid;
-    content: '';
-    padding-top: 3px;
-    width: 1em;
-    border-bottom: 4px solid var(--link-color)
 }
     

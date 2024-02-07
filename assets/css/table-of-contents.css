@@ -31,7 +31,7 @@
     position:relative;
     border-radius: 1.5rem;
     background-color: var(--background-color);
-    padding:20px;
+    padding: 20px ;
 }
 
 /* override tocbot color defaults */
@@ -88,14 +88,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-right: 10px;
+        padding-top: 0px
     }
     .toc-open-icon {
         display: none
     }
      .table-of-contents {
         display:block;
-        top: 57px;
         height: 0;
         left:0;
         position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
