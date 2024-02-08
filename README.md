@@ -2,23 +2,36 @@
 
 Transmission is a theme for the open-source publishing platform [Ghost](https://ghost.org/).
 
-For instructions on how to install Ghost, see the [official documentation](https://ghost.org/help/).
 
 ## Features
+This theme is designed for a simple single author blog site.  There are minimal configuration options in v1.
+
 Features:
+
+- responsive layouts for mobile, tablet, laptops and desktop screens
+    - Search
+    - Tags page
+    - dark mode toggle
+    - dropdown menus for topics
+    - table of contents for long articles
+    - sharing icons (facebook, twitter, copy link)
+ 
+widescreens view:
+![image](https://github.com/nickabs/transmission/assets/4947488/fe6beeaf-3582-4bb4-b9ff-743031cf3e2a)
+
+
+mobile
+![image](https://github.com/nickabs/transmission/assets/4947488/c210352a-c768-4221-88e6-ae8f778ffe9f)
 
 - minimal dependencies
     - image gallery (photowsipe v5.4)
     - code syntax highlighting (prism)
     - responsive table of content (tocbot)
-- Search
-- Tags page
-- dark mode toggle
-- dropdown menus
-- sharing icons (facebook, twitter, copy link)
-- responsive layouts for mobile, tablet, laptops and desktop screens
 - Inter and Menelo font families are installed with the theme
 - simple html & css, minimal js
+
+easy to manage grid layout:
+![image](https://github.com/nickabs/transmission/assets/4947488/7f59ef4c-023e-45dc-aadf-8ee9e7a687b7)
 
 ## Demo
 
@@ -29,6 +42,8 @@ Features:
 [Download `transmission.zip` from the Releases page](https://github.com/nickabs/transmission/releases)
 
 ## Make changes to the theme
+
+For instructions on how to install Ghost, see the [official documentation](https://ghost.org/help/).
 
 unzip the zip file into the theme directory of your local install.
 
