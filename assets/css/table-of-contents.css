@@ -97,6 +97,7 @@
         display:block;
         height: 0;
         left:0;
+        top: 57px;
         position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
      }
 }

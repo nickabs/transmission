@@ -34,6 +34,8 @@
         flex-direction: column;
         justify-content:flex-start;
         align-items: center;
+        position: sticky;
+        top: 57px;
     }
     .social-links svg {
         height: 50px;
