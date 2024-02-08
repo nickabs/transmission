@@ -44,19 +44,28 @@
     width: 100%;
 }
 
-/* featured articles are shown as a row with image on the right and text/metadata on left */
-/* this view is used no matter the size of the screen */
+/* in mobile view featured articles are shown as a row with image on the right and text/metadata on left */
 .featured-articles .article-card {
     display:grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
         "Text Image"
         "Metadata Image";
-
 }
+
+.related-articles .article-card {
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+        "Image Text"
+        "Image Metadata";
+    .article-card-image {
+        padding-right: 20px;
+    }
+}
+
 /* laptops */
 @media (min-width:760px) {
-    .related-articles .article-card,
     .previous-articles .article-card,
     .recent-articles .article-card {
         display:grid;
@@ -64,6 +73,9 @@
         grid-template-areas:
             "Image Text"
             "Image Metadata";
+    }
+    .article-card-image {
+        padding-right: 20px;
     }
 }
 /* large screens */
@@ -76,6 +88,9 @@
             "Image"
             "Text"
             "Metadata";
+        .article-card-image {
+            padding-right: 20px;
+        }
     }
 }
 
@@ -143,12 +158,6 @@
     .main-article img {
         aspect-ratio: 4/3;
     }
-    .related-articles, .recent-articles, .previous-articles {
-        .article-card-text,
-        .article-card-metadata {
-            padding-left:10px;
-        }
-    }
 }
 @media (min-width: 1100px) {
     .main-article img {
@@ -156,9 +165,8 @@
     }
     .recent-articles {
         margin-top: var(--top-margin);
-        .article-card-text,
-        .article-card-metadata {
-            padding-left: 0px;
+        .article-card-image {
+            padding-right: 0px;
         }
     }
     .main-article .article-card-title {
