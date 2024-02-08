@@ -1,10 +1,8 @@
 # transmission
-
-Transmission is a theme for the open-source publishing platform [Ghost](https://ghost.org/).
-
+Transmission is a modern [Ghost](https://ghost.org/) theme.
 
 ## Features
-This theme is designed for a simple single author blog site.  There are minimal configuration options in v1.
+This theme is designed for a simple single author blog site.  
 
 Features:
 
@@ -17,11 +15,11 @@ Features:
     - sharing icons (facebook, twitter, copy link)
  
 widescreens view:
-![image](https://github.com/nickabs/transmission/assets/4947488/fe6beeaf-3582-4bb4-b9ff-743031cf3e2a)
+![image](https://github.com/nickabs/transmission/assets/4947488/c33b984c-4663-4eee-9d4d-d9335104b8b1)
 
 
 mobile
-![image](https://github.com/nickabs/transmission/assets/4947488/c210352a-c768-4221-88e6-ae8f778ffe9f)
+![image](https://github.com/nickabs/transmission/assets/4947488/0c1061ee-47e2-47ed-aded-222697d08233)
 
 - minimal dependencies
     - image gallery (photowsipe v5.4)
@@ -32,6 +30,8 @@ mobile
 
 easy to manage grid layout:
 ![image](https://github.com/nickabs/transmission/assets/4947488/7f59ef4c-023e-45dc-aadf-8ee9e7a687b7)
+
+There are minimal configuration options in v1.
 
 ## Demo
 
