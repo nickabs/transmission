@@ -7,16 +7,23 @@
     {{/is}}
 
     {{#is "tag"}}
-        <div class="hero-title ">{{name}}</div>
-        {{#if description}}
-            <div class="hero-description">{{description}}</div>
-        {{/if}}
+        {{#tag}}
+            <div class="hero-title ">{{name}}</div>
+            {{#if description}}
+                <div class="hero-description">{{description}}</div>
+            {{/if}}
+        {{/tag}}
     {{/is}}
 
-    {{#is "post,page"}}
-        <div class="hero-title">{{title}}</div>
+    {{#is "page"}}
+        {{#page}}
+            <div class="hero-title">{{title}}</div>
+        {{/page}}
     {{/is}}
-    {{#is "post" }}
+
+    {{#is "post"}}
+        {{#post}}
+            <div class="hero-title">{{title}}</div>
         <div class="hero-date">
             <time datetime="{{date format="YYYY-MM-DD"}}">
                 {{date published_at}}
@@ -28,24 +35,64 @@
                 {{ tags seperator=" |" }}
             </div>
         {{/if}}
-     {{/is}}
 
-    {{!-- include the featured image for posts (it is used in the hero banner) --}}
-    {{#is "post"}}
+        {{!-- include the featured image for posts (it is used in the hero banner) --}}
         <figure class="hero-image">
-        {{#if feature_image }}
-            <img
-                srcset="{{> srcset}}"
-                src="{{img_url feature_image size="l"}}"
-                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-            >
-        {{else}}
-            {{#if @site.logo}}
-                <img src="{{@site.logo}}" alt="{{@site.title}}">
+            {{#if feature_image }}
+                <img
+                    srcset="{{> srcset}}"
+                    src="{{img_url feature_image size="l"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                >
             {{else}}
-                {{@site.title}}
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
             {{/if}}
-        {{/if}}
         </figure>
+        {{/post}}
+    {{/is}}
+    {{#is "author"}}
+        {{#author}}
+        <div class="author-title">
+            {{#if profile_image}}
+                <img class="author-profile-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
+            {{/if}}
+            <h1 class="author-name">
+                {{name}}
+            </h1>
+        </div>
+        {{#if bio}}
+            <p class="author-bio">{{bio}}</p>
+        {{/if}}
+        <div class="author-links" >
+            {{#if location}}
+            <div class="author-location" >
+                <div class="icon-button location"> {{> "icons/location"}} </div>
+                <div class="author-location" >{{location}} </div>
+            </div>
+            {{/if}}
+            {{#if website}}
+            <div class="author-website" >
+                <div class="icon-button website"> {{> "icons/website"}} </div>
+                <a class="author-website-url" href="{{website}}" target="_blank" rel="noopener">{{website}} </a>
+            </div>
+            {{/if}}
+            {{#if facebook}}
+            <div class="author-facebook">
+                <div class="icon-button facebook"> {{> "icons/facebook"}} </div>
+                <a class="author-facebook-url" href="{{facebook_url}}" target="_blank" rel="noopener">{{facebook}} </a>
+            </div>
+            {{/if}}
+            {{#if twitter}}
+            <div class="author-twitter">
+                <div class="icon-button twitter"> {{> "icons/twitter"}} </div>
+                <a class="author-twitter-url" href="{{twitter_url}}" target="_blank" rel="noopener">{{twitter}} </a>
+            </div>
+            {{/if}}
+        </div>
+        {{/author}}
     {{/is}}
 </aside>

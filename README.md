@@ -13,13 +13,6 @@ Features:
     - dropdown menus for topics
     - table of contents for long articles
     - sharing icons (facebook, twitter, copy link)
- 
-widescreens view:
-![image](https://github.com/nickabs/transmission/assets/4947488/c33b984c-4663-4eee-9d4d-d9335104b8b1)
-
-
-mobile
-![image](https://github.com/nickabs/transmission/assets/4947488/0c1061ee-47e2-47ed-aded-222697d08233)
 
 - minimal dependencies
     - image gallery (photowsipe v5.4)
@@ -27,9 +20,6 @@ mobile
     - responsive table of content (tocbot)
 - Inter and Menelo font families are installed with the theme
 - simple html & css, minimal js
-
-easy to manage grid layout:
-![image](https://github.com/nickabs/transmission/assets/4947488/7f59ef4c-023e-45dc-aadf-8ee9e7a687b7)
 
 There are minimal configuration options in v1.
 
@@ -45,10 +35,11 @@ There are minimal configuration options in v1.
 
 For instructions on how to install Ghost, see the [official documentation](https://ghost.org/help/).
 
+You will need [Node](https://nodejs.org/) and [Gulp](https://gulpjs.com) installed globally. 
+
 unzip the zip file into the theme directory of your local install.
 
-You can then install the dependencies and start making changes:
-
+After that, from the theme's root directory:
 ```bash
 # Install
 npm install
@@ -56,3 +47,22 @@ npm install
 # Run build & watch for changes
 npm run dev
 ```
+the first command downloads the packages used by the theme into transmission/node_modules.  
+
+The `zip` npm task packages the theme files into `dist/transmission_v1.0.0.zip`, which you can then upload to your site.
+
+```bash
+npm run zip
+```
+
+
+widescreen view:
+![image](https://github.com/nickabs/transmission/assets/4947488/c33b984c-4663-4eee-9d4d-d9335104b8b1)
+
+mobile:
+![image](https://github.com/nickabs/transmission/assets/4947488/0c1061ee-47e2-47ed-aded-222697d08233)
+
+easy to manage grid layout:
+![image](https://github.com/nickabs/transmission/assets/4947488/7f59ef4c-023e-45dc-aadf-8ee9e7a687b7)
+
+

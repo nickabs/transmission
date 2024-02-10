@@ -1,0 +1,8 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
+
+<section class="author-articles paginated ">
+    {{#foreach posts}}
+        {{> "article-card"}}
+    {{/foreach}}
+</section>

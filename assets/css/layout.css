@@ -25,7 +25,7 @@
     .related-articles { grid-area:RelatedArticles}
 }
 
-.tag-template { /* tag and related view only */
+.tag-template {
     .tagged-articles { grid-area: TaggedArticles; }
     .pagination { grid-area: Pagination; }
 }
@@ -77,7 +77,8 @@
         "SiteFooter";
 }
 
-/* tagged article layout (flexible grid of articles) */
+/* tagged and author article layout (flexible grid of articles) */
+.site.author-template .author-articles,
 .site.tag-template .tagged-articles{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
@@ -85,6 +86,7 @@
     gap: 47px;
     margin:47px;
 }
+.site.author-template .author-articles img,
 .site.tag-template .tagged-articles img {
     max-height: 700px;
     aspect-ratio: 4/3;
