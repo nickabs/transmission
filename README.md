@@ -51,13 +51,11 @@ The `zip` npm task packages the theme files into `dist/transmission_v1.0.0.zip`,
 npm run zip
 ```
 
-widescreen view:
-![image](https://github.com/nickabs/transmission/assets/4947488/c33b984c-4663-4eee-9d4d-d9335104b8b1)
+widescreen, tablet, mobile:
+![mockup-index](https://github.com/nickabs/transmission/assets/4947488/cb4de53f-1807-4919-933f-9e80907eadb3)
+![mockup-page](https://github.com/nickabs/transmission/assets/4947488/ce1e988e-56b3-44c6-beba-78fefc9bf5d1)
 
-mobile:
-![image](https://github.com/nickabs/transmission/assets/4947488/0c1061ee-47e2-47ed-aded-222697d08233)
-
-easy to manage grid layout:
+intuitive grid layout:
 ![image](https://github.com/nickabs/transmission/assets/4947488/7f59ef4c-023e-45dc-aadf-8ee9e7a687b7)
 
 
