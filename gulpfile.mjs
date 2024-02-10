@@ -118,6 +118,7 @@ function jsTheme(done) {
 
 function zipper(done) {
     const filename = pkg.name+'_v'+pkg.version+'.zip';
+    console.log("creating "+filename);
 
     pump([
         src([
