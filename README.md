@@ -52,7 +52,8 @@ npm run zip
 ```
 
 widescreen, tablet, mobile:
-![mockup-index](https://github.com/nickabs/transmission/assets/4947488/cb4de53f-1807-4919-933f-9e80907eadb3)
+![mock-up index](https://github.com/nickabs/transmission/assets/4947488/116edc86-5275-4f68-8027-0a386056956a)
+
 ![mockup-page](https://github.com/nickabs/transmission/assets/4947488/ce1e988e-56b3-44c6-beba-78fefc9bf5d1)
 
 intuitive grid layout:
