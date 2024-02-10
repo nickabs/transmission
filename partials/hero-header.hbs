@@ -35,6 +35,12 @@
                 {{ tags seperator=" |" }}
             </div>
         {{/if}}
+        {{#if @custom.show_author}}
+            <div class="hero-authors" >
+                {{authors separator=" | "}}
+            </div>
+        </ul>
+        {{/if}}
 
         {{!-- include the featured image for posts (it is used in the hero banner) --}}
         <figure class="hero-image">

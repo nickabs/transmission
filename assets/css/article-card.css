@@ -28,6 +28,9 @@
 .article-card-metadata {
     grid-area: Metadata;
 }
+.article-card-author { 
+    grid-area: Author;  
+}
 
 /* default view is a simple column */
 .article-card {
@@ -35,7 +38,8 @@
     grid-template-areas:
         "Image"
         "Text"
-        "Metadata";
+        "Metadata"
+        "Author";
 }
 
 .article-card-image img { 
@@ -50,7 +54,8 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
         "Text Image"
-        "Metadata Image";
+        "Metadata Image"
+        "Author Image";
 }
 
 .related-articles .article-card {
@@ -58,7 +63,8 @@
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
         "Image Text"
-        "Image Metadata";
+        "Image Metadata"
+        "Image Author";
     .article-card-image {
         padding-right: 20px;
     }
@@ -72,7 +78,8 @@
         grid-template-columns: 1fr 3fr;
         grid-template-areas:
             "Image Text"
-            "Image Metadata";
+            "Image Metadata"
+            "Image Author";
     }
     .article-card-image {
         padding-right: 20px;
@@ -87,7 +94,8 @@
         grid-template-areas:
             "Image"
             "Text"
-            "Metadata";
+            "Metadata"
+            "Author";
         .article-card-image {
             padding-right: 20px;
         }
@@ -150,6 +158,7 @@
     text-transform: uppercase;
 }
 
+.article-card-author,
 .article-card-date {
     font-size: 1.3rem;
 }

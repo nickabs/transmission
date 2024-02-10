@@ -18,6 +18,9 @@
                 <div class="article-card-excerpt short">{{excerpt words="20"}}...</div>
         {{/if}}
     </a>
+    {{#if @custom.show_author}}
+       <a class="article-card-author" href="{{primary_author.url}}">{{primary_author.name}}</a>
+    {{/if}}
     <div class="article-card-metadata" >
         <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM"}}</time>
         {{#if primary_tag}}
