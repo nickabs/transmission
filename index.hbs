@@ -1,4 +1,7 @@
 {{!< default}}
+
+{{> "hero-header"}}
+
 <article class="main-article">
     {{#foreach posts limit="1"}}
         {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}

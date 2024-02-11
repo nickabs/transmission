@@ -7,23 +7,18 @@
     {{/is}}
 
     {{#is "tag"}}
-        {{#tag}}
-            <div class="hero-title ">{{name}}</div>
-            {{#if description}}
-                <div class="hero-description">{{description}}</div>
-            {{/if}}
-        {{/tag}}
+        <div class="hero-title ">{{name}}</div>
+        {{#if description}}
+            <div class="hero-description">{{description}}</div>
+        {{/if}}
     {{/is}}
 
     {{#is "page"}}
-        {{#page}}
-            <div class="hero-title">{{title}}</div>
-        {{/page}}
+        <div class="hero-title">{{title}}</div>
     {{/is}}
 
     {{#is "post"}}
-        {{#post}}
-            <div class="hero-title">{{title}}</div>
+        <div class="hero-title">{{title}}</div>
         <div class="hero-date">
             <time datetime="{{date format="YYYY-MM-DD"}}">
                 {{date published_at}}
@@ -58,10 +53,9 @@
                 {{/if}}
             {{/if}}
         </figure>
-        {{/post}}
     {{/is}}
+
     {{#is "author"}}
-        {{#author}}
         <div class="author-title">
             {{#if profile_image}}
                 <img class="author-profile-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
@@ -99,6 +93,5 @@
             </div>
             {{/if}}
         </div>
-        {{/author}}
     {{/is}}
 </aside>
