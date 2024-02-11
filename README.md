@@ -17,7 +17,8 @@ Transmission is a modern [Ghost](https://ghost.org/) theme.
 - Inter and Menelo font families are installed with the theme
 - simple html & css, minimal js
 
-There are minimal configuration options in v1.
+limiitations
+this theme was created for my personal blog and I don't use the ghost portal features (registrations, tiers ccomments etc). Although they should work, they are not styled by the theme.
 
 ## Demo
 

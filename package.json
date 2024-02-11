@@ -59,6 +59,11 @@
                 "type": "boolean",
                 "default": false,
                 "group": "homepage"
+            },
+            "show_ghost_link": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
             }
         }
     },

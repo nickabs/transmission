@@ -2,6 +2,9 @@
     <div class="copyright">
         {{@site.title}} © {{date format="YYYY"}}
     </div>
+    {{#if @custom.show_ghost_link}}
+      <a class= "ghost-link" href='https://ghost.org'>Powered by Ghost</a>
+    {{/if}}
     <div class="privacy-policy">
         {{#link href="/privacy-policy/"}}privacy policy{{/link}}
     </div>
