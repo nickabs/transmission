@@ -304,7 +304,8 @@ nav{
     font-size:1.2rem;
     color: var(--secondary-text-color);
     border-top: 1px solid var(--border-color);
-    padding: 10px 5px 10px 5px;
+    margin-top: 10px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
 }
