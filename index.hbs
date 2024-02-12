@@ -1,46 +1,12 @@
+
+{{!-- default post listing (not used in this theme - see tags.hbs, author.hbs and home.hbs instead) --}}
+
 {{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{> "hero-header"}}
 
-<article class="main-article">
-    {{#foreach posts limit="1"}}
-        {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
-    {{/foreach}}
-</article>
-<aside class="recent-articles">
-    <h2 class="recent-articles-title" >RECENT</h2>
-    {{#foreach posts from="2" limit="3"}}
-        {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
-    {{/foreach}}
-</aside>
-<aside class="featured-articles">
-    {{#if @custom.show_featured_posts}}
-        <h2 class="featured-articles-title" >FEATURED</h2>
-        {{#get "posts" filter="featured:true" include="authors,tags" limit=6 as |featured|}}
-            {{#foreach featured}}
-                {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
-            {{/foreach}}
-        {{/get}}
-    {{else}}
-        <h2 class="featured-articles-title" >MORE</h2>
-        {{#foreach posts from="4" limit="6"}}
-            {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
-        {{/foreach}}
-    {{/if}}
-</aside>
-<aside class="previous-articles paginated">
-    <h2 class="previous-articles-title" >MORE</h2>
-    {{#if @custom.show_featured_posts}}
-        {{#foreach posts from="5"}}
-            {{> "article-card"}}
-        {{/foreach}}
-    {{else}}
-        {{#get "posts" include="tags" }}
-            {{#foreach posts from="11" }}
-                {{> "article-card"}}
-            {{/foreach}}
-        {{/get}}
-    {{/if}}
-</aside>
-{{pagination}}
+{{#foreach posts}}
+    {{> "article-card"}}
+{{/foreach}}
 
