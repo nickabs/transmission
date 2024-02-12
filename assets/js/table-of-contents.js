@@ -1,4 +1,6 @@
-// table of contents
+/*
+ * table of contents initialistation
+*/
 (function () {
     tocbot.init({
     tocSelector: '.toc',
@@ -9,7 +11,7 @@
 
 
 /* 
- * toggle floating toc
+ * toggle mobile toc when toc icon is clicked
 */
 (function() {
     const tocButton = document.querySelector("#toc-toggle");
@@ -42,4 +44,31 @@
 
     tocButton.addEventListener('click', toggleTableOfContents, false);
   
+  })();
+
+
+/*
+ * update reading progress based on scroll position
+*/
+(function () {
+  const tocToggleButton = document.querySelector('#toc-toggle');
+
+    function updateProgress() {
+      const totalHeight = document.body.clientHeight;
+      const windowHeight = document.documentElement.clientHeight;
+      const position = window.scrollY;
+      const progress = position / (totalHeight - windowHeight);
+      tocToggleButton.setAttribute('value', progress);
+    tocToggleButton.style.setProperty(
+      '--conic-gradient',
+      `var(--toc-progress-color) 0deg 0%, var(--toc-progress-color) 0deg ${
+        progress * 100
+      }%,var(--background-color) 0deg ${
+        1 - progress * 100
+      }%, var(--background-color) 0deg 360deg`,
+    );
+    requestAnimationFrame(updateProgress);
+
+    }
+    requestAnimationFrame(updateProgress);
   })();

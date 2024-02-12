@@ -58,6 +58,7 @@ html[data-theme='light'] {
     --border-color: #e6e6e6;
     --disabled-button-color: #ccc;
     --link-color: #1a73e8;
+    --toc-progress-color: #1a73e8;
 }
 /* dark mode */
 html[data-theme='dark'] {
@@ -72,6 +73,7 @@ html[data-theme='dark'] {
     --border-color: #564d4d;
     --disabled-button-color: #575050;
     --link-color: #D95736;
+    --toc-progress-color: #D95736;
 }
 
 .dark-mode,
