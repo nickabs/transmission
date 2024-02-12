@@ -7,12 +7,47 @@ table of contents icon shown on bottom left partly overlapping the social icons 
 .table-of-contents {
     z-index: 5;
     position: fixed;
-    left: 15px;
-    bottom: 7px;
+    left: 50px;
+    bottom: 50px;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     font-size: 1.6rem;
     line-height: 1.8;
+}
+
+#toc-toggle {
+    margin:0;
+    padding:0;
+}
+
+.toc-close-icon,
+.toc-open-icon {
+    display:block;
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    left: 50px;
+    bottom: 35px;
+    transform: translateX(-50%) translateY(50%);
+}
+.toc-open-icon {
+    display: block;
+}
+.toc-close-icon {
+    display: none;
+}
+.toc-open .toc-close-icon {
+    display: block;
+}
+
+#toc-toggle svg {
+    border-radius: 50%;
+    fill: currentcolor;
+    background-color: var(--background-color);
+    height: 40px;
+    width: 40px;
+    padding:5px;
 }
 
 /* toc toggle button */
@@ -20,31 +55,18 @@ table of contents icon shown on bottom left partly overlapping the social icons 
     #toc-toggle:before {
         background-image: conic-gradient(var(--conic-gradient)); /* set by table-of-contents.js */
         border-radius: 50%;
+        height: 45px;
+        width: 45px;
         content: "";
-        bottom:1px;
-        left:2.5px;
         opacity: .5;
-        position: absolute;
-        width: 57px;
-        height: 57px;
+        position: fixed;
+        left: 50px;
+        bottom: 35px;
         z-index: -1;
+        transform: translateX(-50%) translateY(50%);
     }
 }
-#toc-toggle {
-    position: relative;
-    height: 57px;
-    width: 57px;
-}
 
-#toc-toggle svg {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    padding: 7px;
-    fill: currentcolor;
-    background-color: var(--background-color);
-    position: relative;
-}
 
 /* hide the toc content on small screens until button is clicked */
 .toc {
@@ -62,14 +84,6 @@ table of contents icon shown on bottom left partly overlapping the social icons 
 
 .toc-list {
     padding-left: 10px;
-}
-
-.toc-open-icon {
-    display: block;
-}
-
-.toc-close-icon {
-    display: none;
 }
 
 @keyframes showToc {
