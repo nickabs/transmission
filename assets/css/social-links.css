@@ -9,21 +9,25 @@
     bottom: 0;
     z-index: 4;
     background-color: var(--background-color);
-    box-shadow: 0 -4px 10px rgba(0,0,0,.1), 0 0 0 transparent;
     display:flex;
     flex-direction: row;
     gap: 12px;
     justify-content: center;
+    align-items: center;
+    padding:5px;
 }
 .social-links svg {
-    height: 40px;
-    padding: 10px;
-    width: 40px;
+    height: 35px;
+    padding: 7px;
+    width: 35px;
     fill: var(--title-color);
-    box-shadow: 0 2px 4px var(--border-color), 0 0 0 transparent;
+    box-shadow: 0 1px 0.5px var(--link-color), 0 0 0 transparent;
     border-radius: 50%;
     background-color: var(--background-color);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width:760px) {
