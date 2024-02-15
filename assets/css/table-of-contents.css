@@ -44,6 +44,12 @@ table of contents icon shown on bottom left partly overlapping the social icons 
         display: block;
     }
 
+    #toc-toggle { /* fix to remove flash on click */
+        position: fixed;
+        left: -40px;
+        bottom: -40px;
+    }
+
     #toc-toggle svg ,
     #toc-toggle:before {
         display:block;
