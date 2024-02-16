@@ -21,7 +21,7 @@
     padding: 7px;
     width: 35px;
     fill: var(--title-color);
-    box-shadow: 0 1px 0.5px var(--link-color), 0 0 0 transparent;
+    box-shadow: 0 0.7px 0.5px var(--link-color), 0 0 0 transparent;
     border-radius: 50%;
     background-color: var(--background-color);
     cursor: pointer;
