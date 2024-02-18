@@ -131,11 +131,11 @@
 @media (min-width: 1100px) { 
     /* home page layout */
     .site.home-template {
-        grid-template-columns: 1.5fr 1fr 1fr; 
+        grid-template-columns: 1fr 1.7fr 1fr; 
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
-            "MainArticle RecentArticles FeaturedArticles"
+            "RecentArticles MainArticle FeaturedArticles"
             "PreviousArticles PreviousArticles PreviousArticles"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
@@ -166,7 +166,7 @@
 @media (min-width:760px) {
     .recent-articles,
     .previous-articles {
-        margin:0 20vw 0 20vw;
+        margin:0 25vw ;
     }
 }
 @media (min-width:1100px) {
@@ -185,7 +185,7 @@
     .article-card {
         flex: 1;
     }
-    gap: 10px;
+    gap: 20px;
 }
 /* divider between article-cards */
 .related-articles .article-card:not(:last-child),

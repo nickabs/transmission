@@ -65,9 +65,6 @@
         "Image Text"
         "Image Metadata"
         "Image Author";
-    .article-card-image {
-        padding-right: 20px;
-    }
 }
 
 /* laptops */
@@ -81,9 +78,6 @@
             "Image Metadata"
             "Image Author";
     }
-    .article-card-image {
-        padding-right: 20px;
-    }
 }
 /* large screens */
 @media (min-width:1100px) {
@@ -96,9 +90,6 @@
             "Text"
             "Metadata"
             "Author";
-        .article-card-image {
-            padding-right: 20px;
-        }
     }
 }
 
@@ -117,20 +108,18 @@
         letter-spacing: .025em;
     }
 }
-.main-article .article-card h2 {
-    line-height: 1.1;
+.main-article .article-card h1 {
     font-size: 2rem;
 }
-.main-article .article-card h2 ,
-.previous-articles .article-card h2 ,
-.recent-articles .article-card h2 {
-    padding-top:10px;
+.main-article .article-card h1 ,
+.previous-articles .article-card h1 ,
+.recent-articles .article-card h1 {
     line-height: 1.3;
     font-size: 1.8rem;
 }
 
-.related-articles .article-card h2,
-.featured-articles .article-card h2 {
+.related-articles .article-card h1,
+.featured-articles .article-card h1 {
     line-height: 1.3;
     font-size: 1.5rem;
 }
@@ -153,8 +142,8 @@
     font-weight: 800;
     letter-spacing: .05rem;
     outline: none;
-    padding: 3px 6px;
-    margin-left: 15px;
+    padding: 1.5px 3px;
+    margin-left: 6px;
     text-transform: uppercase;
 }
 
@@ -167,15 +156,40 @@
     .main-article img {
         aspect-ratio: 4/3;
     }
+    .main-article .article-card h1 {
+        font-size: 3rem;
+        padding: 20px 0;
+    }
+    .recent-articles {
+        .article-card-text, .article-card-author, .article-card-metadata {
+            padding-left: 20px;
+        }
+    }
+    .featured-articles {
+        border-left: 1px solid var(--border-color);
+    }
 }
 @media (min-width: 1100px) {
     .main-article img {
-        height: 500px;
+        height: 400px;
+        margin-top: 55px;
     }
     .recent-articles {
         margin-top: var(--top-margin);
+        border-right: 1px solid var(--border-color);
         .article-card-image {
-            padding-right: 0px;
+            padding: 10px 0 ;
+        }
+        img {
+            height: 150px;
+        }
+        .article-card-text, .article-card-author, .article-card-metadata {
+            padding-left: 0;
+        }
+    }
+    .previous-articles {
+        .article-card-text, .article-card-author, .article-card-metadata {
+            padding-left: 20px;
         }
     }
     .main-article .article-card-title {
