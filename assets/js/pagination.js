@@ -11,6 +11,7 @@
 
     // post list element
     var currentArticleList = document.querySelector('.paginated');
+    console.log("debug");
     if (!currentArticleList) {
         return;
     }
@@ -33,7 +34,8 @@
         }
 
         // append next page of article-cards
-        var nextPageArticleList = this.response.querySelectorAll('.paginated > .article-card');
+        // the next elements are organized as per index.hbs
+        var nextPageArticleList = this.response.querySelectorAll('.article-card');
         var fragment = document.createDocumentFragment();
         var elems = [];
         nextPageArticleList.forEach(function (item) {

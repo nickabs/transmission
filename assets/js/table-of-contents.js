@@ -52,24 +52,26 @@
 */
 (function () {
   const tocToggleButton = document.querySelector('#toc-toggle');
+  if (!tocToggleButton) {
+    return;
+  }
 
-    function updateProgress() {
-      const totalHeight = document.body.clientHeight;
-      const windowHeight = document.documentElement.clientHeight;
-      const position = window.scrollY;
-      const progress = position / (totalHeight - windowHeight)*100;
-      tocToggleButton.setAttribute('progress', `${progress.toFixed(0)}%`);
+  function updateProgress() {
+    const totalHeight = document.body.clientHeight;
+    const windowHeight = document.documentElement.clientHeight;
+    const position = window.scrollY;
+    const progress = position / (totalHeight - windowHeight)*100;
+    tocToggleButton.setAttribute('progress', `${progress.toFixed(0)}%`);
 
-      // this is used to update the circular progress bar show around the toc button
-      tocToggleButton.style.setProperty(
-      '--conic-gradient',
-      `var(--toc-progress-color) 0deg 0%,  
-       var(--toc-progress-color) 0deg ${ progress.toFixed(3) }%,
-       var(--background-color) 0deg ${ 1 - progress.toFixed(3) }%,
-       var(--background-color) 0deg 360deg`,
+    // this is used to update the circular progress bar show around the toc button
+    tocToggleButton.style.setProperty(
+    '--conic-gradient',
+    `var(--toc-progress-color) 0deg 0%,  
+      var(--toc-progress-color) 0deg ${ progress.toFixed(3) }%,
+      var(--background-color) 0deg ${ 1 - progress.toFixed(3) }%,
+      var(--background-color) 0deg 360deg`,
     );
     requestAnimationFrame(updateProgress);
-
-    }
-    requestAnimationFrame(updateProgress);
-  })();
+  }
+  requestAnimationFrame(updateProgress);
+})();
