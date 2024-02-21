@@ -152,6 +152,11 @@
     font-size: 1.3rem;
 }
 
+.related-articles {
+    .article-card-text, .article-card-author, .article-card-metadata {
+        padding-left: 20px;
+    }
+}
 @media (min-width: 760px) {
     .main-article img {
         aspect-ratio: 4/3;
@@ -160,6 +165,7 @@
         font-size: 3rem;
         padding: 20px 0;
     }
+    .previous-articles,
     .recent-articles {
         .article-card-text, .article-card-author, .article-card-metadata {
             padding-left: 20px;
@@ -182,14 +188,6 @@
         }
         img {
             height: 150px;
-        }
-        .article-card-text, .article-card-author, .article-card-metadata {
-            padding-left: 0;
-        }
-    }
-    .previous-articles {
-        .article-card-text, .article-card-author, .article-card-metadata {
-            padding-left: 20px;
         }
     }
     .main-article .article-card-title {
