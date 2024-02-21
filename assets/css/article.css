@@ -95,17 +95,19 @@
      }
  }
 
- /* override the style settings in tables copied from google sheets */
+ /* override the inline styles in tables copied from google sheets */
 .article-content table * {
-  font-family: var(--font-sans) !important;
-  font-size: var(--content-font-size) !important;
+  @media (max-width: 480px) {
+    font-size: 1.0rem!important;
+  }
+  font-family: var(--font-sans)!important ;
+  font-size: var(--content-font-size)!important;
 }
 
 .article-content table {
-  font-family: var(--font-sans) !important;
-  font-size: var(--content-font-size) !important;
   border-collapse: collapse;
   margin-top: var(--top-margin);
+  width: 100%!important;
 }
 
 .article-content table thead, tfoot tr {
@@ -114,14 +116,6 @@
   text-transform: uppercase;
   text-align: left;
   padding: 0.5rem;
-}
-
-.article-content table tr {
-  width: 100%;
-}
-.article-content table td {
-  padding-top:0.7rem;
-  padding-bottom:0.7rem;
 }
 
 .article-content table tbody tr:nth-child(odd) {
