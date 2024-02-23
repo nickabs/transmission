@@ -74,6 +74,7 @@
     margin-top: 0.8rem;
 }
 
+.article-content a span,
 .article-content a {
   color: var(--link-color);
   opacity: 1;
