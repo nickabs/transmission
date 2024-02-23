@@ -1,21 +1,7 @@
-/* -------------------------------------------------------- */
-/* article-card content is shown in the grids defined below */
-/* cards are shown in row or column layouts                 */
-/* -------------------------------------------------------- */
-
-
-.article-card .article-card-title {
-    color: var(--heading-color); 
-    font-weight: 600;
-    margin: 10px 0 10px;
-}
-.article-card .article-card-title:after {
-    display: grid;
-    content: '';
-    padding-top: 3px;
-    width: 1em;
-    border-bottom: 4px solid var(--link-color)
-}
+/* ------------------------------------------------------------ */
+/* article-card layout is determined in the grids defined below */
+/* cards are shown in row or column layouts                     */
+/* ------------------------------------------------------------ */
 
 .article-card-image {
     grid-area: Image;
@@ -48,7 +34,7 @@
     width: 100%;
 }
 
-/* in mobile view featured articles are shown as a row with image on the right and text/metadata on left */
+/* in mobile view featured articles are shown as a row with image on the right and text/metadata on right */
 .featured-articles .article-card {
     display:grid;
     grid-template-columns: 2fr 1fr;
@@ -58,6 +44,7 @@
         "Author Image";
 }
 
+/* related articles used a row layout on all device sizes, but with image on the left */
 .related-articles .article-card {
     display:grid;
     grid-template-columns: 1fr 2fr;
@@ -93,24 +80,44 @@
     }
 }
 
+/* ---------------------------- */
+/* styles for the card contents */
+/* ---------------------------- */
+
+.article-card .article-card-title {
+    color: var(--heading-color); 
+    font-weight: 600;
+    margin: 10px 0 10px;
+}
+
+/* show divider line under title */
+.article-card .article-card-title:after {
+    display: grid;
+    content: '';
+    padding-top: 3px;
+    width: 1em;
+    border-bottom: 4px solid var(--link-color)
+}
+
 .recent-articles-title,
 .previous-articles-title {
     margin-top: 50px;
 }
-.site {
-    .related-articles-title,
-    .recent-articles-title,
-    .featured-articles-title,
-    .previous-articles-title {
-        border-bottom: 1px solid var(--border-color);
-        font-size: 1.6rem;
-        font-weight: 550;
-        letter-spacing: .025em;
-    }
+
+.related-articles-title,
+.recent-articles-title,
+.featured-articles-title,
+.previous-articles-title {
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.6rem;
+    font-weight: 550;
+    letter-spacing: .025em;
 }
+
 .main-article .article-card h1 {
     font-size: 2rem;
 }
+
 .main-article .article-card h1 ,
 .previous-articles .article-card h1 ,
 .recent-articles .article-card h1 {
