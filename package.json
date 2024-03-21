@@ -73,7 +73,7 @@
         "test": "gscan ."
     },
     "devDependencies": {
-        "autoprefixer": "10.4.17",
+        "autoprefixer": "10.4.19",
         "beeper": "3.0.0",
         "cssnano": "6.0.4",
         "gulp": "4.0.2",
