@@ -73,16 +73,16 @@
         "test": "gscan ."
     },
     "devDependencies": {
-        "autoprefixer": "10.4.17",
+        "autoprefixer": "10.4.19",
         "beeper": "3.0.0",
-        "cssnano": "6.0.4",
+        "cssnano": "6.1.1",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "10.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "6.0.0",
-        "postcss": "8.4.35",
+        "postcss": "8.4.38",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.0"
     },
