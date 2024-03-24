@@ -56,6 +56,19 @@ function cssExternal(done) {
     ], handleError(done));
 }
 
+function cssFonts(done) {
+    pump([
+        src( 'assets/css/fonts.css' , {sourcemaps: true}),
+        postcss([
+            easyimport,
+            autoprefixer(),
+            cssnano()
+        ]),
+        concat('fonts.min.css'),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+}
 function cssTheme(done) {
     pump([
         src( 'assets/css/import-all.css' , {sourcemaps: true}),
@@ -137,7 +150,7 @@ const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const cssWatcher = () => watch('assets/css/**/*.css', css);
 const jsWatcher = () => watch('assets/js/**/*.js', js);
 const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
-const css = series(cssExternal, cssTheme);
+const css = series(cssExternal, cssTheme, cssFonts);
 const js = series(jsESM, jsExternal, jsTheme);
 const build = series(css, js);
 
