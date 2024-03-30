@@ -95,8 +95,8 @@
     display: grid;
     content: '';
     padding-top: 3px;
-    width: 1em;
-    border-bottom: 4px solid var(--link-color)
+    width: 2em;
+    border-bottom: 2px solid var(--accent-color)
 }
 
 .recent-articles-title,
