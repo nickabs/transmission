@@ -92,10 +92,27 @@
     aspect-ratio: 4/3;
 }
 
+.site-footer {
+    display:flex;
+    justify-content: space-between;
+}
+.footer-links {
+    display:inline-flex;
+    white-space: pre;
+}
+/* only show the link to the transmission github on larger screens */
+.theme-link {
+    display:none;
+}
+
 /* -------------- */
 /* tablet screens */
 /* -------------- */
 @media (min-width: 760px) { 
+    .theme-link { 
+        display:block;
+    }
+
     /* home page tablet */
     .site.home-template {
         grid-template-columns: 1.5fr 1fr; 

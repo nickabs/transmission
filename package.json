@@ -64,6 +64,19 @@
                 "type": "boolean",
                 "default": true,
                 "group": "homepage"
+            },
+            "show_theme_link": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "site_accent_color_dark": {
+                "type": "color",
+                "default": "#564d4d"
+            },
+            "site_accent_color_light": {
+                "type": "color",
+                "default": "#e6e6e6"
             }
         }
     },
@@ -75,7 +88,7 @@
     "devDependencies": {
         "autoprefixer": "10.4.19",
         "beeper": "3.0.0",
-        "cssnano": "6.1.1",
+        "cssnano": "6.1.2",
         "gulp": "5.0.0",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",

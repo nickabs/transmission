@@ -66,8 +66,8 @@
     // this is used to update the circular progress bar show around the toc button
     tocToggleButton.style.setProperty(
     '--conic-gradient',
-    `var(--toc-progress-color) 0deg 0%,  
-      var(--toc-progress-color) 0deg ${ progress.toFixed(3) }%,
+    `var(--accent-color) 0deg 0%,  
+      var(--accent-color) 0deg ${ progress.toFixed(3) }%,
       var(--background-color) 0deg ${ 1 - progress.toFixed(3) }%,
       var(--background-color) 0deg 360deg`,
     );

@@ -2,9 +2,18 @@
     <div class="copyright">
         {{@site.title}} © {{date format="YYYY"}}
     </div>
-    {{#if @custom.show_ghost_link}}
-      <a class= "ghost-link" href='https://ghost.org'>Powered by Ghost</a>
-    {{/if}}
+      <div class="footer-links">
+        {{#if @custom.show_ghost_link}}
+             <a class= "ghost-link" href='https://ghost.org'>Powered by Ghost </a> 
+            {{#if @custom.show_theme_link}}
+                <a class= "theme-link" href='https://github.com/nickabs/transmission'> ~ transmission theme</a>
+            {{/if}}
+        {{else}}
+            {{#if @custom.show_theme_link}}
+                <a class= "theme-link" href='https://github.com/nickabs/transmission'>transmission theme</a>
+            {{/if}}
+        {{/if}}
+      </div>
     <div class="privacy-policy">
         {{#link href="/privacy-policy/"}}privacy policy{{/link}}
     </div>

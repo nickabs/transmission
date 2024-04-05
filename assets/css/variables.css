@@ -14,7 +14,6 @@
 :root {
     --background-color: #141414; /* reduce screen flash */
     --hero-background-color: #333;
-    --accent-color: #95878e;
     --hero-title-color: #fff;
     --hero-description-color: #ccc;
     --font-sans: 'Inter', 'Inter-fallback', 'Trebuchet MS', sans-serif;
@@ -50,6 +49,7 @@
 html[data-theme='light'] {
     --background-color: #fff;
     --secondary-background-color: #e6e2e2;
+    --link-color: #0969da;
     --title-color: #444;
     --heading-color: #444;
     --secondary-title-color: #1a1a1a;
@@ -57,14 +57,15 @@ html[data-theme='light'] {
     --secondary-text-color: #5a5a5a;
     --border-color: #e6e6e6;
     --disabled-button-color: #ccc;
-    --link-color: #1a73e8;
-    --toc-progress-color: #1a73e8;
+    --accent-color: #D95736;
+    --accent-color: var(--site-accent-color-light);
 }
 /* dark mode */
 html[data-theme='dark'] {
     --hero-background-color: rgb(22, 27, 34);
     --background-color: #181818;
     --secondary-background-color: #1b1a1e;
+    --link-color: #4493f8;
     --title-color:  #f0f6fc;
     --heading-color: rgb(230, 237, 243);
     --secondary-title-color: #ccc;
@@ -72,8 +73,8 @@ html[data-theme='dark'] {
     --secondary-text-color:  #8b949e;
     --border-color: #564d4d;
     --disabled-button-color: #575050;
-    --link-color: #D95736;
-    --toc-progress-color: #D95736;
+    --accent-color: #66FF66 ;
+    --accent-color: var(--site-accent-color-dark);
 }
 
 .dark-mode,
