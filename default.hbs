@@ -23,6 +23,12 @@
       gtag('config', 'G-WTQ8QD028C');
     </script>
 
+    <style>
+        :root {
+            --site-accent-color-dark: {{@custom.site_accent_color_dark}};
+            --site-accent-color-light: {{@custom.site_accent_color_light}};
+        }
+    </style>
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}

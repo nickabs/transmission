@@ -58,6 +58,7 @@ html[data-theme='light'] {
     --border-color: #e6e6e6;
     --disabled-button-color: #ccc;
     --accent-color: #D95736;
+    --accent-color: var(--site-accent-color-light);
 }
 /* dark mode */
 html[data-theme='dark'] {
@@ -73,6 +74,7 @@ html[data-theme='dark'] {
     --border-color: #564d4d;
     --disabled-button-color: #575050;
     --accent-color: #66FF66 ;
+    --accent-color: var(--site-accent-color-dark);
 }
 
 .dark-mode,
