@@ -60,7 +60,7 @@
                 "default": false,
                 "group": "homepage"
             },
-            "show_ghost_link": {
+            "show_footer_links": {
                 "type": "boolean",
                 "default": true,
                 "group": "homepage"
