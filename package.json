@@ -60,10 +60,23 @@
                 "default": false,
                 "group": "homepage"
             },
-            "show_footer_links": {
+            "show_ghost_link": {
                 "type": "boolean",
                 "default": true,
                 "group": "homepage"
+            },
+            "show_theme_link": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "site_accent_color_dark": {
+                "type": "color",
+                "default": "#564d4d"
+            },
+            "site_accent_color_light": {
+                "type": "color",
+                "default": "#e6e6e6"
             }
         }
     },
