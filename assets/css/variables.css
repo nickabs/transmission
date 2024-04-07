@@ -47,6 +47,7 @@
 
 /* light mode */
 html[data-theme='light'] {
+    --hero-background-color: rgb(22, 27, 34);
     --background-color: #fff;
     --secondary-background-color: #e6e2e2;
     --link-color: #0969da;
@@ -57,7 +58,6 @@ html[data-theme='light'] {
     --secondary-text-color: #5a5a5a;
     --border-color: #e6e6e6;
     --disabled-button-color: #ccc;
-    --accent-color: #D95736;
     --accent-color: var(--site-accent-color-light);
 }
 /* dark mode */
@@ -73,7 +73,6 @@ html[data-theme='dark'] {
     --secondary-text-color:  #8b949e;
     --border-color: #564d4d;
     --disabled-button-color: #575050;
-    --accent-color: #66FF66 ;
     --accent-color: var(--site-accent-color-dark);
 }
 

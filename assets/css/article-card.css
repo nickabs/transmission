@@ -7,39 +7,44 @@
     grid-area: Image;
     align-self: center;
 }
-.article-card-text {
-    grid-area: Text;
+.article-card-title {
+    grid-area: Title;
     align-self: end; 
 }
-.article-card-metadata {
-    grid-area: Metadata;
+.main-article .article-card-excerpt {
+    grid-area: Excerpt;
+    align-self: end; 
+}
+
+.main-article .article-card-excerpt.long {
+    display:none;
+}
+.featured-articles, .recent-articles, .previous-articles {
+    .article-card-excerpt {
+        display: none;
+    }
 }
 .article-card-author { 
     grid-area: Author;  
 }
 
-/* default view is a simple column */
-.article-card {
+/* in mobile view main articles are a simple list */
+.main-article .article-card {
     display:grid;
     grid-template-areas:
+        "Title"
         "Image"
-        "Text"
+        "Excerpt"
         "Metadata"
         "Author";
 }
 
-.article-card-image img { 
-    object-fit: cover;
-    aspect-ratio: 16/9;
-    width: 100%;
-}
-
-/* in mobile view featured articles are shown as a row with image on the right and text/metadata on right */
+/* featured articles are shown as a row with image on the right and text/metadata on right */
 .featured-articles .article-card {
     display:grid;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
-        "Text Image"
+        "Title Image"
         "Metadata Image"
         "Author Image";
 }
@@ -49,9 +54,15 @@
     display:grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-        "Image Text"
+        "Image Title"
         "Image Metadata"
         "Image Author";
+}
+
+.article-card-image img { 
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 100%;
 }
 
 /* laptops */
@@ -61,7 +72,7 @@
         display:grid;
         grid-template-columns: 1fr 3fr;
         grid-template-areas:
-            "Image Text"
+            "Image Title"
             "Image Metadata"
             "Image Author";
     }
@@ -74,7 +85,7 @@
         grid-template-rows: 1.5fr 0.3fr 0.3fr;
         grid-template-areas:
             "Image"
-            "Text"
+            "Title"
             "Metadata"
             "Author";
     }
@@ -84,19 +95,23 @@
 /* styles for the card contents */
 /* ---------------------------- */
 
-.article-card .article-card-title {
+.article-card-excerpt {
+    padding: 10px 0 10px 0;
+}
+
+.article-card-title {
     color: var(--heading-color); 
     font-weight: 600;
     margin: 10px 0 10px;
 }
 
 /* show divider line under title */
-.article-card .article-card-title:after {
+.article-card-title:after {
     display: grid;
     content: '';
     padding-top: 3px;
     width: 2em;
-    border-bottom: 2px solid var(--accent-color)
+    border-bottom: 1px solid var(--accent-color)
 }
 
 .recent-articles-title,
@@ -131,10 +146,6 @@
     font-size: 1.5rem;
 }
 
-/* only show excerpts on the main card */
-.article-card-excerpt {
-    display:none;
-}
 .main-article .article-card-excerpt.short {
     display:block;
 }
@@ -174,7 +185,7 @@
     }
     .previous-articles,
     .recent-articles {
-        .article-card-text, .article-card-author, .article-card-metadata {
+        .article-card-title, .article-card-excerpt, .article-card-author, .article-card-metadata {
             padding-left: 20px;
         }
     }
@@ -204,7 +215,7 @@
         display:none;
     }
     .main-article .article-card-excerpt.long {
-        display:block;
+        display:inline;
     }
     .recent-articles .recent-articles-title {
         margin-top:0;

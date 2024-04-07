@@ -11,13 +11,11 @@
             >
         </a>
     {{/if}}
-    <a class="article-card-text" href="{{url}}">
-        <h1 class="article-card-title">{{title}}</h1>
-        {{#if excerpt}}
-                <div class="article-card-excerpt long" >{{excerpt words="55"}}...</div>
-                <div class="article-card-excerpt short">{{excerpt words="20"}}...</div>
-        {{/if}}
-    </a>
+    <h1 class="article-card-title"><a href="{{url}}">{{title}}</a></h1>
+    {{#if excerpt}}
+        <p class="article-card-excerpt long"><a href="{{url}}">{{excerpt words="55"}}...</a></p>
+        <p class="article-card-excerpt short"><a href="{{url}}">{{excerpt words="20"}}...</a></p>
+    {{/if}}
     {{#if @custom.show_author}}
        <a class="article-card-author" href="{{primary_author.url}}">{{primary_author.name}}</a>
     {{/if}}
