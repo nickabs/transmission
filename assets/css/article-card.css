@@ -195,8 +195,7 @@
 }
 @media (min-width: 1100px) {
     .main-article img {
-        height: 400px;
-        margin-top: 55px;
+        height: 500px;
     }
     .recent-articles {
         margin-top: var(--top-margin);
