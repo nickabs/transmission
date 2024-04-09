@@ -16,7 +16,7 @@
     align-self: end; 
 }
 
-.main-article, .related-articles, .author-articles {
+.main-article, .related-articles, .author-articles, .tagged-articles {
     .article-card-excerpt.long {
         display:none;
     }
