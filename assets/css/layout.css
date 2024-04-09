@@ -193,6 +193,21 @@
     }
     gap: 20px;
 }
+/* center the article-card lists on wider screens */ 
+@media (min-width:760px) {
+    .recent-articles,
+    .previous-articles {
+        margin:0 15vw ;
+    }
+}
+@media (min-width:1100px) {
+    .recent-articles {
+        margin:0;
+    }
+    .previous-articles {
+        margin:0 25vw ;
+    }
+}
 /* divider between article-cards */
 .related-articles .article-card:not(:last-child),
 .featured-articles .article-card:not(:last-child),
