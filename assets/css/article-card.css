@@ -11,7 +11,7 @@
     grid-area: Title;
     align-self: end; 
 }
-.main-article .article-card-excerpt {
+.article-card-excerpt {
     grid-area: Excerpt;
     align-self: end; 
 }
@@ -56,11 +56,15 @@
 /* related articles used a row layout on all device sizes, but with image on the left */
 .related-articles .article-card {
     display:grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.2fr 2fr;
     grid-template-areas:
         "Image Title"
+        "Image Excerpt"
         "Image Metadata"
         "Image Author";
+    .article-card-image {
+        padding-right:20px;
+    }
 }
 
 .article-card-image img { 
@@ -79,6 +83,9 @@
             "Image Title"
             "Image Metadata"
             "Image Author";
+        .article-card-image {
+            padding-right:20px;
+        }
     }
 }
 /* large screens */
@@ -186,12 +193,6 @@
     .main-article .article-card h1 {
         font-size: 3rem;
         padding: 20px 0;
-    }
-    .previous-articles,
-    .recent-articles {
-        .article-card-title, .article-card-excerpt, .article-card-author, .article-card-metadata {
-            padding-left: 20px;
-        }
     }
     .featured-articles {
         border-left: 1px solid var(--border-color);

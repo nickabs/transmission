@@ -179,19 +179,7 @@
 /* article-card list layout                                                        */
 /* ------------------------------------------------------------------------------- */
 
-/* center the article-card lists on wider screens */ 
-@media (min-width:760px) {
-    .recent-articles,
-    .previous-articles {
-        margin:0 25vw ;
-    }
-}
-@media (min-width:1100px) {
-    .recent-articles {
-        margin:0;
-    }
-}
-
+/* show the articles as a column */
 .site .main-article,
 .site .previous-articles,
 .site .related-articles,
