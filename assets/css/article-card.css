@@ -16,20 +16,24 @@
     align-self: end; 
 }
 
-.main-article .article-card-excerpt.long {
-    display:none;
+.main-article, .related-articles, .author-articles {
+    .article-card-excerpt.long {
+        display:none;
+    }
 }
+
 .featured-articles, .recent-articles, .previous-articles {
     .article-card-excerpt {
         display: none;
     }
 }
+
 .article-card-author { 
     grid-area: Author;  
 }
 
-/* in mobile view main articles are a simple list */
-.main-article .article-card {
+/* default view for article cards is a simple list */
+.article-card {
     display:grid;
     grid-template-areas:
         "Title"

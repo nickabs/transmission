@@ -6,12 +6,11 @@
         {{#if @custom.show_ghost_link}}
              <a class= "ghost-link" href='https://ghost.org'>Powered by Ghost </a> 
             {{#if @custom.show_theme_link}}
-                <a class= "theme-link" href='https://github.com/nickabs/transmission'> ~ transmission theme</a>
+                <p> ~ </p>
             {{/if}}
-        {{else}}
-            {{#if @custom.show_theme_link}}
-                <a class= "theme-link" href='https://github.com/nickabs/transmission'>transmission theme</a>
-            {{/if}}
+        {{/if}}
+        {{#if @custom.show_theme_link}}
+            <a class= "theme-link" href='https://github.com/nickabs/transmission'>transmission theme</a>
         {{/if}}
       </div>
     <div class="privacy-policy">
