@@ -4,13 +4,17 @@
     </div>
       <div class="footer-links">
         {{#if @custom.show_ghost_link}}
-             <a class= "ghost-link" href='https://ghost.org'>Powered by Ghost </a> 
+            <p>Powered by </p>
+            <a class= "ghost-link" href='https://ghost.org'>Ghost</a> 
             {{#if @custom.show_theme_link}}
-                <p> ~ </p>
+                <p> & </p>
             {{/if}}
         {{/if}}
         {{#if @custom.show_theme_link}}
-            <a class= "theme-link" href='https://github.com/nickabs/transmission'>transmission theme</a>
+            {{^if @custom.show_ghost_link }}
+                <p>Powered by </p>
+            {{/if}}
+            <a class= "theme-link" href='https://github.com/nickabs/transmission'>Transmission</a>
         {{/if}}
       </div>
     <div class="privacy-policy">
