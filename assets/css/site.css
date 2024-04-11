@@ -36,7 +36,7 @@ img {
     height: auto;
 }
 
-/* hyperlinks in menus default to no text decoration/color - see article.css for hyperlinks in the text content */
+/* hyperlinks in asides default to no text decoration/color - see hero.css, article.css etc for hyperlink styles elsewhere */
 a {
     color: var(--text-color);
     text-decoration: none;

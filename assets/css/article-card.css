@@ -106,9 +106,6 @@
 /* styles for the card contents */
 /* ---------------------------- */
 
-.article-card-metadata, .article-card-author , .article-card-excerpt {
-    padding: 7px 0 0px 0;
-}
 
 .article-card-title {
     color: var(--heading-color); 
@@ -176,11 +173,6 @@
     font-size: 1.3rem;
 }
 
-.related-articles {
-    .article-card-text, .article-card-author, .article-card-metadata {
-        padding-left: 20px;
-    }
-}
 @media (min-width: 760px) {
     .main-article img {
         aspect-ratio: 4/3;

@@ -31,13 +31,13 @@
 }
 
 /* metadata items:  date, tags and reading times */
-.hero-authors, .hero-date, .hero-tags {
+.hero-authors, .hero-date, .hero-tags, .hero-authors {
     z-index: 2;
     font-size: 1.5rem;
     color: var(--hero-description-color);
 }
 
-.hero-tags a {
+.hero-tags a, .hero-authors a {
     color: var(--link-color);
 }
 .hero-tags a:hover {
