@@ -11,7 +11,6 @@
 
     // post list element
     var currentArticleList = document.querySelector('.paginated');
-    console.log("debug");
     if (!currentArticleList) {
         return;
     }

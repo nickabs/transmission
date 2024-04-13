@@ -176,22 +176,29 @@
 }
 
 /* ------------------------------------------------------------------------------- */
-/* article-card list layout                                                        */
+/* article-card list layouts                                                        */
 /* ------------------------------------------------------------------------------- */
 
-/* show the articles as a column */
-.site .main-article,
-.site .previous-articles,
-.site .related-articles,
-.site .recent-articles,
-.site .featured-articles {
+.related-articles-title,
+.recent-articles-title,
+.featured-articles-title,
+.previous-articles-title {
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.6rem;
+    font-weight: 550;
+    letter-spacing: .025em;
+}
+
+/* show the article cards as a column */
+.main-article,
+.previous-articles,
+.related-articles,
+.recent-articles,
+.featured-articles {
     display: flex;
     flex-direction: column;
-    
-    .article-card {
-        flex: 1;
-    }
     gap: 20px;
+    justify-content: space-between;
 }
 /* center the article-card lists on wider screens */ 
 @media (min-width:760px) {
@@ -201,6 +208,9 @@
     }
 }
 @media (min-width:1100px) {
+    .previous-articles-title {
+        padding-top: 20px;
+    }
     .recent-articles {
         margin:0;
     }
