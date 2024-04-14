@@ -6,7 +6,6 @@
 .article-card {
     display: grid;
     gap: 10px;
-    justify-content: space-between;
 }
 .main-article .article-card { 
    flex: 1;
