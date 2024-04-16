@@ -10,7 +10,7 @@
     <script>document.documentElement.setAttribute('data-theme',localStorage.getItem("theme"))||""</script>
     {{!-- Theme and vendor css assets - the {asset} helper will handle caching and cache-busting automatically --}}
     
-    <link rel="preload" as="style" type="text/css" href="{{asset "built/fonts.min.css"}}">
+    <link rel="preload" as="font" href="{{asset "built/fonts.min.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "built/lib.min.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "built/theme.min.css"}}">
 
