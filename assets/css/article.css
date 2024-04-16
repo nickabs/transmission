@@ -95,8 +95,9 @@ sup {
      }
  }
 
- /* override the inline styles in tables copied from google sheets */
-.article-content table * {
+ /* override the inline styles in tables copied from google sheets
+ do not change the references table fonts */
+:not(#references) + table * {
   @media (max-width: 480px) {
     font-size: 1.0rem!important;
   }
@@ -116,6 +117,9 @@ sup {
   text-transform: uppercase;
   text-align: left;
   padding: 0.5rem;
+}
+.article-content table td {
+  padding: 5px;
 }
 
 .article-content table tbody tr:nth-child(odd) {
