@@ -17,10 +17,6 @@ Transmission is a modern [Ghost](https://ghost.org/) theme.
 - Inter and Menelo font families are installed with the theme
 - simple html & css, minimal js
 
-limitations
-
-this theme was created for my personal blog and I don't use the ghost portal features (registrations, tiers ccomments etc). Although they should work, they are not styled by the theme.
-
 ## Demo
 
 [See the theme in action](https://smallworkshop.co.uk).
@@ -47,7 +43,7 @@ npm run dev
 ```
 the first command downloads the packages used by the theme into transmission/node_modules.  
 
-The `zip` npm task packages the theme files into `dist/transmission_v1.0.0.zip`, which you can then upload to your site.
+The `zip` npm task packages the theme files into a single zip file named using the theme version number specified in package.json, for instance  `dist/transmission_v1.6.3.zip`. This zip file can then be used to install the modified theme on your site.
 
 ```bash
 npm run zip
