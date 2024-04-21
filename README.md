@@ -1,21 +1,31 @@
-# transmission
+# Transmission
 Transmission is a modern [Ghost](https://ghost.org/) theme.
+
+widescreen, tablet and mobile layouts:
+
+![1 6 3 home views](https://github.com/nickabs/transmission/assets/4947488/78a796b6-c148-4b89-9867-08e90a1072b3)
+
+![1 6 3 page views](https://github.com/nickabs/transmission/assets/4947488/1cfabeb7-40b1-409f-b4db-eedfe4fa5f77)
 
 ## Features
 - responsive layouts for mobile, tablet, laptops and desktop screens
     - dark mode toggle
     - dropdown menus for topics
-    - table of contents for long articles
+    - table of contents for long articles (includes a reading progress indicator - works in both mobile and laptop views)
     - sharing icons (facebook, twitter, copy link)
     - Search
     - Tags and author page
 
 - minimal dependencies
-    - image gallery (photowsipe v5.4)
+    - image gallery (photowsipe)
     - code syntax highlighting (prism)
     - responsive table of content (tocbot)
 - Inter and Menelo font families are installed with the theme
-- simple html & css, minimal js
+- 
+
+easy to maintain with simple html & css and intuitive grid layouts:
+
+![1 6 3 grid layouts](https://github.com/nickabs/transmission/assets/4947488/95f142d7-bfe2-42a7-baea-4e4d9727a3ff)
 
 ## Demo
 
@@ -41,20 +51,11 @@ npm install
 # Run build & watch for changes
 npm run dev
 ```
-the first command downloads the packages used by the theme into transmission/node_modules.  
+the first command downloads the packages used by the theme into transmission/node_modules and the second starts up a file watcher that will rebuild the theme assets whenever you change theme source code (see `gulpfile.mjs` for details)
 
 The `zip` npm task packages the theme files into a single zip file named using the theme version number specified in package.json, for instance  `dist/transmission_v1.6.3.zip`. This zip file can then be used to install the modified theme on your site.
 
 ```bash
 npm run zip
 ```
-
-widescreen, tablet, mobile:
-![mock-up index](https://github.com/nickabs/transmission/assets/4947488/116edc86-5275-4f68-8027-0a386056956a)
-
-![mockup-page](https://github.com/nickabs/transmission/assets/4947488/ce1e988e-56b3-44c6-beba-78fefc9bf5d1)
-
-intuitive grid layout:
-![image](https://github.com/nickabs/transmission/assets/4947488/7f59ef4c-023e-45dc-aadf-8ee9e7a687b7)
-
 
