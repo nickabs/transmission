@@ -49,6 +49,16 @@
         "Metadata"
         "Author";
 }
+.tagged-articles .article-card {
+    display:grid;
+    grid-template-areas:
+        "Image"
+        "Title"
+        "Excerpt"
+        "Metadata"
+        "Author";
+}
+
 
 /* featured articles are shown as a row with image on the right and text/metadata on right */
 .featured-articles .article-card {
