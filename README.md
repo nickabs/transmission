@@ -3,10 +3,10 @@
 Transmission is a modern [Ghost](https://ghost.org/) theme.
 
 widescreen, tablet and mobile layouts:
-<div align="center">
-    <img height="300" alt="home views" src="https://github.com/nickabs/transmission/assets/4947488/78a796b6-c148-4b89-9867-08e90a1072b3">
-    <img height="300" alt="page views" src="https://github.com/nickabs/transmission/assets/4947488/1cfabeb7-40b1-409f-b4db-eedfe4fa5f77">
-</div>
+
+![1 6 3 home views](https://github.com/nickabs/transmission/assets/4947488/78a796b6-c148-4b89-9867-08e90a1072b3)
+
+![1 6 3 page views](https://github.com/nickabs/transmission/assets/4947488/1cfabeb7-40b1-409f-b4db-eedfe4fa5f77)
 
 # Features
 
@@ -19,16 +19,14 @@ widescreen, tablet and mobile layouts:
     - Tags and author page
 - modern Inter and Menelo font families are installed with the theme
 
-# drop down menu
-A two level drop down menu can be configured using the Ghost naviagion feature (settings > navigation).
+# Drop down menu configuration
+A two level drop down menu can be created using the standard Ghost naviagion feature (settings > navigation).
 When the navigation item name is preceeded by a single dash it will show as a parent item and any item with two dashes immediately following it will show as a child item.  For instance:
 
-
-<div style="display: flex; justify-content: center;">
-    <img height="300" alt="drop down menu" src="https://github.com/nickabs/transmission/assets/4947488/4cefbbd5-284f-45fe-be4c-5db69f95387f">
-    <img height="300" alt="drop down menu demo" src="https://github.com/nickabs/transmission/assets/4947488/86f961d5-c2f4-4b3b-be6e-06930f4c1a5e">
-  </div>
-
+<div align="center">
+    <img height="250" alt="drop down menu" src="https://github.com/nickabs/transmission/assets/4947488/4cefbbd5-284f-45fe-be4c-5db69f95387f">
+    <img height="250" alt="drop down menu demo" src="https://github.com/nickabs/transmission/assets/4947488/86f961d5-c2f4-4b3b-be6e-06930f4c1a5e">
+</div>
 
 # Demo
 
@@ -39,7 +37,7 @@ When the navigation item name is preceeded by a single dash it will show as a pa
 [Download `transmission.zip` from the Releases page](https://github.com/nickabs/transmission/releases)
 
 
-# for developers
+# For developers
 
 - minimal dependencies
     - image gallery (photowsipe)
