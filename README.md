@@ -11,12 +11,12 @@ widescreen, tablet and mobile layouts:
 # Features
 
 - different layouts to suit mobile, tablet, laptop and desktop screens
-    - dark mode toggle (dark mode will automatically apply when this is the operating system default, but can be overridden by the user)
-    - dropdown menus (these are configured using the standard Ghost topics features)
-    - table of contents for long articles (includes a reading progress indicator - works in both mobile and laptop views)
-    - sharing icons (facebook, twitter, copy link)
-    - Search
-    - Tags and author page
+- dark mode toggle (dark mode will automatically apply when this is the operating system default, but can be overridden by the user)
+- dropdown menus 
+- table of contents for long articles, including a reading progress indicator - works in both mobile and laptop views)
+- sharing icons (facebook, twitter, copy link)
+- Search
+- Tags and authors page
 - modern Inter and Menelo font families are installed with the theme
 
 # Drop down menu configuration
@@ -34,8 +34,7 @@ When the navigation item name is preceeded by a single dash it will show as a pa
 
 # Download and Install
 
-[Download `transmission.zip` from the Releases page](https://github.com/nickabs/transmission/releases)
-
+Download the latest `transmission.zip` from the [Releases](https://github.com/nickabs/transmission/releases) page and install it to your site via the Ghost admin tools.
 
 # For developers
 
