@@ -2,13 +2,15 @@
 <article class="article-card aria-label={{title}}">
     {{#if feature_image}}
         <a class="article-card-image" href="{{url}} ">
-            <img
-                srcset="{{> "srcset"}}"
-                sizes="{{#if imageSizes}}{{imageSizes}}{{else}}320px{{/if}}"
-                src="{{img_url feature_image size="m"}}"
-                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                loading="lazy"
-            >
+            <figure>
+                <img
+                    srcset="{{> "srcset"}}"
+                    sizes="{{#if imageSizes}}{{imageSizes}}{{else}}320px{{/if}}"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                    loading="lazy"
+                >
+            </figure>
         </a>
     {{/if}}
     <h1 class="article-card-title"><a href="{{url}}">{{title}}</a></h1>
