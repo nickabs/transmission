@@ -131,7 +131,7 @@ table of contents icon shown on bottom left partly overlapping the social icons 
         display:block;
         height: 0;
         left:0;
-        top: 57px;
+        top: 67px;
         position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
      }
 }

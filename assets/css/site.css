@@ -121,8 +121,8 @@ iframe {
 /* 3. site header bar                     */
 /* -------------------------------------- */
 .site-header {
-
   background-color: var(--background-color);
+  border-bottom: 0.25px solid var(--accent-color);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -303,7 +303,7 @@ nav{
     font-weight: 600;
     font-size:1.2rem;
     color: var(--secondary-text-color);
-    border-top: 1px solid var(--accent-color);
+    border-top: 0.25px solid var(--accent-color);
     margin-top: 10px;
     padding: 10px;
     display: flex;

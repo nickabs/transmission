@@ -21,8 +21,6 @@
     padding: 7px;
     width: 35px;
     fill: var(--title-color);
-    box-shadow: 0 0.7px 0.5px var(--accent-color), 0 0 0 transparent;
-    border-radius: 50%;
     background-color: var(--background-color);
     cursor: pointer;
     display: flex;
@@ -33,17 +31,11 @@
 @media (min-width:760px) {
     .social-links {
         bottom: unset;
-        box-shadow: unset;
         height:0;
         flex-direction: column;
         justify-content:flex-start;
         align-items: center;
         position: sticky;
-        top: 57px;
-    }
-    .social-links svg {
-        height: 50px;
-        padding: 15px;
-        width: 50px;
+        top: 67px;
     }
 }
