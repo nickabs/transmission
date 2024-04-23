@@ -3,8 +3,8 @@
 [drop down menu](#drop-down-menu-configuration) |
 [demo](#demo) |
 [download](#download-and-install) |
-[for developers](#for-developers) |
-[make changes](#make-changes-to-the-theme)
+[developer information](#for-developers) |
+[making changes](#make-changes-to-the-theme)
 
 Transmission is a modern [Ghost](https://ghost.org/) theme.
 
