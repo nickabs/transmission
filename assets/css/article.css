@@ -103,6 +103,16 @@ sup {
   }
   font-family: var(--font-sans)!important ;
   font-size: var(--content-font-size)!important;
+  tr:nth-child(even) {
+    background-color: var(--secondary-background-color);
+  }
+  tr:nth-child(odd) {
+    background-color: var(--background-color);
+  }
+}
+
+#references + table tbody tr td {
+  border-bottom: 1px solid var(--border-color);
 }
 
 .article-content table {
@@ -122,15 +132,6 @@ sup {
   padding: 5px;
 }
 
-.article-content table tbody tr:nth-child(odd) {
-  background-color: var(--secondary-background-color);
-}
-.article-content table tbody tr:nth-child(even) {
-  background-color: var(--background-color);
-}
-.article-content table tbody td {
-  border-bottom: 1px solid var(--border-color);
-}
 
 .article-content tr td:first-child {
     min-width: 1%;
