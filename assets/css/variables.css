@@ -56,7 +56,7 @@ html[data-theme='light'] {
     --secondary-title-color: #1a1a1a;
     --text-color: #333;
     --secondary-text-color: #5a5a5a;
-    --border-color: #040e4c;
+    --border-color: #d1d2db;
     --disabled-button-color: #ccc;
     --accent-color: var(--site-accent-color-light);
 }

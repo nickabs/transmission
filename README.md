@@ -16,11 +16,10 @@ widescreen, tablet and mobile layouts:
 
 # Features
 
-- different layouts to suit mobile, tablet, laptop and desktop screens
 - dark mode toggle (dark mode will default to the operating system setting, but can be overridden by the user)
 - dropdown menus 
 - table of contents for long articles, including a reading progress indicator - works in both mobile and laptop views)
-- sharing icons (facebook, twitter, copy link)
+- sharing icons (facebook, twitter, whatsapp, copy link)
 - Search
 - Tags and authors page
 - modern Inter and Menelo font families are installed with the theme
