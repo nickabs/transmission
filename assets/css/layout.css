@@ -82,7 +82,6 @@
 .site.tag-template .tagged-articles{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
-    overflow: hidden;
     gap: 47px;
     margin:47px;
 }
@@ -179,15 +178,6 @@
 /* article-card list layouts                                                        */
 /* ------------------------------------------------------------------------------- */
 
-.related-articles-title,
-.recent-articles-title,
-.featured-articles-title,
-.previous-articles-title {
-    border-bottom: 1px solid var(--border-color);
-    font-size: 1.6rem;
-    font-weight: 550;
-    letter-spacing: .025em;
-}
 
 /* show the article cards as a column */
 .main-article,
@@ -200,29 +190,5 @@
     gap: 20px;
     justify-content: space-between;
 }
-/* center the article-card lists on wider screens */ 
-@media (min-width:760px) {
-    .recent-articles,
-    .previous-articles {
-        margin:0 15vw ;
-    }
-}
-@media (min-width:1100px) {
-    .previous-articles-title {
-        padding-top: 20px;
-    }
-    .recent-articles {
-        margin:0;
-    }
-    .previous-articles {
-        margin:0 25vw ;
-    }
-}
-/* divider between article-cards */
-.related-articles .article-card:not(:last-child),
-.featured-articles .article-card:not(:last-child),
-.previous-articles .article-card:not(:last-child),
-.recent-articles .article-card:not(:last-child) {
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
-}
+
+
