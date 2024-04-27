@@ -7,7 +7,6 @@ import easyimport from 'postcss-easy-import';
 import zip from 'gulp-zip';
 import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
-import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import beeper from 'beeper';
 import pump from 'pump';
@@ -61,7 +60,6 @@ function cssFonts(done) {
         src( 'assets/css/fonts.css' , {sourcemaps: true}),
         postcss([
             easyimport,
-            autoprefixer(),
             cssnano()
         ]),
         concat('fonts.min.css'),
@@ -74,7 +72,6 @@ function cssTheme(done) {
         src( 'assets/css/import-all.css' , {sourcemaps: true}),
         postcss([
             easyimport,
-            autoprefixer(),
             cssnano()
         ]),
         concat('theme.min.css'),

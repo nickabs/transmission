@@ -44,11 +44,12 @@ Download the latest zip file from the [Releases](https://github.com/nickabs/tran
 
 # For developers
 
-- minimal dependencies
+- build controlled by gulp, including support for ES Modules
+- minimal dependencies using the latest versions
     - image gallery (photowsipe)
     - code syntax highlighting (prism)
     - table of content (tocbot)
-- easy to maintain with simple html & css and intuitive grid layouts:
+- easy to maintain with a simple semantic html structure, sensibly organised css and intuitive grid layouts:
 
 ![1 6 3 grid layouts](https://github.com/nickabs/transmission/assets/4947488/95f142d7-bfe2-42a7-baea-4e4d9727a3ff)
 
