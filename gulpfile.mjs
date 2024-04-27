@@ -45,8 +45,7 @@ function cssExternal(done) {
             'node_modules/prismjs/themes/prism-tomorrow.css',
             'node_modules/prismjs/plugins/command-line/prism-command-line.css',
             'node_modules/tocbot/dist/tocbot.css',
-            'node_modules/photoswipe/dist/photoswipe.css',
-            'assets/css/import-all.css'
+            'node_modules/photoswipe/dist/photoswipe.css'
         ], {sourcemaps: true}),
         postcss([cssnano()]),
         concat('lib.min.css'),
