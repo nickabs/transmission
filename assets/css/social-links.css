@@ -12,7 +12,7 @@
     display:flex;
     flex-direction: row;
     gap: 12px;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     padding:5px;
 }
@@ -28,7 +28,14 @@
     align-items: center;
 }
 
+.social-links-title {
+    display:none;
+}
 @media (min-width:760px) {
+    .social-links-title {
+        display: inline-block;
+        font-size: 1.6rem;
+    }
     .social-links {
         bottom: unset;
         height:0;
