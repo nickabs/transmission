@@ -77,6 +77,10 @@
             "site_accent_color_light": {
                 "type": "color",
                 "default": "#e6e6e6"
+            },
+            "google_analytics_id": {
+                "type": "text",
+                "description": "if you use google analytics, add your id here"
             }
         }
     },

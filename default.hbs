@@ -14,14 +14,16 @@
     <link rel="stylesheet" type="text/css" href="{{asset "built/lib.min.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "built/theme.min.css"}}">
 
-     {{!-- google analytics --}}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTQ8QD028C"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WTQ8QD028C');
-    </script>
+     {{#if @custom.google_analytics_id}}
+        {{!-- google analytics --}}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{@custom.google_analytics_id}}"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{@custom.google_analytics_id}}');
+        </script>
+     {{/if}}
 
     <style>
         :root {
