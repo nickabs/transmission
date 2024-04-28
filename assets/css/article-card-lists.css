@@ -3,16 +3,17 @@
 /* --------------------------------------------------------------- */
 
 /* list titles */
-.related-articles-title,
-.recent-articles-title,
-.featured-articles-title,
-.previous-articles-title {
-    border-bottom: 1px solid var(--border-color);
-    font-size: 1.6rem;
-    font-weight: 550;
-    letter-spacing: .025em;
+.site {
+    .related-articles-title,
+    .recent-articles-title,
+    .featured-articles-title,
+    .previous-articles-title {
+        border-bottom: 1px solid var(--border-color);
+        font-size: 1.6rem;
+        font-weight: 550;
+        letter-spacing: .025em;
+    }
 }
-
 /* center the article-card lists on wider screens */ 
 @media (min-width:760px) {
     .recent-articles,
