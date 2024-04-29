@@ -5,6 +5,7 @@
 /* 3. site header                       */
 /* 4. menu                              */
 /* 5. site footer                       */
+/* 6. Ghost cards                       */
 /*------------------------------------- */
 
 /* ------------------------------------*/
@@ -71,25 +72,6 @@ a:hover {
 
 }
 
-/* all images can be opened by photoswipe - show pointer */
-.kg-image, .kg-gallery-image {
-  cursor: pointer;
-}
-
-.kg-embed-card iframe {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  height: auto;
-}
-.kg-width-full img,
-.kg-width-wide img {
-} /* required by gscan */
-
-/* This keeps small images centered */
-.kg-image,
-.kg-image-card img {
-    margin: auto;
-}
 iframe {
   display: block;
   width: 100%;
@@ -100,6 +82,11 @@ iframe {
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */
+
+/* all images can be opened by photoswipe - show pointer */
+.kg-image, .kg-gallery-image {
+  cursor: pointer;
+}
 .pswp__counter {
     height: 20px;
     line-height: 20px;
@@ -318,4 +305,52 @@ nav{
     text-decoration-color: var(--link-color);
     color: var(--link-color);
     opacity: 0.8;
+}
+/* -------------------------------------- */
+/* 6. Ghost cards                         */
+/* -------------------------------------- */
+.site {
+  .kg-embed-card iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+  .kg-width-full img,
+  .kg-width-wide img {
+  } /* required by gscan */
+
+  /* This keeps small images centered */
+  .kg-image,
+  .kg-image-card img {
+      margin: auto;
+  }
+  .gh-portal-triggerbtn-iframe .gh-portal-triggerbtn-container,
+  .kg-signup-card-button.kg-style-accent,
+  .kg-product-card a.kg-product-card-btn-accent ,
+  .kg-button-card a.kg-btn-accent ,
+  .kg-callout-card-accent {
+    background-color: var(--accent-color);
+    color: var(--secondary-text-color);
+    border: 2px solid var(--border-color);
+    font-size: 1.3rem;
+    padding: .5rem 1rem ;
+    font-weight: 500 ;
+  }
+
+  a.kg-product-card-button ,
+  a.kg-product-card-button > span{
+      color: var(--secondary-text-color); 
+  }
+
+  @media (min-width: 1100px) {
+    .kg-layout-split .kg-header-card-content {
+        grid-template-columns: 1fr;
+    }
+    .kg-layout-split .kg-header-card-text {
+      padding: min(1.2vmax, 26px) min(4vmax, 80px);
+    }
+    .kg-header-card-content .kg-header-card-image {
+      height:100%;
+    }
+}
 }

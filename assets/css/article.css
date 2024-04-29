@@ -24,7 +24,7 @@
 }
 /* margin for headings - todo*/
 .article-content > [id]:not(:first-child) {
-  margin-top: 56px;
+  margin-top: 26px;
 }
 .site {
   h1 {
