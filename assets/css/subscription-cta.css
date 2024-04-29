@@ -1,0 +1,69 @@
+.subscription-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    justify-content: center;
+    height: 300px;
+    margin: 20px;
+    background-color: var(--banner-background-color);
+}
+
+.subscription-cta-heading, .subscription-cta-description, .subscription-cta-form .error-text {
+    color: var(--banner-title-color);
+}
+
+.subscription-cta-form {
+    .form-input { grid-area: FormInput; }
+    .button { grid-area: Button; }
+    .error-text { grid-area: ErrorText; }
+
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    grid-template-areas:
+        "FormInput Button"
+        "ErrorText ErrorText";
+
+    gap: 30px;
+    padding: 5px 10px 5px 10px;
+    background-color: #e6e6e6; /*todo*/
+    border-radius: 10px;
+    height: 56px;
+    width: calc(100% - 50px);
+    max-width: 500px;
+
+    .button {
+       width: 120px;
+       justify-self: right;
+    }
+    .text {
+        font-size: 2rem;
+    }
+    .form-input {
+        background-color: transparent;
+        border: 0;
+        font-size: inherit;
+        letter-spacing: inherit;
+        height: 100%;
+        width: 100%;
+        outline: none;
+    }
+    
+}
+/* show the status of a subscription request */
+.subscription-cta-form {
+    .success-icon, .error-icon, .error-text, .loading-icon {
+        display: none;
+    }
+}
+.subscription-cta-form:is(.success, .error, .loading) .text {
+    display:none;
+}
+.subscription-cta-form.success .success-icon ,
+.subscription-cta-form.loading .loading-icon ,
+.subscription-cta-form.error .error-icon ,
+.subscription-cta-form.error .error-text {
+    display:block;
+    pointer-events: none;
+}

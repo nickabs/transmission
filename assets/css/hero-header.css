@@ -5,7 +5,7 @@
 /* ------------------------------------------------------------------------------------------------------ */
 
 .hero-header {
-    background-color: var(--hero-background-color);
+    background-color: var(--banner-background-color);
     width: 100%;
     height: var(--hero-header-height);
     display: flex;
@@ -19,7 +19,7 @@
 .hero-title {
     font-size: 3.25rem;
     font-weight: 800;
-    color: var(--hero-title-color);
+    color: var(--banner-title-color);
     z-index: 2;
 }
 

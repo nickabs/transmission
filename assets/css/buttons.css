@@ -1,26 +1,17 @@
 /* ---------------------- */
-/* "load more" pagination */
+/* buttons                */
 /* ---------------------- */
 
-.pagination {
-    display: grid;
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 15px;
-}
-.load-more {
+.button {
     background-color: var(--background-color);
     color: var(--title-color);
     border: 1px solid var(--border-color);
     border-radius: 3px;
     cursor: pointer;
-    display: inline-flex;
     font-size: 1.1rem;
     font-weight: 800;
     justify-content: center;
     letter-spacing: .05rem;
-    outline: none;
     padding: 5px 5px;
-    text-transform: uppercase;
 }
 

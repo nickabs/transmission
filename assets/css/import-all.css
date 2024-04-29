@@ -10,7 +10,8 @@
 @import "article-card.css";
 @import "table-of-contents.css";
 @import "social-links.css";
-@import "pagination.css";
+@import "buttons.css";
 @import "hero-header.css";
 @import "author.css";
 @import "article-card-lists.css";
+@import "subscription-cta.css";

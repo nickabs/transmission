@@ -13,6 +13,7 @@
     .main-article { grid-area: MainArticle; }
     .featured-articles { grid-area: FeaturedArticles; }
     .recent-articles { grid-area: RecentArticles; }
+    .subscription-cta { grid-area: SubscriptionCTA;}
     .previous-articles { grid-area: PreviousArticles; }
     .pagination { grid-area: Pagination; }
 }
@@ -40,6 +41,7 @@
         "HeroHeader"
         "MainArticle"
         "RecentArticles"
+        "SubscriptionCTA"
         "FeaturedArticles"
         "PreviousArticles"
         "Pagination"
@@ -76,7 +78,12 @@
         "Pagination"
         "SiteFooter";
 }
-
+.pagination {
+    display: grid;
+    justify-content: center;
+    padding-top: 35px;
+    padding-bottom: 15px;
+}
 /* tagged and author article layout (flexible grid of articles) */
 .site.author-template .author-articles,
 .site.tag-template .tagged-articles{
@@ -120,6 +127,7 @@
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
             "RecentArticles RecentArticles"
+            "SubscriptionCTA SubscriptionCTA"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -152,6 +160,7 @@
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
             "RecentArticles MainArticle FeaturedArticles"
+            "SubscriptionCTA SubscriptionCTA SubscriptionCTA"
             "PreviousArticles PreviousArticles PreviousArticles"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
