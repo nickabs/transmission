@@ -72,7 +72,7 @@ html[data-theme='dark'] {
     --heading-color: rgb(230, 237, 243);
     --secondary-title-color: #ccc;
     --text-color:#b0b2b4;
-    --secondary-text-color:  #1e1f20;
+    --secondary-text-color:  #8b949e;
     --border-color: #323030;
     --disabled-button-color: #575050;
     --accent-color: var(--site-accent-color-dark);
