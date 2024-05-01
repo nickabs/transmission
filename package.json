@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.9.0",
+    "version": "1.9.1",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -82,11 +82,11 @@
                 "type": "text",
                 "description": "if you use google analytics, add your id here"
             },
-            "subscribe_cta_heading": {
+            "subscription_cta_heading": {
                 "type": "text",
                 "description": "Defaults to site title when empty"
             },
-            "subscribe_cta_description": {
+            "subscription_cta_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty"
             } 
