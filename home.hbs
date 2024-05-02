@@ -42,6 +42,10 @@
         {{/get}}
     {{/if}}
 </aside>
-{{> "subscription-cta"}}
+{{#if @site.members_enabled}}
+    {{#unless @member}}
+    {{> "subscription-cta"}}
+        {{/unless}}
+{{/if}}
 {{pagination}}
 

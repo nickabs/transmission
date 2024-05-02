@@ -1,36 +1,32 @@
-{{#if @site.members_enabled}}
-    {{#unless @member}}
-        <aside class="subscription-cta">
-            <h2 class="subscription-cta-heading">
-                {{#if @custom.subscription_cta_heading}}
-                    {{@custom.subscription_cta_heading}}
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </h2>
-            <p class="subscription-cta-description">
-                {{#if @custom.subscription_cta_description}}
-                    {{@custom.subscription_cta_description}}
-                {{else}}
-                    {{@site.description}}
-                {{/if}}
-            </p>
-            <form class="subscription-cta-form" data-members-form>
-                <input class="form-input" id="{{email_field_id}}" type="email" placeholder="Your email" required data-members-email>
-                <button class="button button" type="submit" aria-label="Subscribe">
-                    <span class="text">Subscribe</span> 
-                    <span class="loading-icon" >
-                        {{> "icons/loading"}}
-                    </span>
-                    <span class="success-icon"> 
-                        {{> "icons/success"}}
-                    </span>
-                    <span class="error-icon"> 
-                        {{> "icons/error"}}
-                    </span>
-                </button>
-                <p class="error-text" data-members-error></p>
-            </form>
-        </aside>
-    {{/unless}}
-{{/if}}
+<aside class="subscription-cta">
+    <h2 class="subscription-cta-heading">
+        {{#if @custom.subscription_cta_heading}}
+            {{@custom.subscription_cta_heading}}
+        {{else}}
+            {{@site.title}}
+        {{/if}}
+    </h2>
+    <p class="subscription-cta-description">
+        {{#if @custom.subscription_cta_description}}
+            {{@custom.subscription_cta_description}}
+        {{else}}
+            {{@site.description}}
+        {{/if}}
+    </p>
+    <form class="subscription-cta-form" data-members-form>
+        <input class="form-input" id="{{email_field_id}}" type="email" placeholder="Your email" required data-members-email>
+        <button class="button button" type="submit" aria-label="Subscribe">
+            <span class="text">Subscribe</span> 
+            <span class="loading-icon" >
+                {{> "icons/loading"}}
+            </span>
+            <span class="success-icon"> 
+                {{> "icons/success"}}
+            </span>
+            <span class="error-icon"> 
+                {{> "icons/error"}}
+            </span>
+        </button>
+        <p class="error-text" data-members-error></p>
+    </form>
+</aside>
