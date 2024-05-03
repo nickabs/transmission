@@ -25,7 +25,7 @@
         "FormInput Button"
         "ErrorText ErrorText";
 
-    gap: 30px;
+    column-gap:30px;
     padding: 5px 10px 5px 10px;
     background-color: #e6e6e6; /*todo*/
     border-radius: 10px;
@@ -66,4 +66,14 @@
 .subscription-cta-form.error .error-text {
     display:block;
     pointer-events: none;
+}
+
+/* large screens - shown on rhs */
+@media(min-width: 1100px) {
+    .subscription-cta {
+        align-self: center;
+        height: 600px;
+        gap: 60px;
+
+    }
 }
