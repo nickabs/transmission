@@ -151,6 +151,15 @@
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
             "RecentArticles MainArticle FeaturedArticles"
+            "PreviousArticles PreviousArticles PreviousArticles"
+            "Pagination Pagination Pagination"
+            "SiteFooter SiteFooter SiteFooter";
+    }
+    .site.home-template:has(.subscription-banner) {
+        grid-template-areas:
+            "SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader"
+            "RecentArticles MainArticle FeaturedArticles"
             "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
