@@ -109,7 +109,7 @@ iframe {
 /* -------------------------------------- */
 .site-header {
   background-color: var(--background-color);
-  border-bottom: 0.25px solid var(--accent-color);
+  border-bottom: 0.25px solid var(--theme-accent-color);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -290,7 +290,7 @@ nav{
     font-weight: 600;
     font-size:1.2rem;
     color: var(--secondary-text-color);
-    border-top: 0.25px solid var(--accent-color);
+    border-top: 0.25px solid var(--theme-accent-color);
     margin-top: 10px;
     padding: 10px;
     display: flex;
@@ -324,12 +324,10 @@ nav{
   .kg-image-card img {
       margin: auto;
   }
-  .kg-subscription-banner-card-button.kg-style-accent,
   .kg-product-card a.kg-product-card-btn-accent ,
+  .kg-subscription-banner-card-button.kg-style-accent,
   .kg-button-card a.kg-btn-accent ,
   .kg-callout-card-accent {
-    background-color: var(--accent-color);
-    color: var(--secondary-text-color);
     border: 2px solid var(--border-color);
     font-size: 1.3rem;
     padding: .5rem 1rem ;

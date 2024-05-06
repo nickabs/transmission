@@ -59,7 +59,7 @@ html[data-theme='light'] {
     --secondary-text-color: #5a5a5a;
     --border-color: #d1d2db;
     --disabled-button-color: #ccc;
-    --accent-color: var(--site-accent-color-light);
+    --theme-accent-color: var(--theme-accent-color-light);
 }
 /* dark mode */
 html[data-theme='dark'] {
@@ -75,7 +75,7 @@ html[data-theme='dark'] {
     --secondary-text-color:  #8b949e;
     --border-color: #323030;
     --disabled-button-color: #575050;
-    --accent-color: var(--site-accent-color-dark);
+    --theme-accent-color: var(--theme-accent-color-dark);
 }
 
 .dark-mode,

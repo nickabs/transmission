@@ -11,7 +11,7 @@
 
 /* override tocbot color defaults */
 .toc .is-active-link::before {
-    background-color: var(--accent-color);
+    background-color: var(--theme-accent-color);
 }
 
 .toc-list {
