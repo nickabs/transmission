@@ -1,4 +1,4 @@
-.subscription-cta {
+.subscription-banner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,11 +10,11 @@
     background-color: var(--banner-background-color);
 }
 
-.subscription-cta-heading, .subscription-cta-description, .subscription-cta-form .error-text {
+.subscription-banner-heading, .subscription-banner-description, .subscription-banner-form .error-text {
     color: var(--banner-title-color);
 }
 
-.subscription-cta-form {
+.subscription-banner-form {
     .form-input { grid-area: FormInput; }
     .button { grid-area: Button; }
     .error-text { grid-area: ErrorText; }
@@ -26,24 +26,22 @@
         "ErrorText ErrorText";
 
     column-gap:30px;
-    padding: 5px 10px 5px 10px;
+    padding: 2px ;
     background-color: #e6e6e6; /*todo*/
-    border-radius: 10px;
-    height: 56px;
     width: calc(100% - 50px);
     max-width: 500px;
 
     .button {
-       width: 120px;
+       width: 95px;
        justify-self: right;
     }
     .text {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     .form-input {
+        font-size: 1.3rem;
         background-color: transparent;
         border: 0;
-        font-size: inherit;
         letter-spacing: inherit;
         height: 100%;
         width: 100%;
@@ -52,28 +50,32 @@
     
 }
 /* show the status of a subscription request */
-.subscription-cta-form {
+.subscription-banner-form {
     .success-icon, .error-icon, .error-text, .loading-icon {
         display: none;
     }
 }
-.subscription-cta-form:is(.success, .error, .loading) .text {
+.subscription-banner-form:is(.success, .error, .loading) .text {
     display:none;
 }
-.subscription-cta-form.success .success-icon ,
-.subscription-cta-form.loading .loading-icon ,
-.subscription-cta-form.error .error-icon ,
-.subscription-cta-form.error .error-text {
+.subscription-banner-form.success .success-icon ,
+.subscription-banner-form.loading .loading-icon ,
+.subscription-banner-form.error .error-icon ,
+.subscription-banner-form.error .error-text {
     display:block;
     pointer-events: none;
 }
 
 /* large screens - shown on rhs */
 @media(min-width: 1100px) {
-    .subscription-cta {
+    .subscription-banner {
         align-self: center;
         height: 600px;
         gap: 60px;
 
+    }
+    .post-template .subscription-banner {
+        height: 200px;
+        gap: 10px;
     }
 }

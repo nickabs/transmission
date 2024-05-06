@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.9.0",
+    "version": "1.9.1",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -82,11 +82,17 @@
                 "type": "text",
                 "description": "if you use google analytics, add your id here"
             },
-            "subscription_cta_heading": {
+            "subscription_banner": {
+                "type": "select",
+                "options": ["None", "Home Page", "Posts", "Home Page & Posts" ],
+                "default": "None",
+                "description": "use this option to show a banner inviting people to subscribe to the site"
+            },
+            "subscription_banner_heading": {
                 "type": "text",
                 "description": "Defaults to site title when empty"
             },
-            "subscription_cta_description": {
+            "subscription_banner_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty"
             } 

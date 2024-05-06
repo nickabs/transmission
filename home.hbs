@@ -44,8 +44,12 @@
 </aside>
 {{#if @site.members_enabled}}
     {{#unless @member}}
-    {{> "subscription-cta"}}
-        {{/unless}}
+        {{#match @custom.subscription_banner "Home Page"}}
+            {{> "subscription-banner"}}
+        {{else match @custom.subscription_banner "Home Page & Posts" }}
+            {{> "subscription-banner"}}
+        {{/match}}
+    {{/unless}}
 {{/if}}
 {{pagination}}
 

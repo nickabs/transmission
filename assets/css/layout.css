@@ -5,31 +5,20 @@
 /*------------------------------------------------------------ */
 /* map html elements to the grid areas used in the grids below */
 /*------------------------------------------------------------ */
-.site-header { grid-area: SiteHeader; }
+.article-content { grid-area: ArticleContent; }
+.featured-articles { grid-area: FeaturedArticles; }
 .hero-header { grid-area: HeroHeader; }
+.main-article { grid-area: MainArticle; }
+.pagination { grid-area: Pagination; }
+.previous-articles { grid-area: PreviousArticles; }
+.recent-articles { grid-area: RecentArticles; }
+.related-articles { grid-area:RelatedArticles}
 .site-footer { grid-area: SiteFooter; }
-
-.home-template {
-    .main-article { grid-area: MainArticle; }
-    .featured-articles { grid-area: FeaturedArticles; }
-    .recent-articles { grid-area: RecentArticles; }
-    .subscription-cta { grid-area: SubscriptionCTA;}
-    .previous-articles { grid-area: PreviousArticles; }
-    .pagination { grid-area: Pagination; }
-}
-
-.post-template, 
-.page-template {
-    .article-content { grid-area: ArticleContent; }
-    .table-of-contents { grid-area: TableOfContents; }
-    .social-links { grid-area: SocialLinks; } 
-    .related-articles { grid-area:RelatedArticles}
-}
-
-.tag-template {
-    .tagged-articles { grid-area: TaggedArticles; }
-    .pagination { grid-area: Pagination; }
-}
+.site-header { grid-area: SiteHeader; }
+.social-links { grid-area: SocialLinks; }
+.subscription-banner { grid-area: SubscriptionBanner;}
+.table-of-contents { grid-area: TableOfContents; }
+.tagged-articles { grid-area: TaggedArticles; }
 
 /*------------------------*/
 /* home-page mobile view  */
@@ -41,7 +30,7 @@
         "HeroHeader"
         "MainArticle"
         "RecentArticles"
-        "SubscriptionCTA"
+        "SubscriptionBanner"
         "FeaturedArticles"
         "PreviousArticles"
         "Pagination"
@@ -57,6 +46,7 @@
     "SiteHeader"
     "HeroHeader"
     "ArticleContent"
+    "SubscriptionBanner"
     "RelatedArticles"
     "Pagination"
     "TableOfContents"
@@ -127,7 +117,7 @@
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
             "RecentArticles RecentArticles"
-            "SubscriptionCTA SubscriptionCTA"
+            "SubscriptionBanner SubscriptionBanner"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -141,6 +131,7 @@
             "HeroHeader HeroHeader"
             "TableOfContents TableOfContents"
             "ArticleContent SocialLinks"
+            "SubscriptionBanner SocialLinks"
             "RelatedArticles SocialLinks"
             "Pagination SocialLinks"
             "SiteFooter SiteFooter";
@@ -160,7 +151,7 @@
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
             "RecentArticles MainArticle FeaturedArticles"
-            "PreviousArticles PreviousArticles SubscriptionCTA"
+            "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
     }
@@ -171,6 +162,7 @@
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
             "TableOfContents ArticleContent SocialLinks"
+            "TableOfContents SubscriptionBanner SocialLinks"
             "TableOfContents RelatedArticles SocialLinks"
             "TableOfContents Pagination SocialLinks"
             "SiteFooter SiteFooter SiteFooter";
