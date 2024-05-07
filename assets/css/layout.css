@@ -182,22 +182,3 @@
 .site .hero-header .hero-image {
     display:none;
 }
-
-/* ------------------------------------------------------------------------------- */
-/* article-card list layouts                                                        */
-/* ------------------------------------------------------------------------------- */
-
-
-/* show the article cards as a column */
-.main-article,
-.previous-articles,
-.related-articles,
-.recent-articles,
-.featured-articles {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-

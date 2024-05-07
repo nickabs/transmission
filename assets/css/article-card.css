@@ -105,7 +105,6 @@
     .recent-articles .article-card {
         display:grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1.5fr 0.3fr 0.3fr;
         grid-template-areas:
             "Image"
             "Title"
@@ -137,17 +136,21 @@
     font-size: 2rem;
 }
 
-.main-article .article-card h1 ,
-.previous-articles .article-card h1 ,
-.recent-articles .article-card h1 {
-    line-height: 1.3;
-    font-size: 1.8rem;
+.main-article,
+.previous-articles {
+    .article-card h1 {
+        line-height: 1.3;
+        font-size: 1.8rem;
+    }
 }
 
-.related-articles .article-card h1,
-.featured-articles .article-card h1 {
-    line-height: 1.3;
-    font-size: 1.5rem;
+.recent-articles,
+.related-articles ,
+.featured-articles {
+    .article-card h1 {
+        line-height: 1.3;
+        font-size: 1.5rem;
+    }
 }
 
 .main-article .article-card-excerpt.short {
