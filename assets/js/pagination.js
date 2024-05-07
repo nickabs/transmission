@@ -1,6 +1,6 @@
 /* pagination */
 (function (isInfinite, callback) {
-    var buttonElement = document.querySelector('.load-more');
+    var buttonElement = document.querySelector('.pagination');
 
     // next link element
     var nextElement = document.querySelector('link[rel=next]');
