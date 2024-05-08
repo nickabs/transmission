@@ -1,8 +1,9 @@
-/* -------------------------------- */
-/* article-card content layout      */
-/* article-card borders and spacing */
-/* article-card list titles         */
-/* -------------------------------- */
+/* -------------------------------------- */
+/* article-card content layout            */
+/* article-card borders and spacing       */
+/* article-card list titles               */
+/* list view for authors and tagged posts */
+/* -------------------------------------- */
 
 /* ---------------------------- */
 /* article-card contents layout */
@@ -262,4 +263,28 @@
     font-weight: 550;
     letter-spacing: .025em;
     margin-bottom: 13px;
+}
+
+/* -------------------------------------- */
+/* list view for authors and tagged posts */
+/* -------------------------------------- */
+.author-articles,
+.tagged-articles {
+    .article-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .article-card-title {
+        align-self:flex-start;
+    }
+    .article-card-excerpt {
+        font-size: 1.3rem;
+    }
+    img {
+        max-height: 700px;
+        aspect-ratio: 4/3;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
 }

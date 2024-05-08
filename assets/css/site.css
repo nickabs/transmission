@@ -321,6 +321,19 @@ nav{
     color: var(--link-color);
     opacity: 0.8;
 }
+.site-footer {
+  display:flex;
+  justify-content: space-between;
+}
+.footer-links {
+  display:inline-flex;
+  white-space: pre;
+}
+/* only show the link to the transmission github on larger screens */
+.theme-link {
+  display:none;
+}
+
 /* -------------------------------------- */
 /* 6. Ghost cards                         */
 /* -------------------------------------- */
