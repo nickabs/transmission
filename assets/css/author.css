@@ -1,5 +1,5 @@
 .author-title {
-    color: var(--hero-description-color);
+    color: var(--banner-description-color);
     display: flex;
     flex-direction: row;
     gap: 24px;
@@ -14,7 +14,7 @@
 }
 
 .author-bio {
-    color: var(--hero-description-color);
+    color: var(--banner-description-color);
     max-width: 1000px;
     padding-top:10px;
     text-align: center;
@@ -23,7 +23,7 @@
     }
 }
 .author-links {
-    color: var(--hero-description-color);
+    color: var(--banner-description-color);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -40,6 +40,6 @@
     align-items: center;
     gap:3px;
     a, svg {
-        color: var(--hero-description-color);
+        color: var(--banner-description-color);
     }
 }

@@ -24,7 +24,7 @@
 }
 
 .hero-description {
-    color: var(--hero-description-color);
+    color: var(--banner-description-color);
     font-size: 1.7rem;
     z-index: 2;
 }
@@ -33,7 +33,7 @@
 .hero-authors, .hero-date, .hero-tags, .hero-authors {
     z-index: 2;
     font-size: 1.5rem;
-    color: var(--hero-description-color);
+    color: var(--banner-description-color);
 }
 
 .hero-tags a, .hero-authors a {

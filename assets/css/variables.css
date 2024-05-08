@@ -12,10 +12,7 @@
 */
 
 :root {
-    --background-color: #141414; /* reduce screen flash */
-    --banner-background-color: #333;
-    --banner-title-color: #fff;
-    --hero-description-color: #ccc;
+    --background-color: #141414;
     --font-sans: 'Inter', 'Inter-fallback', 'Trebuchet MS', sans-serif;
     --font-mono: 'Menlo', 'Courier New', monospace;
     --content-font-size: 1.6rem;
@@ -47,7 +44,9 @@
 
 /* light mode */
 html[data-theme='light'] {
-    --banner-background-color: rgb(22, 27, 34);
+    --banner-background-color: #ffffff;
+    --banner-title-color: #15171a;
+    --banner-description-color: #15171a;
     --background-color: #fff;
     --secondary-background-color: #e6e2e2;
     --code-color: #3ead43;
@@ -63,7 +62,9 @@ html[data-theme='light'] {
 }
 /* dark mode */
 html[data-theme='dark'] {
-    --banner-background-color: rgb(22, 27, 34);
+    --banner-title-color: #fff;
+    --banner-description-color: #ccc;
+    --banner-background-color: #161b22;
     --background-color: #181818;
     --secondary-background-color: #212022;
     --code-color: #f08d49;
@@ -77,6 +78,7 @@ html[data-theme='dark'] {
     --disabled-button-color: #575050;
     --theme-accent-color: var(--theme-accent-color-dark);
 }
+
 
 .dark-mode,
 .light-mode {
