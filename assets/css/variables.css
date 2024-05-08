@@ -4,15 +4,12 @@
 
 /* 
  screen sizes:
- mobile: 500px
+ mobile: 480px
  tablet: 760px
- laptop: 992px
- desktop: 1200px
- widescreen: 1400px
+ laptop: 1100px
 */
 
 :root {
-    --background-color: #141414;
     --font-sans: 'Inter', 'Inter-fallback', 'Trebuchet MS', sans-serif;
     --font-mono: 'Menlo', 'Courier New', monospace;
     --content-font-size: 1.6rem;
@@ -52,12 +49,10 @@ html[data-theme='light'] {
     --code-color: #3ead43;
     --link-color: #0969da;
     --title-color: #444;
-    --heading-color: #444;
     --secondary-title-color: #1a1a1a;
     --text-color: #333;
     --secondary-text-color: #5a5a5a;
     --border-color: #d1d2db;
-    --disabled-button-color: #ccc;
     --theme-accent-color: var(--theme-accent-color-light);
 }
 /* dark mode */
@@ -70,20 +65,9 @@ html[data-theme='dark'] {
     --code-color: #f08d49;
     --link-color: #4493f8;
     --title-color:  #f0f6fc;
-    --heading-color: rgb(230, 237, 243);
     --secondary-title-color: #ccc;
     --text-color:#b0b2b4;
     --secondary-text-color:  #8b949e;
     --border-color: #323030;
-    --disabled-button-color: #575050;
     --theme-accent-color: var(--theme-accent-color-dark);
-}
-
-
-.dark-mode,
-.light-mode {
-    display: none!important;
-}
-[data-theme=dark] .light-mode, [data-theme=light] .dark-mode { 
-    display: block!important;
 }

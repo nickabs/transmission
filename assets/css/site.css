@@ -6,6 +6,7 @@
 /* 4. menu                              */
 /* 5. site footer                       */
 /* 6. Ghost cards                       */
+/* 7. dark/light mode icons             */
 /*------------------------------------- */
 
 /* ------------------------------------*/
@@ -378,4 +379,16 @@ nav{
       height:100%;
     }
 }
+}
+
+/* ------------------------ */
+/* 7. dark/light mode icons */
+/* ------------------------ */
+
+.dark-mode,
+.light-mode {
+    display: none!important;
+}
+[data-theme=dark] .light-mode, [data-theme=light] .dark-mode { 
+    display: block!important;
 }

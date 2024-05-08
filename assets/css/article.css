@@ -38,8 +38,7 @@
       font-size: var(--h3-font-size);
   }
   .article-content h1, .article-content.h2, .article-content.h3 {
-    color: var(--heading-color);
-    margin-block:0 0;
+      margin-block:0 0;
   }
   sup {
       font-size: var(--content-sup-font-size);
