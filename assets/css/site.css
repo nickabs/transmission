@@ -48,31 +48,6 @@ a:hover {
     opacity: 0.8;
 }
 
-/* default margins and padding */
-/* todo home page spacing*/
-.main-article,
-.recent-articles,
-.featured-articles,
-.previous-articles ,
-.related-articles {
-    padding-left: var(--site-padding);
-    padding-right: var(--site-padding);
-    margin-top: var(--top-margin);
-}
-/* list titles */
-.site {
-  .related-articles-title,
-  .recent-articles-title,
-  .featured-articles-title,
-  .previous-articles-title {
-      border-bottom: 1px solid var(--border-color);
-      font-size: 1.6rem;
-      font-weight: 550;
-      letter-spacing: .025em;
-      margin-bottom: 13px;
-  }
-}
-
 @media (min-width: 1100px) {
   .article-content {
     padding-left: 0px;
@@ -83,7 +58,7 @@ a:hover {
   .social-links,
   .article-content ,
   .table-of-contents {
-    margin-top: calc(var(--top-margin)*1.5);
+    margin-top: calc(var(--site-top-margin)*1.5);
   }
 
 }

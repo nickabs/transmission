@@ -36,6 +36,7 @@
         "Pagination"
         "SiteFooter";
 }
+
 /*------------------------*/
 /* post/page mobile view */
 /*------------------------*/
@@ -54,11 +55,11 @@
     "SocialLinks";
 }
 
-/*------------------------*/
-/* tag collection         */ 
-/* all screen sizes view  */
-/*------------------------*/
-.site.tag-template {
+/*---------------------------------------------------*/
+/* tag and author collection - all screen sizes view */
+/*---------------------------------------------------*/
+.author-template,
+.tag-template {
     display:grid;
     grid-column: content;
     grid-template-areas:
@@ -68,19 +69,15 @@
         "Pagination"
         "SiteFooter";
 }
+
+/* ------------------------------- */
+/* pagination (load more articles) */
+/* ------------------------------- */
 .pagination {
     display: grid;
     justify-content: center;
     padding-top: 35px;
     padding-bottom: 15px;
-}
-/* tagged and author article layout (flexible grid of articles) */
-.site.author-template .author-articles,
-.site.tag-template .tagged-articles{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
-    gap: 47px;
-    margin:47px;
 }
 
 /* -------------- */

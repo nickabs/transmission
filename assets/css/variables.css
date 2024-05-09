@@ -4,9 +4,10 @@
 
 /* 
  screen sizes:
- mobile: 480px
- tablet: 760px
- laptop: 1100px
+ mobile: < 480px
+ tablet: 480 - 760px
+ laptop: 760 - 1100px
+ large screens: > 1100px
 */
 
 :root {
@@ -19,8 +20,8 @@
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
     --max-content-width: 720px;
-    --site-padding: max(4vmin, 20px); 
-    --top-margin: max(1.5vw,24px);
+    --site-left-right-padding: max(4vmin, 20px); 
+    --site-top-margin: max(1.5vw,24px);
     --nav-bar-height: 55px; /* height of top nav bar */
     --hero-header-height: 160px ;
     --grid-gap: 47px;
