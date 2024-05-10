@@ -45,15 +45,15 @@
         },
         "card_assets": true,
         "custom": {
-            "show_featured_posts": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
             "show_related_posts": {
                 "type": "boolean",
                 "default": true,
                 "group": "post"
+            },
+            "show_featured_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
             },
             "show_author": {
                 "type": "boolean",
@@ -70,23 +70,22 @@
                 "default": true,
                 "group": "homepage"
             },
-            "site_accent_color_dark": {
-                "type": "color",
-                "default": "#564d4d"
-            },
-            "site_accent_color_light": {
-                "type": "color",
-                "default": "#e6e6e6"
-            },
-            "google_analytics_id": {
-                "type": "text",
-                "description": "if you use google analytics, add your id here"
+            "home_page_style": {
+                "type": "select",
+                "options": [
+                    "List",
+                    "Focus (right)",
+                    "Focus (middle)",
+                    "Focus (left)"
+                ],
+                "default": "Focus(Left)",
+                "group": "homepage"
             },
             "subscription_banner": {
                 "type": "select",
                 "options": ["None", "Home Page", "Posts", "Home Page & Posts" ],
                 "default": "None",
-                "description": "use this option to show a banner inviting people to subscribe to the site"
+                "description": "Show a banner inviting people to subscribe to the site"
             },
             "subscription_banner_heading": {
                 "type": "text",
@@ -95,7 +94,28 @@
             "subscription_banner_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty"
-            } 
+            },
+            "google_analytics_id": {
+                "type": "text",
+                "description": "if you use google analytics, add your GA id here"
+            },
+            "article_collection_style": {
+                "type": "select",
+                "options": [
+                    "List",
+                    "Grid"
+                ],
+                "default": "Grid",
+                "description": "tagged/author collection style"
+            },
+            "site_accent_color_dark": {
+                "type": "color",
+                "default": "#564d4d"
+            },
+            "site_accent_color_light": {
+                "type": "color",
+                "default": "#e6e6e6"
+            }
         }
     },
     "scripts": {

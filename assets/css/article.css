@@ -1,47 +1,34 @@
 /* ------------------------------- */
 /* styling for all article content */
 /* ------------------------------- */
-.article-content {
-  max-width: 100vw;
+.article-content,
+.related-articles { 
   justify-self: center;
-  padding-left: var(--site-left-right-padding);
-  padding-right: var(--site-left-right-padding);
+  max-width: var(--max-content-width);
 }
-
 .article-content > :first-child{
   padding-top:15px;
 }
-
 @media screen and (min-width: 760px) {
   .article-content :first-child{
     padding-top:0px;
   }
 }
-
 .article-content > * + * {
-  margin-top:var(--site-top-margin);
   font-size: var(--content-font-size);
 }
-/* margin for headings - todo*/
+
+/* margin for headings*/
 .article-content > [id]:not(:first-child) {
   margin-top: 26px;
 }
 .site {
-  h1 {
-      font-size: var(--h1-font-size);
-  }
-  h2 {
-      font-size: var(--h2-font-size);
-  }
-
-  h3 {
-      font-size: var(--h3-font-size);
-  }
+  h1 { font-size: var(--h1-font-size); }
+  h2 { font-size: var(--h2-font-size); }
+  h3 { font-size: var(--h3-font-size); }
+  sup { font-size: var(--content-sup-font-size); }
   .article-content h1, .article-content.h2, .article-content.h3 {
       margin-block:0 0;
-  }
-  sup {
-      font-size: var(--content-sup-font-size);
   }
 }
 
@@ -51,7 +38,6 @@
 .article-content blockquote {
     margin-top: 2rem; 
 }
-
 .article-content blockquote {
     font-style: italic;
     padding: 0 2rem;
@@ -67,11 +53,9 @@
     margin-top: 1.0rem;
     text-align: center;
 }
-
 .article-content li + li {
     margin-top: 0.8rem;
 }
-
 .article-content a span,
 .article-content a {
   color: var(--link-color);
@@ -109,17 +93,14 @@
     background-color: var(--background-color);
   }
 }
-
 #references + table tbody tr td {
   border-bottom: 1px solid var(--border-color);
 }
-
 .article-content table {
   border-collapse: collapse;
-  margin-top: var(--site-top-margin);
+  margin-top: var(--section-gap);
   width: 100%!important;
 }
-
 .article-content table thead, tfoot tr {
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
@@ -130,8 +111,6 @@
 .article-content table td {
   padding: 5px;
 }
-
-
 .article-content tr td:first-child {
     min-width: 1%;
     max-width: 25%;
@@ -155,6 +134,7 @@ code[class*="language-"] {
 .command-line span.token.output {
 	user-select: none;
 }
+
 /* inline code */
 :not(pre) > code {
 	font-size: 1.4rem;

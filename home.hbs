@@ -7,13 +7,13 @@
         {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
     {{/foreach}}
 </article>
-<aside class="recent-articles article-card-list">
+<aside class="recent-articles  ">
     <h1 class="recent-articles-title" >RECENT</h1>
     {{#foreach posts from="2" limit="3"}}
         {{> "article-card" imageSizes="(max-width: 767px) calc(100vw - max(8vmin, 40px)), 640px"}}
     {{/foreach}}
 </aside>
-<aside class="featured-articles article-card-list">
+<aside class="featured-articles  ">
     {{#if @custom.show_featured_posts}}
         <h1 class="featured-articles-title" >FEATURED</h1>
         {{#get "posts" filter="featured:true" include="authors,tags" limit=6 as |featured|}}
@@ -28,7 +28,7 @@
         {{/foreach}}
     {{/if}}
 </aside>
-<aside class="previous-articles article-card-list paginated">
+<aside class="previous-articles   paginated">
     <h1 class="previous-articles-title" >MORE</h1>
     {{#if @custom.show_featured_posts}}
         {{#foreach posts from="5"}}

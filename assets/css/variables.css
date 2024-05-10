@@ -1,9 +1,9 @@
-/* --------------------------- */
-/* variables used in the theme */
-/* --------------------------- */
+/* ---------------------------------- */
+/* global variables used in the theme */
+/* ---------------------------------- */
 
 /* 
- screen sizes:
+ nominal screen sizes:
  mobile: < 480px
  tablet: 480 - 760px
  laptop: 760 - 1100px
@@ -20,12 +20,11 @@
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
     --max-content-width: 720px;
-    --site-left-right-padding: max(4vmin, 20px); 
-    --site-top-margin: max(1.5vw,24px);
-    --nav-bar-height: 55px; /* height of top nav bar */
+    --site-edge-padding: max(5vmin, 20px); 
+    --section-gap: max(1.5vw,24px);
+    --article-card-gap: 15px; 
+    --nav-bar-height: 55px; 
     --hero-header-height: 160px ;
-    --grid-gap: 47px;
-    --container-gap: clamp(24px, 1.7032rem + 1.9355vw, 48px); /* gap responds to screen size (within bounds of 24/48px)*/
 }
 
 /* font sizes on larger screens */

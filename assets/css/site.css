@@ -1,6 +1,6 @@
 /*------------------------------------- */
 /* set the styles used accross the site */
-/* 1. default text styles for the site  */
+/* 1. default styles for the site       */
 /* 2. photoswipe lightbox adjustments   */
 /* 3. site header                       */
 /* 4. menu                              */
@@ -9,9 +9,9 @@
 /* 7. dark/light mode icons             */
 /*------------------------------------- */
 
-/* ------------------------------------*/
-/* 1. default text styles for the site */
-/* ------------------------------------*/
+/* -------------------------------*/
+/* 1. default styles for the site */
+/* -------------------------------*/
 
 /*
  * font sizes are expressed as rems (the pixel size are calculated relative to browser root font size, which can be set by the user)
@@ -22,7 +22,6 @@
 html {
     font-size: 62.5%;
 }
-
 body {
     font-family: var(--font-sans);
     font-size: var(--content-font-size);
@@ -33,7 +32,6 @@ body {
     margin:0;
     scroll-margin-top: var(--nav-bar-height);
 }
-
 img {
     height: auto;
 }
@@ -43,26 +41,17 @@ a {
     color: var(--text-color);
     text-decoration: none;
 }
-
 a:hover {
     opacity: 0.8;
 }
-
 @media (min-width: 1100px) {
   .article-content {
     padding-left: 0px;
   }
 }
-
-@media (min-width: 760px) {
-  .social-links,
-  .article-content ,
-  .table-of-contents {
-    margin-top: calc(var(--site-top-margin)*1.5);
-  }
-
+.hero-header {
+    margin-bottom: var(--section-gap);
 }
-
 iframe {
   display: block;
   width: 100%;
@@ -87,7 +76,6 @@ iframe {
     width: 20px;
     height: 20px;
 }
-
 .pswp__button--arrow > svg {
     color: var(--text-color);
     fill: var(--background-color);
@@ -108,7 +96,7 @@ iframe {
   padding-right:10px;
 
 }
-nav{
+nav {
   background-color: var(--background-color);
   display: flex;
   height:var(--nav-bar-height); 
@@ -117,16 +105,46 @@ nav{
   font-size: 1.5rem;
   font-weight: 700;
 }
-
 .search, .logo, #dark-mode-toggle, .open-menu, .close-menu {
   flex-basis: 30px;
   flex-shrink: 0;
 }
-
 .close-menu svg,
-.open-menu svg{
+.open-menu svg {
   height:20px;
   width:20px;
+}
+
+/* border on left and right of site */
+.site > * {
+  padding-left: var(--site-edge-padding);
+  padding-right: var(--site-edge-padding);
+}
+.home-template > *,
+.author-template > *,
+.tag-template > * {
+  @media (min-width:480px) {
+    margin-left: 15vw ;
+    margin-right: 15vw ;
+  }
+  @media (min-width:760px) {
+        margin-left: 20vw ;
+        margin-right: 20vw ;
+  }
+  @media (min-width:1100px) {
+        margin-left: 25vw ;
+        margin-right: 25vw ;
+  }
+}
+.home-template,
+.author-template,
+.tag-template {
+  .site-header,
+  .hero-header,
+  .site-footer  {
+        margin-left:0;
+        margin-right:0;
+  }
 }
 
 /* -------------------------------------- */
@@ -171,11 +189,9 @@ nav{
   margin-left: auto;
   display: block;
 }
-
 .menu, .submenu {
   list-style: none;
 }
-
 @keyframes showMenu {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -191,7 +207,6 @@ nav{
 .subitem {
   padding-top: 5px;
 }
-
 .site.menu-open .site-content {
   filter: blur(5px);
 }
@@ -207,7 +222,6 @@ nav{
 
 /* larger screens - show menu in nav bar*/
 @media (min-width: 760px) {
-
   .menu {
     position:unset;
     display:flex;
@@ -218,6 +232,7 @@ nav{
     column-gap: 25px;
     flex-wrap: wrap;
   }
+
   /* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
   .menu:not(.menu-ready){
     opacity:0;
@@ -225,57 +240,53 @@ nav{
   .menu.menu-ready {
     opacity:1;
   }
-
-@keyframes showSubmenu {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-.submenu-open .submenu {
-  animation: showSubmenu 300ms ease-in-out both;
-  z-index: 3;
-  display: block;
-  position: absolute;
-  left: 0;
-  background-color: var(--background-color);
-  border-style: solid;
-  border-color: var(--secondary-background-color);
-  border-radius: 2%;
-  box-shadow: 0 1px 3px 0 rgba(76, 137, 251, 0.15), 0 1px 5px 0 rgba(76, 137, 251, 0.10);
-  padding-left: 0;
-}
-
-.item {
-  display: block;
-  position: relative;
-  width: auto;
-}
-.item a {
-  padding: 0px 10px 0px 10px;
-}
-.menu .item a:hover {
-  border-radius: 0.375rem;
-  background-color: var(--secondary-background-color);
-  color: var(--secondary-text-color);
-  opacity: 1;
-}
-.subitem {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1.50rem;
-  padding-right: 1.50rem;
-  width: 100%;
-  white-space: nowrap;
-}
-
-.close-menu, .open-menu{
-  display: none ;
+  @keyframes showSubmenu {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  .submenu-open .submenu {
+    animation: showSubmenu 300ms ease-in-out both;
+    z-index: 3;
+    display: block;
+    position: absolute;
+    left: 0;
+    background-color: var(--background-color);
+    border-style: solid;
+    border-color: var(--secondary-background-color);
+    border-radius: 2%;
+    box-shadow: 0 1px 3px 0 rgba(76, 137, 251, 0.15), 0 1px 5px 0 rgba(76, 137, 251, 0.10);
+    padding-left: 0;
+  }
+  .item {
+    display: block;
+    position: relative;
+    width: auto;
+  }
+  .item a {
+    padding: 0px 10px 0px 10px;
+  }
+  .menu .item a:hover {
+    border-radius: 0.375rem;
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    opacity: 1;
+  }
+  .subitem {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.50rem;
+    padding-right: 1.50rem;
+    width: 100%;
+    white-space: nowrap;
+  }
+  .close-menu, .open-menu{
+    display: none ;
+  }
 }
 
-}
 /* -------------------------------------- */
 /* 5. site footer (privacy and copyright) */
 /* -------------------------------------- */
-
 .site-footer {
     line-height: 2.1rem;
     font-weight: 600;
@@ -287,7 +298,6 @@ nav{
     display: flex;
     justify-content: space-between;
 }
-
 .site-footer a {
   color: var(--secondary-text-color);
 }
@@ -305,6 +315,7 @@ nav{
   display:inline-flex;
   white-space: pre;
 }
+
 /* only show the link to the transmission github on larger screens */
 .theme-link {
   display:none;
@@ -337,7 +348,6 @@ nav{
     padding: .5rem 1rem ;
     font-weight: 500 ;
   }
-
   a.kg-product-card-button ,
   a.kg-product-card-button > span{
       color: var(--secondary-text-color); 
@@ -353,13 +363,12 @@ nav{
     .kg-header-card-content .kg-header-card-image {
       height:100%;
     }
-}
+  }
 }
 
 /* ------------------------ */
 /* 7. dark/light mode icons */
 /* ------------------------ */
-
 .dark-mode,
 .light-mode {
     display: none!important;
