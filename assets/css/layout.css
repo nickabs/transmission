@@ -135,12 +135,6 @@
 
 @media (min-width: 1100px) { 
     /* home page layout */
-    .site:not(:has(.subscription-banner)) {
-        .previous-articles {
-            grid-row: 4;
-            grid-column: 1 / span 3; 
-        }
-    }
     .site.home-template.home-page-focus-left {
         grid-template-columns: 1.7fr 1fr 1fr; 
         grid-template-areas:
@@ -150,6 +144,9 @@
             "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
+        &:not(:has(.subscription-banner)) .previous-articles {
+            grid-row: 4; grid-column: 1 / span 3; 
+        }
     }
     .site.home-template.home-page-focus-middle {
         grid-template-columns: 1fr 1.7fr 1fr; 
@@ -160,6 +157,9 @@
             "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
+        &:not(:has(.subscription-banner)) .previous-articles {
+            grid-row: 4; grid-column: 1 / span 3; 
+        }
     }
     .site.home-template.home-page-focus-right {
         grid-template-columns: 1fr 1fr 1.7fr; 
@@ -170,6 +170,9 @@
             "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
             "SiteFooter SiteFooter SiteFooter";
+        &:not(:has(.subscription-banner)) .previous-articles {
+            grid-row: 4; grid-column: 1 / span 3; 
+        }
     }
     /* page and post layout */
     .site.page-template, .site.post-template {
