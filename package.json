@@ -78,7 +78,7 @@
                     "Focus (middle)",
                     "Focus (left)"
                 ],
-                "default": "Focus(Left)",
+                "default": "Focus (left)",
                 "group": "homepage"
             },
             "subscription_banner": {

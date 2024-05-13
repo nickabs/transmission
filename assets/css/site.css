@@ -128,12 +128,12 @@ nav {
     margin-right: 15vw ;
   }
   @media (min-width:760px) {
-        margin-left: 20vw ;
-        margin-right: 20vw ;
+    margin-left: 20vw ;
+    margin-right: 20vw ;
   }
   @media (min-width:1100px) {
-        margin-left: 25vw ;
-        margin-right: 25vw ;
+    margin-left: 25vw ;
+    margin-right: 25vw ;
   }
 }
 .home-template,
