@@ -50,7 +50,7 @@
 .article-collection-as-list {
     .author-articles, 
     .tagged-articles {
-        gap: var(--article-card-padding);
+        gap: var(--article-card-gap);
         .article-card {
             @media (min-width:760px) {
                 grid-template-columns: 1.2fr 2fr;
@@ -82,14 +82,14 @@
 
 /* divider between article-cards */
 .article-card {
-    padding-bottom: var(--article-card-padding);
-    padding-top: var(--article-card-padding);
+    padding-bottom: var(--article-card-gap);
+    padding-top: var(--article-card-gap);
 }
 .site > * .article-card:not(:last-of-type) {
     border-bottom: 1px solid var(--border-color);
 }
 .site > * .article-card:first-of-type {
-    padding-top: calc(var(--article-card-padding)/1.5) ;
+    padding-top: calc(var(--article-card-gap)/1.5) ;
 }
 
 /* ------------------------ */
@@ -128,7 +128,7 @@
         grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
         margin-left:0;
         margin-right:0;
-        gap: var(--article-card-padding);
+        gap: var(--article-card-gap);
         /* bob article cards up and down on hover */
         .article-card:hover {
             translate: 0 -10px;
