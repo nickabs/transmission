@@ -16,10 +16,13 @@
         {{#if @site.members_enabled}}
             {{#unless @member}}
                 {{#unless @site.members_invite_only}}
-                    <a href="#/portal/signin" data-portal="signin">Sign in</a>
+                    <a href="#/portal/signin" class="signin">Sign in</a>
+                    {{#if @custom.show_header_subscription_button}}
+                        <a class="signup button" aria-label="sign up" href="#/portal/signup">Sign up</a>
+                    {{/if}}
                 {{/unless}}
             {{else}}
-                <a class="gh-button" href="#/portal/account" data-portal="account">Account</a>
+                <a class="gh-button" href="#/portal/account" class="account">Account</a>
             {{/unless}}
         {{/if}}
 

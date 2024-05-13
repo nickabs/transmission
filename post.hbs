@@ -16,11 +16,9 @@
 
 {{#if @site.members_enabled}}
     {{#unless @member}}
-        {{#match @custom.subscription_banner "Posts"}}
+        {{#if @custom.show_post_subscription_banner }}
             {{> "subscription-banner"}}
-        {{else match @custom.subscription_banner "Home Page & Posts" }}
-            {{> "subscription-banner"}}
-        {{/match}}
+        {{/if}}
     {{/unless}}
 {{/if}}
 

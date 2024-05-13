@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.10.1",
+    "version": "1.11.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -50,6 +50,12 @@
                 "default": true,
                 "group": "post"
             },
+            "show_post_subscription_banner": {
+                "type": "boolean",
+                "default": false,
+                "group": "post",
+                "description": "membership must be enabled to use this option"
+            },
             "show_featured_posts": {
                 "type": "boolean",
                 "default": true,
@@ -70,6 +76,12 @@
                 "default": true,
                 "group": "homepage"
             },
+            "show_home_page_subscription_banner": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage",
+                "description": "membership must be enabled to use this option"
+            },
             "home_page_style": {
                 "type": "select",
                 "options": [
@@ -81,11 +93,16 @@
                 "default": "Focus (left)",
                 "group": "homepage"
             },
-            "subscription_banner": {
+            "show_header_subscription_button": {
+                "type": "boolean",
+                "default": false,
+                "description": "membership must be enabled to use this option"
+            },
+            "menu_style": {
                 "type": "select",
-                "options": ["None", "Home Page", "Posts", "Home Page & Posts" ],
-                "default": "None",
-                "description": "Show a banner inviting people to subscribe to the site"
+                "options": [ "Minified", "Expanded" ],
+                "default": "Expanded",
+                "description": "Header menu style on wide screens"
             },
             "subscription_banner_heading": {
                 "type": "text",

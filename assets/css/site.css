@@ -84,7 +84,7 @@ iframe {
 }
 
 /* -------------------------------------- */
-/* 3. site header bar                     */
+/* 3. site header                         */
 /* -------------------------------------- */
 .site-header {
   background-color: var(--background-color);
@@ -94,7 +94,6 @@ iframe {
   z-index: 1000;
   padding-left:10px;
   padding-right:10px;
-
 }
 nav {
   background-color: var(--background-color);
@@ -104,6 +103,17 @@ nav {
   align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
+}
+.signin, .signup, .account {
+  font-size: 1.1rem;
+  letter-spacing: -0.018rem;
+  font-weight: 800;
+}
+.signin {
+  flex-basis: 44px;
+}
+.signup {
+  flex-basis: 57px;
 }
 .search, .logo, #dark-mode-toggle, .open-menu, .close-menu {
   flex-basis: 30px;
@@ -150,7 +160,6 @@ nav {
 /* -------------------------------------- */
 /* 4. menu                                */
 /* -------------------------------------- */
-/*
 
 /* mobile view */
 .menu {
@@ -180,10 +189,15 @@ nav {
 .close-menu {
   display: none;
 }
-.menu-open #dark-mode-toggle,
-.menu-open .search ,
-.menu-open .open-menu {
-  display: none;
+.menu-open {
+  #dark-mode-toggle,
+  .signin,
+  .signup,
+  .account,
+  .search,
+  .open-menu {
+    display: none;
+  }
 }
 .menu-open .close-menu {
   margin-left: auto;
@@ -200,9 +214,33 @@ nav {
   animation: showMenu 450ms ease-in-out both;
   border-bottom: 1px solid var(--border-color);
   display: block;
-  padding-bottom: 1.8rem;
+  padding-bottom: 0.5rem;
   padding-left: 0.75rem;
-  padding-top: 0.8rem;
+  padding-top: 0.5rem;
+  /* todo */
+}
+menu.menu-ready {
+  width: 300px;
+  height: auto;
+  max-height: 480px;
+  margin: 8px 0 16px 0;
+  font-size: 12px;
+  border-color: var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0px 0px 0px 1px #30363d, 0px 24px 48px 0px #010409;
+  box-shadow: 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966;
+  background-color: #161b22;
+  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
+ position: absolute;
+ right: 10px;
+ bottom: auto;
+ left: auto;
+ padding: 0;
+    min-width: 192px;
+    height: auto;
+    width: auto;
+    border-radius: 12px;
+
 }
 .subitem {
   padding-top: 5px;
@@ -220,67 +258,69 @@ nav {
   display: block;
 }
 
-/* larger screens - show menu in nav bar*/
-@media (min-width: 760px) {
-  .menu {
-    position:unset;
-    display:flex;
-    flex-direction: row;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    column-gap: 25px;
-    flex-wrap: wrap;
-  }
+/* larger screens - show expanded menu in nav bar*/
+.site.expanded-menu {
+  @media (min-width: 760px) {
+    .menu {
+      position:unset;
+      display:flex;
+      flex-direction: row;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      column-gap: 25px;
+      flex-wrap: wrap;
+    }
 
-  /* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
-  .menu:not(.menu-ready){
-    opacity:0;
-  }
-  .menu.menu-ready {
-    opacity:1;
-  }
-  @keyframes showSubmenu {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  .submenu-open .submenu {
-    animation: showSubmenu 300ms ease-in-out both;
-    z-index: 3;
-    display: block;
-    position: absolute;
-    left: 0;
-    background-color: var(--background-color);
-    border-style: solid;
-    border-color: var(--secondary-background-color);
-    border-radius: 2%;
-    box-shadow: 0 1px 3px 0 rgba(76, 137, 251, 0.15), 0 1px 5px 0 rgba(76, 137, 251, 0.10);
-    padding-left: 0;
-  }
-  .item {
-    display: block;
-    position: relative;
-    width: auto;
-  }
-  .item a {
-    padding: 0px 10px 0px 10px;
-  }
-  .menu .item a:hover {
-    border-radius: 0.375rem;
-    background-color: var(--secondary-background-color);
-    color: var(--secondary-text-color);
-    opacity: 1;
-  }
-  .subitem {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1.50rem;
-    padding-right: 1.50rem;
-    width: 100%;
-    white-space: nowrap;
-  }
-  .close-menu, .open-menu{
-    display: none ;
+    /* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
+    .menu:not(.menu-ready){
+      opacity:0;
+    }
+    .menu.menu-ready {
+      opacity:1;
+    }
+    @keyframes showSubmenu {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .submenu-open .submenu {
+      animation: showSubmenu 300ms ease-in-out both;
+      z-index: 3;
+      display: block;
+      position: absolute;
+      left: 0;
+      background-color: var(--background-color);
+      border-style: solid;
+      border-color: var(--secondary-background-color);
+      border-radius: 2%;
+      box-shadow: 0 1px 3px 0 rgba(76, 137, 251, 0.15), 0 1px 5px 0 rgba(76, 137, 251, 0.10);
+      padding-left: 0;
+    }
+    .item {
+      display: block;
+      position: relative;
+      width: auto;
+    }
+    .item a {
+      padding: 0px 10px 0px 10px;
+    }
+    .menu .item a:hover {
+      border-radius: 0.375rem;
+      background-color: var(--secondary-background-color);
+      color: var(--secondary-text-color);
+      opacity: 1;
+    }
+    .subitem {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1.50rem;
+      padding-right: 1.50rem;
+      width: 100%;
+      white-space: nowrap;
+    }
+    .close-menu, .open-menu {
+      display: none ;
+    }
   }
 }
 
@@ -293,8 +333,6 @@ nav {
     font-size:1.2rem;
     color: var(--secondary-text-color);
     border-top: 0.25px solid var(--theme-accent-color);
-    padding-top: 10px;
-    padding-bottom: 10px;
     margin-top: var(--section-gap);
     display: flex;
     justify-content: space-between;

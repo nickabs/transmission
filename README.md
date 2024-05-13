@@ -17,7 +17,7 @@ widescreen, tablet and mobile layouts:
 # Features
 
 - dark mode toggle (dark mode will default to the operating system setting, but can be overridden by the user)
-- dropdown menus 
+- dropdown tags menu: expanded or minimised (hamburger) options
 - table of contents for long articles, including a reading progress indicator - works in both mobile and laptop views)
 - sharing icons (facebook, twitter, whatsapp, copy link)
 - Search
