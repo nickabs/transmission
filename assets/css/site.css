@@ -50,7 +50,7 @@ a:hover {
   }
 }
 .hero-header {
-    margin-bottom: var(--section-gap);
+  margin-bottom: var(--section-gap);
 }
 iframe {
   display: block;
@@ -293,8 +293,7 @@ nav {
     font-size:1.2rem;
     color: var(--secondary-text-color);
     border-top: 0.25px solid var(--theme-accent-color);
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: var(--section-gap);
     display: flex;
     justify-content: space-between;
 }
