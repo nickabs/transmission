@@ -24,6 +24,7 @@ widescreen, tablet and mobile layouts:
 - Tags and authors page
 - modern Inter and Menelo font families are installed with the theme
 - infinite pagination (will display a button to Load More posts)
+- home page and article collection layout options 
 
 # Drop down menu configuration
 A two level drop down menu can be created using the standard Ghost naviagion feature (settings > navigation).
