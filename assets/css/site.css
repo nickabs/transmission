@@ -95,6 +95,12 @@ iframe {
   padding-left:10px;
   padding-right:10px;
 }
+.logo {
+  margin-right: auto;
+}
+.logo img {
+  width:20px;
+}
 nav {
   background-color: var(--background-color);
   display: flex;
@@ -115,12 +121,11 @@ nav {
 .signup {
   flex-basis: 57px;
 }
-.search, .logo, #dark-mode-toggle, .open-menu, .close-menu {
+.search, .logo, #dark-mode-toggle, .menu-toggle {
   flex-basis: 30px;
   flex-shrink: 0;
 }
-.close-menu svg,
-.open-menu svg {
+.menu-toggle svg {
   height:20px;
   width:20px;
 }
@@ -161,106 +166,82 @@ nav {
 /* 4. menu                                */
 /* -------------------------------------- */
 
+/* default display for mobile devices (hamburger menu) */
+
 /* mobile view */
-.menu {
-  background-color: var(--background-color);
-  margin: 0;
+.menu, .submenu {
+  position:fixed;
+  right:var(--site-edge-padding);
+  top: calc(var(--nav-bar-height) + 5px);
+  border: 0.25px solid var(--border-color);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: auto;
   padding: 0;
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  display:flex;
-  flex-direction: column;
+  margin: 0px;
+  width: 320px;
+  font-size: 1.4rem;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--banner-background-color);
+  list-style: none;
 }
 
-/* default display for mobile devices - hide menu and show a hamburger menu instead */
-.item {
-  display: none;
+.menu-header, .submenu-header {
+  padding: 5px 10px 5px 10px;
+  color: var(--banner-title-color);
 }
-.logo {
-  margin-right: auto;
+.item, .subitem {
+  padding: 5px 0 5px 10px;
+  border: 0.25px solid var(--border-color);
+  a {
+    color: var(--banner-description-color);
+  }
 }
-.logo img {
-  width:20px;
+.menu .menu-header ,
+.submenu .submenu-header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-column: 1/-1;
+  grid-row: 1; 
+  border-bottom: 0.25px solid var(--border-color);
 }
-.open-menu {
-  display: block;
+
+/* open/close menus */
+.menu, .submenu {
+  display:none;
 }
-.close-menu {
-  display: none;
-}
-.menu-open {
-  #dark-mode-toggle,
-  .signin,
-  .signup,
-  .account,
-  .search,
-  .open-menu {
+.menu:has(.submenu-open) {
+  .item:not(.submenu-open){
     display: none;
   }
 }
-.menu-open .close-menu {
-  margin-left: auto;
-  display: block;
+.submenu-open .submenu,
+.menu.menu-open {
+  display:grid;
 }
-.menu, .submenu {
-  list-style: none;
-}
+
+/* animate menu opening */
 @keyframes showMenu {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-.menu-open .item {
+.menu-open .item ,
+.submenu-open .subitem {
   animation: showMenu 450ms ease-in-out both;
-  border-bottom: 1px solid var(--border-color);
-  display: block;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  padding-top: 0.5rem;
-  /* todo */
-}
-menu.menu-ready {
-  width: 300px;
-  height: auto;
-  max-height: 480px;
-  margin: 8px 0 16px 0;
-  font-size: 12px;
-  border-color: var(--border-color);
-  border-radius: 6px;
-  box-shadow: 0px 0px 0px 1px #30363d, 0px 24px 48px 0px #010409;
-  box-shadow: 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966;
-  background-color: #161b22;
-  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
- position: absolute;
- right: 10px;
- bottom: auto;
- left: auto;
- padding: 0;
-    min-width: 192px;
-    height: auto;
-    width: auto;
-    border-radius: 12px;
-
-}
-.subitem {
-  padding-top: 5px;
-}
-.site.menu-open .site-content {
-  filter: blur(5px);
 }
 
-/* hide submenu when not active */
-.submenu {
-  display: none;
+/* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
+.menu:not(.menu-ready){
+  opacity:0;
 }
-.submenu-open .submenu {
-  padding-left:25px;
-  display: block;
+.menu.menu-ready {
+  opacity:1;
 }
 
-/* larger screens - show expanded menu in nav bar*/
-.site.expanded-menu {
-  @media (min-width: 760px) {
+/* larger screens - show menu in nav bar (assuming expanded menu option has been selected) */
+@media (min-width: 760px) {
+  .expanded-menu {
     .menu {
       position:unset;
       display:flex;
@@ -270,56 +251,25 @@ menu.menu-ready {
       justify-content: center;
       column-gap: 25px;
       flex-wrap: wrap;
+      box-shadow:unset;
+      .item { 
+        margin:0;
+        padding: 0;
+        border:unset;
+      }
     }
-
-    /* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
-    .menu:not(.menu-ready){
-      opacity:0;
+    .item:has(sup) {
+      transform: translateY(-2px) ; /* fix misalignment caused by drop down menu symbol */
     }
-    .menu.menu-ready {
-      opacity:1;
+    .menu .menu-header,
+    .menu-toggle {
+      display: none;
     }
-    @keyframes showSubmenu {
-      from {opacity: 0;}
-      to {opacity: 1;}
+    .item:not(.submenu-open) {
+      display:flex!important;
     }
-    .submenu-open .submenu {
-      animation: showSubmenu 300ms ease-in-out both;
-      z-index: 3;
-      display: block;
-      position: absolute;
-      left: 0;
-      background-color: var(--background-color);
-      border-style: solid;
-      border-color: var(--secondary-background-color);
-      border-radius: 2%;
-      box-shadow: 0 1px 3px 0 rgba(76, 137, 251, 0.15), 0 1px 5px 0 rgba(76, 137, 251, 0.10);
-      padding-left: 0;
-    }
-    .item {
-      display: block;
-      position: relative;
-      width: auto;
-    }
-    .item a {
-      padding: 0px 10px 0px 10px;
-    }
-    .menu .item a:hover {
-      border-radius: 0.375rem;
-      background-color: var(--secondary-background-color);
-      color: var(--secondary-text-color);
-      opacity: 1;
-    }
-    .subitem {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 1.50rem;
-      padding-right: 1.50rem;
-      width: 100%;
-      white-space: nowrap;
-    }
-    .close-menu, .open-menu {
-      display: none ;
+    .submenu {
+      right:-110px;
     }
   }
 }
