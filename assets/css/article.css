@@ -15,6 +15,7 @@
   }
 }
 .article-content > * + * {
+  margin-top:var(--section-gap);
   font-size: var(--content-font-size);
 }
 
