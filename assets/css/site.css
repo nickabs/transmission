@@ -286,6 +286,7 @@ nav {
     margin-top: var(--section-gap);
     display: flex;
     justify-content: space-between;
+    padding: 5px 10px 5px 10px;
 }
 .site-footer a {
   color: var(--secondary-text-color);
