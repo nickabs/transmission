@@ -24,10 +24,9 @@
         "FormInput Button"
         "ErrorText ErrorText";
 
-    column-gap:30px;
+    column-gap:5px;
     padding: 2px ;
     background-color: #e6e6e6; /*todo*/
-    width: calc(100% - 50px);
     max-width: 500px;
 
     .button {
