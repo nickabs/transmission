@@ -5,11 +5,15 @@
 .related-articles { 
   justify-self: center;
   max-width: var(--max-content-width);
+  max-width: 100vw;
 }
 .article-content > :first-child{
   padding-top:15px;
 }
 @media screen and (min-width: 760px) {
+  .article-content {
+    max-width: var(--max-content-width);
+  }
   .article-content :first-child{
     padding-top:0px;
   }
