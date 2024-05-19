@@ -177,7 +177,7 @@ nav {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   height: auto;
   padding: 0;
-  margin: 0px;
+  margin: 0 20px 0 20px;
   width: 320px;
   font-size: 1.4rem;
   border-radius: 6px;
