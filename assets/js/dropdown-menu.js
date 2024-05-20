@@ -91,7 +91,8 @@
   }
 
   /* toggle submenu */
-  function toggleSubmenu() {
+  function toggleSubmenu(e) {
+    e.preventDefault(); // stop screen scroll when opening sub menus
     if (this.classList.contains("submenu-open")) { // this submenu is already active
       this.classList.remove("submenu-open");
     } else if (menu.querySelector(".submenu-open")) {  // another submenu is active
