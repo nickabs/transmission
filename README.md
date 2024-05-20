@@ -9,10 +9,9 @@
 Transmission is a modern [Ghost](https://ghost.org/) theme.
 
 widescreen, tablet and mobile layouts:
+![v1 11 home](https://github.com/nickabs/transmission/assets/4947488/68a22a33-b9d4-49d9-aad6-97106274187d)
 
-![1 6 3 home views](https://github.com/nickabs/transmission/assets/4947488/78a796b6-c148-4b89-9867-08e90a1072b3)
-
-![1 6 3 page views](https://github.com/nickabs/transmission/assets/4947488/1cfabeb7-40b1-409f-b4db-eedfe4fa5f77)
+![v1 11 page](https://github.com/nickabs/transmission/assets/4947488/ac2b58a8-5da7-4646-b93d-88670597061b)
 
 # Features
 
@@ -52,7 +51,7 @@ Download the latest zip file from the [Releases](https://github.com/nickabs/tran
     - table of content (tocbot)
 - easy to maintain with a simple semantic html structure, sensibly organised css and intuitive grid layouts:
 
-![1 6 3 grid layouts](https://github.com/nickabs/transmission/assets/4947488/95f142d7-bfe2-42a7-baea-4e4d9727a3ff)
+![v1 11 dev tools](https://github.com/nickabs/transmission/assets/4947488/aa9c2153-ccf9-412d-b08d-50852763c09d)
 
 # Make changes to the theme
 
