@@ -16,9 +16,12 @@
 
 {{#if @site.members_enabled}}
     {{#unless @member}}
-        {{#if @custom.show_post_subscription_banner }}
-            {{> "subscription-banner"}}
-        {{/if}}
+        {{#match @custom.post_subscription_banner_type "Mini" }}
+            {{> "subscription-banner" mini="true" location="post" }}
+        {{/match}}
+        {{#match @custom.post_subscription_banner_type "Full" }}
+            {{> "subscription-banner" location="post" }}
+        {{/match}}
     {{/unless}}
 {{/if}}
 

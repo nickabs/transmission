@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.11.0",
+    "version": "1.12.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -50,11 +50,28 @@
                 "default": true,
                 "group": "post"
             },
-            "show_post_subscription_banner": {
-                "type": "boolean",
-                "default": false,
+            "post_subscription_banner_type": {
+                "type": "select",
+                "options": [
+                    "Full",
+                    "Mini",
+                    "None"
+                ],
+                "default": "None",
                 "group": "post",
                 "description": "membership must be enabled to use this option"
+            },
+            "post_subscription_banner_heading": {
+                "type": "text",
+                "group" : "post",
+                "description": "Defaults to site title when empty",
+                "visibility": "post_subscription_banner_type:Full"
+            },
+            "post_subscription_banner_description": {
+                "type": "text",
+                "description": "Defaults to site description when empty",
+                "group" : "post",
+                "visibility": "post_subscription_banner_type:Full"
             },
             "show_featured_posts": {
                 "type": "boolean",
@@ -104,13 +121,13 @@
                 "default": "Expanded",
                 "description": "Header menu style on wide screens"
             },
-            "subscription_banner_heading": {
+            "home_subscription_banner_heading": {
                 "type": "text",
                 "group" : "homepage",
                 "description": "Defaults to site title when empty",
                 "visibility": "show_home_page_subscription_banner:true"
             },
-            "subscription_banner_description": {
+            "home_subscription_banner_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty",
                 "group" : "homepage",

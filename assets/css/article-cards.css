@@ -104,7 +104,7 @@
         font-size: 1.6rem;
         font-weight: 550;
         letter-spacing: .025em;
-        margin-top: var(--section-margin);
+        margin-top: var(--section-gap);
     }
     &:not(.home-page-list) {
         @media (min-width: 760px) {
