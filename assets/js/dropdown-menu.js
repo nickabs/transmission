@@ -13,22 +13,22 @@
 */
 
 (function () {
-  const menuIndent= /(^-{1,})(.*)/; // this regex matches the -submenu --subitem navigation entries
+  const menuIndentRegex= /(^-{1,})(.*)/; // match the -submenu and --subitem navigation entries
   let menuItems = document.querySelectorAll('.menu .item'); // get all the the menu items
   let i, match, submenu;
-  let newElement, menuName
+  let menuName
 
   /* go throught the menu items and create the html structure shown above */
   for (i = 0; i < menuItems.length; ++i) {
 
-    match = menuItems[i].lastElementChild.innerText.match(menuIndent);
+    match = menuItems[i].lastElementChild.innerText.match(menuIndentRegex);
 
     if (match) {
       /* remove the submenu & subitem indent indicators (- --) */
-      menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(menuIndent,"$2");
+      menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(menuIndentRegex,"$2").trim();
       menuName=menuItems[i].lastElementChild.innerText;
 
-      if (match[1].length == 1) {
+      if (match[1].length == 1) { //submenu (-)
         /* create parent elemement for the submenu */
         menuItems[i].classList.add("has-submenu");
 
@@ -63,7 +63,7 @@
         menuItems[i].appendChild(ul);
         submenu=menuItems[i];
       }
-      else if (submenu) {
+      else if (submenu) { // submenu item (--)
         /* add submenu items */
         menuItems[i].classList.add("subitem");
         menuItems[i].classList.remove("item");
@@ -115,8 +115,15 @@
   // Close any open submenu when clicking outside
   function closeSubmenuOnClickOutside(event) {
     const openSubmenu = menu.querySelector(".submenu-open");
-    if (openSubmenu && !openSubmenu.contains(event.target)) {
-      openSubmenu.classList.remove("submenu-open");
+    if (openSubmenu) {
+      const submenuToggle = openSubmenu.closest('.has-submenu'); // Find the parent with 'has-submenu'
+      const submenuHeader = openSubmenu.querySelector('.submenu-header'); // Find the submenu header
+
+      if (!openSubmenu.contains(event.target) && 
+          !submenuToggle.contains(event.target) ||
+          (submenuHeader && submenuHeader.contains(event.target))) {
+        openSubmenu.classList.remove("submenu-open");
+      }
     }
   }
 
