@@ -330,7 +330,6 @@ nav {
       margin: auto;
   }
   .kg-product-card a.kg-product-card-btn-accent ,
-  .kg-subscription-banner-card-button.kg-style-accent,
   .kg-button-card a.kg-btn-accent ,
   .kg-callout-card-accent {
     border: 2px solid var(--border-color);

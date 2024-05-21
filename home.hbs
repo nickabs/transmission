@@ -44,9 +44,12 @@
 </aside>
 {{#if @site.members_enabled}}
     {{#unless @member}}
-        {{#if @custom.show_home_page_subscription_banner}}
-            {{> "subscription-banner"}}
-        {{/if}}
+        {{#match @custom.home_page_subscription_banner_type "Mini" }}
+            {{> "subscription-banner" mini="true" location="home" }}
+        {{/match}}
+        {{#match @custom.home_page_subscription_banner_type "Full" }}
+            {{> "subscription-banner" location="home" }}
+        {{/match}}
     {{/unless}}
 {{/if}}
 {{pagination}}

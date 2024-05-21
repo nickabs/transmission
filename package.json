@@ -93,11 +93,28 @@
                 "default": true,
                 "group": "homepage"
             },
-            "show_home_page_subscription_banner": {
-                "type": "boolean",
-                "default": false,
+             "home_page_subscription_banner_type": {
+                "type": "select",
+                "options": [
+                    "Full",
+                    "Mini",
+                    "None"
+                ],
+                "default": "None",
                 "group": "homepage",
                 "description": "membership must be enabled to use this option"
+            },
+            "home_page_subscription_banner_heading": {
+                "type": "text",
+                "group" : "homepage",
+                "description": "Defaults to site title when empty",
+                "visibility": "home_page_subscription_banner_type:Full"
+            },
+            "home_page_subscription_banner_description": {
+                "type": "text",
+                "description": "Defaults to site description when empty",
+                "group" : "homepage",
+                "visibility": "home_page_subscription_banner_type:Full"
             },
             "home_page_style": {
                 "type": "select",
@@ -120,18 +137,6 @@
                 "options": [ "Minified", "Expanded" ],
                 "default": "Expanded",
                 "description": "Header menu style on wide screens"
-            },
-            "home_subscription_banner_heading": {
-                "type": "text",
-                "group" : "homepage",
-                "description": "Defaults to site title when empty",
-                "visibility": "show_home_page_subscription_banner:true"
-            },
-            "home_subscription_banner_description": {
-                "type": "text",
-                "description": "Defaults to site description when empty",
-                "group" : "homepage",
-                "visibility": "show_home_page_subscription_banner:true"
             },
             "google_analytics_id": {
                 "type": "text",

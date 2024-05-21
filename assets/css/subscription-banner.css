@@ -1,20 +1,24 @@
+/* --------------------------------------------------------- */
+/* show the subscription banner on the home and page screens */
+/* --------------------------------------------------------- */
 .subscription-banner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 10px;
-    justify-content: center;
-    height: 300px;
+    justify-content: flex-end;
+    height: 210px;
     background-color: var(--banner-background-color);
     margin: var(--section-gap) 0 var(--section-gap) 0;
 }
 
 .mini {
-    height:90px;
+    height:135px;
 }
 
-.subscription-banner-heading, .subscription-banner-description, .subscription-banner-form .error-text {
+.subscription-banner-heading, 
+.subscription-banner-description, 
+.subscription-banner-form .error-text {
     color: var(--banner-title-color);
 }
 
@@ -25,33 +29,46 @@
 
     display: grid;
     grid-template-columns: 2fr 1fr; 
+    grid-template-rows: 1fr 2fr;
     grid-template-areas:
         "FormInput Button"
         "ErrorText ErrorText";
 
     column-gap:5px;
     padding: 2px ;
-    background-color: #e6e6e6; /*todo*/
+    height: 90px;
     max-width: 500px;
 
     .button {
        width: 95px;
-       justify-self: right;
+       height:40px;
+       padding: 0;
+       display:flex;
+       align-items: center;
+       justify-items: center;
     }
     .text {
         font-size: 1.6rem;
     }
     .form-input {
+        width:220px;
         font-size: 1.3rem;
-        background-color: transparent;
+        background-color: #e6e6e6;
         border: 0;
         letter-spacing: inherit;
-        height: 100%;
-        width: 100%;
         outline: none;
+    }
+    .error-text {
+        padding-top: 4px;
+        font-size:1.4rem;
+    }
+    .success-icon, .loading-icon, .error-icon {
+        width: 24px;
+        height: 24px;
     }
     
 }
+
 /* show the status of a subscription request */
 .subscription-banner-form {
     .success-icon, .error-icon, .error-text, .loading-icon {
@@ -69,18 +86,10 @@
     pointer-events: none;
 }
 
-/* large screens - shown on rhs */
-@todomedia(min-width: 1100px) {
-    .subscription-banner {
-        align-self: center;
-        :not(.mini) {
-            height: 400px;
-            gap: 60px;
-        }
-
-    }
-    .post-template .subscription-banner:not(.mini) {
-        height: 200px;
-        gap: 10px;
+/* large screens - show banner on rhs of home screen */
+@media(min-width: 1100px) {
+    .home-template .subscription-banner:not(.mini) { /*mini banners are shown as a bar below the pagination section */
+        justify-content: center;
+        height: 400px;
     }
 }

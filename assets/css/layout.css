@@ -19,6 +19,9 @@
 .subscription-banner { grid-area: SubscriptionBanner;}
 .table-of-contents { grid-area: TableOfContents; }
 .tagged-articles { grid-area: TaggedArticles; }
+.site.home-template:has(.subscription-banner):has(.mini) { /* used on large screens with mini subs banner */
+    .subscription-banner { grid-area: MiniSubscriptionBanner;} 
+}
 
 /*------------------------*/
 /* home-page mobile view  */
@@ -143,8 +146,9 @@
             "MainArticle RecentArticles FeaturedArticles"
             "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
+            "MiniSubscriptionBanner MiniSubscriptionBanner MiniSubscriptionBanner"
             "SiteFooter SiteFooter SiteFooter";
-        &:not(:has(.subscription-banner)) .previous-articles {
+        &:not(:has(.subscription-banner):not(:has(.mini))) .previous-articles {
             grid-row: 4; grid-column: 1 / span 3; 
         }
     }
@@ -156,6 +160,7 @@
             "RecentArticles MainArticle FeaturedArticles"
             "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
+            "MiniSubscriptionBanner MiniSubscriptionBanner MiniSubscriptionBanner"
             "SiteFooter SiteFooter SiteFooter";
         &:not(:has(.subscription-banner)) .previous-articles {
             grid-row: 4; grid-column: 1 / span 3; 
@@ -169,6 +174,7 @@
             "RecentArticles FeaturedArticles MainArticle"
             "PreviousArticles PreviousArticles SubscriptionBanner"
             "Pagination Pagination Pagination"
+            "MiniSubscriptionBanner MiniSubscriptionBanner MiniSubscriptionBanner"
             "SiteFooter SiteFooter SiteFooter";
         &:not(:has(.subscription-banner)) .previous-articles {
             grid-row: 4; grid-column: 1 / span 3; 

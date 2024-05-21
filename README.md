@@ -14,6 +14,7 @@ widescreen, tablet and mobile layouts:
 ![v1 11 page](https://github.com/nickabs/transmission/assets/4947488/ac2b58a8-5da7-4646-b93d-88670597061b)
 
 # Features
+This theme is optimised for traditional blog sites, particularly sites with lots of content and long articles. Features include:
 
 - dark mode toggle (dark mode will default to the operating system setting, but can be overridden by the user)
 - dropdown tags menu: expanded or minimised (hamburger) options
