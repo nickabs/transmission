@@ -3,7 +3,7 @@
 /* 1. default styles for the site       */
 /* 2. photoswipe lightbox adjustments   */
 /* 3. site header                       */
-/* 4. menu                              */
+/* 4. nav                              */
 /* 5. site footer                       */
 /* 6. Ghost cards                       */
 /* 7. dark/light mode icons             */
@@ -30,7 +30,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     margin:0;
-    scroll-margin-top: var(--nav-bar-height);
+    scroll-margin-top: var(--site-header-height);
 }
 img {
     height: auto;
@@ -101,10 +101,10 @@ iframe {
 .logo img {
   width:20px;
 }
-nav {
+.site-header {
   background-color: var(--background-color);
   display: flex;
-  height:var(--nav-bar-height); 
+  height:var(--site-header-height); 
   flex-direction: row;
   align-items: center;
   font-size: 1.5rem;
@@ -121,11 +121,11 @@ nav {
 .signup {
   flex-basis: 57px;
 }
-.search, .logo, #dark-mode-toggle, .menu-toggle {
+.search, .logo, #dark-mode-toggle, .nav-toggle {
   flex-basis: 30px;
   flex-shrink: 0;
 }
-.menu-toggle svg {
+.nav-toggle svg {
   height:20px;
   width:20px;
 }
@@ -163,16 +163,16 @@ nav {
 }
 
 /* -------------------------------------- */
-/* 4. menu                                */
+/* 4. nav                                */
 /* -------------------------------------- */
 
-/* default display for mobile devices (hamburger menu) */
+/* default display for mobile devices (hamburger nav) */
 
 /* mobile view */
-.menu, .submenu {
+.nav, .submenu {
   position:fixed;
   right:var(--site-edge-padding);
-  top: calc(var(--nav-bar-height) + 5px);
+  top: calc(var(--site-header-height) + 5px);
   border: 0.25px solid var(--border-color);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   height: auto;
@@ -186,7 +186,7 @@ nav {
   list-style: none;
 }
 
-.menu-header, .submenu-header {
+.nav-header, .submenu-header {
   padding: 5px 10px 5px 10px;
   color: var(--banner-title-color);
 }
@@ -197,7 +197,7 @@ nav {
     color: var(--banner-description-color);
   }
 }
-.menu .menu-header ,
+.nav .nav-header ,
 .submenu .submenu-header {
   display:flex;
   flex-direction: row;
@@ -208,41 +208,41 @@ nav {
 }
 
 /* open/close menus */
-.menu, .submenu {
+.nav, .submenu {
   display:none;
 }
-.menu:has(.submenu-open) {
+.nav:has(.submenu-open) {
   .item:not(.submenu-open){
     display: none;
   }
 }
 .submenu-open .submenu,
-.menu.menu-open {
+.nav.nav-open {
   display:grid;
 }
 
-/* animate menu opening */
+/* animate nav opening */
 @keyframes showMenu {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-.menu-open .item ,
+.nav-open .item ,
 .submenu-open .subitem {
   animation: showMenu 450ms ease-in-out both;
 }
 
-/* hide menu items until dropdown-menu.js confirms it has run (to prevent the screen flashing) */
-.menu:not(.menu-ready){
+/* hide nav items until dropdown-nav.js confirms it has run (to prevent the screen flashing) */
+.nav:not(.nav-ready){
   opacity:0;
 }
-.menu.menu-ready {
+.nav.nav-ready {
   opacity:1;
 }
 
-/* larger screens - show menu in nav bar (assuming expanded menu option has been selected) */
+/* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
 @media (min-width: 760px) {
-  .expanded-menu {
-    .menu {
+  .expanded-nav {
+    .nav {
       position:unset;
       display:flex;
       flex-direction: row;
@@ -259,10 +259,10 @@ nav {
       }
     }
     .item:has(sup) {
-      transform: translateY(-2px) ; /* fix misalignment caused by drop down menu symbol */
+      transform: translateY(-2px) ; /* fix misalignment caused by drop down nav symbol */
     }
-    .menu .menu-header,
-    .menu-toggle {
+    .nav .nav-header,
+    .nav-toggle {
       display: none;
     }
     .item:not(.submenu-open) {

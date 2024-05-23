@@ -1,38 +1,35 @@
  <header class="site-header">
-    <nav>
-        <div class="logo">
-            <a href="{{@site.url}}">
-                {{#if @site.logo}}
-                    <img src="{{@site.logo}}" height="20" width="20"  alt="{{@site.title}}">
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </a>
-        </div>
-
-        {{!-- outputs  menu items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
-        {{navigation}}
-
-        {{#if @site.members_enabled}}
-            {{#unless @member}}
-                {{#unless @site.members_invite_only}}
-                    <a href="#/portal/signin" class="signin">Sign in</a>
-                    {{#if @custom.show_header_subscription_button}}
-                        <a class="signup button" aria-label="sign up" href="#/portal/signup">Sign up</a>
-                    {{/if}}
-                {{/unless}}
+    <div class="logo">
+        <a href="{{@site.url}}">
+            {{#if @site.logo}}
+                <img src="{{@site.logo}}" height="20" width="20"  alt="{{@site.title}}">
             {{else}}
-                <a class="gh-button" href="#/portal/account" class="account">Account</a>
+                {{@site.title}}
+            {{/if}}
+        </a>
+    </div>
+
+    {{!-- outputs  nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
+    {{navigation}}
+
+    {{#if @site.members_enabled}}
+        {{#unless @member}}
+            {{#unless @site.members_invite_only}}
+                <a href="#/portal/signin" class="signin">Sign in</a>
+                {{#if @custom.show_header_subscription_button}}
+                    <a class="signup button" aria-label="sign up" href="#/portal/signup">Sign up</a>
+                {{/if}}
             {{/unless}}
-        {{/if}}
+        {{else}}
+            <a class="gh-button" href="#/portal/account" class="account">Account</a>
+        {{/unless}}
+    {{/if}}
 
-        <button id="dark-mode-toggle" aria-label="dark mode" class="icon-button">
-            <span class="dark-mode ">{{> "icons/moon"}}</span>
-            <span class="light-mode ">{{> "icons/sun"}}</span>
-        </button>
-        <button class="search icon-button" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
-        {{!-- hamburger menu (shows when menu is open on a small screen)--}}
-        <button class="menu-toggle icon-button" aria-label="Open menu" >{{> "icons/menu"}}</button>
-
-    </nav>
+    <button id="dark-mode-toggle" aria-label="dark mode" class="icon-button">
+        <span class="dark-mode ">{{> "icons/moon"}}</span>
+        <span class="light-mode ">{{> "icons/sun"}}</span>
+    </button>
+    <button class="search icon-button" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
+    {{!-- hamburger nav (shows when nav is open on a small screen)--}}
+    <button class="nav-toggle icon-button" aria-label="Open nav" >{{> "icons/navigation"}}</button>
 </header>

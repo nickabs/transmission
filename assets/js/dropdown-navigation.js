@@ -1,24 +1,24 @@
 /* 
- * create sub menu structure
+ * create sub nav structure
 
-   ghost menu              rendered html
-  --------------          ------------------
+   ghost navigation         rendered html
+  -----------------         ------------------
     Home                    <li class="item">Home<li>
     About                   <li class="item">About<li>
     -submenu 1              <li class="item has-submenu">submenu 1 <ul class="submenu">
     --subitem 1               <li class="subitem">subitem 1</li> <ul>
     --subitem 2               <li class="subitem">subitem 2</li> </ul></li>
 
-    * note the actual html contains <a> anchors for each item on the menu
+    * note the actual html contains <a> anchors for each item on the nav
 */
 
 (function () {
   const menuIndentRegex= /(^-{1,})(.*)/; // match the -submenu and --subitem navigation entries
-  let menuItems = document.querySelectorAll('.menu .item'); // get all the the menu items
+  let menuItems = document.querySelectorAll('.nav .item'); // get all the the nav items
   let i, match, submenu;
   let menuName
 
-  /* go throught the menu items and create the html structure shown above */
+  /* go throught the nav items and create the html structure shown above */
   for (i = 0; i < menuItems.length; ++i) {
 
     match = menuItems[i].lastElementChild.innerText.match(menuIndentRegex);
@@ -44,7 +44,7 @@
         const ul = document.createElement('ul');
         ul.classList.add("submenu");
 
-        const span = document.createElement('span');
+        const span = document.createElement('div');
         span.classList.add('submenu-header');
 
         const p1 = document.createElement('p');
@@ -52,8 +52,8 @@
         p1.appendChild(document.createTextNode(menuName));
         span.appendChild(p1);
 
-        const p2 = document.createElement('p');
-        p2.classList.add('submenu-close');
+        const p2 = document.createElement('button');
+        p2.classList.add('submenu-close', 'icon-button');
         p2.appendChild(document.createTextNode('✕'));
         span.appendChild(p2);
 
@@ -71,24 +71,24 @@
       }
     }
   }
-  /* set this class so that the menu items remain hidden until this script finishes */
-  document.querySelector(".menu").classList.add("menu-ready");
+  /* set this class so that the nav items remain hidden until this script finishes */
+  document.querySelector(".nav").classList.add("nav-ready");
 })();
 
 /* 
- * toggle menu and submenus
- * .menu.menu-open is set when the menu is opened using the hamburger button 
+ * toggle nav and submenus
+ * .nav.nav-open is set when the nav is opened using the hamburger button 
  * .item.submenu-open is set when an item with a submenu is opened
 */
 (function() {
-  const toggleMenuButton = document.querySelector(".menu-toggle");
-  const closeMenuButton = document.querySelector(".menu-close");
-  const menu = document.querySelector(".menu");
+  const toggleMenuButton = document.querySelector(".nav-toggle");
+  const closeMenuButton = document.querySelector(".nav-close");
+  const nav = document.querySelector(".nav");
   const submenuItems = document.querySelectorAll(".has-submenu");
 
-  // Toggle the main menu using the hamburger toggle 
+  // Toggle the main nav using the hamburger toggle 
   function toggleMenu() {
-    menu.classList.toggle("menu-open");
+    nav.classList.toggle("nav-open");
   }
 
   function toggleSubmenu(event) {
@@ -104,7 +104,7 @@
     if (currentItem.classList.contains("submenu-open")) {
       currentItem.classList.remove("submenu-open");
     } else {
-      const openSubmenu = menu.querySelector(".submenu-open");
+      const openSubmenu = nav.querySelector(".submenu-open");
       if (openSubmenu && openSubmenu !== currentItem) {
         openSubmenu.classList.remove("submenu-open");
       }
@@ -114,7 +114,7 @@
 
   // Close any open submenu when clicking outside
   function closeSubmenuOnClickOutside(event) {
-    const openSubmenu = menu.querySelector(".submenu-open");
+    const openSubmenu = nav.querySelector(".submenu-open");
     if (openSubmenu) {
       const submenuToggle = openSubmenu.closest('.has-submenu'); // Find the parent with 'has-submenu'
       const submenuHeader = openSubmenu.querySelector('.submenu-header'); // Find the submenu header

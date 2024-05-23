@@ -136,7 +136,7 @@
                 "type": "select",
                 "options": [ "Minified", "Expanded" ],
                 "default": "Expanded",
-                "description": "Header menu style on wide screens"
+                "description": "Header nav style on wide screens"
             },
             "google_analytics_id": {
                 "type": "text",

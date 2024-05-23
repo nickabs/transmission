@@ -1,6 +1,6 @@
 # Transmission
 [features](#features) |
-[drop down menu](#drop-down-menu-configuration) |
+[drop down navigation](#drop-down-navigation-configuration) |
 [demo](#demo) |
 [download](#download-and-install) |
 [developer information](#for-developers) |
@@ -17,7 +17,7 @@ widescreen, tablet and mobile layouts:
 This theme is optimised for traditional blog sites, particularly sites with lots of content and long articles. Features include:
 
 - dark mode toggle (dark mode will default to the operating system setting, but can be overridden by the user)
-- dropdown tags menu: expanded or minimised (hamburger) options
+- dropdown navigation menu: expanded or minimised (hamburger) options
 - table of contents for long articles, including a reading progress indicator - works in both mobile and laptop views)
 - sharing icons (facebook, twitter, whatsapp, copy link)
 - Search
@@ -26,13 +26,13 @@ This theme is optimised for traditional blog sites, particularly sites with lots
 - infinite pagination (will display a button to Load More posts)
 - home page and article collection layout options 
 
-# Drop down menu configuration
-A two level drop down menu can be created using the standard Ghost naviagion feature (settings > navigation).
+# Drop down navigation configuration
+A two level drop down nav can be created using the standard Ghost naviagion feature (settings > navigation).
 When the navigation item name is preceeded by a single dash it will show as a parent item and any item with two dashes immediately following it will show as a child item.  For instance:
 
 <div align="center">
-    <img height="250" alt="drop down menu" src="https://github.com/nickabs/transmission/assets/4947488/4cefbbd5-284f-45fe-be4c-5db69f95387f">
-    <img height="250" alt="drop down menu demo" src="https://github.com/nickabs/transmission/assets/4947488/86f961d5-c2f4-4b3b-be6e-06930f4c1a5e">
+    <img height="250" alt="drop down navigation" src="https://github.com/nickabs/transmission/assets/4947488/4cefbbd5-284f-45fe-be4c-5db69f95387f">
+    <img height="250" alt="drop down navigation demo" src="https://github.com/nickabs/transmission/assets/4947488/86f961d5-c2f4-4b3b-be6e-06930f4c1a5e">
 </div>
 
 # Demo

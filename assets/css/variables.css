@@ -23,7 +23,7 @@
     --site-edge-padding: max(5vmin, 20px); 
     --section-gap: max(1.5vw,24px);
     --article-card-gap: 15px; 
-    --nav-bar-height: 55px; 
+    --site-header-height: 55px; 
     --hero-header-height: 160px ;
 }
 
