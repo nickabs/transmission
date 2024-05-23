@@ -1,90 +1,117 @@
 /* 
- * create sub nav structure
-
-   ghost navigation         rendered html
-  -----------------         ------------------
-    Home                    <li class="item">Home<li>
-    About                   <li class="item">About<li>
-    -submenu 1              <li class="item has-submenu">submenu 1 <ul class="submenu">
-    --subitem 1               <li class="subitem">subitem 1</li> <ul>
-    --subitem 2               <li class="subitem">subitem 2</li> </ul></li>
-
-    * note the actual html contains <a> anchors for each item on the nav
+* create the <li> html structure under the <nav> element used in the site-header
+* the items are structured based on markup in the ghost navigation names:
+* names prefixed with - indicate a submenu and -- indicates a submenu item
+* for example
+*
+*  ghost navigation          rendered html
+*  -----------------         ------------------
+*  HOME                      <li class="item">
+*                              <a href="http://localhost:2368/">HOME</a>
+*                            </li>
+*  -HONDA C90                <li class="item has-submenu">
+*                                <a href="#">HONDA C90 ⌄</a>
+*                                <div class="submenu">
+*                                    <div class="submenu-header">
+*                                        <p class="submenu-title">HONDA C90</p>
+*                                        <button class="submenu-close icon-button">✕</button>
+*                                    </div>
+*                                    <ul class="submenu-items">
+*  --introduction                        <li class="submenu-item">
+*                                            <a href="http://localhost:2368/2019/11/16/honda-c90-introduction/">introduction</a>
+*                                        </li>
+*  --engine                              <li class="submenu-item">
+*                                            <a href="http://localhost:2368/tag/engine/">engine</a>
+*                                        </li>
+*                                    </ul>
+*                                </div>
+*                            </li>
 */
 
 (function () {
-  const menuIndentRegex= /(^-{1,})(.*)/; // match the -submenu and --subitem navigation entries
-  let menuItems = document.querySelectorAll('.nav .item'); // get all the the nav items
-  let i, match, submenu;
-  let menuName
+  const menuIndentRegex = /(^-{1,})(.*)/; // Match the -submenu and --submenu-item navigation entries
 
-  /* go throught the nav items and create the html structure shown above */
-  for (i = 0; i < menuItems.length; ++i) {
+  // Function to create submenu structure
+  function createSubMenu(menuName) {
+      const div = document.createElement('div');
+      div.classList.add('submenu');
 
-    match = menuItems[i].lastElementChild.innerText.match(menuIndentRegex);
+      const div1 = document.createElement('div');
+      div1.classList.add('submenu-header');
 
-    if (match) {
-      /* remove the submenu & subitem indent indicators (- --) */
-      menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(menuIndentRegex,"$2").trim();
-      menuName=menuItems[i].lastElementChild.innerText;
+      const p1 = document.createElement('p');
+      p1.classList.add('submenu-title');
+      p1.appendChild(document.createTextNode(menuName));
+      div1.appendChild(p1);
 
-      if (match[1].length == 1) { //submenu (-)
-        /* create parent elemement for the submenu */
-        menuItems[i].classList.add("has-submenu");
+      const p2 = document.createElement('button');
+      p2.classList.add('submenu-close', 'icon-button');
+      p2.appendChild(document.createTextNode('✕'));
+      div1.appendChild(p2);
 
-        const anchor = document.createElement("a");
-        anchor.setAttribute("href", "#");
-        anchor.classList.add('tabindex=0');
-        anchor.appendChild(document.createTextNode(menuName));
+      div.appendChild(div1);
 
-        const sup = document.createElement('sup');
-        sup.appendChild(document.createTextNode(' ⌄'));
-        anchor.appendChild(sup);
+      const ul = document.createElement('ul');
+      ul.classList.add('submenu-items');
 
-        const ul = document.createElement('ul');
-        ul.classList.add("submenu");
+      div.appendChild(ul);
 
-        const span = document.createElement('div');
-        span.classList.add('submenu-header');
-
-        const p1 = document.createElement('p');
-        p1.classList.add('submenu-title');
-        p1.appendChild(document.createTextNode(menuName));
-        span.appendChild(p1);
-
-        const p2 = document.createElement('button');
-        p2.classList.add('submenu-close', 'icon-button');
-        p2.appendChild(document.createTextNode('✕'));
-        span.appendChild(p2);
-
-        ul.appendChild(span);
-
-        menuItems[i].replaceChildren(anchor);
-        menuItems[i].appendChild(ul);
-        submenu=menuItems[i];
-      }
-      else if (submenu) { // submenu item (--)
-        /* add submenu items */
-        menuItems[i].classList.add("subitem");
-        menuItems[i].classList.remove("item");
-        submenu.getElementsByTagName("ul")[0].appendChild(menuItems[i]);
-      }
-    }
+      return div;
   }
-  /* set this class so that the nav items remain hidden until this script finishes */
-  document.querySelector(".nav").classList.add("nav-ready");
+
+  // Main function to process menu items
+  function processMenuItems() {
+      const menuItems = document.querySelectorAll('.nav-items .item');
+      let submenu = null;
+
+      for (let i = 0; i < menuItems.length; ++i) {
+          const match = menuItems[i].lastElementChild.innerText.match(menuIndentRegex);
+
+          if (match) {
+              // Remove the submenu & submenu-item indent indicators (- --)
+              menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(menuIndentRegex,"$2").trim();
+              const menuName=menuItems[i].lastElementChild.innerText;
+
+              if (match[1].length == 1) { // Submenu (-)
+                  menuItems[i].classList.add('has-submenu');
+
+                  const anchor = document.createElement("a");
+                  anchor.setAttribute("href", "#");
+                  anchor.classList.add('tabindex=0');
+                  anchor.appendChild(document.createTextNode(menuName));
+          
+                  const sup = document.createElement('sup');
+                  sup.appendChild(document.createTextNode(' ⌄'));
+                  anchor.appendChild(sup);
+
+                  const div = createSubMenu(menuName);
+                  menuItems[i].replaceChildren(anchor);
+                  menuItems[i].appendChild(div);
+                  submenu = menuItems[i];
+              } else if (submenu) { // Submenu item (--)
+                  menuItems[i].classList.add('submenu-item');
+                  menuItems[i].classList.remove('item');
+                  submenu.querySelector('.submenu-items').appendChild(menuItems[i]);
+              }
+          }
+      }
+
+      document.querySelector('.nav').classList.add('nav-ready');
+  }
+
+  processMenuItems();
 })();
 
 /* 
  * toggle nav and submenus
  * .nav.nav-open is set when the nav is opened using the hamburger button 
- * .item.submenu-open is set when an item with a submenu is opened
+ * .submenu.submenu-open is set when an item with a submenu is opened
 */
 (function() {
   const toggleMenuButton = document.querySelector(".nav-toggle");
   const closeMenuButton = document.querySelector(".nav-close");
   const nav = document.querySelector(".nav");
-  const submenuItems = document.querySelectorAll(".has-submenu");
+  const submenus = document.querySelectorAll(".item.has-submenu > *");
 
   // Toggle the main nav using the hamburger toggle 
   function toggleMenu() {
@@ -92,23 +119,24 @@
   }
 
   function toggleSubmenu(event) {
-    const currentItem = event.currentTarget;
+    const selectedItem = event.target.parentNode;
 
-    if (event.target.closest('.submenu')) {
-      return; // Allow the link inside the submenu item 
-    }
+    if (selectedItem.classList.contains("has-submenu")) {
+      event.preventDefault(); // prevent the default link action from causing the page to jump to top of screen
 
-    event.preventDefault(); // Prevent the default link action that causes the page to jump
-    event.stopPropagation();
-
-    if (currentItem.classList.contains("submenu-open")) {
-      currentItem.classList.remove("submenu-open");
-    } else {
-      const openSubmenu = nav.querySelector(".submenu-open");
-      if (openSubmenu && openSubmenu !== currentItem) {
-        openSubmenu.classList.remove("submenu-open");
+      selectedItem.querySelector(".submenu").classList.toggle("submenu-open");
+      /*
+      if (selectedItem.classList.contains("submenu-open")) {
+        selectedItem.classList.remove("submenu-open");
+      } else {
+        const openSubmenu = nav.querySelector(".submenu-open");
+        if (openSubmenu && openSubmenu !== selectedItem) { // another submenu is open 
+          openSubmenu.classList.remove("submenu-open");
+        }
+        selectedItem.classList.add("submenu-open");
       }
-      currentItem.classList.add("submenu-open");
+      */
+
     }
   }
 
@@ -129,16 +157,14 @@
 
   toggleMenuButton.addEventListener('click', toggleMenu);
   closeMenuButton.addEventListener('click', toggleMenu);
-
-  submenuItems.forEach(item => {
-    if (item.querySelector(".submenu")) {
-      item.addEventListener("click", toggleSubmenu);
-      item.addEventListener("keypress", function(event) {
-        if (event.key === "Enter" || event.key === " ") {
-          toggleSubmenu(event);
-        }
-      });
-    }
+ 
+  submenus.forEach(submenu => {
+    submenu.addEventListener("click", toggleSubmenu);
+    submenu.addEventListener("keypress", function(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        toggleSubmenu(event);
+      }
+    });
   });
 
   window.addEventListener('click', closeSubmenuOnClickOutside);

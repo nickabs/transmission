@@ -1,13 +1,11 @@
  <header class="site-header">
-    <div class="logo">
-        <a href="{{@site.url}}">
-            {{#if @site.logo}}
-                <img src="{{@site.logo}}" height="20" width="20"  alt="{{@site.title}}">
-            {{else}}
-                {{@site.title}}
-            {{/if}}
-        </a>
-    </div>
+    {{#if @site.logo}}
+        <button id="logo" aria-label="go to the home page" class="icon-button">
+            <a href="{{@site.url}}">
+                <img src="{{@site.logo}}" alt="{{@site.title}}">
+            </a>
+        </button>
+    {{/if}}
 
     {{!-- outputs  nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
     {{navigation}}
@@ -17,7 +15,7 @@
             {{#unless @site.members_invite_only}}
                 <a href="#/portal/signin" class="signin">Sign in</a>
                 {{#if @custom.show_header_subscription_button}}
-                    <a class="signup button" aria-label="sign up" href="#/portal/signup">Sign up</a>
+                    <a class="signup" aria-label="sign up" href="#/portal/signup">Sign up</a>
                 {{/if}}
             {{/unless}}
         {{else}}

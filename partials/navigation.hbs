@@ -5,9 +5,11 @@
     <p class="nav-title">Contents</p>
     <button class="icon-button nav-close">✕</button>
   </div>
-  {{#foreach navigation}}
-      <li class="item">
-        <a href="{{url absolute="true"}}">{{label}}</a>
-      </li>
-  {{/foreach}}
+  <ul class="nav-items">
+    {{#foreach navigation}}
+        <li class="item">
+          <a href="{{url absolute="true"}}">{{label}}</a>
+        </li>
+    {{/foreach}}
+  </ul>
 </nav>

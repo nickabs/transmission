@@ -47,9 +47,9 @@
                 >
             {{else}}
                 {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}">
-                {{else}}
-                    {{@site.title}}
+                    <button id="home-page" aria-label="go to the home page" class="icon-button">
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    </button>
                 {{/if}}
             {{/if}}
         </figure>
