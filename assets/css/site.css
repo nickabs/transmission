@@ -196,6 +196,7 @@ iframe {
   border-radius: 6px;
   width:350px;
   border: 0.25px solid var(--border-color);
+  overflow:hidden; /* prevent borders overunning rounded corners */
 }
 .nav-header ,
 .submenu-header {
@@ -264,6 +265,9 @@ iframe {
       white-space: nowrap;
     }
     .nav {
+      overflow: visible; /* if not set this prevents the submenu showing */
+    }
+    .nav {
       position:static;
       display: flex;
       align-items: center;
@@ -299,6 +303,7 @@ iframe {
       .submenu {
         right:-110px;
         top: calc(var(--site-header-height) - 6px);
+        overflow: hidden;
       }
       .item:has(sup) {
         transform: translateY(-4px) ; /* fix misalignment caused by drop down nav symbol */
