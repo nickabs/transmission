@@ -1,10 +1,8 @@
  <header class="site-header">
     {{#if @site.logo}}
-        <button id="logo" aria-label="go to the home page" class="icon-button">
-            <a href="{{@site.url}}">
-                <img src="{{@site.logo}}" alt="{{@site.title}}">
-            </a>
-        </button>
+        <a aria-label="go to the home page" class="logo icon-button" href="{{@site.url}}">
+            <img src="{{@site.logo}}" alt="{{@site.title}}">
+        </a>
     {{/if}}
 
     {{!-- outputs  nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}

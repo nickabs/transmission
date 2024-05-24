@@ -135,6 +135,9 @@ iframe {
   font-weight: 700;
   align-items: center;
 }
+.nav {
+  flex-grow:1;
+}
 .signin, .signup, .account {
   font-size: 1.1rem;
   letter-spacing: -0.018rem;
@@ -152,8 +155,11 @@ iframe {
   border-radius: 6px;
   border: 1px solid var(--border-color);
 }
-.nav {
-  flex-grow:1;
+.light-mode ,
+.dark-mode 
+{
+  height: 20px;
+  width: 20px;
 }
 
 /* keep the icons following the nav bar on the rhs */
