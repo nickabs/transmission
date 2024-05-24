@@ -18,13 +18,13 @@
         <h1 class="featured-articles-title" >FEATURED</h1>
         {{#get "posts" filter="featured:true" include="authors,tags" limit=6 as |featured|}}
             {{#foreach featured}}
-                {{> "article-card" imageSizes="160w" }}
+                {{> "article-card" imageSizes="160px" }}
             {{/foreach}}
         {{/get}}
     {{else}}
         <h1 class="featured-articles-title" >MORE</h1>
         {{#foreach posts from="4" limit="6"}}
-            {{> "article-card" imageSizes="160w" }}
+            {{> "article-card" imageSizes="160px" }}
         {{/foreach}}
     {{/if}}
 </aside>

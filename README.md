@@ -24,7 +24,14 @@ This theme is optimised for traditional blog sites, particularly sites with lots
 - Tags and authors page
 - modern Inter and Menelo font families are installed with the theme
 - infinite pagination (will display a button to Load More posts)
-- home page and article collection layout options 
+- home page and article collection layout options
+
+# Pagespeed scores
+
+<div align="center">
+    <img height="250" alt="drop down navigation" src="https://github.com/nickabs/transmission/assets/4947488/2b30ed75-00fd-4156-8e42-42a59afaf3e4">
+    <img height="250" alt="drop down navigation demo" src="https://github.com/nickabs/transmission/assets/4947488/ba34f557-5a10-48d3-8541-d8e96d6975ec">
+</div>
 
 # Drop down navigation configuration
 A two level drop down nav can be created using the standard Ghost naviagion feature (settings > navigation).
