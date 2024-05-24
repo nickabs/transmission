@@ -41,7 +41,7 @@
 
 /* light mode */
 html[data-theme='light'] {
-    --banner-background-color: #ffffff;
+    --banner-background-color: #fffff9;
     --banner-title-color: #15171a;
     --banner-description-color: #56585b;
     --background-color: #fff;

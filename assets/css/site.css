@@ -147,6 +147,7 @@ iframe {
   align-items: center;
 }
 .signin {
+  font-weight: 400;
   width: 44px;
 }
 .signup {
