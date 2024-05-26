@@ -16,14 +16,14 @@
 *                                        <p class="submenu-title">HONDA C90</p>
 *                                        <button class="submenu-close icon-button">✕</button>
 *                                    </div>
-*                                    <ul class="submenu-items">
+*                                    <ol class="submenu-items">
 *  --introduction                        <li class="submenu-item">
 *                                            <a href="http://localhost:2368/2019/11/16/honda-c90-introduction/">introduction</a>
 *                                        </li>
 *  --engine                              <li class="submenu-item">
 *                                            <a href="http://localhost:2368/tag/engine/">engine</a>
 *                                        </li>
-*                                    </ul>
+*                                    </ol>
 *                                </div>
 *                            </li>
 */
@@ -51,10 +51,10 @@
 
       div.appendChild(div1);
 
-      const ul = document.createElement('ul');
-      ul.classList.add('submenu-items');
+      const ol = document.createElement('ol');
+      ol.classList.add('submenu-items');
 
-      div.appendChild(ul);
+      div.appendChild(ol);
 
       return div;
   }
