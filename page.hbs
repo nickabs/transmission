@@ -1,7 +1,11 @@
 {{!< default}}
 {{#page}}
     {{> "asides"}}
-    {{> "hero-header"}}
+
+    {{#if @page.show_title_and_feature_image}}
+        {{> "hero-header"}}
+    {{/if}}
+    
     {{!-- outputting post or page content --}}
     <article class="article-content">
         {{content}}

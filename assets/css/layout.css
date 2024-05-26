@@ -20,7 +20,7 @@
 .table-of-contents { grid-area: TableOfContents; }
 .tagged-articles { grid-area: TaggedArticles; }
 .site.home-template:has(.subscription-banner):has(.mini) { /* used on large screens with mini subs banner */
-    .subscription-banner { grid-area: MiniSubscriptionBanner;} 
+    .subscription-banner { grid-area: MiniSubscriptionBanner; } 
 }
 
 /*------------------------*/
@@ -47,15 +47,14 @@
     display: grid;
     
     grid-template-areas:
-    "SiteHeader"
-    "HeroHeader"
-    "ArticleContent"
-    "SubscriptionBanner"
-    "RelatedArticles"
-    "Pagination"
-    "TableOfContents"
-    "SiteFooter"
-    "SocialLinks";
+    "SiteHeader SiteHeader"
+    "HeroHeader HeroHeader"
+    "ArticleContent ArticleContent"
+    "SubscriptionBanner SubscriptionBanner"
+    "RelatedArticles RelatedArticles"
+    "Pagination Pagination"
+    "SiteFooter SiteFooter"
+    "TableOfContents SocialLinks";
 }
 
 /*---------------------------------------------------*/
@@ -117,19 +116,20 @@
             "SiteFooter SiteFooter";
     }
 
-    /* page & post view tablet  */
+    /* page & post view tablet with sidebar */
     .site.page-template , .site.post-template {
-        grid-template-columns: 6fr 1fr; 
-        grid-template-areas:
-            "SiteHeader SiteHeader"
-            "HeroHeader HeroHeader"
-            "TableOfContents TableOfContents"
-            "ArticleContent SocialLinks"
-            "SubscriptionBanner SocialLinks"
-            "RelatedArticles SocialLinks"
-            "Pagination SocialLinks"
-            "SiteFooter SiteFooter";
-       
+        &:has(.sidebar) {
+            grid-template-columns: 6fr 1fr; 
+            grid-template-areas:
+                "SiteHeader SiteHeader"
+                "HeroHeader HeroHeader"
+                "ArticleContent SocialLinks"
+                "SubscriptionBanner SocialLinks"
+                "RelatedArticles SocialLinks"
+                "Pagination SocialLinks"
+                "TableOfContents TableOfContents"
+                "SiteFooter SiteFooter";
+        }
     }
 }
 /* ------------- */
@@ -180,16 +180,18 @@
             grid-row: 4; grid-column: 1 / span 3; 
         }
     }
-    /* page and post layout */
+    /* page and post layout with sidebar */
     .site.page-template, .site.post-template {
-        grid-template-columns: 1fr 2.5fr 1fr; 
-        grid-template-areas:
-            "SiteHeader SiteHeader SiteHeader"
-            "HeroHeader HeroHeader HeroHeader"
-            "TableOfContents ArticleContent SocialLinks"
-            "TableOfContents SubscriptionBanner SocialLinks"
-            "TableOfContents RelatedArticles SocialLinks"
-            "TableOfContents Pagination SocialLinks"
-            "SiteFooter SiteFooter SiteFooter";
+        &:has(.sidebar) {
+            grid-template-columns: 1fr 2.5fr 1fr; 
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader"
+                "TableOfContents ArticleContent SocialLinks"
+                "TableOfContents SubscriptionBanner SocialLinks"
+                "TableOfContents RelatedArticles SocialLinks"
+                "TableOfContents Pagination SocialLinks"
+                "SiteFooter SiteFooter SiteFooter";
+        }
     }
 }

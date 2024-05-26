@@ -32,11 +32,8 @@
     display:none;
 }
 @media (min-width:760px) {
-    .site .social-links-title {
-        display: inline-block;
-        font-size: 1.6rem;
-    }
-    .social-links {
+    .social-links.sidebar {
+        display:flex;
         bottom: unset;
         height:0;
         flex-direction: column;
@@ -44,5 +41,9 @@
         align-items: center;
         position: sticky;
         top: 67px;
+        .social-links-title {
+            display: inline-block;
+            font-size: 1.6rem;
+        }
     }
 }

@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.12.0",
+    "version": "1.13.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -45,33 +45,32 @@
         },
         "card_assets": true,
         "custom": {
-            "show_related_posts": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
+            "menu_style": {
+                "type": "select",
+                "options": [ "Minified", "Expanded" ],
+                "default": "Expanded",
+                "description": "Header nav style on wide screens"
             },
-            "post_subscription_banner_type": {
+            "google_analytics_id": {
+                "type": "text",
+                "description": "if you use google analytics, add your GA id here"
+            },
+            "article_collection_style": {
                 "type": "select",
                 "options": [
-                    "Full",
-                    "Mini",
-                    "None"
+                    "List",
+                    "Grid"
                 ],
-                "default": "None",
-                "group": "post",
-                "description": "membership must be enabled to use this option"
+                "default": "Grid",
+                "description": "tagged/author collection style"
             },
-            "post_subscription_banner_heading": {
-                "type": "text",
-                "group" : "post",
-                "description": "Defaults to site title when empty",
-                "visibility": "post_subscription_banner_type:Full"
+            "site_accent_color_dark": {
+                "type": "color",
+                "default": "#564d4d"
             },
-            "post_subscription_banner_description": {
-                "type": "text",
-                "description": "Defaults to site description when empty",
-                "group" : "post",
-                "visibility": "post_subscription_banner_type:Full"
+            "site_accent_color_light": {
+                "type": "color",
+                "default": "#e6e6e6"
             },
             "show_featured_posts": {
                 "type": "boolean",
@@ -132,32 +131,46 @@
                 "default": false,
                 "description": "membership must be enabled to use this option"
             },
-            "menu_style": {
-                "type": "select",
-                "options": [ "Minified", "Expanded" ],
-                "default": "Expanded",
-                "description": "Header nav style on wide screens"
-            },
-            "google_analytics_id": {
-                "type": "text",
-                "description": "if you use google analytics, add your GA id here"
-            },
-            "article_collection_style": {
+            "post_layout_type": {
                 "type": "select",
                 "options": [
-                    "List",
-                    "Grid"
+                    "Sidebars / no feature image",
+                    "Footer / no feature image",
+                    "Sidebars / feature image",
+                    "Footer / feature image",
+                    "Footer / wide feature image"
                 ],
-                "default": "Grid",
-                "description": "tagged/author collection style"
+                "default": "Sidebars / no feature image",
+                "group": "post",
+                "description": "arrangement of featured image, TOC & social links"
             },
-            "site_accent_color_dark": {
-                "type": "color",
-                "default": "#564d4d"
+            "show_related_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
             },
-            "site_accent_color_light": {
-                "type": "color",
-                "default": "#e6e6e6"
+            "post_subscription_banner_type": {
+                "type": "select",
+                "options": [
+                    "Full",
+                    "Mini",
+                    "None"
+                ],
+                "default": "None",
+                "group": "post",
+                "description": "membership must be enabled to use this option"
+            },
+            "post_subscription_banner_heading": {
+                "type": "text",
+                "group" : "post",
+                "description": "Defaults to site title when empty",
+                "visibility": "post_subscription_banner_type:Full"
+            },
+            "post_subscription_banner_description": {
+                "type": "text",
+                "description": "Defaults to site description when empty",
+                "group" : "post",
+                "visibility": "post_subscription_banner_type:Full"
             }
         }
     },

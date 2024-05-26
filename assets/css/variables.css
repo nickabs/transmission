@@ -20,6 +20,7 @@
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
     --max-content-width: 720px;
+    --max-container-width: 1300px;
     --site-edge-padding: max(5vmin, 20px); 
     --section-gap: max(1.5vw,24px);
     --article-card-gap: 15px; 
@@ -46,6 +47,7 @@ html[data-theme='light'] {
     --banner-description-color: #56585b;
     --background-color: #fff;
     --secondary-background-color: #e6e2e2;
+    --reading-progress-color:#3ead43; 
     --code-color: #3ead43;
     --link-color: #0969da;
     --title-color: #444;
@@ -63,6 +65,7 @@ html[data-theme='dark'] {
     --banner-background-color: #161b22;
     --background-color: #181818;
     --secondary-background-color: #212022;
+    --reading-progress-color:#3ead43; 
     --code-color: #f08d49;
     --link-color: #4493f8;
     --title-color:  #f0f6fc;

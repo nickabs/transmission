@@ -1,19 +1,51 @@
 /* ------------------------------- */
 /* styling for all article content */
 /* ------------------------------- */
+
+/* article layout */
+.site:has(.sidebar) {
+  .article-content {
+      max-width: var(--max-content-width);
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+
+/* display wide/full width images on larger screens where sidebars are not used */
+.site:not(:has(.sidebar)) {
+  @media (min-width:760px) {
+    .article-content {
+      --main: var(--max-content-width);
+      --wide: minmax(0, calc((var(--max-container-width) - var(--max-content-width)) / 2));
+      --full: minmax(var(--section-gap), 1fr);
+      display: grid;
+      grid-template-columns:
+          [full-start] var(--full)
+          [wide-start] var(--wide)
+          [main-start] var(--main) [main-end]
+          var(--wide) [wide-end]
+          var(--full) [full-end];
+      > * {
+        grid-column: main;
+      }
+      .kg-width-wide {
+        grid-column: wide;
+      }
+      .kg-width-full {
+        grid-column: full;
+      }
+    }
+  }
+}
+
 .article-content,
 .related-articles { 
   justify-self: center;
-  max-width: var(--max-content-width);
-  max-width: 100vw;
 }
 .article-content > :first-child{
   padding-top:15px;
 }
 @media screen and (min-width: 760px) {
-  .article-content {
-    max-width: var(--max-content-width);
-  }
   .article-content :first-child{
     padding-top:0px;
   }
@@ -78,10 +110,10 @@
 
 /* flex table when on a mobile */
 @media(max-width:480px) {
-    .article-content table{
-      table-layout:auto !important;
-     }
- }
+  .article-content table{
+    table-layout:auto !important;
+  }
+}
 
  /* override the inline styles in tables copied from google sheets
  do not change the references table fonts */

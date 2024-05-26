@@ -1,7 +1,10 @@
-{{!-- markup for the table of contents and social link icons (used by both pages and posts) --}}    
+{{!-- markup for the table of contents and social link icons (used by both pages and posts) 
+Parameters:
+    layout: [ sidebar , footer]
+--}}    
 
 {{!-- The TOC will be inserted here --}}
-<aside class="table-of-contents">
+<aside class="table-of-contents {{layout}}">
     <div class="toc"></div>
     <button id="toc-toggle" progress="0" aria-label="table-of-contents-mode" class="icon-button">
         <span class="toc-open-icon ">{{> "icons/toc-open"}}</span>
@@ -10,7 +13,7 @@
 </aside> 
 
 {{!-- share buttons inserted here --}}
-<aside class="social-links">
+<aside class="social-links {{layout}}">
     <h1 class="social-links-title">Share</h1>
     <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
     class="social-link-icon" aria-label="share on facebook" target="_blank" rel="noopener" >

@@ -59,7 +59,11 @@ iframe {
   border: 0;
 }
 
-/* site borders */
+/* site margins and padding */
+body {
+  max-width: var(--max-container-width);
+  margin: 0 auto; 
+}
 .site > * {
   padding-left: var(--site-edge-padding);
   padding-right: var(--site-edge-padding);
@@ -90,6 +94,7 @@ iframe {
         margin-right:0;
   }
 }
+
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */

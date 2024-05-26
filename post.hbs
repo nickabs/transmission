@@ -2,14 +2,28 @@
 
 {{#post}}
     {{!-- toc and social icons --}}
-    {{> "asides"}}
+    {{#match @custom.post_layout_type "Sidebars / no feature image"}} 
+        {{> "asides" layout="sidebar"}}
+    {{else match @custom.post_layout_type "Sidebars / feature image"}}
+        {{> "asides" layout="sidebar"}}
+    {{else}}
+        {{> "asides" layout="footer"}}
+    {{/match}}
 
-    {{#if @page.show_title_and_feature_image}}
-        {{> "hero-header"}}
-    {{/if}}
+    {{> "hero-header"}}
 
     {{!-- outputting post or page content --}}
     <article class="article-content">
+        {{#if custom_excerpt}}<p class="article-excerpt">{{custom_excerpt}}</p>{{/if}}
+        {{#if feature_image }}
+            {{#match @custom.post_layout_type "Sidebars / feature image"}} 
+                {{> "feature_image" }}
+            {{else match @custom.post_layout_type "Footer / feature image"}}
+                {{> "feature_image" }}
+            {{else match @custom.post_layout_type "Footer / wide feature image"}}
+                {{> "feature_image" image_format="wide" }}
+            {{/match}}
+        {{/if}}
         {{content}}
     </article>
 {{/post}}
