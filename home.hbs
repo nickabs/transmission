@@ -4,13 +4,13 @@
 
 <article class="main-article">
     {{#foreach posts limit="1"}}
-        {{> "article-card" imageSizes="320px" }}
+        {{> "article-card" image_size="m" }}
     {{/foreach}}
 </article>
 <aside class="recent-articles  ">
     <h1 class="recent-articles-title" >RECENT</h1>
     {{#foreach posts from="2" limit="3"}}
-        {{> "article-card" imageSizes="320px" }}
+        {{> "article-card" image_size="s" }}
     {{/foreach}}
 </aside>
 <aside class="featured-articles  ">
@@ -18,13 +18,13 @@
         <h1 class="featured-articles-title" >FEATURED</h1>
         {{#get "posts" filter="featured:true" include="authors,tags" limit=6 as |featured|}}
             {{#foreach featured}}
-                {{> "article-card" imageSizes="160px" }}
+                {{> "article-card" image_size="xs" }}
             {{/foreach}}
         {{/get}}
     {{else}}
         <h1 class="featured-articles-title" >MORE</h1>
         {{#foreach posts from="4" limit="6"}}
-            {{> "article-card" imageSizes="160px" }}
+            {{> "article-card" image_size="xs" }}
         {{/foreach}}
     {{/if}}
 </aside>
@@ -32,12 +32,12 @@
     <h1 class="previous-articles-title" >MORE</h1>
     {{#if @custom.show_featured_posts}}
         {{#foreach posts from="5"}}
-            {{> "article-card" imageSizes="320px" }}
+            {{> "article-card" image_size="s" }}
         {{/foreach}}
     {{else}}
         {{#get "posts" include="tags" }}
             {{#foreach posts from="11" }}
-                {{> "article-card" imageSizes="320px"}}
+                {{> "article-card" image_size="s"}}
             {{/foreach}}
         {{/get}}
     {{/if}}

@@ -1,20 +1,24 @@
 
 {{!-- 
-    article summary (thumbnail, tile and excerpt 
-    Params: imageSizes (optional sizes property for the <img> tag )
+    article summary : thumbnail, tile and excerpt 
+    Params: image_size [ xs | s | m | l | xl  ] optional featued image sizes property
 --}}
 <article class="article-card aria-label={{title}}">
     {{#if feature_image}}
         <a class="article-card-image" href="{{url}} ">
-            <figure>
-                <img
-                    srcset="{{> "srcset"}}"
-                    sizes="{{#if imageSizes}}{{imageSizes}}{{else}}320px{{/if}}"
-                    src="{{img_url feature_image size="m"}}"
-                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                    loading="lazy"
-                >
-            </figure>
+            {{#match image_size "xs"}}
+                {{> "feature_image" image_size="xs"}}
+            {{else match image_size "s"}}
+                {{> "feature_image" image_size="s"}}
+            {{else match image_size "m"}}
+                {{> "feature_image" image_size="m"}}
+            {{else match image_size "l"}}
+                {{> "feature_image" image_size="l"}}
+            {{else match image_size "xl"}}
+               {{> "feature_image" image_size="xl"}}
+            {{else}}
+               {{> "feature_image"}}
+            {{/match}}
         </a>
     {{/if}}
     <h1 class="article-card-title"><a href="{{url}}">{{title}}</a></h1>

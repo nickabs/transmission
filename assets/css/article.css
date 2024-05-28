@@ -103,6 +103,13 @@
     text-decoration-color: var(--link-color);
     opacity: 0.8;
 }
+/* make sure feature-image fills container */
+.feature-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
 
 /*----------------------*/
 /* tables               */
