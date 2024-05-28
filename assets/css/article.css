@@ -2,15 +2,6 @@
 /* styling for all article content */
 /* ------------------------------- */
 
-/* article layout */
-.site:has(.sidebar) {
-  .article-content {
-      max-width: var(--max-content-width);
-      padding-left: 0;
-      padding-right: 0;
-  }
-}
-
 /* display wide/full width images on larger screens where sidebars are not used */
 .site:not(:has(.sidebar)) {
   @media (min-width:760px) {
@@ -37,7 +28,6 @@
     }
   }
 }
-
 .article-content,
 .related-articles { 
   justify-self: center;

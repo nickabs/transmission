@@ -1,6 +1,6 @@
 {{!- 
     Parameters:
-    image_format [ wide full ] (when not set the image fills the main column of the article)
+    image_format [ wide ] (when not set the image fills the main column of the article)
     image_size [] xs | s | m | w | xl ] (when not set a responsive srcset is used)
 --}}
 <figure class="feature-image {{#match image_format "wide"}}kg-width-wide{{/match}}">
@@ -14,7 +14,11 @@
             {{img_url feature_image size="m" }} 600w,
             {{img_url feature_image size="l" }} 960w,
             {{img_url feature_image size="xl"}} 1200w"
-            sizes="(max-width: 160px) 100vw, (max-width: 320px) 100vw, (max-width: 600px) 100vw, (max-width: 1200px) 100vw, 1200px"
+            sizes="(max-width: 160px) 100vw, 
+                   (max-width: 320px) 100vw,
+                   (max-width: 600px) 100vw,
+                   (max-width: 1200px) 100vw, 
+                   1200px"
         {{/if}}
         alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
     >

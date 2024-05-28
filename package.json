@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.13.0",
+    "version": "1.13.1",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -135,8 +135,8 @@
                 "type": "select",
                 "options": [
                     "Sidebars / no feature image",
-                    "Footer / no feature image",
                     "Sidebars / feature image",
+                    "Footer / no feature image",
                     "Footer / feature image",
                     "Footer / wide feature image"
                 ],

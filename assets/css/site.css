@@ -44,11 +44,6 @@ a {
 a:hover {
     opacity: 0.8;
 }
-@media (min-width: 1100px) {
-  .article-content {
-    padding-left: 0px;
-  }
-}
 .hero-header {
   margin-bottom: var(--section-gap);
 }
