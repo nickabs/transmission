@@ -42,7 +42,7 @@
 
 /* light mode */
 html[data-theme='light'] {
-    --banner-background-color: #fffff9;
+    --banner-background-color: #fafafa;
     --banner-title-color: #15171a;
     --banner-description-color: #56585b;
     --background-color: #fff;

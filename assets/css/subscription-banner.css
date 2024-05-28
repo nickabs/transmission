@@ -11,7 +11,7 @@
     background-color: var(--banner-background-color);
     margin: var(--section-gap) 0 var(--section-gap) 0;
     border: 1px solid var(--border-color);
-    border-radius:5%;
+    border-radius:5px;
     margin:30px 30px 0 30px!important;
 }
 
@@ -60,7 +60,12 @@
         border: 0;
         letter-spacing: inherit;
         outline: none;
+        border-radius: 5px;
     }
+    .form-input::placeholder {
+        padding-left: 5px; 
+    }
+
     .error-text {
         padding-top: 4px;
         font-size:1.4rem;
