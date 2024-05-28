@@ -72,13 +72,17 @@
 }
 
 /* figure captions */
-.article-content figcaption ,
-.article-content figcaption * {
+figcaption {
     font-size: var(--content-fig-font-size);
     line-height: 1.5;
     color: var(--secondary-text-color);
     margin-top: 1.0rem;
     text-align: center;
+}
+
+/* hide feature card figcaptions in article cards */
+.article-card figcaption {
+  display: none;
 }
 .article-content li + li {
     margin-top: 0.8rem;

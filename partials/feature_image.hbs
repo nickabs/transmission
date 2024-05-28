@@ -22,4 +22,7 @@
         {{/if}}
         alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
     >
+    {{#if feature_image_caption}}
+        <figcaption class="feature_image_caption">{{feature_image_caption}}</figcaption>
+    {{/if}}
 </figure>
