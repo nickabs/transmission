@@ -40,6 +40,11 @@
         "SiteFooter";
 }
 
+/* list mode */
+.site.home-page-list :not(.site-header):not(.hero-header):not(.site-footer) {
+    justify-self: center;
+}
+
 /*------------------------*/
 /* post/page mobile view */
 /*------------------------*/
@@ -183,7 +188,7 @@
     /* page and post layout with sidebar */
     .site.page-template, .site.post-template {
         &:has(.sidebar) {
-            grid-template-columns: 1fr 2.5fr 1fr; 
+            grid-template-columns: 1fr auto 1fr; 
             grid-template-areas:
                 "SiteHeader SiteHeader SiteHeader"
                 "HeroHeader HeroHeader HeroHeader"

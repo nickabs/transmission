@@ -1,12 +1,13 @@
 /*------------------------------------- */
 /* set the styles used accross the site */
 /* 1. default styles for the site       */
-/* 2. photoswipe lightbox adjustments   */
-/* 3. site header                       */
-/* 4. navigation menu                  */
-/* 5. site footer                       */
-/* 6. Ghost cards                       */
-/* 7. dark/light mode icons             */
+/* 2. default site padding              */
+/* 3. photoswipe lightbox adjustments   */
+/* 4. site header                       */
+/* 5. navigation menu                   */
+/* 6. site footer                       */
+/* 7. Ghost cards                       */
+/* 8. dark/light mode icons             */
 /*------------------------------------- */
 
 /* -------------------------------*/
@@ -54,41 +55,39 @@ iframe {
   border: 0;
 }
 
-/* site margins and padding */
-body {
-  max-width: var(--max-container-width);
-  margin: 0 auto; 
-}
-.site > * {
-  padding-left: var(--site-edge-padding);
-  padding-right: var(--site-edge-padding);
-}
+/***************************/
+/* 2. default site padding */
+/***************************/
+
+/* default padding */
 .home-template > *,
 .author-template > *,
-.tag-template > * {
-  @media (min-width:480px) {
-    margin-left: 15vw ;
-    margin-right: 15vw ;
-  }
-  @media (min-width:760px) {
-    margin-left: 20vw ;
-    margin-right: 20vw ;
-  }
-  @media (min-width:1100px) {
-    margin-left: 25vw ;
-    margin-right: 25vw ;
+.tag-template > *,
+.site-footer,
+.site-header {
+  padding-left: var(--default-edge-padding);
+  padding-right: var(--default-edge-padding);
+}
+
+/* large screens: pad header/footer menus so they do not stetch beyond max-container-size */
+@media (min-width:1200px) {
+  .post-template,
+  .page-template {
+    .site-footer,
+    .site-header {
+      padding-right: var(--large-screen-edge-padding);
+      padding-left: var(--large-screen-edge-padding);
+      width: 100%;
+    }
+    .table-of-contents { 
+      padding-left: var(--large-screen-edge-padding); 
+    }
+    .social-links { 
+      padding-right: var(--large-screen-edge-padding); 
+    }
   }
 }
-.home-template,
-.author-template,
-.tag-template {
-  .site-header,
-  .hero-header,
-  .site-footer  {
-        margin-left:0;
-        margin-right:0;
-  }
-}
+
 
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
@@ -115,19 +114,13 @@ body {
 }
 
 /* -------------------------------------- */
-/* 3. site header                         */
+/* 4. site header                         */
 /* -------------------------------------- */
 .site-header {
   background-color: var(--background-color);
-  border-bottom: 0.25px solid var(--theme-accent-color);
   position: sticky;
   top: 0;
-  padding-left:10px;
-  padding-right:10px;
   z-index: 1000; /* show above page content */
-}
-.site-header {
-  background-color: var(--background-color);
   display: flex;
   height:var(--site-header-height); 
   flex-direction: row;
@@ -169,7 +162,7 @@ body {
 }
 
 /* -------------------------------------- */
-/* 4. navigation menu                     */
+/* 5. navigation menu                     */
 /* -------------------------------------- */
 /* default display for mobile devices (hamburger nav) */
 .nav {
@@ -191,7 +184,7 @@ body {
 
 .nav, .submenu {
   position:fixed;
-  right:var(--site-edge-padding);
+  right:var(--default-edge-padding);
   top: calc(var(--site-header-height) + 5px);
   background-color: var(--banner-background-color);
   border-radius: 6px;
@@ -314,18 +307,17 @@ body {
 }
 
 /* -------------------------------------- */
-/* 5. site footer (privacy and copyright) */
+/* 6. site footer (privacy and copyright) */
 /* -------------------------------------- */
 .site-footer {
     line-height: 2.1rem;
     font-weight: 600;
     font-size:1.2rem;
     color: var(--secondary-text-color);
-    border-top: 0.25px solid var(--theme-accent-color);
     margin-top: var(--section-gap);
     display: flex;
     justify-content: space-between;
-    padding: 5px 10px 5px 10px;
+    border-top: 0.25px solid var(--border-color);
 }
 .site-footer a {
   color: var(--secondary-text-color);
@@ -351,7 +343,7 @@ body {
 }
 
 /* -------------------------------------- */
-/* 6. Ghost cards                         */
+/* 7. Ghost cards                         */
 /* -------------------------------------- */
 .site {
   .kg-embed-card iframe {
@@ -395,7 +387,7 @@ body {
 }
 
 /* ------------------------ */
-/* 7. dark/light mode icons */
+/* 8. dark/light mode icons */
 /* ------------------------ */
 .dark-mode,
 .light-mode {

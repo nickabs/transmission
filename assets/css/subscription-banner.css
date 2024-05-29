@@ -2,29 +2,26 @@
 /* show the subscription banner on the home and page screens */
 /* --------------------------------------------------------- */
 .subscription-banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-end;
-    height: 210px;
+    min-height: 300px;
     background-color: var(--banner-background-color);
-    margin: var(--section-gap) 0 var(--section-gap) 0;
     border: 1px solid var(--border-color);
     border-radius:5px;
-    margin:30px 30px 0 30px!important;
+    margin: var(--section-gap) var(--section-gap) 0 var(--section-gap);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
 }
-
 .mini {
     height:135px;
 }
-
 .subscription-banner-heading, 
 .subscription-banner-description, 
 .subscription-banner-form .error-text {
     color: var(--banner-title-color);
 }
-
 .subscription-banner-form {
     .form-input { grid-area: FormInput; }
     .button { grid-area: Button; }
@@ -54,7 +51,7 @@
         font-size: 1.6rem;
     }
     .form-input {
-        width:220px;
+        width:190px;
         font-size: 1.3rem;
         background-color: #e6e6e6;
         border: 0;
@@ -96,10 +93,10 @@
 
 /* large screens - show banner on rhs of home screen */
 @media(min-width: 1100px) {
-    .home-template .subscription-banner:not(.mini) { /*mini banners are shown as a bar below the pagination section */
+    .home-template:not(.home-page-list) .subscription-banner:not(.mini) { /*mini banners are shown as a bar below the pagination section */
         justify-content: center;
-        height: 400px;
+        max-height: 400px;
         position: sticky;
-        top:0;
+        top:85px;
     }
 }

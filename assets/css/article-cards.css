@@ -17,6 +17,7 @@
 
 /* default article card view */
 .article-card {
+    max-width: var(--max-content-width);
     display:grid;
     grid-template-columns: auto;
     grid-template-areas:
@@ -50,6 +51,9 @@
 .article-collection-as-list {
     .author-articles, 
     .tagged-articles {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-self: center;
         gap: var(--article-card-gap);
         .article-card {
             @media (min-width:760px) {
@@ -64,6 +68,29 @@
     }
 }
 
+/* flexible grid of article-cards */
+.article-collection-as-grid {
+    .tagged-articles,
+    .author-articles  {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
+        gap: var(--article-card-gap);
+        /* bob article cards up and down on hover */
+        .article-card:hover {
+            translate: 0 -10px;
+        }
+        .article-card {
+            transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+        }
+        .article-card-image  {
+            border-radius: 10px;
+            max-height: 700px;
+            align-self:baseline;
+        }
+    }
+}
 
 /* article-card excerpt display settings */
 .main-article, .related-articles, .author-articles, .tagged-articles {
@@ -120,31 +147,6 @@
     }
 }
 
-/* flexible grid of article-cards */
-.article-collection-as-grid {
-    .tagged-articles,
-    .author-articles  {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
-        margin-left:0;
-        margin-right:0;
-        gap: var(--article-card-gap);
-        /* bob article cards up and down on hover */
-        .article-card:hover {
-            translate: 0 -10px;
-        }
-        .article-card {
-            transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
-            border: 1px solid var(--border-color);
-            padding: 10px;
-        }
-        .article-card-image  {
-            border-radius: 10px;
-            max-height: 700px;
-            align-self:baseline;
-        }
-    }
-}
 /* --------------------------- */
 /* article-card content styles */
 /* --------------------------- */
@@ -215,10 +217,6 @@
 /* -------------- */
 @media (min-width: 480px) {
     .site.home-template:not(.home-page-list) {
-        > * {
-            margin-left: 0;
-            margin-right: 0;
-        }
         .main-article .article-card {
             padding:0;
         }

@@ -2,7 +2,33 @@
 /* styling for all article content */
 /* ------------------------------- */
 
-/* display wide/full width images on larger screens where sidebars are not used */
+/* default article view is a single column with all user content inside a variable margin:
+
+the article-content grid is as follows:
+     |<--- full --->|<--- main --->|<--- full --->|
+[full-start]     [main-start]     [main-end]      [full-end]
+*/
+.related-articles,
+.article-content {
+  --main: minmax(calc(1fr-40px), var(--max-content-width));
+  --full: var(--default-edge-padding);
+  display: grid;
+
+  grid-template-columns:
+      [full-start] var(--full)
+      [main-start] var(--main) [main-end] 
+      var(--full) [full-end];
+  > * {
+    grid-column: main;
+  }
+}
+
+/* display wide/full width images on larger screens where sidebars are not used 
+
+ the article-content grid is as follows:
+     |<--- full --->|<--- wide --->|<--- main --->|<--- wide --->|<--- full --->|
+[full-start]     [wide-start]   [main-start]     [main-end]     [wide-end]      [full-end]
+*/
 .site:not(:has(.sidebar)) {
   @media (min-width:760px) {
     .article-content {
@@ -10,11 +36,12 @@
       --wide: minmax(0, calc((var(--max-container-width) - var(--max-content-width)) / 2));
       --full: minmax(var(--section-gap), 1fr);
       display: grid;
+
       grid-template-columns:
           [full-start] var(--full)
           [wide-start] var(--wide)
-          [main-start] var(--main) [main-end]
-          var(--wide) [wide-end]
+          [main-start] var(--main) [main-end] 
+          var(--wide) [wide-end] 
           var(--full) [full-end];
       > * {
         grid-column: main;

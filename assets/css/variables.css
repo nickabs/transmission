@@ -7,7 +7,7 @@
  mobile: < 480px
  tablet: 480 - 760px
  laptop: 760 - 1100px
- large screens: > 1100px
+ large screens: > 1200px
 */
 
 :root {
@@ -19,13 +19,14 @@
     --h1-font-size: 2.5rem;
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
-    --max-content-width: 720px;
-    --max-container-width: 1300px;
-    --site-edge-padding: max(5vmin, 20px); 
-    --section-gap: max(1.5vw,24px);
-    --article-card-gap: 15px; 
     --site-header-height: 55px; 
     --hero-header-height: 160px ;
+    --section-gap: max(1.5vw,24px);
+    --max-content-width: 720px;
+    --max-container-width: 1200px; 
+    --default-edge-padding: max(5vmin, 20px); 
+    --large-screen-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1200px */
+    --article-card-gap: 15px; 
 }
 
 /* font sizes on larger screens */

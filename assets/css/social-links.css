@@ -4,6 +4,7 @@
 /* for larger screens they are shown on the right hand side        */
 /* ------------------------------------------------------------------- */
 
+/* mobile view */
 .social-links {
     position: sticky;
     bottom: 0;
@@ -27,7 +28,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .social-links-title {
     display:none;
 }
@@ -37,13 +37,18 @@
         bottom: unset;
         height:0;
         flex-direction: column;
-        justify-content:flex-start;
-        align-items: center;
+        margin-right: auto;
+        margin-left: 40px;
         position: sticky;
         top: 67px;
         .social-links-title {
             display: inline-block;
             font-size: 1.6rem;
         }
+    }
+}
+@media (min-width:1100px) {
+    .social-links.sidebar {
+        margin-left: 100px;
     }
 }
