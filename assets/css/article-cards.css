@@ -55,10 +55,12 @@
     .author-articles, 
     .tagged-articles {
         display: grid;
-        grid-template-columns: 1fr;
-        place-self: center;
+        justify-content: center;
+        grid-template-columns: .25fr 1fr .25fr;
         gap: var(--article-card-gap);
+
         .article-card {
+            grid-column: 1 / -1;
             @media (min-width:760px) {
                 grid-template-columns: 1.2fr 2fr;
                 grid-template-areas:
@@ -66,6 +68,11 @@
                     "Image Excerpt"
                     "Image Metadata"
                     "Image Author";
+            }
+        }
+        @media (min-width: 480px) {
+            .article-card {
+                grid-column: 2;
             }
         }
     }

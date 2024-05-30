@@ -7,13 +7,13 @@
         {{> "article-card" image_size="m" }}
     {{/foreach}}
 </article>
-<aside class="recent-articles  ">
+<aside class="recent-articles">
     <h1 class="recent-articles-title" >RECENT</h1>
     {{#foreach posts from="2" limit="3"}}
         {{> "article-card" image_size="s" }}
     {{/foreach}}
 </aside>
-<aside class="featured-articles  ">
+<aside class="featured-articles">
     {{#if @custom.show_featured_posts}}
         <h1 class="featured-articles-title" >FEATURED</h1>
         {{#get "posts" filter="featured:true" include="authors,tags" limit=6 as |featured|}}
@@ -28,7 +28,7 @@
         {{/foreach}}
     {{/if}}
 </aside>
-<aside class="previous-articles   paginated">
+<aside class="previous-articles paginated">
     <h1 class="previous-articles-title" >MORE</h1>
     {{#if @custom.show_featured_posts}}
         {{#foreach posts from="5"}}
@@ -53,4 +53,3 @@
     {{/unless}}
 {{/if}}
 {{pagination}}
-

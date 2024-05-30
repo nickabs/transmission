@@ -22,10 +22,10 @@
 .site.home-template:has(.subscription-banner):has(.mini) { /* used on large screens with mini subs banner */
     .subscription-banner { grid-area: MiniSubscriptionBanner; } 
 }
-
 .site {
     display: grid;
 }
+
 /*------------------------*/
 /* home-page mobile view  */
 /*------------------------*/
@@ -133,7 +133,7 @@
 @media (min-width: 1100px) { 
     /* home page layout */
     .site.home-template.home-page-focus-left {
-        grid-template-columns: 1.7fr 1fr 1fr; 
+        grid-template-columns: 2.2fr 1fr 1fr; 
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
@@ -147,7 +147,7 @@
         }
     }
     .site.home-template.home-page-focus-middle {
-        grid-template-columns: 1fr 1.7fr 1fr; 
+        grid-template-columns: 1fr 2.2fr 1fr; 
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
@@ -161,7 +161,7 @@
         }
     }
     .site.home-template.home-page-focus-right {
-        grid-template-columns: 1fr 1fr 1.7fr; 
+        grid-template-columns: 1fr 1fr 2.2fr; 
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader"
