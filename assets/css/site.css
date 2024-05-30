@@ -136,8 +136,8 @@ iframe {
   letter-spacing: -0.018rem;
   font-weight: 800;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
+  place-items: center;
 }
 .signin {
   font-weight: 400;

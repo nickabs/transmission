@@ -1,14 +1,18 @@
-/* --------------------------- */
-/* article-card content layout */
-/* author & tagged collections */
-/* article card list titles    */
-/* article-card content styles */
-/* larger screens              */
-/* --------------------------- */
+/* ---------------------------------------------------------------------------------- */
+/* article-card content layout - this css is used by all pages that use article cards */
+/* (home page, author & tagged collections)                                           */
+/*                                                                                    */
+/* 1. article-card content layout (mobile view)                                       */
+/* 2. author & tagged collections                                                     */
+/* 3. pagination (load more articles button)                                          */
+/* 4. article card list titles                                                        */
+/* 5. article-card content styles                                                     */
+/* 6. article-card layout adjustments for larger screens                              */
+/* ---------------------------------------------------------------------------------- */
 
-/* ----------------------------------------- */
-/* article-card content layout (mobile view) */
-/* ----------------------------------------- */
+/* -------------------------------------------- */
+/* 1. article-card content layout (mobile view) */
+/* -------------------------------------------- */
 .article-card-image { grid-area: Image; }
 .article-card-title { grid-area: Title; }
 .article-card-author { grid-area: Author; }
@@ -17,7 +21,6 @@
 
 /* default article card view */
 .article-card {
-    max-width: var(--max-content-width);
     display:grid;
     grid-template-columns: auto;
     grid-template-areas:
@@ -45,9 +48,9 @@
         "Author Image";
 }
 
-/* --------------------------- */
-/* author & tagged collections */
-/* --------------------------- */
+/* ------------------------------ */
+/* 2. author & tagged collections */
+/* ------------------------------ */
 .article-collection-as-list {
     .author-articles, 
     .tagged-articles {
@@ -119,9 +122,19 @@
     padding-top: calc(var(--article-card-gap)/1.5) ;
 }
 
-/* ------------------------ */
-/* article card list titles */
-/* ------------------------ */
+/* ---------------------------------- */
+/* 3. pagination (load more articles) */
+/* ---------------------------------- */
+.pagination {
+    display:flex;
+    justify-content: center;
+    padding-top: 35px;
+    padding-bottom: 15px;
+}
+
+/* --------------------------- */
+/* 4. article card list titles */
+/* --------------------------- */
 .site {
     .related-articles-title,
     .recent-articles-title,
@@ -147,9 +160,9 @@
     }
 }
 
-/* --------------------------- */
-/* article-card content styles */
-/* --------------------------- */
+/* ------------------------------ */
+/* 5. article-card content styles */
+/* ------------------------------ */
 .article-card {
     gap: 9px;
 }
@@ -212,13 +225,18 @@
     padding: 0 2px 0 2px;
 }
 
-/* -------------- */
-/* larger screens */
-/* -------------- */
+/* ----------------- */
+/* 6. larger screens */
+/* ----------------- */
 @media (min-width: 480px) {
     .site.home-template:not(.home-page-list) {
         .main-article .article-card {
             padding:0;
+        }
+        .recent-articles {
+            img { 
+                max-height: 200px;
+            }
         }
         .previous-articles {
             gap: 15px;
@@ -233,7 +251,7 @@
             }
         }
         .main-article img {
-            height: 500px;
+            min-height: 500px;
         }
         .main-article .article-card-excerpt.short {
             display:none;

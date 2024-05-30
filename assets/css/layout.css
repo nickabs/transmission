@@ -23,11 +23,13 @@
     .subscription-banner { grid-area: MiniSubscriptionBanner; } 
 }
 
+.site {
+    display: grid;
+}
 /*------------------------*/
 /* home-page mobile view  */
 /*------------------------*/
 .site.home-template {
-    display: grid;
     grid-template-areas:
         "SiteHeader"
         "HeroHeader"
@@ -40,7 +42,7 @@
         "SiteFooter";
 }
 
-/* list mode */
+/* grid list mode */
 .site.home-page-list :not(.site-header):not(.hero-header):not(.site-footer) {
     justify-self: center;
 }
@@ -49,8 +51,6 @@
 /* post/page mobile view */
 /*------------------------*/
 .site.post-template, .site.page-template {
-    display: grid;
-    
     grid-template-areas:
     "SiteHeader SiteHeader"
     "HeroHeader HeroHeader"
@@ -67,7 +67,6 @@
 /*---------------------------------------------------*/
 .author-template,
 .tag-template {
-    display:grid;
     grid-column: content;
     grid-template-areas:
         "SiteHeader" 
@@ -75,16 +74,6 @@
         "TaggedArticles"
         "Pagination"
         "SiteFooter";
-}
-
-/* ------------------------------- */
-/* pagination (load more articles) */
-/* ------------------------------- */
-.pagination {
-    display: grid;
-    justify-content: center;
-    padding-top: 35px;
-    padding-bottom: 15px;
 }
 
 /* -------------- */

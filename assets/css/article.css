@@ -8,11 +8,12 @@ the article-content grid is as follows:
      |<--- full --->|<--- main --->|<--- full --->|
 [full-start]     [main-start]     [main-end]      [full-end]
 */
-.related-articles,
-.article-content {
+.article-content,
+.related-articles {
   --main: minmax(calc(1fr-40px), var(--max-content-width));
   --full: var(--default-edge-padding);
   display: grid;
+  justify-self: center;
 
   grid-template-columns:
       [full-start] var(--full)
@@ -54,10 +55,6 @@ the article-content grid is as follows:
       }
     }
   }
-}
-.article-content,
-.related-articles { 
-  justify-self: center;
 }
 .article-content > :first-child{
   padding-top:15px;
