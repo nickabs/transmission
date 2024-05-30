@@ -315,6 +315,8 @@ iframe {
     font-size:1.2rem;
     color: var(--secondary-text-color);
     margin-top: var(--section-gap);
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     border-top: 0.25px solid var(--border-color);
