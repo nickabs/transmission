@@ -11,6 +11,8 @@
     border: 1px solid var(--border-color);
     border-radius:5px;
     padding: var(--default-edge-padding);
+    padding: 40px var(--default-edge-padding) 0 var(--default-edge-padding);
+    margin-top: var(--section-gap);
     display: grid;
     place-self: center;
     place-items: center;
@@ -21,16 +23,11 @@
         "SubscriptionBannerForm";
     grid-template-rows: 1fr 1fr 2fr;
 
+    width: 100vw;
     &.mini { /* simplified banner */
         grid-template-areas: 
             "SubscriptionBannerForm";
         grid-template-rows: 1fr ;
-    }
-    @media (min-width: 480px) {
-        width: 100vw;
-        &:not(.mini) {
-            padding-top:45px;
-        }
     }
 }
 .subscription-banner-heading, 
@@ -53,7 +50,6 @@
         "ErrorText ErrorText";
     column-gap:5px;
     font-size:1.4rem;
-    margin-top:40px;
 
     .button {
        width: 75px;
