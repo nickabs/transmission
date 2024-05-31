@@ -101,7 +101,7 @@
                 ],
                 "default": "None",
                 "group": "homepage",
-                "description": "Show subs banner on the home and static site pages. Note that membership must be enabled to use this option."
+                "description": "Show banner on home and static pages. Note that membership must be enabled to use this option."
             },
             "page_subscription_banner_heading": {
                 "type": "text",
