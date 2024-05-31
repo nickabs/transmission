@@ -22,7 +22,7 @@
         "url": "https://github.com/nickabs/transmission.git"
     },
     "config": {
-        "posts_per_page": 10,
+        "posts_per_page": 16,
         "image_sizes": {
             "xs": {
                 "width": 160
@@ -92,7 +92,7 @@
                 "default": true,
                 "group": "homepage"
             },
-             "home_page_subscription_banner_type": {
+             "page_subscription_banner_type": {
                 "type": "select",
                 "options": [
                     "Full",
@@ -101,19 +101,19 @@
                 ],
                 "default": "None",
                 "group": "homepage",
-                "description": "membership must be enabled to use this option"
+                "description": "Show subs banner on the home and static site pages. Note that membership must be enabled to use this option."
             },
-            "home_page_subscription_banner_heading": {
+            "page_subscription_banner_heading": {
                 "type": "text",
                 "group" : "homepage",
                 "description": "Defaults to site title when empty",
-                "visibility": "home_page_subscription_banner_type:Full"
+                "visibility": "page_subscription_banner_type:Full"
             },
-            "home_page_subscription_banner_description": {
+            "page_subscription_banner_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty",
                 "group" : "homepage",
-                "visibility": "home_page_subscription_banner_type:Full"
+                "visibility": "page_subscription_banner_type:Full"
             },
             "home_page_style": {
                 "type": "select",

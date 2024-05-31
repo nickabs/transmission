@@ -10,4 +10,15 @@
     <article class="article-content">
         {{content}}
     </article>
+
+    {{#if @site.members_enabled}}
+        {{#unless @member}}
+            {{#match @custom.page_subscription_banner_type "Mini" }}
+                {{> "subscription-banner" mini="true" location="home" }}
+            {{/match}}
+            {{#match @custom.page_subscription_banner_type "Full" }}
+                {{> "subscription-banner" location="home" }}
+            {{/match}}
+        {{/unless}}
+    {{/if}}
 {{/page}}

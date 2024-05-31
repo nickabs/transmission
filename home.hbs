@@ -44,10 +44,10 @@
 </aside>
 {{#if @site.members_enabled}}
     {{#unless @member}}
-        {{#match @custom.home_page_subscription_banner_type "Mini" }}
+        {{#match @custom.page_subscription_banner_type "Mini" }}
             {{> "subscription-banner" mini="true" location="home" }}
         {{/match}}
-        {{#match @custom.home_page_subscription_banner_type "Full" }}
+        {{#match @custom.page_subscription_banner_type "Full" }}
             {{> "subscription-banner" location="home" }}
         {{/match}}
     {{/unless}}

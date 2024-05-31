@@ -10,7 +10,7 @@
     background-color: var(--banner-background-color);
     border: 1px solid var(--border-color);
     border-radius:5px;
-    padding: var(--default-edge-padding);
+    /* 0px bottom padding is to make room for an empty row used to show error messages*/
     padding: 40px var(--default-edge-padding) 0 var(--default-edge-padding);
     margin-top: var(--section-gap);
     display: grid;
