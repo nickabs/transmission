@@ -1,19 +1,18 @@
-/* copy link button (copies link and shows a tooltip) */
+/* copy link button (copies link and shows a tooltip)  */
 (function() {
-    const socialLinkIconCopy = document.querySelector(".social-link-icon-copy")  ;
-    if (! socialLinkIconCopy)
+    const copyLinkElement = document.getElementById("copy-link")  ;
+    if (! copyLinkElement)
         return;
 
     function copyLink() {
         navigator.clipboard.writeText(window.location.href);
 
-        socialLinkIconCopy.insertAdjacentHTML('afterend','<div class=copy-link-tooltip>copied</div>');
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = 'Copied!';
+        copyLinkElement.appendChild(tooltip);
 
-        setTimeout( () => {
-            document.querySelectorAll('.copy-link-tooltip').forEach(el => el.remove()); 
-        }, 1000);
+        setTimeout(() => { tooltip.remove(); }, 1000);
     }
-
-
-    socialLinkIconCopy.addEventListener("click", copyLink, false);
+    copyLinkElement.addEventListener("click", copyLink, false);
 })();

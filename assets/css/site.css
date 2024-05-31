@@ -1,5 +1,5 @@
 /*------------------------------------- */
-/* set the styles used accross the site */
+/* styles used accross the site         */
 /* 1. default styles for the site       */
 /* 2. default site padding              */
 /* 3. photoswipe lightbox adjustments   */
@@ -7,7 +7,6 @@
 /* 5. navigation menu                   */
 /* 6. site footer                       */
 /* 7. Ghost cards                       */
-/* 8. dark/light mode icons             */
 /*------------------------------------- */
 
 /* -------------------------------*/
@@ -159,6 +158,15 @@ iframe {
 /* keep the icons following the nav bar on the rhs */
 .site-header > *:nth-child(3) { 
   margin-left: auto;
+}
+
+/* dark/light mode icons */
+.dark-mode,
+.light-mode {
+    display: none;
+}
+[data-theme=dark] .light-mode, [data-theme=light] .dark-mode { 
+    display: block;
 }
 
 /* -------------------------------------- */
@@ -386,15 +394,4 @@ iframe {
       height:100%;
     }
   }
-}
-
-/* ------------------------ */
-/* 8. dark/light mode icons */
-/* ------------------------ */
-.dark-mode,
-.light-mode {
-    display: none!important;
-}
-[data-theme=dark] .light-mode, [data-theme=light] .dark-mode { 
-    display: block!important;
 }

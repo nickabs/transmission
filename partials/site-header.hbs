@@ -1,6 +1,6 @@
  <header class="site-header">
     {{#if @site.logo}}
-        <a aria-label="go to the home page" class="logo icon-button" href="{{@site.url}}">
+        <a aria-label="go to the home page" class="logo icon" href="{{@site.url}}">
             <img src="{{@site.logo}}" alt="{{@site.title}}">
         </a>
     {{/if}}
@@ -21,11 +21,11 @@
         {{/unless}}
     {{/if}}
 
-    <button id="dark-mode-toggle" aria-label="dark mode" class="icon-button">
+    <button id="dark-mode-toggle" aria-label="dark mode" class="icon">
         <span class="dark-mode ">{{> "icons/moon"}}</span>
         <span class="light-mode ">{{> "icons/sun"}}</span>
     </button>
-    <button class="search icon-button" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
+    <button class="search icon" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
     {{!-- hamburger nav (shows when nav is open on a small screen)--}}
-    <button class="nav-toggle icon-button" aria-label="Open nav" >{{> "icons/navigation"}}</button>
+    <button class="nav-toggle icon" aria-label="Open nav" >{{> "icons/navigation"}}</button>
 </header>

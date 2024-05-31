@@ -14,7 +14,7 @@
 *                                <div class="submenu">
 *                                    <div class="submenu-header">
 *                                        <p class="submenu-title">HONDA C90</p>
-*                                        <button class="submenu-close icon-button">✕</button>
+*                                        <button class="submenu-close icon">✕</button>
 *                                    </div>
 *                                    <ol class="submenu-items">
 *  --introduction                        <li class="submenu-item">
@@ -45,7 +45,7 @@
       div1.appendChild(p1);
 
       const p2 = document.createElement('button');
-      p2.classList.add('submenu-close', 'icon-button');
+      p2.classList.add('submenu-close', 'icon');
       p2.appendChild(document.createTextNode('✕'));
       div1.appendChild(p2);
 

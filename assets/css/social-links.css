@@ -1,8 +1,8 @@
 
-/* ------------------------------------------------------------------- */
-/* social links are show at the bottom of the screen for small screens */
-/* for larger screens they are shown on the right hand side        */
-/* ------------------------------------------------------------------- */
+/* -------------------------------------------------------------------- */
+/* social links are shown at the bottom of the screen for small screens */
+/* for larger screens they are shown on the right hand side             */
+/* -------------------------------------------------------------------- */
 
 /* mobile view */
 .social-links {
@@ -12,25 +12,15 @@
     background-color: var(--background-color);
     display:flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 22px;
     justify-content: right;
     align-items: center;
     padding:5px;
 }
-.social-links svg {
-    height: 35px;
-    padding: 7px;
-    width: 35px;
-    fill: var(--title-color);
-    background-color: var(--background-color);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .social-links-title {
     display:none;
 }
+/* larger screens */
 @media (min-width:760px) {
     .social-links.sidebar {
         display:flex;
@@ -50,5 +40,25 @@
 @media (min-width:1100px) {
     .social-links.sidebar {
         margin-left: 100px;
+    }
+}
+#copy-link .tooltip {
+    position: absolute;
+    bottom: 30px; 
+    transform: translateX(-50%);
+    padding: 5px 10px 5px 10px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    background-color: var(--background-color);
+    color: var(-color);
+    text-align: center;
+    border-radius: 4px;
+    z-index: 1000; 
+    white-space: nowrap;
+    font-size: 1.2rem;
+    @media (min-width: 760px) {
+        top:215px;
+        right:15px;
+        border:unset;
     }
 }

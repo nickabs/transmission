@@ -1,8 +1,8 @@
 /* ------------------------------------ */
-/* icon buttons (search, dark-mode etc) */
+/* icon  (search, dark-mode etc) .      */
 /* ------------------------------------ */
 .icon,
-.icon-button {
+.icon {
     display:flex;
     justify-content: center;
     align-items: center;
@@ -16,12 +16,13 @@
     svg {
         width: 20px;
         height: 20px;
+        fill: currentColor;
     }
 }
 
-.icon-button {
+.icon {
     cursor: pointer;
 }
-.icon-button:hover .icon {
+.icon:hover .icon {
     opacity: 0.8;
 }
