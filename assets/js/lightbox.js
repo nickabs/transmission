@@ -20,6 +20,8 @@ import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
     bgOpacity: 0.8,
     closeOnScroll: true,
     Xpadding: { top: 40, bottom: 40, left: 0, right: 0 },
+    imageClickAction: 'close',
+    tapAction: 'close',
     pswpModule: () => import('./photoswipe.esm.min.js')
   };
 
