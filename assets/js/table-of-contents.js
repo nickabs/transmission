@@ -61,7 +61,7 @@
     const windowHeight = document.documentElement.clientHeight;
     const position = window.scrollY;
     const progress = position / (totalHeight - windowHeight)*100;
-    tocToggleButton.setAttribute('progress', `${progress.toFixed(0)}%`);
+    tocToggleButton.setAttribute('data-progress', `${progress.toFixed(0)}%`);
 
     // this is used to update the circular progress bar show around the toc button
     tocToggleButton.style.setProperty(
