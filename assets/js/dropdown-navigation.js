@@ -124,18 +124,13 @@
     if (selectedItem.classList.contains("has-submenu")) {
       event.preventDefault(); // prevent the default link action from causing the page to jump to top of screen
 
-      selectedItem.querySelector(".submenu").classList.toggle("submenu-open");
-      /*
-      if (selectedItem.classList.contains("submenu-open")) {
-        selectedItem.classList.remove("submenu-open");
-      } else {
-        const openSubmenu = nav.querySelector(".submenu-open");
-        if (openSubmenu && openSubmenu !== selectedItem) { // another submenu is open 
-          openSubmenu.classList.remove("submenu-open");
-        }
-        selectedItem.classList.add("submenu-open");
+      // if another submenu is already open, close it
+      const openSubmenu = nav.querySelector(".submenu-open");
+      if (openSubmenu && openSubmenu !== selectedItem) { 
+        openSubmenu.classList.remove("submenu-open");
       }
-      */
+
+      selectedItem.querySelector(".submenu").classList.toggle("submenu-open");
 
     }
   }
