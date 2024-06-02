@@ -64,8 +64,8 @@ iframe {
 .tag-template > *,
 .site-footer,
 .site-header {
-  padding-left: var(--default-edge-padding);
-  padding-right: var(--default-edge-padding);
+  padding-left: var(--edge-padding);
+  padding-right: var(--edge-padding);
 }
 
 /* large screens: pad header/footer menus so they do not stetch beyond max-container-size */
@@ -186,10 +186,10 @@ iframe {
 
 .nav, .submenu {
   position:fixed;
-  right:var(--default-edge-padding);
+  right:var(--edge-padding);
   top: calc(var(--site-header-height) + 5px);
   background-color: var(--banner-background-color);
-  border-radius: 6px;
+  border-radius: 10px;
   width:350px;
   border: 0.25px solid var(--border-color);
   overflow:hidden; /* prevent borders overunning rounded corners */
@@ -205,12 +205,14 @@ iframe {
 .nav-title,
 .submenu-title {
   color: var(--banner-title-color);
+  font-weight:800;
 }
 .nav-items, .submenu-items {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   list-style: none;
   padding:0;
+  font-weight: 200;
 }
 .item,
 .submenu-item, 

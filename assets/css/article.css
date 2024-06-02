@@ -11,7 +11,7 @@ the article-content grid is as follows:
 .article-content,
 .related-articles {
   --main: minmax(calc(1fr-40px), var(--max-content-width));
-  --full: var(--default-edge-padding);
+  --full: var(--edge-padding);
   display: grid;
   justify-self: center;
 

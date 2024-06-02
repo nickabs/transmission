@@ -54,16 +54,15 @@
 /*------------------------*/
 .site.post-template, .site.page-template {
     grid-template-areas:
-    "SiteHeader SiteHeader"
-    "HeroHeader HeroHeader"
-    "ArticleContent ArticleContent"
-    "SubscriptionBanner SubscriptionBanner"
-    "RelatedArticles RelatedArticles"
-    "Pagination Pagination"
-    "SiteFooter SiteFooter"
-    "TableOfContents SocialLinks";
+    "SiteHeader"
+    "HeroHeader"
+    "ArticleContent"
+    "SubscriptionBanner"
+    "RelatedArticles"
+    "Pagination"
+    "SiteFooter"
+    "SocialLinks";
 }
-
 /*---------------------------------------------------*/
 /* tag and author collection - all screen sizes view */
 /*---------------------------------------------------*/

@@ -6,28 +6,51 @@
 /* table of contents icon shown on bottom left */
 
 /* hide the toc toggle button if there is no toc */
-.toc:empty + #toc-toggle {
+.table-of-contents:has(.toc:empty) {
     display:none;
+}
+
+/* animate open toc & button */
+@keyframes showToc {
+    from {
+        opacity: 0; 
+        scale: 0;
+    }
+    to {
+        opacity: 1; 
+        scale: 1;
+    }
 }
 .table-of-contents {
     z-index: 5;
-    background-color: var(--background-color);
-    padding: 5px;
-    position: sticky;
-    bottom: 0;
-    left:0;
+    position: relative;
 }
-.toc-list {
-    border: 0.25px solid var(--border-color);
-    font-size: 1.4rem;
-    font-weight: 200;
-    line-height: 1.8;
-    padding: 10px;
+#toc-toggle { 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    animation: showToc 300ms ease-in-out both;
 }
 #toc-toggle span {
     display: flex;
 }
-.toc,
+.toc-container {
+    border: 0.25px solid var(--border-color);
+    border-radius: 10px;
+    height:auto;
+    font-weight:200;
+    font-size: 1.4rem;
+    .toc-header {
+        margin:0;
+        padding:5px 10px;
+        font-weight:800;
+        border-bottom: 1px solid var(--border-color); 
+    }
+    .toc {
+        padding:10px;
+    }
+}
+.toc-container,
 #toc-toggle .toc-close-icon {
     display: none;
 }
@@ -41,6 +64,9 @@
 .toc .is-active-link {
     font-weight:400;
     letter-spacing: -0.55px;
+}
+.toc-link:before {
+    background-color: var(--background-color);
 }
 .toc .is-active-link::before {
     background-color: var(--reading-progress-color);
@@ -62,29 +88,15 @@
     opacity: 0.5;
 }
 
-/* animate toc open */
-@keyframes showToc {
-    from {
-        opacity: 0; 
-        scale: 0;
-    }
-    to {
-        opacity: 1; 
-        scale: 1;
-    }
-}
 .toc-open {
-    .toc {
+    .toc-container {
         display: flex;
+        flex-direction: column;
         animation: showToc 300ms ease-in-out both;
         background-color: var(--banner-background-color);
-        border: .25px solid var(--border-color);
-        border-radius: 6px;
-        overflow: hidden;
         position: fixed;
         left:50px;
         bottom: 50px;
-       todopadding:20px;
     }
     /* toggle open/close icon */
     #toc-toggle .toc-close-icon {
@@ -94,30 +106,31 @@
         display: none;
     }
 }
-@todomedia (min-width:760px) {
-    .table-of-contents.sidebar {
-        background-color: transparent;
-    }
-}
-
 /* On larger screens, TOC will stay in the same spot on the left hand side of the page 
 (the sidebar property is set by a user selected custom option  */
 @media (min-width:1300px) {
-    .table-of-contents.sidebar {
-        display:block;
-        margin-left: var(--large-screen-edge-padding);
-        height: 0;
-        left:0;
-        top: 67px;
-        position: sticky; /* On larger screens, TOC will stay in the same spot on the page */
-        .toc {
+        .table-of-contents {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding-top: 0px
+            position: relative;
         }
         #toc-toggle {
-            display: none
+            display:none;
         }
+    .toc-container {
+        display: flex;
+        margin-left: var(--large-screen-edge-padding);
+        position: sticky;
+        top: 67px;
+        flex-direction: column;
+        animation: showToc 300ms ease-in-out both;
+        background-color: var(--banner-background-color);
+    }
+    /* toggle open/close icon */
+    #toc-toggle .toc-close-icon {
+        display: flex;
+    }
+    #toc-toggle .toc-open-icon {
+        display: none;
     }
 }

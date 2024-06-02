@@ -24,7 +24,7 @@
     --section-gap: max(1.5vw,24px);
     --max-content-width: 720px;
     --max-container-width: 1300px; 
-    --default-edge-padding: max(5vmin, 20px); 
+    --edge-padding: max(5vmin, 20px); 
     --large-screen-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1300px */
     --article-card-gap: 15px; 
 }

@@ -11,7 +11,7 @@
     border: 1px solid var(--border-color);
     border-radius:5px;
     /* 0px bottom padding is to make room for an empty row used to show error messages*/
-    padding: 40px var(--default-edge-padding) 0 var(--default-edge-padding);
+    padding: 40px var(--edge-padding) 0 var(--edge-padding);
     margin-top: var(--section-gap);
     display: grid;
     place-self: center;
@@ -91,8 +91,8 @@
 @media (min-width: 1100px) { 
     /* when using full banner, the banner is shown on rhs of home page for larger screen - make sticky */
     .home-template .subscription-banner:not(.mini) {
-        padding: var(--default-edge-padding);
-        margin: var(--default-edge-padding);
+        padding: var(--edge-padding);
+        margin: var(--edge-padding);
         align-self:flex-start;
         width: auto;
         justify-content: center;

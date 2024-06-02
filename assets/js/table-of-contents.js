@@ -41,7 +41,6 @@
     });
   
     /* Toggle mobile toc */
-
     tocButton.addEventListener('click', toggleTableOfContents, false);
   
   })();

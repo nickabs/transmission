@@ -8,8 +8,13 @@ Parameters:
         <span class="toc-open-icon ">{{> "icons/toc-open"}}</span>
         <span class="toc-close-icon">{{> "icons/toc-close"}}</span>
     </button>
-    {{!-- The table of content list will be inserted here --}}
-    <div class="toc"></div>
+    <div class="toc-container">
+        <div class="toc-header">
+            <span class="toc-title">Table of contents</span>
+        </div>
+        {{!-- The table of content list will be inserted here --}}
+        <div class="toc"></div>
+    </div>
 </aside> 
 
 {{!-- share buttons inserted here --}}
