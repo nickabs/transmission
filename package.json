@@ -51,10 +51,6 @@
                 "default": "Expanded",
                 "description": "Header nav style on wide screens"
             },
-            "google_analytics_id": {
-                "type": "text",
-                "description": "if you use google analytics, add your GA id here"
-            },
             "article_collection_style": {
                 "type": "select",
                 "options": [
@@ -63,6 +59,19 @@
                 ],
                 "default": "Grid",
                 "description": "tagged/author collection style"
+            },
+            "footer_link_type": {
+                "type": "select",
+                "options": [
+                    "None",
+                    "Ghost",
+                    "Ghost & Transmission"
+                ],
+                "default": "Ghost & Transmission"
+            },
+            "google_analytics_id": {
+                "type": "text",
+                "description": "if you use google analytics, add your GA id here"
             },
             "site_accent_color_dark": {
                 "type": "color",
@@ -82,17 +91,7 @@
                 "default": false,
                 "group": "homepage"
             },
-            "show_ghost_link": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "show_theme_link": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-             "page_subscription_banner_type": {
+            "page_subscription_banner_type": {
                 "type": "select",
                 "options": [
                     "Full",

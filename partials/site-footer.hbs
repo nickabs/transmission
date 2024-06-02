@@ -3,19 +3,16 @@
         {{@site.title}} © {{date format="YYYY"}}
     </div>
       <div class="footer-links">
-        {{#if @custom.show_ghost_link}}
+        {{#match @custom.footer_link_type "Ghost"}}
             <p>Powered by </p>
             <a class= "ghost-link" href='https://ghost.org'>Ghost</a> 
-            {{#if @custom.show_theme_link}}
-                <p class="theme-link"> & </p>
-            {{/if}}
-        {{/if}}
-        {{#if @custom.show_theme_link}}
-            {{^if @custom.show_ghost_link }}
-                <p>Powered by </p>
-            {{/if}}
+        {{/match}}
+        {{#match @custom.footer_link_type "Ghost & Transmission"}}
+            <p>Powered by </p>
+            <a class= "ghost-link" href='https://ghost.org'>Ghost</a> 
+            <p class="theme-link"> & </p>
             <a class= "theme-link" href='https://github.com/nickabs/transmission'>Transmission</a>
-        {{/if}}
+        {{/match}}
       </div>
     <div class="privacy-policy">
         {{#link href="/privacy-policy/"}}privacy policy{{/link}}
