@@ -16,9 +16,11 @@
     position: sticky;
     bottom: 0;
     left:0;
+    font-weight: 800;
+    font-family: var(--font-mono);
 }
 .toc-list {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     padding-left: 10px;
 }
