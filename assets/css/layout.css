@@ -133,7 +133,7 @@
 /* large screens */
 /* ------------- */
 
-@media (min-width: 1100px) { 
+@media (min-width: 1300px) { 
     /* home page layout */
     .site.home-template.home-page-focus-left {
         grid-template-columns: 2.2fr 1fr 1fr; 

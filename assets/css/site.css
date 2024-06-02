@@ -69,7 +69,7 @@ iframe {
 }
 
 /* large screens: pad header/footer menus so they do not stetch beyond max-container-size */
-@media (min-width:1200px) {
+@media (min-width:1300px) {
   .post-template,
   .page-template {
     .site-footer,

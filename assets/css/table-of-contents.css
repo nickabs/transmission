@@ -11,16 +11,17 @@
 }
 .table-of-contents {
     z-index: 5;
+    /* debug */
+    z-index: 50000;
     background-color: var(--background-color);
     padding: 5px;
     position: sticky;
     bottom: 0;
     left:0;
-    font-weight: 800;
-    font-family: var(--font-mono);
 }
 .toc-list {
     font-size: 1.4rem;
+    font-weight: 200;
     line-height: 1.8;
     padding-left: 10px;
 }
@@ -39,8 +40,8 @@
 
 /* override tocbot color defaults */
 .toc .is-active-link {
-    font-weight:800;
-    letter-spacing: -0.75px;
+    font-weight:400;
+    letter-spacing: -0.55px;
 }
 .toc .is-active-link::before {
     background-color: var(--reading-progress-color);
@@ -94,7 +95,7 @@
         display: none;
     }
 }
-@media (min-width:760px) {
+@todomedia (min-width:760px) {
     .table-of-contents.sidebar {
         background-color: transparent;
     }
@@ -102,10 +103,11 @@
 
 /* On larger screens, TOC will stay in the same spot on the left hand side of the page 
 (the sidebar property is set by a user selected custom option  */
-@media (min-width:1200px) {
+@media (min-width:1300px) {
     .table-of-contents.sidebar {
         display:block;
-        margin-left:auto;
+        todomargin-left:auto;
+        margin-left: var(--default-edge-padding);
         height: 0;
         left:0;
         top: 67px;

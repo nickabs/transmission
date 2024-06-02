@@ -7,7 +7,7 @@
  mobile: < 480px
  tablet: 480 - 760px
  laptop: 760 - 1100px
- large screens: > 1200px
+ large screens: > 1300px
 */
 
 :root {
@@ -23,9 +23,9 @@
     --hero-header-height: 160px ;
     --section-gap: max(1.5vw,24px);
     --max-content-width: 720px;
-    --max-container-width: 1200px; 
+    --max-container-width: 1300px; 
     --default-edge-padding: max(5vmin, 20px); 
-    --large-screen-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1200px */
+    --large-screen-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1300px */
     --article-card-gap: 15px; 
 }
 
