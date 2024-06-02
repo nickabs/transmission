@@ -47,7 +47,10 @@
         "custom": {
             "menu_style": {
                 "type": "select",
-                "options": [ "Minified", "Expanded" ],
+                "options": [
+                    "Minified",
+                    "Expanded"
+                ],
                 "default": "Expanded",
                 "description": "Header nav style on wide screens"
             },
@@ -104,14 +107,14 @@
             },
             "page_subscription_banner_heading": {
                 "type": "text",
-                "group" : "homepage",
+                "group": "homepage",
                 "description": "Defaults to site title when empty",
                 "visibility": "page_subscription_banner_type:Full"
             },
             "page_subscription_banner_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty",
-                "group" : "homepage",
+                "group": "homepage",
                 "visibility": "page_subscription_banner_type:Full"
             },
             "home_page_style": {
@@ -161,14 +164,14 @@
             },
             "post_subscription_banner_heading": {
                 "type": "text",
-                "group" : "post",
+                "group": "post",
                 "description": "Defaults to site title when empty",
                 "visibility": "post_subscription_banner_type:Full"
             },
             "post_subscription_banner_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty",
-                "group" : "post",
+                "group": "post",
                 "visibility": "post_subscription_banner_type:Full"
             }
         }
@@ -192,10 +195,10 @@
         "pump": "3.0.0"
     },
     "dependencies": {
-        "photoswipe": "^5.4.3",
+        "photoswipe": "^5.4.4",
         "prism-components": "^1.0.0",
         "prism-themes": "^1.9.0",
         "prismjs": "^1.29.0",
-        "tocbot": "^4.25.0"
+        "tocbot": "^4.28.2"
     }
 }
