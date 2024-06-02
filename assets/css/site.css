@@ -78,12 +78,6 @@ iframe {
       padding-left: var(--large-screen-edge-padding);
       width: 100%;
     }
-    .table-of-contents { 
-      padding-left: var(--large-screen-edge-padding); 
-    }
-    .social-links { 
-      padding-right: var(--large-screen-edge-padding); 
-    }
   }
 }
 

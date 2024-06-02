@@ -97,7 +97,10 @@
         background-color: transparent;
     }
 }
-@media (min-width:1100px) {
+
+/* On larger screens, TOC will stay in the same spot on the left hand side of the page 
+(the sidebar property is set by a user selected custom option  */
+@media (min-width:1200px) {
     .table-of-contents.sidebar {
         display:block;
         margin-left:auto;
