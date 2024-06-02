@@ -11,8 +11,6 @@
 }
 .table-of-contents {
     z-index: 5;
-    /* debug */
-    z-index: 50000;
     background-color: var(--background-color);
     padding: 5px;
     position: sticky;
@@ -20,10 +18,11 @@
     left:0;
 }
 .toc-list {
+    border: 0.25px solid var(--border-color);
     font-size: 1.4rem;
     font-weight: 200;
     line-height: 1.8;
-    padding-left: 10px;
+    padding: 10px;
 }
 #toc-toggle span {
     display: flex;
@@ -85,7 +84,7 @@
         position: fixed;
         left:50px;
         bottom: 50px;
-        padding:20px;
+       todopadding:20px;
     }
     /* toggle open/close icon */
     #toc-toggle .toc-close-icon {
@@ -106,8 +105,7 @@
 @media (min-width:1300px) {
     .table-of-contents.sidebar {
         display:block;
-        todomargin-left:auto;
-        margin-left: var(--default-edge-padding);
+        margin-left: var(--large-screen-edge-padding);
         height: 0;
         left:0;
         top: 67px;
