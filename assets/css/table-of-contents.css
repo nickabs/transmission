@@ -28,7 +28,7 @@
 #toc-toggle { 
     position: fixed;
     bottom: 0;
-    left: 0;
+    left:10px;
     animation: showToc 300ms ease-in-out both;
 }
 #toc-toggle span {

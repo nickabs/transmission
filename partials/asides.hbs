@@ -19,24 +19,26 @@ Parameters:
 
 {{!-- share buttons inserted here --}}
 <aside class="social-links {{layout}}">
-    <h1 class="social-links-title">Share</h1>
-    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
-    class="icon" aria-label="share on facebook" target="_blank" rel="noopener" >
-        {{> "icons/facebook"}}
-    </a>
-    <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
-        class="icon" aria-label="share on twitter" target="_blank" rel="noopener">
-        {{> "icons/twitter"}}
-    </a>
-    <a href="whatsapp://send?text={{url absolute=" true"}}" 
-        class="icon" aria-label="share on whatsapp" target="_blank" rel="noopener">
-        {{> "icons/whatsapp"}}
-    </a>
-     <a href="{{@site.url}}/rss"
-        class="icon" aria-label="rss feed" target="_blank" rel="noopener">
-        {{> "icons/rss"}}
-    </a>
-    <button id="copy-link" class="icon" aria-label="copy link">
-        {{> "icons/link"}}
-    </button>
+    <div class="social-links-container" >
+        <h1 class="social-links-title">Share</h1>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+        class="icon" aria-label="share on facebook" target="_blank" rel="noopener" >
+            {{> "icons/facebook"}}
+        </a>
+        <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
+            class="icon" aria-label="share on twitter" target="_blank" rel="noopener">
+            {{> "icons/twitter"}}
+        </a>
+        <a href="whatsapp://send?text={{url absolute=" true"}}" 
+            class="icon" aria-label="share on whatsapp" target="_blank" rel="noopener">
+            {{> "icons/whatsapp"}}
+        </a>
+        <a href="{{@site.url}}/rss"
+            class="icon" aria-label="rss feed" target="_blank" rel="noopener">
+            {{> "icons/rss"}}
+        </a>
+        <button id="copy-link" class="icon" aria-label="copy link">
+            {{> "icons/link"}}
+        </button>
+    </div>
 </aside>
