@@ -30,7 +30,7 @@ the article-content grid is as follows:
      |<--- full --->|<--- wide --->|<--- main --->|<--- wide --->|<--- full --->|
 [full-start]     [wide-start]   [main-start]     [main-end]     [wide-end]      [full-end]
 */
-.site:not(:has(.sidebar)) {
+.site:not(:has(.sidebar-layout)) {
   @media (min-width:760px) {
     .article-content {
       --main: var(--max-content-width);

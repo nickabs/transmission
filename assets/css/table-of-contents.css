@@ -107,30 +107,23 @@
     }
 }
 /* On larger screens, TOC will stay in the same spot on the left hand side of the page 
-(the sidebar property is set by a user selected custom option  */
+(the sidebar-layout property is set by a user selected custom option  */
 @media (min-width:1300px) {
-        .table-of-contents {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        #toc-toggle {
-            display:none;
-        }
-    .toc-container {
+    .table-of-contents.sidebar-layout {
         display: flex;
-        margin-left: var(--large-screen-edge-padding);
-        position: sticky;
-        top: 67px;
         flex-direction: column;
-        animation: showToc 300ms ease-in-out both;
-        background-color: var(--banner-background-color);
-    }
-    /* toggle open/close icon */
-    #toc-toggle .toc-close-icon {
-        display: flex;
-    }
-    #toc-toggle .toc-open-icon {
-        display: none;
+        position: relative;
+        #toc-toggle {
+            display: none;
+        }
+        .toc-container {
+            display: flex;
+            margin-left: var(--large-screen-edge-padding);
+            position: sticky;
+            top: 67px;
+            flex-direction: column;
+            animation: showToc 300ms ease-in-out both;
+            background-color: var(--banner-background-color);
+        }
     }
 }

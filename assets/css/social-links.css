@@ -26,23 +26,25 @@
 }
 /* larger screens */
 @media (min-width:760px) {
-    .social-links.sidebar {
+    .social-links.sidebar-layout {
         flex-direction: column;
         .social-links-title {
             display: block;
             font-size: 1.4rem;
         }
-    }
-    .social-links-container {
-        width:auto;
-        flex-direction: column;
-        position: sticky;
-        top:67px;
+        .social-links-container {
+            width:auto;
+            flex-direction: column;
+            position: sticky;
+            top:67px;
+        }
     }
 }
 @media (min-width:1100px) {
-    .social-links-container {
-        margin-right: var(--large-screen-edge-padding);
+    sosical-links.social-links.sidebar-layout {
+        .social-links-container {
+            margin-right: var(--large-screen-edge-padding);
+        }
     }
 }
 #copy-link .tooltip {
