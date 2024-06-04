@@ -71,6 +71,9 @@
 .toc .is-active-link::before {
     background-color: var(--reading-progress-color);
 }
+.toc .toc-list-item {
+    padding-bottom: 3px;
+}
 
 /* reading progress */
 #toc-toggle svg {
