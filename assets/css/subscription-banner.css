@@ -23,11 +23,11 @@
         "SubscriptionBannerForm";
     grid-template-rows: 1fr 1fr 2fr;
 
-    width: 100vw;
     &.mini { /* simplified banner */
         grid-template-areas: 
             "SubscriptionBannerForm";
         grid-template-rows: 1fr ;
+        width: 100vw;
     }
 }
 .subscription-banner-heading, 
@@ -41,7 +41,6 @@
 .error-text { grid-area: ErrorText; }
 
 .subscription-banner-form {
-    width: 300px;
     display: grid;
     grid-template-columns: 2fr auto; 
     grid-template-rows: 1fr 1.5fr;
@@ -92,12 +91,13 @@
     /* when using full banner, the banner is shown on rhs of home page for larger screen - make sticky */
     .home-template .subscription-banner:not(.mini) {
         padding: var(--edge-padding);
-        margin: var(--edge-padding);
         align-self:flex-start;
-        width: auto;
+        width: 200px;
         justify-content: center;
         position: sticky;
-        top: 250px;
+        top: 110px;
         row-gap: 20px;
+        /*todo*/
+        display:none;
     }
 }

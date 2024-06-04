@@ -5,8 +5,9 @@
 /* ------------------------------------------------------------------------------------------------------ */
 
 .hero-header {
+    margin-top: var(--site-header-height);
     background-color: var(--banner-background-color);
-    width: 100%;
+    width: 100vw;
     height: var(--hero-header-height);
     display: flex;
     flex-direction: column;

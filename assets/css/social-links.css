@@ -9,7 +9,10 @@
     z-index: 4;
 }
 .social-links-container {
+    position: fixed;
     width:100vw;
+    bottom: 0;
+    right: 0;
     background-color: var(--background-color);
     display:flex;
     flex-direction: row;
@@ -17,8 +20,6 @@
     justify-content: right;
     align-items: center;
     padding:5px;
-    position: fixed;
-    bottom:0;
     right:var(--edge-padding);
 }
 .social-links-title {
@@ -40,12 +41,11 @@
         }
     }
 }
-@media (min-width:1100px) {
-    sosical-links.social-links.sidebar-layout {
-        .social-links-container {
-            margin-right: var(--large-screen-edge-padding);
-        }
+@media (min-width:1300px) {
+    .social-links .social-links-container {
+        padding-right: var(--large-screen-edge-padding);
     }
+
 }
 #copy-link .tooltip {
     position: absolute;

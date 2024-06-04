@@ -30,7 +30,9 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     margin:0;
+    padding:0;
     scroll-margin-top: var(--site-header-height);
+    width:100vw;
 }
 img {
     height: auto;
@@ -68,20 +70,6 @@ iframe {
   padding-right: var(--edge-padding);
 }
 
-/* large screens: pad header/footer menus so they do not stetch beyond max-container-size */
-@media (min-width:1300px) {
-  .post-template,
-  .page-template {
-    .site-footer,
-    .site-header {
-      padding-right: var(--large-screen-edge-padding);
-      padding-left: var(--large-screen-edge-padding);
-      width: 100%;
-    }
-  }
-}
-
-
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */
@@ -111,7 +99,9 @@ iframe {
 /* -------------------------------------- */
 .site-header {
   background-color: var(--background-color);
-  position: sticky;
+  position: fixed;
+  justify-content: center;
+  width: 100%;
   top: 0;
   z-index: 1000; /* show above page content */
   display: flex;
@@ -163,6 +153,12 @@ iframe {
     display: block;
 }
 
+@media (min-width: 1300px) {
+  .site-header {
+    padding-left: var(--large-screen-edge-padding);
+    padding-right: var(--large-screen-edge-padding);
+  }
+}
 /* -------------------------------------- */
 /* 5. navigation menu                     */
 /* -------------------------------------- */
@@ -313,6 +309,13 @@ iframe {
 /* -------------------------------------- */
 /* 6. site footer (privacy and copyright) */
 /* -------------------------------------- */
+
+/* make room for social and toc icons */
+.post-template, .page-template {
+  .site-footer {
+      margin-bottom: 35px; 
+  }
+}
 .site-footer {
     line-height: 2.1rem;
     font-weight: 600;
@@ -347,6 +350,22 @@ iframe {
 .theme-link {
   display:none;
 }
+/* large screens: pad footer contents do not stetch beyond max-container-size */
+@media (min-width:1300px) {
+  .post-template,
+  .page-template {
+    &:has(.sidebar-layout) {
+      .site-footer {
+        margin-bottom: 0;
+      }
+    }
+    .site-footer {
+      padding-right: var(--large-screen-edge-padding);
+      padding-left: var(--large-screen-edge-padding);
+      width: 100%;
+    }
+  }
+}
 
 /* -------------------------------------- */
 /* 7. Ghost cards                         */
@@ -357,9 +376,6 @@ iframe {
     width: 100%;
     height: auto;
   }
-  .kg-width-full img,
-  .kg-width-wide img {
-  } /* required by gscan */
 
   /* This keeps small images centered */
   .kg-image,

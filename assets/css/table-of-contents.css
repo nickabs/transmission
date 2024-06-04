@@ -109,6 +109,11 @@
 /* On larger screens, TOC will stay in the same spot on the left hand side of the page 
 (the sidebar-layout property is set by a user selected custom option  */
 @media (min-width:1300px) {
+    .table-of-contents.footer-layout {
+        #toc-toggle {
+            margin-left: var(--large-screen-edge-padding);
+        }
+    }
     .table-of-contents.sidebar-layout {
         display: flex;
         flex-direction: column;
@@ -119,6 +124,7 @@
         .toc-container {
             display: flex;
             margin-left: var(--large-screen-edge-padding);
+            width:fit-content;
             position: sticky;
             top: 67px;
             flex-direction: column;
