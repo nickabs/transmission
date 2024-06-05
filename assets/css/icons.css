@@ -12,6 +12,7 @@
     border: 0;
     outline: none;
     text-align:left;
+    padding-inline: 6px;
     img,
     svg {
         width: 20px;
