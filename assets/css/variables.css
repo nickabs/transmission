@@ -42,7 +42,7 @@
 }
 
 /* light mode */
-html[data-theme='light'] {
+html[data-color-scheme='light'] {
     --banner-background-color: #fafafa;
     --banner-title-color: #15171a;
     --banner-description-color: #56585b;
@@ -60,7 +60,7 @@ html[data-theme='light'] {
     --box-shadow: 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #d3d9e466;
 }
 /* dark mode */
-html[data-theme='dark'] {
+html[data-color-scheme='dark'] {
     --banner-title-color: #fff;
     --banner-description-color: #ccc;
     --banner-background-color: #161b22;

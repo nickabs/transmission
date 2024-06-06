@@ -150,29 +150,6 @@
                 "type": "boolean",
                 "default": true,
                 "group": "post"
-            },
-            "post_subscription_banner_type": {
-                "type": "select",
-                "options": [
-                    "Full",
-                    "Mini",
-                    "None"
-                ],
-                "default": "None",
-                "group": "post",
-                "description": "membership must be enabled to use this option"
-            },
-            "post_subscription_banner_heading": {
-                "type": "text",
-                "group": "post",
-                "description": "Defaults to site title when empty",
-                "visibility": "post_subscription_banner_type:Full"
-            },
-            "post_subscription_banner_description": {
-                "type": "text",
-                "description": "Defaults to site description when empty",
-                "group": "post",
-                "visibility": "post_subscription_banner_type:Full"
             }
         }
     },

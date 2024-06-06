@@ -1,39 +1,22 @@
 {{!--
     Parameters :
     mini [ true, false]
-    location [ post, home ]
 --}}
 <aside class="subscription-banner {{#if mini}}mini{{/if}}">
     {{^if mini}}
         <h2 class="subscription-banner-heading">
-            {{#match location "post" }}
-                {{#if @custom.post_subscription_banner_heading}}
-                    {{@custom.post_subscription_banner_heading}}
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
+            {{#if @custom.page_subscription_banner_heading}}
+                {{@custom.page_subscription_banner_heading}}
             {{else}}
-                {{#if @custom.page_subscription_banner_heading}}
-                    {{@custom.page_subscription_banner_heading}}
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            {{/match}}
+                {{@site.title}}
+            {{/if}}
         </h2>
         <p class="subscription-banner-description">
-            {{#match location "post"}}
-                {{#if @custom.post_subscription_banner_description}}
-                    {{@custom.post_subscription_banner_description}}
-                {{else}}
-                    {{@site.description}}
-                {{/if}}
+            {{#if @custom.page_subscription_banner_description}}
+                {{@custom.page_subscription_banner_description}}
             {{else}}
-                {{#if @custom.page_subscription_banner_description}}
-                    {{@custom.page_subscription_banner_description}}
-                {{else}}
-                    {{@site.description}}
-                {{/if}}
-            {{/match}}
+                {{@site.description}}
+            {{/if}}
         </p>
     {{/if}}
     <form class="subscription-banner-form" data-members-form>
