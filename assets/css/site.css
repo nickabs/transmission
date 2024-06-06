@@ -49,7 +49,7 @@ a:hover {
 .hero-header {
   margin-bottom: var(--section-gap);
 }
-iframe {
+todoiframe {
   display: block;
   width: 100%;
   overflow: hidden;
@@ -149,7 +149,7 @@ iframe {
 .light-mode {
     display: none;
 }
-[data-theme=dark] .light-mode, [data-theme=light] .dark-mode { 
+[data-color-scheme=dark] .light-mode, [data-color-scheme=light] .dark-mode { 
     display: block;
 }
 

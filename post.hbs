@@ -26,18 +26,13 @@
         {{/if}}
         {{content}}
     </article>
-{{/post}}
 
-{{#if @site.members_enabled}}
-    {{#unless @member}}
-        {{#match @custom.post_subscription_banner_type "Mini" }}
-            {{> "subscription-banner" mini="true" location="post" }}
-        {{/match}}
-        {{#match @custom.post_subscription_banner_type "Full" }}
-            {{> "subscription-banner" location="post" }}
-        {{/match}}
-    {{/unless}}
-{{/if}}
+    {{#if comments}}
+        <aside class="comments">
+            {{comments mode="auto"}}
+        </aside>
+    {{/if}}
+{{/post}}
 
 {{#if @custom.show_related_posts}}
     {{#get "posts" limit=@config.posts_per_page filter="tags:[{{post.tags}}]+id:-{{post.id}}" as |related|}}

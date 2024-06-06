@@ -24,6 +24,7 @@
 .subscription-banner { grid-area: SubscriptionBanner;}
 .table-of-contents { grid-area: TableOfContents; }
 .tagged-articles { grid-area: TaggedArticles; }
+.comments { grid-area: Comments; }
 @media (min-width: 1100px) { /* relocate banner on larger screens using mini subs banner format */
     .site.home-template:has(.subscription-banner):has(.mini) { 
         .subscription-banner { grid-area: MiniSubscriptionBanner; } 
@@ -60,7 +61,7 @@
     grid-template-areas:
     "HeroHeader"
     "ArticleContent"
-    "SubscriptionBanner"
+    "Comments"
     "RelatedArticles"
     "Pagination"
     "SiteFooter"
@@ -120,7 +121,7 @@
             grid-template-areas:
                 "HeroHeader HeroHeader"
                 "ArticleContent SocialLinks"
-                "SubscriptionBanner SocialLinks"
+                "Comments SocialLinks"
                 "RelatedArticles SocialLinks"
                 "Pagination SocialLinks"
                 "TableOfContents TableOfContents"
@@ -177,7 +178,7 @@
             grid-template-areas:
                 "HeroHeader HeroHeader HeroHeader"
                 "TableOfContents ArticleContent SocialLinks"
-                "TableOfContents SubscriptionBanner SocialLinks"
+                "TableOfContents Comments SocialLinks"
                 "TableOfContents RelatedArticles SocialLinks"
                 "TableOfContents Pagination SocialLinks"
                 "SiteFooter SiteFooter SiteFooter";
