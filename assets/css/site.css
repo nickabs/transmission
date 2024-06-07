@@ -49,18 +49,13 @@ a:hover {
 .hero-header {
   margin-bottom: var(--section-gap);
 }
-todoiframe {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  border: 0;
-}
 
 /***************************/
 /* 2. default site padding */
 /***************************/
 
 /* default padding */
+.related-articles,
 .home-template > *,
 .author-template > *,
 .tag-template > *,

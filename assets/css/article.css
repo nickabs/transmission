@@ -8,8 +8,7 @@ the article-content grid is as follows:
      |<--- full --->|<--- main --->|<--- full --->|
 [full-start]     [main-start]     [main-end]      [full-end]
 */
-.article-content,
-.related-articles {
+.article-content {
   --main: minmax(calc(1fr-40px), var(--max-content-width));
   --full: var(--edge-padding);
   display: grid;
@@ -120,13 +119,6 @@ figcaption {
     text-decoration: underline;
     text-decoration-color: var(--link-color);
     opacity: 0.8;
-}
-/* make sure feature-image fills container */
-.feature-image img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
 }
 
 /*----------------------*/

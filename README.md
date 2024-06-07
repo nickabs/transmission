@@ -24,7 +24,7 @@ This theme is optimised for traditional blog sites, particularly sites with lots
 - Tags and authors page
 - modern Inter and Menelo font families are installed with the theme
 - infinite pagination (will display a button to Load More posts)
-- home page and article collection layout options
+- article card collection layout options (grid/list)
 
 # Pagespeed scores
 

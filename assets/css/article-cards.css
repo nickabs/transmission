@@ -3,7 +3,7 @@
 /* (home page, author & tagged collections)                                           */
 /*                                                                                    */
 /* 1. article-card content layout (mobile view)                                       */
-/* 2. author & tagged collections                                                     */
+/* 2. article-card collections                                                        */
 /* 3. pagination (load more articles button)                                          */
 /* 4. article card list titles                                                        */
 /* 5. article-card content styles                                                     */
@@ -48,56 +48,67 @@
         "Author Image";
 }
 
-/* ------------------------------ */
-/* 2. author & tagged collections */
-/* ------------------------------ */
-.article-collection-as-list {
-    .author-articles, 
-    .tagged-articles {
-        display: grid;
-        justify-content: center;
-        grid-template-columns: .25fr 1fr .25fr;
-        gap: var(--article-card-gap);
+/* --------------------------- */
+/* 2. article-card collections */
+/* --------------------------- */
 
+/* default view is a grid of cards */
+.previous-articles,
+.related-articles,
+.tagged-articles  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: var(--article-card-gap);
+    .article-card {
+        flex: 1 1 200px; 
+        min-width: 200px; 
+        max-width: 250px; 
+    }
+    .related-articles-title,
+    .previous-articles-title {
+        width: 100%;
+    }
+    .article-card {
+        height: 340px;
+        transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
+        border: 1px solid var(--border-color);
+        padding: 10px;
+    }
+    .article-card-image  {
+        border-radius: 10px;
+        align-self:baseline;
+    }
+}
+.previous-articles {
+    .article-card {
+        height: 280px;
+    }
+}
+.article-collection-as-list {
+    .previous-articles,
+    .related-articles,
+    .tagged-articles {
+        height: auto;
+        flex-direction: column;
         .article-card {
-            grid-column: 1 / -1;
-            @media (min-width:760px) {
-                grid-template-columns: 1.2fr 2fr;
-                grid-template-areas:
-                    "Image Title"
-                    "Image Excerpt"
-                    "Image Metadata"
-                    "Image Author";
-            }
-        }
-        @media (min-width: 480px) {
-            .article-card {
-                grid-column: 2;
-            }
+            flex: 1 1 auto; 
+            max-width: var(--max-content-width); 
+            width: 100%; 
         }
     }
 }
 
-/* flexible grid of article-cards */
+/* bob article cards up and down on hover */
 .article-collection-as-grid {
     .tagged-articles,
     .author-articles  {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
-        gap: var(--article-card-gap);
-        /* bob article cards up and down on hover */
         .article-card:hover {
             translate: 0 -10px;
         }
         .article-card {
             transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
-            border: 1px solid var(--border-color);
-            padding: 10px;
-        }
-        .article-card-image  {
-            border-radius: 10px;
-            max-height: 700px;
-            align-self:baseline;
         }
     }
 }
@@ -243,18 +254,6 @@
         .recent-articles {
             img { 
                 max-height: 200px;
-            }
-        }
-        .previous-articles {
-            gap: 15px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(248px,1fr));
-            .article-card {
-                gap:6px;
-            }
-            .previous-articles-title {
-                grid-column: 1/-1;
-                grid-row: 1; 
             }
         }
         .main-article img {

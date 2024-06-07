@@ -61,7 +61,7 @@
                     "Grid"
                 ],
                 "default": "Grid",
-                "description": "tagged/author collection style"
+                "description": "article card collection style for related, tagged and author articles"
             },
             "footer_link_type": {
                 "type": "select",
