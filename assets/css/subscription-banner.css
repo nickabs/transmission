@@ -14,7 +14,8 @@
     padding: 40px var(--edge-padding) 0 var(--edge-padding);
     margin-top: var(--section-gap);
     display: grid;
-    place-self: center;
+    align-self: center; /* Aligns the item along the block axis (vertical) */
+    justify-self: center;
     place-items: center;
     text-align: center;
     grid-template-areas: 
