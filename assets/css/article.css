@@ -37,14 +37,14 @@
       .kg-width-full {
         grid-column: full;
       }
-      .feature-image {
-        display: flex;
-        max-width: auto;
-        max-height: auto;
-        justify-content: space-around;
-      }
     }
   }
+}
+.article-content img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 .article-content > :first-child{
   padding-top:15px;
