@@ -2,25 +2,10 @@
 /* styling for all article content */
 /* ------------------------------- */
 
-/* default article view is a single column with all user content inside a variable margin:
+/* default article view is a single column with all user content inside a variable margin */
 
-the article-content grid is as follows:
-     |<--- full --->|<--- main --->|<--- full --->|
-[full-start]     [main-start]     [main-end]      [full-end]
-*/
 .article-content {
-  --main: minmax(calc(1fr-40px), var(--max-content-width));
-  --full: var(--edge-padding);
-  display: grid;
-  justify-self: center;
-
-  grid-template-columns:
-      [full-start] var(--full)
-      [main-start] var(--main) [main-end] 
-      var(--full) [full-end];
-  > * {
-    grid-column: main;
-  }
+    padding:var(--edge-padding);
 }
 
 /* display wide/full width images on larger screens where sidebars are not used 
@@ -29,8 +14,8 @@ the article-content grid is as follows:
      |<--- full --->|<--- wide --->|<--- main --->|<--- wide --->|<--- full --->|
 [full-start]     [wide-start]   [main-start]     [main-end]     [wide-end]      [full-end]
 */
-.site:not(:has(.sidebar-layout)) {
-  @media (min-width:760px) {
+ @media (min-width:760px) {
+  .site:not(:has(.sidebar-layout)) {
     .article-content {
       --main: var(--max-content-width);
       --wide: minmax(0, calc((var(--max-container-width) - var(--max-content-width)) / 2));
@@ -51,6 +36,12 @@ the article-content grid is as follows:
       }
       .kg-width-full {
         grid-column: full;
+      }
+      .feature-image {
+        display: flex;
+        max-width: auto;
+        max-height: auto;
+        justify-content: space-around;
       }
     }
   }
