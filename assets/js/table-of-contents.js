@@ -7,8 +7,19 @@
     contentSelector: '.article-content',
     hasInnerContainers: true
     })
+    
 })();
 
+// safari fix  - toc not showing without a forced repaint
+window.onload = function() {
+  const toc = document.querySelector('.table-of-contents');
+  if (toc) {
+      // Force a repaint
+      toc.style.display = 'none';
+      toc.offsetHeight;
+      toc.style.display = 'block';
+  }
+};
 
 /* 
  * toggle mobile toc when toc icon is clicked
@@ -16,6 +27,10 @@
 (function() {
     const tocButton = document.querySelector("#toc-toggle");
     const tableOfContents = document.querySelector(".table-of-contents");
+
+    if (!tableOfContents) {
+      return;
+    }
   
     function toggleTableOfContents(){
         tableOfContents.classList.toggle("toc-open");
