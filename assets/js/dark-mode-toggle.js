@@ -22,7 +22,6 @@
         var currentTheme = document.documentElement.getAttribute("data-color-scheme");
         var targetDataColorTheme = currentTheme == "dark" ? "light" : "dark";
 
-        console.log("todo on click");
         document.documentElement.setAttribute('data-color-scheme', targetDataColorTheme)
         localStorage.setItem('data-color-scheme', targetDataColorTheme);
 

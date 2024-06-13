@@ -29,8 +29,8 @@
     display: block;
     position: fixed;
     bottom: 0;
-    left:10px;
-    animation: showToc 300ms ease-in-out both;
+    left:50px;
+    animation: showToc 100ms ease-in-out both;
 }
 #toc-toggle span {
     display: flex;
@@ -115,6 +115,7 @@
 @media (min-width:1300px) {
     .table-of-contents.footer-layout {
         #toc-toggle {
+            left:30px;
             margin-left: var(--large-screen-edge-padding);
         }
     }

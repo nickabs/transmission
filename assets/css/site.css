@@ -237,7 +237,7 @@ a:hover {
 }
 .nav-open .item ,
 .submenu-open .submenu-item {
-  todoanimation: showMenu 450ms ease-in-out both;
+  animation: showMenu 450ms ease-in-out both;
 }
 
 /* hide nav items until dropdown-nav.js confirms it has run (to prevent the screen flashing) */
