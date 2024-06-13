@@ -9,8 +9,51 @@
 .table-of-contents:has(.toc:empty) {
     display:none;
 }
+.table-of-contents {
+    z-index: 5;
+    left: 40px;
+    bottom: 40px;
+    position: fixed;
+}
+.toc-close-icon,
+.toc-open-icon {
+    display: none;
+}
+.toc-open-icon {
+    display: block;
+}
+.toc-open .toc-close-icon {
+    display: block;
+}
+#toc-toggle { /* fix to remove flash on click */
+    position: fixed;
+    left: -40px;
+    bottom: -40px;
+}
+#toc-toggle svg ,
+#toc-toggle:before {
+    display:block;
+    position: fixed;
+    left: 40px;
+    bottom: 22px;
+    transform: translateX(-50%) translateY(50%);
+}
+#toc-toggle svg {
+    border-radius: 50%;
+    background-color: var(--background-color);
+    height: 35px;
+    width: 35px;
+    padding:3px;
+}
+#toc-toggle:before {
+    background-image: conic-gradient(var(--conic-gradient)); /* set by table-of-contents.js */
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    content: "";
+    opacity: .5;
+}
 
-/* animate open toc & button */
 @keyframes showToc {
     from {
         opacity: 0; 
@@ -20,20 +63,6 @@
         opacity: 1; 
         scale: 1;
     }
-}
-.table-of-contents {
-    z-index: 5;
-    position: relative;
-}
-#toc-toggle { 
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left:50px;
-    animation: showToc 100ms ease-in-out both;
-}
-#toc-toggle span {
-    display: flex;
 }
 .toc-container {
     border: 0.25px solid var(--border-color);
@@ -55,11 +84,6 @@
 #toc-toggle .toc-close-icon {
     display: none;
 }
-#toc-toggle svg {
-    height: 35px;
-    padding: 3px;
-    width: 35px;
-}
 
 /* override tocbot color defaults */
 .toc .is-active-link {
@@ -74,22 +98,6 @@
 }
 .toc .toc-list-item {
     padding-bottom: 3px;
-}
-
-/* reading progress */
-#toc-toggle svg {
-    fill: currentcolor;
-    background-color: var(--background-color);
-    border-radius: 50%;
-    transform: translateX(-37.5px) ;
-}
-#toc-toggle:before {
-    background-image: conic-gradient(var(--conic-gradient)); /* set by table-of-contents.js */
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    content: "";
-    opacity: 0.5;
 }
 
 .toc-open {
@@ -110,12 +118,13 @@
         display: none;
     }
 }
+
 /* On larger screens, TOC will stay in the same spot on the left hand side of the page 
 (the sidebar-layout property is set by a user selected custom option  */
 @media (min-width:1300px) {
     .table-of-contents.footer-layout {
-        #toc-toggle {
-            left:30px;
+        #toc-toggle svg,
+        #toc-toggle:before {
             margin-left: var(--large-screen-edge-padding);
         }
     }
@@ -131,7 +140,7 @@
             margin-left: var(--large-screen-edge-padding);
             width:fit-content;
             position: sticky;
-            top: 67px;
+            top: 72px;
             flex-direction: column;
             animation: showToc 300ms ease-in-out both;
             background-color: var(--banner-background-color);

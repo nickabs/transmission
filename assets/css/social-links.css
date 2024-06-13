@@ -10,7 +10,7 @@
 }
 .social-links-container {
     position: fixed;
-    width:100vw;
+    width:100%;
     bottom: 0;
     right: 0;
     background-color: var(--background-color);

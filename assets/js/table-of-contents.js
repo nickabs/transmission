@@ -25,18 +25,16 @@
     }
 
     window.addEventListener('click', function(e){
-      /* close toc when clicking anywhere on the toc */
-      if (tableOfContents.querySelector("toc-open")) {
-        let isClickInside = tableOfContents.querySelector("toc-open").contains(e.target);
-  
-        if (!isClickInside && tableOfContents.querySelector("toc-open")) {
-          tableOfContents.querySelector("toc-open").classList.remove("toc-open");
-        }
+      let tocOpenElement = null;
+      tocOpenElement = tableOfContents.querySelector(".toc-open");
+
+      if (tocOpenElement && tocOpenElement.contains(e.target)) {
+          return;
       }
-      /* close toc when clicking ouside the toc */
-      if (!tableOfContents.contains(e.target) && !tocButton.contains(e.target) &&
-         tableOfContents.classList.contains("toc-open")) {
-            toggleTableOfContents();
+
+      // Close TOC when clicking outside the TOC
+      if (!tableOfContents.contains(e.target) && !tocButton.contains(e.target) && tableOfContents.classList.contains("toc-open")) {
+          toggleTableOfContents();
       }
     });
   
