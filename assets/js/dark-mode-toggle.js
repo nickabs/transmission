@@ -12,25 +12,26 @@
         return;
     }
 
-    var storedTheme = localStorage.getItem('data-color-scheme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    var storedDataColorTheme = localStorage.getItem('data-color-scheme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 
-    if (storedTheme) {
-        document.documentElement.setAttribute('data-color-scheme', storedTheme);
+    if (storedDataColorTheme) {
+        document.documentElement.setAttribute('data-color-scheme', storedDataColorTheme);
     }
 
     darkModeToggle.onclick = function() {
         var currentTheme = document.documentElement.getAttribute("data-color-scheme");
-        var targetTheme = currentTheme == "dark" ? "light" : "dark";
+        var targetDataColorTheme = currentTheme == "dark" ? "light" : "dark";
 
-        document.documentElement.setAttribute('data-color-scheme', targetTheme)
-        localStorage.setItem('data-color-scheme', targetTheme);
+        console.log("todo on click");
+        document.documentElement.setAttribute('data-color-scheme', targetDataColorTheme)
+        localStorage.setItem('data-color-scheme', targetDataColorTheme);
 
         // set color-scheme on the comments iframe
         // As of 5.0 Ghost helper supports {{comments mode="auto" }} which will use the background color to determine if the theme is using a dark mode
         // ... but this only works after a screen refresh.  The code below will make the scheme change on clicking the dark mode toggle
         const commentsScript = document.querySelector('script[data-color-scheme]');
         if (commentsScript) {
-            commentsScript.setAttribute('data-color-scheme', targetTheme);
+            commentsScript.setAttribute('data-color-scheme', targetDataColorTheme);
         };
     }
   })();
