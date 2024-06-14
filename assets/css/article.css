@@ -6,6 +6,7 @@
 
 .article-content {
     padding:var(--edge-padding);
+    max-width: var(--max-content-width);
 }
 
 /* display wide/full width images on larger screens where sidebars are not used 
@@ -169,13 +170,13 @@ figcaption {
 /* ----------------- */
 /* code highlighting */
 /* ----------------- */
-pre[class*="language-"] ,
-code[class*="language-"] {
+pre[class*=language-] ,
+code[class*=language-] {
     hyphens: none;
     line-height: 1.5;
-    white-space: pre;
 	  font-size: 1.4rem;
     font-family: var(--font-mono);
+    max-width: 90vw;
 }
 
 /* make output lines in code blocks not selectable */
