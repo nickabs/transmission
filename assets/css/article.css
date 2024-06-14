@@ -41,10 +41,13 @@
   }
 }
 .article-content img {
-    display: block;
-    margin: 0;
-    width: 100%;
-    height: 100%;
+    &:not:has(.icon),
+    &:not:has(.kg-bookmark-icon) {
+      display: block;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      }
 }
 .article-content > :first-child{
   padding-top:15px;
