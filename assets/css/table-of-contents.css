@@ -5,10 +5,6 @@
 /* default view is for mobile view */
 /* table of contents icon shown on bottom left */
 
-/* hide the toc toggle button if there is no toc */
-.table-of-contents:has(.toc:empty) {
-    display:none;
-}
 .table-of-contents {
     z-index: 5;
     left: 40px;
@@ -144,8 +140,14 @@
             position: sticky;
             top: 72px;
             flex-direction: column;
-            animation: showToc 300ms ease-in-out both;
             background-color: var(--banner-background-color);
         }
+    }
+}
+
+/* hide the toc toggle button if there is no toc */
+.table-of-contents {
+    :has(.toc:empty){
+        display:none;
     }
 }
