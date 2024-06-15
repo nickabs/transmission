@@ -55,6 +55,7 @@
 /* default view is a grid of cards */
 .previous-articles,
 .related-articles,
+.recent-articles,
 .tagged-articles  {
     display: flex;
     flex-wrap: wrap;
@@ -67,6 +68,7 @@
         max-width: 250px; 
     }
     .related-articles-title,
+    .recent-articles-title,
     .previous-articles-title {
         width: 100%;
     }
@@ -273,5 +275,21 @@
     .main-article,
     .recent-articles {
         border-right: 1px solid var(--border-color); 
+    }
+}
+@media (min-width: 1300px) {
+    .site.home-template:not(.home-page-list) {
+        .recent-articles .article-card {
+            height:auto;
+            display:grid;
+            grid-template-areas:
+            "Image"
+            "Title"
+            "Excerpt"
+            "Metadata"
+            "Author";
+            max-width:fit-content;
+            min-width:fit-content;
+        }
     }
 }
