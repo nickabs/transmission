@@ -276,6 +276,7 @@ a:hover {
       justify-content: center; 
 
       .item {
+        position: relative;
         display: flex!important ; /* always show the nav-items in this view */
         border: unset;
         margin: 0;
@@ -288,15 +289,31 @@ a:hover {
         display:none;
       }
       
-      /* hacky adjustment of the submenu positon in relation to header bar */
       .submenu {
-        right:-110px;
+        transform: translateX(50%);
+        position:absolute;
         top: calc(var(--site-header-height) - 6px);
         overflow: hidden;
       }
       .item:has(sup) {
-        transform: translateY(-4px) ; /* fix misalignment caused by drop down nav symbol */
+        line-height: 12px; /* fix misalignment caused by drop down nav symbol */
       }
+    }
+    /* animate hover */
+    .item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 0.5px;
+      background-color: var(--banner-title-color);
+      width:0;
+      transform: scaleX(0); /* Initially hidden */
+      transition: transform 0.2s ease; 
+    }
+    .item:hover::after {
+      width:100%;
+      transform: scaleX(1); 
     }
   }
 }
