@@ -126,6 +126,7 @@
                 "Pagination SocialLinks"
                 "TableOfContents TableOfContents"
                 "SiteFooter SiteFooter";
+            justify-items: center;
         }
     }
 }
@@ -174,7 +175,7 @@
     /* page and post layout with sidebar */
     .site.page-template, .site.post-template {
         &:has(.sidebar-layout) {
-            grid-template-columns: 1.2fr 2.2fr 0.8fr;
+            grid-template-columns: 1fr 2fr 1fr;
             grid-template-areas:
                 "HeroHeader HeroHeader HeroHeader"
                 "TableOfContents ArticleContent SocialLinks"
@@ -182,6 +183,7 @@
                 "TableOfContents RelatedArticles SocialLinks"
                 "TableOfContents Pagination SocialLinks"
                 "SiteFooter SiteFooter SiteFooter";
+            justify-items: center;
         }
     }
 }
