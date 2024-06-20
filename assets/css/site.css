@@ -218,14 +218,14 @@ a:hover {
 .nav {
   display: none;
 }
-.nav-open {
+.active-nav {
   display: grid;
 }
-.submenu-open {
+.active-submenu {
   display:grid;
 }
-.nav:has(.submenu-open) {
-  .item:not(:has(.submenu-open)) {
+.nav:has(.active-submenu) {
+  .item:not(:has(.active-submenu)) {
     display: none ;
   }
 }
@@ -235,8 +235,8 @@ a:hover {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-.nav-open .item ,
-.submenu-open .submenu-item {
+.active-nav .item ,
+.active-submenu .submenu-item {
   animation: showMenu 450ms ease-in-out both;
 }
 
@@ -282,7 +282,7 @@ a:hover {
         margin: 0;
         padding: 0;
       }
-      .submenu:not(.submenu-open) {
+      .submenu:not(.active-submenu) {
         display:none;
       }
       .nav-header {
