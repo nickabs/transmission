@@ -34,8 +34,13 @@ body {
     scroll-margin-top: var(--site-header-height);
     width:100vw;
 }
+
 img {
     height: auto;
+}
+iframe {
+  width: 100%;
+  height: auto;
 }
 
 /* hyperlinks in asides default to no text decoration/color - see hero.css, article.css etc for hyperlink styles elsewhere */
