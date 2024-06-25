@@ -99,8 +99,8 @@ a:hover {
 /* -------------------------------------- */
 .site-header {
   background-color: var(--background-color);
-  position: fixed;
   justify-content: center;
+  position: absolute;
   width: 100%;
   top: 0;
   z-index: 1000; /* show above page content */
@@ -110,6 +110,9 @@ a:hover {
   font-size: 1.5rem;
   font-weight: 700;
   align-items: center;
+}
+.fixed-header .site-header{
+  position: fixed;
 }
 .nav {
   flex-grow:1;

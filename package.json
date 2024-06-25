@@ -45,6 +45,15 @@
         },
         "card_assets": true,
         "custom": {
+            "header_style": {
+                "type": "select",
+                "options": [
+                    "Normal",
+                    "Fixed"
+                ],
+                "default": "Normal",
+                "description": "header scrolls with content or is fixed in place"
+            },
             "menu_style": {
                 "type": "select",
                 "options": [

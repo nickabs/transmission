@@ -65,6 +65,7 @@
     .article-card {
         flex: 1 1 200px; 
         min-width: 200px; 
+        max-width: 250px; 
     }
     .related-articles-title,
     .recent-articles-title,
@@ -248,9 +249,6 @@
 /* 6. larger screens */
 /* ----------------- */
 @media (min-width: 480px) {
-    .article-card {
-        max-width: 250px;
-    }
     .site.home-template:not(.home-page-list) {
         .main-article .article-card {
             padding:0;
