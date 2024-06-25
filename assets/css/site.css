@@ -111,7 +111,7 @@ a:hover {
   font-weight: 700;
   align-items: center;
 }
-.fixed-header .site-header{
+.fixed-header-and-footer .site-header{
   position: fixed;
 }
 .nav {

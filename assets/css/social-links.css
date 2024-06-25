@@ -9,7 +9,7 @@
     z-index: 4;
 }
 .social-links-container {
-    position: fixed;
+    position: absolute;
     width:100%;
     bottom: 0;
     right: 0;
@@ -21,6 +21,9 @@
     align-items: center;
     padding:5px;
     right:var(--edge-padding);
+}
+.fixed-header-and-footer .social-links-container {
+    position: fixed;
 }
 .social-links-title {
     display:none;

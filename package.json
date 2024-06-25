@@ -45,7 +45,7 @@
         },
         "card_assets": true,
         "custom": {
-            "header_style": {
+            "header_and_footer_style": {
                 "type": "select",
                 "options": [
                     "Normal",
