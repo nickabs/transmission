@@ -7,6 +7,7 @@
 .article-content {
     padding:var(--edge-padding);
     max-width: var(--max-content-width);
+    justify-self: center;
 }
 
 /* display wide/full width images on larger screens where sidebars are not used 

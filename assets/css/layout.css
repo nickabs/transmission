@@ -175,7 +175,7 @@
     /* page and post layout with sidebar */
     .site.page-template, .site.post-template {
         &:has(.sidebar-layout) {
-            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-columns: 1fr var(--max-content-width) 1fr;
             grid-template-areas:
                 "HeroHeader HeroHeader HeroHeader"
                 "TableOfContents ArticleContent SocialLinks"
