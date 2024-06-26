@@ -19,7 +19,6 @@
     grid-template-rows: 75px 75px 85px;
     grid-template-columns: auto;
     justify-items: center;
-    text-align: center;
     align-items:center;
 
     &.mini { /* simplified banner */
@@ -27,14 +26,18 @@
             "SubscriptionBannerForm";
         grid-template-rows: 1fr ;
         width: 100vw;
+        height: 90px;
     }
 }
 
 .subscription-banner-heading {
-    align-self:self-end;
+    align-self: self-end;
 }
 .subscription-banner-form {
-    align-self:self-start;
+    align-self: self-start;
+}
+.mini .subscription-banner-form {
+    align-self: center;
 }
 .subscription-banner-heading, 
 .subscription-banner-description, 
@@ -57,9 +60,8 @@
     column-gap:5px;
     font-size:1.3rem;
     height: 35px;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
+    todojustify-content: center;
+    todojustify-self: center;
 
     .button {
        width: 70px;
