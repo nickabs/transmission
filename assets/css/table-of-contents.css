@@ -146,8 +146,6 @@
 }
 
 /* hide the toc toggle button if there is no toc */
-.table-of-contents {
-    :has(.toc:empty){
-        display:none;
-    }
+.table-of-contents:has(.toc:empty){
+    display:none!important;
 }

@@ -360,6 +360,7 @@ a:hover {
 .site-footer {
   display:flex;
   justify-content: space-between;
+  width:100%;
 }
 .footer-links {
   display:inline-flex;
@@ -382,7 +383,6 @@ a:hover {
     .site-footer {
       padding-right: var(--large-screen-edge-padding);
       padding-left: var(--large-screen-edge-padding);
-      width: 100%;
     }
   }
 }
