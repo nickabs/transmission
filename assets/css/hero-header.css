@@ -5,7 +5,7 @@
 /* ------------------------------------------------------------------------------------------------------ */
 
 .hero-header {
-    margin-top: var(--site-header-height);
+    margin-top: var(--site-top-gap);
     background-color: var(--banner-background-color);
     width: 100vw;
     height: var(--hero-header-height);

@@ -3,7 +3,7 @@
 /* 1. default styles for the site       */
 /* 2. default site padding              */
 /* 3. photoswipe lightbox adjustments   */
-/* 4. site header                       */
+/* 4. site header/annoucmenent bar      */
 /* 5. navigation menu                   */
 /* 6. site footer                       */
 /* 7. Ghost cards                       */
@@ -31,7 +31,7 @@ body {
     background-color: var(--background-color);
     margin:0;
     padding:0;
-    scroll-margin-top: var(--site-header-height);
+    scroll-margin-top: var(--site-top-gap);
     width:100vw;
 }
 
@@ -95,14 +95,14 @@ a:hover {
 }
 
 /* -------------------------------------- */
-/* 4. site header                         */
+/* 4. site header/annoucmenent bar        */
 /* -------------------------------------- */
 .site-header {
   background-color: var(--background-color);
   justify-content: center;
   position: absolute;
   width: 100%;
-  top: 0;
+  top: var(--site-header-top-gap);
   z-index: 1000; /* show above page content */
   display: flex;
   height:var(--site-header-height); 
@@ -111,6 +111,22 @@ a:hover {
   font-weight: 700;
   align-items: center;
 }
+.site:has(#announcement-bar-root:not(:empty)) {
+  --site-header-top-gap: var(--announcement-bar-height);
+  --site-top-gap: calc(var(--site-header-height) + var(--announcement-bar-height));
+}
+#announcement-bar-root {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  .gh-announcement-bar {
+    height: var(--announcement-bar-height);
+    padding: 0;
+    width:100%;
+  }
+}
+
 .fixed-header-and-footer .site-header{
   position: fixed;
 }
@@ -186,7 +202,7 @@ a:hover {
 .nav, .submenu {
   position:fixed;
   right:var(--edge-padding);
-  top: calc(var(--site-header-height) + 5px);
+  top: calc(var(--site-top-gap) + 5px);
   background-color: var(--banner-background-color);
   border-radius: 10px;
   width:350px;
@@ -300,7 +316,7 @@ a:hover {
       .submenu {
         transform: translateX(50%);
         position:absolute;
-        top: calc(var(--site-header-height) - 6px);
+        top: calc(var(--site-top-gap) - 6px);
         overflow: hidden;
       }
       .item:has(sup) {
