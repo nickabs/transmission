@@ -102,7 +102,7 @@ a:hover {
   justify-content: center;
   position: absolute;
   width: 100%;
-  top: var(--site-header-top-gap);
+  top: var(--announcement-bar-height); /* zero when there is no announcement bar */
   z-index: 1000; /* show above page content */
   display: flex;
   height:var(--site-header-height); 
@@ -111,10 +111,6 @@ a:hover {
   font-weight: 700;
   align-items: center;
 }
-.site:has(#announcement-bar-root:not(:empty)) {
-  --site-header-top-gap: var(--announcement-bar-height);
-  --site-top-gap: calc(var(--site-header-height) + var(--announcement-bar-height));
-}
 #announcement-bar-root {
   position: fixed;
   top: 0;
@@ -122,8 +118,7 @@ a:hover {
   z-index: 1000;
   .gh-announcement-bar {
     height: var(--announcement-bar-height);
-    padding: 0;
-    width:100%;
+    todowidth:100%;
   }
 }
 
@@ -172,7 +167,9 @@ a:hover {
     display: block;
 }
 
+/* ensure that the header buttons, menus etc do not stretch to the edges of large screens */
 @media (min-width: 1300px) {
+  .site .gh-announcement-bar > *,
   .site-header {
     padding-left: var(--large-screen-edge-padding);
     padding-right: var(--large-screen-edge-padding);
