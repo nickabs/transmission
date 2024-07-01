@@ -20,9 +20,8 @@
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
     --site-header-height: 55px; 
-    --announcement-bar-height: 55px; 
-    --site-top-gap: var(--site-header-height); /* this value is updated in site.css when there is an announcement bar */
-    --site-header-gap: 0px; /* this value is updated in site.css when there is an announcement bar */
+    --announcement-bar-height: 0px;
+    --site-top-gap: var(--site-header-height); 
     --hero-header-height: 160px ;
     --section-gap: max(1.5vw,24px);
     --max-content-width: 720px;
@@ -30,6 +29,12 @@
     --edge-padding: max(5vmin, 20px); 
     --large-screen-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1300px */
     --article-card-gap: 15px; 
+}
+
+/* adjust position of headers to make room for announcement bar */
+.site:has(#announcement-bar-root:not(:empty)) {
+    --announcement-bar-height: 55px;
+    --site-top-gap: calc(var(--site-header-height) + var(--announcement-bar-height));
 }
 
 /* font sizes on larger screens */
