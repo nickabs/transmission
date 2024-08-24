@@ -112,6 +112,7 @@
     let activeSubmenu = nav.querySelector('.active-submenu');
     let clickedItem;
 
+
     // when a submenu item is clicked no need to do anythng further (new page will open)
     if (event.target.closest(".submenu-item")) {
       return;
@@ -121,12 +122,20 @@
     }
 
     if (clickedItem) {
+      if (clickedItem.querySelector('.has-submenu')) {
+        event.preventDefault(); // prevent the page scrolling to the top when a menu item is clicked;
+      }
+
       if (activeSubmenu) { // close any previously opened submenu
         activeSubmenu.classList.remove('active-submenu');
       }
-      if (clickedItem.classList.contains("has-submenu")) {
-        clickedItem.querySelector(".submenu").classList.add('active-submenu');
+
+      if (! clickedItem.contains(activeSubmenu)) { // do not reopen the submenu item if it was closed by the statement above
+        if (clickedItem.classList.contains("has-submenu")) {
+          clickedItem.querySelector(".submenu").classList.add('active-submenu');
+        }
       }
+
       return;
     }
 
