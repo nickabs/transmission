@@ -27,7 +27,16 @@
         <p class="article-card-excerpt short"><a href="{{url}}">{{excerpt words="20"}}...</a></p>
     {{/if}}
     {{#if @custom.show_author}}
-       <a class="article-card-author" href="{{primary_author.url}}">{{primary_author.name}}</a>
+        <div class="article-card-authors">
+            {{#foreach authors}}
+                {{#if @first}}
+                    <a class="article-card-author" href="{{url}}">{{name}}</a>
+                {{else}}
+                    <span>,</span> 
+                    <a class="article-card-author" href="{{url}}">{{name}}</a>
+                {{/if}}
+            {{/foreach}}
+        </div>
     {{/if}}
     <div class="article-card-metadata" >
         {{#unless access}}

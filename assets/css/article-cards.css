@@ -15,7 +15,7 @@
 /* -------------------------------------------- */
 .article-card-image { grid-area: Image; }
 .article-card-title { grid-area: Title; }
-.article-card-author { grid-area: Author; }
+.article-card-authors { grid-area: Authors; }
 .article-card-excerpt { grid-area: Excerpt; }
 .article-card-metadata { grid-area: Metadata; }
 
@@ -28,7 +28,7 @@
         "Title"
         "Excerpt"
         "Metadata"
-        "Author";
+        "Authors";
 }
 .main-article .article-card {
     display:grid;
@@ -38,14 +38,14 @@
         "Image"
         "Excerpt"
         "Metadata"
-        "Author";
+        "Authors";
 }
 .featured-articles .article-card {
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
         "Title Image"
         "Metadata Image"
-        "Author Image";
+        "Authors Image";
 }
 
 /* --------------------------- */
@@ -296,7 +296,7 @@
             "Title"
             "Excerpt"
             "Metadata"
-            "Author";
+            "Authors";
             max-width:fit-content;
             min-width:fit-content;
         }
