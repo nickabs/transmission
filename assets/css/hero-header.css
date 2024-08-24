@@ -44,11 +44,7 @@
     font-size: 1.5rem;
     color: var(--banner-description-color);
 }
-todo {
-.hero-tags a, .hero-authors .author-names a {
-    color: var(--link-color);
-}
-}
+
 .hero-tags a:hover {
     opacity: 0.8;
 }
