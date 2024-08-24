@@ -30,6 +30,14 @@
        <a class="article-card-author" href="{{primary_author.url}}">{{primary_author.name}}</a>
     {{/if}}
     <div class="article-card-metadata" >
+        {{#unless access}}
+            {{^has visibility="public"}}
+                <a class="article-card-premium-content" href="{{url}}">
+                    {{> "icons/lock"}}
+                    <p>premium content</p>
+                </a>
+                {{/has}}
+        {{/unless}}
         <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM"}}</time>
         {{#if primary_tag}}
             {{#if primary_tag.accent_color}}
