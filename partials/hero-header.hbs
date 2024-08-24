@@ -31,8 +31,24 @@
             </div>
         {{/if}}
         {{#if @custom.show_author}}
-            <div class="hero-authors" >
-                {{authors separator=" | "}}
+            <div class="hero-authors">
+                {{#foreach authors}}
+                    {{#if profile_image}}
+                        <a class="author-profile-image" href="{{url}}">
+                            <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
+                        </a>
+                    {{else}}
+                        <a class="author-profile-image" href="{{url}}">{{> "icons/avatar"}}</a>
+                    {{/if}}
+                {{/foreach}}
+                {{#foreach authors}}
+                    {{#if @first}}
+                        <a class="author-name" href="{{url}}">{{name}}</a>
+                    {{else}}
+                        <span>,</span> 
+                        <a class="author-name" href="{{url}}">{{name}}</a>
+                    {{/if}}
+                {{/foreach}}
             </div>
         </ol>
         {{/if}}

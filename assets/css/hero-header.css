@@ -39,17 +39,42 @@
 }
 
 /* metadata items:  date, tags and reading times */
-.hero-authors, .hero-date, .hero-tags, .hero-authors {
+.hero-date, .hero-tags, .hero-authors {
     z-index: 2;
     font-size: 1.5rem;
     color: var(--banner-description-color);
 }
-.hero-tags a, .hero-authors a {
+todo {
+.hero-tags a, .hero-authors .author-names a {
     color: var(--link-color);
+}
 }
 .hero-tags a:hover {
     opacity: 0.8;
 }
+
+.hero-authors {
+    display: flex;
+    align-items: center;
+
+    a:nth-child(1 of .author-name) {
+        margin-left: 25px;
+    }
+    a.author-name:not(:nth-child(1 of .author-name)) {
+        margin-left: 5px;
+    }
+    .author-profile-image {
+        border: 3px solid var(--theme-accent-color);
+        border-radius: 50%;
+        margin: 0 -7px;
+        height: 43px;
+        width: 43px;
+        :is(img,svg) {
+            border-radius: 50%;
+        }
+    }
+}
+
 /* small screens */
 @media (max-width: 760px) {
     .hero-title {
