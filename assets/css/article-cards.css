@@ -30,9 +30,15 @@
         "Metadata"
         "Authors";
 }
+
+.previous-articles .article-card {
+    grid-template-areas:
+        "Image"
+        "Title"
+        "Metadata"
+        "Authors";
+}
 .main-article .article-card {
-    display:grid;
-    grid-template-columns: auto;
     grid-template-areas:
         "Title"
         "Image"
@@ -64,20 +70,17 @@
     align-items: flex-start;
     gap: var(--article-card-gap);
     .article-card {
-        flex: 1 1 200px; 
-        min-width: 200px; 
-        max-width: 250px; 
+        flex: 1 1 310px; 
+        max-width: 310px; 
+        height: 370px;
+        transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
+        border: 1px solid var(--border-color);
+        padding: 10px;
     }
     .related-articles-title,
     .recent-articles-title,
     .previous-articles-title {
         width: 100%;
-    }
-    .article-card {
-        height: 340px;
-        transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
-        border: 1px solid var(--border-color);
-        padding: 10px;
     }
     .article-card-image  {
         border-radius: 10px;
@@ -86,7 +89,7 @@
 }
 .previous-articles {
     .article-card {
-        height: 280px;
+        height: 310px;
     }
 }
 .article-collection-as-list {
@@ -205,6 +208,12 @@
     font-weight: 600;
 }
 
+.main-article .article-card-title {
+    margin-top: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
 /* show divider line under title */
 .article-card-title:after {
     display: grid;
@@ -267,11 +276,6 @@
     .site.home-template:not(.home-page-list) {
         .main-article .article-card {
             padding:0;
-        }
-        .recent-articles {
-            img { 
-                max-height: 200px;
-            }
         }
         .main-article img {
             min-height: 500px;

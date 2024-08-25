@@ -137,7 +137,7 @@
 @media (min-width: 1300px) { 
     /* home page layout */
     .site.home-template.home-page-focus-left {
-        grid-template-columns: 2.2fr 1fr 1fr; 
+        grid-template-columns: 1.5fr 1fr 0.8fr; 
         grid-template-areas:
             "HeroHeader HeroHeader HeroHeader"
             "MainArticle RecentArticles FeaturedArticles"
@@ -149,7 +149,7 @@
        
     }
     .site.home-template.home-page-focus-middle {
-        grid-template-columns: 1fr 2.2fr 1fr; 
+        grid-template-columns: 1fr 1.5fr 0.8fr; 
         grid-template-areas:
             "HeroHeader HeroHeader HeroHeader"
             "RecentArticles MainArticle FeaturedArticles"
@@ -159,7 +159,7 @@
             "SiteFooter SiteFooter SiteFooter";
     }
     .site.home-template.home-page-focus-right {
-        grid-template-columns: 1fr 1fr 2.2fr; 
+        grid-template-columns: 1fr 0.8fr 1.5fr; 
         grid-template-areas:
             "HeroHeader HeroHeader HeroHeader"
             "RecentArticles FeaturedArticles MainArticle"
