@@ -122,7 +122,7 @@
     }
 
     if (clickedItem) {
-      if (clickedItem.querySelector('.has-submenu')) {
+      if (clickedItem.classList.contains('has-submenu')) {
         event.preventDefault(); // prevent the page scrolling to the top when a menu item is clicked;
       }
 
