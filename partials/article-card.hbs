@@ -43,9 +43,9 @@
     <div class="article-card-metadata" >
         {{#unless access}}
             {{^has visibility="public"}}
-                <a class="article-card-members-only icon" href="{{url}}">
+                <a class="article-card-restricted-access icon" href="{{url}}">
                     {{> "icons/lock"}}
-                    <p>members only</p>
+                    {{tiers}}
                 </a>
                 {{/has}}
         {{/unless}}

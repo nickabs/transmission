@@ -228,7 +228,7 @@
 .article-card-excerpt,
 .article-card-author,
 .article-card-date,
-.article-card-members-only,
+.article-card-restricted-access,
 .article-card-author-list {
     font-size: 1.3rem;
 }
@@ -247,7 +247,7 @@
     text-transform: uppercase;
     padding: 0 2px 0 2px;
 }
-.article-card-members-only {
+.article-card-restricted-access {
     display: flex;
     svg { 
         margin-right: 5px;
