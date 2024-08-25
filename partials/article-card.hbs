@@ -24,7 +24,7 @@
     <h1 class="article-card-title"><a href="{{url}}">{{title}}</a></h1>
     {{#if excerpt}}
         <p class="article-card-excerpt long"><a href="{{url}}">{{excerpt words="55"}}...</a></p>
-        <p class="article-card-excerpt short"><a href="{{url}}">{{excerpt words="20"}}...</a></p>
+        <p class="article-card-excerpt short"><a href="{{url}}">{{excerpt words="15"}}...</a></p>
     {{/if}}
     {{#if @custom.show_author}}
         <div class="article-card-authors">
@@ -41,7 +41,7 @@
     <div class="article-card-metadata" >
         {{#unless access}}
             {{^has visibility="public"}}
-                <a class="article-card-members-only" href="{{url}}">
+                <a class="article-card-members-only icon" href="{{url}}">
                     {{> "icons/lock"}}
                     <p>members only</p>
                 </a>
