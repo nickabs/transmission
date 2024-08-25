@@ -228,7 +228,7 @@
 .article-card-excerpt,
 .article-card-author,
 .article-card-date,
-.article-card-premium-content {
+.article-card-members-only {
     font-size: 1.3rem;
 }
 .article-card-tag  {
@@ -246,7 +246,7 @@
     text-transform: uppercase;
     padding: 0 2px 0 2px;
 }
-.article-card-premium-content {
+.article-card-members-only {
     display: flex;
     svg { 
         margin-right: 5px;
