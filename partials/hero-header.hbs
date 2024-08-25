@@ -31,33 +31,40 @@
             </div>
         {{/if}}
         {{#if @custom.show_author}}
-            <div class="hero-authors">
+            <ol class="hero-author-list">
                 {{#foreach authors}}
-                    {{#if profile_image}}
-                        <a class="author-profile-image" href="{{url}}">
-                            <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
-                        </a>
-                    {{else}}
-                        <a class="author-profile-image" href="{{url}}">{{> "icons/avatar"}}</a>
-                    {{/if}}
+                    <li class="author-profile-image">
+                        {{#if profile_image}}
+                            <a href="{{url}}">
+                                <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
+                            </a>
+                        {{else}}
+                            <a href="{{url}}">
+                                {{> "icons/avatar"}}
+                            </a>
+                        {{/if}}
+                    </li>
                 {{/foreach}}
                 {{#foreach authors}}
-                    {{#if @first}}
-                        <a class="author-name" href="{{url}}">{{name}}</a>
-                    {{else}}
-                        <span>,</span> 
-                        <a class="author-name" href="{{url}}">{{name}}</a>
-                    {{/if}}
+                    <li class="author-name">
+                        {{#if @first}}
+                            <a href="{{url}}">{{name}}</a>
+                        {{else}}
+                            <span>,</span> 
+                            <a href="{{url}}">{{name}}</a>
+                        {{/if}}
+                    </li>
                 {{/foreach}}
-            </div>
-        </ol>
+            </ol>
         {{/if}}
     {{/is}}
 
     {{#is "author"}}
         <div class="author-title">
             {{#if profile_image}}
-                <img class="author-profile-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                <div class="author-profile-image" >
+                    <img src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                </div>
             {{/if}}
             <h1 class="author-name">
                 {{name}}

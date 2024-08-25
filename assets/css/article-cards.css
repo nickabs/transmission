@@ -15,7 +15,7 @@
 /* -------------------------------------------- */
 .article-card-image { grid-area: Image; }
 .article-card-title { grid-area: Title; }
-.article-card-authors { grid-area: Authors; }
+.article-card-author-list { grid-area: Authors; }
 .article-card-excerpt { grid-area: Excerpt; }
 .article-card-metadata { grid-area: Metadata; }
 
@@ -228,7 +228,8 @@
 .article-card-excerpt,
 .article-card-author,
 .article-card-date,
-.article-card-members-only {
+.article-card-members-only,
+.article-card-author-list {
     font-size: 1.3rem;
 }
 .article-card-tag  {
@@ -251,7 +252,12 @@
     svg { 
         margin-right: 5px;
     }
-
+}
+.article-card-author-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-inline-start: 0;
 }
 
 /* ----------------- */

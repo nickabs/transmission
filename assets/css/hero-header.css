@@ -39,7 +39,7 @@
 }
 
 /* metadata items:  date, tags and reading times */
-.hero-date, .hero-tags, .hero-authors {
+.hero-date, .hero-tags, .hero-author-list {
     z-index: 2;
     font-size: 1.5rem;
     color: var(--banner-description-color);
@@ -49,25 +49,17 @@
     opacity: 0.8;
 }
 
-.hero-authors {
+.hero-author-list {
     display: flex;
     align-items: center;
+    list-style: none;
 
-    a:nth-child(1 of .author-name) {
+    li:nth-child(1 of .author-name) {
         margin-left: 25px;
     }
-    a.author-name:not(:nth-child(1 of .author-name)) {
-        margin-left: 5px;
-    }
     .author-profile-image {
-        border: 3px solid var(--theme-accent-color);
-        border-radius: 50%;
         margin: 0 -7px;
-        height: 43px;
-        width: 43px;
-        :is(img,svg) {
-            border-radius: 50%;
-        }
+       
     }
 }
 
