@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.18.1",
+    "version": "1.19.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -95,7 +95,7 @@
             },
             "show_featured_posts": {
                 "type": "boolean",
-                "default": true,
+                "default": false,
                 "group": "homepage"
             },
             "show_author": {
@@ -131,7 +131,6 @@
                 "options": [
                     "List",
                     "Focus (right)",
-                    "Focus (middle)",
                     "Focus (left)"
                 ],
                 "default": "Focus (left)",

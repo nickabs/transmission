@@ -38,11 +38,12 @@
 </head>
 
 <body class='site {{body_class}}
-    {{~#match @custom.article_collection_style "List"}} article-collection-as-list {{else}} article-collection-as-grid {{/match}}
-    {{~#match @custom.home_page_style "List"}}home-page-list{{/match}}
-    {{~#match @custom.home_page_style "Focus (right)"}}home-page-focus-right{{/match}}
-    {{~#match @custom.home_page_style "Focus (middle)"}}home-page-focus-middle{{/match}}
-    {{~#match @custom.home_page_style "Focus (left)"}}home-page-focus-left{{/match}}
+    {{!-- set classes to reflect custom options selected by the site owner --}}
+    {{#if @custom.show_featured_posts}} show-featured-articles{{/if}}
+    {{~#match @custom.article_collection_style "List"}} article-collection-as-list{{else}} article-collection-as-grid{{/match}}
+    {{~#match @custom.home_page_style "List"}} home-page-list{{/match}}
+    {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match}}
+    {{~#match @custom.home_page_style "Focus (left)"}} home-page-focus-left{{/match}}
     {{~#match @custom.menu_style "Expanded"}} expanded-nav{{else}} minified-nav{{/match}}
     {{~#match @custom.header_and_footer_style "Fixed"}} fixed-header-and-footer{{/match}}'>
 

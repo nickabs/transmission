@@ -60,8 +60,6 @@
     column-gap:5px;
     font-size:1.3rem;
     height: 35px;
-    todojustify-content: center;
-    todojustify-self: center;
 
     .button {
        width: 70px;
@@ -99,17 +97,4 @@
 .subscription-banner-form.error .error-text {
     display:block;
     pointer-events: none;
-}
-/* larger screens */
-@media (min-width: 1300px) { 
-    /* when using full banner, the banner is shown on rhs of home page for larger screen - make sticky */
-    .home-template .subscription-banner:not(.mini) {
-        margin-left: 5px;
-        gap:20px;
-        justify-content: center;
-        width: 300px;
-        height: 275px;
-        position: sticky;
-        top: 110px;
-    }
 }

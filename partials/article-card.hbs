@@ -41,14 +41,6 @@
         </ol>
     {{/if}}
     <div class="article-card-metadata" >
-        {{#unless access}}
-            {{^has visibility="public"}}
-                <a class="article-card-restricted-access icon" href="{{url}}">
-                    {{> "icons/lock"}}
-                    {{tiers}}
-                </a>
-                {{/has}}
-        {{/unless}}
         <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM"}}</time>
         {{#if primary_tag}}
             {{#if primary_tag.accent_color}}
@@ -57,6 +49,14 @@
                 <a class="article-card-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
             {{/if}}
         {{/if}}
+        {{#unless access}}
+            {{^has visibility="public"}}
+                <a class="article-card-restricted-access icon" href="{{url}}">
+                    {{> "icons/lock"}}
+                    {{tiers}}
+                </a>
+            {{/has}}
+        {{/unless}}
     </div>
 
 </article>

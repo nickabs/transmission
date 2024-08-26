@@ -3,45 +3,47 @@
 {{> "hero-header"}}
 
 <article class="main-article">
-    {{#foreach posts limit="1"}}
+    {{#foreach posts limit=1}}
         {{> "article-card" image_size="m" }}
     {{/foreach}}
 </article>
-<aside class="recent-articles">
-    <h1 class="recent-articles-title" >RECENT</h1>
-    {{#foreach posts from="2" limit="3"}}
+
+<aside class="latest-articles">
+    <h1 class="latest-articles-title" >LATEST</h1>
+    {{#foreach posts from=2 limit=6}}
         {{> "article-card" image_size="s" }}
     {{/foreach}}
 </aside>
-<aside class="featured-articles">
-    {{#if @custom.show_featured_posts}}
+
+{{#if @custom.show_featured_posts }}
+    <aside class="featured-articles">
         <h1 class="featured-articles-title" >FEATURED</h1>
         {{#get "posts" filter="featured:true" include="authors,tags" limit=6 as |featured|}}
             {{#foreach featured}}
                 {{> "article-card" image_size="xs" }}
             {{/foreach}}
         {{/get}}
-    {{else}}
-        <h1 class="featured-articles-title" >MORE</h1>
-        {{#foreach posts from="4" limit="6"}}
-            {{> "article-card" image_size="xs" }}
-        {{/foreach}}
-    {{/if}}
+    </aside>
+{{/if}}
+
+<aside class="recent-articles">
+    <h1 class="recent-articles-title" >RECENT</h1>
+    {{#foreach posts from=8 limit=6}}
+        {{> "article-card" image_size="xs" }}
+    {{/foreach}}
 </aside>
+
 <aside class="previous-articles paginated">
     <h1 class="previous-articles-title" >MORE</h1>
-    {{#if @custom.show_featured_posts}}
-        {{#foreach posts from="5"}}
-            {{> "article-card" image_size="s" }}
+    {{#get "posts" include="tags" }}
+        {{#foreach posts from=13 }}
+            {{> "article-card" image_size="s"}}
         {{/foreach}}
-    {{else}}
-        {{#get "posts" include="tags" }}
-            {{#foreach posts from="11" }}
-                {{> "article-card" image_size="s"}}
-            {{/foreach}}
-        {{/get}}
-    {{/if}}
+    {{/get}}
 </aside>
+
+{{pagination}}
+
 {{#if @site.members_enabled}}
     {{#unless @member}}
         {{#match @custom.page_subscription_banner_type "Mini" }}
@@ -52,4 +54,3 @@
         {{/match}}
     {{/unless}}
 {{/if}}
-{{pagination}}
