@@ -31,12 +31,15 @@
         "Authors";
 }
 
-.previous-articles .article-card {
-    grid-template-areas:
-        "Image"
-        "Title"
-        "Metadata"
-        "Authors";
+.previous-articles,
+.recent-articles {
+    .article-card {
+        grid-template-areas:
+            "Image"
+            "Title"
+            "Metadata"
+            "Authors";
+    }
 }
 .main-article .article-card {
     grid-template-areas:
@@ -209,7 +212,6 @@
 }
 
 .main-article .article-card-title {
-    margin-top: 5px;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
