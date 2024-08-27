@@ -35,7 +35,7 @@
 
 <aside class="previous-articles paginated">
     <h1 class="previous-articles-title" >MORE</h1>
-    {{#get "posts" include="tags" }}
+    {{#get "posts" include="authors,tags,tiers" }}
         {{#foreach posts from=13 }}
             {{> "article-card" image_size="s"}}
         {{/foreach}}

@@ -7,7 +7,6 @@
 /* 3. pagination (load more articles button)                                          */
 /* 4. article card list titles                                                        */
 /* 5. article-card content styles                                                     */
-/* 6. article-card layout adjustments for larger screens                              */
 /* ---------------------------------------------------------------------------------- */
 
 /* -------------------------------------------- */
@@ -23,7 +22,7 @@
 .article-card {
     display:grid;
     align-items: center;
-    align-content: center;
+    align-content: space-between;
     gap: var(--article-card-gap);
     grid-template-columns: auto;
     grid-template-areas:
@@ -45,6 +44,7 @@
         "Authors";
     max-width:none;
     height: auto;
+    padding-top:0;
 }
 
 /* condensed view */
@@ -72,8 +72,10 @@
         "Metadata Image"
         "Authors Image";
     max-width: none;
+    align-content: center;
     height: 125px;
     padding: 0;
+    margin-top:0;
     img {
         max-height:115px;
     }
@@ -139,11 +141,8 @@
 }
 
 /* divider between article-cards */
-.site > * .article-card:not(:last-of-type) {
+.todosite > * .article-card:not(:last-of-type) {
     border-bottom: 1px solid var(--border-color);
-}
-.site > * .article-card:first-of-type {
-    padding-top: calc(var(--article-card-gap)/1.5) ;
 }
 
 /* ---------------------------------- */
@@ -170,6 +169,10 @@
         font-weight: 550;
         letter-spacing: .025em;
         margin-top: var(--section-gap);
+    }
+    .latest-articles .latest-articles-title:not(.show-featured-articles *),
+    .featured-articles .featured-articles-title {
+        margin-top: 0;
     }
 }
 
@@ -267,32 +270,4 @@
     flex-wrap: wrap;
     list-style: none;
     padding-inline-start: 0;
-}
-
-/* ----------------- */
-/* 6. larger screens */
-/* ----------------- */
-@media (min-width: 480px) {
-    .site.home-template:not(.home-page-list) {
-        .main-article .article-card {
-            padding:0;
-        }
-        .main-article img {
-            min-height: 500px;
-        }
-        .main-article .article-card-excerpt.short {
-            display:none;
-        }
-        .main-article .article-card-excerpt.long {
-            display:inline;
-            font-size: var(--content-font-size);
-        }
-    }
-    .previous-articles .article-card {
-        border-bottom: 1px solid var(--border-color);
-    }
-    .main-article,
-    .latest-articles {
-        border-right: 1px solid var(--border-color); 
-    }
 }
