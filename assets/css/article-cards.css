@@ -113,29 +113,15 @@
         align-self:baseline;
     }
 }
-.article-collection-as-list {
-    .tagged-articles,
-    .author-articles {
-        height: auto;
-        flex-direction: column;
-        .article-card {
-            flex: 1 1 auto; 
-            max-width: var(--max-content-width); 
-            width: 100%; 
-        }
-    }
-}
 
 /* bob article cards up and down on hover */
-.article-collection-as-grid {
-    .tagged-articles,
-    .author-articles  {
-        .article-card:hover {
-            translate: 0 -10px;
-        }
-        .article-card {
-            transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
-        }
+.tagged-articles,
+.author-articles  {
+    .article-card:hover {
+        translate: 0 -10px;
+    }
+    .article-card {
+        transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
     }
 }
 

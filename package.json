@@ -63,15 +63,6 @@
                 "default": "Expanded",
                 "description": "Header nav style on wide screens"
             },
-            "article_collection_style": {
-                "type": "select",
-                "options": [
-                    "List",
-                    "Grid"
-                ],
-                "default": "Grid",
-                "description": "article card collection style for related, tagged and author articles"
-            },
             "footer_link_type": {
                 "type": "select",
                 "options": [
