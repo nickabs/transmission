@@ -141,7 +141,7 @@
 }
 
 /* divider between article-cards */
-.todosite > * .article-card:not(:last-of-type) {
+.site > * .article-card:not(:last-of-type) {
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -249,7 +249,7 @@
     background-color: var(--background-color);
     color: var(--title-color);
     border: 1px solid var(--border-color);
-    border-radius: 3px;
+    border-radius: 22px;
     cursor: pointer;
     display: inline-flex;
     font-size: 1.1rem;
@@ -257,7 +257,7 @@
     letter-spacing: .05rem;
     outline: none;
     text-transform: uppercase;
-    padding: 0 2px 0 2px;
+    padding: 0 5px;
 }
 .article-card-restricted-access {
     display: flex;
