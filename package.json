@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.19.0",
+    "version": "1.19.1",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -92,6 +92,10 @@
             "site_accent_color_light": {
                 "type": "color",
                 "default": "#e6e6e6"
+            },
+            "show_dates_on_article_cards": {
+                "type": "boolean",
+                "default": false
             },
             "show_featured_posts": {
                 "type": "boolean",

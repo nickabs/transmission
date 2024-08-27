@@ -108,7 +108,7 @@
             "SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-right {
-        grid-template-columns: 1fr 2fr; 
+        grid-template-columns: 1fr 1.5fr; 
         grid-template-areas:
             "HeroHeader HeroHeader"
             "LatestArticles MainArticle"
@@ -119,7 +119,7 @@
             "SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-left.show-featured-articles {
-        grid-template-columns: 2fr 1fr; 
+        grid-template-columns: 1.5fr 1fr; 
         grid-template-areas:
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
@@ -131,7 +131,7 @@
             "SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-right.show-featured-articles {
-        grid-template-columns: 1fr 2fr; 
+        grid-template-columns: 1fr 1.5fr; 
         grid-template-areas:
             "HeroHeader HeroHeader"
             "FeaturedArticles MainArticle"

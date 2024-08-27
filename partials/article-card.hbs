@@ -41,7 +41,9 @@
         </ol>
     {{/if}}
     <div class="article-card-metadata" >
-        <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM"}}</time>
+        {{#if @custom.show_dates_on_article_cards}}
+            <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM-YYYY"}}</time>
+        {{/if}}
         {{#if primary_tag}}
             {{#if primary_tag.accent_color}}
                 <a class="article-card-tag" href="{{primary_tag.url}}" style="border: 1px solid {{ primary_tag.accent_color }}">{{primary_tag.name}}</a>

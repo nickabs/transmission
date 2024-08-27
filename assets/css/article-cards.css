@@ -23,6 +23,8 @@
 .article-card {
     display:grid;
     align-items: center;
+    align-content: center;
+    gap: var(--article-card-gap);
     grid-template-columns: auto;
     grid-template-areas:
         "Image"
@@ -136,22 +138,6 @@
     }
 }
 
-/* don't display excerpts by default */
-.main-article, .latest-articles, .recent-articles, .previous-articles, .featured-articles, .related-articles, .author-articles, .tagged-articles {
-    .article-card-excerpt {
-        display:none;
-    }
-}
-.main-article .article-card-excerpt.long {
-    display:block;
-}
-
-.related-articles, .author-articles, .tagged-articles {
-    .article-card-excerpt.short {
-        display:block;
-    }
-}
-
 /* divider between article-cards */
 .site > * .article-card:not(:last-of-type) {
     border-bottom: 1px solid var(--border-color);
@@ -197,6 +183,7 @@
         align-self: center;
     }
 }
+
 .article-card-image img { 
     object-fit: cover;
     aspect-ratio: 16/9;
@@ -220,29 +207,40 @@
     width: 2em;
     border-bottom: 1px solid var(--theme-accent-color)
 }
-.article-card h1 {
-    line-height: 1.3;
-    font-size: 1.6rem;
-}
-.latest-articles,
-.previous-articles,
-.related-articles ,
-.featured-articles {
-    .article-card h1 {
-        line-height: 1.3;
-        font-size: 1.5rem;
-    }
-}
-.article-card-excerpt,
-.article-card-author,
-.article-card-date,
-.article-card-restricted-access,
-.article-card-author-list {
+.article-card {
     font-size: 1.3rem;
 }
+.article-card h1 {
+    font-size: 1.6rem;
+}
+.featured-articles {
+    font-size: 1rem;
+}
 
-.article-card-restricted-access {
-    padding-top:5px;
+/* don't display excerpts by default */
+.main-article, .latest-articles, .recent-articles, .previous-articles, .featured-articles, .related-articles, .author-articles, .tagged-articles {
+    .article-card-excerpt {
+        display:none;
+    }
+}
+.main-article .article-card-excerpt.long {
+    display:block;
+}
+.related-articles, .author-articles, .tagged-articles {
+    .article-card-excerpt.short {
+        display:block;
+    }
+}
+.featured-articles {
+    .article-card-date {
+        display:none;
+    }
+}
+.article-card-metadata {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap:wrap;
 }
 .article-card-tag  {
     background-color: var(--background-color);
@@ -255,7 +253,6 @@
     font-weight: 800;
     letter-spacing: .05rem;
     outline: none;
-    margin-left: 6px;
     text-transform: uppercase;
     padding: 0 2px 0 2px;
 }
