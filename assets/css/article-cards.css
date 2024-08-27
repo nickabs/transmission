@@ -114,9 +114,8 @@
     }
 }
 .article-collection-as-list {
-    .previous-articles,
-    .related-articles,
-    .tagged-articles {
+    .tagged-articles,
+    .author-articles {
         height: auto;
         flex-direction: column;
         .article-card {

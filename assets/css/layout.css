@@ -58,10 +58,6 @@
         "SiteFooter";
 }
 
-/* grid list mode */
-.site.home-page-list :not(.site-header):not(.hero-header):not(.site-footer) {
-    justify-self: center;
-}
 
 /*------------------------*/
 /* post/page mobile view */
@@ -93,6 +89,7 @@
 /* tablet and larger screens */
 /* ------------------------- */
 @media (min-width: 760px) { 
+    
     .theme-link { 
         display:block;
     }
@@ -141,6 +138,18 @@
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
+    }
+
+    /* list view */
+    .home-template.home-page-list {
+            .main-article,
+            .featured-articles,
+            .latest-articles,
+            .recent-articles,
+            .previous-articles {
+                max-width: 450px;
+                justify-self: center;
+        }
     }
 
     /* page & post view tablet with sidebar */
