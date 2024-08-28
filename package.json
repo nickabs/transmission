@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.19.1",
+    "version": "1.20.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -93,9 +93,15 @@
                 "default": false,
                 "group": "homepage"
             },
-            "show_author": {
-                "type": "boolean",
-                "default": false,
+            "show_authors": {
+                "type": "select",
+                "options":[
+                    "Names",
+                    "Profile images",
+                    "Names and profile images",
+                    "None"
+                ],
+                "default": "None",
                 "group": "homepage"
             },
             "page_subscription_banner_type": {

@@ -26,8 +26,28 @@
         <p class="article-card-excerpt long"><a href="{{url}}">{{excerpt words="55"}}...</a></p>
         <p class="article-card-excerpt short"><a href="{{url}}">{{excerpt words="15"}}...</a></p>
     {{/if}}
-    {{#if @custom.show_author}}
-        <ol class="article-card-author-list">
+    {{#match @custom.show_authors "!=" "None"}}
+    {{#match @custom.show_authors "!=" "Names"}}
+        <ol class="article-card-author-profile-images">
+            {{#foreach authors}}
+                <li class="author-profile-image">
+                    {{#if profile_image}}
+                        <a href="{{url}}">
+                            <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
+                        </a>
+                    {{else}}
+                        <a href="{{url}}">
+                            {{> "icons/avatar"}}
+                        </a>
+                    {{/if}}
+                </li>
+            {{/foreach}}
+        </ol>
+    {{/match}}
+    {{/match}}
+    {{#match @custom.show_authors "!=" "None"}}
+    {{#match @custom.show_authors "!=" "Profile images"}}
+        <ol class="article-card-author-names">
             {{#foreach authors}}
                 <li class="author-name">
                     {{#if @first}}
@@ -39,7 +59,8 @@
                 </li>
             {{/foreach}}
         </ol>
-    {{/if}}
+    {{/match}}
+    {{/match}}
     <div class="article-card-metadata" >
         {{#if @custom.show_dates_on_article_cards}}
             <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM-YYYY"}}</time>

@@ -14,10 +14,54 @@
 /* -------------------------------------------- */
 .article-card-image { grid-area: Image; }
 .article-card-title { grid-area: Title; }
-.article-card-author-list { grid-area: Authors; }
+.article-card-author-names { grid-area: Authors; }
 .article-card-excerpt { grid-area: Excerpt; }
 .article-card-metadata { grid-area: Metadata; }
 
+/*todo*/
+.article-card-author-profile-images { grid-area: Image; } /* overlay author profile pics on to the featured image for the card */
+
+.article-card-author-profile-images { 
+    align-self: end;
+    justify-self: left;
+    margin: 0  10px 10px;
+}
+
+.article-card-author-profile-images {
+    z-index: 500;
+}
+.author-profile-image {
+    margin: 0 -7px 0 0;
+    img, svg { 
+        border: 1px solid var(--theme-accent-color);
+        height: 40px;
+        width: 40px;
+    }
+}
+.main-article  .author-profile-image {
+    margin: 0 -10px 0 0;
+    img, svg { 
+        border: 3px solid var(--theme-accent-color);
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.latest-articles:not(.show-featured-articles *),
+.featured-articles {
+    .article-card-author-profile-images {
+        margin-bottom: 20px;
+    }
+    .author-profile-image {
+        margin: 0 -3px 0 0;
+        img, svg { 
+            border: 0.25px solid var(--theme-accent-color);
+            height: 18px;
+            width: 18px;
+        }
+    }
+}
+/* end todo */
 /* default article card view */
 .article-card {
     display:grid;
@@ -33,7 +77,7 @@
         "Authors";
     max-width: 365px;
     height: 400px;
-    padding: 10px;
+    todopadding: 10px;
 }
 .main-article .article-card {
     grid-template-areas:
@@ -250,7 +294,8 @@
         margin-right: 5px;
     }
 }
-.article-card-author-list {
+/*todo*/
+.article-card-author-profile-images, .article-card-author-names {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
