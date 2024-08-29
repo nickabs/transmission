@@ -51,7 +51,7 @@ a {
 a:hover {
     opacity: 0.8;
 }
-.hero-header {
+.todohero-header {
   margin-bottom: var(--section-gap);
 }
 
@@ -98,6 +98,7 @@ a:hover {
 /* 4. site header/annoucmenent bar        */
 /* -------------------------------------- */
 .site-header {
+  border-bottom: 0.25px solid var(--border-color);
   background-color: var(--background-color);
   justify-content: center;
   position: absolute;
@@ -373,6 +374,7 @@ a:hover {
   display:flex;
   justify-content: space-between;
   width:100%;
+  border-bottom: 0.25px solid var(--border-color);
 }
 .footer-links {
   display:inline-flex;

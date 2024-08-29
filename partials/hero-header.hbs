@@ -1,8 +1,11 @@
  <aside class="hero-header">
     {{#is "home"}}
-        <div style="text-transform: lowercase;" class="hero-title">{{@site.title}}</div>
+        <div class="hero-title">{{@site.title}}</div>
         {{#if @site.description}}
             <div class="hero-description">{{@site.description}}</div>
+        {{/if}}
+        {{#if @site.cover_image}}
+            <img class="hero-cover-image" src="{{@site.cover_image}}"/>
         {{/if}}
     {{/is}}
 
@@ -30,6 +33,7 @@
                 {{ tags seperator=" |" }}
             </div>
         {{/if}}
+        {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
         {{#if @custom.show_authors}}
             <ol class="hero-author-list">
                 {{#foreach authors}}

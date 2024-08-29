@@ -14,7 +14,6 @@
 
     {{!-- outputting post or page content --}}
     <article class="article-content">
-        {{#if custom_excerpt}}<p class="article-excerpt">{{custom_excerpt}}</p>{{/if}}
         {{#if feature_image }}
             {{#match @custom.post_layout_type "Sidebars / feature image"}} 
                 {{> "feature_image" }}

@@ -1,3 +1,6 @@
+/* ------------------------------------ */
+/* styles used on author landig page    */
+/* ------------------------------------ */
 .author-title {
     color: var(--banner-description-color);
     display: flex;
@@ -21,6 +24,7 @@
     max-width: 1000px;
     padding-top:10px;
     text-align: center;
+    align-self: center;
     @media (max-width: 1100px) {
         display:none;
     }

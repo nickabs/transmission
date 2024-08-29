@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.20.0",
+    "version": "1.19.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -71,6 +71,14 @@
                     "Ghost & Transmission"
                 ],
                 "default": "Ghost & Transmission"
+            },
+            "hero_style": {
+                "type": "select",
+                "options": [
+                     "slim",
+                     "full"
+                ],
+                "default": "slim"
             },
             "google_analytics_id": {
                 "type": "text",
