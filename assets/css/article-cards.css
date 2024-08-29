@@ -288,7 +288,8 @@
 .latest-articles:not(.show-featured-articles *),
 .featured-articles {
     .article-card-author-profile-images {
-        margin-bottom: 20px;
+        align-self: center;
+        transform: translateY(25px);
     }
     .author-profile-image {
         margin: 0 -3px 0 0;
