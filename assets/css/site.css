@@ -402,7 +402,7 @@ a:hover {
 }
 
 /* -------------------------------------- */
-/* 7. Ghost cards                         */
+/* 7. Ghost cards and CTAs                */
 /* -------------------------------------- */
 .site {
   .kg-embed-card iframe {
@@ -439,5 +439,10 @@ a:hover {
     .kg-header-card-content .kg-header-card-image {
       height:100%;
     }
+  }
+}
+.site:has(.gh-post-upgrade-cta) {
+  .table-of-contents {
+    display: none!important;;
   }
 }

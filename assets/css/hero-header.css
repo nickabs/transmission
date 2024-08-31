@@ -28,6 +28,8 @@
 .hero-description {
     text-align: center;
     z-index: 3;
+    padding-left: var(--edge-padding);
+    padding-right: var(--edge-padding);
 }
 .home-template {
     .hero-title,
