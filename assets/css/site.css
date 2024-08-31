@@ -34,7 +34,10 @@ body {
     scroll-margin-top: var(--site-top-gap);
     width:100vw;
 }
-
+h1, h2, h3 {
+  font-family: var(--secondary-font-sans);
+  font-weight: bold;
+}
 img {
     height: auto;
 }
@@ -50,9 +53,6 @@ a {
 }
 a:hover {
     opacity: 0.8;
-}
-.todohero-header {
-  margin-bottom: var(--section-gap);
 }
 
 /***************************/

@@ -12,6 +12,7 @@
 
 :root {
     --font-sans: 'Inter', 'Inter-fallback', 'Trebuchet MS', sans-serif;
+    --secondary-font-sans: 'Poppins', 'Inter-fallback', 'Trebuchet MS', sans-serif;
     --font-mono: 'Menlo', 'Courier New', monospace;
     --content-font-size: 1.6rem;
     --content-sup-font-size: 1.2rem;

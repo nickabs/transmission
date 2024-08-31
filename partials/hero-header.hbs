@@ -1,8 +1,8 @@
  <aside class="hero-header">
     {{#is "home"}}
-        <div class="hero-title">{{@site.title}}</div>
+        <h1 class="hero-title">{{@site.title}}</h1>
         {{#if @site.description}}
-            <div class="hero-description">{{@site.description}}</div>
+            <p class="hero-description">{{@site.description}}</p>
         {{/if}}
         {{#if @site.cover_image}}
             <img class="hero-cover-image" src="{{@site.cover_image}}"/>
@@ -10,28 +10,26 @@
     {{/is}}
 
     {{#is "tag"}}
-        <div class="hero-title ">{{name}}</div>
+        <h1 class="hero-title ">{{name}}</h1>
         {{#if description}}
-            <div class="hero-description">{{description}}</div>
+            <p class="hero-description">{{description}}</p>
         {{/if}}
     {{/is}}
 
     {{#is "page"}}
-        <div class="hero-title">{{title}}</div>
+        <h1 class="hero-title">{{title}}</h1>
     {{/is}}
 
     {{#is "post"}}
-        <div class="hero-title">{{title}}</div>
-        <div class="hero-date">
-            <time datetime="{{date format="YYYY-MM-DD"}}">
+        <h1 class="hero-title">{{title}}</h1>
+            <time class="hero-date" datetime="{{date format="YYYY-MM-DD"}}">
                 {{date published_at}}
             </time>
-        </div>
         {{#if tags}}
-            <div class="hero-tags">
+            <p class="hero-tags">
                 Tags:
                 {{ tags seperator=" |" }}
-            </div>
+            </p>
         {{/if}}
         {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
         {{#if @custom.show_authors}}
