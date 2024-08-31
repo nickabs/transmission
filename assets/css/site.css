@@ -256,10 +256,12 @@ a:hover {
   from {opacity: 0;}
   to {opacity: 1;}
 }
+/* causes an issue on iphone 
 .active-nav .item ,
 .active-submenu .submenu-item {
   animation: showMenu 450ms ease-in-out both;
 }
+*/
 
 /* hide nav items until dropdown-nav.js confirms it has run (to prevent the screen flashing) */
 .nav:not(.nav-ready){
