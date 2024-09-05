@@ -177,7 +177,7 @@
     },
     "devDependencies": {
         "beeper": "3.0.0",
-        "cssnano": "7.0.5",
+        "cssnano": "7.0.6",
         "gulp": "5.0.0",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
