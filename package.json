@@ -201,7 +201,7 @@
         "gulp-postcss": "10.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "6.0.0",
-        "postcss": "8.4.41",
+        "postcss": "8.4.45",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.0"
     },
