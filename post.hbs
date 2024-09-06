@@ -26,6 +26,14 @@
         {{content}}
     </article>
 
+    {{#if @custom.show_one_time_payment_request}}
+        <aside class="one-time-payment-request">
+            <div class="one-time-payment-icon" aria-label="one-time-donation">{{> "icons/donation"}}</div>
+            <p class="one-time-payment-description">{{@custom.one_time_payment_description}}</p>
+            <a href="#/portal/support" target="_blank" class="button one-time-payment-button">{{@custom.one_time_payment_button_text}}</a>
+        </aside>
+    {{/if}}
+
     {{#if comments}}
         <aside class="comments">
             {{comments mode="auto"}}
@@ -44,4 +52,5 @@
         {{/if}}
         {{/get}}
     {{/if}}
+    
 {{/post}}

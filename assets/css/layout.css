@@ -26,6 +26,7 @@
 .table-of-contents { grid-area: TableOfContents; }
 .tagged-articles { grid-area: TaggedArticles; }
 .comments { grid-area: Comments; }
+.one-time-payment-request { grid-area: OneTimePaymentRequest; }
 
 .site {
     display: grid;
@@ -66,6 +67,7 @@
     grid-template-areas:
     "HeroHeader"
     "ArticleContent"
+    "OneTimePaymentRequest"
     "Comments"
     "RelatedArticles"
     "Pagination"
@@ -159,6 +161,7 @@
             grid-template-areas:
                 "HeroHeader HeroHeader"
                 "ArticleContent SocialLinks"
+                "OneTimePaymentRequest SocialLinks"
                 "Comments SocialLinks"
                 "RelatedArticles SocialLinks"
                 "Pagination SocialLinks"
@@ -180,6 +183,7 @@
             grid-template-areas:
                 "HeroHeader HeroHeader HeroHeader"
                 "TableOfContents ArticleContent SocialLinks"
+                "TableOfContents OneTimePaymentRequest SocialLinks"
                 "TableOfContents Comments SocialLinks"
                 "TableOfContents RelatedArticles SocialLinks"
                 "TableOfContents Pagination SocialLinks"

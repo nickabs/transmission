@@ -1,0 +1,24 @@
+.one-time-payment-request {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 300px;
+    align-content: center;
+    justify-content: center;
+    border: 2px solid var(--secondary-border-color);
+    column-gap: 40px;
+    row-gap: 10px;
+    margin: 50px var(--edge-padding);
+    align-items: center;
+}
+.one-time-payment-icon svg{
+    height:60px;
+    width:60px;
+
+}
+.one-time-payment-description {
+    flex-basis:300px;
+    text-align:center;
+}
+.one-time-payment-button {
+    flex-basis:100px;
+}

@@ -64,6 +64,7 @@ html[data-color-scheme='light'] {
     --text-color: #333;
     --secondary-text-color: #5a5a5a;
     --border-color: #d1d2db;
+    --secondary-border-color: black;
     --theme-accent-color: var(--theme-accent-color-light);
     --box-shadow: 0 7px 7px rgba(0,0,0,.08);
     --box-shadow-hover: 0 4px 60px 0 rgba(0,0,0,.2);
@@ -91,6 +92,7 @@ html[data-color-scheme='dark'] {
     --text-color:#b0b2b4;
     --secondary-text-color:  #8b949e;
     --border-color: #323030;
+    --secondary-border-color: white;
     --theme-accent-color: var(--theme-accent-color-dark);
     --box-shadow: 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966;
     --box-shadow-hover: 0px 3px 60px -3px #01040966, 0px 6px 18px 0px #01040966;
