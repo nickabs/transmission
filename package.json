@@ -73,14 +73,17 @@
                 "default": "Expanded",
                 "description": "Header nav style on wide screens"
             },
-            "footer_link_type": {
+            "footer_link_style": {
                 "type": "select",
                 "options": [
-                    "None",
-                    "Ghost",
-                    "Ghost & Transmission"
+                    "Option 1",
+                    "Option 2",
+                    "Option 3", 
+                    "Option 4", 
+                    "Option 5", 
+                    "Option 6"
                 ],
-                "default": "Ghost & Transmission"
+                "default": "Option 1"
             },
             "hero_style": {
                 "type": "select",
