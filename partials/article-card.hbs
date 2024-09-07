@@ -3,7 +3,7 @@
     article summary : thumbnail, tile and excerpt 
     Params: image_size [ xs | s | m | l | xl  ] optional featued image sizes property
 --}}
-<article class="article-card" aria-label="{{title}}">
+<article class="article-card {{#if featured}}featured{{/if}}" aria-label="{{title}}">
     {{#if feature_image}}
         <a class="article-card-image" href="{{url}} ">
             {{#match image_size "xs"}}

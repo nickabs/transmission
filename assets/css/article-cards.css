@@ -2,93 +2,18 @@
 /* article-card content layout - this css is used by all pages that use article cards */
 /* (home page, author & tagged collections)                                           */
 /*                                                                                    */
-/* 1. article-card content layout (mobile view)                                       */
-/* 2. article-card collections                                                        */
+/* 1. article-card collections                                                        */
+/* 2. article-card content layout (mobile view)                                       */
 /* 3. pagination (load more articles button)                                          */
 /* 4. article card list titles                                                        */
 /* 5. article-card content styles                                                     */
 /* ---------------------------------------------------------------------------------- */
 
-/* -------------------------------------------- */
-/* 1. article-card content layout (mobile view) */
-/* -------------------------------------------- */
-.article-card-image { grid-area: Image; }
-.article-card-title { grid-area: Title; }
-.article-card-author-names { grid-area: Authors; }
-.article-card-excerpt { grid-area: Excerpt; }
-.article-card-metadata { grid-area: Metadata; }
-.article-card-author-profile-images { grid-area: Image; } /* overlay author profile pics on to the featured image for the card */
-
-.article-card {
-    display:grid;
-    align-items: center;
-    align-content: space-between;
-    grid-template-columns: auto;
-    grid-template-areas:
-        "Image"
-        "Title"
-        "Excerpt"
-        "Metadata"
-        "Authors";
-    max-width: 365px;
-    height: 400px;
-    padding: 10px;
-    box-shadow: var(--box-shadow);
-}
-.main-article .article-card {
-    grid-template-areas:
-        "Title"
-        "Image"
-        "Excerpt"
-        "Metadata"
-        "Authors";
-    max-width:none;
-    height: auto;
-    padding-top:0;
-    gap: 15px;
-}
-
-/* condensed view */
-.latest-articles,
-.recent-articles,
-.previous-articles {
-    .article-card {
-        grid-template-areas:
-            "Image"
-            "Title"
-            "Metadata"
-            "Authors";
-        max-width: 365px;
-        height: 345px;
-        padding: 10px;
-    }
-}
-
-/* use a horizontal layout to higlight either the latest or featured articles depeding on the custom option selected */
-.latest-articles .article-card:not(.show-featured-articles *),
-.featured-articles .article-card {
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-        "Title Image"
-        "Metadata Image"
-        "Authors Image";
-    max-width: none;
-    align-content: center;
-    max-height: 125px;
-    padding: 0;
-    margin-top:0;
-    gap: 5px;
-    box-shadow: none;
-    img {
-        height:100px;
-    }
-}
-
 /* --------------------------- */
-/* 2. article-card collections */
+/* 1. article-card collections */
 /* --------------------------- */
 
-/* default view is a grid of cards */
+/* default view */
 .show-featured-articles .latest-articles,
 .recent-articles,
 .previous-articles,
@@ -100,10 +25,18 @@
     justify-content: center; 
     align-items: flex-start;
     gap: 25px;
+    width:100%;
     .article-card {
-        flex: 1 1 300px; 
         transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
         border: 1px solid var(--border-color);
+        flex: 0 0 calc(23.333% - var(--edge-padding)* 2);
+        box-sizing: border-box;
+        &.featured {
+            flex-basis: calc(46.666% - var(--edge-padding)* 2);
+        }
+        img {
+            max-height: 190px;
+        }
     }
     .latest-articles-title,
     .recent-articles-title,
@@ -133,6 +66,79 @@
 /* divider between article-cards */
 .site > * .article-card:not(:last-of-type) {
     border-bottom: 1px solid var(--border-color);
+}
+
+/* -------------------------------------------- */
+/* 2. article-card content layout (mobile view) */
+/* -------------------------------------------- */
+.article-card-image { grid-area: Image; }
+.article-card-title { grid-area: Title; }
+.article-card-author-names { grid-area: Authors; }
+.article-card-excerpt { grid-area: Excerpt; }
+.article-card-metadata { grid-area: Metadata; }
+.article-card-author-profile-images { grid-area: Image; } /* overlay author profile pics on to the featured image for the card */
+
+.article-card {
+    display:grid;
+    align-items: center;
+    align-content: space-between;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "Image"
+        "Title"
+        "Excerpt"
+        "Metadata"
+        "Authors";
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    min-width: 365px;
+    height: 400px;
+}
+.main-article .article-card {
+    grid-template-areas:
+        "Title"
+        "Image"
+        "Excerpt"
+        "Metadata"
+        "Authors";
+    padding-top:0;
+    gap: 15px;
+    height: auto;
+}
+
+/* condensed view */
+.latest-articles,
+.recent-articles,
+.previous-articles {
+    .article-card {
+        grid-template-areas:
+            "Image"
+            "Title"
+            "Metadata"
+            "Authors";
+        padding: 10px;
+        height: 345px;
+    }
+}
+
+/* use a horizontal layout to higlight either the latest or featured articles depeding on the custom option selected */
+.latest-articles .article-card:not(.show-featured-articles *),
+.featured-articles .article-card {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "Title Image"
+        "Metadata Image"
+        "Authors Image";
+    max-width: none;
+    align-content: center;
+    max-height: 125px;
+    padding: 0;
+    margin-top:0;
+    gap: 5px;
+    box-shadow: none;
+    img {
+        height:100px;
+    }
 }
 
 /* ---------------------------------- */
