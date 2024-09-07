@@ -11,14 +11,4 @@
         {{content}}
     </article>
 
-    {{#if @site.members_enabled}}
-        {{#unless @member}}
-            {{#match @custom.page_subscription_banner_type "Mini" }}
-                {{> "subscription-banner" mini="true" }}
-            {{/match}}
-            {{#match @custom.page_subscription_banner_type "Full" }}
-                {{> "subscription-banner" }}
-            {{/match}}
-        {{/unless}}
-    {{/if}}
-{{/page}}
+   {{/page}}
