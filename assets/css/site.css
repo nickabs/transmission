@@ -68,7 +68,7 @@ a:hover {
 /* full width elements */
 .site {
   .hero-header,
-  .subscription-banner {
+  .newsletter-banner {
     margin-left: 0;
     margin-right: 0;
   }

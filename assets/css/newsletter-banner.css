@@ -1,0 +1,148 @@
+/* ------------------------------------------- */
+/* show the newsletter banner on the home page */
+/* ------------------------------------------- */
+
+.newsletter-banner-description { grid-area: NewsletterBannerDescription;}
+.newsletter-banner-heading { grid-area: NewsletterBannerHeading;}
+.newsletter-banner-form { grid-area: NewsletterBannerForm;}
+
+.newsletter-banner {
+    display: grid;
+    grid-template-areas: 
+        "NewsletterBannerHeading"
+        "NewsletterBannerDescription"
+        "NewsletterBannerForm";
+    grid-template-rows: 105px 75px 105px;
+    grid-template-columns: auto;
+
+    justify-items: center;
+    align-items:center;
+    text-align: center;
+
+    margin-top: var(--section-gap);
+    background-color: var(--banner-background-color);
+    border: 1px solid var(--border-color);
+    border-radius:5px;
+
+    > * {
+        z-index: 1;
+    }
+
+    &.mini { /* simplified banner */
+        display: flex;
+        justify-content: center;
+        height: 90px;
+        padding-top: 20px;
+    }
+}
+
+.home-template .newsletter-banner {
+    width:100vw;
+}
+.post-template .newsletter-banner {
+    width:100%;
+}
+.newsletter-banner-background {
+  grid-area: 1 / 1 / 4 / 1; 
+  z-index: 0;
+  height: 285px;
+  overflow: hidden;
+  svg {
+    color: var(--border-color);
+    transform: translateY(-15%);
+    opacity: 0.6;
+    height: 500px;
+  }
+}
+@media (max-width:480px) {  /* bodge - todo */
+    .newsletter-banner-background {
+        width: 80vw;
+    }
+}
+.newsletter-banner-icon svg{
+    height:50px;
+    width:50px;
+}
+.newsletter-banner-heading, 
+.newsletter-banner-description, 
+.newsletter-banner-form .error-text {
+    color: var(--banner-title-color);
+}
+.newsletter-banner-heading {
+    display: flex;
+    column-gap: 20px;
+    align-self: self-end;
+}
+.newsletter-banner-form {
+    border-radius: 9.5px;
+}
+.mini .newsletter-banner-form {
+    align-self: center;
+}
+
+.newsletter-banner-form-input { grid-area: FormInput; }
+.newsletter-banner-button { grid-area: Button; }
+.error-text { grid-area: ErrorText; }
+
+.newsletter-banner-form {
+    font-size:1.4rem;
+    display: grid;
+    grid-template-columns: 200px 50px;
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-areas:
+        "FormInput Button"
+        "ErrorText ErrorText";
+    font-size:1.3rem;
+    height: 55px;
+
+    .newsletter-banner-button {
+       padding:3px;
+       border-radius: 0 10px 10px 0;
+       display: flex;
+       justify-content: center;
+       align-items: center; 
+       background-color: var(--ghost-accent-color);
+       svg {
+        color: white;
+       }
+    }
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .newsletter-banner-form-input, .newsletter-banner-button {
+        border: 1px solid var(--ghost-accent-color);
+    }
+    .error-text {
+        padding-top: 10px;
+        height: 38px;
+    }
+    .newsletter-banner-form-input {
+        padding: 3px ;
+        font-size: 1.3rem;
+        background-color: #e6e6e6;
+        letter-spacing: inherit;
+        outline: none;
+        border-radius: 10px 0 0 10px;
+        width: 200px;
+        justify-self:end;
+    }
+}
+
+/* show the status of a subscription request */
+.newsletter-banner-form {
+    .success-icon, .error-icon, .error-text, .loading-icon {
+        display: none;
+    }
+}
+.newsletter-banner-form:is(.success, .error, .loading) .submit-icon {
+    display:none;
+}
+.newsletter-banner-form.success .success-icon ,
+.newsletter-banner-form.loading .loading-icon ,
+.newsletter-banner-form.error .error-icon ,
+.newsletter-banner-form.error .error-text {
+    display:block;
+    pointer-events: none;
+}
