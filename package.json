@@ -72,6 +72,30 @@
                 ],
                 "default": "slim"
             },
+            "newsletter_banner_type": {
+                "type": "select",
+                "options": [
+                    "Large - home page only",
+                    "Large - home page & posts",
+                    "Large - posts only",
+                    "Mini - home page only",
+                    "Mini - home page & posts",
+                    "Mini - posts only",
+                    "None"
+                ],
+                "default": "None",
+                "description": "Add a banner to invite newsletter membership subscription to the home page."
+            },
+            "newsletter_banner_heading": {
+                "type": "text",
+                "description": "Defaults to site title when empty",
+                "visibility": "newsletter_banner_type:-None"
+            },
+            "newsletter_banner_description": {
+                "type": "text",
+                "description": "Defaults to site description when empty",
+                "visibility": "newsletter_banner_type:-None"
+            },
             "footer_link_style": {
                 "type": "select",
                 "options": [
@@ -115,29 +139,6 @@
                 ],
                 "default": "None",
                 "group": "homepage"
-            },
-            "page_subscription_banner_type": {
-                "type": "select",
-                "options": [
-                    "Full",
-                    "Mini",
-                    "None"
-                ],
-                "default": "None",
-                "group": "homepage",
-                "description": "Show banner on home and static pages. Note that membership must be enabled to use this option."
-            },
-            "page_subscription_banner_heading": {
-                "type": "text",
-                "group": "homepage",
-                "description": "Defaults to site title when empty",
-                "visibility": "page_subscription_banner_type:Full"
-            },
-            "page_subscription_banner_description": {
-                "type": "text",
-                "description": "Defaults to site description when empty",
-                "group": "homepage",
-                "visibility": "page_subscription_banner_type:Full"
             },
             "home_page_style": {
                 "type": "select",

@@ -28,14 +28,14 @@
     width:100%;
     .article-card {
         transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
-        border: 1px solid var(--border-color);
+        border: 1px solid var(--color);
         flex: 0 0 calc(23.333% - var(--edge-padding)* 2);
         box-sizing: border-box;
         &.featured {
             flex-basis: calc(46.666% - var(--edge-padding)* 2);
         }
         img {
-            max-height: 190px;
+            max-height: 155px;
         }
     }
     .latest-articles-title,
@@ -91,7 +91,7 @@
         "Authors";
     padding: 10px;
     box-shadow: var(--box-shadow);
-    min-width: 365px;
+    min-width: 300px;
     height: 400px;
 }
 .main-article .article-card {
@@ -102,6 +102,7 @@
         "Metadata"
         "Authors";
     padding-top:0;
+    margin-bottom: var(--section-gap);
     gap: 15px;
     height: auto;
 }

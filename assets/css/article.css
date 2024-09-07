@@ -53,7 +53,7 @@
 .article-content > :first-child{
   padding-top:15px;
 }
-@media screen and (min-width: 760px) {
+@media (min-width: 760px) {
   .article-content :first-child{
     padding-top:0px;
   }

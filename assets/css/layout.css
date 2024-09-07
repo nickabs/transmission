@@ -22,7 +22,7 @@
 .related-articles { grid-area:RelatedArticles}
 .site-footer { grid-area: SiteFooter; }
 .social-links { grid-area: SocialLinks; }
-.subscription-banner { grid-area: SubscriptionBanner;}
+.newsletter-banner { grid-area: NewsletterBanner;}
 .table-of-contents { grid-area: TableOfContents; }
 .tagged-articles { grid-area: TaggedArticles; }
 .comments { grid-area: Comments; }
@@ -40,7 +40,7 @@
         "HeroHeader"
         "MainArticle"
         "LatestArticles"
-        "SubscriptionBanner"
+        "NewsletterBanner"
         "RecentArticles"
         "PreviousArticles"
         "Pagination"
@@ -52,7 +52,7 @@
         "MainArticle"
         "FeaturedArticles"
         "LatestArticles"
-        "SubscriptionBanner"
+        "NewsletterBanner"
         "RecentArticles"
         "PreviousArticles"
         "Pagination"
@@ -69,6 +69,7 @@
     "ArticleContent"
     "OneTimePaymentRequest"
     "Comments"
+    "NewsletterBanner"
     "RelatedArticles"
     "Pagination"
     "SiteFooter"
@@ -98,7 +99,7 @@
             "HeroHeader HeroHeader"
             "MainArticle LatestArticles"
             "RecentArticles RecentArticles"
-            "SubscriptionBanner SubscriptionBanner"
+            "NewsletterBanner NewsletterBanner"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -109,7 +110,7 @@
             "HeroHeader HeroHeader"
             "LatestArticles MainArticle"
             "RecentArticles RecentArticles"
-            "SubscriptionBanner SubscriptionBanner"
+            "NewsletterBanner NewsletterBanner"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -120,7 +121,7 @@
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
             "LatestArticles LatestArticles"
-            "SubscriptionBanner SubscriptionBanner"
+            "NewsletterBanner NewsletterBanner"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
@@ -132,7 +133,7 @@
             "HeroHeader HeroHeader"
             "FeaturedArticles MainArticle"
             "LatestArticles LatestArticles"
-            "SubscriptionBanner SubscriptionBanner"
+            "NewsletterBanner NewsletterBanner"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
@@ -159,6 +160,7 @@
                 "HeroHeader HeroHeader"
                 "ArticleContent SocialLinks"
                 "OneTimePaymentRequest SocialLinks"
+                "NewsletterBanner SocialLinks"
                 "Comments SocialLinks"
                 "RelatedArticles SocialLinks"
                 "Pagination SocialLinks"
@@ -181,6 +183,7 @@
                 "HeroHeader HeroHeader HeroHeader"
                 "TableOfContents ArticleContent SocialLinks"
                 "TableOfContents OneTimePaymentRequest SocialLinks"
+                "TableOfContents NewsletterBanner SocialLinks"
                 "TableOfContents Comments SocialLinks"
                 "TableOfContents RelatedArticles SocialLinks"
                 "TableOfContents Pagination SocialLinks"

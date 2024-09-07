@@ -33,6 +33,31 @@
             <a href="#/portal/support" target="_blank" class="button one-time-payment-button">{{@custom.one_time_payment_button_text}}</a>
         </aside>
     {{/if}}
+    {{#if @site.members_enabled}}
+        {{#unless @member}}
+            {{#match @custom.newsletter_banner_type "!=" "None"}}
+                {{#match @custom.newsletter_banner_type "!=" "Large - posts only" }}
+                {{#match @custom.newsletter_banner_type "!=" "Large - home page only" }}
+                {{#match @custom.newsletter_banner_type "!=" "Large - home page & posts" }}
+                {{#match @custom.newsletter_banner_type "!=" "Mini - home page only" }}
+                    {{> "newsletter-banner" mini="true" }}
+                {{/match}}
+                {{/match}}
+                {{/match}}
+                {{/match}}
+
+                {{#match @custom.newsletter_banner_type "!=" "Mini - posts only" }}
+                {{#match @custom.newsletter_banner_type "!=" "Mini - home page only" }}
+                {{#match @custom.newsletter_banner_type "!=" "Mini - home page & posts" }}
+                {{#match @custom.newsletter_banner_type "!=" "Large - home page only" }}
+                    {{> "newsletter-banner" }}
+                {{/match}}
+                {{/match}}
+                {{/match}}
+                {{/match}}
+            {{/match}}
+        {{/unless}}
+    {{/if}}
 
     {{#if comments}}
         <aside class="comments">
