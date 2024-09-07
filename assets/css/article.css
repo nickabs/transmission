@@ -5,8 +5,6 @@
 /* default article view is a single column with all user content inside a variable margin */
 
 .article-content {
-    padding-left:var(--edge-padding);
-    padding-right:var(--edge-padding);
     max-width: var(--max-content-width);
     justify-self: center;
 }

@@ -62,8 +62,7 @@
     height: 35px;
 
     .button {
-       width: 70px;
-       padding:0;
+       padding:3px;
     }
     .error-text {
         padding-top: 10px;

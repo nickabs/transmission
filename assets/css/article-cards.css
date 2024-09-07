@@ -23,7 +23,6 @@
     display:grid;
     align-items: center;
     align-content: space-between;
-    gap: 15px;
     grid-template-columns: auto;
     grid-template-areas:
         "Image"
@@ -46,6 +45,7 @@
     max-width:none;
     height: auto;
     padding-top:0;
+    gap: 15px;
 }
 
 /* condensed view */
@@ -64,7 +64,7 @@
     }
 }
 
-/* use a unique layout to highlight either latest or featured articles depeding on the custom option selected */
+/* use a horizontal layout to higlight either the latest or featured articles depeding on the custom option selected */
 .latest-articles .article-card:not(.show-featured-articles *),
 .featured-articles .article-card {
     grid-template-columns: 2fr 1fr;
@@ -74,12 +74,13 @@
         "Authors Image";
     max-width: none;
     align-content: center;
-    height: 125px;
+    max-height: 125px;
     padding: 0;
     margin-top:0;
+    gap: 5px;
     box-shadow: none;
     img {
-        max-height:115px;
+        height:100px;
     }
 }
 
@@ -98,7 +99,7 @@
     flex-wrap: wrap;
     justify-content: center; 
     align-items: flex-start;
-    gap: var(--article-card-gap);
+    gap: 25px;
     .article-card {
         flex: 1 1 310px; 
         transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
@@ -264,8 +265,6 @@
     align-self: end;
     justify-self: left;
     margin: 0  10px 10px;
-}
-.article-card-author-profile-images {
     z-index: 500;
 }
 .author-profile-image {
@@ -284,13 +283,8 @@
         width: 60px;
     }
 }
-
 .latest-articles:not(.show-featured-articles *),
 .featured-articles {
-    .article-card-author-profile-images {
-        align-self: center;
-        transform: translateY(25px);
-    }
     .author-profile-image {
         margin: 0 -3px 0 0;
         img, svg { 

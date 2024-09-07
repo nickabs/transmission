@@ -28,8 +28,6 @@
 .hero-description {
     text-align: center;
     z-index: 3;
-    padding-left: var(--edge-padding);
-    padding-right: var(--edge-padding);
     font-family: var(--secondary-font-sans);
 }
 .home-template {
@@ -38,7 +36,7 @@
         max-width: 600px;
     }
 }
-.hero-title {
+h1.hero-title {
     font-size: clamp(2.8rem, 4vw, 4.8rem);
     line-height: 1.3;
     font-weight: bold;
@@ -97,14 +95,14 @@
     /* styles */
     .hero-header {
         row-gap: 10px;
-        height: 350px;
+        height: 450px;
         background-color: var(--theme-accent-color);
         align-content: center;
         position: relative;
         justify-items: center;
         &:has(.hero-custom-excerpt) {
             max-width: var(--max-content-width);
-            height: 450px;
+            height: 500px;
         }
     }
     .hero-cover-image {

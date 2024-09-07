@@ -60,16 +60,19 @@ a:hover {
 /***************************/
 
 /* default padding */
-.related-articles,
-.home-template > *,
-.author-template > *,
-.tag-template > *,
-.site-footer,
-.site-header {
+.site > * {
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
 }
 
+/* full width elements */
+.site {
+  .hero-header,
+  .subscription-banner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */
