@@ -377,19 +377,30 @@ a:hover {
 }
 .site-footer {
   display:flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width:100%;
   border-bottom: 0.25px solid var(--border-color);
 }
-.footer-links {
-  display:inline-flex;
-  white-space: pre;
-}
 
 /* only show the link to the transmission github on larger screens */
-.theme-link {
+.footer-links {
   display:none;
+  white-space: pre;
 }
+@media (min-width:480px) {
+  .footer-links {
+    display: inline-flex;
+    .theme-link {
+      display: none;
+    }
+  }
+}
+@media (min-width:760px) {
+  .footer-links .theme-link {
+    display: inline-flex;
+  }
+}
+
 /* large screens: pad footer contents do not stetch beyond max-container-size */
 @media (min-width:1300px) {
   .post-template,
