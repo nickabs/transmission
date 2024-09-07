@@ -50,15 +50,6 @@
                 "default": false,
                 "description": "Fix navigation bar at top of the screen"
             },
-            "show_dates_on_article_cards": {
-                "type": "boolean",
-                "default": false
-            },
-            "show_featured_posts": {
-                "type": "boolean",
-                "default": false,
-                "group": "homepage"
-            },
             "show_header_subscription_button": {
                 "type": "boolean",
                 "default": false,
@@ -73,6 +64,14 @@
                 "default": "Expanded",
                 "description": "Header nav style on wide screens"
             },
+            "hero_style": {
+                "type": "select",
+                "options": [
+                     "slim",
+                     "full"
+                ],
+                "default": "slim"
+            },
             "footer_link_style": {
                 "type": "select",
                 "options": [
@@ -85,13 +84,14 @@
                 ],
                 "default": "Option 1"
             },
-            "hero_style": {
-                "type": "select",
-                "options": [
-                     "slim",
-                     "full"
-                ],
-                "default": "slim"
+            "show_dates_on_article_cards": {
+                "type": "boolean",
+                "default": false
+            },
+            "show_featured_posts": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
             },
             "google_analytics_id": {
                 "type": "text",
