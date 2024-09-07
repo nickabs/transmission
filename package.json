@@ -45,14 +45,24 @@
         },
         "card_assets": true,
         "custom": {
-            "header_and_footer_style": {
-                "type": "select",
-                "options": [
-                    "Normal",
-                    "Fixed"
-                ],
-                "default": "Normal",
-                "description": "header scrolls with content or is fixed in place"
+            "fixed_navigation_bar": {
+                "type": "boolean",
+                "default": false,
+                "description": "Fix navigation bar at top of the screen"
+            },
+            "show_dates_on_article_cards": {
+                "type": "boolean",
+                "default": false
+            },
+            "show_featured_posts": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
+            },
+            "show_header_subscription_button": {
+                "type": "boolean",
+                "default": false,
+                "description": "membership must be enabled to use this option"
             },
             "menu_style": {
                 "type": "select",
@@ -91,15 +101,6 @@
             "site_accent_color_light": {
                 "type": "color",
                 "default": "#e6e6e6"
-            },
-            "show_dates_on_article_cards": {
-                "type": "boolean",
-                "default": false
-            },
-            "show_featured_posts": {
-                "type": "boolean",
-                "default": false,
-                "group": "homepage"
             },
             "show_authors": {
                 "type": "select",
@@ -144,11 +145,6 @@
                 ],
                 "default": "Focus (left)",
                 "group": "homepage"
-            },
-            "show_header_subscription_button": {
-                "type": "boolean",
-                "default": false,
-                "description": "membership must be enabled to use this option"
             },
             "post_layout_type": {
                 "type": "select",

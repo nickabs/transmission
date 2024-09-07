@@ -22,7 +22,7 @@
     padding:5px;
     right:var(--edge-padding);
 }
-.fixed-header-and-footer .social-links-container {
+.fixed-navigation-bar .social-links-container {
     position: fixed;
 }
 .social-links-title {

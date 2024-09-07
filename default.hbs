@@ -46,7 +46,7 @@
     {{~#match @custom.hero_style "slim"}} hero-style-slim{{/match}}
     {{~#match @custom.hero_style "full"}} hero-style-full{{/match}}
     {{~#match @custom.menu_style "Expanded"}} expanded-nav{{else}} minified-nav{{/match}}
-    {{~#match @custom.header_and_footer_style "Fixed"}} fixed-header-and-footer{{/match}}'>
+    {{#if @custom.fixed_navigation_bar }} fixed-navigation-bar{{/if}}'>
 
     {{> "site-header"}}
 
