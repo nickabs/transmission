@@ -101,7 +101,7 @@
     align-items: flex-start;
     gap: 25px;
     .article-card {
-        flex: 1 1 310px; 
+        flex: 1 1 300px; 
         transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
         border: 1px solid var(--border-color);
     }
