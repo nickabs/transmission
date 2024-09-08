@@ -20,6 +20,8 @@
     text-align: center;
 
     margin-top: var(--section-gap);
+    todomargin-left: var(--edge-padding);
+    todomargin-right: var(--edge-padding);
     background-color: var(--banner-background-color);
     border: 1px solid var(--border-color);
     border-radius:5px;
@@ -143,6 +145,6 @@
 .newsletter-banner-form.loading .loading-icon ,
 .newsletter-banner-form.error .error-icon ,
 .newsletter-banner-form.error .error-text {
-    display:block;
+    display:inline-flex;
     pointer-events: none;
 }
