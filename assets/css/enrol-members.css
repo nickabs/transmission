@@ -1,0 +1,156 @@
+/* -------------------------------------------------------------------------------------------- */
+/* Show an "enrol members" banner on the home and/or post pages.                                */
+/*                                                                                              */
+/* There is a custom option to show a banner with either:                                       */
+/* - a newsletter enrollment form                                                               */
+/* - a subscription button                                                                      */
+/* - ...or both                                                                                 */
+/*                                                                                              */
+/* Note that newsletters are optional. People signing-up using the newslettter enrollment form  */
+/* when there are no newsletters enabled are limited to:                                        */
+/*  - viewing free posts                                                                        */
+/*  - commenting on posts                                                                       */
+/*                                                                                              */
+/* It is therefore possible to use the newsletter feature - even if you don't email regular     */
+/* updates in the form of newsletters or have paid subscribers - to you encourage spam-free     */
+/* comments via registered users, without confusing user with messages aboust ubscriptions.     */
+/* -------------------------------------------------------------------------------------------- */
+
+.enrol-members-description { grid-area: EnrolMembersDescription;}
+.enrol-members-heading { grid-area: EnrolMembersHeading;}
+.enrol-members-newsletter { grid-area: EnrolMembersNewsletter;}
+.enrol-members-subscribe { grid-area: EnrolMembersSubscribe;}
+
+.enrol-members {
+    display: grid;
+    grid-template-areas: 
+        "EnrolMembersHeading"
+        "EnrolMembersDescription"
+        "EnrolMembersNewsletter"
+        "EnrolMembersSubscribe";
+
+    grid-template-columns: auto;
+    &.newsletter-and-subscribe {
+        grid-template-rows: min-content ;
+    }
+    &.newsletter{
+        grid-template-rows: min-content min-content min-content 0;
+    }
+    &.subscribe{
+        grid-template-rows: min-content min-content 0 min-content;
+    }
+
+    justify-items: center;
+    align-items:center;
+    text-align: center;
+    margin-top: var(--section-gap);
+    margin-left: var(--edge-padding);
+    margin-right: var(--edge-padding);
+    padding: 0;
+    background-color: var(--banner-background-color);
+    border: 1px solid var(--border-color);
+    border-radius:5px;
+
+    > *:not(.enrol-members-background) {
+        z-index: 1;
+        padding: 20px 10px 0 10px;
+    }
+    padding-bottom: 20px;
+    position:relative;
+    overflow: hidden;
+
+}
+
+.enrol-members-background svg {
+    z-index: 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(2);
+    color: var(--border-color);
+    opacity: 0.6;
+}
+.enrol-members-icon svg{
+    height:50px;
+    width:50px;
+}
+.enrol-members-heading, 
+.enrol-members-description, 
+.enrol-members-newsletter .error-text {
+    color: var(--banner-title-color);
+}
+.enrol-members-heading {
+    display: flex;
+    column-gap: 20px;
+    align-self: self-end;
+}
+.enrol-members-newsletter {
+    border-radius: 9.5px;
+    display:flex;
+}
+
+.enrol-members-newsletter-input { grid-area: Input; }
+.enrol-members-newsletter-button { grid-area: Button; }
+.error-text { grid-area: ErrorText; }
+
+.enrol-members-newsletter {
+    display: grid;
+    grid-template-areas:
+        "Input Button"
+        "ErrorText ErrorText";
+    grid-template-columns: 200px 50px;
+    grid-template-rows: min-content;
+    font-size:1.3rem;
+    row-gap:10px;
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .enrol-members-newsletter-input {
+        padding: 3px ;
+        font-size: 1.3rem;
+        background-color: #e6e6e6;
+        outline: none;
+        border-radius: 10px 0 0 10px;
+        width: 200px;
+        justify-self:end;
+    }
+    .enrol-members-newsletter-input, .enrol-members-newsletter-button {
+        border: 1px solid var(--ghost-accent-color);
+    }
+    .enrol-members-newsletter-button {
+        align-items: center;
+        background-color: var(--ghost-accent-color);
+        border-radius: 0 10px 10px 0;
+        display: flex;
+        justify-content: center;
+        padding: 3px;
+    }
+}
+
+/* show the status of a subscription request */
+.enrol-members-newsletter {
+    .success-icon, .error-icon, .error-text, .loading-icon {
+        display: none;
+    }
+}
+.enrol-members-newsletter:is(.success, .error, .loading) .submit-icon {
+    display:none;
+}
+.enrol-members-newsletter.success .success-icon ,
+.enrol-members-newsletter.loading .loading-icon ,
+.enrol-members-newsletter.error .error-icon ,
+.enrol-members-newsletter.error .error-text {
+    display:inline-flex;
+    pointer-events: none;
+}
+.enrol-members-subscribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}

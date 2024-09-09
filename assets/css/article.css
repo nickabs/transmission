@@ -51,11 +51,11 @@
       }
 }
 .article-content > :first-child{
-  padding-top:15px;
+  margin-top:15px;
 }
 @media (min-width: 760px) {
   .article-content :first-child{
-    padding-top:0px;
+    margin-top:0px;
   }
 }
 .article-content > * + * {

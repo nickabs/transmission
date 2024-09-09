@@ -33,37 +33,33 @@
             <a href="#/portal/support" target="_blank" class="button one-time-payment-button">{{@custom.one_time_payment_button_text}}</a>
         </aside>
     {{/if}}
-    {{#if @site.members_enabled}}
-        {{#unless @member}}
-            {{#match @custom.newsletter_banner_type "!=" "None"}}
-                {{#match @custom.newsletter_banner_type "!=" "Large - posts only" }}
-                {{#match @custom.newsletter_banner_type "!=" "Large - home page only" }}
-                {{#match @custom.newsletter_banner_type "!=" "Large - home page & posts" }}
-                {{#match @custom.newsletter_banner_type "!=" "Mini - home page only" }}
-                    {{> "newsletter-banner" mini="true" }}
-                {{/match}}
-                {{/match}}
-                {{/match}}
-                {{/match}}
-
-                {{#match @custom.newsletter_banner_type "!=" "Mini - posts only" }}
-                {{#match @custom.newsletter_banner_type "!=" "Mini - home page only" }}
-                {{#match @custom.newsletter_banner_type "!=" "Mini - home page & posts" }}
-                {{#match @custom.newsletter_banner_type "!=" "Large - home page only" }}
-                    {{> "newsletter-banner" }}
-                {{/match}}
-                {{/match}}
-                {{/match}}
-                {{/match}}
-            {{/match}}
-        {{/unless}}
-    {{/if}}
 
     {{#if comments}}
         <aside class="comments">
             {{comments mode="auto"}}
         </aside>
     {{/if}}
+
+    {{#if @site.members_enabled}}
+        {{#unless @member}}
+
+            {{#match @custom.enrol_members_banner_type "Both - posts only" }}
+                {{> "enrol-members" banner-type="both" }}
+            {{else match @custom.enrol_members_banner_type "Both - home page & posts" }}
+                {{> "enrol-members" banner-type="both" }}
+            {{else match @custom.enrol_members_banner_type "Newsletter - posts only" }}
+                {{> "enrol-members" banner-type="newsletter" }}
+            {{else match @custom.enrol_members_banner_type "Newsletter - home page & posts" }}
+                {{> "enrol-members" banner-type="newsletter" }}
+            {{else match @custom.enrol_members_banner_type "Subscribe - posts only" }}
+                {{> "enrol-members" banner-type="subscribe" }}
+            {{else match @custom.enrol_members_banner_type "Subscribe - home page & posts" }}
+                {{> "enrol-members" banner-type="subscribe" }}
+            {{/match}}
+
+        {{/unless}}
+    {{/if}}
+
 
     {{#if @custom.show_related_posts}}
         {{#get "posts" limit="6" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}

@@ -9,6 +9,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
+    font-size: 1.5rem;
     text-wrap: nowrap;
     padding: 8px 16px;
 }

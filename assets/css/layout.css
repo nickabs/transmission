@@ -22,7 +22,7 @@
 .related-articles { grid-area:RelatedArticles}
 .site-footer { grid-area: SiteFooter; }
 .social-links { grid-area: SocialLinks; }
-.newsletter-banner { grid-area: NewsletterBanner;}
+.enrol-members { grid-area: EnrolMembers;}
 .table-of-contents { grid-area: TableOfContents; }
 .tagged-articles { grid-area: TaggedArticles; }
 .comments { grid-area: Comments; }
@@ -40,7 +40,7 @@
         "HeroHeader"
         "MainArticle"
         "LatestArticles"
-        "NewsletterBanner"
+        "EnrolMembers"
         "RecentArticles"
         "PreviousArticles"
         "Pagination"
@@ -52,7 +52,7 @@
         "MainArticle"
         "FeaturedArticles"
         "LatestArticles"
-        "NewsletterBanner"
+        "EnrolMembers"
         "RecentArticles"
         "PreviousArticles"
         "Pagination"
@@ -69,7 +69,7 @@
     "ArticleContent"
     "OneTimePaymentRequest"
     "Comments"
-    "NewsletterBanner"
+    "EnrolMembers"
     "RelatedArticles"
     "Pagination"
     "SiteFooter"
@@ -99,7 +99,7 @@
             "HeroHeader HeroHeader"
             "MainArticle LatestArticles"
             "RecentArticles RecentArticles"
-            "NewsletterBanner NewsletterBanner"
+            "EnrolMembers EnrolMembers"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -110,7 +110,7 @@
             "HeroHeader HeroHeader"
             "LatestArticles MainArticle"
             "RecentArticles RecentArticles"
-            "NewsletterBanner NewsletterBanner"
+            "EnrolMembers EnrolMembers"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -121,7 +121,7 @@
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
             "LatestArticles LatestArticles"
-            "NewsletterBanner NewsletterBanner"
+            "EnrolMembers EnrolMembers"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
@@ -133,7 +133,7 @@
             "HeroHeader HeroHeader"
             "FeaturedArticles MainArticle"
             "LatestArticles LatestArticles"
-            "NewsletterBanner NewsletterBanner"
+            "EnrolMembers EnrolMembers"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
@@ -160,8 +160,8 @@
                 "HeroHeader HeroHeader"
                 "ArticleContent SocialLinks"
                 "OneTimePaymentRequest SocialLinks"
-                "NewsletterBanner SocialLinks"
                 "Comments SocialLinks"
+                "EnrolMembers SocialLinks"
                 "RelatedArticles SocialLinks"
                 "Pagination SocialLinks"
                 "TableOfContents TableOfContents"
@@ -183,8 +183,8 @@
                 "HeroHeader HeroHeader HeroHeader"
                 "TableOfContents ArticleContent SocialLinks"
                 "TableOfContents OneTimePaymentRequest SocialLinks"
-                "TableOfContents NewsletterBanner SocialLinks"
                 "TableOfContents Comments SocialLinks"
+                "TableOfContents EnrolMembers SocialLinks"
                 "TableOfContents RelatedArticles SocialLinks"
                 "TableOfContents Pagination SocialLinks"
                 "SiteFooter SiteFooter SiteFooter";

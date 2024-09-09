@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.21.0",
+    "version": "1.22.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -50,11 +50,6 @@
                 "default": false,
                 "description": "Fix navigation bar at top of the screen"
             },
-            "show_header_subscription_button": {
-                "type": "boolean",
-                "default": false,
-                "description": "membership must be enabled to use this option"
-            },
             "menu_style": {
                 "type": "select",
                 "options": [
@@ -72,30 +67,39 @@
                 ],
                 "default": "slim"
             },
-            "newsletter_banner_type": {
+            "enrol_members_banner_type": {
                 "type": "select",
                 "options": [
-                    "Large - home page only",
-                    "Large - home page & posts",
-                    "Large - posts only",
-                    "Mini - home page only",
-                    "Mini - home page & posts",
-                    "Mini - posts only",
-                    "None"
+                    "None",
+                    "Newsletter - home page only",
+                    "Newsletter - home page & posts",
+                    "Newsletter - posts only",
+                    "Subscribe - home page only",
+                    "Subscribe - home page & posts",
+                    "Subscribe - posts only",
+                    "Both - home page only",
+                    "Both - home page & posts",
+                    "Both - posts only"
                 ],
                 "default": "None",
                 "description": "Add a banner to invite newsletter membership subscription to the home page."
             },
-            "newsletter_banner_heading": {
+            "enrol_members_banner_heading": {
                 "type": "text",
                 "description": "Defaults to site title when empty",
-                "visibility": "newsletter_banner_type:-None"
+                "visibility": "enrol_members_banner_type:-None"
             },
-            "newsletter_banner_description": {
+            "enrol_members_banner_description": {
                 "type": "text",
                 "description": "Defaults to site description when empty",
-                "visibility": "newsletter_banner_type:-None"
+                "visibility": "enrol_members_banner_type:-None"
             },
+            "hide_comments_subscribe_cta": {
+                 "type": "boolean",
+                 "default": false,
+                 "description": "this will hide the native ghost subscribe CTA that shows under   the comments section",
+                 "visibility": "enrol_members_banner_type:-None"
+          },
             "footer_link_style": {
                 "type": "select",
                 "options": [

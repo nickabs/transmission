@@ -46,26 +46,20 @@
 
 {{#if @site.members_enabled}}
     {{#unless @member}}
-        {{#match @custom.newsletter_banner_type "!=" "None"}}
-            {{#match @custom.newsletter_banner_type "!=" "Large - posts only" }}
-            {{#match @custom.newsletter_banner_type "!=" "Large - home page only" }}
-            {{#match @custom.newsletter_banner_type "!=" "Large - home page & posts" }}
-            {{#match @custom.newsletter_banner_type "!=" "Mini - posts only" }}
-                {{> "newsletter-banner" mini="true" }}
-            {{/match}}
-            {{/match}}
-            {{/match}}
-            {{/match}}
 
-            {{#match @custom.newsletter_banner_type "!=" "Mini - posts only" }}
-            {{#match @custom.newsletter_banner_type "!=" "Mini - home page only" }}
-            {{#match @custom.newsletter_banner_type "!=" "Mini - home page & posts" }}
-            {{#match @custom.newsletter_banner_type "!=" "Large - posts only" }}
-                {{> "newsletter-banner" }}
-            {{/match}}
-            {{/match}}
-            {{/match}}
-            {{/match}}
+        {{#match @custom.enrol_members_banner_type "Both - home page only" }}
+            {{> "enrol-members" banner-type="both" }}
+        {{else match @custom.enrol_members_banner_type "Both - home page & posts" }}
+            {{> "enrol-members" banner-type="both" }}
+        {{else match @custom.enrol_members_banner_type "Newsletter - home page only" }}
+            {{> "enrol-members" banner-type="newsletter" }}
+        {{else match @custom.enrol_members_banner_type "Newsletter - home page & posts" }}
+            {{> "enrol-members" banner-type="newsletter" }}
+        {{else match @custom.enrol_members_banner_type "Subscribe - home page only" }}
+            {{> "enrol-members" banner-type="subscribe" }}
+        {{else match @custom.enrol_members_banner_type "Subscribe - home page & posts" }}
+            {{> "enrol-members" banner-type="subscribe" }}
         {{/match}}
+
     {{/unless}}
 {{/if}}

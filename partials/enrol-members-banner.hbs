@@ -1,0 +1,56 @@
+{{!--
+    Parameters :
+    banner-type [ newsletter, subscription, both ]
+--}}
+<aside class="enrol-members {{~#match banner-type 'newsletter'}} newsletter{{/match}}
+                                   {{~#match banner-type 'subscribe'}} subscribe{{/match}}
+                                   {{~#match banner-type 'both'}} newsletter-and-subscribe{{/match}}">
+    
+    <div class="enrol-members-background">
+        {{> "icons/circles-oval"}}
+    </div>
+    <h2 class="enrol-members-heading">
+        <div class="enrol-members-icon icon">
+            {{> "icons/mail"}}
+        </div>
+        {{#if @custom.enrol_members_banner_heading}}
+            {{@custom.enrol_members_banner_heading}}
+        {{else}}
+            {{@site.title}}
+        {{/if}}
+    </h2>
+    <p class="enrol-members-description">
+        {{#if @custom.enrol_members_banner_description}}
+            {{@custom.enrol_members_banner_description}}
+        {{else}}
+            {{@site.description}}
+        {{/if}}
+    </p>
+
+    {{#match banner-type "!=" "subscribe"}}
+        <form class="enrol-members-newsletter" data-members-form>
+            <input class="enrol-members-newsletter-input" id="{{email_field_id}}" type="email" placeholder="Enter your email address" required data-members-email>
+            <button class="enrol-members-newsletter-button" type="submit" aria-label="newsletter enrollment">
+                <span class="submit-icon icon" >
+                    {{> "icons/submit"}}
+                </span>
+                <span class="loading-icon icon" >
+                    {{> "icons/loading"}}
+                </span>
+                <span class="success-icon icon"> 
+                    {{> "icons/success"}}
+                </span>
+                <span class="error-icon icon"> 
+                    {{> "icons/error"}}
+                </span>
+            </button>
+            <p class="error-text" data-members-error></p>
+        </form>
+    {{/match}}
+
+    {{#match banner-type "!=" "newsletter"}}
+        <span class="enrol-members-subscribe">Sign-up for a subscription to see more articles
+            <a class="button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+        </span>
+    {{/match}}
+</aside>

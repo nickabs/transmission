@@ -1,9 +1,24 @@
 /* note that as of Ghost 5 it is not possible to specify an external css file for the comments section.
  * changes to the inline styles contained in the iframe have to be done with js */
 .comments {
-    padding: 50px var(--edge-padding);
     justify-self: center;
     min-width: 375px;
     max-width: var(--max-content-width);
     width: 100%;
+    position: relative;
+}
+/*
+ hacky way to use cover the subscription CTA used in the comments iframe with the theme specified newsletter banner
+
+ this is useful if your site is a standard blog and the only reason people register is to leave comments:
+ e.g set the enrol-members name/description to something like 
+    "leave a comment/ add your email below and check your inbox"
+*/
+
+.post-template.hide-comments-subscribe-cta > .enrol-members {
+    grid-area: Comments;
+    align-self: end;
+    min-height: 280px;
+    min-width: 470px;
+    z-index: 1;
 }
