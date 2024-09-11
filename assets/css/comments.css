@@ -19,6 +19,11 @@
     grid-area: Comments;
     align-self: end;
     min-height: 280px;
-    min-width: 470px;
+    min-width: 280px;
     z-index: 1;
+}
+@media (min-width: 480px) {
+    .post-template.hide-comments-subscribe-cta > .enrol-members {
+    min-width: 470px;
+    }
 }
