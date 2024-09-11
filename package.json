@@ -208,7 +208,7 @@
         "gulp-zip": "6.0.0",
         "postcss": "8.4.45",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0"
+        "pump": "3.0.2"
     },
     "dependencies": {
         "photoswipe": "^5.4.4",
