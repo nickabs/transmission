@@ -459,8 +459,8 @@ a:hover {
 /* hide usual post assides when notifying the user about paid content */
 .site:has(.gh-post-upgrade-cta) {
   .related-articles,
-  .one-time-payment-request,
-  .enrol-members,
+  .one-time-payment,
+  .enrol,
   .table-of-contents {
     display: none!important;;
   }

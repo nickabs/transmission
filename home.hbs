@@ -48,17 +48,17 @@
     {{#unless @member}}
 
         {{#match @custom.enrol_members_banner_type "Both - home page only" }}
-            {{> "enrol-members" banner-type="both" }}
+            {{> "enrol" banner-type="both" }}
         {{else match @custom.enrol_members_banner_type "Both - home page & posts" }}
-            {{> "enrol-members" banner-type="both" }}
+            {{> "enrol" banner-type="both" }}
         {{else match @custom.enrol_members_banner_type "Newsletter - home page only" }}
-            {{> "enrol-members" banner-type="newsletter" }}
+            {{> "enrol" banner-type="newsletter" }}
         {{else match @custom.enrol_members_banner_type "Newsletter - home page & posts" }}
-            {{> "enrol-members" banner-type="newsletter" }}
+            {{> "enrol" banner-type="newsletter" }}
         {{else match @custom.enrol_members_banner_type "Subscribe - home page only" }}
-            {{> "enrol-members" banner-type="subscribe" }}
+            {{> "enrol" banner-type="subscribe" }}
         {{else match @custom.enrol_members_banner_type "Subscribe - home page & posts" }}
-            {{> "enrol-members" banner-type="subscribe" }}
+            {{> "enrol" banner-type="subscribe" }}
         {{/match}}
 
     {{/unless}}

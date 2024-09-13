@@ -27,7 +27,7 @@
     </article>
 
     {{#if @custom.show_one_time_payment_request}}
-        <aside class="one-time-payment-request">
+        <aside class="one-time-payment">
             <div class="one-time-payment-icon" aria-label="one-time-donation">{{> "icons/donation"}}</div>
             <p class="one-time-payment-description">{{@custom.one_time_payment_description}}</p>
             <a href="#/portal/support" target="_blank" class="button one-time-payment-button">{{@custom.one_time_payment_button_text}}</a>
@@ -44,17 +44,17 @@
         {{#unless @member}}
 
             {{#match @custom.enrol_members_banner_type "Both - posts only" }}
-                {{> "enrol-members" banner-type="both" }}
+                {{> "enrol" banner-type="both" }}
             {{else match @custom.enrol_members_banner_type "Both - home page & posts" }}
-                {{> "enrol-members" banner-type="both" }}
+                {{> "enrol" banner-type="both" }}
             {{else match @custom.enrol_members_banner_type "Newsletter - posts only" }}
-                {{> "enrol-members" banner-type="newsletter" }}
+                {{> "enrol" banner-type="newsletter" }}
             {{else match @custom.enrol_members_banner_type "Newsletter - home page & posts" }}
-                {{> "enrol-members" banner-type="newsletter" }}
+                {{> "enrol" banner-type="newsletter" }}
             {{else match @custom.enrol_members_banner_type "Subscribe - posts only" }}
-                {{> "enrol-members" banner-type="subscribe" }}
+                {{> "enrol" banner-type="subscribe" }}
             {{else match @custom.enrol_members_banner_type "Subscribe - home page & posts" }}
-                {{> "enrol-members" banner-type="subscribe" }}
+                {{> "enrol" banner-type="subscribe" }}
             {{/match}}
 
         {{/unless}}

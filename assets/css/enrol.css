@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------------------------- */
-/* Show an "enrol members" banner on the home and/or post pages.                                */
+/* Show an enrollment banner on the home and/or post pages.                                     */
 /*                                                                                              */
 /* There is a custom option to show a banner with either:                                       */
 /* - a newsletter enrollment form                                                               */
@@ -7,27 +7,27 @@
 /* - ...or both                                                                                 */
 /*                                                                                              */
 /* Note that newsletters are optional. People signing-up using the newslettter enrollment form  */
-/* when there are no newsletters enabled are limited to:                                        */
+/* when there are no newsletters enabled get a free access membership and are limited to:       */
 /*  - viewing free posts                                                                        */
 /*  - commenting on posts                                                                       */
 /*                                                                                              */
 /* It is therefore possible to use the newsletter feature - even if you don't email regular     */
-/* updates in the form of newsletters or have paid subscribers - to you encourage spam-free     */
+/* updates in the form of newsletters or have paid subscribers - to encourage spam-free         */
 /* comments via registered users, without confusing user with messages aboust ubscriptions.     */
 /* -------------------------------------------------------------------------------------------- */
 
-.enrol-members-description { grid-area: EnrolMembersDescription;}
-.enrol-members-heading { grid-area: EnrolMembersHeading;}
-.enrol-members-newsletter { grid-area: EnrolMembersNewsletter;}
-.enrol-members-subscribe { grid-area: EnrolMembersSubscribe;}
+.enrol-description { grid-area: EnrolDescription;}
+.enrol-heading { grid-area: EnrolHeading;}
+.enrol-newsletter { grid-area: EnrolNewsletter;}
+.enrol-subscribe { grid-area: EnrolSubscribe;}
 
-.enrol-members {
+.enrol {
     display: grid;
     grid-template-areas: 
-        "EnrolMembersHeading"
-        "EnrolMembersDescription"
-        "EnrolMembersNewsletter"
-        "EnrolMembersSubscribe";
+        "EnrolHeading"
+        "EnrolDescription"
+        "EnrolNewsletter"
+        "EnrolSubscribe";
 
     grid-template-columns: auto;
     &.newsletter-and-subscribe {
@@ -51,7 +51,7 @@
     border: 1px solid var(--border-color);
     border-radius:5px;
 
-    > *:not(.enrol-members-background) {
+    > *:not(.enrol-background):not(.enrol-dialog) {
         z-index: 1;
         padding: 20px 10px 0 10px;
     }
@@ -61,7 +61,7 @@
 
 }
 
-.enrol-members-background svg {
+.enrol-background svg {
     z-index: 0;
     position: absolute;
     top:50%;
@@ -71,30 +71,30 @@
     color: var(--border-color);
     opacity: 0.6;
 }
-.enrol-members-icon svg{
+.enrol-icon svg{
     height:50px;
     width:50px;
 }
-.enrol-members-heading, 
-.enrol-members-description, 
-.enrol-members-newsletter .error-text {
+.enrol-heading, 
+.enrol-description, 
+.enrol-newsletter .error-text {
     color: var(--banner-title-color);
 }
-.enrol-members-heading {
+.enrol-heading {
     display: flex;
     column-gap: 20px;
     align-self: self-end;
 }
-.enrol-members-newsletter {
+.enrol-newsletter {
     border-radius: 9.5px;
     display:flex;
 }
 
-.enrol-members-newsletter-input { grid-area: Input; }
-.enrol-members-newsletter-button { grid-area: Button; }
+.enrol-newsletter-input { grid-area: Input; }
+.enrol-newsletter-button { grid-area: Button; }
 .error-text { grid-area: ErrorText; }
 
-.enrol-members-newsletter {
+.enrol-newsletter {
     display: grid;
     grid-template-areas:
         "Input Button"
@@ -110,7 +110,7 @@
         align-items: center;
     }
     
-    .enrol-members-newsletter-input {
+    .enrol-newsletter-input {
         padding: 3px ;
         font-size: 1.3rem;
         background-color: #e6e6e6;
@@ -119,10 +119,10 @@
         width: 200px;
         justify-self:end;
     }
-    .enrol-members-newsletter-input, .enrol-members-newsletter-button {
+    .enrol-newsletter-input, .enrol-newsletter-button {
         border: 1px solid var(--ghost-accent-color);
     }
-    .enrol-members-newsletter-button {
+    .enrol-newsletter-button {
         align-items: center;
         background-color: var(--ghost-accent-color);
         border-radius: 0 10px 10px 0;
@@ -133,24 +133,48 @@
 }
 
 /* show the status of a subscription request */
-.enrol-members-newsletter {
+.enrol-newsletter {
     .success-icon, .error-icon, .error-text, .loading-icon {
         display: none;
     }
 }
-.enrol-members-newsletter:is(.success, .error, .loading) .submit-icon {
+.enrol-newsletter:is(.success, .error, .loading) .submit-icon {
     display:none;
 }
-.enrol-members-newsletter.success .success-icon ,
-.enrol-members-newsletter.loading .loading-icon ,
-.enrol-members-newsletter.error .error-icon ,
-.enrol-members-newsletter.error .error-text {
+.enrol-newsletter.success .success-icon ,
+.enrol-newsletter.loading .loading-icon ,
+.enrol-newsletter.error .error-icon ,
+.enrol-newsletter.error .error-text {
     display:inline-flex;
     pointer-events: none;
 }
-.enrol-members-subscribe {
+.enrol-subscribe {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
 }
+/* pop-up dialog that shows after an email has been entered by someone enrolling for a newsletter */
+.enrol-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
+    padding: 32px;
+    border-radius: 10px;
+    width: min(500px, 95vw);
+    display: none; /* hidden until an email has been succesfully entered in the form */
+    scrollbar-width: none;
+  }
+  .enrol-dialog-icon svg {
+    height:44px;
+    width: auto;
+    color: var(--ghost-accent-color);
+  }
+  .enrol-dialog-button {
+    width: 100%;
+  }

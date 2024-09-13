@@ -1,0 +1,77 @@
+{{!--
+    Parameters :
+    banner-type [ newsletter, subscription, both ]
+--}}
+<aside class="enrol {{~#match banner-type 'newsletter'}} newsletter{{/match}}
+                                   {{~#match banner-type 'subscribe'}} subscribe{{/match}}
+                                   {{~#match banner-type 'both'}} newsletter-and-subscribe{{/match}}">
+    
+    <div class="enrol-background">
+        {{> "icons/circles-oval"}}
+    </div>
+    <h2 class="enrol-heading">
+        <div class="enrol-icon icon">
+            {{> "icons/unread-mail"}}
+        </div>
+        {{#if @custom.enrol_members_banner_heading}}
+            {{{@custom.enrol_members_banner_heading}}}
+        {{else}}
+            {{@site.title}}
+        {{/if}}
+    </h2>
+    <p class="enrol-description">
+        {{#if @custom.enrol_members_banner_description}}
+            {{{@custom.enrol_members_banner_description}}}
+        {{else}}
+            {{@site.description}}
+        {{/if}}
+    </p>
+
+    {{!-- newsletter section --}}
+    {{#match banner-type "!=" "subscribe"}} 
+        <form class="enrol-newsletter" data-members-form>
+            <input class="enrol-newsletter-input" id="{{email_field_id}}" type="email" placeholder="Enter your email address" required data-members-email>
+            <button class="enrol-newsletter-button" type="submit" aria-label="newsletter enrollment">
+                <span class="submit-icon icon" >
+                    {{> "icons/submit"}}
+                </span>
+                <span class="loading-icon icon" >
+                    {{> "icons/loading"}}
+                </span>
+                <span class="success-icon icon"> 
+                    {{> "icons/success"}}
+                </span>
+                <span class="error-icon icon"> 
+                    {{> "icons/error"}}
+                </span>
+            </button>
+            <p class="error-text" data-members-error></p>
+        </form>
+    {{/match}}
+
+    {{!-- subscribe section --}}
+    {{#match banner-type "!=" "newsletter"}} 
+        <div class="enrol-subscribe">
+            {{!-- ideally this text should be specified as a custom option --}}
+            <p class="enrol-subscribe-text">Unlock exclusive content by signing-up for a subscription</p>
+            <a class="enrol-subscribe-button button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+        </div>
+    {{/match}}
+
+    {{!-- popup window used to remind users to check their inbox
+        only needed for the newsletter option (a similar window is opened automatically by the
+        Ghost code when using the portal/signup feature in the portal)
+    --}}
+
+    <dialog class="enrol-dialog">
+
+        <div class="enrol-dialog-icon icon">
+            {{> "icons/envelope"}}
+        </div>
+
+        <h2 class="enrol-dialog-title">Now check your email!</h2>
+        <p class="enrol-dialog-text">To complete signup, click the confirmation link in your inbox.  If it doesn't arrive within 3 minutes, check your spam folder!</p>  
+        <button class="enrol-dialog-button button">Close</button>
+    </dialog>
+
+</aside>

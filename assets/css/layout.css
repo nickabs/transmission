@@ -22,11 +22,11 @@
 .related-articles { grid-area:RelatedArticles}
 .site-footer { grid-area: SiteFooter; }
 .social-links { grid-area: SocialLinks; }
-.enrol-members { grid-area: EnrolMembers;}
+.enrol { grid-area: Enrol;}
 .table-of-contents { grid-area: TableOfContents; }
 .tagged-articles { grid-area: TaggedArticles; }
 .comments { grid-area: Comments; }
-.one-time-payment-request { grid-area: OneTimePaymentRequest; }
+.one-time-payment { grid-area: OneTimePaymentRequest; }
 
 .site {
     display: grid;
@@ -40,7 +40,7 @@
         "HeroHeader"
         "MainArticle"
         "LatestArticles"
-        "EnrolMembers"
+        "Enrol"
         "RecentArticles"
         "PreviousArticles"
         "Pagination"
@@ -52,7 +52,7 @@
         "MainArticle"
         "FeaturedArticles"
         "LatestArticles"
-        "EnrolMembers"
+        "Enrol"
         "RecentArticles"
         "PreviousArticles"
         "Pagination"
@@ -69,7 +69,7 @@
     "ArticleContent"
     "OneTimePaymentRequest"
     "Comments"
-    "EnrolMembers"
+    "Enrol"
     "RelatedArticles"
     "Pagination"
     "SiteFooter"
@@ -99,7 +99,7 @@
             "HeroHeader HeroHeader"
             "MainArticle LatestArticles"
             "RecentArticles RecentArticles"
-            "EnrolMembers EnrolMembers"
+            "Enrol Enrol"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -110,7 +110,7 @@
             "HeroHeader HeroHeader"
             "LatestArticles MainArticle"
             "RecentArticles RecentArticles"
-            "EnrolMembers EnrolMembers"
+            "Enrol Enrol"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
             "SiteFooter SiteFooter";
@@ -121,7 +121,7 @@
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
             "LatestArticles LatestArticles"
-            "EnrolMembers EnrolMembers"
+            "Enrol Enrol"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
@@ -133,7 +133,7 @@
             "HeroHeader HeroHeader"
             "FeaturedArticles MainArticle"
             "LatestArticles LatestArticles"
-            "EnrolMembers EnrolMembers"
+            "Enrol Enrol"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
@@ -161,7 +161,7 @@
                 "ArticleContent SocialLinks"
                 "OneTimePaymentRequest SocialLinks"
                 "Comments SocialLinks"
-                "EnrolMembers SocialLinks"
+                "Enrol SocialLinks"
                 "RelatedArticles SocialLinks"
                 "Pagination SocialLinks"
                 "TableOfContents TableOfContents"
@@ -184,7 +184,7 @@
                 "TableOfContents ArticleContent SocialLinks"
                 "TableOfContents OneTimePaymentRequest SocialLinks"
                 "TableOfContents Comments SocialLinks"
-                "TableOfContents EnrolMembers SocialLinks"
+                "TableOfContents Enrol SocialLinks"
                 "TableOfContents RelatedArticles SocialLinks"
                 "TableOfContents Pagination SocialLinks"
                 "SiteFooter SiteFooter SiteFooter";

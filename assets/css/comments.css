@@ -11,11 +11,11 @@
  hacky way to use cover the subscription CTA used in the comments iframe with the theme specified newsletter banner
 
  this is useful if your site is a standard blog and the only reason people register is to leave comments:
- e.g set the enrol-members name/description to something like 
+ e.g set the enrol name/description to something like 
     "leave a comment/ add your email below and check your inbox"
 */
 
-.post-template.hide-comments-subscribe-cta > .enrol-members {
+.post-template.hide-comments-subscribe-cta > .enrol {
     grid-area: Comments;
     align-self: end;
     min-height: 280px;
@@ -23,7 +23,7 @@
     z-index: 1;
 }
 @media (min-width: 480px) {
-    .post-template.hide-comments-subscribe-cta > .enrol-members {
+    .post-template.hide-comments-subscribe-cta > .enrol {
     min-width: 470px;
     }
 }
