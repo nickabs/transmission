@@ -6,6 +6,9 @@
     max-width: var(--max-content-width);
     width: 100%;
     position: relative;
+    border-top: 2px solid var(--secondary-border-color);
+    margin-top: var(--section-gap);
+    padding-top: var(--section-gap);
 }
 /*
  hacky way to use cover the subscription CTA used in the comments iframe with the theme specified newsletter banner
@@ -18,9 +21,13 @@
 .post-template.hide-comments-subscribe-cta > .enrol {
     grid-area: Comments;
     align-self: end;
-    min-height: 280px;
     min-width: 280px;
+    min-height: 280px;
     z-index: 1;
+    &.newsletter, 
+    &.subscription {
+        padding-top:35px;
+    }
 }
 @media (min-width: 480px) {
     .post-template.hide-comments-subscribe-cta > .enrol {
