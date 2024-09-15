@@ -134,6 +134,7 @@ function zipper(done) {
         src([
             '**',
             '!node_modules', '!node_modules/**',
+            '!todo.md',
             '!dist', '!dist/**',
             '!package-lock.json'
         ]),
