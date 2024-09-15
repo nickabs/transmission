@@ -21,6 +21,10 @@ Parameters:
 <aside class="social-links {{layout}}">
     <div class="social-links-container" >
         <h1 class="social-links-title">Share</h1>
+        <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
+        class="icon" aria-label="share on bluesky" target="_blank" rel="noopener" >
+            {{> "icons/bluesky"}}
+        </a>
         <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
         class="icon" aria-label="share on facebook" target="_blank" rel="noopener" >
             {{> "icons/facebook"}}
