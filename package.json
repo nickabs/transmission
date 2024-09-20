@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.22.0",
+    "version": "1.23.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -62,10 +62,11 @@
             "hero_style": {
                 "type": "select",
                 "options": [
-                     "slim",
-                     "full"
+                     "plain",
+                     "color",
+                     "grayscale"
                 ],
-                "default": "slim"
+                "default": "plain"
             },
             "enrol_members_banner_type": {
                 "type": "select",

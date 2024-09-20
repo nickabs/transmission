@@ -1,5 +1,8 @@
 /* ---------------------------------------------------------------- */
 /* layout grids for home page, article (post), page and tag summary */
+/* 1. home-page mobile view                                         */
+/* 2. post/page mobile view                                         */
+/* 3. tag and author collection - all screen sizes view             */
 /* ---------------------------------------------------------------- */
 
 /* 
@@ -32,9 +35,9 @@
     display: grid;
 }
 
-/*------------------------*/
-/* home-page mobile view  */
-/*------------------------*/
+/*---------------------------*/
+/* 1. home-page mobile view  */
+/*---------------------------*/
 .site.home-template {
     grid-template-areas:
         "HeroHeader"
@@ -46,7 +49,7 @@
         "Pagination"
         "SiteFooter";
 }
-.site.home-template.show-featured-articles {
+.site.home-template.show-featured-articles { 
     grid-template-areas:
         "HeroHeader"
         "MainArticle"
@@ -59,40 +62,7 @@
         "SiteFooter";
 }
 
-
-/*------------------------*/
-/* post/page mobile view */
-/*------------------------*/
-.site.post-template, .site.page-template {
-    grid-template-areas:
-    "HeroHeader"
-    "ArticleContent"
-    "OneTimePaymentRequest"
-    "Comments"
-    "Enrol"
-    "RelatedArticles"
-    "Pagination"
-    "SiteFooter"
-    "SocialLinks";
-}
-/*---------------------------------------------------*/
-/* tag and author collection - all screen sizes view */
-/*---------------------------------------------------*/
-.author-template,
-.tag-template {
-    grid-column: content;
-    grid-template-areas:
-        "HeroHeader"
-        "TaggedArticles"
-        "Pagination"
-        "SiteFooter";
-}
-
-/* ------------------------- */
-/* tablet and larger screens */
-/* ------------------------- */
 @media (min-width: 760px) { 
-    
     .home-template.home-page-focus-left {
         grid-template-columns: 1.5fr 1fr; 
         grid-template-areas:
@@ -139,18 +109,24 @@
             "Pagination Pagination"
             "SiteFooter SiteFooter";
     }
+}
 
-    /* list view */
-    .home-template.home-page-list {
-            .main-article,
-            .featured-articles,
-            .latest-articles,
-            .recent-articles,
-            .previous-articles {
-                max-width: 450px;
-                justify-self: center;
-        }
-    }
+/*--------------------------*/
+/* 2. post/page mobile view */
+/*--------------------------*/
+.site.post-template, .site.page-template {
+    grid-template-areas:
+    "HeroHeader"
+    "ArticleContent"
+    "OneTimePaymentRequest"
+    "Comments"
+    "Enrol"
+    "RelatedArticles"
+    "Pagination"
+    "SiteFooter"
+    "SocialLinks";
+}
+@media (min-width: 760px) { 
 
     /* page & post view tablet with sidebar */
     .site.page-template , .site.post-template {
@@ -170,10 +146,6 @@
         }
     }
 }
-/* ------------- */
-/* large screens */
-/* ------------- */
-
 @media (min-width: 1300px) { 
     /* page and post layout with sidebar */
     .site.page-template, .site.post-template {
@@ -191,4 +163,19 @@
             justify-items: center;
         }
     }
+    .home-template.home-page-list {
+        max-width: var(--max-container-width);
+    }
+}
+/*------------------------------------------------------*/
+/* 3. tag and author collection - all screen sizes view */
+/*------------------------------------------------------*/
+.author-template,
+.tag-template {
+    grid-column: content;
+    grid-template-areas:
+        "HeroHeader"
+        "TaggedArticles"
+        "Pagination"
+        "SiteFooter";
 }

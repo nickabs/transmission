@@ -8,13 +8,6 @@
     {{/foreach}}
 </article>
 
-<aside class="latest-articles">
-    <h1 class="latest-articles-title" >LATEST</h1>
-    {{#foreach posts from=2 limit=6}}
-        {{> "article-card" image_size="s" }}
-    {{/foreach}}
-</aside>
-
 {{#if @custom.show_featured_posts }}
     <aside class="featured-articles">
         <h1 class="featured-articles-title" >FEATURED</h1>
@@ -26,17 +19,24 @@
     </aside>
 {{/if}}
 
+<aside class="latest-articles">
+    <h1 class="latest-articles-title" >LATEST</h1>
+    {{#foreach posts from=2 limit=6}}
+        {{> "article-card" image_size="s" }}
+    {{/foreach}}
+</aside>
+
 <aside class="recent-articles">
     <h1 class="recent-articles-title" >RECENT</h1>
-    {{#foreach posts from=8 limit=6}}
+    {{#foreach posts from=8 limit=4}}
         {{> "article-card" image_size="s" }}
     {{/foreach}}
 </aside>
 
 <aside class="previous-articles paginated">
-    <h1 class="previous-articles-title" >MORE</h1>
+    <h1 class="previous-articles-title" >YOU MIGHT ALSO LIKE</h1>
     {{#get "posts" include="authors,tags,tiers" }}
-        {{#foreach posts from=14 }}
+        {{#foreach posts from=12 }}
             {{> "article-card" image_size="s"}}
         {{/foreach}}
     {{/get}}
