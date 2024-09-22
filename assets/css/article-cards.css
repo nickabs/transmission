@@ -146,7 +146,7 @@
 
 /* on small screens featured articles are shown in a different format to standard cards */
 @media (max-width:480px) {
-    .article-card.featured {
+    .article-card.featured:not(.main-article *) {
         display: grid;
         grid-template-columns: 2fr 1fr;
         grid-template-areas:
