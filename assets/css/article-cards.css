@@ -74,6 +74,7 @@
     grid-template-areas:
         "Image"
         "Title"
+        "Excerpt"
         "Metadata"
         "Authors";
     align-items: center;
@@ -345,6 +346,7 @@
 }
 .author-profile-image {
     margin: 0 -7px 0 0;
+    width:auto;
     img, svg { 
         border: 1px solid var(--theme-accent-color);
         height: 40px;
