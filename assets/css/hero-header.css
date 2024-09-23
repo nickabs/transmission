@@ -99,11 +99,6 @@ h1.hero-title {
         grid-template-areas: 
             "HeroTitle"
             "HeroDescription";
-
-        img {
-            height:inherit;
-        }
-
     }
     .hero-title { grid-area: HeroTitle;}
     .hero-description { grid-area: HeroDescription;}

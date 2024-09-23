@@ -39,8 +39,8 @@
 
 <body class='site {{body_class}}
     {{!-- set classes to reflect custom options selected by the site owner --}}
-    {{#if @custom.show_featured_posts}} show-featured-articles{{/if}}
-    {{#if @custom.hide_comments_subscribe_cta}} hide-comments-subscribe-cta{{/if}}
+    {{~#if @custom.show_featured_posts}} show-featured-articles{{/if}}
+    {{~#if @custom.hide_comments_subscribe_cta}} hide-comments-subscribe-cta{{/if}}
     {{~#match @custom.home_page_style "List"}} home-page-list{{/match}}
     {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match}}
     {{~#match @custom.home_page_style "Focus (left)"}} home-page-focus-left{{/match}}
@@ -48,7 +48,7 @@
     {{~#match @custom.hero_style "color"}} hero-style-color{{/match}}
     {{~#match @custom.hero_style "grayscale"}} hero-style-grayscale{{/match}}
     {{~#match @custom.menu_style "Expanded"}} expanded-nav{{else}} minified-nav{{/match}}
-    {{#if @custom.fixed_navigation_bar }} fixed-navigation-bar{{/if}}'>
+    {{~#if @custom.fixed_navigation_bar }} fixed-navigation-bar{{/if}}'>
 
     {{> "site-header"}}
 

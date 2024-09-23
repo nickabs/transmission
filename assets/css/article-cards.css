@@ -12,9 +12,6 @@
 /* --------------------------- */
 /* 1. article-card collections */
 /* --------------------------- */
-/* 
- * The default view is a simple list of article cards
- */
 .latest-articles,
 .featured-articles,
 .recent-articles,
@@ -83,7 +80,6 @@
         padding: 10px 10px 0px 10px;
     }
 }
-
 .main-article {
     align-self: center;
 
@@ -102,7 +98,6 @@
         }
     }
 }
-
 .article-card-image img { 
     object-fit: cover;
     aspect-ratio: 16/9;
@@ -162,6 +157,7 @@
         }
     }
 }
+
 /* on larger screens article-cards are 300px wide and feature cards are 25% larger so they stand out */
 @media (min-width:760px) {
     .article-card {
@@ -178,10 +174,13 @@
         .featured-articles {
             .article-card {
                 width: 100%;
+                box-shadow: none;
+                > * {
+                    padding: 0;
+                }
             }
         }
     }
-
     .main-article .article-card {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -190,7 +189,6 @@
             "Metadata Image"
             "Title Image"
             "Excerpt Image";
-
         .article-card-author-profile-images { grid-area: AuthorProfileImages; }
 
         width:100%;
@@ -216,7 +214,6 @@
     }
 }
 
-
 /* ------------------------------ */
 /* 4. article-card content styles */
 /* ------------------------------ */
@@ -224,7 +221,6 @@
     color: var(--title-color); 
     font-weight: 600;
 }
-
 .main-article .article-card-title {
     text-transform: uppercase;
 }
@@ -295,12 +291,9 @@
         margin-right: 5px;
     }
 }
-.article-card-author-names li {
-    display: inline;
-}
-.article-card-author-profile-images {
-    display: flex;
-    flex-wrap: wrap;
+.article-card-author-profile-images,
+.article-card-author-names  {
+    display: inline-flex;
     list-style: none;
 }
 .article-card-author-profile-images { 
@@ -311,6 +304,7 @@
 }
 .article-card .author-profile-image {
     margin: 0 -7px 0 0;
+    width: auto;
     img, svg { 
         border: 1px solid var(--theme-accent-color);
         height: 25px;
