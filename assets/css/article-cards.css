@@ -152,7 +152,16 @@
                     "Excerpt"
                     "Image"
                     "Metadata";
-                    padding-bottom: 20px;
+                padding-bottom: 20px;
+
+                .author-profile-image {
+                    margin: 0 -10px 0 0;
+                    img, svg { 
+                        border: 3px solid var(--theme-accent-color);
+                        height: 60px;
+                        width: 60px;
+                    }
+                }
             }
         }
     }
@@ -203,7 +212,7 @@
         .article-card-excerpt {
             font-size: clamp(1.0rem, 1.5vw, 1.7rem);
         }
-        img {
+        .article-card-image img {
             width: 100%;
             height: auto;
             max-height: 25vw;
@@ -211,6 +220,7 @@
             object-fit: cover;
             border-radius: 35px;
         }
+        
     }
 }
 
@@ -312,14 +322,6 @@
         border: 1px solid var(--theme-accent-color);
         height: 25px;
         width: 25px;
-    }
-}
-.main-article  .author-profile-image {
-    margin: 0 -10px 0 0;
-    img, svg { 
-        border: 3px solid var(--theme-accent-color);
-        height: 60px;
-        width: 60px;
     }
 }
 .article-card-author-profile-images {
