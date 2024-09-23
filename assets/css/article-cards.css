@@ -292,9 +292,12 @@
     }
 }
 .article-card-author-profile-images,
-.article-card-author-names  {
-    display: inline-flex;
+.article-card-author-names {
+    display: flex;
     list-style: none;
+    * {
+        width:auto
+    }
 }
 .article-card-author-profile-images { 
     align-self: end;

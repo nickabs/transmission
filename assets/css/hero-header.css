@@ -122,6 +122,6 @@ h1.hero-title {
         grid-area: 1 / 1 / -1 / -1;
     }
 }
-.hero-style-grayscale  .hero-header {
+.hero-style-grayscale  .hero-cover-image {
     filter: grayscale(100%);
 }
