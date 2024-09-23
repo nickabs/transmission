@@ -109,7 +109,6 @@ h1.hero-title {
     .hero-description { grid-area: HeroDescription;}
     .hero-title { 
         align-self: self-end;    
-        todowhite-space: nowrap;
         max-width: unset;
     }
     .hero-description { 

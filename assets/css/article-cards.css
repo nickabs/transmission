@@ -13,8 +13,6 @@
 /* 1. article-card collections */
 /* --------------------------- */
 /* 
- * The collection layouts can be changed by the theme user (@custom.home_page_style)
- * this custom option only changes the layout on larger screens 
  * The default view is a simple list of article cards
  */
 .latest-articles,
@@ -28,12 +26,10 @@
     flex-wrap: wrap;
     justify-content: center; 
     align-items: stretch;
-    --gap-between-cards: 20px;
-    gap: var(--gap-between-cards); /* adjusted below */
-
+    gap: 20px;
     width: 100%;
     * {
-        width: inherit;
+        width: 100%;
     }
 }
 
@@ -51,9 +47,8 @@
 }
 
 /* divider between article-cards */
-.site > * .article-card:not(:last-of-type) {
-    padding-bottom: 20px;
-    padding-bottom: var(--gap-between-cards);
+.site > * .article-card {
+    padding-bottom: 10px; 
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -82,16 +77,10 @@
     grid-template-columns: auto;
     grid-auto-rows: min-content; 
     box-shadow: var(--box-shadow);
-    .article-card-title,
-    .article-card-image,
-    .article-card-excerpt,
-    .article-card-metadata,
-    .article-card-author-names {
-        padding-bottom: 5px;
-    }
 
-    .article-card-image {
-        padding-top: 10px;
+    /* padding on the default horizontal cards */
+    > * {
+        padding: 10px 10px 0px 10px;
     }
 }
 
@@ -114,26 +103,6 @@
     }
 }
 
-/* padding around card contents */
-@media (min-width: 480px) {
-    .article-card   {
-        .article-card-author-names,
-        .article-card-author-profile-images,
-        .article-card-metadata,
-        .article-card-excerpt,
-        .article-card-title,
-        .article-card-image img {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-    }
-    .featured-articles {
-        .article-card-image,
-        .article-card-image img {
-            padding: 0;
-        }
-    }
-}
 .article-card-image img { 
     object-fit: cover;
     aspect-ratio: 16/9;
@@ -144,20 +113,52 @@
     border-radius: 10px;
 }
 
-
-/* on small screens featured articles are shown in a different format to standard cards */
-@media (max-width:480px) {
-    .article-card.featured:not(.main-article *) {
+/*
+ * show first 6 featured articles in a horizontal format
+ * Note if the user has chosen not to show featured articles, this format applies to the latest articles instead
+*/
+.latest-articles:not(.show-featured-articles *),
+.featured-articles {
+    row-gap: 10px;
+    .article-card {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr auto;
         grid-template-areas:
             "Title Image"
-            "Metadata Image"
-            "Excerpt Image"
-            "Authors Image";
-        
-        .article-card-image img  {
-            aspect-ratio: 1/1;
+            "Metadata Image";
+
+        box-shadow: none;
+    }
+    .article-card-image {
+        padding:0 10px 0 0;
+    }
+    .article-card-image img { 
+        aspect-ratio: 1/1;
+        min-width: 110px;
+        max-width: 120px;
+        border-radius: 5px;
+    }
+    .article-card-excerpt,
+    .article-card-author-names {
+        display: none;
+    }
+}
+@media(min-width: 480px) {
+    .home-page-focus-left, .home-page-focus-right {
+        .main-article {
+            align-self: center;
+
+            .article-card {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "AuthorProfileImages"
+                    "Title"
+                    "Excerpt"
+                    "Image"
+                    "Metadata";
+                    padding-bottom: 20px;
+            }
         }
     }
 }
@@ -170,6 +171,14 @@
         width: calc(300px * 1.25);
         img {
             aspect-ratio: calc((16  * 1.25) / 9 );
+        }
+    }
+    .home-page-focus-left, .home-page-focus-right {
+        .latest-articles:not(.show-featured-articles *),
+        .featured-articles {
+            .article-card {
+                width: 100%;
+            }
         }
     }
 
@@ -207,51 +216,6 @@
     }
 }
 
-/*
- * when the "focus (left)" or "focus (right)" home page views are used, change the layout of the featured cards
- * Note if the user has chosen not to show featured articles, this format applies to the latest articles instead
-*/
-.home-page-focus-left, .home-page-focus-right {
-    .latest-articles:not(.show-featured-articles *),
-    .featured-articles {
-        --gap-between-cards: 5px;
-        .article-card {
-            box-shadow: none;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            grid-template-areas:
-                "Title Image"
-                "Metadata Image";
-            width: 100%;
-            .article-card-image img { 
-                aspect-ratio: 1/1;
-                height: 110px;
-                border-radius: 5px;
-            }
-            .article-card-author-names {
-                display: none;
-            }
-        }
-    }
-}
-@media(min-width: 480px) {
-    .home-page-focus-left, .home-page-focus-right {
-        .main-article {
-            align-self: center;
-
-            .article-card {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                    "AuthorProfileImages"
-                    "Title"
-                    "Excerpt"
-                    "Image"
-                    "Metadata";
-            }
-        }
-    }
-}
 
 /* ------------------------------ */
 /* 4. article-card content styles */
@@ -267,12 +231,11 @@
 
 /* show short divider line under title */
 .article-card-title:after {
-    display: grid;
+    display: block;
     content: '';
     width: 2em;
     border-bottom: 1px solid var(--theme-accent-color)
 }
-
 .article-card-tag {
     width:fit-content;
 
@@ -332,11 +295,13 @@
         margin-right: 5px;
     }
 }
-.article-card-author-profile-images, .article-card-author-names {
+.article-card-author-names li {
+    display: inline;
+}
+.article-card-author-profile-images {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    padding-inline-start: 0;
 }
 .article-card-author-profile-images { 
     align-self: end;
@@ -344,16 +309,6 @@
     margin: 0  0 10px 10px;
     z-index: 500;
 }
-.author-profile-image {
-    margin: 0 -7px 0 0;
-    width:auto;
-    img, svg { 
-        border: 1px solid var(--theme-accent-color);
-        height: 40px;
-        width: 40px;
-    }
-}
-
 .article-card .author-profile-image {
     margin: 0 -7px 0 0;
     img, svg { 
