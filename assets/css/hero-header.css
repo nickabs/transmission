@@ -48,6 +48,12 @@ h1.hero-title {
     color: var(--banner-description-color);
 }
 
+/* metadata items:  date, tags and reading times */
+.hero-date, .hero-tags, .hero-author-list {
+    z-index: 2;
+    font-size: 1.5rem;
+    color: var(--banner-description-color);
+}
 /* ------------------- */
 /* 2. plain hero style */
 /* ------------------- */
@@ -70,13 +76,6 @@ h1.hero-title {
     .hero-cover-image {
         display: none;
 
-    }
-
-    /* metadata items:  date, tags and reading times */
-    .hero-date, .hero-tags, .hero-author-list {
-        z-index: 2;
-        font-size: 1.5rem;
-        color: var(--banner-description-color);
     }
 }
 
@@ -110,7 +109,7 @@ h1.hero-title {
     .hero-description { grid-area: HeroDescription;}
     .hero-title { 
         align-self: self-end;    
-        white-space: nowrap;
+        todowhite-space: nowrap;
         max-width: unset;
     }
     .hero-description { 
@@ -127,17 +126,8 @@ h1.hero-title {
         overflow:hidden;
         object-fit:cover;
         grid-area: 1 / 1 / -1 / -1;
-
-
-    }
-    /* metadata items:  date, tags and reading times */
-    .hero-date, .hero-tags, .hero-author-list {
-        z-index: 2;
-        font-size: 1.5rem;
-        color: var(--banner-description-color);
     }
 }
-
 .hero-style-grayscale  .hero-header {
     filter: grayscale(100%);
 }

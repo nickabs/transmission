@@ -67,7 +67,7 @@
                      "grayscale"
                 ],
                 "default": "plain",
-                "description": "Note the color/greyscale options use the site image as a background"
+                "description": "Note the color/greyscale options use the site publication cover image as a background"
             },
             "enrol_members_banner_type": {
                 "type": "select",
