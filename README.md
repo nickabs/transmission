@@ -9,9 +9,8 @@
 Transmission is a modern [Ghost](https://ghost.org/) theme.
 
 widescreen, tablet and mobile layouts:
-![v1 11 home](https://github.com/nickabs/transmission/assets/4947488/68a22a33-b9d4-49d9-aad6-97106274187d)
-
-![v1 11 page](https://github.com/nickabs/transmission/assets/4947488/ac2b58a8-5da7-4646-b93d-88670597061b)
+![transmission v1 23 home](https://github.com/user-attachments/assets/01b687ec-c118-4414-92f9-d11b4aae3aee)
+![transmission v1 23 post](https://github.com/user-attachments/assets/5cfd6ed9-9d76-4145-a887-c3239855c333)
 
 # Features
 This theme is optimised for traditional blog sites, particularly sites with lots of content and long articles. Features include:
@@ -22,10 +21,10 @@ This theme is optimised for traditional blog sites, particularly sites with lots
 - sharing icons (facebook, twitter, whatsapp, copy link)
 - Search
 - Tags and authors page
-- modern Inter and Menelo font families are installed with the theme
+- modern Inter, Roboto and Menelo font families are installed with the theme
 - infinite pagination (will display a button to Load More posts)
-- article card collection layout options (grid/list)
-
+- configurable layouts: home page, post layout, headers and footers are all configurable
+  
 # Pagespeed scores
 
 <div align="center">
