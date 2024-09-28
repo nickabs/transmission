@@ -63,6 +63,18 @@
   font-size: var(--content-font-size);
 }
 
+/* drop cap on leading paragraph */
+.article-content > p:first-of-type {
+  font-size:2.5rem;
+}
+.article-content > p:first-of-type:first-letter {
+  float: left;
+  font-size: 8.0rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: -5px 10px 0 -5px;
+}
+
 /* margin for headings*/
 .article-content > [id]:not(:first-child) {
   margin-top: 26px;
