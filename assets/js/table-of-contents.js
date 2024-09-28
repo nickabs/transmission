@@ -4,7 +4,7 @@
 (function () {
     tocbot.init({
     tocSelector: '.toc',
-    contentSelector: '.article-content',
+    contentSelector: '.article',
     hasInnerContainers: true
     })
     

@@ -1,7 +1,7 @@
 /*------------------------------------- */
 /* styles used accross the site         */
 /* 1. default styles for the site       */
-/* 2. default site padding              */
+/* 2. default site margins              */
 /* 3. photoswipe lightbox adjustments   */
 /* 4. site header/annoucmenent bar      */
 /* 5. navigation menu                   */
@@ -56,22 +56,51 @@ a:hover {
 }
 
 /***************************/
-/* 2. default site padding */
+/* 2. default site margins */
 /***************************/
-
-/* default padding */
-.site > * {
+.site>* {
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
 }
 
-/* full width elements */
-.site {
-  .hero-header {
-    margin-left: 0;
-    margin-right: 0;
+/* these items are full width, but the contents are limited to the max-container-width using dynamic padding */
+.hero-header,
+.site-footer,
+.site-header {
+    width: 100vw;
+    padding-left: var(--site-edge-padding);
+    padding-right: var(--site-edge-padding);
+}
+.site #announcement-bar-root {
+  width: 100vw;
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article > * {
+  max-width: var(--max-content-width);
+}
+/* images will use the editor 'full' and 'wide' settings only if the selected post layout type does not have sidebars */
+.article {
+  .kg-width-full,
+  .kg-width-wide {
+    display: flex;
+    justify-content: center;
+  }
+  .kg-width-full,
+  .kg-width-full img { 
+    width: 100%;
+    max-width: var(--max-container-width);
+  }
+  .kg-width-wide,
+  .kg-width-wide img { 
+    width: 100%;
+    max-width: calc(var(--max-container-width) * 0.8);
   }
 }
+
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */
@@ -99,44 +128,41 @@ a:hover {
 /* -------------------------------------- */
 /* 4. site header/annoucmenent bar        */
 /* -------------------------------------- */
-.site-header {
-  border-bottom: 0.25px solid var(--border-color);
+.site-header { 
   background-color: var(--background-color);
-  justify-content: center;
-  position: absolute;
-  width: 100%;
   top: var(--announcement-bar-height); /* zero when there is no announcement bar */
-  z-index: 1000; /* show above page content */
   display: flex;
   height:var(--site-header-height); 
-  flex-direction: row;
-  font-size: 1.5rem;
-  font-weight: 700;
+  flex-direction: row ;
+  justify-self: center;
   align-items: center;
+  z-index: 1000;
+  position:absolute;
+  .logo {
+    margin-right: auto;
+  }
+  .icon:not(.logo) {
+    padding-left: 7px;
+  }
 }
 #announcement-bar-root {
-  position: fixed;
+  position: absolute;
   top: 0;
-  width: 100%;
   z-index: 1000;
   .gh-announcement-bar {
     height: var(--announcement-bar-height);
   }
 }
-
+.fixed-navigation-bar #announcement-bar-root,
 .fixed-navigation-bar .site-header{
   position: fixed;
-}
-.nav {
-  flex-grow:1;
 }
 .signin, .signup, .account {
   font-size: 1.1rem;
   letter-spacing: -0.018rem;
   font-weight: 800;
-  display: flex;
-  place-content: center;
-  place-items: center;
+  text-align: center;
+  text-wrap: nowrap;
 }
 .signin {
   font-weight: 400;
@@ -148,40 +174,21 @@ a:hover {
   border-radius: 6px;
   border: 1px solid var(--border-color);
 }
-.light-mode ,
-.dark-mode 
-{
-  height: 20px;
-  width: 20px;
-}
-
-/* keep the icons following the nav bar on the rhs */
-.site-header > *:nth-child(3) { 
-  margin-left: auto;
-}
-
 /* dark/light mode icons */
-.dark-mode,
-.light-mode {
+.dark-mode.icon,
+.light-mode.icon{
     display: none;
 }
-[data-color-scheme=dark] .light-mode, [data-color-scheme=light] .dark-mode { 
-    display: block;
+[data-color-scheme=dark] .light-mode.icon, [data-color-scheme=light] .dark-mode.icon { 
+    display: inline-flex;
 }
 
-/* ensure that the header buttons, menus etc do not stretch to the edges of large screens */
-@media (min-width: 1300px) {
-  .site .gh-announcement-bar > *,
-  .site-header {
-    padding-left: var(--large-screen-edge-padding);
-    padding-right: var(--large-screen-edge-padding);
-  }
-}
 /* -------------------------------------- */
 /* 5. navigation menu                     */
 /* -------------------------------------- */
 /* default display for mobile devices (hamburger nav) */
 .nav {
+  flex: 1;
   display: grid;
   grid-template-areas:
     "NavHeader" 
@@ -287,7 +294,7 @@ a:hover {
       align-items: center;
       flex-wrap: wrap;
       font-size: 1.4rem;
-      margin: 0 20px;
+      margin: 0 15px;
     }
     .nav-header,
     .nav-toggle {
@@ -347,10 +354,12 @@ a:hover {
 /* 6. site footer (privacy and copyright) */
 /* -------------------------------------- */
 
-/* make room for social and toc icons */
-.post-template, .page-template {
-  .site-footer {
-      margin-bottom: 35px; 
+/* make room for social and toc icons - these move to the bottom of the screen on smaller screens*/
+@media (max-width: 760px) {
+  .post-template, .page-template {
+    .site-footer {
+        margin-bottom: 25px; 
+    }
   }
 }
 .site-footer {
@@ -360,7 +369,7 @@ a:hover {
     color: var(--secondary-text-color);
     margin-top: var(--section-gap);
     padding-top: 10px;
-    padding-bottom: 10px;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     border-top: 0.25px solid var(--border-color);
@@ -373,12 +382,6 @@ a:hover {
     text-decoration-color: var(--link-color);
     color: var(--link-color);
     opacity: 0.8;
-}
-.site-footer {
-  display:flex;
-  justify-content: space-around;
-  width:100%;
-  border-bottom: 0.25px solid var(--border-color);
 }
 
 /* only show the link to the transmission github on larger screens */
@@ -397,22 +400,6 @@ a:hover {
 @media (min-width:760px) {
   .footer-links .theme-link {
     display: inline-flex;
-  }
-}
-
-/* large screens: pad footer contents do not stetch beyond max-container-size */
-@media (min-width:1300px) {
-  .post-template,
-  .page-template {
-    &:has(.sidebar-layout) {
-      .site-footer {
-        margin-bottom: 0;
-      }
-    }
-    .site-footer {
-      padding-right: var(--large-screen-edge-padding);
-      padding-left: var(--large-screen-edge-padding);
-    }
   }
 }
 
@@ -456,7 +443,7 @@ a:hover {
     }
   }
 }
-/* hide usual post assides when notifying the user about paid content */
+/* hide usual post asides when notifying the user about paid content */
 .site:has(.gh-post-upgrade-cta) {
   .related-articles,
   .one-time-payment,

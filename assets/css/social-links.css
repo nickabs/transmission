@@ -20,7 +20,6 @@
     justify-content: right;
     align-items: center;
     padding:5px;
-    right:var(--edge-padding);
 }
 .fixed-navigation-bar .social-links-container {
     position: fixed;
@@ -43,12 +42,6 @@
             top:67px;
         }
     }
-}
-@media (min-width:1300px) {
-    .social-links .social-links-container {
-        padding-right: var(--large-screen-edge-padding);
-    }
-
 }
 #copy-link .tooltip {
     position: absolute;

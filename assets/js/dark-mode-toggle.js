@@ -6,9 +6,10 @@
 */
 
 (function() {
-    var darkModeToggle = document.getElementById("dark-mode-toggle");
+    var darkModeButton = document.querySelector("button.dark-mode");
+    var lightModeButton = document.querySelector("button.light-mode");
 
-    if (! darkModeToggle) {
+    if (! darkModeButton || ! lightModeButton) {
         return;
     }
 
@@ -18,7 +19,7 @@
         document.documentElement.setAttribute('data-color-scheme', storedDataColorTheme);
     }
 
-    darkModeToggle.onclick = function() {
+    function onClick(event) {
         var currentTheme = document.documentElement.getAttribute("data-color-scheme");
         var targetDataColorTheme = currentTheme == "dark" ? "light" : "dark";
 
@@ -33,4 +34,7 @@
             commentsScript.setAttribute('data-color-scheme', targetDataColorTheme);
         };
     }
+    darkModeButton.addEventListener('click', onClick);
+    lightModeButton.addEventListener('click', onClick);
+
   })();

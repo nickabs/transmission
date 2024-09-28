@@ -14,7 +14,7 @@
 /*------------------------------------------------------------ */
 /* map html elements to the grid areas used in the grids below */
 /*------------------------------------------------------------ */
-.article-content { grid-area: ArticleContent; }
+.article { grid-area: ArticleContent; }
 .featured-articles { grid-area: FeaturedArticles; }
 .hero-header { grid-area: HeroHeader; }
 .main-article { grid-area: MainArticle; }

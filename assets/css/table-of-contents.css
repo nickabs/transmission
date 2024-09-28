@@ -121,7 +121,7 @@
     .table-of-contents.footer-layout {
         #toc-toggle svg,
         #toc-toggle:before {
-            margin-left: var(--large-screen-edge-padding);
+            margin-left: var(--site-edge-padding);
         }
     }
     .table-of-contents.sidebar-layout {
@@ -135,7 +135,7 @@
         }
         .toc-container {
             display: flex;
-            margin-left: var(--large-screen-edge-padding);
+            margin-left: var(--site-edge-padding);
             width:fit-content;
             position: sticky;
             top: 72px;

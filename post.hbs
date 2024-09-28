@@ -1,6 +1,7 @@
 {{!< default}}
 
 {{#post}}
+    {{> "hero-header"}}
     {{!-- toc and social icons --}}
     {{#match @custom.post_layout_type "Sidebars / no feature image"}} 
         {{> "asides" layout="sidebar-layout"}}
@@ -10,10 +11,8 @@
         {{> "asides" layout="footer-layout"}}
     {{/match}}
 
-    {{> "hero-header"}}
-
     {{!-- outputting post or page content --}}
-    <article class="article-content">
+    <main class="article">
         {{#if feature_image }}
             {{#match @custom.post_layout_type "Sidebars / feature image"}} 
                 {{> "feature_image" }}
@@ -24,7 +23,7 @@
             {{/match}}
         {{/if}}
         {{content}}
-    </article>
+    </main>
 
     {{#if @custom.show_one_time_payment_request}}
         <aside class="one-time-payment">
@@ -59,7 +58,6 @@
 
         {{/unless}}
     {{/if}}
-
 
     {{#if @custom.show_related_posts}}
         {{#get "posts" limit="6" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}

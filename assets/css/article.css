@@ -2,46 +2,7 @@
 /* styling for all article content */
 /* ------------------------------- */
 
-/* default article view is a single column with all user content inside a variable margin */
-
-.article-content {
-    max-width: var(--max-content-width);
-    justify-self: center;
-}
-
-/* display wide/full width images on larger screens where sidebars are not used 
-
- the article-content grid is as follows:
-     |<--- full --->|<--- wide --->|<--- main --->|<--- wide --->|<--- full --->|
-[full-start]     [wide-start]   [main-start]     [main-end]     [wide-end]      [full-end]
-*/
- @media (min-width:760px) {
-  .site:not(:has(.sidebar-layout)) {
-    .article-content {
-      --main: var(--max-content-width);
-      --wide: minmax(0, calc((var(--max-container-width) - var(--max-content-width)) / 2));
-      --color: minmax(var(--section-gap), 1fr);
-      display: grid;
-
-      grid-template-columns:
-          [full-start] var(--color)
-          [wide-start] var(--wide)
-          [main-start] var(--main) [main-end] 
-          var(--wide) [wide-end] 
-          var(--color) [full-end];
-      > * {
-        grid-column: main;
-      }
-      .kg-width-wide {
-        grid-column: wide;
-      }
-      .kg-width-full {
-        grid-column: full;
-      }
-    }
-  }
-}
-.article-content img {
+.article img {
     &:not:has(.icon),
     &:not:has(.kg-bookmark-icon) {
       display: block;
@@ -50,24 +11,24 @@
       height: 100%;
       }
 }
-.article-content > :first-child{
+.article > :first-child{
   margin-top:15px;
 }
 @media (min-width: 760px) {
-  .article-content :first-child{
+  .article :first-child{
     margin-top:0px;
   }
 }
-.article-content > * + * {
+.article > * + * {
   margin-top:var(--section-gap);
   font-size: var(--content-font-size);
 }
 
 /* drop cap on leading paragraph */
-.article-content > p:first-of-type {
+.article > p:first-of-type {
   font-size:2.5rem;
 }
-.article-content > p:first-of-type:first-letter {
+.article > p:first-of-type:first-letter {
   float: left;
   font-size: 8.0rem;
   font-weight: bold;
@@ -76,24 +37,24 @@
 }
 
 /* margin for headings*/
-.article-content > [id]:not(:first-child) {
+.article > [id]:not(:first-child) {
   margin-top: 26px;
 }
 h1 { font-size: var(--h1-font-size); }
 h2 { font-size: var(--h2-font-size); }
 h3 { font-size: var(--h3-font-size); }
 sup { font-size: var(--content-sup-font-size); }
-.article-content h1, .article-content.h2, .article-content.h3 {
+.article h1, .article.h2, .article.h3 {
     margin-block:0 0;
 }
 
 /* A margin before/after HRs and blockquotes */
-.article-content hr,
-.article-content ul,
-.article-content blockquote {
+.article hr,
+.article ul,
+.article blockquote {
     margin-top: 2rem; 
 }
-.article-content blockquote {
+.article blockquote {
     font-style: italic;
     padding: 0 2rem;
     border-left: 0.1rem solid var(--theme-accent-color);
@@ -112,15 +73,15 @@ figcaption {
 .article-card figcaption {
   display: none;
 }
-.article-content li + li {
+.article li + li {
     margin-top: 0.8rem;
 }
-.article-content a span,
-.article-content a {
+.article a span,
+.article a {
   color: var(--link-color);
   opacity: 1;
 }
-.article-content a:hover {
+.article a:hover {
     text-decoration: underline;
     text-decoration-color: var(--link-color);
     opacity: 0.8;
@@ -132,7 +93,7 @@ figcaption {
 
 /* flex table when on a mobile */
 @media(max-width:480px) {
-  .article-content table{
+  .article table{
     table-layout:auto !important;
   }
 }
@@ -155,22 +116,22 @@ figcaption {
 #references + table tbody tr td {
   border-bottom: 1px solid var(--border-color);
 }
-.article-content table {
+.article table {
   border-collapse: collapse;
   margin-top: var(--section-gap);
   width: 100%!important;
 }
-.article-content table thead, tfoot tr {
+.article table thead, tfoot tr {
   border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
   text-transform: uppercase;
   text-align: left;
   padding: 0.5rem;
 }
-.article-content table td {
+.article table td {
   padding: 5px;
 }
-.article-content tr td:first-child {
+.article tr td:first-child {
     min-width: 1%;
     max-width: 25%;
     white-space: nowrap;

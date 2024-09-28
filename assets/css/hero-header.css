@@ -60,7 +60,6 @@ h1.hero-title {
 .hero-style-plain {
     .hero-header {
         background-color: var(--banner-background-color);
-        width: 100vw;
         height: 190px;
         gap: 7px;
         display: flex;
@@ -82,12 +81,11 @@ h1.hero-title {
 /* ----------------------------- */
 /* 3. color/grayscale hero style */
 /* ----------------------------- */
-.hero-style-color,
+.hero_style_color,
 .hero-style-grayscale {
     .hero-header {
         background-color: var(--banner-background-color);
-        width: 100vw;
-        height: 33vh;
+        height: 40vh;
         gap: 7px;
         justify-items: center;
         align-items: center;

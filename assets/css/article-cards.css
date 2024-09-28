@@ -184,9 +184,6 @@
             .article-card {
                 width: 100%;
                 box-shadow: none;
-                > * {
-                    padding: 0;
-                }
             }
         }
     }

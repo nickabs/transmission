@@ -2,11 +2,13 @@
 
 {{> "hero-header"}}
 
-<article class="main-article">
-    {{#foreach posts limit=1}}
-        {{> "article-card" image_size="m" }}
-    {{/foreach}}
-</article>
+<main> 
+    <article class="main-article">
+        {{#foreach posts limit=1}}
+            {{> "article-card" image_size="m" }}
+        {{/foreach}}
+    </article>
+</main>
 
 {{#if @custom.show_featured_posts }}
     <aside class="featured-articles">

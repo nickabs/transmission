@@ -3,20 +3,20 @@
 /* ------------------------------------ */
 .icon,
 .icon {
+    display: inline-flex;
+    padding:0;
+    align-items: center;
     color: var(--secondary-title-color);
     background-color: transparent;
     border: 0;
     outline: none;
+    cursor: pointer;
     img,
     svg {
         width: 20px;
         height: 20px;
         stroke: currentColor;
     }
-}
-
-.icon {
-    cursor: pointer;
 }
 .icon:hover .icon {
     opacity: 0.8;

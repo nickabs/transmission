@@ -44,8 +44,6 @@
     align-items:center;
     text-align: center;
     margin-top: var(--section-gap);
-    margin-left: var(--edge-padding);
-    margin-right: var(--edge-padding);
     padding: 0;
     background-color: var(--banner-background-color);
     border: 1px solid var(--border-color);
@@ -60,7 +58,6 @@
     overflow: hidden;
 
 }
-
 .enrol-background svg {
     z-index: 0;
     position: absolute;

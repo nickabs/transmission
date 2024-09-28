@@ -26,9 +26,8 @@
     --section-gap: max(1.5vw,24px);
     --max-content-width: 720px;
     --max-container-width: 1300px; 
-    --edge-padding: 20px; 
     --edge-padding: max(5vmin, 20px); 
-    --large-screen-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1300px */
+    --site-edge-padding: max(5vmin, 20px); 
 }
 
 /* adjust position of headers to make room for announcement bar */
@@ -46,6 +45,12 @@
         --h1-font-size: 3.2rem;
         --h2-font-size: 2.5rem;
         --h3-font-size: 2.0rem;
+    }
+}
+
+@media (min-width: 1300px) {
+    :root {
+        --site-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1300px */
     }
 }
 
