@@ -84,11 +84,14 @@ a:hover {
 }
 
 /* images will use the editor 'full' and 'wide' settings when the selected post layout type does not use sidebars */
+.article .feature-image {
+  display: flex;
+  justify-content: center;
+}
 .kg-image-card,
 .kg-gallery-card,
 .article .feature-image {
   width: 100vw;
-  display: inline-flex;
   &.kg-width-full,
   &.kg-width-full img { 
     max-width: var(--max-container-width);
