@@ -110,19 +110,15 @@ h1.hero-title {
         width:inherit;
         height: inherit;
         object-fit:cover;
+        filter: blur(3px);
     }
-    .hero-description{
-        color: var(--banner-title-color);
-    }
+    .hero-description,
     .hero-date,
     .hero-tags,
     .hero-tags a,
     .author-name a {
         color: var(--banner-title-color);
         font-weight: bold;
-        backdrop-filter: blur(20px); 
-        border-radius: 10px;
-        padding: 1.5px;
     }
 }
 .hero-style-grayscale-image .hero-image {
