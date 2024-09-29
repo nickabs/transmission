@@ -122,5 +122,5 @@ h1.hero-title {
     }
 }
 .hero-style-grayscale-image .hero-image {
-    filter: grayscale(100%);
+    filter: blur(3px) grayscale(100%);
 }
