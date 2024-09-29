@@ -82,21 +82,19 @@ a:hover {
 .article > * {
   max-width: var(--max-content-width);
 }
-/* images will use the editor 'full' and 'wide' settings only if the selected post layout type does not have sidebars */
-.article {
-  .kg-width-full,
-  .kg-width-wide {
-    display: flex;
-    justify-content: center;
-  }
-  .kg-width-full,
-  .kg-width-full img { 
-    width: 100%;
+
+/* images will use the editor 'full' and 'wide' settings when the selected post layout type does not use sidebars */
+.kg-image-card,
+.kg-gallery-card,
+.article .feature-image {
+  width: 100vw;
+  display: inline-flex;
+  &.kg-width-full,
+  &.kg-width-full img { 
     max-width: var(--max-container-width);
   }
-  .kg-width-wide,
-  .kg-width-wide img { 
-    width: 100%;
+  &.kg-width-wide,
+  &.kg-width-wide img { 
     max-width: calc(var(--max-container-width) * 0.8);
   }
 }

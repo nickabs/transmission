@@ -11,12 +11,12 @@
 .hero-header {
     margin-top: var(--site-top-gap);
     margin-bottom: var(--section-gap);
-    padding: 0;
 }
 .hero-author-list {
     display: flex;
     align-items: center;
     list-style: none;
+    flex-wrap: wrap;
 
     li:nth-child(1 of .author-name) {
         margin-left: 25px;
@@ -27,7 +27,6 @@
 }
 .hero-title,
 .hero-description {
-    text-align: center;
     z-index: 3;
     font-family: var(--secondary-font-sans);
 }
@@ -72,7 +71,7 @@ h1.hero-title {
     .hero-custom-excerpt {
         display:none;
     }
-    .hero-cover-image {
+    .hero-image {
         display: none;
 
     }
@@ -81,45 +80,49 @@ h1.hero-title {
 /* ----------------------------- */
 /* 3. color/grayscale hero style */
 /* ----------------------------- */
-.hero_style_color,
-.hero-style-grayscale {
+.home-template .hero-header {
+    grid-template-rows: min-content min-content 0 0;
+}
+.hero-style-color-image,
+.hero-style-grayscale-image-image {
     .hero-header {
         background-color: var(--banner-background-color);
-        height: 40vh;
+        height: 43vh;
         gap: 7px;
-        justify-items: center;
-        align-items: center;
-        text-align: center;
         border-bottom: 0.25px solid var(--border-color);
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "HeroTitle"
-            "HeroDescription";
-    }
-    .hero-title { grid-area: HeroTitle;}
-    .hero-description { grid-area: HeroDescription;}
-    .hero-title { 
-        align-self: self-end;    
-        max-width: unset;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
     .hero-description { 
-        align-self: self-start;    
         max-width: var(--max-content-width);
     }
     .hero-custom-excerpt {
         display:none;
     }
-    .hero-cover-image {
+    .hero-image {
         mask-image: var(--hero-background-gradient);
-        width:100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:inherit;
         height: inherit;
-        overflow:hidden;
         object-fit:cover;
-        grid-area: 1 / 1 / -1 / -1;
+    }
+    .hero-date,
+    .hero-tags,
+    .hero-tags a,
+    .author-name a {
+        color: var(--banner-title-color);
+        font-weight: bold;
+        backdrop-filter: blur(20px); /* Blur the background behind the element */
+        border-radius: 10px;
+        padding: 1.5px;
     }
 }
-.hero-style-grayscale  .hero-cover-image {
+.hero-style-grayscale-image-image  .hero-image {
     filter: grayscale(100%);
 }
