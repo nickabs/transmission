@@ -94,7 +94,7 @@ figcaption {
 /* flex table when on a mobile */
 @media(max-width:480px) {
   .article table{
-    table-layout:auto !important;
+    todotable-layout:auto !important;
   }
 }
 
@@ -120,6 +120,9 @@ figcaption {
   border-collapse: collapse;
   margin-top: var(--section-gap);
   width: 100%!important;
+  colgroup col {
+    width: max-content!important;
+  }
 }
 .article table thead, tfoot tr {
   border-top: 2px solid var(--border-color);
