@@ -42,16 +42,15 @@ h1.hero-title {
     font-weight: bold;
     color: var(--banner-title-color);
 }
+.hero-date,
+.hero-tags,
+.hero-tags a,
+.hero-author-list,
+.hero-author-list a,
 .hero-description {
     font-size: clamp(1rem, calc(1vw+1.65vh), 3rem);
     color: var(--banner-description-color);
-}
-
-/* metadata items:  date, tags and reading times */
-.hero-date, .hero-tags, .hero-author-list {
     z-index: 2;
-    font-size: 1.5rem;
-    color: var(--banner-description-color);
 }
 /* ------------------- */
 /* 2. plain hero style */
@@ -84,7 +83,7 @@ h1.hero-title {
     grid-template-rows: min-content min-content 0 0;
 }
 .hero-style-color-image,
-.hero-style-grayscale-image-image {
+.hero-style-grayscale-image{
     .hero-header {
         background-color: var(--banner-background-color);
         height: 43vh;
@@ -112,17 +111,20 @@ h1.hero-title {
         height: inherit;
         object-fit:cover;
     }
+    .hero-description{
+        color: var(--banner-title-color);
+    }
     .hero-date,
     .hero-tags,
     .hero-tags a,
     .author-name a {
         color: var(--banner-title-color);
         font-weight: bold;
-        backdrop-filter: blur(20px); /* Blur the background behind the element */
+        backdrop-filter: blur(20px); 
         border-radius: 10px;
         padding: 1.5px;
     }
 }
-.hero-style-grayscale-image-image  .hero-image {
+.hero-style-grayscale-image .hero-image {
     filter: grayscale(100%);
 }
