@@ -85,17 +85,20 @@ h1.hero-title {
 @media (orientation: portrait) {
     .hero-style-color-image,
     .hero-style-grayscale-image{
+        .hero-image ,
         .hero-header {
             height: 250px;
+            width: 100%;
         }
     }
 }
 @media (orientation: landscape) {
     .hero-style-color-image,
     .hero-style-grayscale-image{
+        .hero-image ,
         .hero-header {
-            max-height: 350px;
-            min-height: 25vh;
+            height:350px;
+            width: 100%;
         }
     }
 }
@@ -129,10 +132,13 @@ h1.hero-title {
         position: absolute;
         top: 0;
         left: 0;
-        width:inherit;
-        height: inherit;
+        todowidth:inherit;
+        todoheight: inherit;
+        todomin-height: inherit;
+        todomax-height: inherit;
         object-fit:cover;
         filter: blur(3px);
+
     }
     .hero-description,
     .hero-date,
