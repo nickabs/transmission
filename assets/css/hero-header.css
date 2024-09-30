@@ -82,11 +82,27 @@ h1.hero-title {
 .home-template .hero-header {
     grid-template-rows: min-content min-content 0 0;
 }
+@media (orientation: portrait) {
+    .hero-style-color-image,
+    .hero-style-grayscale-image{
+        .hero-header {
+            height: 250px;
+        }
+    }
+}
+@media (orientation: landscape) {
+    .hero-style-color-image,
+    .hero-style-grayscale-image{
+        .hero-header {
+            max-height: 350px;
+            min-height: 25vh;
+        }
+    }
+}
 .hero-style-color-image,
 .hero-style-grayscale-image{
     .hero-header {
         background-color: var(--banner-background-color);
-        height: 43vh;
         gap: 7px;
         border-bottom: 0.25px solid var(--border-color);
         position: relative;
@@ -95,6 +111,12 @@ h1.hero-title {
         align-items: center;
         justify-content: center;
         text-align: center;
+    }
+    .author-profile-image  {
+        svg, img {
+            height: 32px;
+            width: 32px;
+        }
     }
     .hero-description { 
         max-width: var(--max-content-width);
