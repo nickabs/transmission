@@ -37,7 +37,7 @@
     }
 }
 h1.hero-title {
-    font-size: clamp(3rem, calc(1.5vw+3vh), 8rem);
+    font-size: clamp(3rem, calc(4vw+2vh), 8rem);
     line-height: 1.3;
     font-weight: bold;
     color: var(--banner-title-color);
@@ -82,26 +82,6 @@ h1.hero-title {
 .home-template .hero-header {
     grid-template-rows: min-content min-content 0 0;
 }
-@media (orientation: portrait) {
-    .hero-style-color-image,
-    .hero-style-grayscale-image{
-        .hero-image ,
-        .hero-header {
-            height: 250px;
-            width: 100%;
-        }
-    }
-}
-@media (orientation: landscape) {
-    .hero-style-color-image,
-    .hero-style-grayscale-image{
-        .hero-image ,
-        .hero-header {
-            height:350px;
-            width: 100%;
-        }
-    }
-}
 .hero-style-color-image,
 .hero-style-grayscale-image{
     .hero-header {
@@ -114,6 +94,10 @@ h1.hero-title {
         align-items: center;
         justify-content: center;
         text-align: center;
+        max-height: 450px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+        width: 100%;
     }
     .author-profile-image  {
         svg, img {
@@ -132,10 +116,8 @@ h1.hero-title {
         position: absolute;
         top: 0;
         left: 0;
-        todowidth:inherit;
-        todoheight: inherit;
-        todomin-height: inherit;
-        todomax-height: inherit;
+        width:100%;
+        height:100%;
         object-fit:cover;
         filter: blur(3px);
 
