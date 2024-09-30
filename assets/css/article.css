@@ -91,37 +91,15 @@ figcaption {
 /* tables               */
 /*----------------------*/
 
-/* flex table when on a mobile */
-@media(max-width:480px) {
-  .article table{
-    todotable-layout:auto !important;
-  }
-}
-
- /* override the inline styles in tables copied from google sheets
- do not change the references table fonts */
-:not(#references) + table * {
-  @media (max-width: 480px) {
-    font-size: 1.0rem!important;
-  }
-  font-family: var(--font-sans)!important ;
-  font-size: var(--content-font-size)!important;
-  tr:nth-child(even) {
-    background-color: var(--secondary-background-color);
-  }
-  tr:nth-child(odd) {
-    background-color: var(--background-color);
-  }
-}
-#references + table tbody tr td {
-  border-bottom: 1px solid var(--border-color);
-}
+ /* override the inline styles in tables copied from google sheets */
 .article table {
+  table-layout:auto!important;
   border-collapse: collapse;
   margin-top: var(--section-gap);
   width: 100%!important;
-  colgroup col {
-    width: max-content!important;
+  td {
+    overflow-wrap:break-word!important;
+    padding: 5px;
   }
 }
 .article table thead, tfoot tr {
@@ -131,14 +109,17 @@ figcaption {
   text-align: left;
   padding: 0.5rem;
 }
-.article table td {
-  padding: 5px;
+:not(#references) + .article table * {
+  font-size: clamp(1.0rem, 1.5vw, 1.7rem);
+  tr:nth-child(even) {
+    background-color: var(--secondary-background-color);
+  }
+  tr:nth-child(odd) {
+    background-color: var(--background-color);
+  }
 }
-.article tr td:first-child {
-    min-width: 1%;
-    max-width: 25%;
-    white-space: nowrap;
-    padding-right: 10px;
+#references + table tbody tr td {
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* ----------------- */
