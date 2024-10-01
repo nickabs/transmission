@@ -14,7 +14,7 @@
 /*------------------------------------------------------------ */
 /* map html elements to the grid areas used in the grids below */
 /*------------------------------------------------------------ */
-.article { grid-area: ArticleContent; }
+.article { grid-area: Article; }
 .featured-articles { grid-area: FeaturedArticles; }
 .hero-header { grid-area: HeroHeader; }
 .main-article { grid-area: MainArticle; }
@@ -117,7 +117,7 @@
 .site.post-template, .site.page-template {
     grid-template-areas:
     "HeroHeader"
-    "ArticleContent"
+    "Article"
     "OneTimePaymentRequest"
     "Comments"
     "Enrol"
@@ -126,6 +126,7 @@
     "SiteFooter"
     "SocialLinks";
 }
+/* here is the problem todo */
 @media (min-width: 760px) { 
 
     /* page & post view tablet with sidebar */
@@ -134,7 +135,7 @@
             grid-template-columns: 6fr 1fr; 
             grid-template-areas:
                 "HeroHeader HeroHeader"
-                "ArticleContent SocialLinks"
+                "Article SocialLinks"
                 "OneTimePaymentRequest SocialLinks"
                 "Comments SocialLinks"
                 "Enrol SocialLinks"
@@ -142,7 +143,7 @@
                 "Pagination SocialLinks"
                 "TableOfContents TableOfContents"
                 "SiteFooter SiteFooter";
-            justify-items: center;
+            todo-breaking-justify-items: center;
         }
     }
 }
@@ -153,7 +154,7 @@
             grid-template-columns: 1fr var(--max-content-width) 1fr;
             grid-template-areas:
                 "HeroHeader HeroHeader HeroHeader"
-                "TableOfContents ArticleContent SocialLinks"
+                "TableOfContents Article SocialLinks"
                 "TableOfContents OneTimePaymentRequest SocialLinks"
                 "TableOfContents Comments SocialLinks"
                 "TableOfContents Enrol SocialLinks"

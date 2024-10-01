@@ -26,7 +26,7 @@
     --section-gap: max(1.5vw,24px);
     --max-content-width: 720px;
     --max-container-width: 1300px; 
-    --edge-padding: max(5vmin, 20px); 
+    --edge-padding: max(3vmin, 20px); 
     --site-edge-padding: max(5vmin, 20px); 
 }
 

@@ -99,6 +99,7 @@ h1.hero-title {
         padding-bottom: 35px;
         width: 100%;
     }
+     
     .author-profile-image  {
         svg, img {
             height: 32px;
@@ -116,7 +117,7 @@ h1.hero-title {
         position: absolute;
         top: 0;
         left: 0;
-        width:100%;
+        width:100vw;
         height:100%;
         object-fit:cover;
         filter: blur(3px);

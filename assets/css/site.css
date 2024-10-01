@@ -67,17 +67,20 @@ a:hover {
 .hero-header,
 .site-footer,
 .site-header {
-    width: 100vw;
+    width: inherit;
     padding-left: var(--site-edge-padding);
     padding-right: var(--site-edge-padding);
 }
 .site #announcement-bar-root {
   width: 100vw;
+  padding-left: 0;
+  padding-right: 0;
 }
 .article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .article > * {
   max-width: var(--max-content-width);
@@ -101,6 +104,11 @@ a:hover {
   }
 }
 
+pre {
+  width: inherit;
+  overflow: auto; /* Show scrollbars when content overflows */
+  padding: inherit;
+}
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */

@@ -131,7 +131,6 @@ code[class*=language-] {
     line-height: 1.5;
 	  font-size: 1.4rem;
     font-family: var(--font-mono);
-    max-width: 90vw;
 }
 
 /* make output lines in code blocks not selectable */
