@@ -126,7 +126,6 @@
     "SiteFooter"
     "SocialLinks";
 }
-/* here is the problem todo */
 @media (min-width: 760px) { 
 
     /* page & post view tablet with sidebar */
@@ -143,7 +142,6 @@
                 "Pagination SocialLinks"
                 "TableOfContents TableOfContents"
                 "SiteFooter SiteFooter";
-            todo-breaking-justify-items: center;
         }
     }
 }

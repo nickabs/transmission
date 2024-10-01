@@ -104,11 +104,6 @@ a:hover {
   }
 }
 
-pre {
-  width: inherit;
-  overflow: auto; /* Show scrollbars when content overflows */
-  padding: inherit;
-}
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
 /* ---------------------------------- */
