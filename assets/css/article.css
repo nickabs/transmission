@@ -125,12 +125,11 @@ figcaption {
 /* ----------------- */
 /* code highlighting */
 /* ----------------- */
-.article pre,
-.article code {
-    hyphens: none;
+.article pre {
     line-height: 1.5;
 	  font-size: 1.4rem;
     font-family: var(--font-mono);
+    max-width: 100%;
     max-width: 90vw; /* not sure why this is  needed, but without it the scroll bar does not show on overflow*/
 }
 
