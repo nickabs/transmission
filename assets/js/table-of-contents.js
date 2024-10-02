@@ -17,7 +17,7 @@ window.onload = function() {
       // Force a repaint
       toc.style.display = 'none';
       toc.offsetHeight;
-      toc.style.display = 'block';
+      toc.style.display = 'flex';
   }
 };
 

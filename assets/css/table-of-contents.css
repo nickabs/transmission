@@ -2,38 +2,23 @@
 /* table of contents               */
 /* ------------------------------- */
 
-/* default view is for mobile view */
-/* table of contents icon shown on bottom left */
-
+/* positon table of contents icon bottom left for mobile views */
+.toc-container,
 .table-of-contents {
     z-index: 5;
-    left: 40px;
     bottom: 40px;
+    left: var(--site-edge-padding);
     position: fixed;
-}
-.toc-close-icon,
-.toc-open-icon {
-    display: none;
-}
-.toc-open-icon {
-    display: block;
-}
-.toc-open .toc-close-icon {
-    display: block;
-}
-#toc-toggle { /* fix to remove flash on click */
-    position: fixed;
-    left: -40px;
-    bottom: -40px;
 }
 #toc-toggle svg ,
 #toc-toggle:before {
-    display:block;
+    display:flex;
     position: fixed;
-    left: 40px;
+    left: var(--site-edge-padding);
     bottom: 22px;
     transform: translateX(-50%) translateY(50%);
 }
+
 #toc-toggle svg {
     border-radius: 50%;
     background-color: var(--background-color);
@@ -41,6 +26,8 @@
     width: 35px;
     padding:3px;
 }
+
+/* the menu toggle has a 'halo' showing reading progress */
 #toc-toggle:before {
     background-image: conic-gradient(var(--conic-gradient)); /* set by table-of-contents.js */
     border-radius: 50%;
@@ -50,35 +37,22 @@
     opacity: .5;
 }
 
-@keyframes showToc {
-    from {
-        opacity: 0; 
-        scale: 0;
-    }
-    to {
-        opacity: 1; 
-        scale: 1;
-    }
-}
 .toc-container {
     border: 0.25px solid var(--border-color);
     border-radius: 10px;
     height:auto;
     font-weight:200;
     font-size: 1.4rem;
-    .toc-header {
+    h1.toc-title {
         margin:0;
         padding:5px 10px;
         font-weight:800;
+        font-size: 1.4rem;
         border-bottom: 1px solid var(--border-color); 
     }
     .toc {
         padding:10px;
     }
-}
-.toc-container,
-#toc-toggle .toc-close-icon {
-    display: none;
 }
 
 /* override tocbot color defaults */
@@ -96,15 +70,37 @@
     padding-bottom: 3px;
 }
 
+/* TOC toggle settingsa */
+.toc-close-icon {
+    display: none;
+}
+.toc-open-icon {
+    display: block;
+}
+.toc-open .toc-close-icon {
+    display: block;
+}
+.toc-container {
+    display: none;
+}
+
+/* animate opening of TOC */
+@keyframes showToc {
+    from {
+        opacity: 0; 
+        scale: 0;
+    }
+    to {
+        opacity: 1; 
+        scale: 1;
+    }
+}
 .toc-open {
     .toc-container {
         display: flex;
         flex-direction: column;
         animation: showToc 300ms ease-in-out both;
         background-color: var(--banner-background-color);
-        position: fixed;
-        left:50px;
-        bottom: 50px;
     }
     /* toggle open/close icon */
     #toc-toggle .toc-close-icon {
@@ -115,36 +111,33 @@
     }
 }
 
-/* On larger screens, TOC will stay in the same spot on the left hand side of the page 
+/* On larger screens using sidebar layout, the§ TOC will stay in the same spot on the left hand side of the page 
 (the sidebar-layout property is set by a user selected custom option  */
 @media (min-width:1300px) {
-    .table-of-contents.footer-layout {
-        #toc-toggle svg,
-        #toc-toggle:before {
-            margin-left: var(--site-edge-padding);
-        }
-    }
     .table-of-contents.sidebar-layout {
-        display: flex;
-        flex-direction: column;
+        inset: auto;
         position: relative;
-        bottom:0;
-        left:0;
+        display: flex;
+        flex-direction: column; /* ensures the container scrolls vertically, needed by position sticky below */
+        align-items: end;
+        padding-left: var(--edge-padding);
+        padding-right: 5vw;
         #toc-toggle {
             display: none;
         }
         .toc-container {
-            display: flex;
-            margin-left: var(--site-edge-padding);
-            width:fit-content;
+            animation: none;
+        }
+        .toc-container {
+            width: max-content;
             position: sticky;
-            top: 72px;
+            top:72px;
+            display:flex;
             flex-direction: column;
             background-color: var(--banner-background-color);
         }
     }
 }
-
 /* hide the toc toggle button if there is no toc */
 .table-of-contents:has(.toc:empty){
     display:none!important;

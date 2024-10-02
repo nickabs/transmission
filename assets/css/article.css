@@ -21,7 +21,6 @@
 }
 .article > * + * {
   margin-top:var(--section-gap);
-  font-size: var(--content-font-size);
 }
 
 /* drop cap on leading paragraph */

@@ -32,7 +32,6 @@ body {
     margin:0;
     padding:0;
     scroll-margin-top: var(--site-top-gap);
-    todowidth:100vw;
 }
 h1, h2, h3 {
   font-family: var(--secondary-font-sans);
@@ -78,6 +77,10 @@ a:hover {
 }
 .article {
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 }
 .article > * {
   max-width: var(--max-content-width);
