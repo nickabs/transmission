@@ -1,37 +1,41 @@
  <header class="site-header">
-    {{#if @site.logo}}
-        <a aria-label="go to the home page" class="logo" href="{{@site.url}}">
-            <img height="20px" width="20px" src="{{@site.logo}}" alt="{{@site.title}}">
-        </a>
-    {{/if}}
+    {{!-- placeholder for the announcement bar--}}
+    <div id="announcement-bar-root"></div>
+    <div class="site-header-container">
 
-    {{!-- outputs  nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
-    {{navigation}}
-
-    {{#if @site.members_enabled}}
-        {{#unless @member}}
-            {{#unless @site.members_invite_only}}
-                <a href="#/portal/signin" class="signin">Sign in</a>
-                {{!-- only shows if one of the subscribe options is selected --}}
-                {{#match @custom.enrol_members_banner_type "!=" "None" }}
-                {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page only" }}
-                {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page & posts" }}
-                    <a class="signup" aria-label="sign up" href="#/portal/signup">Sign up</a>
-                {{/match}}
-                {{/match}}
-                {{/match}}
-            {{/unless}}
-        {{else}}
-            <a class="account-link icon" aria-label="account link" href="#/portal/account"> 
-                {{> "icons/account"}}
+        {{#if @site.logo}}
+            <a aria-label="go to the home page" class="logo" href="{{@site.url}}">
+                <img height="20px" width="20px" src="{{@site.logo}}" alt="{{@site.title}}">
             </a>
-        {{/unless}}
-    {{/if}}
+        {{/if}}
 
-    <button class="dark-mode icon">{{> "icons/moon"}}</button>
-    <button class="light-mode icon">{{> "icons/sun"}}</button>
+        {{!-- outputs  nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
+        {{navigation}}
 
-    <button class="search icon" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
-    {{!-- hamburger nav (shows when nav is open on a small screen)--}}
-    <button class="nav-toggle icon" aria-label="Open nav" >{{> "icons/navigation"}}</button>
+        {{#if @site.members_enabled}}
+            {{#unless @member}}
+                {{#unless @site.members_invite_only}}
+                    <a href="#/portal/signin" class="signin">Sign in</a>
+                    {{!-- only shows if one of the subscribe options is selected --}}
+                    {{#match @custom.enrol_members_banner_type "!=" "None" }}
+                    {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page only" }}
+                    {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page & posts" }}
+                        <a class="signup" aria-label="sign up" href="#/portal/signup">Sign up</a>
+                    {{/match}}
+                    {{/match}}
+                    {{/match}}
+                {{/unless}}
+            {{else}}
+                <a class="account-link icon" aria-label="account link" href="#/portal/account"> 
+                    {{> "icons/account"}}
+                </a>
+            {{/unless}}
+        {{/if}}
+
+        <button class="dark-mode icon">{{> "icons/moon"}}</button>
+        <button class="light-mode icon">{{> "icons/sun"}}</button>
+        <button class="search icon" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
+        {{!-- hamburger nav (shows when nav is open on a small screen)--}}
+        <button class="nav-toggle icon" aria-label="Open nav" >{{> "icons/navigation"}}</button>
+    </div>
 </header>

@@ -6,40 +6,40 @@
 /* ---------------------------------------------------------------- */
 
 /* 
- * site-header is not part of the grid layout (it is fixed to the top of the viewport for the entire site)
  * in page/post views the table-of-contents and social-link icons are fixed to the bottom of the viewport 
  * unless the site is being viewed on a large screen and the user selected a sidebar layout.
 */
-
-/*------------------------------------------------------------ */
-/* map html elements to the grid areas used in the grids below */
-/*------------------------------------------------------------ */
-.article { grid-area: Article; }
-.featured-articles { grid-area: FeaturedArticles; }
-.hero-header { grid-area: HeroHeader; }
-.main-article { grid-area: MainArticle; }
-.latest-articles { grid-area: LatestArticles; }
-.recent-articles { grid-area: RecentArticles; }
-.previous-articles { grid-area: PreviousArticles; }
-.pagination { grid-area: Pagination; }
-.related-articles { grid-area:RelatedArticles}
-.site-footer { grid-area: SiteFooter; }
-.social-links { grid-area: SocialLinks; }
-.enrol { grid-area: Enrol;}
-.table-of-contents { grid-area: TableOfContents; }
-.tagged-articles { grid-area: TaggedArticles; }
-.comments { grid-area: Comments; }
-.one-time-payment { grid-area: OneTimePaymentRequest; }
-
 .site {
     display: grid;
 }
+
+/*
+/* map html elements to the grid areas used in the grids below 
+*/
+.site-header { grid-area: SiteHeader; }
+.hero-header { grid-area: HeroHeader; }
+.table-of-contents { grid-area: TableOfContents; }
+.social-links { grid-area: SocialLinks; }
+.main-article { grid-area: MainArticle; }
+.featured-articles { grid-area: FeaturedArticles; }
+.latest-articles { grid-area: LatestArticles; }
+.recent-articles { grid-area: RecentArticles; }
+.previous-articles { grid-area: PreviousArticles; }
+.related-articles { grid-area:RelatedArticles}
+.site-footer { grid-area: SiteFooter; }
+.pagination { grid-area: Pagination; }
+.tagged-articles { grid-area: TaggedArticles; }
+.enrol { grid-area: Enrol;}
+.comments { grid-area: Comments; }
+.one-time-payment { grid-area: OneTimePaymentRequest; }
+.article { grid-area: Article; }
 
 /*---------------------------*/
 /* 1. home-page mobile view  */
 /*---------------------------*/
 .site.home-template {
     grid-template-areas:
+        "SiteHeader"
         "HeroHeader"
         "MainArticle"
         "LatestArticles"
@@ -51,6 +51,7 @@
 }
 .site.home-template.show-featured-articles { 
     grid-template-areas:
+        "SiteHeader"
         "HeroHeader"
         "MainArticle"
         "FeaturedArticles"
@@ -66,6 +67,7 @@
     .home-template.home-page-focus-left {
         grid-template-columns: 1.5fr 1fr; 
         grid-template-areas:
+            "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
             "MainArticle LatestArticles"
             "RecentArticles RecentArticles"
@@ -77,6 +79,7 @@
     .home-template.home-page-focus-right {
         grid-template-columns: 1fr 1.5fr; 
         grid-template-areas:
+            "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
             "LatestArticles MainArticle"
             "RecentArticles RecentArticles"
@@ -88,6 +91,7 @@
     .home-template.home-page-focus-left.show-featured-articles {
         grid-template-columns: 1.5fr 1fr; 
         grid-template-areas:
+            "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
             "MainArticle FeaturedArticles"
             "LatestArticles LatestArticles"
@@ -100,6 +104,7 @@
     .home-template.home-page-focus-right.show-featured-articles {
         grid-template-columns: 1fr 1.5fr; 
         grid-template-areas:
+            "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
             "FeaturedArticles MainArticle"
             "LatestArticles LatestArticles"
@@ -116,6 +121,7 @@
 /*--------------------------*/
 .site.post-template, .site.page-template {
     grid-template-areas:
+    "SiteHeader"
     "HeroHeader"
     "Article"
     "OneTimePaymentRequest"
@@ -133,6 +139,7 @@
         &:has(.sidebar-layout) {
             grid-template-columns: 6fr 1fr; 
             grid-template-areas:
+                "SiteHeader SiteHeader"
                 "HeroHeader HeroHeader"
                 "Article SocialLinks"
                 "OneTimePaymentRequest SocialLinks"
@@ -151,6 +158,7 @@
         &:has(.sidebar-layout) {
             grid-template-columns: 1fr var(--max-content-width) 1fr;
             grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader"
                 "HeroHeader HeroHeader HeroHeader"
                 "TableOfContents Article SocialLinks"
                 "TableOfContents OneTimePaymentRequest SocialLinks"
@@ -173,6 +181,7 @@
 .tag-template {
     grid-column: content;
     grid-template-areas:
+        "SiteHeader"
         "HeroHeader"
         "TaggedArticles"
         "Pagination"

@@ -57,24 +57,22 @@ a:hover {
 /***************************/
 /* 2. default site margins */
 /***************************/
-.site>* {
+.site>*:not(.site-header):not(.hero-header):not(.site-footer) {
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
 }
 
-/* these items are full width, but the contents are limited to the max-container-width using dynamic padding */
+/*
+* header & footer items have a background that will fill the screen 
+* the contents are limited to max-container-with using padding
+*/
 .hero-header,
-.site-footer,
-.site-header {
-    width: 100%;
-    padding-left: var(--site-edge-padding);
-    padding-right: var(--site-edge-padding);
+.site-header-container,
+.site-footer {
+  padding-left: var(--site-edge-padding);
+  padding-right: var(--site-edge-padding);
 }
-.site #announcement-bar-root {
-  width: 100vw;
-  padding-left: 0;
-  padding-right: 0;
-}
+
 .article {
   justify-self: center;
   display: flex;
@@ -131,16 +129,13 @@ a:hover {
 /* -------------------------------------- */
 /* 4. site header/annoucmenent bar        */
 /* -------------------------------------- */
-.site-header { 
+.site-header-container { 
   background-color: var(--background-color);
-  top: var(--announcement-bar-height); /* zero when there is no announcement bar */
   display: flex;
   height:var(--site-header-height); 
   flex-direction: row ;
   justify-self: center;
   align-items: center;
-  z-index: 1000;
-  position:absolute;
   .logo {
     margin-right: auto;
   }
@@ -148,17 +143,13 @@ a:hover {
     padding-left: 7px;
   }
 }
-#announcement-bar-root {
-  position: absolute;
-  top: 0;
-  z-index: 1000;
-  .gh-announcement-bar {
-    height: var(--announcement-bar-height);
-  }
+.gh-announcement-bar {
+  todoheight: var(--announcement-bar-height);
 }
-.fixed-navigation-bar #announcement-bar-root,
-.fixed-navigation-bar .site-header{
-  position: fixed;
+.fixed-navigation-bar .site-header {
+  z-index: 1000;
+  position: sticky;
+  top:0;
 }
 .signin, .signup, .account {
   font-size: 1.1rem;
