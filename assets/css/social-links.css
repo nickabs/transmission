@@ -24,7 +24,6 @@
 /* larger screens */
 @media (min-width:760px) {
     .social-links.sidebar-layout {
-        flex-direction: column;
         padding-left: 5vw;
         padding-right: 0;
         .social-links-title {

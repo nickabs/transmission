@@ -54,8 +54,9 @@ a:hover {
 
 /***************************/
 /* 2. default site margins */
+/* todoo .site>*:not(.site-header):not(.hero-header):not(.site-footer) {
 /***************************/
-.site>*:not(.site-header):not(.hero-header):not(.site-footer) {
+.site > :not(.site-header, .hero-header, .site-footer) {
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
 }
