@@ -143,9 +143,6 @@ a:hover {
     padding-left: 7px;
   }
 }
-.gh-announcement-bar {
-  todoheight: var(--announcement-bar-height);
-}
 .fixed-navigation-bar .site-header {
   z-index: 1000;
   position: sticky;
