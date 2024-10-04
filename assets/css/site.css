@@ -313,6 +313,7 @@ a:hover {
         transform: translateX(50%);
         position:absolute;
         overflow: hidden;
+        top: 40px;
       }
       .item:has(sup) {
         line-height: 12px; /* fix misalignment caused by drop down nav symbol */
