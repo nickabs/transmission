@@ -35,7 +35,7 @@
             width:max-content;
             flex-direction: column;
             position: sticky;
-            top:67px;
+            top: var(--site-header-height);
         }
     }
 }

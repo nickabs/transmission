@@ -130,7 +130,7 @@ a:hover {
 .site-header-container { 
   background-color: var(--background-color);
   display: flex;
-  height:var(--site-header-height); 
+  height:var(--site-header-container-height); 
   flex-direction: row ;
   justify-self: center;
   align-items: center;
@@ -145,6 +145,10 @@ a:hover {
   z-index: 1000;
   position: sticky;
   top:0;
+  
+}
+.todosite:has(#announcement-bar-root:not(:empty)) {
+  --site-top-gap: calc(var(--site-header-container-height) + var(--announcement-bar-height));
 }
 .signin, .signup, .account {
   font-size: 1.1rem;
@@ -202,6 +206,7 @@ a:hover {
   width:350px;
   border: 0.25px solid var(--border-color);
   overflow:hidden; /* prevent borders overunning rounded corners */
+  top: calc(var(--site-header-height) + 5px);
 }
 .nav-header ,
 .submenu-header {
