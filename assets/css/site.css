@@ -30,7 +30,6 @@ body {
     background-color: var(--background-color);
     margin:0;
     padding:0;
-    scroll-margin-top: var(--site-top-gap);
 }
 h1, h2, h3 {
   font-family: var(--secondary-font-sans);
@@ -198,7 +197,6 @@ a:hover {
 .nav, .submenu {
   position:fixed;
   right:var(--edge-padding);
-  top: calc(var(--site-top-gap) + 5px);
   background-color: var(--banner-background-color);
   border-radius: 10px;
   width:350px;
@@ -314,7 +312,6 @@ a:hover {
       .submenu {
         transform: translateX(50%);
         position:absolute;
-        top: calc(var(--site-top-gap) - 6px);
         overflow: hidden;
       }
       .item:has(sup) {

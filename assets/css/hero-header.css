@@ -9,7 +9,6 @@
 /* 1. common styles   */
 /* ------------------ */
 .hero-header {
-    topmargin-top: var(--site-top-gap);
     margin-bottom: var(--section-gap);
 }
 .hero-author-list {

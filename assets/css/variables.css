@@ -21,7 +21,6 @@
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
     --site-header-height: 55px; 
-    --site-top-gap: var(--site-header-height); 
     --section-gap: max(1.5vw,24px);
     --max-content-width: 720px;
     --max-container-width: 1300px; 
