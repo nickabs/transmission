@@ -52,9 +52,12 @@ a:hover {
     opacity: 0.8;
 }
 
+li {
+  list-style: none;
+}
+
 /***************************/
 /* 2. default site margins */
-/* todoo .site>*:not(.site-header):not(.hero-header):not(.site-footer) {
 /***************************/
 .site > :not(.site-header, .hero-header, .site-footer) {
   padding-left: var(--edge-padding);
@@ -148,9 +151,6 @@ a:hover {
   top:0;
   
 }
-.todosite:has(#announcement-bar-root:not(:empty)) {
-  --site-top-gap: calc(var(--site-header-container-height) + var(--announcement-bar-height));
-}
 .signin, .signup, .account {
   font-size: 1.1rem;
   letter-spacing: -0.018rem;
@@ -229,7 +229,7 @@ a:hover {
   padding:0;
   font-weight: 200;
 }
-.item,
+.nav-item,
 .submenu-item, 
 .nav-header,
 .submenu-header {
@@ -249,7 +249,7 @@ a:hover {
   display:grid;
 }
 .nav:has(.active-submenu) {
-  .item:not(:has(.active-submenu)) {
+  .nav-item:not(:has(.active-submenu)) {
     display: none ;
   }
 }
@@ -259,12 +259,6 @@ a:hover {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-/* causes an issue on iphone 
-.active-nav .item ,
-.active-submenu .submenu-item {
-  animation: showMenu 450ms ease-in-out both;
-}
-*/
 
 /* hide nav items until dropdown-nav.js confirms it has run (to prevent the screen flashing) */
 .nav:not(.nav-ready){
@@ -276,7 +270,7 @@ a:hover {
 /* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
 @media (min-width: 760px) {
   .expanded-nav {
-    .item {
+    .nav-item {
       white-space: nowrap;
     }
     .nav {
@@ -301,7 +295,7 @@ a:hover {
       column-gap: 25px;
       justify-content: center; 
 
-      .item {
+      .nav-item {
         position: relative;
         display: flex!important ; /* always show the nav-items in this view */
         border: unset;
@@ -321,12 +315,12 @@ a:hover {
         overflow: hidden;
         top: 40px;
       }
-      .item:has(sup) {
+      .nav-item:has(sup) {
         line-height: 12px; /* fix misalignment caused by drop down nav symbol */
       }
     }
     /* animate hover */
-    .item::after {
+    .nav-item::after {
       content: '';
       position: absolute;
       left: 0;
@@ -337,7 +331,7 @@ a:hover {
       transform: scaleX(0); /* Initially hidden */
       transition: transform 0.2s ease; 
     }
-    .item:hover::after {
+    .nav-item:hover::after {
       width:100%;
       transform: scaleX(1); 
     }
@@ -348,7 +342,7 @@ a:hover {
 /* 6. site footer (privacy and copyright) */
 /* -------------------------------------- */
 
-/* make room for social and toc icons - these move to the bottom of the screen on smaller screens*/
+/* make room for share and toc icons - these move to the bottom of the screen on smaller screens*/
 @media (max-width: 760px) {
   .post-template, .page-template {
     .site-footer {

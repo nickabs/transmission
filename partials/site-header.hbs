@@ -9,8 +9,8 @@
             </a>
         {{/if}}
 
-        {{!-- outputs  nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
-        {{navigation}}
+        {{!-- outputs primary nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
+        {{navigation nav-type="primary"}}
 
         {{#if @site.members_enabled}}
             {{#unless @member}}

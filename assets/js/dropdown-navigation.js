@@ -6,10 +6,10 @@
 *
 *  ghost navigation          rendered html
 *  -----------------         ------------------
-*  HOME                      <li class='item'>
+*  HOME                      <li class='nav-item'>
 *                              <a href='http://localhost:2368/'>HOME</a>
 *                            </li>
-*  -HONDA C90                <li class='item has-submenu'>
+*  -HONDA C90                <li class='nav-item has-submenu'>
 *                                <a href='#'>HONDA C90 ⌄</a>
 *                                <div class='submenu'>
 *                                    <div class='submenu-header'>
@@ -59,7 +59,7 @@
   }
 
   function processMenuItems() {
-      const menuItems = document.querySelectorAll('.nav-items .item');
+      const menuItems = document.querySelectorAll('.nav-items .nav-item');
       let submenu = null;
 
       for (let i = 0; i < menuItems.length; ++i) {
@@ -88,7 +88,7 @@
                   submenu = menuItems[i];
               } else if (submenu) { // Submenu item (--)
                   menuItems[i].classList.add('submenu-item');
-                  menuItems[i].classList.remove('item');
+                  menuItems[i].classList.remove('nav-item');
                   submenu.querySelector('.submenu-items').appendChild(menuItems[i]);
               }
           }
@@ -117,8 +117,8 @@
     if (event.target.closest(".submenu-item")) {
       return;
     }
-    else if (event.target.closest(".item") && ! event.target.closest(".submenu-header")) { // do not count a click on a submenu header as a clicked item
-      clickedItem= event.target.closest(".item");
+    else if (event.target.closest(".nav-item") && ! event.target.closest(".submenu-header")) { // do not count a click on a submenu header as a clicked item
+      clickedItem= event.target.closest(".nav-item");
     }
 
     if (clickedItem) {

@@ -1,4 +1,4 @@
-{{!-- markup for the table of contents and social link icons (used by both pages and posts) 
+{{!-- markup for the table of contents and sidebar nav
 Parameters:
     layout: [ sidebar-layout , footer-layout]
 --}}    
@@ -15,32 +15,7 @@ Parameters:
     </div>
 </aside> 
 
-{{!-- share buttons inserted here --}}
-<aside class="social-links {{layout}}">
-    <div class="social-links-container" >
-        <h1 class="social-links-title">Share</h1>
-        <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
-        class="icon" aria-label="share on bluesky" target="_blank" rel="noopener" >
-            {{> "icons/bluesky"}}
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
-        class="icon" aria-label="share on facebook" target="_blank" rel="noopener" >
-            {{> "icons/facebook"}}
-        </a>
-        <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
-            class="icon" aria-label="share on twitter" target="_blank" rel="noopener">
-            {{> "icons/twitter"}}
-        </a>
-        <a href="whatsapp://send?text={{url absolute=" true"}}" 
-            class="icon" aria-label="share on whatsapp" target="_blank" rel="noopener">
-            {{> "icons/whatsapp"}}
-        </a>
-        <a href="{{@site.url}}/rss"
-            class="icon" aria-label="rss feed" target="_blank" rel="noopener">
-            {{> "icons/rss"}}
-        </a>
-        <button id="copy-link" class="icon" aria-label="copy link">
-            {{> "icons/link"}}
-        </button>
-    </div>
+{{!-- share buttons and secondary nav items inserted here --}}
+<aside class="sidebar {{layout}}">
+    {{> "navigation" nav-type="sidebar-social-secondary"}}
 </aside>

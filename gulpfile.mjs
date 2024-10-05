@@ -115,6 +115,7 @@ function jsTheme(done) {
             'assets/js/pagination.js',
             'assets/js/copy-link.js',
             'assets/js/table-of-contents.js',
+            'assets/js/sidebar.js',
             'assets/js/lightbox.js',
             'assets/js/enrol-dialog.js'
         ], {sourcemaps: true}),

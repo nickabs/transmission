@@ -1,15 +1,73 @@
 {{!-- outputs nav items defined in the Ghost admin panel (Settings > Design > Navigation) 
-  the html defined in this custom template is expected by dropdown-nav.js --}}
-<nav class="nav">   
-  <div class="nav-header">
-    <p class="nav-title">Contents</p>
-    <button class="icon nav-close">✕</button>
-  </div>
-  <ol class="nav-items">
-    {{#foreach navigation}}
-        <li class="item">
-          <a href="{{url absolute="true"}}">{{label}}</a>
+  note this is used instead of the standard navigation helper so we can pass in a parameter --}}
+{{#match nav-type "primary"}}
+  {{!-- the html defined in this here is used by dropdown-nav.js --}}
+  <nav class="nav">   
+    <div class="nav-header">
+      <p class="nav-title">Contents</p>
+      <button class="icon nav-close">✕</button>
+    </div>
+    <ol class="nav-items">
+      {{#foreach navigation}}
+          <li class="nav-item">
+            <a href="{{url absolute="true"}}">{{label}}</a>
+          </li>
+      {{/foreach}}
+    </ol>
+  </nav>
+{{/match}}
+
+
+{{#match nav-type "sidebar-social-secondary"}}
+  <nav class="sidebar-nav">   
+    {{#if isSecondary}}
+        <ol class="secondary-nav-items">
+          {{#foreach navigation}}
+              <li>
+                <a class="secondary-nav-item" href="{{url absolute="true"}}">{{label}}</a>
+              </li>
+          {{/foreach}}
+        </ol>
+    {{/if}}
+
+    <button id="share-button" class="icon" aria-label="share">
+        {{> "icons/share"}} <p> Share</p>
+    </button>
+    <ol class="share-links">
+          <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
+          class="icon share-link" aria-label="share on bluesky" target="_blank" rel="noopener" >
+              {{> "icons/bluesky"}}
+          </a>
         </li>
-    {{/foreach}}
-  </ol>
-</nav>
+        <li>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+          class="icon share-link" aria-label="share on facebook" target="_blank" rel="noopener" >
+              {{> "icons/facebook"}}
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
+              class="icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
+              {{> "icons/twitter"}}
+          </a>
+        </li>
+        <li>
+          <a href="whatsapp://send?text={{url absolute=" true"}}" 
+              class="icon share-link" aria-label="share on whatsapp" target="_blank" rel="noopener">
+              {{> "icons/whatsapp"}}
+          </a>
+        </li>
+        <li>
+          <a href="{{@site.url}}/rss"
+              class="icon share-link" aria-label="rss feed" target="_blank" rel="noopener">
+              {{> "icons/rss"}}
+          </a>
+        </li>
+        <li>
+          <button id="copy-link" class="icon share-link" aria-label="copy link">
+              {{> "icons/link"}}
+          </button>
+        </li>
+    </div>
+  </nav>
+{{/match}}

@@ -11,6 +11,9 @@
       height: 100%;
       }
 }
+.article > [id]:not(:first-child) {
+  margin-top: 56px;
+}
 .article > :first-child{
   margin-top:15px;
 }
@@ -21,7 +24,9 @@
 }
 .article > * + * {
   margin-top:var(--section-gap);
+  letter-spacing: -0.01em;
 }
+
 
 /* drop cap on leading paragraph */
 .article > p:first-of-type {

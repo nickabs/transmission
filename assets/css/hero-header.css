@@ -9,7 +9,7 @@
 /* 1. common styles   */
 /* ------------------ */
 .hero-header {
-    margin-bottom: var(--section-gap);
+    margin-bottom: 60px;
 }
 .hero-author-list {
     display: flex;

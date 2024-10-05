@@ -1,40 +1,68 @@
 /* -------------------------------------------------------------------- */
-/* social links are shown at the bottom of the screen for small screens */
+/* share links are shown at the bottom of the screen for small screens */
 /* for larger screens they are shown on the right hand side             */
 /* -------------------------------------------------------------------- */
 
-/* mobile view */
-.social-links-container {
-    z-index: 4;
-    position: fixed;
+.sidebar {
+    position: sticky;
     width:100%;
     bottom: 0;
     right: 0;
     background-color: var(--background-color);
+    padding:5px var(--site-edge-padding) 5px 0;
+    z-index: 4;
+}
+
+/* share links are only shown when the share button is clicked */
+.sidebar .share-links {
+    display:none
+}
+.sidebar.share-links-expanded .share-links {
+    display:inline-flex;
+}
+.sidebar-nav {
     display:flex;
     flex-direction: row;
-    gap: 22px;
     justify-content: right;
-    align-items: center;
-    padding:5px var(--site-edge-padding) 5px 0;
+    gap: 7px;
 }
-.social-links-title {
-    display:none;
+.secondary-nav-header {
+    display: none;
+}
+.secondary-nav-items {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.share-links {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    li {
+        display: flex;
+        align-content: center;
+    }
 }
 /* larger screens */
 @media (min-width:760px) {
-    .social-links.sidebar-layout {
+    .sidebar.sidebar-layout { 
+        inset: auto;
+        padding-right: var(--edge-padding);
         padding-left: 5vw;
-        padding-right: 0;
-        .social-links-title {
-            display: block;
-            font-size: 1.4rem;
-        }
-        .social-links-container {
+        position: relative;
+        .sidebar-nav {
             width:max-content;
             flex-direction: column;
             position: sticky;
             top: var(--site-header-height);
+        }
+        .share-links,
+        .secondary-nav-items {
+            flex-direction: column;
+            align-items: center;
+            padding-left:0;
         }
     }
 }

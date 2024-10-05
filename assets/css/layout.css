@@ -6,7 +6,7 @@
 /* ---------------------------------------------------------------- */
 
 /* 
- * in page/post views the table-of-contents and social-link icons are fixed to the bottom of the viewport 
+ * in page/post views the table-of-contents and share-link icons are fixed to the bottom of the viewport 
  * unless the site is being viewed on a large screen and the user selected a sidebar layout.
 */
 .site {
@@ -19,7 +19,7 @@
 .site-header { grid-area: SiteHeader; }
 .hero-header { grid-area: HeroHeader; }
 .table-of-contents { grid-area: TableOfContents; }
-.social-links { grid-area: SocialLinks; }
+.sidebar { grid-area: Sidebar; }
 .main-article { grid-area: MainArticle; }
 .featured-articles { grid-area: FeaturedArticles; }
 .latest-articles { grid-area: LatestArticles; }
@@ -130,7 +130,7 @@
     "RelatedArticles"
     "Pagination"
     "SiteFooter"
-    "SocialLinks";
+    "Sidebar";
 }
 @media (min-width: 760px) { 
 
@@ -141,12 +141,12 @@
             grid-template-areas:
                 "SiteHeader SiteHeader"
                 "HeroHeader HeroHeader"
-                "Article SocialLinks"
-                "OneTimePaymentRequest SocialLinks"
-                "Comments SocialLinks"
-                "Enrol SocialLinks"
-                "RelatedArticles SocialLinks"
-                "Pagination SocialLinks"
+                "Article Sidebar"
+                "OneTimePaymentRequest Sidebar"
+                "Comments Sidebar"
+                "Enrol Sidebar"
+                "RelatedArticles Sidebar"
+                "Pagination Sidebar"
                 "TableOfContents TableOfContents"
                 "SiteFooter SiteFooter";
         }
@@ -160,12 +160,12 @@
             grid-template-areas:
                 "SiteHeader SiteHeader SiteHeader"
                 "HeroHeader HeroHeader HeroHeader"
-                "TableOfContents Article SocialLinks"
-                "TableOfContents OneTimePaymentRequest SocialLinks"
-                "TableOfContents Comments SocialLinks"
-                "TableOfContents Enrol SocialLinks"
-                "TableOfContents RelatedArticles SocialLinks"
-                "TableOfContents Pagination SocialLinks"
+                "TableOfContents Article Sidebar"
+                "TableOfContents OneTimePaymentRequest Sidebar"
+                "TableOfContents Comments Sidebar"
+                "TableOfContents Enrol Sidebar"
+                "TableOfContents RelatedArticles Sidebar"
+                "TableOfContents Pagination Sidebar"
                 "SiteFooter SiteFooter SiteFooter";
         }
     }
