@@ -133,15 +133,8 @@ figcaption {
     line-height: 1.5;
 	  font-size: 1.4rem;
     font-family: var(--font-mono);
-    max-width: 100%;
-    max-width: 90vw; /* not sure why this is  needed, but without it the scroll bar does not show on overflow*/
+    width: 100vw; /* not sure why this is  needed, but without it the scroll bar does not show on overflow*/
 }
-@media (min-width: 1300px) {
-  .article pre {
-    width: var(--max-content-width);
-  }
-}
-
 /* make output lines in code blocks not selectable */
 .command-line span.token.output {
 	user-select: none;
@@ -155,4 +148,7 @@ figcaption {
   color: var(--code-color);
   background-color: var(--backgrond-color);
   border-radius: 3px;
+  overflow-wrap: break-word;
+  white-space: normal;
+  word-break: break-all; /* stop long directory names overflowing on small screens */
 }
