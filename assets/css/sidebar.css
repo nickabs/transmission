@@ -1,7 +1,7 @@
-/* -------------------------------------------------------------------- */
-/* share links are shown at the bottom of the screen for small screens */
+/* ------------------------------------------ */
+/* share links are secondary navigation items */
 /* for larger screens they are shown on the right hand side             */
-/* -------------------------------------------------------------------- */
+/* ------------------------------------------ */
 
 .sidebar {
     position: sticky;

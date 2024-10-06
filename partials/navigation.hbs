@@ -1,5 +1,8 @@
-{{!-- outputs nav items defined in the Ghost admin panel (Settings > Design > Navigation) 
-  note this is used instead of the standard navigation helper so we can pass in a parameter --}}
+{{!-- 
+  outputs nav items defined in the Ghost admin panel (Settings > Design > Navigation) 
+  parameters: nav-type [ primary, sidebar-social-secondary ]
+  todo: options for social and/or secondary  
+ --}}
 {{#match nav-type "primary"}}
   {{!-- the html defined in this here is used by dropdown-nav.js --}}
   <nav class="nav">   
@@ -33,7 +36,8 @@
     <button id="share-button" class="icon" aria-label="share">
         {{> "icons/share"}} <p> Share</p>
     </button>
-    <ol class="share-links">
+    <ul class="share-links">
+        <li>
           <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
           class="icon share-link" aria-label="share on bluesky" target="_blank" rel="noopener" >
               {{> "icons/bluesky"}}
@@ -68,6 +72,6 @@
               {{> "icons/link"}}
           </button>
         </li>
-    </div>
+    </ul>
   </nav>
 {{/match}}
