@@ -25,30 +25,30 @@
         </script>
      {{/if}}
 
-    <style>
-        :root {
-            --theme-accent-color-dark: {{@custom.site_accent_color_dark}};
-            --theme-accent-color-light: {{@custom.site_accent_color_light}};
-        }
-    </style>
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
 </head>
 
-<body class='site {{body_class}}
+<body class='site {{body_class~}}
     {{!-- set classes to reflect custom options selected by the site owner --}}
-    {{~#if @custom.show_featured_posts}} show-featured-articles{{/if}}
-    {{~#if @custom.hide_comments_subscribe_cta}} hide-comments-subscribe-cta{{/if}}
-    {{~#match @custom.home_page_style "List"}} home-page-list{{/match}}
-    {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match}}
-    {{~#match @custom.home_page_style "Focus (left)"}} home-page-focus-left{{/match}}
-    {{~#match @custom.hero_style "plain"}} hero-style-plain{{/match}}
-    {{~#match @custom.hero_style "color"}} hero-style-color-image{{/match}}
-    {{~#match @custom.hero_style "grayscale"}} hero-style-grayscale-image{{/match}}
-    {{~#match @custom.menu_style "Expanded"}} expanded-nav{{else}} minified-nav{{/match}}
-    {{~#if @custom.fixed_navigation_bar }} fixed-navigation-bar{{/if}}'>
+    {{~#match @custom.menu_style "Expanded"}} expanded-nav{{else}} minified-nav{{/match~}}
+    {{~#match @custom.hero_style "plain"}} hero-style-plain{{/match~}}
+    {{~#match @custom.hero_style "color"}} hero-style-color-image{{/match~}}
+    {{~#match @custom.hero_style "grayscale"}} hero-style-grayscale-image{{/match~}}
+    {{~#if @custom.hide_comments_subscribe_cta}} hide-comments-subscribe-cta{{/if~}}
+    {{~#if @custom.fixed_navigation_bar }} fixed-navigation-bar{{/if~}}
+    {{#is "home"}}
+        {{~#match @custom.home_page_style "List"}} home-page-list{{/match~}}
+        {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match~}}
+        {{~#match @custom.home_page_style "Focus (left)"}} home-page-focus-left{{/match~}}
+        {{~#match @custom.home_page_sidebar "Top"}} sidebar-top{{/match~}}
+        {{~#match @custom.home_page_sidebar "Bottom"}} sidebar-bottom{{/match~}}
+        {{~#match @custom.home_page_sidebar "None"}} home-page-sidebar-none{{/match~}}
+        {{~#if @custom.show_featured_posts}} show-featured-articles{{/if~}}
+    {{/is~}}
+    '>
 
     {{> "site-header"}}
 

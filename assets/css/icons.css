@@ -1,22 +1,23 @@
 /* ------------------------------------ */
 /* icon  (search, dark-mode etc) .      */
 /* ------------------------------------ */
-.icon,
 .icon {
     display: inline-flex;
     padding:0;
     align-items: center;
-    color: var(--secondary-title-color);
+    color: var(--icon-color);
     background-color: transparent;
     border: 0;
     outline: none;
     cursor: pointer;
-    img,
-    svg {
-        width: 20px;
-        height: 20px;
-        stroke: currentColor;
-    }
+}
+
+embed.icon,
+.icon img,
+.icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
 }
 .icon:hover .icon {
     opacity: 0.8;

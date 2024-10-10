@@ -18,10 +18,13 @@
 */
 .site-header { grid-area: SiteHeader; }
 .hero-header { grid-area: HeroHeader; }
+.home-template.sidebar-top .sidebar { grid-area: SidebarTop; }
+.home-template.sidebar-bottom .sidebar { grid-area: SidebarBottom; }
+.home-template.home-page-sidebar-none .sidebar { display: none; }
+.home-template.home-template.show-featured-articles .featured-articles { grid-area: FeaturedArticles; }
+.home-template.home-template:not(.show-featured-articles) .featured-articles { display: none; }
 .table-of-contents { grid-area: TableOfContents; }
-.sidebar { grid-area: Sidebar; }
 .main-article { grid-area: MainArticle; }
-.featured-articles { grid-area: FeaturedArticles; }
 .latest-articles { grid-area: LatestArticles; }
 .recent-articles { grid-area: RecentArticles; }
 .previous-articles { grid-area: PreviousArticles; }
@@ -41,18 +44,7 @@
     grid-template-areas:
         "SiteHeader"
         "HeroHeader"
-        "MainArticle"
-        "LatestArticles"
-        "Enrol"
-        "RecentArticles"
-        "PreviousArticles"
-        "Pagination"
-        "SiteFooter";
-}
-.site.home-template.show-featured-articles { 
-    grid-template-areas:
-        "SiteHeader"
-        "HeroHeader"
+        "SidebarTop"
         "MainArticle"
         "FeaturedArticles"
         "LatestArticles"
@@ -60,6 +52,7 @@
         "RecentArticles"
         "PreviousArticles"
         "Pagination"
+        "SidebarBottom"
         "SiteFooter";
 }
 
@@ -69,11 +62,13 @@
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
+            "SidebarTop SidebarTop"
             "MainArticle LatestArticles"
             "RecentArticles RecentArticles"
             "Enrol Enrol"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
+            "SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-right {
@@ -81,11 +76,13 @@
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
+            "SidebarTop SidebarTop"
             "LatestArticles MainArticle"
             "RecentArticles RecentArticles"
             "Enrol Enrol"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
+            "SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-left.show-featured-articles {
@@ -93,12 +90,14 @@
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
+            "SidebarTop SidebarTop"
             "MainArticle FeaturedArticles"
             "LatestArticles LatestArticles"
             "Enrol Enrol"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
+            "SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-right.show-featured-articles {
@@ -106,12 +105,14 @@
         grid-template-areas:
             "SiteHeader SiteHeader"
             "HeroHeader HeroHeader"
+            "SidebarTop SidebarTop"
             "FeaturedArticles MainArticle"
             "LatestArticles LatestArticles"
             "Enrol Enrol"
             "RecentArticles RecentArticles"
             "PreviousArticles PreviousArticles"
             "Pagination Pagination"
+            "SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter";
     }
 }
@@ -169,7 +170,6 @@
                 "SiteFooter SiteFooter SiteFooter";
         }
     }
-
     .home-template.home-page-list {
         max-width: var(--max-container-width);
     }

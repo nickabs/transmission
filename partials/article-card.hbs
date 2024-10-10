@@ -28,7 +28,7 @@
     {{/if}}
     {{#match @custom.show_authors "!=" "None"}}
     {{#match @custom.show_authors "!=" "Names"}}
-        <ol class="article-card-author-profile-images">
+        <ul class="article-card-author-profile-images">
             {{#foreach authors}}
                 <li class="author-profile-image">
                     {{#if profile_image}}
@@ -42,12 +42,12 @@
                     {{/if}}
                 </li>
             {{/foreach}}
-        </ol>
+        </ul>
     {{/match}}
     {{/match}}
     {{#match @custom.show_authors "!=" "None"}}
     {{#match @custom.show_authors "!=" "Profile images"}}
-        <ol class="article-card-author-names">
+        <ul class="article-card-author-names">
             {{#foreach authors}}
                 <li class="author-name">
                     {{#if @first}}
@@ -58,7 +58,7 @@
                     {{/if}}
                 </li>
             {{/foreach}}
-        </ol>
+        </ul>
     {{/match}}
     {{/match}}
     <div class="article-card-metadata" >

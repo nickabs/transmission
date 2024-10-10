@@ -61,7 +61,7 @@ sup { font-size: var(--content-sup-font-size); }
 .article blockquote {
     font-style: italic;
     padding: 0 2rem;
-    border-left: 0.1rem solid var(--theme-accent-color);
+    border-left: 0.1rem solid var(--ghost-accent-color);
 }
 
 /* figure captions */

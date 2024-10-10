@@ -1,7 +1,7 @@
  <header class="site-header">
     {{!-- placeholder for the announcement bar--}}
     <div id="announcement-bar-root"></div>
-    <div class="site-header-container">
+    <nav class="main-nav">
 
         {{#if @site.logo}}
             <a aria-label="go to the home page" class="logo" href="{{@site.url}}">
@@ -36,6 +36,6 @@
         <button class="light-mode icon">{{> "icons/sun"}}</button>
         <button class="search icon" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
         {{!-- hamburger nav (shows when nav is open on a small screen)--}}
-        <button class="nav-toggle icon" aria-label="Open nav" >{{> "icons/navigation"}}</button>
-    </div>
+        <button class="main-nav-links-toggle icon" aria-label="Open nav" >{{> "icons/navigation"}}</button>
+    </nav>
 </header>

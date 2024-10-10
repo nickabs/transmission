@@ -111,11 +111,10 @@ function jsTheme(done) {
     pump([
         src([
             'assets/js/dark-mode-toggle.js',
-            'assets/js/dropdown-navigation.js',
+            'assets/js/navigation.js',
             'assets/js/pagination.js',
             'assets/js/copy-link.js',
             'assets/js/table-of-contents.js',
-            'assets/js/sidebar.js',
             'assets/js/lightbox.js',
             'assets/js/enrol-dialog.js'
         ], {sourcemaps: true}),

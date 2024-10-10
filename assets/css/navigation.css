@@ -1,0 +1,389 @@
+
+/* ------------------------------------------------------------ */
+/* 1. main navigation                                           */
+/* 2. internal tags, share links are secondary navigation items */
+/* ------------------------------------------------------------ */
+
+/* -------------------------------------- */
+/* 1. main navigation                     */
+/* -------------------------------------- */
+/* default display for mobile devices (hamburger nav) */
+.main-nav-links-container {
+  flex: 1;
+  display: grid;
+  grid-template-areas:
+    "NavHeader" 
+    "NavItems";
+}
+.submenu {
+  display: grid;
+  grid-template-areas:
+    "SubmenuHeader" 
+    "SubmenuItems";
+}
+.main-nav-links-header { grid-area: NavHeader }
+.main-nav-links { grid-area: NavItems; }
+.submenu-header { grid-area: SubmenuHeader }
+.submenu-items { grid-area: SubmenuItems; }
+
+.main-nav-links-container, .submenu {
+  position:fixed;
+  right:var(--edge-padding);
+  background-color: var(--banner-background-color);
+  border-radius: 10px;
+  width:350px;
+  border: 0.25px solid var(--border-color);
+  overflow:hidden; /* prevent borders overunning rounded corners */
+  top: calc(var(--site-header-height) + 5px);
+}
+.main-nav-links-header ,
+.submenu-header {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  grid-column: 1/-1;
+  grid-row: 1; 
+}
+.main-nav-links-title,
+.submenu-title {
+  color: var(--banner-title-color);
+  font-weight:800;
+}
+.main-nav-links, .submenu-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  padding:0;
+  font-weight: 200;
+}
+.main-nav-link-item,
+.submenu-item, 
+.main-nav-links-header,
+.submenu-header {
+  padding: 5px 10px;
+  border: 0.25px solid var(--border-color);
+}
+
+/* hide until clicked */
+.submenu,
+.main-nav-links-container {
+  display: none;
+}
+.main-nav-links-active {
+  display: grid;
+}
+.active-submenu {
+  display:grid;
+}
+.main-nav-links-container:has(.active-submenu) {
+  .main-nav-link-item:not(:has(.active-submenu)) {
+    display: none ;
+  }
+}
+
+/* animate nav opening */
+@keyframes showMenu {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* hide nav items until dropdown-nav.js confirms it has run (to prevent the screen flashing) */
+.main-nav-links-container:not(.main-nav-links-ready){
+  opacity:0;
+}
+.main-nav-links-container.main-nav-links-ready {
+  opacity:1;
+}
+/* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
+@media (min-width: 760px) {
+  .expanded-nav {
+    .main-nav-link-item {
+      white-space: nowrap;
+    }
+    .main-nav-links-container {
+      overflow: visible; /* if not set this prevents the submenu showing */
+    }
+    .main-nav-links-container {
+      position:static;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 1.4rem;
+      margin: 0 15px;
+    }
+    .main-nav-links-header,
+    .main-nav-links-toggle {
+      display: none;
+    }
+    .main-nav-links {
+      display: flex;
+      flex-grow: 1;
+      flex-wrap:wrap;
+      column-gap: 25px;
+      justify-content: center; 
+
+      .main-nav-link-item {
+        position: relative;
+        display: flex!important ; /* always show the main-nav-links in this view */
+        border: unset;
+        margin: 0;
+        padding: 0;
+      }
+      .submenu:not(.active-submenu) {
+        display:none;
+      }
+      .main-nav-links-header {
+        display:none;
+      }
+      
+      .submenu {
+        transform: translateX(50%);
+        position:absolute;
+        overflow: hidden;
+        top: 40px;
+      }
+      .main-nav-link-item:has(sup) {
+        line-height: 12px; /* fix misalignment caused by drop down nav symbol */
+      }
+    }
+    /* animate hover */
+    .main-nav-link-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 0.5px;
+      background-color: var(--ghost-accent-color);
+      width:0;
+      transform: scaleX(0); /* Initially hidden */
+      transition: transform 0.2s ease; 
+    }
+    .main-nav-link-item:hover::after {
+      width:100%;
+      transform: scaleX(1); 
+    }
+  }
+}
+
+
+/* -------------------------------------------------------- */
+/* 2. share links are secondary navigation items            */
+/* for larger screens they are shown on the right hand side */
+/* -------------------------------------------------------- */
+
+/*hide the icons initially - sidebar.js will resize them and then make them visible */
+.internal-tags .sidebar-link-item .hidden{
+    visibility:hidden;
+}
+
+/* this is needed to make the <object> svg clickable */
+.internal-tags .sidebar-link-icon {
+    pointer-events: none;
+}
+
+.sidebar-link-item object {
+    height: 20px;
+    width: 20px;
+}
+
+/* make the two character secondary link indicators look like an icon */
+.secondary-links  .sidebar-link-icon {
+    display: inline-block;
+    width: 23px;          
+    height: 23px;        
+    line-height: 20px; 
+    border-radius: 50%; 
+    border: solid 2px var(--text-color);
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+    text-align: center; 
+    font-size: 1rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    flex-direction: column;
+}
+.sidebar-top,
+.sidebar-bottom  {
+  .sidebar-nav {
+    flex-direction: row;
+    padding-bottom: 30px;
+  }
+}
+.todointernal-tags .sidebar-link-item {
+    display:flex;
+    align-items: center;
+    a {
+        height:20px;
+    }
+}
+.internal-tags {
+    display: flex;
+    column-gap: 12px;
+    .sidebar-link-description {
+        display: none;
+    }
+    .todosidebar-link-item a {
+        display:flex;
+        flex-direction: column;
+    }
+    .sidebar-link-item {
+        position:relative;
+    }
+}
+.sidebar-short {
+  /* hide descriptions and link items when showing the short sidebar */
+  #sidebar-expand-button,
+  #sidebar-colapse-button {
+      display: none;
+  }
+  :not(.internal-tags).sidebar-links {
+      display:none;
+  }
+
+  /* show the descriptions below the icon on hover */
+  .internal-tags {
+    .sidebar-link-item:hover {
+        .sidebar-link-description {
+            display:inline-flex;
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%); 
+            white-space: nowrap;
+        }
+    }
+  }
+
+  /* popup menus for sidebar links */
+  .sidebar-links-container {
+      position:relative;
+  }
+  .show-items-toggle {
+      .sidebar-links {
+          top:150%;
+          left: -70px; /* todo - mobile only */
+          z-index: 1000;
+          width: max-content;
+          max-width: 250px;
+          background-color: var(--menu-background-color);
+          position: absolute;
+          flex-direction: column;
+          display: inline-flex;
+          padding:12px;
+          gap: 12px;
+          border-radius: 10px;
+      }
+
+      .sidebar-link-item button,
+      .sidebar-link-item a {
+          display:flex;
+          column-gap: 24px;
+          align-items: center;
+      }
+  }
+}
+
+/* show popup menu above the sidebar when the sidebar is positioned at the bottom of the screen */
+.sidebar-bottom .sidebar-short {
+  padding-top:30px;
+  .show-items-toggle .sidebar-links {
+    bottom:130%;
+    top:unset;
+  }
+}
+
+/* todo - expanded sidebar */
+.sidebar.sidebar-long {
+  padding-left: var(--site-edge-padding);
+  padding-right: 0px;
+  .sidebar-nav {
+      max-width: var(--sidebar-width); 
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      position: sticky;
+      top: var(--site-header-height);
+  }
+  .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+  }
+
+  /* toggle the descriptions shown alongside the icons */
+  &:not(.sidebar-colapsed) {
+      #sidebar-expand-button {
+          display: none;
+      }
+  }
+  &.sidebar-colapsed {
+      .sidebar-header,
+      .sidebar-link-description,
+      #sidebar-colapse-button {
+          display: none;
+      }
+  }
+
+  .sidebar-header {
+      font-size: 1.4rem;
+      color: var(--text-color);
+  }
+  .sidebar-links {
+      padding:0;
+      .sidebar-link-item button,
+      .sidebar-link-item a {
+          display:flex;
+          flex-direction: row;
+          column-gap: 12px;
+          align-items: center;
+          font-size: 1.4rem;
+          color: var(--icon-color);
+      }
+  }
+  
+  .sidebar-link-item {
+      opacity: 50%;
+  }
+  .sidebar-link-item:hover {
+      opacity: 1; 
+      /* show the descriptions on hover when sidebar is colapsed */
+      .sidebar-link-description {
+          display:inline-flex;
+      }
+  }
+
+  hr {
+      opacity:50%;
+      height:2px;
+  }
+  &.sidebar-colapsed hr {
+      width:20px;
+  }
+}
+/* todo */
+#copy-link .tooltip {
+    position: absolute;
+    bottom: 30px; 
+    transform: translateX(-50%);
+    padding: 5px 10px 5px 10px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    background-color: var(--background-color);
+    color: var(-color);
+    text-align: center;
+    border-radius: 4px;
+    z-index: 1000; 
+    white-space: nowrap;
+    font-size: 1.2rem;
+    @media (min-width: 760px) {
+        top:215px;
+        right:15px;
+        border:unset;
+    }
+}
+

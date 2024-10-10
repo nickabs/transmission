@@ -6,8 +6,8 @@
 */
 
 (function() {
-    var darkModeButton = document.querySelector("button.dark-mode");
-    var lightModeButton = document.querySelector("button.light-mode");
+    const darkModeButton = document.querySelector("button.dark-mode");
+    const lightModeButton = document.querySelector("button.light-mode");
 
     if (! darkModeButton || ! lightModeButton) {
         return;
@@ -18,6 +18,29 @@
     if (storedDataColorTheme) {
         document.documentElement.setAttribute('data-color-scheme', storedDataColorTheme);
     }
+
+    /* 
+     * where an svg icon is loaded externally, e.g in the sidebar, 
+     * we have to update the svg paths to reflect the selected color scheme 
+     */
+    function updateIconColor() {
+        if (!icons) return;
+
+        const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--icon-color').trim();
+
+        icons.forEach(icon => {
+            const svgDoc = icon.contentDocument;
+            if (!svgDoc) return; 
+
+            const elements = svgDoc.querySelectorAll('path, circle, rect, ellipse');
+            
+            elements.forEach(element => {
+                element.setAttribute('fill', fillColor);
+                element.setAttribute('stroke', fillColor);
+            });
+        });
+    }
+
 
     function onClick(event) {
         var currentTheme = document.documentElement.getAttribute("data-color-scheme");
@@ -33,7 +56,14 @@
         if (commentsScript) {
             commentsScript.setAttribute('data-color-scheme', targetDataColorTheme);
         };
+
+        /* update the sidebar icons */
+        updateIconColor();
     }
+
+    const icons = document.querySelectorAll('.sidebar-link-icon');
+    updateIconColor();
+
     darkModeButton.addEventListener('click', onClick);
     lightModeButton.addEventListener('click', onClick);
 

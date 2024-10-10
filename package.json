@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "1.24.0",
+    "version": "2.0.0",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -118,22 +118,14 @@
                 "type": "boolean",
                 "default": false
             },
-            "show_featured_posts": {
-                "type": "boolean",
-                "default": false,
-                "group": "homepage"
-            },
             "google_analytics_id": {
                 "type": "text",
                 "description": "if you use google analytics, add your GA id here"
             },
-            "site_accent_color_dark": {
-                "type": "color",
-                "default": "#564d4d"
-            },
-            "site_accent_color_light": {
-                "type": "color",
-                "default": "#e6e6e6"
+            "show_featured_posts": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
             },
             "show_authors": {
                 "type": "select",
@@ -154,6 +146,16 @@
                     "Focus (left)"
                 ],
                 "default": "Focus (left)",
+                "group": "homepage"
+            },
+            "home_page_sidebar": {
+                "type": "select",
+                "options": [
+                    "None",
+                    "Top",
+                    "Bottom"
+                ],
+                "default": "Top",
                 "group": "homepage"
             },
             "post_layout_type": {

@@ -3,9 +3,8 @@
 /* 2. default site margins              */
 /* 3. photoswipe lightbox adjustments   */
 /* 4. site header/annoucmenent bar      */
-/* 5. navigation menu                   */
-/* 6. site footer                       */
-/* 7. Ghost cards                       */
+/* 5. site footer                       */
+/* 6. Ghost cards                       */
 /*------------------------------------- */
 
 /* -------------------------------*/
@@ -69,7 +68,7 @@ li {
 * the contents are limited to max-container-with using padding
 */
 .hero-header,
-.site-header-container,
+.main-nav,
 .site-footer {
   padding-left: var(--site-edge-padding);
   padding-right: var(--site-edge-padding);
@@ -131,10 +130,10 @@ li {
 /* -------------------------------------- */
 /* 4. site header/annoucmenent bar        */
 /* -------------------------------------- */
-.site-header-container { 
+.main-nav { 
   background-color: var(--background-color);
   display: flex;
-  height:var(--site-header-container-height); 
+  height:var(--main-nav-height); 
   flex-direction: row ;
   justify-self: center;
   align-items: center;
@@ -178,168 +177,7 @@ li {
 }
 
 /* -------------------------------------- */
-/* 5. navigation menu                     */
-/* -------------------------------------- */
-/* default display for mobile devices (hamburger nav) */
-.nav {
-  flex: 1;
-  display: grid;
-  grid-template-areas:
-    "NavHeader" 
-    "NavItems";
-}
-.submenu {
-  display: grid;
-  grid-template-areas:
-    "SubmenuHeader" 
-    "SubmenuItems";
-}
-.nav-header { grid-area: NavHeader }
-.nav-items { grid-area: NavItems; }
-.submenu-header { grid-area: SubmenuHeader }
-.submenu-items { grid-area: SubmenuItems; }
-
-.nav, .submenu {
-  position:fixed;
-  right:var(--edge-padding);
-  background-color: var(--banner-background-color);
-  border-radius: 10px;
-  width:350px;
-  border: 0.25px solid var(--border-color);
-  overflow:hidden; /* prevent borders overunning rounded corners */
-  top: calc(var(--site-header-height) + 5px);
-}
-.nav-header ,
-.submenu-header {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  grid-column: 1/-1;
-  grid-row: 1; 
-}
-.nav-title,
-.submenu-title {
-  color: var(--banner-title-color);
-  font-weight:800;
-}
-.nav-items, .submenu-items {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  list-style: none;
-  padding:0;
-  font-weight: 200;
-}
-.nav-item,
-.submenu-item, 
-.nav-header,
-.submenu-header {
-  padding: 5px 10px;
-  border: 0.25px solid var(--border-color);
-}
-
-/* hide until clicked */
-.submenu,
-.nav {
-  display: none;
-}
-.active-nav {
-  display: grid;
-}
-.active-submenu {
-  display:grid;
-}
-.nav:has(.active-submenu) {
-  .nav-item:not(:has(.active-submenu)) {
-    display: none ;
-  }
-}
-
-/* animate nav opening */
-@keyframes showMenu {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-/* hide nav items until dropdown-nav.js confirms it has run (to prevent the screen flashing) */
-.nav:not(.nav-ready){
-  opacity:0;
-}
-.nav.nav-ready {
-  opacity:1;
-}
-/* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
-@media (min-width: 760px) {
-  .expanded-nav {
-    .nav-item {
-      white-space: nowrap;
-    }
-    .nav {
-      overflow: visible; /* if not set this prevents the submenu showing */
-    }
-    .nav {
-      position:static;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      font-size: 1.4rem;
-      margin: 0 15px;
-    }
-    .nav-header,
-    .nav-toggle {
-      display: none;
-    }
-    .nav-items {
-      display: flex;
-      flex-grow: 1;
-      flex-wrap:wrap;
-      column-gap: 25px;
-      justify-content: center; 
-
-      .nav-item {
-        position: relative;
-        display: flex!important ; /* always show the nav-items in this view */
-        border: unset;
-        margin: 0;
-        padding: 0;
-      }
-      .submenu:not(.active-submenu) {
-        display:none;
-      }
-      .nav-header {
-        display:none;
-      }
-      
-      .submenu {
-        transform: translateX(50%);
-        position:absolute;
-        overflow: hidden;
-        top: 40px;
-      }
-      .nav-item:has(sup) {
-        line-height: 12px; /* fix misalignment caused by drop down nav symbol */
-      }
-    }
-    /* animate hover */
-    .nav-item::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 0.5px;
-      background-color: var(--theme-accent-color);
-      width:0;
-      transform: scaleX(0); /* Initially hidden */
-      transition: transform 0.2s ease; 
-    }
-    .nav-item:hover::after {
-      width:100%;
-      transform: scaleX(1); 
-    }
-  }
-}
-
-/* -------------------------------------- */
-/* 6. site footer (privacy and copyright) */
+/* 5. site footer (privacy and copyright) */
 /* -------------------------------------- */
 
 /* make room for share and toc icons - these move to the bottom of the screen on smaller screens*/
@@ -392,7 +230,7 @@ li {
 }
 
 /* -------------------------------------- */
-/* 7. Ghost cards and CTAs                */
+/* 6. Ghost cards and CTAs                */
 /* -------------------------------------- */
 .site {
   .kg-embed-card iframe {

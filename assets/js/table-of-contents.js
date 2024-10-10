@@ -10,7 +10,7 @@
     
 })();
 
-// safari fix  - toc not showing without a forced repaint
+// safari fix  - toc not showing without a forced repaint - todo - retest
 window.onload = function() {
   const toc = document.querySelector('.table-of-contents');
   if (toc) {
@@ -27,6 +27,9 @@ window.onload = function() {
 (function() {
     const tocButton = document.querySelector("#toc-toggle");
     const tableOfContents = document.querySelector(".table-of-contents");
+
+    return; //todo debug
+
 
     if (!tableOfContents) {
       return;

@@ -1,21 +1,37 @@
 {{!-- markup for the table of contents and sidebar nav
 Parameters:
-    layout: [ sidebar-layout , footer-layout]
+    layout: [ sidebar-layout , footer-layout] todo
+    aside-type: [ toc , sidebar, etc ]
 --}}    
 
-<aside class="table-of-contents {{layout}}">
-    <button id="toc-toggle" data-progress="0" aria-label="table-of-contents-mode" class="icon">
-        <span class="toc-open-icon ">{{> "icons/toc-open"}}</span>
-        <span class="toc-close-icon">{{> "icons/toc-close"}}</span>
-    </button>
-    <div class="toc-container">
-        <h1 class="toc-title">On this page</h1>
-        {{!-- The table of content list will be inserted here --}}
-        <div class="toc"></div>
-    </div>
-</aside> 
+{{#match aside-type "toc"}}
+    <aside class="table-of-contents {{layout}}">
+        <button id="toc-toggle" data-progress="0" aria-label="table-of-contents-mode" class="icon">
+            <span class="toc-open-icon ">{{> "icons/toc-open"}}</span>
+            <span class="toc-close-icon">{{> "icons/toc-close"}}</span>
+        </button>
+        <div class="toc-container">
+            <h1 class="toc-title">On this page</h1>
+            {{!-- The table of content list will be inserted here --}}
+            <div class="toc"></div>
+        </div>
+    </aside> 
+{{/match}}
 
 {{!-- share buttons and secondary nav items inserted here --}}
-<aside class="sidebar {{layout}}">
-    {{> "navigation" nav-type="sidebar-social-secondary"}}
-</aside>
+{{#match aside-type "sidebar"}} 
+    <aside class="sidebar {{layout}} sidebar-short">
+        <nav class="sidebar-nav">   
+            {{!-- todo hide the buttons if there are no nav items --}}
+            <button id="sidebar-expand-button" class="icon" aria-label="expand sidebar">
+            {{> "icons/sidebar-expand" }}
+            </button>
+            <button id="sidebar-colapse-button" class="icon" aria-label="colapse sidebar">
+                {{> "icons/sidebar-colapse" }}
+            </button>
+            {{navigation type="secondary" nav-type="sidebar-internal-tag"}}
+            {{navigation type="secondary" nav-type="sidebar-secondary-links"}}
+            {{navigation type="secondary" nav-type="sidebar-share"}}
+        </nav>
+    </aside>
+{{/match}}

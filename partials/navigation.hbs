@@ -1,77 +1,158 @@
 {{!-- 
-  outputs nav items defined in the Ghost admin panel (Settings > Design > Navigation) 
-  parameters: nav-type [ primary, sidebar-social-secondary ]
-  todo: options for social and/or secondary  
+  parameters: nav-type [ primary, sidebar-secondary-links, sidebar-internal-tags ]
+
+  - primary nav: outputs nav items defined in the Ghost admin panel (Settings > Design > Navigation) 
+  - sidebar-secondary-links: Settings > Desing > Navigation > Secondary
+  - sidebar-internal-tags:  Tags > Internal (note if the user supplies an svg as a featured image this will be used as an icon in the menu)
+
  --}}
 {{#match nav-type "primary"}}
   {{!-- the html defined in this here is used by dropdown-nav.js --}}
-  <nav class="nav">   
-    <div class="nav-header">
-      <p class="nav-title">Contents</p>
-      <button class="icon nav-close">✕</button>
+  <div class="main-nav-links-container">   
+    <div class="main-nav-links-header">
+      <p class="main-nav-links-title">Contents</p>
     </div>
-    <ol class="nav-items">
+    <ul class="main-nav-links">
       {{#foreach navigation}}
-          <li class="nav-item">
-            <a href="{{url absolute="true"}}">{{label}}</a>
+          <li class="main-nav-link-item">
+            <a class="main-nav-link" href="{{url absolute="true"}}">{{label}}</a>
           </li>
       {{/foreach}}
-    </ol>
-  </nav>
+    </ul>
+  </div>
 {{/match}}
 
+{{#match nav-type "sidebar-internal-tag"}}
+  {{#get "tags" filter="visibility:internal" as |internal-tags|}}
+  {{#if internal-tags}}
+    
+      <ul class="internal-tags sidebar-links">
+      {{#foreach internal-tags visibility="internal"}}
+        <li class="sidebar-link-item">
+          {{!-- 
+            load the svg inline so that we can update the fill attribute values according 
+            to the dark/light mode selected (see dark-mode-toggle.js)
+            these "hidden" class hides the images while the javascript runs 
 
-{{#match nav-type "sidebar-social-secondary"}}
-  <nav class="sidebar-nav">   
+            some useful items in the post/page context below:
+              - excerpt - excerpt from the current post/page
+              - featured_image - post/page feature image
+              - primary_tag - post/page primary tag (use include="tags" in the #get to access the tags properties)
+
+              from the internal tag context:
+              - accent_color  - the color assigned to the internal tag (from the tags context)
+              - name - internal tag name
+              - description - internal tag description
+              - feature_image - internal tag feature image
+              - slug - internal tag slug
+
+              note that you can't use a relative reference in a filter expression, e.g filter="tags:{{../../slug}}".
+              The workaround is to pass the relative attribute reference as a parameter that can is then used in a partial hbs script
+
+              note that logic for a primary tag is: a primary tag is the first tag associated with a post, *if that tag is public*.
+              therefore if the first (or only) tag on your post/page is an internal tag this field will be null
+            --}}
+          
+          {{!-- todo handle pages and posts, handle tags with multiple posts or pages 
+          --}}
+          {{#get "posts" filter="tags:{{slug}}" as |posts-with-internal-tag|}}
+          {{#foreach posts-with-internal-tag }}
+            {{#match ../posts.length 1}}
+              <a href="{{this.url}}" >
+                <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                <p class="sidebar-link-description">{{../../name}}</p>
+              </a>
+            {{else}}
+              {{#if @first}}
+              <a href="{{this.url}}" >
+                <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                <p class="sidebar-link-description">{{../../name}}</p>
+              </a>
+              {{/if}}
+            {{/match}}
+          {{/foreach}}
+          {{/get}}
+        </li>
+      {{/foreach}}
+      </ul>
+     <hr>
+    {{/if}}
+  {{/get}}
+{{/match}}
+
+{{#match nav-type "sidebar-secondary-links"}}
     {{#if isSecondary}}
-        <ol class="secondary-nav-items">
+      <div class="sidebar-links-container secondary-links-container">
+        <div class="sidebar-header secondary-links-header">
+          <button id="secondary-links-button" class="icon" aria-label="secondary-links">
+              {{> "icons/categories"}} 
+              <span class="secondary-link-button-description sidebar-header-description">Sections</span>
+          </button>
+        </div>
+        <ul class="secondary-links sidebar-links">
           {{#foreach navigation}}
-              <li>
-                <a class="secondary-nav-item" href="{{url absolute="true"}}">{{label}}</a>
+              <li class="sidebar-link-item" >
+                <a class="sidebar-link" href="{{url absolute='true'}}">
+                  <span class="sidebar-link-description">{{label}}</span>
+                </a>
               </li>
           {{/foreach}}
-        </ol>
+        </ul>
+      </div>
+      <hr>
     {{/if}}
+{{/match}}
 
-    <button id="share-button" class="icon" aria-label="share">
-        {{> "icons/share"}} <p> Share</p>
-    </button>
-    <ul class="share-links">
-        <li>
-          <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
-          class="icon share-link" aria-label="share on bluesky" target="_blank" rel="noopener" >
-              {{> "icons/bluesky"}}
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
-          class="icon share-link" aria-label="share on facebook" target="_blank" rel="noopener" >
-              {{> "icons/facebook"}}
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
-              class="icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
-              {{> "icons/twitter"}}
-          </a>
-        </li>
-        <li>
-          <a href="whatsapp://send?text={{url absolute=" true"}}" 
-              class="icon share-link" aria-label="share on whatsapp" target="_blank" rel="noopener">
-              {{> "icons/whatsapp"}}
-          </a>
-        </li>
-        <li>
-          <a href="{{@site.url}}/rss"
-              class="icon share-link" aria-label="rss feed" target="_blank" rel="noopener">
-              {{> "icons/rss"}}
-          </a>
-        </li>
-        <li>
-          <button id="copy-link" class="icon share-link" aria-label="copy link">
-              {{> "icons/link"}}
-          </button>
-        </li>
-    </ul>
-  </nav>
+{{#match nav-type "sidebar-share"}}
+    <div class="sidebar-links-container share-links-container">
+      <div class="sidebar-header share-links-header">
+        <button id="share-links-button" class="icon" aria-label="share">
+            {{> "icons/share"}} 
+            <span class="share-links-button-description sidebar-header-description">Share</span>
+        </button>
+      </div>
+      <ul class="share-links sidebar-links">
+          <li class="sidebar-link-item">
+            <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
+            class="sidebar-link-icon icon share-link" aria-label="share on bluesky" target="_blank" rel="noopener" >
+                {{> "icons/bluesky"}}
+                <p class="sidebar-link-description">Bluesky</p>
+            </a>
+          </li>
+          <li class="sidebar-link-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+            class="sidebar-link-icon icon share-link" aria-label="share on facebook" target="_blank" rel="noopener" >
+                {{> "icons/facebook"}}
+                <p class="sidebar-link-description">Facebook</p>
+            </a>
+          </li>
+          <li class="sidebar-link-item">
+            <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
+                class="sidebar-link-icon icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
+                {{> "icons/twitter"}}
+                <p class="sidebar-link-description">Twitter</p>
+            </a>
+          </li>
+          <li class="sidebar-link-item">
+            <a href="whatsapp://send?text={{url absolute=" true"}}"
+                class="sidebar-link-icon icon share-link" aria-label="share on whatsapp" target="_blank" rel="noopener">
+                {{> "icons/whatsapp"}}
+                <p class="sidebar-link-description">WhatsApp</p>
+            </a>
+          </li>
+          <li class="sidebar-link-item">
+            <a href="{{@site.url}}/rss"
+                class="sidebar-link-icon icon share-link" aria-label="rss feed" target="_blank" rel="noopener">
+                {{> "icons/rss"}}
+                <p class="sidebar-link-description">RSS</p>
+            </a>
+          </li>
+          <li class="sidebar-link-item">
+            <button id="copy-link" class="sidebar-link-icon icon share-link" aria-label="copy link">
+                {{> "icons/link"}}
+                <p class="sidebar-link-description">Copy link</p>
+            </button>
+          </li>
+      </ul>
+    </div>
 {{/match}}

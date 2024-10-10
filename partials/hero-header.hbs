@@ -36,7 +36,7 @@
         {{/if}}
         {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
         {{#if @custom.show_authors}}
-            <ol class="hero-author-list">
+            <ul class="hero-author-list">
                 {{#foreach authors}}
                     <li class="author-profile-image">
                         {{#if profile_image}}
@@ -60,7 +60,7 @@
                         {{/if}}
                     </li>
                 {{/foreach}}
-            </ol>
+            </ul>
         {{/if}}
         {{#if feature_image }}
             <img class="hero-image" src="{{feature_image}}"/>
