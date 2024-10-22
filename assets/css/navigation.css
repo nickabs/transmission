@@ -7,6 +7,7 @@
 /* -------------------------------------- */
 /* 1. main navigation                     */
 /* -------------------------------------- */
+
 /* default display for mobile devices (hamburger nav) */
 .main-nav-links-container {
   flex: 1;
@@ -81,7 +82,7 @@
   }
 }
 
-/* animate nav opening */
+/* animate nav opening todo  */
 @keyframes showMenu {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -165,13 +166,14 @@
   }
 }
 
+/* ------------------------------------------------------------ */
+/* 2. internal tags, share links are secondary navigation items */
+/* ------------------------------------------------------------ */
 
-/* -------------------------------------------------------- */
-/* 2. share links are secondary navigation items            */
-/* for larger screens they are shown on the right hand side */
-/* -------------------------------------------------------- */
-
-/*hide the icons initially - sidebar.js will resize them and then make them visible */
+.sidebar {
+  min-width: var(--sidebar-width);
+}
+/*hide the icons initially - navigation.js will resize them and then remove the 'hidden' class so they are visible */
 .internal-tags .sidebar-link-item .hidden{
     visibility:hidden;
 }
@@ -181,6 +183,14 @@
     pointer-events: none;
 }
 
+/* show the internal tag icons centrally */
+.internal-tags .sidebar-link-item {
+  display:flex;
+  align-items: center;
+  a {
+      height:20px;
+  }
+}
 .sidebar-link-item object {
     height: 20px;
     width: 20px;
@@ -214,155 +224,143 @@
     padding-bottom: 30px;
   }
 }
-.todointernal-tags .sidebar-link-item {
-    display:flex;
-    align-items: center;
-    a {
-        height:20px;
-    }
-}
 .internal-tags {
     display: flex;
     column-gap: 12px;
-    .sidebar-link-description {
-        display: none;
-    }
-    .todosidebar-link-item a {
-        display:flex;
-        flex-direction: column;
-    }
     .sidebar-link-item {
         position:relative;
     }
 }
-.sidebar-short {
-  /* hide descriptions and link items when showing the short sidebar */
-  #sidebar-expand-button,
-  #sidebar-colapse-button {
-      display: none;
-  }
-  :not(.internal-tags).sidebar-links {
-      display:none;
-  }
+/* default view - the sidebar link lists are not expanded */
 
-  /* show the descriptions below the icon on hover */
-  .internal-tags {
-    .sidebar-link-item:hover {
-        .sidebar-link-description {
-            display:inline-flex;
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%); 
-            white-space: nowrap;
-        }
-    }
-  }
+/* hide descriptions and link items when showing the (default) short sidebar */
+#sidebar-show-descriptions-button,
+#sidebar-hide-descriptions-button {
+    display: none;
+}
+:not(.internal-tags).sidebar-links {
+    display:none;
+}
+.internal-tags .sidebar-link-description {
+    display: none;
+}
 
-  /* popup menus for sidebar links */
-  .sidebar-links-container {
-      position:relative;
-  }
-  .show-items-toggle {
-      .sidebar-links {
-          top:150%;
-          left: -70px; /* todo - mobile only */
-          z-index: 1000;
-          width: max-content;
-          max-width: 250px;
-          background-color: var(--menu-background-color);
+/* show the descriptions below the icon on hover */
+.site:not(.sidebar-left):not(.sidebar-right) .internal-tags {
+  .sidebar-link-item:hover {
+      .sidebar-link-description {
+          display:inline-flex;
           position: absolute;
-          flex-direction: column;
-          display: inline-flex;
-          padding:12px;
-          gap: 12px;
-          border-radius: 10px;
-      }
-
-      .sidebar-link-item button,
-      .sidebar-link-item a {
-          display:flex;
-          column-gap: 24px;
-          align-items: center;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%); 
+          white-space: nowrap;
       }
   }
+}
+
+/* popup menus for sidebar links */
+.sidebar-links-container {
+    position:relative;
+}
+.sidebar .display-item-details {
+    .sidebar-links {
+        top:150%;
+        left: -70px; 
+        z-index: 1000;
+        width: max-content;
+        max-width: 250px;
+        background-color: var(--menu-background-color);
+        position: absolute;
+        flex-direction: column;
+        display: inline-flex;
+        padding:12px;
+        gap: 12px;
+        border-radius: 10px;
+    }
+
+    .sidebar-link-item button,
+    .sidebar-link-item a {
+        display:flex;
+        column-gap: 24px;
+        align-items: center;
+    }
 }
 
 /* show popup menu above the sidebar when the sidebar is positioned at the bottom of the screen */
 .sidebar-bottom .sidebar-short {
   padding-top:30px;
-  .show-items-toggle .sidebar-links {
+  .display-item-details .sidebar-links {
     bottom:130%;
     top:unset;
   }
 }
 
-/* todo - expanded sidebar */
-.sidebar.sidebar-long {
-  padding-left: var(--site-edge-padding);
-  padding-right: 0px;
-  .sidebar-nav {
-      max-width: var(--sidebar-width); 
-      display: flex;
-      flex-direction: column;
-      row-gap: 15px;
-      position: sticky;
-      top: var(--site-header-height);
-  }
-  .sidebar-links {
-      display: flex;
-      flex-direction: column;
-      row-gap: 8px;
-  }
+@media (min-width: 760px) {
+  .sidebar-right,
+  .sidebar-left {
+    padding-right: 0px;
+    .sidebar-nav {
+        display: flex;
+        row-gap: 15px;
+        position: sticky;
+        top: var(--site-header-height);
+    }
+    .sidebar-links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        padding:0;
+        .sidebar-link-item button,
+        .sidebar-link-item a {
+            display:flex;
+            flex-direction: row;
+            column-gap: 12px;
+            align-items: center;
+            font-size: 1.4rem;
+            color: var(--icon-color);
+        }
+    }
 
-  /* toggle the descriptions shown alongside the icons */
-  &:not(.sidebar-colapsed) {
-      #sidebar-expand-button {
-          display: none;
+    /* toggle sidebar descriptions */
+    .sidebar.display-item-details {
+      #sidebar-show-descriptions-button {
+        display: none;
       }
-  }
-  &.sidebar-colapsed {
+      .sidebar-link-description,
+      #sidebar-hide-descriptions-button {
+       display: inline-flex;
+      }
+    } 
+
+    .sidebar:not(.display-item-details) {
       .sidebar-header,
       .sidebar-link-description,
-      #sidebar-colapse-button {
+      #sidebar-hide-descriptions-button {
           display: none;
       }
-  }
-
-  .sidebar-header {
-      font-size: 1.4rem;
-      color: var(--text-color);
-  }
-  .sidebar-links {
-      padding:0;
-      .sidebar-link-item button,
-      .sidebar-link-item a {
-          display:flex;
-          flex-direction: row;
-          column-gap: 12px;
-          align-items: center;
-          font-size: 1.4rem;
-          color: var(--icon-color);
+      #sidebar-show-descriptions-button {
+        display: inline-flex;
       }
-  }
-  
-  .sidebar-link-item {
+      .sidebar-link-item:hover {
+        .sidebar-link-description {
+          display: inline-flex;
+        }
+      }
+      hr {
+        width:20px;
+      }
+    }
+    .sidebar-link-item {
       opacity: 50%;
-  }
-  .sidebar-link-item:hover {
-      opacity: 1; 
-      /* show the descriptions on hover when sidebar is colapsed */
-      .sidebar-link-description {
-          display:inline-flex;
-      }
-  }
-
-  hr {
-      opacity:50%;
-      height:2px;
-  }
-  &.sidebar-colapsed hr {
-      width:20px;
+    }
+    .sidebar-link-item:hover {
+        opacity: 1; 
+    }
+    #share-links-button:hover,
+    #secondary-links-button:hover {
+        cursor: default; /* Prevent pointer from changing */
+    }
   }
 }
 /* todo */

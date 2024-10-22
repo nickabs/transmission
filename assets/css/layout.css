@@ -20,6 +20,8 @@
 .hero-header { grid-area: HeroHeader; }
 .home-template.sidebar-top .sidebar { grid-area: SidebarTop; }
 .home-template.sidebar-bottom .sidebar { grid-area: SidebarBottom; }
+.home-template.sidebar-left .sidebar { grid-area: SidebarLeft; }
+.home-template.sidebar-right .sidebar { grid-area: SidebarRight; }
 .home-template.home-page-sidebar-none .sidebar { display: none; }
 .home-template.home-template.show-featured-articles .featured-articles { grid-area: FeaturedArticles; }
 .home-template.home-template:not(.show-featured-articles) .featured-articles { display: none; }
@@ -58,62 +60,62 @@
 
 @media (min-width: 760px) { 
     .home-template.home-page-focus-left {
-        grid-template-columns: 1.5fr 1fr; 
+        grid-template-columns: auto auto 33vw auto;
         grid-template-areas:
-            "SiteHeader SiteHeader"
-            "HeroHeader HeroHeader"
-            "SidebarTop SidebarTop"
-            "MainArticle LatestArticles"
-            "RecentArticles RecentArticles"
-            "Enrol Enrol"
-            "PreviousArticles PreviousArticles"
-            "Pagination Pagination"
-            "SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter";
+            "SiteHeader SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader HeroHeader"
+            "SidebarTop SidebarTop SidebarTop SidebarTop"
+            "SidebarLeft MainArticle LatestArticles SidebarRight"
+            "SidebarLeft RecentArticles RecentArticles SidebarRight"
+            "SidebarLeft Enrol Enrol SidebarRight"
+            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+            "SidebarLeft Pagination Pagination SidebarRight"
+            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+            "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-right {
-        grid-template-columns: 1fr 1.5fr; 
+        grid-template-columns: auto 33vw auto auto;
         grid-template-areas:
-            "SiteHeader SiteHeader"
-            "HeroHeader HeroHeader"
-            "SidebarTop SidebarTop"
-            "LatestArticles MainArticle"
-            "RecentArticles RecentArticles"
-            "Enrol Enrol"
-            "PreviousArticles PreviousArticles"
-            "Pagination Pagination"
-            "SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter";
+            "SiteHeader SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader HeroHeader"
+            "SidebarTop SidebarTop SidebarTop SidebarTop"
+            "SidebarLeft LatestArticles MainArticle SidebarRight"
+            "SidebarLeft RecentArticles RecentArticles SidebarRight"
+            "SidebarLeft Enrol Enrol SidebarRight"
+            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+            "SidebarLeft Pagination Pagination SidebarRight"
+            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+            "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-left.show-featured-articles {
-        grid-template-columns: 1.5fr 1fr; 
+        grid-template-columns: auto auto 33vw auto;
         grid-template-areas:
-            "SiteHeader SiteHeader"
-            "HeroHeader HeroHeader"
-            "SidebarTop SidebarTop"
-            "MainArticle FeaturedArticles"
-            "LatestArticles LatestArticles"
-            "Enrol Enrol"
-            "RecentArticles RecentArticles"
-            "PreviousArticles PreviousArticles"
-            "Pagination Pagination"
-            "SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter";
+            "SiteHeader SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader HeroHeader"
+            "SidebarTop SidebarTop SidebarTop SidebarTop"
+            "SidebarLeft MainArticle FeaturedArticles SidebarRight"
+            "SidebarLeft LatestArticles LatestArticles SidebarRight"
+            "SidebarLeft Enrol Enrol SidebarRight"
+            "SidebarLeft RecentArticles RecentArticles SidebarRight"
+            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+            "SidebarLeft Pagination Pagination SidebarRight"
+            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+            "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
     .home-template.home-page-focus-right.show-featured-articles {
-        grid-template-columns: 1fr 1.5fr; 
+        grid-template-columns: auto 33vw auto auto;
         grid-template-areas:
-            "SiteHeader SiteHeader"
-            "HeroHeader HeroHeader"
-            "SidebarTop SidebarTop"
-            "FeaturedArticles MainArticle"
-            "LatestArticles LatestArticles"
-            "Enrol Enrol"
-            "RecentArticles RecentArticles"
-            "PreviousArticles PreviousArticles"
-            "Pagination Pagination"
-            "SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter";
+            "SiteHeader SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader HeroHeader"
+            "SidebarTop SidebarTop SidebarTop SidebarTop"
+            "SidebarLeft FeaturedArticles MainArticle SidebarRight"
+            "SidebarLeft LatestArticles LatestArticles SidebarRight"
+            "SidebarLeft Enrol Enrol SidebarRight"
+            "SidebarLeft RecentArticles RecentArticles SidebarRight"
+            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+            "SidebarLeft Pagination Pagination SidebarRight"
+            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+            "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
 }
 

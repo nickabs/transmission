@@ -152,34 +152,49 @@
 })();
 
 
-/* open/close menu of nav link items - note the user decides whether to include share or secondary links, so they may be null */
+/*
+ * open/close nav link item menu 
+ * note the user decides whether to include share or secondary links, so they may be null 
+*/
 (function() {
     const containers = {
-        share: document.querySelector('.share-links-container'),
-        secondary: document.querySelector('.secondary-links-container')
+        share: document.querySelector('.site:is(.sidebar-top,.sidebar-bottom) .share-links-container'),
+        secondary: document.querySelector('.site:is(.sidebar-top,.sidebar-bottom) .secondary-links-container'),
+        sidebar: document.querySelector('.sidebar')
     };
 
     function toggle(container) {
-        container.classList.toggle('show-items-toggle');
+        container.classList.toggle('display-item-details');
     }
 
     document.addEventListener('click', function(event) {
-        const { share, secondary } = containers;
+        const { share, secondary, sidebar } = containers;
 
         if (share?.contains(event.target)) {
             toggle(share);
-            if (secondary?.classList.contains('show-items-toggle')) toggle(secondary);
+            if (secondary?.classList.contains('display-item-details')) toggle(secondary);
+            if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
             return;
         }
 
         if (secondary?.contains(event.target)) {
             toggle(secondary);
-            if (share?.classList.contains('show-items-toggle')) toggle(share);
+            if (share?.classList.contains('display-item-details')) toggle(share);
+            if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
             return;
         }
 
-        if (share?.classList.contains('show-items-toggle')) toggle(share);
-        if (secondary?.classList.contains('show-items-toggle')) toggle(secondary);
+        if (sidebar?.contains(event.target)) {
+            toggle(sidebar);
+            if (share?.classList.contains('display-item-details')) toggle(share);
+            if (secondary?.classList.contains('display-item-details')) toggle(secondary);
+            return;
+        }
+
+        /* close open menus when clicking outside */
+        if (share?.classList.contains('display-item-details')) toggle(share);
+        if (secondary?.classList.contains('display-item-details')) toggle(secondary);
+        //if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
     });
     /* 
      * remove the secondary nav indicator (e.g ##1-) from internal tag names. The number is optional and there to sort the icons
@@ -188,7 +203,6 @@
      *  the svg element is embeded from the tag's feature_post image into the HTML so that we can dynamically adjut the 
      *  color according to dark mode settings (see dark-mode-toggle.js). 
      *  as a consequence, we can't control the height /width with css and have to do it here instead
-     * todo sort by slug
     */
     const internalTagItems = document.querySelectorAll('.internal-tags .sidebar-link-item');
     if (internalTagItems) {

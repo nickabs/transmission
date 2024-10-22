@@ -28,9 +28,6 @@ window.onload = function() {
     const tocButton = document.querySelector("#toc-toggle");
     const tableOfContents = document.querySelector(".table-of-contents");
 
-    return; //todo debug
-
-
     if (!tableOfContents) {
       return;
     }

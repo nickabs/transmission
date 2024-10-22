@@ -20,14 +20,13 @@ Parameters:
 
 {{!-- share buttons and secondary nav items inserted here --}}
 {{#match aside-type "sidebar"}} 
-    <aside class="sidebar {{layout}} sidebar-short">
+    <aside class="sidebar {{layout}} display-item-details">
         <nav class="sidebar-nav">   
-            {{!-- todo hide the buttons if there are no nav items --}}
-            <button id="sidebar-expand-button" class="icon" aria-label="expand sidebar">
+            <button id="sidebar-show-descriptions-button" class="icon" aria-label="expand sidebar">
             {{> "icons/sidebar-expand" }}
             </button>
-            <button id="sidebar-colapse-button" class="icon" aria-label="colapse sidebar">
-                {{> "icons/sidebar-colapse" }}
+            <button id="sidebar-hide-descriptions-button" class="icon" aria-label="collapse sidebar">
+                {{> "icons/sidebar-collapse" }}
             </button>
             {{navigation nav-type="sidebar-internal-tag"}}
             {{navigation type="secondary" nav-type="sidebar-secondary-links"}}

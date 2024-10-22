@@ -153,7 +153,9 @@
                 "options": [
                     "None",
                     "Top",
-                    "Bottom"
+                    "Bottom",
+                    "Left",
+                    "Right"
                 ],
                 "default": "Top",
                 "group": "homepage"
