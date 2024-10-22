@@ -152,7 +152,7 @@
 })();
 
 
-/* open/close menu of nav link items */
+/* open/close menu of nav link items - note the user decides whether to include share or secondary links, so they may be null */
 (function() {
     const containers = {
         share: document.querySelector('.share-links-container'),
@@ -166,20 +166,20 @@
     document.addEventListener('click', function(event) {
         const { share, secondary } = containers;
 
-        if (share.contains(event.target)) {
+        if (share?.contains(event.target)) {
             toggle(share);
-            if (secondary.classList.contains('show-items-toggle')) toggle(secondary);
+            if (secondary?.classList.contains('show-items-toggle')) toggle(secondary);
             return;
         }
 
-        if (secondary.contains(event.target)) {
+        if (secondary?.contains(event.target)) {
             toggle(secondary);
-            if (share.classList.contains('show-items-toggle')) toggle(share);
+            if (share?.classList.contains('show-items-toggle')) toggle(share);
             return;
         }
 
-        if (share.classList.contains('show-items-toggle')) toggle(share);
-        if (secondary.classList.contains('show-items-toggle')) toggle(secondary);
+        if (share?.classList.contains('show-items-toggle')) toggle(share);
+        if (secondary?.classList.contains('show-items-toggle')) toggle(secondary);
     });
     /* 
      * remove the secondary nav indicator (e.g ##1-) from internal tag names. The number is optional and there to sort the icons
