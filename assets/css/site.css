@@ -135,7 +135,6 @@ li {
   display: flex;
   height:var(--main-nav-height); 
   flex-direction: row ;
-  justify-self: center;
   align-items: center;
   .logo {
     margin-right: auto;
