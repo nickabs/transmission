@@ -6,14 +6,11 @@
     {{/if}}
 
     {{!-- toc and social icons --}}
-    {{#match @custom.post_layout_type "Sidebars / no feature image"}} 
-        {{> "asides" layout="sidebar-layout"}}
-    {{else match @custom.post_layout_type "Sidebars / feature image"}}
-        {{> "asides" layout="sidebar-layout"}}
-    {{else}}
-        {{> "asides" layout="footer-layout"}}
-    {{/match}}
+    {{> "asides" aside-layout="toc" }}
     
+    {{^match @custom.post_sidebar "None"}}
+        {{> "asides" aside-type="sidebar"}}
+    {{/match}}
     {{!-- outputting post or page content --}}
     <main class="article">
         {{content}}

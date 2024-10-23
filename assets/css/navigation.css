@@ -215,14 +215,16 @@
     justify-content: center;
     align-content: center;
     gap: 20px;
-    flex-direction: column;
+    flex-wrap:wrap;
 }
-.sidebar-top,
-.sidebar-bottom  {
-  .sidebar-nav {
+.sidebar-bottom .sidebar-nav {
+    flex-direction: row;
+    padding-top: 20px;
+}
+.sidebar-top .sidebar-nav {
     flex-direction: row;
     padding-bottom: 30px;
-  }
+    padding-top: 30px;
 }
 .internal-tags {
     display: flex;
@@ -231,7 +233,6 @@
         position:relative;
     }
 }
-/* default view - the sidebar link lists are not expanded */
 
 /* hide descriptions and link items when showing the (default) short sidebar */
 #sidebar-show-descriptions-button,
@@ -288,7 +289,7 @@
 }
 
 /* show popup menu above the sidebar when the sidebar is positioned at the bottom of the screen */
-.sidebar-bottom .sidebar-short {
+.sidebar-bottom {
   padding-top:30px;
   .display-item-details .sidebar-links {
     bottom:130%;
@@ -296,7 +297,11 @@
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 1300px) {
+  .sidebar-nav {
+    flex-direction: column;
+    align-content: flex-start;
+  }
   .sidebar-right,
   .sidebar-left {
     padding-right: 0px;

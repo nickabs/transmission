@@ -151,27 +151,37 @@
             "home_page_sidebar": {
                 "type": "select",
                 "options": [
-                    "None",
                     "Top",
                     "Bottom",
                     "Left",
-                    "Right"
+                    "Right",
+                    "None"
                 ],
                 "default": "Top",
                 "group": "homepage"
             },
-            "post_layout_type": {
+            "post_table_of_contents": {
                 "type": "select",
                 "options": [
-                    "Sidebars / no feature image",
-                    "Sidebars / feature image",
-                    "Footer / no feature image",
-                    "Footer / feature image",
-                    "Footer / wide feature image"
+                    "Full",
+                    "Minified",
+                    "None"
                 ],
-                "default": "Sidebars / no feature image",
+                "default": "Full",
                 "group": "post",
-                "description": "arrangement of featured image, TOC & social links"
+                "description": "TOC display options"
+            },
+            "post_sidebar": {
+                "type": "select",
+                "options": [
+                    "Top",
+                    "Bottom",
+                    "Left",
+                    "Right",
+                    "None"
+                ],
+                "default": "Top",
+                "group": "post"
             },
             "show_related_posts": {
                 "type": "boolean",

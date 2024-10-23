@@ -50,6 +50,15 @@
         {{~#match @custom.home_page_sidebar "None"}} home-page-sidebar-none{{/match~}}
         {{~#if @custom.show_featured_posts}} show-featured-articles{{/if~}}
     {{/is~}}
+    {{#is "post,page"}}
+        {{~#match @custom.post_table_of_contents "Full"}} post-toc-full{{/match~}}
+        {{~#match @custom.post_table_of_contents "Minified"}} post-toc-minified{{/match~}}
+        {{~#match @custom.post_table_of_contents "None"}} post-toc-none{{/match~}}
+        {{~#match @custom.post_sidebar "Top"}} sidebar-top{{/match~}}
+        {{~#match @custom.post_sidebar "Bottom"}} sidebar-bottom{{/match~}}
+        {{~#match @custom.post_sidebar "Left"}} sidebar-left{{/match~}}
+        {{~#match @custom.post_sidebar "Right"}} sidebar-right{{/match~}}
+    {{/is}}
     '>
 
     {{> "site-header"}}
