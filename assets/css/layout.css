@@ -135,7 +135,7 @@
             "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
     .home-template .main-article {
-        width: 77vw;
+        width: 60vw;
     }
     .home-template:is(.sidebar-left,.sidebar-right) .main-article {
         width: 50vw;
@@ -148,6 +148,11 @@
     }
     .home-template:is(.sidebar-top,.sidebar-bottom) {
         grid-template-columns: 0 auto auto 0;
+    }
+}
+@media (min-width: 760px) { 
+    .home-template .main-article {
+        width: 65vw;
     }
 }
 /*--------------------------*/
