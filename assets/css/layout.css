@@ -235,9 +235,6 @@
             }
         }
     }
-    .home-template.home-page-list {
-        max-width: var(--max-container-width);
-    }
 }
 /* make a bit more space for the sidebars */
 @media (min-width: 1300px) {
