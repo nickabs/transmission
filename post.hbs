@@ -3,10 +3,11 @@
 {{#post}}
 
 {{> "hero-header"}}
-{{!-- toc and social icons --}}
+
 {{^match @custom.post_table_of_contents "None"}}
     {{> "asides" aside-type="toc"}}
 {{/match}}
+
 {{^match @custom.post_sidebar "None"}}
     {{> "asides" aside-type="sidebar"}}
 {{/match}}

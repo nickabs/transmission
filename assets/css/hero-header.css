@@ -8,7 +8,7 @@
 /* ------------------ */
 /* 1. common styles   */
 /* ------------------ */
-.site:not(.sidebar-top) .hero-header {
+.hero-header {
     margin-bottom: 60px;
 }
 .hero-author-list {

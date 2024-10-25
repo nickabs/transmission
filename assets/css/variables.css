@@ -28,7 +28,7 @@
     --max-container-width: 1300px; 
     --edge-padding: max(3vmin, 20px); 
     --site-edge-padding: max(5vmin, 20px); 
-    --sidebar-width: 230px;
+    --sidebar-width: min(18vw, 230px);
 
 }
 /* 

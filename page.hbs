@@ -5,12 +5,14 @@
         {{> "hero-header"}}
     {{/if}}
 
-    {{!-- toc and social icons --}}
-    {{> "asides" aside-layout="toc" }}
-    
+    {{^match @custom.post_table_of_contents "None"}}
+        {{> "asides" aside-type="toc"}}
+    {{/match}}
+
     {{^match @custom.post_sidebar "None"}}
         {{> "asides" aside-type="sidebar"}}
     {{/match}}
+    
     {{!-- outputting post or page content --}}
     <main class="article">
         {{content}}
