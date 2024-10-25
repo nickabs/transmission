@@ -347,6 +347,7 @@
       }
 
       .sidebar:not(.display-item-details) {
+        hr,
         .sidebar-header,
         .sidebar-link-description,
         #sidebar-hide-descriptions-button {

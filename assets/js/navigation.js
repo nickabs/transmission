@@ -158,8 +158,8 @@
 */
 (function() {
     const containers = {
-        share: document.querySelector('.site:is(.sidebar-top,.sidebar-bottom) .share-links-container'),
-        secondary: document.querySelector('.site:is(.sidebar-top,.sidebar-bottom) .secondary-links-container'),
+        share: document.querySelector('.share-links-container'),
+        secondary: document.querySelector('.secondary-links-container'),
         sidebar: document.querySelector('.sidebar')
     };
 
