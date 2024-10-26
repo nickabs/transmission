@@ -5,6 +5,11 @@
 {{#tag}}
 {{> "hero-header"}}
 {{/tag}}
+
+{{^match @custom.post_sidebar "None"}}
+    {{> "asides" aside-type="sidebar"}}
+{{/match}}
+
 {{!-- a list of posts for this tag--}}
 <section class="tagged-articles paginated">
     {{#foreach posts}}

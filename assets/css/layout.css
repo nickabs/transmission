@@ -32,6 +32,7 @@
 .site-footer { grid-area: SiteFooter; }
 .pagination { grid-area: Pagination; }
 .tagged-articles { grid-area: TaggedArticles; }
+.author-articles { grid-area: TaggedArticles; }
 .enrol { grid-area: Enrol;}
 .comments { grid-area: Comments; }
 .one-time-payment { grid-area: OneTimePaymentRequest; }
@@ -216,11 +217,12 @@
 /*------------------------------------------------------*/
 .author-template,
 .tag-template {
-    grid-column: content;
     grid-template-areas:
-        "SiteHeader"
-        "HeroHeader"
-        "TaggedArticles"
-        "Pagination"
-        "SiteFooter";
+        "SiteHeader SiteHeader SiteHeader"
+        "HeroHeader HeroHeader HeroHeader"
+        "SidebarTop SidebarTop SidebarTop"
+        "SidebarLeft TaggedArticles SidebarRight"
+        "SidebarLeft Pagination SidebarRight"
+        "SidebarBottom SidebarBottom SidebarBottom"
+        "SiteFooter SiteFooter SidebarFooter";
 }

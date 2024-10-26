@@ -50,7 +50,7 @@
         {{~#match @custom.home_page_sidebar "None"}} home-page-sidebar-none{{/match~}}
         {{~#if @custom.show_featured_posts}} show-featured-articles{{/if~}}
     {{/is~}}
-    {{#is "post,page"}}
+    {{#is "post,page,author,tag"}}
         {{~#match @custom.post_table_of_contents "Full"}} post-toc-full{{/match~}}
         {{~#match @custom.post_table_of_contents "Minified"}} post-toc-minified{{/match~}}
         {{~#match @custom.post_table_of_contents "None"}} post-toc-none{{/match~}}

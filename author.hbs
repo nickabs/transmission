@@ -5,7 +5,11 @@
     {{> "hero-header" }}
 {{/author}}
 
-<section class="author-articles   paginated ">
+{{^match @custom.post_sidebar "None"}}
+    {{> "asides" aside-type="sidebar"}}
+{{/match}}
+
+<section class="author-articles paginated">
     {{#foreach posts}}
         {{> "article-card"}}
     {{/foreach}}
