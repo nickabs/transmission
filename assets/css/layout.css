@@ -225,4 +225,12 @@
         "SidebarLeft Pagination SidebarRight"
         "SidebarBottom SidebarBottom SidebarBottom"
         "SiteFooter SiteFooter SidebarFooter";
+
+        grid-template-columns: 0 auto 0;
+}
+@media (min-width: 760px) {
+    .author-template,
+    .tag-template {
+        grid-template-columns: auto auto auto;
+    }
 }
