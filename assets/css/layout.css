@@ -173,11 +173,7 @@
     "SidebarBottom";
 }
 @media (min-width: 760px) { 
-    /* page & post view tablet with sidebar */
-    .sidebar-left .sidebar { grid-area: SidebarLeft; } /* default mobile view has sidebars at top when "left" or "right" option is selected */
-    .sidebar-right .sidebar { grid-area: SidebarRight; }
-
-    .todopage-template , .post-template {
+    .page-template , .post-template {
         &.post-toc-full {
             grid-template-columns: var(--max-content-width) auto; 
             grid-template-areas:
@@ -195,7 +191,9 @@
         }
     }
 }
-@media (min-width: 760px) { 
+@media (min-width: 1300px) { 
+    .sidebar-left .sidebar { grid-area: SidebarLeft; } /* default mobile view has sidebars at top when "left" or "right" option is selected */
+    .sidebar-right .sidebar { grid-area: SidebarRight; }
     /* page and post layout with sidebar */
     .site.page-template, .site.post-template {
         grid-template-columns: auto var(--max-content-width) auto auto;
@@ -212,6 +210,7 @@
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
 
+        
         &.sidebar-left .sidebar { grid-area: SidebarLeft; }
         &.sidebar-right .sidebar { grid-area: SidebarRight; }
 
@@ -228,7 +227,11 @@
             }
         }
         &.post-toc-full.sidebar-left {
-            grid-template-columns: 1.0fr 7.0fr 2.0fr 0;
+            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr;
+            .sidebar {
+                justify-self: end;
+                margin-left: auto;
+            }
             &:has(.toc:empty) {
                 grid-template-columns: 1.0fr 4.0fr 0 0;
             }
@@ -239,15 +242,6 @@
                 grid-template-columns: 0 1fr 0 0;
             }
         }
-    }
-}
-/* make a bit more space for the sidebars */
-@media (min-width: 1300px) {
-    &.post-toc-full.sidebar-right {
-        grid-template-columns: 0 6.0fr 2.0fr 2.0fr;
-    }
-    &.post-toc-full.sidebar-left {
-        grid-template-columns: 2.0fr 6.0fr 2.0fr 0;
     }
 }
 /*------------------------------------------------------*/

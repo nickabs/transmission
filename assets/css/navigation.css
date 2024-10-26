@@ -304,8 +304,82 @@
   }
 }
 
-@media (min-width: 760px) { /* todo */
-  .site:is(.sidebar-left,.sidebar-right) {
+@media (min-width: 760px) {
+  .site.home-template:is(.sidebar-left,.sidebar-right) {
+    .hero-header {
+      margin-bottom: 60px;
+    }
+    .sidebar-nav {
+      flex-direction: column;
+      align-content: flex-start;
+    }
+    .sidebar-nav {
+        display: flex;
+        row-gap: 15px;
+        position: sticky;
+        top: var(--site-header-height);
+    }
+    .sidebar-links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        padding:0;
+        .sidebar-link-item button,
+        .sidebar-link-item a {
+            display:flex;
+            flex-direction: row;
+            column-gap: 12px;
+            align-items: center;
+            font-size: 1.4rem;
+            color: var(--icon-color);
+        }
+      }
+
+      /* toggle sidebar descriptions */
+      .sidebar.display-item-details {
+        #sidebar-show-descriptions-button {
+          display: none;
+        }
+        .sidebar-link-description,
+        #sidebar-hide-descriptions-button {
+          display: inline-flex;
+        }
+      }
+
+      .sidebar:not(.display-item-details) {
+        hr,
+        .sidebar-header,
+        .sidebar-link-description,
+        #sidebar-hide-descriptions-button {
+            display: none;
+        }
+        #sidebar-show-descriptions-button {
+          display: inline-flex;
+        }
+        .sidebar-link-item:hover {
+          .sidebar-link-description {
+            display: inline-flex;
+          }
+        }
+      }
+      hr {
+        width:20px;
+      }
+      .sidebar-link-item {
+        opacity: 50%;
+      }
+      .sidebar-link-item:hover {
+          opacity: 1; 
+      }
+      #share-links-button:hover,
+      #secondary-links-button:hover {
+          cursor: default; /* Prevent pointer from changing */
+      }
+  }
+}
+
+@media (min-width: 1300px) { /* todo  - duplicated code can be removed once support for :is(@media) is supported */
+  .site:is(.post-template,.page-template):is(.sidebar-left,.sidebar-right) {
     .hero-header {
       margin-bottom: 60px;
     }
