@@ -237,7 +237,19 @@
             }
         }
         &.post-toc-full:is(.sidebar-top,.sidebar-bottom) {
-            grid-template-columns: 0 7.7fr 3.3fr 0;
+            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr 0;
+    
+            .article {
+                justify-self: center;
+                display: flex;
+                justify-content: center;
+            }
+              
+            .table-of-contents {
+                justify-self: start;
+                display: flex;
+                justify-content: flex-start;
+            }
             &:has(.toc:empty) {
                 grid-template-columns: 0 1fr 0 0;
             }
