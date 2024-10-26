@@ -170,6 +170,11 @@
     document.addEventListener('click', function(event) {
         const { share, secondary, sidebar } = containers;
 
+        const clickedLink = event.target.closest('a');
+        if (sidebar?.contains(event.target) && clickedLink) {
+            return;
+        }
+
         if (share?.contains(event.target)) {
             toggle(share);
             if (secondary?.classList.contains('display-item-details')) toggle(secondary);

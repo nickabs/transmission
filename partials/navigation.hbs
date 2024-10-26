@@ -113,32 +113,64 @@
       </div>
       <ul class="share-links sidebar-links">
           <li class="sidebar-link-item">
-            <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
-            class="sidebar-link-icon icon share-link" aria-label="share on bluesky" target="_blank" rel="noopener" >
-                {{> "icons/bluesky"}}
-                <p class="sidebar-link-description">Bluesky</p>
-            </a>
+            {{#is "home"}}
+              <a href="https://bsky.app/intent/compose?text={{encode @site.title}}%0A%0A{{encode @site.url absolute='true'}}"
+              class="sidebar-link-icon icon share-link" aria-label="share on bluesky" target="_blank" rel="noopener" >
+                  {{> "icons/bluesky"}}
+                  <p class="sidebar-link-description">Bluesky</p>
+              </a>
+            {{else}}
+              <a href="https://bsky.app/intent/compose?text={{encode title}}%0A%0A{{encode url absolute='true'}}"
+              class="sidebar-link-icon icon share-link" aria-label="share on bluesky" target="_blank" rel="noopener" >
+                  {{> "icons/bluesky"}}
+                  <p class="sidebar-link-description">Bluesky</p>
+              </a>
+            {{/is}}
           </li>
           <li class="sidebar-link-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
-            class="sidebar-link-icon icon share-link" aria-label="share on facebook" target="_blank" rel="noopener" >
-                {{> "icons/facebook"}}
-                <p class="sidebar-link-description">Facebook</p>
-            </a>
+            {{#is "home"}}
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{encode @site.url absolute='true'}}"
+              class="sidebar-link-icon icon share-link" aria-label="share on facebook" target="_blank" rel="noopener" >
+                  {{> "icons/facebook"}}
+                  <p class="sidebar-link-description">Facebook</p>
+              </a>
+            {{else}}
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{encode url absolute='true'}}"
+              class="sidebar-link-icon icon share-link" aria-label="share on facebook" target="_blank" rel="noopener" >
+                  {{> "icons/facebook"}}
+                  <p class="sidebar-link-description">Facebook</p>
+              </a>
+            {{/is}}
           </li>
           <li class="sidebar-link-item">
-            <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
-                class="sidebar-link-icon icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
-                {{> "icons/twitter"}}
-                <p class="sidebar-link-description">Twitter</p>
-            </a>
+            {{#is "home"}}
+              <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{encode @site.url absolute='true'}}"
+                  class="sidebar-link-icon icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
+                  {{> "icons/twitter"}}
+                  <p class="sidebar-link-description">Twitter</p>
+              </a>
+            {{else}}
+              <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{encode url absolute='true'}}"
+                  class="sidebar-link-icon icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
+                  {{> "icons/twitter"}}
+                  <p class="sidebar-link-description">Twitter</p>
+              </a>
+            {{/is}}
           </li>
           <li class="sidebar-link-item">
-            <a href="whatsapp://send?text={{url absolute=" true"}}"
-                class="sidebar-link-icon icon share-link" aria-label="share on whatsapp" target="_blank" rel="noopener">
-                {{> "icons/whatsapp"}}
-                <p class="sidebar-link-description">WhatsApp</p>
-            </a>
+            {{#is "home"}}
+              <a href="whatsapp://send?text={{encode @site.url absolute=" true"}}"
+                  class="sidebar-link-icon icon share-link" aria-label="share on whatsapp" target="_blank" rel="noopener">
+                  {{> "icons/whatsapp"}}
+                  <p class="sidebar-link-description">WhatsApp</p>
+              </a>
+            {{else}}
+              <a href="whatsapp://send?text={{encode url absolute=" true"}}"
+                  class="sidebar-link-icon icon share-link" aria-label="share on whatsapp" target="_blank" rel="noopener">
+                  {{> "icons/whatsapp"}}
+                  <p class="sidebar-link-description">WhatsApp</p>
+              </a>
+            {{/is}}
           </li>
           <li class="sidebar-link-item">
             <a href="{{@site.url}}/rss"
