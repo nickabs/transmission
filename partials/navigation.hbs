@@ -59,7 +59,13 @@
           {{#foreach posts-with-internal-tag }}
             {{#match ../posts.length 1}}
               <a href="{{this.url}}" >
-                <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                {{#if ../../feature_image}}
+                  <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                {{else}}
+                  <div class="sidebar-link-icon icon">
+                    {{> "icons/item"}}
+                  </div>
+                {{/if}}
                 <p class="sidebar-link-description">{{../../name}}</p>
               </a>
             {{else}}
