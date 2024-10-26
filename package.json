@@ -158,7 +158,9 @@
                     "None"
                 ],
                 "default": "Top",
-                "group": "homepage"
+                "group": "homepage",
+                "description": "Note the sidebar shows under the header on smaller screens, even if left/right is selected"
+
             },
             "post_table_of_contents": {
                 "type": "select",
@@ -181,7 +183,8 @@
                     "None"
                 ],
                 "default": "Top",
-                "group": "post"
+                "group": "post",
+                "description": "Note the sidebar is shown beneath the header on smaller screens, even if left/right is selected"
             },
             "show_related_posts": {
                 "type": "boolean",
@@ -192,7 +195,7 @@
                 "type": "boolean",
                 "default": false,
                 "group": "post",
-                "description": "note: this option only works when Stripe integration has been enabled for the site"
+                "description": "Note the sidebar is shown beneath the header on smaller screens, even if left/right is selected"
             },
             "one_time_payment_button_text": {
                   "type": "text",
