@@ -158,104 +158,64 @@
 /*--------------------------*/
 /* 2. post/page mobile view */
 /*--------------------------*/
-.site.post-template, .site.page-template {
+.site:is(.post-template, .page-template) {
     grid-template-areas:
-    "SiteHeader"
-    "HeroHeader"
-    "SidebarTop"
-    "Article"
-    "OneTimePaymentRequest"
-    "Comments"
-    "Enrol"
-    "RelatedArticles"
-    "Pagination"
-    "SiteFooter"
-    "SidebarBottom";
+        "SiteHeader SiteHeader SiteHeader SiteHeader"
+        "HeroHeader HeroHeader HeroHeader HeroHeader"
+        "SidebarTop SidebarTop SidebarTop SidebarTop"
+        "SidebarLeft Article TableOfContents SidebarRight"
+        "SidebarLeft OneTimePaymentRequest TableOfContents SidebarRight"
+        "SidebarLeft Comments TableOfContents SidebarRight"
+        "SidebarLeft Enrol TableOfContents SidebarRight"
+        "SidebarLeft RelatedArticles TableOfContents SidebarRight"
+        "SidebarLeft Pagination TableOfContents SidebarRight"
+        "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+        "SiteFooter SiteFooter SiteFooter SiteFooter";
+
+        /* default is for small screens: sidebar are moved to the top and TOC is minified */
+        grid-template-columns: 0 1fr 0 0;
 }
 @media (min-width: 760px) { 
-    .page-template , .post-template {
-        &.post-toc-full {
-            grid-template-columns: var(--max-content-width) auto; 
-            grid-template-areas:
-                "SiteHeader SiteHeader"
-                "HeroHeader HeroHeader"
-                "SidebarTop SidebarTop"
-                "Article TableOfContents"
-                "OneTimePaymentRequest TableOfContents"
-                "Comments TableOfContents"
-                "Enrol TableOfContents"
-                "RelatedArticles TableOfContents"
-                "Pagination TableOfContents"
-                "SiteFooter SiteFooter"
-                "SidebarBottom SidebarBottom";
+    /* 
+     * toc can now be shown in the column on the right of the article  
+     * where is used below so that these settings can be overridden at larger screen sizes
+     */
+    .site:is(.post-template, .site.page-template) {
+        grid-template-columns: 0 minmax(0, min(66%, var(--max-content-width) )) 1fr 0;
+
+        &:where(.post-toc-minified),
+        &:has(.toc:empty) {
+            grid-template-columns: 0 1fr 0 0;
         }
     }
 }
+
 @media (min-width: 1300px) { 
-    .sidebar-left .sidebar { grid-area: SidebarLeft; } /* default mobile view has sidebars at top when "left" or "right" option is selected */
+    /* sidebar can now be shown on left or right */
+    .sidebar-left .sidebar { grid-area: SidebarLeft; }
     .sidebar-right .sidebar { grid-area: SidebarRight; }
-    /* page and post layout with sidebar */
-    .site.page-template, .site.post-template {
-        grid-template-columns: auto var(--max-content-width) auto auto;
-        grid-template-areas:
-            "SiteHeader SiteHeader SiteHeader SiteHeader"
-            "HeroHeader HeroHeader HeroHeader HeroHeader"
-            "SidebarTop SidebarTop SidebarTop SidebarTop"
-            "SidebarLeft Article TableOfContents SidebarRight"
-            "SidebarLeft OneTimePaymentRequest TableOfContents SidebarRight"
-            "SidebarLeft Comments TableOfContents SidebarRight"
-            "SidebarLeft Enrol TableOfContents SidebarRight"
-            "SidebarLeft RelatedArticles TableOfContents SidebarRight"
-            "SidebarLeft Pagination TableOfContents SidebarRight"
-            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter SiteFooter SiteFooter";
 
-        
-        &.sidebar-left .sidebar { grid-area: SidebarLeft; }
-        &.sidebar-right .sidebar { grid-area: SidebarRight; }
-
-        &.post-toc-minified.sidebar-left {
-            grid-template-columns: 2.5fr 7.5fr 0 0;
-        }
-        &.post-toc-minified.sidebar-right {
-            grid-template-columns: 0 7.5fr 0 25fr;
-        }
-        &.post-toc-full.sidebar-right {
-            grid-template-columns: 0 7.0fr 1.0fr 2.0fr;
-            &:has(.toc:empty) {
-                grid-template-columns: 0 4.0fr 0 1.0fr;
-            }
-        }
-        &.post-toc-full.sidebar-left {
-            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr;
-            .sidebar {
-                justify-self: end;
-                margin-left: auto;
-            }
-            &:has(.toc:empty) {
-                grid-template-columns: 1.0fr 4.0fr 0 0;
-            }
-        }
-        &.post-toc-full:is(.sidebar-top,.sidebar-bottom) {
+    .site:is(.post-template, .page-template):is(.sidebar-top, .sidebar-bottom) {
+        grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr 0;
+    }
+    .site:is(.post-template, .page-template):is(.sidebar-right, .sidebar-left) {
+        &.sidebar-left { 
             grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr 0;
-    
-            .article {
-                justify-self: center;
-                display: flex;
-                justify-content: center;
-            }
-              
-            .table-of-contents {
-                justify-self: start;
-                display: flex;
-                justify-content: flex-start;
-            }
-            &:has(.toc:empty) {
-                grid-template-columns: 0 1fr 0 0;
-            }
+        }
+        &.sidebar-right { 
+            grid-template-columns: 0 minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr fr;
+        }
+        &.sidebar-left .sidebar {
+            justify-self: end;
+            margin-left: auto;
+        }
+        &:is(.post-toc-minified),
+        &:has(.toc:empty) {
+            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 0 1fr;
         }
     }
 }
+
 /*------------------------------------------------------*/
 /* 3. tag and author collection - all screen sizes view */
 /*------------------------------------------------------*/
