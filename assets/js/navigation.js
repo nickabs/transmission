@@ -210,9 +210,20 @@
     */
     const internalTagItems = document.querySelectorAll('.internal-tags .sidebar-link-item');
     if (internalTagItems) {
-        internalTagItems.forEach(item => {
-            const description  = item.querySelector('.sidebar-link-description');
-            const icon = item.querySelector('.sidebar-link-icon');
+        internalTagItems.forEach(internalTag => {
+
+            // if the user has tagged multiple posts/pages with this tag, the element will contain multiple links
+            // we keep the first (most recent publication) link
+            const firstLink = internalTag.querySelector('a');
+            let sibling = firstLink.nextElementSibling;
+            while (sibling) {
+                const nextSibling = sibling.nextElementSibling;
+                sibling.remove();
+                sibling = nextSibling;
+            }
+
+            const description = firstLink.querySelector('.sidebar-link-description');
+            const icon = firstLink.querySelector('.sidebar-link-icon');
             const svgDoc = icon.contentDocument;
             const regex = /^##[0-9]*-/;  // this is the pattern of internal nag names that are to be used for secondary navigation
 
@@ -220,7 +231,7 @@
                 if (regex.test(description.textContent)) {
                     description.textContent = description.textContent.replace(regex,'');
                 } else {
-                    item.remove(); // standard internal tags (these start with a single #) are not used in the navigation
+                    internalTag.remove(); // standard internal tags (these start with a single #) are not used in the navigation
                 }
             }
 

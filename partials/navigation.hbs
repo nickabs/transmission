@@ -23,16 +23,16 @@
 {{/match}}
 
 {{#match nav-type "sidebar-internal-tag"}}
+<div>beep</div>
   {{#get "tags" filter="visibility:internal" as |internal-tags|}}
   {{#if internal-tags}}
-    
       <ul class="internal-tags sidebar-links">
       {{#foreach internal-tags visibility="internal"}}
-        <li class="sidebar-link-item">
+        <li class="sidebar-link-item ">
           {{!-- 
             load the svg inline so that we can update the fill attribute values according 
             to the dark/light mode selected (see dark-mode-toggle.js)
-            these "hidden" class hides the images while the javascript runs 
+            the "hidden" class hides the links while the javascript runs 
 
             some useful items in the post/page context below:
               - excerpt - excerpt from the current post/page
@@ -54,10 +54,25 @@
             --}}
           
           {{!-- todo handle pages and posts, handle tags with multiple posts or pages 
+          .. for now this we print out all the linked pages and navigation.js picks the first one (ie most recently published) 
+          for each tag. If there are no linked pages then the most recent linked post is kept
           --}}
+          {{#get "pages" filter="tags:{{slug}}" as |pages-with-internal-tag|}}
+            {{#foreach pages-with-internal-tag }}
+                <a href="{{this.url}}" >
+                  {{#if ../../feature_image}}
+                    <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                  {{else}}
+                    <div class="sidebar-link-icon icon">
+                      {{> "icons/item"}}
+                    </div>
+                  {{/if}}
+                  <p class="sidebar-link-description">{{../../name}}</p>
+                </a>
+            {{/foreach}}
+          {{/get}}
           {{#get "posts" filter="tags:{{slug}}" as |posts-with-internal-tag|}}
-          {{#foreach posts-with-internal-tag }}
-            {{#match ../posts.length 1}}
+            {{#foreach posts-with-internal-tag }}
               <a href="{{this.url}}" >
                 {{#if ../../feature_image}}
                   <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
@@ -68,15 +83,7 @@
                 {{/if}}
                 <p class="sidebar-link-description">{{../../name}}</p>
               </a>
-            {{else}}
-              {{#if @first}}
-              <a href="{{this.url}}" >
-                <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
-                <p class="sidebar-link-description">{{../../name}}</p>
-              </a>
-              {{/if}}
-            {{/match}}
-          {{/foreach}}
+            {{/foreach}}
           {{/get}}
         </li>
       {{/foreach}}
