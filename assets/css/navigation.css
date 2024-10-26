@@ -242,8 +242,8 @@
 }
 
 /* hide descriptions and link items when showing the (default) short sidebar */
-#sidebar-show-descriptions-button,
-#sidebar-hide-descriptions-button {
+.sidebar-show-descriptions-button,
+.sidebar-hide-descriptions-button {
     display: none;
 }
 :not(.internal-tags).sidebar-links {
@@ -337,11 +337,11 @@
 
     /* toggle sidebar descriptions */
     .sidebar.display-item-details {
-      #sidebar-show-descriptions-button {
+      .sidebar-show-descriptions-button {
         display: none;
       }
       .sidebar-link-description,
-      #sidebar-hide-descriptions-button {
+      .sidebar-hide-descriptions-button {
         display: inline-flex;
       }
     }
@@ -350,10 +350,10 @@
       hr,
       .sidebar-header,
       .sidebar-link-description,
-      #sidebar-hide-descriptions-button {
+      .sidebar-hide-descriptions-button {
           display: none;
       }
-      #sidebar-show-descriptions-button {
+      .sidebar-show-descriptions-button {
         display: inline-flex;
       }
       .sidebar-link-item:hover {
@@ -371,8 +371,8 @@
     .sidebar-link-item:hover {
         opacity: 1; 
     }
-    #share-links-button:hover,
-    #secondary-links-button:hover {
+    .share-links-button:hover,
+    .secondary-links-button:hover {
         cursor: default; /* Prevent pointer from changing */
     }
   }
@@ -411,11 +411,11 @@
 
       /* toggle sidebar descriptions */
       .sidebar.display-item-details {
-        #sidebar-show-descriptions-button {
+        .sidebar-show-descriptions-button {
           display: none;
         }
         .sidebar-link-description,
-        #sidebar-hide-descriptions-button {
+        .sidebar-hide-descriptions-button {
           display: inline-flex;
         }
       }
@@ -424,10 +424,10 @@
         hr,
         .sidebar-header,
         .sidebar-link-description,
-        #sidebar-hide-descriptions-button {
+        .sidebar-hide-descriptions-button {
             display: none;
         }
-        #sidebar-show-descriptions-button {
+        .sidebar-show-descriptions-button {
           display: inline-flex;
         }
         .sidebar-link-item:hover {
@@ -445,8 +445,8 @@
       .sidebar-link-item:hover {
           opacity: 1; 
       }
-      #share-links-button:hover,
-      #secondary-links-button:hover {
+      .share-links-button:hover,
+      .secondary-links-button:hover {
           cursor: default; /* Prevent pointer from changing */
       }
   }
@@ -454,7 +454,7 @@
 
 
 /* todo */
-#copy-link .tooltip {
+.copy-link .tooltip {
     position: absolute;
     bottom: 30px; 
     transform: translateX(-50%);

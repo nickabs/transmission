@@ -25,7 +25,7 @@ window.onload = function() {
  * toggle mobile toc when toc icon is clicked
 */
 (function() {
-    const tocButton = document.querySelector("#toc-toggle");
+    const tocButton = document.querySelector(".toc-toggle");
     const tableOfContents = document.querySelector(".table-of-contents");
 
     if (!tableOfContents) {
@@ -63,7 +63,7 @@ window.onload = function() {
  * update reading progress based on scroll position
 */
 (function () {
-  const tocToggleButton = document.querySelector('#toc-toggle');
+  const tocToggleButton = document.querySelector('.toc-toggle');
   if (!tocToggleButton) {
     return;
   }

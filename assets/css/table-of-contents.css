@@ -10,8 +10,8 @@
     left: var(--site-edge-padding);
     position: fixed;
 }
-#toc-toggle svg ,
-#toc-toggle:before {
+.toc-toggle svg ,
+.toc-toggle:before {
     display:flex;
     position: fixed;
     left: var(--site-edge-padding);
@@ -19,7 +19,7 @@
     transform: translateX(-50%) translateY(50%);
 }
 
-#toc-toggle svg {
+.toc-toggle svg {
     border-radius: 50%;
     background-color: var(--background-color);
     height: 35px;
@@ -28,7 +28,7 @@
 }
 
 /* the menu toggle has a 'halo' showing reading progress */
-#toc-toggle:before {
+.toc-toggle:before {
     background-image: conic-gradient(var(--conic-gradient)); /* set by table-of-contents.js */
     border-radius: 50%;
     height: 40px;
@@ -103,10 +103,10 @@
         background-color: var(--banner-background-color);
     }
     /* toggle open/close icon */
-    #toc-toggle .toc-close-icon {
+    .toc-toggle .toc-close-icon {
         display: flex;
     }
-    #toc-toggle .toc-open-icon {
+    .toc-toggle .toc-open-icon {
         display: none;
     }
 }
@@ -120,7 +120,7 @@
         align-items: end;
         justify-self: flex-start;
         padding-right: 3vw;
-        #toc-toggle {
+        .toc-toggle {
             display: none;
         }
         .toc-container {

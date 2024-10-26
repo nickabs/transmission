@@ -5,7 +5,7 @@
 
 {{#match aside-type "toc"}}
     <aside class="table-of-contents {{layout}}">
-        <button id="toc-toggle" data-progress="0" aria-label="table-of-contents-mode" class="icon">
+        <button data-progress="0" aria-label="table-of-contents-mode" class="toc-toggle icon">
             <span class="toc-open-icon ">{{> "icons/toc-open"}}</span>
             <span class="toc-close-icon">{{> "icons/toc-close"}}</span>
         </button>
@@ -21,10 +21,10 @@
 {{#match aside-type "sidebar"}} 
     <aside class="sidebar {{layout}} display-item-details">
         <nav class="sidebar-nav">   
-            <button id="sidebar-show-descriptions-button" class="icon" aria-label="expand sidebar">
+            <button class="sidebar-show-descriptions-button icon" aria-label="expand sidebar">
             {{> "icons/sidebar-expand" }}
             </button>
-            <button id="sidebar-hide-descriptions-button" class="icon" aria-label="collapse sidebar">
+            <button class="sidebar-hide-descriptions-button icon" aria-label="collapse sidebar">
                 {{> "icons/sidebar-collapse" }}
             </button>
             {{navigation nav-type="sidebar-internal-tag"}}

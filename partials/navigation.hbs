@@ -84,7 +84,7 @@
     {{#if isSecondary}}
       <div class="sidebar-links-container secondary-links-container">
         <div class="sidebar-header secondary-links-header">
-          <button id="secondary-links-button" class="icon" aria-label="secondary-links">
+          <button class="secondary-links-button icon" aria-label="secondary-links">
               {{> "icons/categories"}} 
               <span class="secondary-links-button-description sidebar-header-description">Sections</span>
           </button>
@@ -106,7 +106,7 @@
 {{#match nav-type "sidebar-share"}}
     <div class="sidebar-links-container share-links-container">
       <div class="sidebar-header share-links-header">
-        <button id="share-links-button" class="icon" aria-label="share">
+        <button class="share-links-button icon" aria-label="share">
             {{> "icons/share"}} 
             <span class="share-links-button-description sidebar-header-description">Share</span>
         </button>
@@ -148,7 +148,7 @@
             </a>
           </li>
           <li class="sidebar-link-item">
-            <button id="copy-link" class="sidebar-link-icon icon share-link" aria-label="copy link">
+            <button class="copy-link sidebar-link-icon icon share-link" aria-label="copy link">
                 {{> "icons/link"}}
                 <p class="sidebar-link-description">Copy link</p>
             </button>

@@ -194,7 +194,6 @@
         /* close open menus when clicking outside */
         if (share?.classList.contains('display-item-details')) toggle(share);
         if (secondary?.classList.contains('display-item-details')) toggle(secondary);
-        //if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
     });
     /* 
      * remove the secondary nav indicator (e.g ##1-) from internal tag names. The number is optional and there to sort the icons
