@@ -159,32 +159,42 @@
 /*--------------------------*/
 .site:is(.post-template, .page-template) {
     grid-template-areas:
-        "SiteHeader SiteHeader SiteHeader SiteHeader"
-        "HeroHeader HeroHeader HeroHeader HeroHeader"
-        "SidebarTop SidebarTop SidebarTop SidebarTop"
-        "SidebarLeft Article TableOfContents SidebarRight"
-        "SidebarLeft OneTimePaymentRequest TableOfContents SidebarRight"
-        "SidebarLeft Comments TableOfContents SidebarRight"
-        "SidebarLeft Enrol TableOfContents SidebarRight"
-        "SidebarLeft RelatedArticles TableOfContents SidebarRight"
-        "SidebarLeft Pagination TableOfContents SidebarRight"
-        "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-        "SiteFooter SiteFooter SiteFooter SiteFooter";
-
-        /* default is for small screens: sidebar are moved to the top and TOC is minified */
-        grid-template-columns: 0 1fr 0 0;
+    "SiteHeader"
+    "HeroHeader"
+    "SidebarTop"
+    "Article"
+    "OneTimePaymentRequest"
+    "Comments"
+    "Enrol"
+    "RelatedArticles"
+    "Pagination"
+    "SidebarBottom"
+    "SiteFooter";
 }
+
 @media (min-width: 760px) { 
-    /* 
-     * toc can now be shown in the column on the right of the article  
-     * where is used below so that these settings can be overridden at larger screen sizes
-     */
-    .site:is(.post-template, .site.page-template) {
-        grid-template-columns: auto auto auto auto;
+    .site:is(.post-template, .page-template) {
+      grid-template-areas:
+            "SiteHeader SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader HeroHeader"
+            "SidebarTop SidebarTop SidebarTop SidebarTop"
+            "SidebarLeft Article TableOfContents SidebarRight"
+            "SidebarLeft OneTimePaymentRequest TableOfContents SidebarRight"
+            "SidebarLeft Comments TableOfContents SidebarRight"
+            "SidebarLeft Enrol TableOfContents SidebarRight"
+            "SidebarLeft RelatedArticles TableOfContents SidebarRight"
+            "SidebarLeft Pagination TableOfContents SidebarRight"
+            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+            "SiteFooter SiteFooter SiteFooter SiteFooter";
+
+        /* 
+        * toc can now be shown in the column on the right of the article  
+        * where is used below so that these settings can be overridden at larger screen sizes
+        */
 
         &:where(.post-toc-minified),
         &:has(.toc:empty) {
-            grid-template-columns: 0 1fr 0 0;
+            grid-template-columns: auto 1fr 0 auto;
         }
     }
 
