@@ -172,6 +172,15 @@
 .sidebar {
   min-width: var(--sidebar-width);
 }
+
+/* if there are standard internal tags, but no sidebar tags (prefixed by ##) we will end up with an empty ul elment.*/
+.internal-tags:not(:has(.sidebar-link-item)) {
+  display: none;
+}
+.internal-tags:not(:has(.sidebar-link-item)) + hr {
+  display: none;
+}
+
 /*hide the icons initially - navigation.js will resize them and then remove the 'hidden' class so they are visible */
 .internal-tags .sidebar-link-item:has(.hidden){
     visibility:hidden;

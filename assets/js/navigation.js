@@ -153,8 +153,8 @@
 
 
 /*
- * open/close nav link item menu 
- * note the user decides whether to include share or secondary links, so they may be null 
+ * open/close nav link item menus when sidebar items are clicked 
+ * note the user decides whether to include internal tags or secondary links on the sidebar
 */
 (function() {
     const containers = {
@@ -200,6 +200,7 @@
         if (share?.classList.contains('display-item-details')) toggle(share);
         if (secondary?.classList.contains('display-item-details')) toggle(secondary);
     });
+
     /* 
      * remove the secondary nav indicator (e.g ##1-) from internal tag names. The number is optional and there to sort the icons
      *
