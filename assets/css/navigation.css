@@ -8,102 +8,95 @@
 /* 1. main navigation                     */
 /* -------------------------------------- */
 
-/* default display for mobile devices (hamburger nav) */
-.main-nav-links-container {
-  flex: 1;
-  display: grid;
-  grid-template-areas:
-    "NavHeader" 
-    "NavItems";
-}
-.submenu {
-  display: grid;
-  grid-template-areas:
-    "SubmenuHeader" 
-    "SubmenuItems";
-}
-.main-nav-links-header { grid-area: NavHeader }
-.main-nav-links { grid-area: NavItems; }
-.submenu-header { grid-area: SubmenuHeader }
-.submenu-items { grid-area: SubmenuItems; }
 
-.main-nav-links-container, .submenu {
+.main-nav-button-container {
+  display: flex;
+  align-items: center;
+}
+/* default display for mobile devices (hamburger nav) */
+.menu-links-container {
+  display: grid;
+  grid-template-areas:
+    "MenuLinksHeader" 
+    "MenuLinks";
+}
+.submenu-links-container {
+  display: grid;
+  grid-template-areas:
+    "SubmenuLinksHeader" 
+    "SubmenuLinks";
+}
+.menu-links-header { grid-area: MenuLinksHeader }
+.menu-links { grid-area: MenuLinks; }
+.submenu-links-header { grid-area: SubmenuLinksHeader }
+.submenu-links { grid-area: SubmenuLinks; }
+
+.menu-links-container,
+.submenu-links-container {
+  display: flex;
+  flex-direction: column;
   position:fixed;
   right:var(--edge-padding);
+  top: calc(var(--site-header-height) + 5px);
   background-color: var(--menu-background-color);
   border-radius: 10px;
-  width:350px;
   border: 0.25px solid var(--border-color);
   overflow:hidden; /* prevent borders overunning rounded corners */
-  top: calc(var(--site-header-height) + 5px);
+  min-width: min-content;
+  width: fit-content;
+  max-width: 300px;
 }
-.main-nav-links-header ,
-.submenu-header {
+.menu-links,
+.submenu-links {
+  padding:6px 12px 6px 12px;
   display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  grid-column: 1/-1;
-  grid-row: 1; 
+  flex-direction: column;
+  gap: 12px;
 }
-.main-nav-links-title,
-.submenu-title {
+.menu-links-title,
+.submenu-links-title {
+  padding:6px 12px 6px 12px;
+  border-bottom: 0.25px solid var(--border-color);
   color: var(--banner-title-color);
   font-weight:800;
 }
-.main-nav-links, .submenu-items {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  list-style: none;
-  padding:0;
+
+/* toggle menus */
+.menu-links-container,
+.submenu-links-container {
+  display:none;
 }
-.main-nav-link-item,
-.submenu-item, 
-.main-nav-links-header,
-.submenu-header {
-  padding: 10px 10px;
-  border: 0.25px solid var(--border-color);
+.menu-links-container.menu-links-active {
+  display: flex;
 }
 
-/* hide until clicked */
-.submenu,
-.main-nav-links-container {
-  display: none;
+/* don't show the main nav window when a submenu is open */
+.menu-links-container.menu-links-active:has(.submenu-links-active) {
+   visibility: hidden;
 }
-.main-nav-links-active {
-  display: grid;
-}
-.active-submenu {
-  display:grid;
-}
-.main-nav-links-container:has(.active-submenu) {
-  .main-nav-link-item:not(:has(.active-submenu)) {
-    display: none ;
-  }
-}
-
-/* animate nav opening todo  */
-@keyframes showMenu {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.submenu-links-container.submenu-links-active {
+  visibility: visible;
+  display: flex;
 }
 
 /* hide nav items until dropdown-nav.js confirms it has run (to prevent the screen flashing) */
-.main-nav-links-container:not(.main-nav-links-ready){
+.menu-links-container:not(.menu-links-ready){
   opacity:0;
 }
-.main-nav-links-container.main-nav-links-ready {
+.menu-links-container.menu-links-ready {
   opacity:1;
 }
+
 /* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
 @media (min-width: 760px) {
   .expanded-nav {
-    .main-nav-link-item {
+    .menu-link-item {
       white-space: nowrap;
     }
-    .main-nav-links-container {
-      overflow: visible; /* if not set this prevents the submenu showing */
+    .menu-links-container {
+      overflow: visible; /* if not set this prevents the submenu-links-container showing */
     }
-    .main-nav-links-container {
+    .menu-links-container {
       position:static;
       display: flex;
       align-items: center;
@@ -111,43 +104,43 @@
       font-size: 1.4rem;
       margin: 0 15px;
     }
-    .main-nav-links-header,
-    .main-nav-links-toggle {
+    .menu-links-header,
+    .menu-links-toggle {
       display: none;
     }
-    .main-nav-links {
+    .menu-links {
       display: flex;
       flex-grow: 1;
       flex-wrap:wrap;
+      flex-direction: row;
       column-gap: 25px;
-      justify-content: center; 
 
-      .main-nav-link-item {
+      .menu-link-item {
         position: relative;
-        display: flex!important ; /* always show the main-nav-links in this view */
+        display: flex!important ; /* always show the menu-links in this view */
         border: unset;
         margin: 0;
         padding: 0;
       }
-      .submenu:not(.active-submenu) {
+      .submenu-links-container:not(.submenu-links-active) {
         display:none;
       }
-      .main-nav-links-header {
+      .menu-links-header {
         display:none;
       }
       
-      .submenu {
+      .submenu-links-container {
         transform: translateX(50%);
         position:absolute;
         overflow: hidden;
         top: 40px;
       }
-      .main-nav-link-item:has(sup) {
+      .menu-link-item:has(sup) {
         line-height: 12px; /* fix misalignment caused by drop down nav symbol */
       }
     }
     /* animate hover */
-    .main-nav-link-item::after {
+    .menu-link-item::after {
       content: '';
       position: absolute;
       left: 0;
@@ -158,7 +151,7 @@
       transform: scaleX(0); /* Initially hidden */
       transition: transform 0.2s ease; 
     }
-    .main-nav-link-item:hover::after {
+    .menu-link-item:hover::after {
       width:100%;
       transform: scaleX(1); 
     }

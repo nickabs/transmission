@@ -8,14 +8,14 @@
  --}}
 {{#match nav-type "primary"}}
   {{!-- the html defined in this here is used by dropdown-nav.js --}}
-  <div class="main-nav-links-container">   
-    <div class="main-nav-links-header">
-      <p class="main-nav-links-title">Contents</p>
+  <div class="menu-links-container">   
+    <div class="menu-links-header">
+      <p class="menu-links-title">Contents</p>
     </div>
-    <ul class="main-nav-links">
+    <ul class="menu-links">
       {{#foreach navigation}}
-          <li class="main-nav-link-item">
-            <a class="main-nav-link" href="{{url absolute="true"}}">{{label}}</a>
+          <li class="menu-link-item">
+            <a href="{{url absolute="true"}}">{{label}}</a>
           </li>
       {{/foreach}}
     </ul>

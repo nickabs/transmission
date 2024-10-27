@@ -11,31 +11,32 @@
 
         {{!-- outputs primary nav items defined in the Ghost admin panel (Settings > Design > Navigation) --}}
         {{navigation nav-type="primary"}}
-
-        {{#if @site.members_enabled}}
-            {{#unless @member}}
-                {{#unless @site.members_invite_only}}
-                    <a href="#/portal/signin" class="signin">Sign in</a>
-                    {{!-- only shows if one of the subscribe options is selected --}}
-                    {{#match @custom.enrol_members_banner_type "!=" "None" }}
-                    {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page only" }}
-                    {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page & posts" }}
-                        <a class="signup" aria-label="sign up" href="#/portal/signup">Sign up</a>
-                    {{/match}}
-                    {{/match}}
-                    {{/match}}
+        <div class="main-nav-button-container">
+            {{#if @site.members_enabled}}
+                {{#unless @member}}
+                    {{#unless @site.members_invite_only}}
+                        <a href="#/portal/signin" class="signin">Sign in</a>
+                        {{!-- only shows if one of the subscribe options is selected --}}
+                        {{#match @custom.enrol_members_banner_type "!=" "None" }}
+                        {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page only" }}
+                        {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page & posts" }}
+                            <a class="signup" aria-label="sign up" href="#/portal/signup">Sign up</a>
+                        {{/match}}
+                        {{/match}}
+                        {{/match}}
+                    {{/unless}}
+                {{else}}
+                    <a class="account-link icon" aria-label="account link" href="#/portal/account"> 
+                        {{> "icons/account"}}
+                    </a>
                 {{/unless}}
-            {{else}}
-                <a class="account-link icon" aria-label="account link" href="#/portal/account"> 
-                    {{> "icons/account"}}
-                </a>
-            {{/unless}}
-        {{/if}}
+            {{/if}}
 
-        <button class="dark-mode icon">{{> "icons/moon"}}</button>
-        <button class="light-mode icon">{{> "icons/sun"}}</button>
-        <button class="search icon" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
-        {{!-- hamburger nav (shows when nav is open on a small screen)--}}
-        <button class="main-nav-links-toggle icon" aria-label="Open nav" >{{> "icons/navigation"}}</button>
+            <button class="dark-mode icon">{{> "icons/moon"}}</button>
+            <button class="light-mode icon">{{> "icons/sun"}}</button>
+            <button class="search icon" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
+            {{!-- hamburger nav (shows when nav is open on a small screen)--}}
+            <button class="menu-links-toggle icon" aria-label="Open nav" >{{> "icons/navigation"}}</button>
+        </div>
     </nav>
 </header>

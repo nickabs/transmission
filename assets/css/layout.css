@@ -150,6 +150,9 @@
     .home-template:is(.sidebar-top,.sidebar-bottom) {
         grid-template-columns: 0 auto auto 0;
     }
+    .home-template:is(.sidebar-top,.sidebar-bottom):is(.home-page-list) {
+        grid-template-columns: 0 auto 0;
+    }
 }
 /*--------------------------*/
 /* 2. post/page mobile view */
@@ -177,13 +180,14 @@
      * where is used below so that these settings can be overridden at larger screen sizes
      */
     .site:is(.post-template, .site.page-template) {
-        grid-template-columns: 0 minmax(0, min(66%, var(--max-content-width) )) 1fr 0;
+        grid-template-columns: auto auto auto auto;
 
         &:where(.post-toc-minified),
         &:has(.toc:empty) {
             grid-template-columns: 0 1fr 0 0;
         }
     }
+
 }
 
 @media (min-width: 1300px) { 
@@ -226,7 +230,7 @@
         "SidebarBottom SidebarBottom SidebarBottom"
         "SiteFooter SiteFooter SidebarFooter";
 
-        grid-template-columns: 0 auto 0;
+        grid-template-columns:  0 auto 0;
 }
 @media (min-width: 760px) {
     .author-template,

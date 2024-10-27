@@ -136,8 +136,9 @@ li {
   height:var(--main-nav-height); 
   flex-direction: row ;
   align-items: center;
+  justify-content: space-between;
   .logo {
-    margin-right: auto;
+    todomargin-right: auto;
   }
   .icon:not(.logo) {
     padding-left: 7px;

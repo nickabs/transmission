@@ -16,6 +16,7 @@
     align-items: center;
     list-style: none;
     flex-wrap: wrap;
+    padding-bottom: 10px;
 
     li:nth-child(1 of .author-name) {
         margin-left: 25px;
@@ -57,7 +58,7 @@ h1.hero-title {
 .hero-style-plain {
     .hero-header {
         background-color: var(--banner-background-color);
-        height: 190px;
+        min-height: 190px;
         gap: 7px;
         display: flex;
         flex-direction: column;

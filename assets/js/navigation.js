@@ -6,20 +6,20 @@
 *
 *  ghost navigation          rendered html
 *  -----------------         ------------------
-*  HOME                      <li class='main-nav-link-item'>
+*  HOME                      <li class='menu-link-item'>
 *                              <a href='http://localhost:2368/'>HOME</a>
 *                            </li>
-*  -HONDA C90                <li class='main-nav-link-item has-submenu'>
+*  -HONDA C90                <li class='menu-link-item has-submenu'>
 *                                <a href='#'>HONDA C90 ⌄</a>
-*                                <div class='submenu'>
-*                                    <div class='submenu-header'>
-*                                        <p class='submenu-title'>HONDA C90</p>
+*                                <div class='submenu-links-container'>
+*                                    <div class='submenu-links-header'>
+*                                        <p class='submenu-links-title'>HONDA C90</p>
 *                                    </div>
-*                                    <ul class='submenu-items'>
-*  --introduction                        <li class='submenu-item'>
+*                                    <ul class='submenu-links'>
+*  --introduction                        <li class='submenu-link-item'>
 *                                            <a href='http://localhost:2368/2019/11/16/honda-c90-introduction/'>introduction</a>
 *                                        </li>
-*  --engine                              <li class='submenu-item'>
+*  --engine                              <li class='submenu-link-item'>
 *                                            <a href='http://localhost:2368/tag/engine/'>engine</a>
 *                                        </li>
 *                                    </ul>
@@ -28,24 +28,24 @@
 */
 
 (function () {
-  const menuIndentRegex = /(^-{1,})(.*)/; // Match the -submenu and --submenu-item navigation entries
+  const menuIndentRegex = /(^-{1,})(.*)/; // Match the -submenu and --submenu-link-item navigation entries
 
   function createSubMenu(menuName) {
       const div = document.createElement('div');
-      div.classList.add('submenu');
+      div.classList.add('submenu-links-container');
 
       const div1 = document.createElement('div');
-      div1.classList.add('submenu-header');
+      div1.classList.add('submenu-links-header');
 
       const p1 = document.createElement('p');
-      p1.classList.add('submenu-title');
+      p1.classList.add('submenu-links-title');
       p1.appendChild(document.createTextNode(menuName));
       div1.appendChild(p1);
 
       div.appendChild(div1);
 
       const ul = document.createElement('ul');
-      ul.classList.add('submenu-items');
+      ul.classList.add('submenu-links');
 
       div.appendChild(ul);
 
@@ -53,14 +53,14 @@
   }
 
   function processMenuItems() {
-      const menuItems = document.querySelectorAll('.main-nav-links .main-nav-link-item');
+      const menuItems = document.querySelectorAll('.menu-links .menu-link-item');
       let submenu = null;
 
       for (let i = 0; i < menuItems.length; ++i) {
           const match = menuItems[i].lastElementChild.innerText.match(menuIndentRegex);
 
           if (match) {
-              // Remove the submenu & submenu-item indent indicators (- --)
+              // Remove the submenu & submenu-link-item indent indicators (- --)
               menuItems[i].lastElementChild.innerText = menuItems[i].lastElementChild.innerText.replace(menuIndentRegex,'$2').trim();
               const menuName=menuItems[i].lastElementChild.innerText;
 
@@ -81,13 +81,13 @@
                   menuItems[i].appendChild(div);
                   submenu = menuItems[i];
               } else if (submenu) { // Submenu item (--)
-                  menuItems[i].classList.add('submenu-item');
-                  menuItems[i].classList.remove('main-nav-link-item');
-                  submenu.querySelector('.submenu-items').appendChild(menuItems[i]);
+                  menuItems[i].classList.add('submenu-link-item');
+                  menuItems[i].classList.remove('menu-link-item');
+                  submenu.querySelector('.submenu-links').appendChild(menuItems[i]);
               }
           }
       }
-      document.querySelector('.main-nav-links-container').classList.add('main-nav-links-ready');
+      document.querySelector('.menu-links-container').classList.add('menu-links-ready');
   }
 
   processMenuItems();
@@ -95,24 +95,24 @@
 
 /* 
  * open/close nav (main) menu and submenus
- * .main-nav-links-container.main-nav-links-active is set when the nav is opened using the hamburger button 
- * .submenu.active-submenu is set when an item with a submenu is opened
+ * .menu-links-container.menu-links-active is set when the nav is opened using the hamburger button 
+ * .submenu.submenu-links-active is set when an item with a submenu is opened
 */
 (function() {
-  const nav = document.querySelector('.main-nav-links-container');
-  const navToggle = document.querySelector('.main-nav-links-toggle');
+  const nav = document.querySelector('.menu-links-container');
+  const navToggle = document.querySelector('.menu-links-toggle');
 
   function handleDocumentClick(event) {
-    let activeSubmenu = nav.querySelector('.active-submenu');
+    let activeSubmenu = nav.querySelector('.submenu-links-active');
     let clickedItem;
 
 
     // when a submenu item is clicked no need to do anythng further (new page will open)
-    if (event.target.closest(".submenu-item")) {
+    if (event.target.closest(".submenu-link-item")) {
       return;
     }
-    else if (event.target.closest(".main-nav-link-item") && ! event.target.closest(".submenu-header")) { // do not count a click on a submenu header as a clicked item
-      clickedItem= event.target.closest(".main-nav-link-item");
+    else if (event.target.closest(".menu-link-item") && ! event.target.closest(".submenu-links-header")) { // do not count a click on a submenu header as a clicked item
+      clickedItem= event.target.closest(".menu-link-item");
     }
 
     if (clickedItem) {
@@ -121,12 +121,12 @@
       }
 
       if (activeSubmenu) { // close any previously opened submenu
-        activeSubmenu.classList.remove('active-submenu');
+        activeSubmenu.classList.remove('submenu-links-active');
       }
 
       if (! clickedItem.contains(activeSubmenu)) { // do not reopen the submenu item if it was closed by the statement above
         if (clickedItem.classList.contains("has-submenu")) {
-          clickedItem.querySelector(".submenu").classList.add('active-submenu');
+          clickedItem.querySelector(".submenu-links-container").classList.add('submenu-links-active');
         }
       }
 
@@ -134,17 +134,17 @@
     }
 
     // toggle nav if the hamburger menu is clicked
-    if (event.target.closest('.main-nav-links-toggle')) {
-      nav.classList.toggle('main-nav-links-active');
+    if (event.target.closest('.menu-links-toggle')) {
+      nav.classList.toggle('menu-links-active');
       return;
     }
 
     // when click is outside of menus, close the latest menu
     if (activeSubmenu) { // close any previously opened submenu
-      activeSubmenu.classList.remove('active-submenu');
+      activeSubmenu.classList.remove('submenu-links-active');
     }
-    else if (nav.classList.contains('main-nav-links-active')) {
-        nav.classList.remove('main-nav-links-active');
+    else if (nav.classList.contains('menu-links-active')) {
+        nav.classList.remove('menu-links-active');
     }
   }
 

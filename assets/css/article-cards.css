@@ -191,10 +191,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            "AuthorProfileImages Image"
-            "Metadata Image"
             "Title Image"
-            "Excerpt Image";
+            "Excerpt Image"
+            "Metadata Image"
+            "AuthorProfileImages Image";
         .article-card-author-profile-images { grid-area: AuthorProfileImages; }
 
         width:100%;
