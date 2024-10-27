@@ -141,18 +141,6 @@
     .home-template:is(.sidebar-left,.sidebar-right) .main-article {
         width: 50vw;
     }
-    .home-template.sidebar-left {
-        grid-template-columns: auto auto auto 0;
-    }
-    .home-template.sidebar-right {
-        grid-template-columns: 0 auto auto auto;
-    }
-    .home-template:is(.sidebar-top,.sidebar-bottom) {
-        grid-template-columns: 0 auto auto 0;
-    }
-    .home-template:is(.sidebar-top,.sidebar-bottom):is(.home-page-list) {
-        grid-template-columns: 0 auto 0;
-    }
 }
 /*--------------------------*/
 /* 2. post/page mobile view */
