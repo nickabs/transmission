@@ -232,19 +232,24 @@
 .author-template,
 .tag-template {
     grid-template-areas:
-        "SiteHeader SiteHeader SiteHeader"
-        "HeroHeader HeroHeader HeroHeader"
-        "SidebarTop SidebarTop SidebarTop"
-        "SidebarLeft TaggedArticles SidebarRight"
-        "SidebarLeft Pagination SidebarRight"
-        "SidebarBottom SidebarBottom SidebarBottom"
-        "SiteFooter SiteFooter SidebarFooter";
-
-        grid-template-columns:  0 auto 0;
+        "SiteHeader"
+        "HeroHeader"
+        "SidebarTop"
+        "TaggedArticles"
+        "Pagination"
+        "SidebarBottom"
+        "SiteFooter";
 }
 @media (min-width: 760px) {
     .author-template,
     .tag-template {
-        grid-template-columns: auto auto auto;
+        grid-template-areas:
+            "SiteHeader SiteHeader SiteHeader"
+            "HeroHeader HeroHeader HeroHeader"
+            "SidebarTop SidebarTop SidebarTop"
+            "SidebarLeft TaggedArticles SidebarRight"
+            "SidebarLeft Pagination SidebarRight"
+            "SidebarBottom SidebarBottom SidebarBottom"
+            "SiteFooter SiteFooter SidebarFooter";
     }
 }
