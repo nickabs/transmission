@@ -103,6 +103,7 @@
       flex-wrap: wrap;
       font-size: 1.4rem;
       margin: 0 15px;
+      max-width:unset;
     }
     .menu-links-header,
     .menu-links-toggle {
@@ -110,10 +111,15 @@
     }
     .menu-links {
       display: flex;
-      flex-grow: 1;
+      flex: 1 1 auto;
       flex-wrap:wrap;
       flex-direction: row;
       column-gap: 25px;
+      justify-content: center;
+      column-gap: 20px;
+      row-gap:0px;
+      padding-top: 1px;
+      padding-bottom: 1px;
 
       .menu-link-item {
         position: relative;
