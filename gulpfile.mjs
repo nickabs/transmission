@@ -116,7 +116,8 @@ function jsTheme(done) {
             'assets/js/copy-link.js',
             'assets/js/table-of-contents.js',
             'assets/js/lightbox.js',
-            'assets/js/enrol-dialog.js'
+            'assets/js/enrol-dialog.js',
+            'assets/js/demo.js'
         ], {sourcemaps: true}),
         concat('theme.min.js'),
         uglify(),

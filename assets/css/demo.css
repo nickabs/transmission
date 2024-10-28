@@ -1,0 +1,147 @@
+/* 
+ * this css file controls the behaviour of the options-picker created by demo.js
+ *
+ *  to enable demo functionality, use code injection to insert a data-demo-site attribute to root of the doc
+ *      <script>
+ *          document.documentElement.setAttribute('data-demo-site', 'true');
+ *      </script>
+*/
+[data-demo-site="true"] {
+    .site .options-picker {
+        
+        position: fixed;
+        z-index: 2000;
+        top: 70px;
+        right: 20px;
+        background-color: var(--menu-background-color);
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1.6rem;
+        border:1px solid var(--ghost-accent-color);
+        width: 350px;
+
+        .options-picker-button {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .options-picker-form {
+            padding: 10px 0 10px 0;
+            display:flex;
+            flex-direction: column;
+            gap: 15px
+        };
+        .form-fieldset {
+            display:flex;
+            flex-direction: column;
+            row-gap: 10px;
+            border-radius: 10px;
+
+        }
+
+        details[open] {
+            summary {
+                color: transparent;
+            }
+                summary::marker {
+                    color: var(--text-color);
+                }
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap:7px;
+        }
+        .form-select {
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        &.closed {
+            width: 85px;
+            .options-picker-button {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .options-picker-container {
+                display:none;
+            }
+        }
+    }
+
+    /* these options are enabled by the handlebars logic - use css to hide/show the relevant html */
+    .site {
+        &.footer-option-2 .site-footer {
+            .theme-link {
+                display:none;
+            }
+        }
+        &.footer-option-3 .site-footer {
+            .footer-links {
+                display: none;
+            }
+        }
+        &.footer-option-4 .site-footer {
+            >:not(.privacy-policy) {
+                display: none;
+            }
+        }
+        &.footer-option-5 .site-footer {
+            >:not(.copyright) {
+                display: none;
+            }
+        }
+        &.footer-none .site-footer {
+            > * {
+                display:none;
+            }
+        }
+        &:not(:is(.subscribe,.newsletter,.newsletter-subscribe)) .enrol {
+            height:0;
+            padding:0;
+            border:unset;
+        }
+        &.subscribe {
+            .enrol .enrol-newsletter {
+                display:none;
+            }
+        }
+        &.newsletter {
+            .enrol .enrol-subscribe {
+                display: none;
+            }
+        }
+        &:not(.show-payment-request) {
+            .one-time-payment {
+                display: none;
+            }
+        }
+        &.author-names {
+            .article-card-author-profile-images {
+                display: none;
+            }
+        }
+        &.author-profile-images {
+            .article-card-author-names {
+                display: none;
+            }
+        }
+        &.author-none {
+            .article-card-author-profile-images,
+            .article-card-author-names {
+                display: none;
+            }
+        }
+        &.hide-related-posts {
+            .related-articles {
+                display: none;
+            }
+        }
+        &.post-toc-none {
+            .table-of-contents {
+                display: none!important;
+            }
+        }
+    }
+}

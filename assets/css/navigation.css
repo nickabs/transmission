@@ -114,7 +114,6 @@
       flex: 1 1 auto;
       flex-wrap:wrap;
       flex-direction: row;
-      column-gap: 25px;
       justify-content: center;
       column-gap: 20px;
       row-gap:0px;
