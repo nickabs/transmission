@@ -69,6 +69,19 @@
                 "default": "plain",
                 "description": "Note the color/greyscale options use the site publication cover image as a background"
             },
+            "sidebar": {
+                "type": "select",
+                "options": [
+                    "Top",
+                    "Bottom",
+                    "Left",
+                    "Right",
+                    "None"
+                ],
+                "default": "Top",
+                "description": "Note the sidebar shows under the header on smaller screens, even if left/right is selected"
+
+            },
             "enrol_members_banner_type": {
                 "type": "select",
                 "options": [
@@ -148,20 +161,6 @@
                 "default": "Focus (left)",
                 "group": "homepage"
             },
-            "home_page_sidebar": {
-                "type": "select",
-                "options": [
-                    "Top",
-                    "Bottom",
-                    "Left",
-                    "Right",
-                    "None"
-                ],
-                "default": "Top",
-                "group": "homepage",
-                "description": "Note the sidebar shows under the header on smaller screens, even if left/right is selected"
-
-            },
             "post_table_of_contents": {
                 "type": "select",
                 "options": [
@@ -173,19 +172,6 @@
                 "group": "post",
                 "description": "TOC display options"
             },
-            "post_sidebar": {
-                "type": "select",
-                "options": [
-                    "Top",
-                    "Bottom",
-                    "Left",
-                    "Right",
-                    "None"
-                ],
-                "default": "Top",
-                "group": "post",
-                "description": "Note the sidebar is shown beneath the header on smaller screens, even if left/right is selected"
-            },
             "show_related_posts": {
                 "type": "boolean",
                 "default": true,
@@ -195,7 +181,7 @@
                 "type": "boolean",
                 "default": false,
                 "group": "post",
-                "description": "Note the sidebar is shown beneath the header on smaller screens, even if left/right is selected"
+                "description": "Can be used, example for 'buy me a coffee' requests"
             },
             "one_time_payment_button_text": {
                   "type": "text",

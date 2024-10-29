@@ -39,25 +39,21 @@
     {{~#match @custom.hero_style "grayscale"}} hero-style-grayscale-image{{/match~}}
     {{~#if @custom.hide_comments_subscribe_cta}} hide-comments-subscribe-cta{{/if~}}
     {{~#if @custom.fixed_navigation_bar }} fixed-navigation-bar{{/if~}}
+    {{~#match @custom.sidebar "Top"}} sidebar-top{{/match~}}
+    {{~#match @custom.sidebar "Bottom"}} sidebar-bottom{{/match~}}
+    {{~#match @custom.sidebar "Left"}} sidebar-left{{/match~}}
+    {{~#match @custom.sidebar "Right"}} sidebar-right{{/match~}}
+    {{~#match @custom.sidebar "None"}} home-page-sidebar-none{{/match~}}
     {{#is "home"}}
         {{~#match @custom.home_page_style "List"}} home-page-list{{/match~}}
         {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match~}}
         {{~#match @custom.home_page_style "Focus (left)"}} home-page-focus-left{{/match~}}
-        {{~#match @custom.home_page_sidebar "Top"}} sidebar-top{{/match~}}
-        {{~#match @custom.home_page_sidebar "Bottom"}} sidebar-bottom{{/match~}}
-        {{~#match @custom.home_page_sidebar "Left"}} sidebar-left{{/match~}}
-        {{~#match @custom.home_page_sidebar "Right"}} sidebar-right{{/match~}}
-        {{~#match @custom.home_page_sidebar "None"}} home-page-sidebar-none{{/match~}}
         {{~#if @custom.show_featured_posts}} show-featured-articles{{/if~}}
     {{/is~}}
     {{#is "post,page,author,tag"}}
         {{~#match @custom.post_table_of_contents "Full"}} post-toc-full{{/match~}}
         {{~#match @custom.post_table_of_contents "Minified"}} post-toc-minified{{/match~}}
         {{~#match @custom.post_table_of_contents "None"}} post-toc-none{{/match~}}
-        {{~#match @custom.post_sidebar "Top"}} sidebar-top{{/match~}}
-        {{~#match @custom.post_sidebar "Bottom"}} sidebar-bottom{{/match~}}
-        {{~#match @custom.post_sidebar "Left"}} sidebar-left{{/match~}}
-        {{~#match @custom.post_sidebar "Right"}} sidebar-right{{/match~}}
     {{/is}}
     '>
 
