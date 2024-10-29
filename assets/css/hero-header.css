@@ -67,6 +67,11 @@ h1.hero-title {
         text-align: center;
         border-bottom: 0.25px solid var(--border-color);
     }
+    .hero-date,
+    .hero-author-list,
+    .hero-tags {
+        display: none;
+    }
     .hero-custom-excerpt {
         display:none;
     }
