@@ -8,7 +8,6 @@
 */
 [data-demo-site="true"] {
     .site .options-picker {
-        
         position: fixed;
         top: 110px;
         right: 20px;
@@ -16,7 +15,7 @@
         background-color: var(--menu-background-color);
         border-radius: 10px;
         padding: 10px;
-        font-size: 1.6rem;
+        font-size: 1.4rem; 
         border:1px solid var(--ghost-accent-color);
         width: 350px;
 
