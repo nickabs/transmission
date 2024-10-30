@@ -128,7 +128,8 @@ function jsTheme(done) {
 }
 
 function zipper(done) {
-    const filename = pkg.name+'_v'+pkg.version+'.zip';
+    //const filename = pkg.name+'_v'+pkg.version+'.zip';
+    const filename = pkg.name+'.zip';
     console.log("creating "+filename);
 
     pump([
