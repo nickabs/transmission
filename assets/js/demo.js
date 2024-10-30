@@ -26,11 +26,11 @@
             footerOption: ['footer-option-1','footer-option-2','footer-option-3','footer-option-4',
                     'footer-option-5','footer-none'],
             enrolOption: ['newsletter','subscribe','newsletter-subscribe','enrol-none'],
+            authorOption: ['show-author-names', 'show-author-images', 'show-author-names-and-images', 
+                    'show-author-none'],
         },
         homePage: {
             focusPosition: ['home-page-list', 'home-page-focus-right', 'home-page-focus-left'],
-            authorOption: ['author-names', 'author-profile-images', 'author-names-and-profile-images', 
-                    'author-none'],
         },
         post: {
             tableOfContentsOption: ['post-toc-full','post-toc-minified','post-toc-none'],

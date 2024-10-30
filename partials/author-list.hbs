@@ -1,0 +1,27 @@
+<ul class="author-profile-images">
+    {{#foreach authors}}
+        <li class="author-profile-image">
+            {{#if profile_image}}
+                <a href="{{url}}">
+                    <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
+                </a>
+            {{else}}
+                <a href="{{url}}">
+                    {{> "icons/avatar"}}
+                </a>
+            {{/if}}
+        </li>
+    {{/foreach}}
+</ul>
+<ul class="author-names">
+    {{#foreach authors}}
+        <li class="author-name">
+            {{#if @first}}
+                <a href="{{url}}">{{name}}</a>
+            {{else}}
+                <span>,</span>
+                <a href="{{url}}">{{name}}</a>
+            {{/if}}
+        </li>
+    {{/foreach}}
+</ul>

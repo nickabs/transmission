@@ -1,7 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -115,6 +115,20 @@
                  "description": "this will hide the native ghost subscribe CTA that shows under   the comments section",
                  "visibility": "enrol_members_banner_type:-None"
           },
+            "show_authors": {
+                "type": "select",
+                "options":[
+                    "Names",
+                    "Profile images",
+                    "Names and profile images",
+                    "None"
+                ],
+                "default": "None"
+            },
+            "show_dates_on_article_cards": {
+                "type": "boolean",
+                "default": false
+            },
             "footer_link_style": {
                 "type": "select",
                 "options": [
@@ -127,10 +141,6 @@
                 ],
                 "default": "Option 1"
             },
-            "show_dates_on_article_cards": {
-                "type": "boolean",
-                "default": false
-            },
             "google_analytics_id": {
                 "type": "text",
                 "description": "if you use google analytics, add your GA id here"
@@ -138,17 +148,6 @@
             "show_featured_posts": {
                 "type": "boolean",
                 "default": false,
-                "group": "homepage"
-            },
-            "show_authors": {
-                "type": "select",
-                "options":[
-                    "Names",
-                    "Profile images",
-                    "Names and profile images",
-                    "None"
-                ],
-                "default": "None",
                 "group": "homepage"
             },
             "home_page_style": {

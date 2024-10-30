@@ -35,33 +35,31 @@
             </p>
         {{/if}}
         {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
-        {{#if @custom.show_authors}}
-            <ul class="hero-author-list">
-                {{#foreach authors}}
-                    <li class="author-profile-image">
-                        {{#if profile_image}}
-                            <a href="{{url}}">
-                                <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
-                            </a>
-                        {{else}}
-                            <a href="{{url}}">
-                                {{> "icons/avatar"}}
-                            </a>
-                        {{/if}}
-                    </li>
-                {{/foreach}}
-                {{#foreach authors}}
-                    <li class="author-name">
-                        {{#if @first}}
-                            <a href="{{url}}">{{name}}</a>
-                        {{else}}
-                            <span>,</span> 
-                            <a href="{{url}}">{{name}}</a>
-                        {{/if}}
-                    </li>
-                {{/foreach}}
-            </ul>
-        {{/if}}
+        <ul class="hero-author-list">
+            {{#foreach authors}}
+                <li class="author-profile-image">
+                    {{#if profile_image}}
+                        <a href="{{url}}">
+                            <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
+                        </a>
+                    {{else}}
+                        <a href="{{url}}">
+                            {{> "icons/avatar"}}
+                        </a>
+                    {{/if}}
+                </li>
+            {{/foreach}}
+            {{#foreach authors}}
+                <li class="author-name">
+                    {{#if @first}}
+                        <a href="{{url}}">{{name}}</a>
+                    {{else}}
+                        <span>,</span> 
+                        <a href="{{url}}">{{name}}</a>
+                    {{/if}}
+                </li>
+            {{/foreach}}
+        </ul>
         {{#if feature_image }}
             <img class="hero-image" src="{{feature_image}}"/>
         {{/if}}

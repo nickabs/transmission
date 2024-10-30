@@ -44,6 +44,11 @@
     {{~#match @custom.sidebar "Left"}} sidebar-left{{/match~}}
     {{~#match @custom.sidebar "Right"}} sidebar-right{{/match~}}
     {{~#match @custom.sidebar "None"}} home-page-sidebar-none{{/match~}}
+    {{~#match @custom.sidebar "None"}} home-page-sidebar-none{{/match~}}
+    {{~#match @custom.show_authors "Names"}} show-author-names{{/match~}}
+    {{~#match @custom.show_authors "Profile images"}} show-author-images{{/match~}}
+    {{~#match @custom.show_authors "Names and profile images"}} show-author-names-and-images{{/match~}}
+    {{~#match @custom.show_authors "None"}} show-author-none{{/match~}}
     {{#is "home"}}
         {{~#match @custom.home_page_style "List"}} home-page-list{{/match~}}
         {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match~}}

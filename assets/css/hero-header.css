@@ -17,12 +17,26 @@
     list-style: none;
     flex-wrap: wrap;
     padding-bottom: 10px;
-
+    padding-left:0;
     li:nth-child(1 of .author-name) {
         margin-left: 25px;
     }
     .author-profile-image {
         margin: 0 -7px;
+    }
+}
+
+/* custom options todo hero-header and article card should use the same compoonent for authors */
+.site.show-author-names .hero-header .author-profile-image {
+    display: none;
+}
+.site.show-author-images .hero-header .author-name {
+    display: none;
+}
+.site.show-author-none .hero-header {
+    .author-profile-image,
+    .author-name {
+        display: none;
     }
 }
 .hero-title,

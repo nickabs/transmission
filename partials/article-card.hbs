@@ -26,41 +26,33 @@
         <p class="article-card-excerpt long"><a href="{{url}}">{{excerpt words="55"}}...</a></p>
         <p class="article-card-excerpt short"><a href="{{url}}">{{excerpt words="25"}}...</a></p>
     {{/if}}
-    {{#match @custom.show_authors "!=" "None"}}
-    {{#match @custom.show_authors "!=" "Names"}}
-        <ul class="article-card-author-profile-images">
-            {{#foreach authors}}
-                <li class="author-profile-image">
-                    {{#if profile_image}}
-                        <a href="{{url}}">
-                            <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
-                        </a>
-                    {{else}}
-                        <a href="{{url}}">
-                            {{> "icons/avatar"}}
-                        </a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-        </ul>
-    {{/match}}
-    {{/match}}
-    {{#match @custom.show_authors "!=" "None"}}
-    {{#match @custom.show_authors "!=" "Profile images"}}
-        <ul class="article-card-author-names">
-            {{#foreach authors}}
-                <li class="author-name">
-                    {{#if @first}}
-                        <a href="{{url}}">{{name}}</a>
-                    {{else}}
-                        <span>,</span>
-                        <a href="{{url}}">{{name}}</a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-        </ul>
-    {{/match}}
-    {{/match}}
+    <ul class="author-profile-images">
+        {{#foreach authors}}
+            <li class="author-profile-image">
+                {{#if profile_image}}
+                    <a href="{{url}}">
+                        <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
+                    </a>
+                {{else}}
+                    <a href="{{url}}">
+                        {{> "icons/avatar"}}
+                    </a>
+                {{/if}}
+            </li>
+        {{/foreach}}
+    </ul>
+    <ul class="author-names">
+        {{#foreach authors}}
+            <li class="author-name">
+                {{#if @first}}
+                    <a href="{{url}}">{{name}}</a>
+                {{else}}
+                    <span>,</span>
+                    <a href="{{url}}">{{name}}</a>
+                {{/if}}
+            </li>
+        {{/foreach}}
+    </ul>
     <div class="article-card-metadata" >
         {{#if @custom.show_dates_on_article_cards}}
             <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM-YYYY"}}</time>

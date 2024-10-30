@@ -54,10 +54,10 @@
 /* ------------------------------ */
 .article-card-image { grid-area: Image; }
 .article-card-title { grid-area: Title; }
-.article-card-author-names { grid-area: Authors; }
+.author-names { grid-area: Authors; }
 .article-card-excerpt { grid-area: Excerpt; }
 .article-card-metadata { grid-area: Metadata; }
-.article-card-author-profile-images { grid-area: Image; } /* overlay author profile pics on to the featured image for the card */
+.author-profile-images { grid-area: Image; } /* overlay author profile pics on to the featured image for the card */
 
 .article-card {
     border: 1px solid var(--color);
@@ -93,7 +93,7 @@
             "Excerpt"
             "Metadata";
         .article-card-excerpt,
-        .article-card-author-names {
+        .author-names {
             display:none;
         }
     }
@@ -108,7 +108,22 @@
     border-radius: 10px;
 }
 
-/*
+/* custom options todo*/
+.site.show-author-names .author-profile-images {
+    display: none;
+}
+
+.site.show-author-images .author-names {
+    display: none;
+}
+.site.show-author-none {
+    .author-profile-images,
+    .author-names {
+        display: none;
+    }
+}
+
+/* todo move to layout.css?
  * show first 6 featured articles in a horizontal format
  * Note if the user has chosen not to show featured articles, this format applies to the latest articles instead
 */
@@ -134,7 +149,7 @@
         border-radius: 5px;
     }
     .article-card-excerpt,
-    .article-card-author-names {
+    .author-names {
         display: none;
     }
 }
@@ -195,12 +210,12 @@
             "Excerpt Image"
             "Metadata Image"
             "AuthorProfileImages Image";
-        .article-card-author-profile-images { grid-area: AuthorProfileImages; }
+        .author-profile-images { grid-area: AuthorProfileImages; }
 
         width:100%;
         row-gap: 25px;
         border-radius: 15px;
-        .article-card-author-names {
+        .author-names {
             display: none;
         }
         .article-card-title {
@@ -298,15 +313,15 @@
         margin-right: 5px;
     }
 }
-.article-card-author-profile-images,
-.article-card-author-names {
+.author-profile-images,
+.author-names {
     display: flex;
     list-style: none;
     * {
         width:auto
     }
 }
-.article-card-author-profile-images { 
+.author-profile-images { 
     align-self: end;
     justify-self: left;
     margin: 0  0 10px 10px;
@@ -321,7 +336,7 @@
         width: 25px;
     }
 }
-.article-card-author-profile-images {
+.author-profile-images {
     margin: 0 0 10px 10px;
 }
 /* ---------------------------------- */

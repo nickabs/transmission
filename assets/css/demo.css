@@ -117,22 +117,7 @@
                 display: none;
             }
         }
-        &.author-names {
-            .article-card-author-profile-images {
-                display: none;
-            }
-        }
-        &.author-profile-images {
-            .article-card-author-names {
-                display: none;
-            }
-        }
-        &.author-none {
-            .article-card-author-profile-images,
-            .article-card-author-names {
-                display: none;
-            }
-        }
+       
         &.hide-related-posts {
             .related-articles {
                 display: none;
