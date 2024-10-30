@@ -51,7 +51,7 @@ a:hover {
     opacity: 0.8;
 }
 
-li {
+li:not(.article li) {
   list-style: none;
 }
 
@@ -137,9 +137,6 @@ li {
   flex-direction: row ;
   align-items: center;
   justify-content: space-between;
-  .logo {
-    todomargin-right: auto;
-  }
   .icon:not(.logo) {
     padding-left: 7px;
   }
