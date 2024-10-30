@@ -1,5 +1,5 @@
 /* 
- * this css file controls the behaviour of the options-picker created by demo.js
+ * this css file controls the behaviour of the demo-options html created by demo.js
  *
  *  to enable demo functionality, use code injection to insert a data-demo-site attribute to root of the doc
  *      <script>
@@ -7,22 +7,48 @@
  *      </script>
 */
 [data-demo-site="true"] {
-    .site .options-picker {
+    /* options picker can be open or closed - common settings here */
+    .demo-options {
         position: fixed;
         top: 110px;
         right: 20px;
         z-index: 2000;
         background-color: var(--menu-background-color);
         border-radius: 10px;
-        padding: 10px;
         font-size: 1.4rem; 
         border:1px solid var(--ghost-accent-color);
-        width: 350px;
+        padding: 15px 0;
 
-        .options-picker-button {
+        hr {
+            border-color: var(--ghost-accent-color);
+        }
+        display:flex;
+        flex-direction: column;
+        gap:15px; 
+    }
+
+    /* on refresh the pop-up options picker is closed */
+    .demo-options.options-picker-closed {
+        width: 100px;
+        .download-link,
+        .demo-options-button {
             display: flex;
+            flex-direction: column;
+        }
+        .options-picker-container {
+            display:none;
+        }
+    }
+    .demo-options:not(.options-picker-closed) {
+        > :not(hr) {
+            padding-left:15px;
+            padding-right: 15px;
+        }
+        width: 350px;
+        .download-link ,
+        .demo-options-button {
             flex-direction: row;
-            gap: 10px;
+            column-gap: 15px;
         }
         .options-picker-form {
             padding: 10px 0 10px 0;
@@ -35,16 +61,15 @@
             flex-direction: column;
             row-gap: 10px;
             border-radius: 10px;
-
         }
 
         details[open] {
             summary {
                 color: transparent;
             }
-                summary::marker {
-                    color: var(--text-color);
-                }
+            summary::marker {
+                color: var(--text-color);
+            }
         }
         .form-group {
             display: flex;
@@ -56,17 +81,6 @@
             border-radius: 5px;
         }
 
-        &.closed {
-            width: 85px;
-            .options-picker-button {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .options-picker-container {
-                display:none;
-            }
-        }
     }
 
     /* these options are enabled by the handlebars logic - use css to hide/show the relevant html */
