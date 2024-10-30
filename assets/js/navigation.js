@@ -156,131 +156,133 @@
  * open/close nav link item menus when sidebar items are clicked 
  * note the user decides whether to include internal tags or secondary links on the sidebar
 */
-(function() {
-    const containers = {
-        share: document.querySelector('.share-links-container'),
-        secondary: document.querySelector('.secondary-links-container'),
-        sidebar: document.querySelector('.sidebar')
-    };
+document.addEventListener("DOMContentLoaded", function() {
+    (function() {
+        const containers = {
+            share: document.querySelector('.share-links-container'),
+            secondary: document.querySelector('.secondary-links-container'),
+            sidebar: document.querySelector('.sidebar')
+        };
 
-    function toggle(container) {
-        container.classList.toggle('display-item-details');
-    }
-
-    document.addEventListener('click', function(event) {
-        const { share, secondary, sidebar } = containers;
-
-        const clickedLink = event.target.closest('a');
-        if (sidebar?.contains(event.target) && clickedLink) {
-            return;
+        function toggle(container) {
+            container.classList.toggle('display-item-details');
         }
 
-        if (share?.contains(event.target)) {
-            toggle(share);
-            if (secondary?.classList.contains('display-item-details')) toggle(secondary);
-            if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
-            return;
-        }
+        document.addEventListener('click', function(event) {
+            const { share, secondary, sidebar } = containers;
 
-        if (secondary?.contains(event.target)) {
-            toggle(secondary);
+            const clickedLink = event.target.closest('a');
+            if (sidebar?.contains(event.target) && clickedLink) {
+                return;
+            }
+
+            if (share?.contains(event.target)) {
+                toggle(share);
+                if (secondary?.classList.contains('display-item-details')) toggle(secondary);
+                if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
+                return;
+            }
+
+            if (secondary?.contains(event.target)) {
+                toggle(secondary);
+                if (share?.classList.contains('display-item-details')) toggle(share);
+                if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
+                return;
+            }
+
+            if (sidebar?.contains(event.target)) {
+                toggle(sidebar);
+                if (share?.classList.contains('display-item-details')) toggle(share);
+                if (secondary?.classList.contains('display-item-details')) toggle(secondary);
+                return;
+            }
+
+            /* close open menus when clicking outside */
             if (share?.classList.contains('display-item-details')) toggle(share);
-            if (sidebar?.classList.contains('display-item-details')) toggle(sidebar);
-            return;
-        }
-
-        if (sidebar?.contains(event.target)) {
-            toggle(sidebar);
-            if (share?.classList.contains('display-item-details')) toggle(share);
             if (secondary?.classList.contains('display-item-details')) toggle(secondary);
-            return;
-        }
-
-        /* close open menus when clicking outside */
-        if (share?.classList.contains('display-item-details')) toggle(share);
-        if (secondary?.classList.contains('display-item-details')) toggle(secondary);
-    });
-
-    /* 
-     * remove the secondary nav indicator (e.g ##1-) from internal tag names. The number is optional and there to sort the icons
-     *
-     * make the sidebar icons 20px x 20px:
-     *  the svg element is embeded from the tag's feature_post image into the HTML so that we can dynamically adjut the 
-     *  color according to dark mode settings (see dark-mode-toggle.js). 
-     *  as a consequence, we can't control the height /width with css and have to do it here instead
-    */
-    const internalTagItems = document.querySelectorAll('.internal-tags .sidebar-link-item');
-    if (internalTagItems) {
-        internalTagItems.forEach(internalTag => {
-
-            // if the user has tagged multiple posts/pages with this tag, the element will contain multiple links
-            // we keep the first (most recent publication) link
-            const firstLink = internalTag.querySelector('a');
-            let sibling = firstLink.nextElementSibling;
-            while (sibling) {
-                const nextSibling = sibling.nextElementSibling;
-                sibling.remove();
-                sibling = nextSibling;
-            }
-
-            const description = firstLink.querySelector('.sidebar-link-description');
-            const icon = firstLink.querySelector('.sidebar-link-icon');
-            const svgDoc = icon.contentDocument;
-            const regex = /^##[0-9]*-/;  // this is the pattern of internal nag names that are to be used for secondary navigation
-
-            if (description) {
-                if (regex.test(description.textContent)) {
-                    description.textContent = description.textContent.replace(regex,'');
-                } else {
-                    internalTag.remove(); // standard internal tags (these start with a single #) are not used in the navigation
-                }
-            }
-
-            if (svgDoc) {
-                const svgElement = svgDoc.querySelector('svg');
-                if (svgElement) {
-                    const viewBox = svgElement.getAttribute('viewBox');
-                    const naturalWidth = svgElement.getAttribute('width');
-                    const naturalHeight = svgElement.getAttribute('height');
-                    if (!viewBox) {
-                        if (!naturalWidth || !naturalHeight){
-                            const bbox = svgElement.getBBox(); // Returns the bounding box of the element
-                            svgElement.setAttribute('viewBox', `0 0 ${bbox.width} ${bbox.height}`);
-                        } else {
-                            svgElement.setAttribute('viewBox', `0 0 ${naturalWidth} ${naturalHeight}`);
-                        }
-                    }
-                    svgElement.setAttribute('height', '20px');
-                    svgElement.setAttribute('width', '20px');
-                }
-            }
-
-            icon.classList.remove('hidden'); // only show the image after it is resized
         });
 
-        // for the secondary link items we use the first two characters of the words in the description instead of an icon
-        const secondaryLinksItems = document.querySelectorAll('.secondary-links .sidebar-link-item');
-        if (secondaryLinksItems) {
-            secondaryLinksItems.forEach(item => {
-                const span = document.createElement('span');
-                const itemDescription = item.querySelector('.sidebar-link-description') ;
-                if (itemDescription) {
-                    const words = itemDescription.textContent.replace(/[^a-zA-Z0-9\s]/g, ' ').trim().split(/\s+/);
+        /* 
+        * remove the secondary nav indicator (e.g ##1-) from internal tag names. The number is optional and there to sort the icons
+        *
+        * make the sidebar icons 20px x 20px:
+        *  the svg element is embeded from the tag's feature_post image into the HTML so that we can dynamically adjut the 
+        *  color according to dark mode settings (see dark-mode-toggle.js). 
+        *  as a consequence, we can't control the height /width with css and have to do it here instead
+        */
+        const internalTagItems = document.querySelectorAll('.internal-tags .sidebar-link-item');
+        if (internalTagItems) {
+            internalTagItems.forEach(internalTag => {
 
-                    let firstLetters = words.slice(0, 2).map(word => word.charAt(0).toUpperCase()).join('');
+                // if the user has tagged multiple posts/pages with this tag, the element will contain multiple links
+                // we keep the first (most recent publication) link
+                const firstLink = internalTag.querySelector('a');
+                let sibling = firstLink.nextElementSibling;
+                while (sibling) {
+                    const nextSibling = sibling.nextElementSibling;
+                    sibling.remove();
+                    sibling = nextSibling;
+                }
 
-                    if (words.length === 1) {
-                        firstLetters=(itemDescription.textContent.slice(0, 2)).toUpperCase();
-                    }
+                const description = firstLink.querySelector('.sidebar-link-description');
+                const icon = firstLink.querySelector('.sidebar-link-icon');
+                const svgDoc = icon.contentDocument;
+                const regex = /^##[0-9]*-/;  // this is the pattern of internal nag names that are to be used for secondary navigation
 
-                    span.textContent = firstLetters;
-                    span.classList.add('sidebar-link-icon');
-                    const link=item.querySelector('.sidebar-link');
-                    if (link) {
-                        link.insertBefore(span,link.firstChild);
+                if (description) {
+                    if (regex.test(description.textContent)) {
+                        description.textContent = description.textContent.replace(regex,'');
+                    } else {
+                        internalTag.remove(); // standard internal tags (these start with a single #) are not used in the navigation
                     }
                 }
+
+                if (svgDoc) {
+                    const svgElement = svgDoc.querySelector('svg');
+                    if (svgElement) {
+                        const viewBox = svgElement.getAttribute('viewBox');
+                        const naturalWidth = svgElement.getAttribute('width');
+                        const naturalHeight = svgElement.getAttribute('height');
+                        if (!viewBox) {
+                            if (!naturalWidth || !naturalHeight){
+                                const bbox = svgElement.getBBox(); // Returns the bounding box of the element
+                                svgElement.setAttribute('viewBox', `0 0 ${bbox.width} ${bbox.height}`);
+                            } else {
+                                svgElement.setAttribute('viewBox', `0 0 ${naturalWidth} ${naturalHeight}`);
+                            }
+                        }
+                        svgElement.setAttribute('height', '20px');
+                        svgElement.setAttribute('width', '20px');
+                    }
+                }
+
+                icon.classList.remove('hidden'); // only show the image after it is resized
             });
+
+            // for the secondary link items we use the first two characters of the words in the description instead of an icon
+            const secondaryLinksItems = document.querySelectorAll('.secondary-links .sidebar-link-item');
+            if (secondaryLinksItems) {
+                secondaryLinksItems.forEach(item => {
+                    const span = document.createElement('span');
+                    const itemDescription = item.querySelector('.sidebar-link-description') ;
+                    if (itemDescription) {
+                        const words = itemDescription.textContent.replace(/[^a-zA-Z0-9\s]/g, ' ').trim().split(/\s+/);
+
+                        let firstLetters = words.slice(0, 2).map(word => word.charAt(0).toUpperCase()).join('');
+
+                        if (words.length === 1) {
+                            firstLetters=(itemDescription.textContent.slice(0, 2)).toUpperCase();
+                        }
+
+                        span.textContent = firstLetters;
+                        span.classList.add('sidebar-link-icon');
+                        const link=item.querySelector('.sidebar-link');
+                        if (link) {
+                            link.insertBefore(span,link.firstChild);
+                        }
+                    }
+                });
+            }
         }
-    }
-})();
+    })()
+});
