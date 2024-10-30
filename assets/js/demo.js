@@ -66,7 +66,7 @@
         const demoOptionsButton = document.createElement('button');
         demoOptionsButton.innerHTML = `
             ${gearIcon}
-            <div class="demo-options-button-description">Settings</div>
+            <div class="demo-options-button-description">Customise</div>
         `;
 
         demoOptionsButton.classList.add('icon','demo-options-button')
