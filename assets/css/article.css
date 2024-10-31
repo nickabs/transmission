@@ -135,6 +135,12 @@ figcaption {
     font-family: var(--font-mono);
     width: 100vw; /* not sure why this is  needed, but without it the scroll bar does not show on overflow*/
 }
+/* fix because prism css does not cause inline code scroll unless an language class is specified */
+pre:not([class]) {
+  margin: .5em 0;
+  overflow: auto;
+  padding: 1em;
+}
 /* make output lines in code blocks not selectable */
 .command-line span.token.output {
 	user-select: none;
