@@ -23,11 +23,11 @@
 {{/match}}
 
 {{#match nav-type "sidebar-internal-tag"}}
-  {{#get "tags" filter="visibility:internal" as |internal-tags|}}
+  {{#get "tags" filter="visibility:internal+name:~^'##'" as |internal-tags|}}
   {{#if internal-tags}}
       <ul class="internal-tags sidebar-links">
       {{#foreach internal-tags visibility="internal"}}
-        <li class="sidebar-link-item ">
+        <li class="sidebar-link-item">
           {{!-- 
             load the svg inline so that we can update the fill attribute values according 
             to the dark/light mode selected (see dark-mode-toggle.js)
