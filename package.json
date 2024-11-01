@@ -1,8 +1,8 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
+    "demo": "https://demo.transmissionthemes.com",
     "version": "2.2.2",
-    "private": true,
     "engines": {
         "ghost": ">=5.0.0"
     },
