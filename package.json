@@ -2,7 +2,7 @@
     "name": "transmission",
     "description": "transmission Ghost theme",
     "demo": "https://demo.transmissionthemes.com",
-    "version": "2.2.2",
+    "version": "2.2.3",
     "engines": {
         "ghost": ">=5.0.0"
     },
