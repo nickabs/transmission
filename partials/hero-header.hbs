@@ -5,7 +5,7 @@
             <p class="hero-description">{{@site.description}}</p>
         {{/if}}
         {{#if @site.cover_image}}
-            <img class="hero-image" src="{{@site.cover_image}}"/>
+            <img alt="hero image" class="hero-image" src="{{@site.cover_image}}"/>
         {{/if}}
     {{/is}}
 
@@ -19,7 +19,7 @@
     {{#is "page"}}
         <h1 class="hero-title">{{title}}</h1>
         {{#if feature_image }}
-            <img class="hero-image" src="{{feature_image}}"/>
+            <img alt="hero image" class="hero-image" src="{{feature_image}}"/>
         {{/if}}
     {{/is}}
 
@@ -61,7 +61,7 @@
             {{/foreach}}
         </ul>
         {{#if feature_image }}
-            <img class="hero-image" src="{{feature_image}}"/>
+            <img  <meta charset="UTF-8"> class="hero-image" src="{{feature_image}}"/>
         {{/if}}
     {{/is}}
 

@@ -10,9 +10,9 @@
         {{> "icons/circles-oval"}}
     </div>
     <h2 class="enrol-heading">
-        <div class="enrol-icon icon">
+        <span class="enrol-icon icon">
             {{> "icons/unread-mail"}}
-        </div>
+        </span>
         {{#if @custom.enrol_members_banner_heading}}
             {{{@custom.enrol_members_banner_heading}}}
         {{else}}
@@ -30,7 +30,7 @@
     {{!-- newsletter section --}}
     {{#match banner-type "!=" "subscribe"}} 
         <form class="enrol-newsletter" data-members-form>
-            <input class="enrol-newsletter-input" id="{{email_field_id}}" type="email" placeholder="Enter your email address" required data-members-email>
+            <input class="enrol-newsletter-input" type="email" placeholder="Enter your email address" required data-members-email>
             <button class="enrol-newsletter-button" type="submit" aria-label="newsletter enrollment">
                 <span class="submit-icon icon" >
                     {{> "icons/submit"}}
