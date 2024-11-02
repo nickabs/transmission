@@ -1,6 +1,7 @@
 {
     "name": "transmission",
     "description": "transmission Ghost theme",
+    "type": "module",
     "demo": "https://demo.transmissionthemes.com",
     "version": "2.2.6",
     "engines": {
