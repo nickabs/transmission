@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" data-color-scheme="dark"></html>
 
 <head>
-    {{!-- set the data-color-scheme attribute before rendering the page to avoid a screen flash --}}
-    <script>document.documentElement.setAttribute('data-color-scheme',localStorage.getItem("data-color-scheme"))||""</script>
+    {{!-- set the color scheme option from local storage (local storage is used if the user has used the dark mode toggle previously) --}}
+    <script> localStorage.getItem("data-color-scheme") && document.documentElement.setAttribute('data-color-scheme', localStorage.getItem("data-color-scheme")); </script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

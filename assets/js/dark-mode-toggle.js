@@ -1,10 +1,9 @@
 /*
  * toggle between dark and light mode
  * if the user has set a system preference then default to that setting
- * if they specify a setting save it in local storage so it is remembered next time
+ * if they specify a setting using the site dark/light mode buttons, save it in local storage so it is remembered next time
  * 
 */
-
 (function() {
     const darkModeButton = document.querySelector("button.dark-mode");
     const lightModeButton = document.querySelector("button.light-mode");
@@ -13,11 +12,11 @@
         return;
     }
 
-    var storedDataColorTheme = localStorage.getItem('data-color-scheme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const icons = document.querySelectorAll('.sidebar-link-icon'); // sidebar icons need to be updated according to the color scheme preference
+    const storedDataColorScheme = localStorage.getItem('data-color-scheme');
+    const systemSchemePreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
-    if (storedDataColorTheme) {
-        document.documentElement.setAttribute('data-color-scheme', storedDataColorTheme);
-    }
+    document.documentElement.setAttribute('data-color-scheme', storedDataColorScheme || systemSchemePreference);
 
     /* 
      * where an svg icon is loaded externally, e.g in the sidebar, 
@@ -43,25 +42,25 @@
 
 
     function onClick(event) {
-        var currentTheme = document.documentElement.getAttribute("data-color-scheme");
-        var targetDataColorTheme = currentTheme == "dark" ? "light" : "dark";
+        var currentScheme = document.documentElement.getAttribute("data-color-scheme");
+        var targetDataColorScheme = currentScheme == "dark" ? "light" : "dark";
 
-        document.documentElement.setAttribute('data-color-scheme', targetDataColorTheme)
-        localStorage.setItem('data-color-scheme', targetDataColorTheme);
+        document.documentElement.setAttribute('data-color-scheme', targetDataColorScheme)
+
+        localStorage.setItem('data-color-scheme', targetDataColorScheme);
 
         // set color-scheme on the comments iframe
         // As of 5.0 Ghost helper supports {{comments mode="auto" }} which will use the background color to determine if the theme is using a dark mode
         // ... but this only works after a screen refresh.  The code below will make the scheme change on clicking the dark mode toggle
         const commentsScript = document.querySelector('script[data-color-scheme]');
         if (commentsScript) {
-            commentsScript.setAttribute('data-color-scheme', targetDataColorTheme);
+            commentsScript.setAttribute('data-color-scheme', targetDataColorScheme);
         };
 
         /* update the sidebar icons */
         updateIconColor();
     }
 
-    const icons = document.querySelectorAll('.sidebar-link-icon');
     updateIconColor();
 
     darkModeButton.addEventListener('click', onClick);
