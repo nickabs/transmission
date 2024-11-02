@@ -139,7 +139,7 @@ function zipper(done) {
             '!todo.md',
             '!dist', '!dist/**',
             '!package-lock.json'
-        ]),
+        ], {encoding: false}),
         zip(filename),
         dest('dist/')
     ], handleError(done));
