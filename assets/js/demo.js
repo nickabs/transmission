@@ -190,9 +190,6 @@
         return container;
     }
     
-    document.addEventListener('DOMContentLoaded', () => {
-        //todo
-        const demoOptions = createDemoOptions();
-        site.appendChild(demoOptions);
-    });
+    const demoOptions = createDemoOptions();
+    site.appendChild(demoOptions);
 })();
