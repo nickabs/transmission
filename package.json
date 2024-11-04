@@ -2,6 +2,201 @@
     "name": "transmission",
     "description": "transmission Ghost theme",
     "type": "module",
+    "demo": "https://demo.transmissionthemes.com",
+    "version": "2.2.6",
+    "engines": {
+        "ghost": ">=5.0.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Nick",
+        "email": "nick.abson@gmail.com",
+        "url": "https://smallworkshop.co.uk"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nickabs/transmission.git"
+    },
+    "config": {
+        "posts_per_page": 16,
+        "image_sizes": {
+            "xs": {
+                "width": 160
+            },
+            "s": {
+                "width": 320
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 960
+            },
+            "xl": {
+                "width": 1200
+            },
+            "xxl": {
+                "width": 2000
+            }
+        },
+        "card_assets": true,
+        "custom": {
+            "fixed_navigation_bar": {
+                "type": "boolean",
+                "default": false,
+                "description": "Fix navigation bar at top of the screen"
+            },
+            "menu_style": {
+                "type": "select",
+                "options": [
+                    "Minified",
+                    "Expanded"
+                ],
+                "default": "Expanded",
+                "description": "Header nav style on wide screens"
+            },
+            "hero_style": {
+                "type": "select",
+                "options": [
+                     "plain",
+                     "color",
+                     "grayscale"
+                ],
+                "default": "plain",
+                "description": "Note the color/greyscale options use the site publication cover image as a background"
+            },
+            "sidebar": {
+                "type": "select",
+                "options": [
+                    "Top",
+                    "Bottom",
+                    "Left",
+                    "Right",
+                    "None"
+                ],
+                "default": "Top",
+                "description": "Note the sidebar shows under the header on smaller screens, even if left/right is selected"
+
+            },
+            "enrol_members_banner_type": {
+                "type": "select",
+                "options": [
+                    "None",
+                    "Newsletter - home page only",
+                    "Newsletter - home page & posts",
+                    "Newsletter - posts only",
+                    "Subscribe - home page only",
+                    "Subscribe - home page & posts",
+                    "Subscribe - posts only",
+                    "Both - home page only",
+                    "Both - home page & posts",
+                    "Both - posts only"
+                ],
+                "default": "None",
+                "description": "Add a banner to invite newsletter membership subscription to the home page."
+            },
+            "enrol_members_banner_heading": {
+                "type": "text",
+                "description": "Defaults to site title when empty",
+                "visibility": "enrol_members_banner_type:-None"
+            },
+            "enrol_members_banner_description": {
+                "type": "text",
+                "description": "Defaults to site description when empty",
+                "visibility": "enrol_members_banner_type:-None"
+            },
+            "hide_comments_subscribe_cta": {
+                 "type": "boolean",
+                 "default": false,
+                 "description": "this will hide the native ghost subscribe CTA that shows under   the comments section",
+                 "visibility": "enrol_members_banner_type:-None"
+          },
+            "show_authors": {
+                "type": "select",
+                "options":[
+                    "Names",
+                    "Profile images",
+                    "Names and profile images",
+                    "None"
+                ],
+                "default": "None"
+            },
+            "show_dates_on_article_cards": {
+                "type": "boolean",
+                "default": false
+            },
+            "footer_link_style": {
+                "type": "select",
+                "options": [
+                    "Option 1",
+                    "Option 2",
+                    "Option 3", 
+                    "Option 4", 
+                    "Option 5", 
+                    "None"
+                ],
+                "default": "Option 1"
+            },
+            "google_analytics_id": {
+                "type": "text",
+                "description": "if you use google analytics, add your GA id here"
+            },
+            "show_featured_posts": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
+            },
+            "home_page_style": {
+                "type": "select",
+                "options": [
+                    "List",
+                    "Focus (right)",
+                    "Focus (left)"
+                ],
+                "default": "Focus (left)",
+                "group": "homepage"
+            },
+            "post_table_of_contents": {
+                "type": "select",
+                "options": [
+                    "Full",
+                    "Minified",
+                    "None"
+                ],
+                "default": "Full",
+                "group": "post",
+                "description": "TOC display options"
+            },
+            "show_related_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            },
+            "show_one_time_payment_request": {
+                "type": "boolean",
+                "default": false,
+                "group": "post",
+                "description": "Can be used, example for 'buy me a coffee' requests"
+            },
+            "one_time_payment_button_text": {
+                  "type": "text",
+                  "default": "buy me a coffee",
+                  "group": "post",
+                  "visibility": "show_one_time_payment_request:true"
+            },
+            "one_time_payment_description": {
+                  "type": "text",
+                  "default": "Enjoyed this post? Consider leaving a tip to support my work, which is entirely funded by readers like you.",
+                  "group": "post",
+                  "visibility": "show_one_time_payment_request:true"
+             }
+        }
+    },
     "scripts": {
         "dev": "gulp dev",
         "zip": "gulp zip",
