@@ -179,7 +179,7 @@
 }
 
 /*hide the icons initially - navigation.js will resize them and then remove the 'hidden' class so they are visible */
-.internal-tags .sidebar-link-item:has(.hidden){
+.internal-tags.hidden {
     visibility:hidden;
 }
 

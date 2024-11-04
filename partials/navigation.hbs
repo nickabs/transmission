@@ -25,13 +25,13 @@
 {{#match nav-type "sidebar-internal-tag"}}
   {{#get "tags" filter="visibility:internal+name:~^'##'" as |internal-tags|}}
   {{#if internal-tags}}
-      <ul class="internal-tags sidebar-links">
+      {{!-- the "hidden" class hides the links while the javascript to update the svg icons runs --}}
+      <ul class="sidebar-links internal-tags hidden">
       {{#foreach internal-tags visibility="internal"}}
         <li class="sidebar-link-item">
           {{!-- 
             load the svg inline so that we can update the fill attribute values according 
             to the dark/light mode selected (see dark-mode-toggle.js)
-            the "hidden" class hides the links while the javascript runs 
 
             some useful items in the post/page context below:
               - excerpt - excerpt from the current post/page
@@ -60,7 +60,7 @@
             {{#foreach pages-with-internal-tag }}
                 <a href="{{this.url}}" >
                   {{#if ../../feature_image}}
-                    <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                    <object class="sidebar-link-icon {{slug}} icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
                   {{else}}
                     <div class="sidebar-link-icon icon">
                       {{> "icons/item"}}
@@ -74,7 +74,7 @@
             {{#foreach posts-with-internal-tag }}
               <a href="{{this.url}}" >
                 {{#if ../../feature_image}}
-                  <object class="sidebar-link-icon {{slug}} hidden icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                  <object class="sidebar-link-icon {{slug}} icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
                 {{else}}
                   <div class="sidebar-link-icon icon">
                     {{> "icons/item"}}

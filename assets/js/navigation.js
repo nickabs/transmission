@@ -156,6 +156,10 @@
  * note the user decides whether to include internal tags or secondary links on the sidebar
 */
 (function() {
+    const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--icon-color').trim();
+    const internalTags = document.querySelector('.internal-tags');
+    const internalTagItems = internalTags.querySelectorAll('.sidebar-link-item');
+    const regex = /^##[0-9]*-/;  // this is the pattern of internal nag names that are to be used for secondary navigation
     const containers = {
         share: document.querySelector('.share-links-container'),
         secondary: document.querySelector('.secondary-links-container'),
@@ -208,7 +212,41 @@
     *  color according to dark mode settings (see dark-mode-toggle.js). 
     *  as a consequence, we can't control the height /width with css and have to do it here instead
     */
-    const internalTagItems = document.querySelectorAll('.internal-tags .sidebar-link-item');
+
+    /* the icons are loaded by the user - update the size and color so they are displayed consistently in the sidebar*/
+    function updateInternalTagIcons (icon) {
+        try {
+            // get the doc content from inside the icon object element
+            const svgDoc = icon.contentDocument;
+            if (! svgDoc ) return;
+
+            const svgElement = svgDoc.querySelector('svg');
+            if (svgElement) {
+                const viewBox = svgElement.getAttribute('viewBox');
+                const naturalWidth = svgElement.getAttribute('width');
+                const naturalHeight = svgElement.getAttribute('height');
+                if (!viewBox) {
+                    if (!naturalWidth || !naturalHeight){
+                        const bbox = svgElement.getBBox(); // Returns the bounding box of the element
+                        svgElement.setAttribute('viewBox', `0 0 ${bbox.width} ${bbox.height}`);
+                    } else {
+                        svgElement.setAttribute('viewBox', `0 0 ${naturalWidth} ${naturalHeight}`);
+                    }
+                }
+                svgElement.setAttribute('height', '20px');
+                svgElement.setAttribute('width', '20px');
+            
+                const elements = svgElement.querySelectorAll('path, circle, rect, ellipse');
+                elements.forEach(element => {
+                    element.setAttribute('fill', fillColor);
+                    element.setAttribute('stroke', fillColor);
+                });
+            }
+        } catch (e) {
+            console.error('Error adjusting SVG:', e);
+        }
+    }
+
     if (internalTagItems) {
         internalTagItems.forEach(internalTag => {
 
@@ -224,7 +262,6 @@
 
             const description = firstLink.querySelector('.sidebar-link-description');
             const icon = firstLink.querySelector('.sidebar-link-icon');
-            const regex = /^##[0-9]*-/;  // this is the pattern of internal nag names that are to be used for secondary navigation
 
             if (description) {
                 if (regex.test(description.textContent)) {
@@ -234,28 +271,19 @@
                 }
             }
 
+            // the document content for the object is from an external svg so may load after the doc
             const svgDoc = icon.contentDocument;
-            if (svgDoc) {
-                const svgElement = svgDoc.querySelector('svg');
-                if (svgElement) {
-                    const viewBox = svgElement.getAttribute('viewBox');
-                    const naturalWidth = svgElement.getAttribute('width');
-                    const naturalHeight = svgElement.getAttribute('height');
-                    if (!viewBox) {
-                        if (!naturalWidth || !naturalHeight){
-                            const bbox = svgElement.getBBox(); // Returns the bounding box of the element
-                            svgElement.setAttribute('viewBox', `0 0 ${bbox.width} ${bbox.height}`);
-                        } else {
-                            svgElement.setAttribute('viewBox', `0 0 ${naturalWidth} ${naturalHeight}`);
-                        }
-                    }
-                    svgElement.setAttribute('height', '20px');
-                    svgElement.setAttribute('width', '20px');
-                }
-                }
+            if (svgDoc && svgDoc.querySelector('svg')) {
+                updateInternalTagIcons(icon);
+            } else {
+                // SVG isn't loaded yet, wait for load event
+                icon.addEventListener('load', () => {
+                    updateInternalTagIcons(icon);
+                });
+            }
 
-            icon.classList.remove('hidden'); // only show the image after it is resized
         });
+        internalTags.classList.remove('hidden'); // only show the icons after they are resized.
 
         // for the secondary link items we use the first two characters of the words in the description instead of an icon
         const secondaryLinksItems = document.querySelectorAll('.secondary-links .sidebar-link-item');

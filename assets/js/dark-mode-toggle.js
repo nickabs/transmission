@@ -12,7 +12,7 @@
         return;
     }
 
-    const icons = document.querySelectorAll('.sidebar-link-icon'); // sidebar icons need to be updated according to the color scheme preference
+    const icons = document.querySelectorAll('.internal-tags .sidebar-link-icon'); // sidebar icons need to be updated according to the color scheme preference
     const storedDataColorScheme = localStorage.getItem('data-color-scheme');
     const systemSchemePreference = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
@@ -23,9 +23,9 @@
      * we have to update the svg paths to reflect the selected color scheme 
      */
     function updateIconColor() {
-        if (!icons) return;
-
+        // get current setting
         const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--icon-color').trim();
+        if (!icons) return;
 
         icons.forEach(icon => {
             const svgDoc = icon.contentDocument;
@@ -39,7 +39,6 @@
             });
         });
     }
-
 
     function onClick(event) {
         var currentScheme = document.documentElement.getAttribute("data-color-scheme");
@@ -60,8 +59,6 @@
         /* update the sidebar icons */
         updateIconColor();
     }
-
-    updateIconColor();
 
     darkModeButton.addEventListener('click', onClick);
     lightModeButton.addEventListener('click', onClick);
