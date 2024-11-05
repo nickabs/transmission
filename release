@@ -16,9 +16,9 @@ const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
 // repo settings 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const packageJSON = JSON.parse(fs.readFileSync('./package.json'));
-const repoSlug = packageJSON.repository.url.match(/github\.com\/([^/]+)\/(.*).git *$/);
-const owner = repoSlug[1];
-const repo = repoSlug[2];
+const repoSlug = packageJSON.repository?.url?.match(/github\.com\/([^/]+)\/(.*).git *$/);
+const owner = repoSlug ? repoSlug[1] : undefined;
+const repo = repoSlug ? repoSlug[2] : undefined;
 const version = packageJSON.version;
 
 // file system locations
@@ -70,6 +70,24 @@ async function getCommitMessages() {
     return commitMessages;
  }
 
+async function checkRepoExists() {
+    const url = `https://api.github.com/repos/${owner}/${repo}`
+    const response = await fetch(url, {
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    });
+
+    if (!response.ok) {
+        if (response.status === 404) {
+            throw new Error(`The ${owner}/${repo} repository does not exist`);
+        } else {
+            throw new Error(`GitHub API request failed: ${response.statusText}`);
+        }
+    }
+}
+
 async function getPreviousRelease(key) {
     const url = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
     const response = await fetch(url, {
@@ -80,7 +98,11 @@ async function getPreviousRelease(key) {
     });
 
     if (!response.ok) {
-        throw new Error(`GitHub API request failed: ${response.statusText}`);
+        if (response.status === 404) {
+            throw new Error(`no releases found for ${owner}/${repo}. Have you created your initial release?`);
+        } else {
+            throw new Error(`GitHub API request failed: ${response.statusText}`);
+        }
     }
 
     const release = await response.json();
@@ -113,7 +135,7 @@ async function createNewRelease(isDraft, changelog) {
     });
 
     if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
+        throw new Error(`Github API POST request failed: ${response.statusText}`);
     }
 
     const data = await response.json();
@@ -141,12 +163,8 @@ async function uploadZipFileToLatestRelease(zipFilePath,zipFileName) {
         return true;
     } else {
         const errorData = await response.json();
-        if (response.status === 422) {
-            if (errorData.errors && errorData.errors.some(error => error.code === 'already_exists')) { 
+        if (response.status === 422 && errorData.errors && errorData.errors.some(error => error.code === 'already_exists')) { 
                 throw new Error(`${zipFileName} already exists in this release.`);
-            } else {
-                throw new Error(`Error uploading file: ${response.status} - ${response.message}`);
-            }
         }
         throw new Error(`Error uploading file: ${response.status} - ${response.statusText}\nError message: ${errorData.message}`);
     }
@@ -182,13 +200,15 @@ function checkCommandLineArgs() {
 async function main() {
     try {
         if (!owner || !repo) {
-            throw new("can't read owner and repo from package.json - is repository.url defined?");
+            throw new Error(`can't read owner and repo from package.json - is repository.url defined?`);
         }
         if (!version ) throw new Error('version not found in package.json');
 
         if (!GITHUB_TOKEN) throw new Error('GITHUB_TOKEN environment variable not set');
 
         checkCommandLineArgs();
+
+        await checkRepoExists();
 
         previousReleaseTag = await getPreviousRelease("tag_name");
 
@@ -204,7 +224,6 @@ async function main() {
             if (! await checkFile(changelogDir)) {
                 throw new Error(`can't open changelog directory ${changelogDir}`);
             }
-
 
             if (await checkFile(changelogPath)) {
                 throw new Error(` ${changelogPath} already exists`);
@@ -227,7 +246,7 @@ async function main() {
                 throw new Error(`can't open ${changelogPath}: use the --create-changelog option to create this file`);
             }
             const changelog = fs.readFileSync(changelogPath, 'utf8')
-            console.log(`\nCreating release for ${version} (previous version: ${previousReleaseTag})`);
+            console.log(`\nCreating release for ${owner}/${repo} ${version} (previous version: ${previousReleaseTag})`);
 
             const uri = await createNewRelease(isDraft, changelog);
 

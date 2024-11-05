@@ -138,6 +138,7 @@ function zipper(done) {
             '!todo.md',
             '!dist', '!dist/**',
             '!package-lock.json',
+            '!release',
             '!changelogs', '!changelogs/**'
         ], {encoding: false}),
         zip(filename),
