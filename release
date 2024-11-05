@@ -192,12 +192,12 @@ async function main() {
 
         previousReleaseTag = await getPreviousRelease("tag_name");
 
-        if (showLatestReleaseOption) {
-            console.log(await getPreviousRelease("html_url"));
-        }
-
         if ( (createChangelogOption || createReleaseOption) && (`v${version}` == previousReleaseTag) ) {
             throw new Error(`The package.json version is the same as the previously released version found on github (${previousReleaseTag}) `);
+        }
+
+        if (showLatestReleaseOption) {
+            console.log(await getPreviousRelease("html_url"));
         }
 
         if (createChangelogOption) {

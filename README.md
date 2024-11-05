@@ -69,6 +69,7 @@ You will need [Node](https://nodejs.org/) and [Gulp](https://gulpjs.com) install
 to start, unzip the zip file into the theme directory of your local installation.
 
 After that, you then need to install the packages used by the theme.  From the theme's root directory:
+
 ```bash
 # Install
 npm install
@@ -82,6 +83,22 @@ You can use the npm `zip` task to package the theme files into a single zip file
 ```bash
 npm run zip
 ```
+# Release a new version of the theme
+the ```release``` javascript util can be used to create new github releases from the command line.
 
-This zip file can then be used to install the modified theme on your site.
+To do a quick release of all the latest changes:
 
+```bash
+# increment version in package.json and bump the vesion"
+git commit -am "bump version"
+git push origin main
+npm run full-release
+```
+the full-release npm script does the following:
+1. gscan the theme
+2. creates a changelog based on github commits since the previous release
+3. creates the  dist/theme.zip
+4. creates a github release with a tag of package.json
+5. uploads the theme.zip file to the relase
+
+if you prefer you can run each of these stages separately using the appropriate npm scripts
