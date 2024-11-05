@@ -199,7 +199,13 @@
     "scripts": {
         "dev": "gulp dev",
         "zip": "gulp zip",
-        "test": "gscan ."
+        "test": "gscan .",
+        "create-changelog": "./release --create-changelog",
+        "create-release": "./release --create-release published",
+        "create-draft-release": "./release --create-release draft",
+        "upload-zipfile": "./release --upload-zipfile dist/transmission.zip",
+        "full-release": "gscan . && ./release --create-changelog && ./release --create-release published && gulp zip && ./release --upload-zipfile dist/transmission.zip ",
+        "draft-full-release": "gscan . && ./release --create-changelog && ./release --create-release draft"
     },
     "devDependencies": {
         "beeper": "^3.0.0",
