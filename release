@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 /* 
  * create a github release for the theme referenced in package.json 
- * check message when package is x+1 but not pushed - todo
  */
 import fs from 'fs';
 import path from 'path';
-import FormData from 'form-data';
 
 const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
             Options:
@@ -14,22 +12,27 @@ const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
                 --upload-zipfile  file.zip          upload the zipped up theme bundle (npm run zip) to the latest version on github.
                 --help `;
 
-const packageJSON = JSON.parse(fs.readFileSync('./package.json'));
-const r = packageJSON.repository.url.match(/github\.com\/([^/]+)\/(.*).git *$/);
-const owner = r[1];
-const repo = r[2];
+// repo settings 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+const repoSlug = packageJSON.repository.url.match(/github\.com\/([^/]+)\/(.*).git *$/);
+const owner = repoSlug[1];
+const repo = repoSlug[2];
 const version = packageJSON.version;
+
+// file system locations
 const changelogDir = path.join(process.cwd(),'./changelogs');
 const changelogPath = path.join(`${changelogDir}`, `${version}-changelog.md`);
+const zipFilePath = path.join(process.cwd(), process.argv[process.argv.indexOf('--upload-zipfile') + 1]||'notfound.zip');
+const zipFileName = `${repo}.zip`;
+
+// options
 const createReleaseOption = process.argv.includes('--create-release');
 const releaseType = process.argv[process.argv.indexOf('--create-release') + 1];
 const createChangelogOption = process.argv.includes('--create-changelog');
 const uploadZipFileOption = process.argv.includes('--upload-zipfile');
-const zipFilePath = path.join(process.cwd(), process.argv[process.argv.indexOf('--upload-zipfile') + 1]||'notfound.zip');
-const zipFileName = `${repo}.zip`;
 const helpOption = process.argv.includes('-h') || process.argv.includes('--help');
-let previousReleaseTag, isDraft ;
+let previousReleaseTag, isDraft ; //initialised in main()
 
 async function checkFile(filePath) {
     try {
@@ -120,15 +123,16 @@ async function uploadZipFileToLatestRelease(zipFilePath,zipFileName) {
     const url = new URL(uploadTemplateUrl.replace('{?name,label}', ''));
     url.searchParams.set('name', zipFileName);
 
-    const form = new FormData();
-    form.append('file', fs.createReadStream(zipFilePath), zipFileName);
+    const fileBuffer = fs.readFileSync(zipFilePath);
 
     const response = await fetch(url.href, {
         method: 'POST',
         headers: {
             'Authorization': `token ${GITHUB_TOKEN}`,
-            ...form.getHeaders() 
-        }, body: form
+            'Content-Type': 'application/zip',
+            'Content-Length': fileBuffer.length
+        },
+        body: fileBuffer
     });
 
     if (response.ok) {
