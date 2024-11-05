@@ -43,11 +43,11 @@ When the navigation item name is preceeded by a single dash it will show as a pa
 
 # Demo
 
-[See the theme in action](https://smallworkshop.co.uk).
+[See the theme demo site](https://demo.transmissionthemes.com).
 
 # Download and Install
-
-Download the latest zip file from the [Releases](https://github.com/nickabs/transmission/releases) page and install it to your site via the Ghost admin tools.
+You can download the latest version from the demo site (above) or get previous versions from the [Releases](https://github.com/nickabs/transmission/releases) page.
+The theme is installed by using the Ghost theme admin tools on your site to upload the transmission.zip file.
 
 # For developers
 
