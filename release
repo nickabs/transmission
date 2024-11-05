@@ -1,0 +1,246 @@
+#!/usr/bin/env node
+/* 
+ * create a github release for the theme referenced in package.json 
+ * check message when package is x+1 but not pushed - todo
+ */
+import fs from 'fs';
+import path from 'path';
+import FormData from 'form-data';
+
+const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
+            Options:
+                --create-changelog                  create changelog based on github commits after the latest published version
+                --create-release draft|published    create a release (uses changelog file created above)
+                --upload-zipfile  file.zip          upload the zipped up theme bundle (npm run zip) to the latest version on github.
+                --help `;
+
+const packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+const r = packageJSON.repository.url.match(/github\.com\/([^/]+)\/(.*).git *$/);
+const owner = r[1];
+const repo = r[2];
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const version = packageJSON.version;
+const changelogDir = path.join(process.cwd(),'./changelogs');
+const changelogPath = path.join(`${changelogDir}`, `${version}-changelog.md`);
+const createReleaseOption = process.argv.includes('--create-release');
+const releaseType = process.argv[process.argv.indexOf('--create-release') + 1];
+const createChangelogOption = process.argv.includes('--create-changelog');
+const uploadZipFileOption = process.argv.includes('--upload-zipfile');
+const zipFilePath = path.join(process.cwd(), process.argv[process.argv.indexOf('--upload-zipfile') + 1]||'notfound.zip');
+const zipFileName = `${repo}.zip`;
+const helpOption = process.argv.includes('-h') || process.argv.includes('--help');
+let previousReleaseTag, isDraft ;
+
+async function checkFile(filePath) {
+    try {
+        await fs.promises.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
+        return true;
+    } catch (err) {
+        return false;
+    }
+}
+
+async function getCommitMessages() {
+    const url = `https://api.github.com/repos/${owner}/${repo}/compare/${previousReleaseTag}...main` 
+    const response = await fetch(url, {
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error(`GitHub API request failed: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    const commitMessages = data.commits.map(commit => {
+        const shortSha = commit.sha.substring(0, 7);
+        const message = commit.commit.message;
+        const commitUrl = `https://github.com/${owner}/${repo}/commit/${commit.sha}`;
+        return `- ${message} ([\`${shortSha}\`](${commitUrl}))`;
+        }).join('\n');
+
+    return commitMessages;
+ }
+
+async function getPreviousRelease(key) {
+    const url = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
+    const response = await fetch(url, {
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error(`GitHub API request failed: ${response.statusText}`);
+    }
+
+    const release = await response.json();
+    
+    if (key in release) {
+        return release[key];
+    } else {
+        throw new Error(`Unrecognized key supplied to getPreviousRelease: ${key}`);
+    }
+}
+
+async function createNewRelease(isDraft, changelog) {
+    const url = `https://api.github.com/repos/${owner}/${repo}/releases`;
+    const releaseData = {
+        tag_name: 'v' + version,
+        target_commitish: 'main',   // The commitish value (branch or commit SHA)
+        name: version,
+        body: `${changelog}`,
+        draft: isDraft,
+        prerelease: false            
+    };
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(releaseData)
+    });
+
+    if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.html_url;
+}
+
+async function uploadZipFileToLatestRelease(zipFilePath,zipFileName) {
+    const uploadTemplateUrl = await getPreviousRelease('upload_url'); //template URL
+    const url = new URL(uploadTemplateUrl.replace('{?name,label}', ''));
+    url.searchParams.set('name', zipFileName);
+
+    const form = new FormData();
+    form.append('file', fs.createReadStream(zipFilePath), zipFileName);
+
+    const response = await fetch(url.href, {
+        method: 'POST',
+        headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            ...form.getHeaders() 
+        }, body: form
+    });
+
+    if (response.ok) {
+        return true;
+    } else {
+        const errorData = await response.json();
+        if (response.status === 422) {
+            if (errorData.errors && errorData.errors.some(error => error.code === 'already_exists')) { 
+                throw new Error(`${zipFileName} already exists in this release.`);
+            } else {
+                throw new Error(`Error uploading file: ${response.status} - ${response.message}`);
+            }
+        }
+        throw new Error(`Error uploading file: ${response.status} - ${response.statusText}\nError message: ${errorData.message}`);
+    }
+}
+
+function checkCommandLineArgs() {
+    if (helpOption) {
+        console.log(usage);
+        process.exit(1);
+    }
+    if (! createReleaseOption && ! createChangelogOption && ! uploadZipFileOption) {
+        throw new Error(usage);
+    }
+    if (createReleaseOption) {
+        if (releaseType === 'draft' || releaseType === 'published') {
+            isDraft = (releaseType === 'draft');
+        } else {
+            throw new Error(
+                releaseType
+                    ? `Invalid value for --create-release: ${releaseType}. Expected 'draft' or 'published'.`
+                    : 'No value provided for --create-release. Expected "draft" or "published".'
+            );
+        }
+    }
+    if (uploadZipFileOption) {
+        const regex = new RegExp(`${repo}\\.zip`)
+        if (!zipFilePath || ! regex.test(zipFilePath) ) {
+            throw new Error(`file error: ${zipFilePath} : you must specify the location of a ${repo}.zip file as a parameter for the --upload-zipfile option`);
+        }
+    }
+};
+
+async function main() {
+    try {
+        if (!owner || !repo) {
+            throw new("can't read owner and repo from package.json - is repository.url defined?");
+        }
+        if (!version ) throw new Error('version not found in package.json');
+
+        if (!GITHUB_TOKEN) throw new Error('GITHUB_TOKEN environment variable not set');
+
+        checkCommandLineArgs();
+
+        previousReleaseTag = await getPreviousRelease("tag_name");
+
+        if ( (createChangelogOption || createReleaseOption) && (`v${version}` == previousReleaseTag) ) {
+            throw new Error(`The package.json version is the same as the previously released version found on github (${previousReleaseTag}) `);
+        }
+
+        if (createChangelogOption) {
+            if (! await checkFile(changelogDir)) {
+                throw new Error(`can't open changelog directory ${changelogDir}`);
+            }
+
+
+            if (await checkFile(changelogPath)) {
+                throw new Error(` ${changelogPath} already exists`);
+            }
+
+            const commitMessages = await getCommitMessages();
+            const lines = commitMessages ? commitMessages.split(/\n/).length : 0;
+            if (lines === 0) {
+                throw new Error(`There are no commits on github after ${previousReleaseTag} - did you push your changes?`);
+            } else {
+                const changelogData = `**Updates in this release**\n\n${commitMessages}\n`;
+
+                fs.writeFileSync(changelogPath, changelogData);
+                console.log(`Changelog created: changes from (${previousReleaseTag}) : ${changelogPath}`);
+            }
+        }
+
+        if (createReleaseOption) {
+            if (! await checkFile(changelogPath)) {
+                throw new Error(`can't open ${changelogPath}: use the --create-changelog option to create this file`);
+            }
+            const changelog = fs.readFileSync(changelogPath, 'utf8')
+            console.log(`\nCreating release for ${version} (previous version: ${previousReleaseTag})`);
+
+            const uri = await createNewRelease(isDraft, changelog);
+
+            if (isDraft) 
+                console.log(`\ndraft release created:  ${uri}`);
+            else
+                console.log(`\nPublished release created:  ${uri}`);
+        }
+
+        if (uploadZipFileOption) {
+            if (! await checkFile(zipFilePath) ) {
+                throw new Error(`can't open zip file ${zipFilePath}`);
+            }
+
+            console.log(`uploading ${zipFilePath} to ${await getPreviousRelease('tag_name')}`);
+            if (await uploadZipFileToLatestRelease(zipFilePath,zipFileName)) {
+                console.log(`${zipFileName} uploaded`);
+            }
+        }
+    } catch (error) {
+        console.error('Error:', error.message);
+        process.exit(1);
+    }
+}
+
+main();

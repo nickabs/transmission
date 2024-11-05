@@ -128,7 +128,6 @@ function jsTheme(done) {
 }
 
 function zipper(done) {
-    //const filename = pkg.name+'_v'+pkg.version+'.zip';
     const filename = pkg.name+'.zip';
     console.log("creating "+filename);
 
@@ -138,7 +137,8 @@ function zipper(done) {
             '!node_modules', '!node_modules/**',
             '!todo.md',
             '!dist', '!dist/**',
-            '!package-lock.json'
+            '!package-lock.json',
+            '!changelogs', '!changelogs/**'
         ], {encoding: false}),
         zip(filename),
         dest('dist/')

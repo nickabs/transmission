@@ -3,7 +3,7 @@
     "description": "transmission Ghost theme",
     "type": "module",
     "demo": "https://demo.transmissionthemes.com",
-    "version": "2.2.6",
+    "version": "2.3.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -63,9 +63,9 @@
             "hero_style": {
                 "type": "select",
                 "options": [
-                     "plain",
-                     "color",
-                     "grayscale"
+                    "plain",
+                    "color",
+                    "grayscale"
                 ],
                 "default": "plain",
                 "description": "Note the color/greyscale options use the site publication cover image as a background"
@@ -81,7 +81,6 @@
                 ],
                 "default": "Top",
                 "description": "Note the sidebar shows under the header on smaller screens, even if left/right is selected"
-
             },
             "enrol_members_banner_type": {
                 "type": "select",
@@ -111,14 +110,14 @@
                 "visibility": "enrol_members_banner_type:-None"
             },
             "hide_comments_subscribe_cta": {
-                 "type": "boolean",
-                 "default": false,
-                 "description": "this will hide the native ghost subscribe CTA that shows under   the comments section",
-                 "visibility": "enrol_members_banner_type:-None"
-          },
+                "type": "boolean",
+                "default": false,
+                "description": "this will hide the native ghost subscribe CTA that shows under   the comments section",
+                "visibility": "enrol_members_banner_type:-None"
+            },
             "show_authors": {
                 "type": "select",
-                "options":[
+                "options": [
                     "Names",
                     "Profile images",
                     "Names and profile images",
@@ -135,9 +134,9 @@
                 "options": [
                     "Option 1",
                     "Option 2",
-                    "Option 3", 
-                    "Option 4", 
-                    "Option 5", 
+                    "Option 3",
+                    "Option 4",
+                    "Option 5",
                     "None"
                 ],
                 "default": "Option 1"
@@ -184,17 +183,17 @@
                 "description": "Can be used, example for 'buy me a coffee' requests"
             },
             "one_time_payment_button_text": {
-                  "type": "text",
-                  "default": "buy me a coffee",
-                  "group": "post",
-                  "visibility": "show_one_time_payment_request:true"
+                "type": "text",
+                "default": "buy me a coffee",
+                "group": "post",
+                "visibility": "show_one_time_payment_request:true"
             },
             "one_time_payment_description": {
-                  "type": "text",
-                  "default": "Enjoyed this post? Consider leaving a tip to support my work, which is entirely funded by readers like you.",
-                  "group": "post",
-                  "visibility": "show_one_time_payment_request:true"
-             }
+                "type": "text",
+                "default": "Enjoyed this post? Consider leaving a tip to support my work, which is entirely funded by readers like you.",
+                "group": "post",
+                "visibility": "show_one_time_payment_request:true"
+            }
         }
     },
     "scripts": {
@@ -213,7 +212,8 @@
         "gulp-zip": "^6.0.0",
         "postcss": "^8.4.47",
         "postcss-easy-import": "^4.0.0",
-        "pump": "^3.0.2"
+        "pump": "^3.0.2",
+        "form-data": "^4.0.1"
     },
     "dependencies": {
         "photoswipe": "^5.4.4",

@@ -8,6 +8,7 @@ todo.md
 npm-debug.log
 node_modules/
 package-lock.json
+changelogs/
 
 .DS_Store
 .idea
