@@ -86,22 +86,36 @@ You can use the npm `zip` task to package the theme files into a single zip file
 ```bash
 npm run zip
 ```
-# Release a new version of the theme
-the ```release``` javascript util can be used to create new github releases from the command line.
+# Release utility
+If you have copied the theme to make your own changes, the ```release``` javascript util can be used to create new github releases from the command line.
 
-To do a quick release of all the latest changes:
+To do a quick release of all the latest changes pushed to github since the last release, first increment _version_ in package.json then:
 
 ```bash
-# increment version in package.json and bump the vesion"
 git commit -am "bump version"
 git push origin main
 npm run full-release
 ```
-the full-release npm script does the following:
-1. gscan the theme
+
+there are several npm scripts defined.  For instance ```npm run full-release``` does the following:
+1. gscans the theme
 2. creates a changelog based on github commits since the previous release
-3. creates the  dist/theme.zip
-4. creates a github release with a tag of package.json
+3. creates an updated dist/theme.zip file
+4. creates a github release with a tag based on the _version_ in package.json
 5. uploads the theme.zip file to the relase
 
-if you prefer you can run each of these stages separately using the appropriate npm scripts
+use ```npm run draft-full-release``` to create a draft release.
+
+if you prefer you can run each of these stages separately using the appropriate _npm run_ scripts:
+- create-changelog
+- create-release
+- create-draft-release
+- upload-zipfile
+
+To use this script you need to
+1. create a subdirectory in your local theme repo dirrectory called changelogs
+2. Create a personal access token in your github account: > Developer settings>  Personal Access Tokens > Tokens (classic).  The token needs 'repo' permissions)
+3. Assign the token to a local env variable called GITHUB_TOKEN.
+
+The script will create releases in the repo identified in the packge.json file (repository.url).
+
