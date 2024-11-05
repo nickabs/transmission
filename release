@@ -10,6 +10,7 @@ const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
                 --create-changelog                  create changelog based on github commits after the latest published version
                 --create-release draft|published    create a release (uses changelog file created above)
                 --upload-zipfile  file.zip          upload the zipped up theme bundle (npm run zip) to the latest version on github.
+                --show-latest-release               print the url of the latest release
                 --help `;
 
 // repo settings 
@@ -26,12 +27,13 @@ const changelogPath = path.join(`${changelogDir}`, `${version}-changelog.md`);
 const zipFilePath = path.join(process.cwd(), process.argv[process.argv.indexOf('--upload-zipfile') + 1]||'notfound.zip');
 const zipFileName = `${repo}.zip`;
 
-// options
+// command line options
 const createReleaseOption = process.argv.includes('--create-release');
 const releaseType = process.argv[process.argv.indexOf('--create-release') + 1];
 const createChangelogOption = process.argv.includes('--create-changelog');
 const uploadZipFileOption = process.argv.includes('--upload-zipfile');
 const helpOption = process.argv.includes('-h') || process.argv.includes('--help');
+const showLatestReleaseOption = process.argv.includes('-h') || process.argv.includes('--show-latest-release');
 let previousReleaseTag, isDraft ; //initialised in main()
 
 async function checkFile(filePath) {
@@ -155,7 +157,7 @@ function checkCommandLineArgs() {
         console.log(usage);
         process.exit(1);
     }
-    if (! createReleaseOption && ! createChangelogOption && ! uploadZipFileOption) {
+    if (! createReleaseOption && ! createChangelogOption && ! uploadZipFileOption && ! showLatestReleaseOption ) {
         throw new Error(usage);
     }
     if (createReleaseOption) {
@@ -189,6 +191,10 @@ async function main() {
         checkCommandLineArgs();
 
         previousReleaseTag = await getPreviousRelease("tag_name");
+
+        if (showLatestReleaseOption) {
+            console.log(await getPreviousRelease("html_url"));
+        }
 
         if ( (createChangelogOption || createReleaseOption) && (`v${version}` == previousReleaseTag) ) {
             throw new Error(`The package.json version is the same as the previously released version found on github (${previousReleaseTag}) `);
