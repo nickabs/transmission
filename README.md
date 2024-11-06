@@ -92,7 +92,7 @@ If you have copied the theme to make your own changes, the ```release``` javascr
 To do a quick release of all the latest changes pushed to github since the last release:
 
 ```bash
-npm version minor --message "bump version to %s" # bump the minor version and commit changes.
+npm run bump-patch # bump the (patch/minor/major) version and commit changes.
 git push origin main
 npm run full-release
 ```
