@@ -58,9 +58,10 @@
           --}}
           {{#get "pages" filter="tags:{{slug}}" as |pages-with-internal-tag|}}
             {{#foreach pages-with-internal-tag }}
-                <a href="{{this.url}}" >
+            {{log this}}
+                <a href="{{this.url}}"  aria-label="{{this.title}}" >
                   {{#if ../../feature_image}}
-                    <object class="sidebar-link-icon {{slug}} icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                    <object class="sidebar-link-icon {{slug}} icon" aria-label="{{slug}}" data="{{../../feature_image}}" type="image/svg+xml"></object>
                   {{else}}
                     <div class="sidebar-link-icon icon">
                       {{> "icons/item"}}
@@ -72,9 +73,9 @@
           {{/get}}
           {{#get "posts" filter="tags:{{slug}}" as |posts-with-internal-tag|}}
             {{#foreach posts-with-internal-tag }}
-              <a href="{{this.url}}" >
+              <a href="{{this.url}}"  aria-label="{{this.title}}" >
                 {{#if ../../feature_image}}
-                  <object class="sidebar-link-icon {{slug}} icon" data="{{../../feature_image}}" type="image/svg+xml"></object>
+                  <object class="sidebar-link-icon {{slug}} icon" aria-label="{{slug}}" data="{{../../feature_image}}" type="image/svg+xml"></object>
                 {{else}}
                   <div class="sidebar-link-icon icon">
                     {{> "icons/item"}}

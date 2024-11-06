@@ -4,7 +4,7 @@
 
 .button {
     background-color: var(--ghost-accent-color);
-    color: white;
+    color: black;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     cursor: pointer;
