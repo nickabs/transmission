@@ -112,7 +112,9 @@ if you prefer you can run each of these stages separately using the appropriate 
 - create-draft-release
 - upload-zipfile
 
-To use this script you need to
+use ```npm run``` to get a full list of all the npm script
+
+To use this the ```release```  you need to
 1. create a subdirectory in your local theme repo dirrectory called changelogs
 2. Create a personal access token in your github account: > Developer settings>  Personal Access Tokens > Tokens (classic).  The token needs 'repo' permissions)
 3. Assign the token to a local env variable called GITHUB_TOKEN.
