@@ -129,17 +129,18 @@
                 "type": "boolean",
                 "default": false
             },
-            "footer_link_style": {
+            "footer_style": {
                 "type": "select",
                 "options": [
-                    "Option 1",
-                    "Option 2",
-                    "Option 3",
-                    "Option 4",
-                    "Option 5",
+                    "All",
+                    "Copyright and privacy policy",
+                    "Copyright",
+                    "Privacy policy",
+                    "Ghost and theme",
+                    "Ghost",
                     "None"
                 ],
-                "default": "Option 1"
+                "default": "All"
             },
             "google_analytics_id": {
                 "type": "text",

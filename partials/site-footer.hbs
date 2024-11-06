@@ -1,46 +1,14 @@
  <footer class="site-footer">
-    {{#match @custom.footer_link_style "Option 1"}}
-        <div class="copyright">
-            {{@site.title}} © {{date format="YYYY"}}
-        </div>
-        <div class="footer-links">
-            <p>Published with </p>
-            <a class= "ghost-link" href='https://ghost.org'>Ghost</a> 
-            <p class="theme-link"> & </p>
-            <a class= "theme-link" href='https://github.com/nickabs/transmission'>Transmission</a>
-        </div>
-        <div class="privacy-policy">
-            {{#link href="/privacy-policy/"}}privacy policy{{/link}}
-        </div>
-    {{/match}}
-     {{#match @custom.footer_link_style "Option 2"}}
-        <div class="copyright">
-            {{@site.title}} © {{date format="YYYY"}}
-        </div>
-        <div class="footer-links">
-            <p>Published with </p>
-            <a class= "ghost-link" href='https://ghost.org'>Ghost</a> 
-        </div>
-        <div class="privacy-policy">
-            {{#link href="/privacy-policy/"}}privacy policy{{/link}}
-        </div>
-    {{/match}}
-     {{#match @custom.footer_link_style "Option 3"}}
-        <div class="copyright">
-            {{@site.title}} © {{date format="YYYY"}}
-        </div>
-        <div class="privacy-policy">
-            {{#link href="/privacy-policy/"}}privacy policy{{/link}}
-        </div>
-    {{/match}}
-    {{#match @custom.footer_link_style "Option 4"}}
-        <div class="privacy-policy">
-            {{#link href="/privacy-policy/"}}privacy policy{{/link}}
-        </div>
-    {{/match}}
-    {{#match @custom.footer_link_style "Option 5"}}
-        <div class="copyright">
-            {{@site.title}} © {{date format="YYYY"}}
-        </div>
-    {{/match}}
+    <div class="copyright">
+        {{@site.title}} © {{date format="YYYY"}}
+    </div>
+    <div class="footer-links">
+        <p>Published with </p>
+        <a class= "ghost-link" href='https://ghost.org'>Ghost</a> 
+        <p class="theme-link"> & </p>
+        <a class= "theme-link" href='https://github.com/nickabs/transmission'>Transmission</a>
+    </div>
+    <div class="privacy-policy">
+        {{#link href="/privacy-policy/"}}privacy policy{{/link}}
+    </div>
 </footer>

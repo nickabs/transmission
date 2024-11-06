@@ -50,6 +50,13 @@
     {{~#match @custom.show_authors "Profile images"}} show-author-images{{/match~}}
     {{~#match @custom.show_authors "Names and profile images"}} show-author-names-and-images{{/match~}}
     {{~#match @custom.show_authors "None"}} show-author-none{{/match~}}
+    {{~#match @custom.footer_style "All"}} footer-style-all{{/match~}}
+    {{~#match @custom.footer_style "Copyright & privacy policy"}} footer-style-copyright-privacy{{/match~}}
+    {{~#match @custom.footer_style "Copyright"}} footer-style-copyright{{/match~}}
+    {{~#match @custom.footer_style "Privacy policy"}} footer-style-privacy{{/match~}}
+    {{~#match @custom.footer_style "Ghost and theme links"}} footer-style-ghost-theme{{/match~}}
+    {{~#match @custom.footer_style "Ghost"}} footer-style-ghost{{/match~}}
+    {{~#match @custom.footer_style "None"}} footer-style-none{{/match~}}
     {{#is "home"}}
         {{~#match @custom.home_page_style "List"}} home-page-list{{/match~}}
         {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match~}}

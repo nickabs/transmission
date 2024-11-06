@@ -89,6 +89,7 @@ li:not(.article li) {
   display: flex;
   justify-content: center;
 }
+/* todo  - wide screen images 
 .site:has(.footer-layout) {
   .article .feature-image.kg-width-wide,
   .kg-image-card.kg-width-wide,
@@ -101,6 +102,7 @@ li:not(.article li) {
     max-width: var(--max-container-width);
   }
 }
+*/
 
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
@@ -172,9 +174,48 @@ li:not(.article li) {
     display: inline-flex;
 }
 
-/* -------------------------------------- */
-/* 5. site footer (privacy and copyright) */
-/* -------------------------------------- */
+/* -------------- */
+/* 5. site footer */
+/* -------------- */
+
+/* 
+  * the footer-style classes are set in default.hbs according to the custom option selected
+  * default is to show all: copyright    published by    privacy policy
+*/
+.site {
+  &.footer-style-copyright .site-footer {
+    >:not(.copyright) {
+      display: none;
+    }
+  }
+  &.footer-style-copyright-privacy .site-footer {
+    .footer-links {
+      display: none;
+    }
+  }
+  &.footer-style-privacy .site-footer {
+    >:not(.privacy-policy) {
+      display: none;
+    }
+  }
+  &.footer-style-ghost-theme .site-footer {
+    >:not(.footer-links) {
+      display: none;
+    }
+  }
+  &.footer-style-ghost .site-footer {
+    .privacy-policy,
+    .copyright,
+    .theme-link {
+        display: none;
+    }
+  }
+  &.footer-style-none .site-footer {
+    > * {
+      display:none;
+    }
+  }
+}
 
 /* make room for share and toc icons - these move to the bottom of the screen on smaller screens*/
 @media (max-width: 760px) {
