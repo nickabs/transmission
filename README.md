@@ -89,10 +89,10 @@ npm run zip
 # Release utility
 If you have copied the theme to make your own changes, the ```release``` javascript util can be used to create new github releases from the command line.
 
-To do a quick release of all the latest changes pushed to github since the last release, first increment _version_ in package.json then:
+To do a quick release of all the latest changes pushed to github since the last release:
 
 ```bash
-git commit -am "bump version"
+npm version minor --message "bump version to %s" # bump the minor version and commit changes.
 git push origin main
 npm run full-release
 ```
