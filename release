@@ -2,8 +2,8 @@
 /* 
  * create a github release for the theme referenced in package.json 
  */
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
 const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
             Options:
@@ -15,7 +15,7 @@ const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
 
 // repo settings 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const packageJSON = JSON.parse(fs.readFileSync('./package.json'));
+const packageJSON = JSON.parse(await fs.readFile('./package.json'));
 const repoSlug = packageJSON.repository?.url?.match(/github\.com\/([^/]+)\/(.*).git *$/);
 const owner = repoSlug ? repoSlug[1] : undefined;
 const repo = repoSlug ? repoSlug[2] : undefined;
@@ -38,7 +38,7 @@ let previousReleaseTag, isDraft ; //initialised in main()
 
 async function checkFile(filePath) {
     try {
-        await fs.promises.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
+        await fs.access(filePath, fs.constants.F_OK | fs.constants.R_OK);
         return true;
     } catch (err) {
         return false;
@@ -147,7 +147,7 @@ async function uploadZipFileToLatestRelease(zipFilePath,zipFileName) {
     const url = new URL(uploadTemplateUrl.replace('{?name,label}', ''));
     url.searchParams.set('name', zipFileName);
 
-    const fileBuffer = fs.readFileSync(zipFilePath);
+    const fileBuffer = await fs.readFile(zipFilePath);
 
     const response = await fetch(url.href, {
         method: 'POST',
@@ -236,7 +236,7 @@ async function main() {
             } else {
                 const changelogData = `**Updates in this release**\n\n${commitMessages}\n`;
 
-                fs.writeFileSync(changelogPath, changelogData);
+                await fs.writeFile(changelogPath, changelogData);
                 console.log(`Changelog created: changes from (${previousReleaseTag}) : ${changelogPath}`);
             }
         }
@@ -245,7 +245,7 @@ async function main() {
             if (! await checkFile(changelogPath)) {
                 throw new Error(`can't open ${changelogPath}: use the --create-changelog option to create this file`);
             }
-            const changelog = fs.readFileSync(changelogPath, 'utf8')
+            const changelog = await fs.readFile(changelogPath, 'utf8')
             console.log(`\nCreating release for ${owner}/${repo} ${version} (previous version: ${previousReleaseTag})`);
 
             const uri = await createNewRelease(isDraft, changelog);
