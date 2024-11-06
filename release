@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* 
- * create a github release for the theme referenced in package.json 
+ * command line utility (linux) to create a github release for the theme referenced in package.json 
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
