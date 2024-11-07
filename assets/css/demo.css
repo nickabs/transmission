@@ -10,7 +10,7 @@
     /* options picker can be open or closed - open settings here */
     .demo-options { 
         z-index: 2000;
-        background-color: var(--menu-background-color);
+        background-color: var(--secondary-background-color);
         border-radius: 10px;
         border:1px solid var(--ghost-accent-color);
         padding: 15px 0;

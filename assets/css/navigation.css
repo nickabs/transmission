@@ -37,7 +37,7 @@
   position:fixed;
   right:var(--edge-padding);
   top: calc(var(--site-header-height) + 5px);
-  background-color: var(--menu-background-color);
+  background-color: var(--secondary-background-color);
   border-radius: 10px;
   border: 0.25px solid var(--border-color);
   overflow:hidden; /* prevent borders overunning rounded corners */
@@ -209,7 +209,6 @@
     line-height: 20px; 
     border-radius: 50%; 
     border: solid 2px var(--text-color);
-    background-color: var(--secondary-background-color);
     color: var(--text-color);
     text-align: center; 
     font-size: 1rem;
@@ -281,7 +280,7 @@
         z-index: 1000;
         width: max-content;
         max-width: 250px;
-        background-color: var(--menu-background-color);
+        background-color: var(--secondary-background-color);
         position: absolute;
         flex-direction: column;
         display: inline-flex;
