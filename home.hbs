@@ -10,16 +10,14 @@
     {{/foreach}}
 </main>
 
-{{#if @custom.show_featured_posts }}
-    <aside class="featured-articles">
-        <h1 class="featured-articles-title" >FEATURED</h1>
-        {{#get "posts" filter="featured:true" include="authors,tags,tiers" limit=6 as |featured|}}
-            {{#foreach featured}}
-                {{> "article-card" image_size="xs" }}
-            {{/foreach}}
-        {{/get}}
-    </aside>
-{{/if}}
+<aside class="featured-articles">
+    <h1 class="featured-articles-title" >FEATURED</h1>
+    {{#get "posts" filter="featured:true" include="authors,tags,tiers" limit=6 as |featured|}}
+        {{#foreach featured}}
+            {{> "article-card" image_size="xs" }}
+        {{/foreach}}
+    {{/get}}
+</aside>
 
 <aside class="latest-articles">
     <h1 class="latest-articles-title" >LATEST</h1>
