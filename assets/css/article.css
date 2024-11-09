@@ -11,12 +11,15 @@
       height: 100%;
       }
 }
+
+/* margin for headings*/
 .article > [id]:not(:first-child) {
   margin-top: 56px;
 }
 .article > :first-child{
   margin-top:15px;
 }
+
 @media (min-width: 760px) {
   .article :first-child{
     margin-top:0px;
@@ -40,10 +43,6 @@
   margin: -5px 10px 0 -5px;
 }
 
-/* margin for headings*/
-.article > [id]:not(:first-child) {
-  margin-top: 26px;
-}
 h1 { font-size: var(--h1-font-size); }
 h2 { font-size: var(--h2-font-size); }
 h3 { font-size: var(--h3-font-size); }
