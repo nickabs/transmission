@@ -87,11 +87,11 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
-            "AuthorProfileImages"
             "Title"
             "Image"
             "Excerpt"
-            "Metadata";
+            "Metadata"
+            "AuthorProfileImages";
         .article-card-excerpt,
         .author-names {
             display:none;
@@ -161,11 +161,12 @@
                 display: grid;
                 grid-template-columns: 1fr;
                 grid-template-areas:
-                    "AuthorProfileImages"
                     "Title"
                     "Excerpt"
                     "Image"
-                    "Metadata";
+                    "Metadata"
+                    "AuthorProfileImages";
+
                 padding-bottom: 20px;
 
                 .author-profile-image {

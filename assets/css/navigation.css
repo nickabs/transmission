@@ -218,7 +218,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap:wrap;
 }
 .sidebar-bottom .sidebar-nav {
@@ -238,6 +238,7 @@
 .internal-tags {
     display: flex;
     column-gap: 12px;
+    padding-left:0;
     .sidebar-link-item {
         position:relative;
     }

@@ -5,6 +5,9 @@
 [developer information](#for-developers) |
 
 Transmission is a modern [Ghost](https://ghost.org/) theme.
+
+![v2 3 8 screenshots](https://github.com/user-attachments/assets/bfe6691a-bd8e-456e-bced-cb507b24ce9f)
+
 # Demo
 
 See the theme in action on the [demo site](https://demo.transmissionthemes.com).
@@ -29,9 +32,6 @@ This theme is optimised for traditional blog sites, particularly sites with lots
 - infinite pagination (will display a button to Load More posts)
 - configurable layouts: home page, post layout, headers and footers are all configurable
 
-widescreen, tablet and mobile layouts:
-![transmission v1 23 home](https://github.com/user-attachments/assets/01b687ec-c118-4414-92f9-d11b4aae3aee)
-![transmission v1 23 post](https://github.com/user-attachments/assets/5cfd6ed9-9d76-4145-a887-c3239855c333)
 
 # For developers
 - straightforward package and build management controlled by npm and gulp
@@ -44,6 +44,7 @@ widescreen, tablet and mobile layouts:
 - easy to maintain with a simple semantic html structure, sensibly organised css and intuitive grid layouts.
   
 For details of how to make changes of the theme see [here](https://demo.transmissionthemes.com/for-developers/)
-![v1 11 dev tools](https://github.com/nickabs/transmission/assets/4947488/aa9c2153-ccf9-412d-b08d-50852763c09d)
+
+![v2 3 8 devtools](https://github.com/user-attachments/assets/0acababf-3071-4afb-986b-66800b258aba)
 
 

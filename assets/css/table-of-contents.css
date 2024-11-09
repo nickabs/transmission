@@ -3,8 +3,20 @@
 /* ------------------------------- */
 
 /* positon table of contents icon bottom left for mobile views */
-.toc-container,
+
+@media (max-width: 760px) {
+    .table-of-contents { grid-area: unset};
+}
 .table-of-contents {
+    background-color: var(--background-color);
+    width: 100%;
+    height: 29px;
+    bottom: 0;
+    left:0;
+    position: fixed;
+    z-index: 1000;
+}
+.toc-container {
     z-index: 5;
     bottom: 40px;
     left: var(--site-edge-padding);
@@ -14,9 +26,10 @@
 .toc-toggle:before {
     display:flex;
     position: fixed;
-    left: var(--site-edge-padding);
+    left: calc(var(--site-edge-padding)+3px);
     bottom: 22px;
     transform: translateX(-50%) translateY(50%);
+    z-index: 1000;
 }
 
 .toc-toggle svg {
@@ -120,6 +133,7 @@
         align-items: end;
         justify-self: flex-start;
         padding-right: 3vw;
+        height: unset;
         .toc-toggle {
             display: none;
         }
