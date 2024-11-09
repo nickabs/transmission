@@ -38,14 +38,14 @@
     .demo-options:not(.options-picker-closed) {
         position: fixed;
         top: 110px;
-        right: 20px;
+        left: 150px;
         bottom: auto;
     }
     /* on refresh the pop-up options picker is closed */
     .demo-options.options-picker-closed {
         position:fixed;
         bottom:110px;
-        right: 20px;
+        left: 150px;
         top: auto;
         width: 100px;
         .download-link,

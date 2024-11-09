@@ -366,7 +366,7 @@
           }
         }
       }
-      hr {
+      .sidebar hr {
         width:20px;
       }
       .sidebar-link-item {
