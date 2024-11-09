@@ -30,10 +30,11 @@
                 'footer-style-ghost-theme', 'footer-style-ghost', 'footer-style-none' ],
             enrolOption: ['newsletter','subscribe','newsletter-subscribe','enrol-none'],
             authorOption: ['show-author-names', 'show-author-images', 'show-author-names-and-images', 
-                    'show-author-none'],
+                    'show-author-none']
         },
         homePage: {
             focusPosition: ['home-page-list', 'home-page-focus-right', 'home-page-focus-left'],
+            ShowFeaturedArticles: [ 'show-featured-articles', 'use-latest-articles' ]
         },
         post: {
             tableOfContentsOption: ['post-toc-full','post-toc-minified','post-toc-none'],

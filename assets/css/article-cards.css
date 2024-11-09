@@ -196,6 +196,7 @@
     .home-page-focus-left, .home-page-focus-right {
         .latest-articles:not(.show-featured-articles *),
         .featured-articles {
+            align-self: flex-start;
             .article-card {
                 width: 100%;
                 box-shadow: none;
