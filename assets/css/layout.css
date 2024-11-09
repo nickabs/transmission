@@ -107,6 +107,11 @@
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
+    .home-template.home-page-focus-left:not(.show-featured-articles) {
+        .featured-articles {
+            display: none;
+        }
+    }
     .home-template.home-page-focus-left.show-featured-articles {
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader SiteHeader"
