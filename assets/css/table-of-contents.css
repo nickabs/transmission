@@ -130,9 +130,6 @@
         position: relative;
         display: flex;
         flex-direction: column; /* ensures the container scrolls vertically, needed by position sticky below */
-        align-items: end;
-        justify-self: flex-start;
-        padding-right: 3vw;
         height: unset;
         .toc-toggle {
             display: none;

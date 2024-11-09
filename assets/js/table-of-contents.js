@@ -14,10 +14,8 @@
 window.onload = function() {
   const toc = document.querySelector('.table-of-contents');
   if (toc) {
-      // Force a repaint
-      toc.style.display = 'none';
-      toc.offsetHeight;
-      toc.style.display = 'flex';
+      // Force a repaint by triggering GPU acceleration
+      toc.style.transform = 'translateZ(0)';
   }
 };
 
