@@ -171,7 +171,7 @@
             details.open = false;
 
             const summary = document.createElement('summary')
-            summary.textContent = `... ${pretifiedSectionName.toLowerCase()} options`
+            summary.textContent = `${pretifiedSectionName.toLowerCase()} options`
 
             details.appendChild(summary);
             details.appendChild(fieldset)
