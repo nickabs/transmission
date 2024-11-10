@@ -4,7 +4,7 @@
  * if they specify a setting using the site dark/light mode buttons, save it in local storage so it is remembered next time
  * 
 */
-(function() {
+export function darkModeToggle() {
     const darkModeButton = document.querySelector("button.dark-mode");
     const lightModeButton = document.querySelector("button.light-mode");
 
@@ -63,4 +63,4 @@
     darkModeButton.addEventListener('click', onClick);
     lightModeButton.addEventListener('click', onClick);
 
-  })();
+  }

@@ -27,7 +27,7 @@
 *                            </li>
 */
 
-(function () {
+export function createMainNavMenu() {
   const menuIndentRegex = /(^-{1,})(.*)/; // Match the -submenu and --submenu-link-item navigation entries
 
   function createSubMenu(menuName) {
@@ -91,14 +91,14 @@
   }
 
   processMenuItems();
-})();
+}
 
 /* 
  * open/close nav (main) menu and submenus
  * .menu-links-container.menu-links-active is set when the nav is opened using the hamburger button 
  * .submenu.submenu-links-active is set when an item with a submenu is opened
 */
-(function() {
+export function mainNavMenuToggle() {
   const nav = document.querySelector('.menu-links-container');
   const navToggle = document.querySelector('.menu-links-toggle');
 
@@ -149,13 +149,13 @@
   }
 
   document.addEventListener('click', handleDocumentClick);
-})();
+}
 
 /*
  * open/close nav link item menus when sidebar items are clicked 
  * note the user decides whether to include internal tags or secondary links on the sidebar
 */
-(function() {
+export function sidebarToggle() {
     const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--icon-color').trim();
     const internalTags = document.querySelector('.internal-tags');
     const internalTagItems = internalTags.querySelectorAll('.sidebar-link-item');
@@ -310,4 +310,4 @@
             });
         }
     }
-})();
+}

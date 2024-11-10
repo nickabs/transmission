@@ -382,25 +382,11 @@
   }
 }
 
-/* todo */
-.copy-link .tooltip {
-    position: absolute;
-    bottom: 30px; 
-    transform: translateX(-50%);
+.sidebar .tooltip {
     padding: 5px 10px 5px 10px;
     border: 1px solid var(--border-color);
-    margin-bottom: 10px;
-    background-color: var(--background-color);
-    color: var(-color);
-    text-align: center;
+    width:20px;
     border-radius: 4px;
-    z-index: 1000; 
-    white-space: nowrap;
     font-size: 1.2rem;
-    @media (min-width: 760px) {
-        top:215px;
-        right:15px;
-        border:unset;
-    }
 }
 

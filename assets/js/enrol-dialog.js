@@ -2,7 +2,7 @@
 * as of 2024/09 this is only required for newsletter registrations.  When using the portal/sign-up feature 
 * Ghost automatically opens a similar window
 */
-(function() {
+export function enrolDialog() {
     const dialog = document.querySelector(".enrol-dialog");
     const closeButton = document.querySelector(".enrol-dialog-button");
     const form = document.querySelector("form.enrol-newsletter");
@@ -26,5 +26,4 @@
         });
         observer.observe(form, { attributes: true, attributeFilter: ["class"] });
     }
-})();
-
+};

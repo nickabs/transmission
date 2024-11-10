@@ -1,18 +1,21 @@
 /* copy link button (copies link and shows a tooltip)  */
-(function() {
-    const copyLinkElement = document.getElementById("copy-link")  ;
-    if (! copyLinkElement)
-        return;
+export function copyLink() {
+  const copyLinkElement = document.querySelector(".copy-link");
+  const sidebar = document.querySelector(".sidebar")
 
-    function copyLink() {
-        navigator.clipboard.writeText(window.location.href);
+  if (!copyLinkElement || !sidebar) return;
 
-        const tooltip = document.createElement('div');
-        tooltip.className = 'tooltip';
-        tooltip.textContent = 'Copied!';
-        copyLinkElement.appendChild(tooltip);
+  const handleCopyLinkClick = () => {
+    // Write the current URL to the clipboard
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      tooltip.textContent = 'Copied!';
+      sidebar.appendChild(tooltip);
+      console.log(copyLinkElement);
+      setTimeout(() => tooltip.remove(), 500);
+    });
+  };
 
-        setTimeout(() => { tooltip.remove(); }, 1000);
-    }
-    copyLinkElement.addEventListener("click", copyLink, false);
-})();
+  copyLinkElement.addEventListener("click", handleCopyLinkClick);
+}

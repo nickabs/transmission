@@ -56,7 +56,7 @@
 
 @media (min-width: 1300px) {
     :root {
-        --site-edge-padding: calc((100vw-var(--max-container-width))/2); /* used for screens greater than 1300px */
+        --site-edge-padding: calc((100vw - var(--max-container-width))/2); /* used for screens greater than 1300px */
     }
 }
 

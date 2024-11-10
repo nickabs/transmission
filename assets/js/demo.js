@@ -10,12 +10,12 @@
  *      </script>
 */
 
-(function() {
-    const site = document.querySelector('[data-demo-site="true"] .site');
+export function demoOptionsPicker() {
+    const demoSite = document.querySelector('[data-demo-site="true"] .site');
     const downloadIcon =`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="download"> <g> <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> <g> <polyline data-name="Right" fill="none" id="Right-2" points="7.9 12.3 12 16.3 16.1 12.3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline> <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="2.7" y2="14.2"></line> </g> </g> </g> </g> </g></svg>`;
     const gearIcon = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M19.19 3.757A1 1 0 0018.22 3h-4.44a1 1 0 00-.97.757l-.66 2.644a1 1 0 01-.47.623l-1.291.747a1 1 0 01-.776.095l-2.62-.75a1 1 0 00-1.142.462l-2.219 3.844a1 1 0 00.171 1.219l1.96 1.895a1 1 0 01.305.719v1.49a1 1 0 01-.305.72l-1.96 1.894a1 1 0 00-.17 1.22l2.218 3.843a1 1 0 001.141.461l2.61-.746a1 1 0 01.793.106l.963.584a1 1 0 01.43.54l.984 2.95a1 1 0 00.949.683h4.558a1 1 0 00.949-.684l.982-2.947a1 1 0 01.435-.542l.982-.587a1 1 0 01.79-.103l2.59.745a1 1 0 001.142-.461l2.222-3.848a1 1 0 00-.166-1.214l-1.933-1.896a1 1 0 01-.3-.713v-1.5a1 1 0 01.3-.713l1.933-1.896a1 1 0 00.166-1.214l-2.222-3.848a1 1 0 00-1.142-.46l-2.6.747a1 1 0 01-.774-.093l-1.31-.75a1 1 0 01-.474-.625l-.66-2.64z"></path> <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></circle> </g></svg>`;
     const downloadURL = `https://github.com/nickabs/transmission/releases/latest/download/transmission.zip`;
-    if (!site) {
+    if (!demoSite) {
         return false;
     }
 
@@ -54,8 +54,8 @@
         }
     
         //remove the class option previously selected and add the new one
-        validClasses.forEach(cls => site.classList.remove(cls));
-        site.classList.add(className);
+        validClasses.forEach(cls => demoSite.classList.remove(cls));
+        demoSite.classList.add(className);
         return true;
     }
 
@@ -192,5 +192,5 @@
     }
     
     const demoOptions = createDemoOptions();
-    site.appendChild(demoOptions);
-})();
+    demoSite.appendChild(demoOptions);
+}

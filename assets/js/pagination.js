@@ -1,5 +1,4 @@
-/* pagination */
-(function (isInfinite, callback) {
+export function pagination(isInfinite, callback) {
     var buttonElement = document.querySelector('.pagination');
 
     // next link element
@@ -132,4 +131,4 @@
     } else {
         buttonElement.addEventListener('click', requestTick);
     }
-})(false);
+}

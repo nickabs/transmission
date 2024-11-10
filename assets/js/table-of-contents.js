@@ -1,66 +1,66 @@
 /*
  * table of contents initialistation
 */
-(function () {
-    tocbot.init({
+import tocbot from 'tocbot';
+
+export function initialiseTocbot() {
+  tocbot.init({
     tocSelector: '.toc',
     contentSelector: '.article',
     hasInnerContainers: true
-    })
-    
-})();
+  })
 
-// safari fix  - toc not showing without a forced repaint - todo - retest
-window.onload = function() {
-  const toc = document.querySelector('.table-of-contents');
-  if (toc) {
-      // Force a repaint by triggering GPU acceleration
-      toc.style.transform = 'translateZ(0)';
-  }
-};
-
+  // safari fix  - toc not showing without a forced repaint - todo - retest
+  /* todo
+  window.onload = function() {
+    const toc = document.querySelector('.table-of-contents');
+    if (toc) {
+        // Force a repaint by triggering GPU acceleration
+        toc.style.transform = 'translateZ(0)';
+    }
+  };
+  */
+}
 /* 
  * toggle mobile toc when toc icon is clicked
 */
-(function() {
-    const tocButton = document.querySelector(".toc-toggle");
-    const tableOfContents = document.querySelector(".table-of-contents");
+export function toggleToc() {
+  const tocButton = document.querySelector(".toc-toggle");
+  const tableOfContents = document.querySelector(".table-of-contents");
 
-    if (!tableOfContents) {
-      return;
+  if (!tableOfContents) {
+    return;
+  }
+
+  function toggleTableOfContents(){
+      tableOfContents.classList.toggle("toc-open");
+  }
+  if (!tocButton) {
+    return;
+  }
+
+  window.addEventListener('click', function(e){
+    let tocOpenElement = null;
+    tocOpenElement = tableOfContents.querySelector(".toc-open");
+
+    if (tocOpenElement && tocOpenElement.contains(e.target)) {
+        return;
     }
-  
-    function toggleTableOfContents(){
-        tableOfContents.classList.toggle("toc-open");
+
+    // Close TOC when clicking outside the TOC
+    if (!tableOfContents.contains(e.target) && !tocButton.contains(e.target) && tableOfContents.classList.contains("toc-open")) {
+        toggleTableOfContents();
     }
-    if (!tocButton) {
-      return;
-    }
+  });
 
-    window.addEventListener('click', function(e){
-      let tocOpenElement = null;
-      tocOpenElement = tableOfContents.querySelector(".toc-open");
-
-      if (tocOpenElement && tocOpenElement.contains(e.target)) {
-          return;
-      }
-
-      // Close TOC when clicking outside the TOC
-      if (!tableOfContents.contains(e.target) && !tocButton.contains(e.target) && tableOfContents.classList.contains("toc-open")) {
-          toggleTableOfContents();
-      }
-    });
-  
-    /* Toggle mobile toc */
-    tocButton.addEventListener('click', toggleTableOfContents, false);
-  
-  })();
-
+  /* Toggle mobile toc */
+  tocButton.addEventListener('click', toggleTableOfContents, false);
+}
 
 /*
  * update reading progress based on scroll position
 */
-(function () {
+export function updateTocReadingProgress() {
   const tocToggleButton = document.querySelector('.toc-toggle');
   if (!tocToggleButton) {
     return;
@@ -84,4 +84,4 @@ window.onload = function() {
     requestAnimationFrame(updateProgress);
   }
   requestAnimationFrame(updateProgress);
-})();
+}

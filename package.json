@@ -198,8 +198,8 @@
         }
     },
     "scripts": {
-        "dev": "gulp dev",
-        "zip": "gulp zip",
+        "dev": "node build.js --watch",
+        "zip": "todo zip",
         "test": "gscan .",
         "bump-patch": "npm version patch --message 'bump patch version to %s' && git push origin main",
         "bump-minor": "npm version minor --message 'bump minor version to %s' && git push origin main",
@@ -208,21 +208,12 @@
         "create-release": "./release --create-release published",
         "create-draft-release": "./release --create-release draft",
         "upload-zipfile": "./release --upload-zipfile dist/transmission.zip",
-        "full-release": "gscan . && ./release --create-changelog && ./release --create-release published && gulp zip && ./release --upload-zipfile dist/transmission.zip ",
+        "full-release": "gscan . && ./release --create-changelog && ./release --create-release published && todo zip && ./release --upload-zipfile dist/transmission.zip ",
         "draft-full-release": "gscan . && ./release --create-changelog && ./release --create-release draft"
     },
     "devDependencies": {
-        "beeper": "^3.0.0",
-        "cssnano": "^7.0.6",
-        "gulp": "^5.0.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-livereload": "^4.0.2",
-        "gulp-postcss": "^10.0.0",
-        "gulp-uglify": "^3.0.2",
-        "gulp-zip": "^6.0.0",
-        "postcss": "^8.4.47",
-        "postcss-easy-import": "^4.0.0",
-        "pump": "^3.0.2"
+        "browser-sync": "^3.0.3",
+        "esbuild": "^0.24.0"
     },
     "dependencies": {
         "photoswipe": "^5.4.4",
