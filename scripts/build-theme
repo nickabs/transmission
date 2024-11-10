@@ -10,7 +10,7 @@ import path from 'node:path';
 const buildOptions = {
   entryPoints: ['assets/js/main.js', 'assets/css/main.css'],
   bundle: true,
-  minify: false,
+  minify: true,
   sourcemap: true,
   format: 'esm',
   outdir: 'assets/built',

@@ -198,18 +198,18 @@
         }
     },
     "scripts": {
-        "dev": "scripts/build --watch",
-        "zip": "scripts/build --zip",
+        "dev": "scripts/build-theme --watch",
+        "zip": "scripts/build-theme --zip",
         "test": "gscan .",
         "bump-patch": "npm version patch --message 'bump patch version to %s' && git push origin main",
         "bump-minor": "npm version minor --message 'bump minor version to %s' && git push origin main",
         "bump-major": "npm version major --message 'bump major version to %s' && git push origin main",
-        "create-changelog": "scripts/release --create-changelog",
-        "create-release": "scripts/release --create-release published",
-        "create-draft-release": "scripts/release --create-release draft",
-        "upload-zipfile": "scripts/release --upload-zipfile dist/transmission.zip",
-        "full-release": "gscan . && scripts/release --create-changelog && scripts/release --create-release published && scripts/build --zip && scripts/release --upload-zipfile dist/transmission.zip ",
-        "draft-full-release": "gscan . && scripts/release --create-changelog && scripts/release --create-release draft"
+        "create-changelog": "scripts/release-theme --create-changelog",
+        "create-release": "scripts/release-theme --create-release published",
+        "create-draft-release": "scripts/release-theme --create-release draft",
+        "upload-zipfile": "scripts/release-theme --upload-zipfile dist/transmission.zip",
+        "full-release": "gscan . && scripts/release-theme --create-changelog && scripts/release-theme --create-release published && scripts/build-theme --zip && scripts/release-theme --upload-zipfile dist/transmission.zip ",
+        "draft-full-release": "gscan . && scripts/release-theme --create-changelog && scripts/release-theme --create-release draft"
     },
     "devDependencies": {
         "archiver": "^7.0.1",
