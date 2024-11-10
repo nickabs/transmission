@@ -41,6 +41,11 @@
 /*---------------------------*/
 /* 1. home-page mobile view  */
 /*---------------------------*/
+.site.home-template:not(.show-featured-articles) {
+    .featured-articles {
+        display: none;
+    }
+}
 .site.home-template {
     grid-template-areas:
         "SiteHeader"
@@ -106,11 +111,6 @@
             "SidebarLeft Pagination Pagination SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
-    }
-    .home-template.home-page-focus-left:not(.show-featured-articles) {
-        .featured-articles {
-            display: none;
-        }
     }
     .home-template.home-page-focus-left.show-featured-articles {
         grid-template-areas:
