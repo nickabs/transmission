@@ -51,7 +51,7 @@
     }
 }
 h1.hero-title {
-    font-size: clamp(3rem, calc(4vw+2vh), 8rem);
+    font-size: clamp(3rem, calc(4vw + 2vh), 8rem);
     line-height: 1.3;
     font-weight: bold;
     color: var(--banner-title-color);
@@ -62,7 +62,7 @@ h1.hero-title {
 .hero-author-list,
 .hero-author-list a,
 .hero-description {
-    font-size: clamp(1rem, calc(1vw+1.65vh), 3rem);
+    font-size: clamp(1rem, calc(1vw + 1.65vh), 3rem);
     color: var(--banner-description-color);
     z-index: 2;
 }
