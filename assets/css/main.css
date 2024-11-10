@@ -20,3 +20,5 @@
 @import "demo.css";
 @import 'photoswipe/dist/photoswipe.css';
 @import 'tocbot/dist/tocbot.css';
+@import 'prismjs/themes/prism-tomorrow.css';
+@import 'prismjs/plugins/command-line/prism-command-line.css';

@@ -1,0 +1,92 @@
+#!/usr/bin/env node
+import esbuild from 'esbuild';
+import browserSync from 'browser-sync';
+import { createWriteStream } from 'node:fs';
+import { readFile, cp } from 'node:fs/promises';
+import archiver from 'archiver';
+import path from 'node:path';
+
+// Build configuration
+const buildOptions = {
+  entryPoints: ['assets/js/main.js', 'assets/css/main.css'],
+  bundle: true,
+  minify: false,
+  sourcemap: true,
+  format: 'esm',
+  outdir: 'assets/built',
+  platform: 'browser', 
+  mainFields: ['browser', 'module', 'main'], 
+  conditions: ['browser', 'default', 'module'],
+  loader: {
+    '.woff2': 'file'
+  },
+  assetNames: 'fonts/[name]'
+}
+
+async function dev() {
+  const context = await esbuild.context(buildOptions)
+  console.log("Watching files");
+  await context.watch()
+}
+
+async function build() {
+  await cp('assets/fonts', 'assets/built/fonts/', { recursive: true })
+  await esbuild.build(buildOptions);
+  console.log('Build completed');
+}
+
+async function zip() {
+  const packageJSON = JSON.parse(await readFile('./package.json'));
+  const name = packageJSON.name;
+  if (!name) throw new Error(`can't read name from package.json`)
+  
+  const filepath = path.join(process.cwd(), `./dist/${name}.zip`);
+  const output = createWriteStream(filepath);
+  const archive = archiver('zip', { zlib: { level: 9 } });
+
+  // Return a promise that resolves when zip is complete or rejects on error
+  return new Promise((resolve, reject) => {
+    output.on('error', error => {
+      reject(new Error(`Output stream error: ${error.message}`));
+    });
+
+    output.on('close', () => {
+      console.log(`zip file created: ${(archive.pointer() / 1024 / 1024).toFixed(2)} MB`);
+      resolve();
+    });
+
+    archive.pipe(output);
+
+    archive.glob('**/*', {
+      ignore: [
+        'node_modules/**',
+        'todo.md',
+        'package-lock.json',
+        'dist/**',
+        'scripts/**',
+        'changelogs/**'
+      ]
+    });
+
+    console.log(`Creating ${filepath}`);
+    archive.finalize();
+  });
+}
+
+async function main() {
+  try {
+
+    if (process.argv.includes('--watch')) {
+      await build();
+      await dev();
+    } else if (process.argv.includes('--zip')) {
+      await zip();
+    } else {
+      await build();
+    }
+  } catch(error) {
+    console.error('Error:', error.message);
+    process.exit(1);
+  }
+}
+main();

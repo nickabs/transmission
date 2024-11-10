@@ -9,6 +9,7 @@ npm-debug.log
 node_modules/
 package-lock.json
 changelogs/
+assets/built
 
 .DS_Store
 .idea
