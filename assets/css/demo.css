@@ -30,13 +30,13 @@
 
     .demo-options:not(.options-picker-closed) {
         position: fixed;
-        bottom: 110px;
+        bottom: 20px;
         left: 40px;
     }
     /* on refresh the pop-up options picker is closed */
     .demo-options.options-picker-closed {
         position:fixed;
-        bottom:110px;
+        bottom:20px;
         left: 40px;
         width: 90px;
         .download-link,

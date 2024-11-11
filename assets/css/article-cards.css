@@ -136,7 +136,7 @@
     row-gap: 10px;
     .article-card {
         display: grid;
-        grid-template-columns: 2fr auto;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             "Title Image"
             "Metadata Image";
@@ -207,6 +207,7 @@
             align-self: flex-start;
             justify-content: flex-start;
             .article-card {
+                grid-template-columns: 1fr;
                 min-width:375px; /* ?? todo */
                 max-width: 375px;
                 > * {
