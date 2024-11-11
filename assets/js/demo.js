@@ -96,7 +96,6 @@ export function demoOptionsPicker() {
         //<a href="path/to/yourfile.pdf" download class="download-link">Download File</a>
         demoOptions.appendChild(downloadLink);
 
-
         return demoOptions;
     }
 

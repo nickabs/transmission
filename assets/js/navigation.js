@@ -27,7 +27,7 @@
 *                            </li>
 */
 
-export function createMainNavMenu() {
+export function mainMenuSetup() {
   const menuIndentRegex = /(^-{1,})(.*)/; // Match the -submenu and --submenu-link-item navigation entries
 
   function createSubMenu(menuName) {
@@ -155,7 +155,7 @@ export function mainNavMenuToggle() {
  * open/close nav link item menus when sidebar items are clicked 
  * note the user decides whether to include internal tags or secondary links on the sidebar
 */
-export function sidebarToggle() {
+export function sidebarSetup() {
     const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--icon-color').trim();
     const internalTags = document.querySelector('.internal-tags');
     const internalTagItems = internalTags.querySelectorAll('.sidebar-link-item');

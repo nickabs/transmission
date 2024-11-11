@@ -13,22 +13,20 @@
         background-color: var(--secondary-background-color);
         border-radius: 10px;
         border:1px solid var(--ghost-accent-color);
-        padding: 15px 0;
         font-size:1.4rem;
+
+        display:flex;
+        flex-direction: column;
+        gap:7px; 
+        padding:7px 0;
 
         hr {
             border-color: var(--ghost-accent-color);
         }
-        display:flex;
-        flex-direction: column;
-        gap:15px; 
-
         .download-button-description {
             text-align: center;
         }
     }
-
-
 
     .demo-options:not(.options-picker-closed) {
         position: fixed;
@@ -40,7 +38,7 @@
         position:fixed;
         bottom:110px;
         left: 40px;
-        width: 100px;
+        width: 90px;
         .download-link,
         .demo-options-button {
             display: flex;
@@ -55,7 +53,7 @@
             padding-left:15px;
             padding-right: 15px;
         }
-        width: 350px;
+        width: 300px;
         .download-link ,
         .demo-options-button {
             flex-direction: row;
