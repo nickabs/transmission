@@ -11,7 +11,6 @@ export function initialiseTocbot() {
   })
 
   // safari fix  - toc not showing without a forced repaint - todo - retest
-  /* todo
   window.onload = function() {
     const toc = document.querySelector('.table-of-contents');
     if (toc) {
@@ -19,7 +18,6 @@ export function initialiseTocbot() {
         toc.style.transform = 'translateZ(0)';
     }
   };
-  */
 }
 /* 
  * toggle mobile toc when toc icon is clicked

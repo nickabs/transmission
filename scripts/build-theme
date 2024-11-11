@@ -36,7 +36,7 @@ async function build() {
 }
 
 async function zip() {
-  const packageJSON = JSON.parse(await readFile('./package.json'));
+  const packageJSON = JSON.parse(await readFile('./package.json')); //importing json still experimental up to node v24)
   const name = packageJSON.name;
   if (!name) throw new Error(`can't read name from package.json`)
   
