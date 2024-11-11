@@ -34,7 +34,7 @@ export function demoOptionsPicker() {
         },
         homePage: {
             focusPosition: ['home-page-list', 'home-page-focus-right', 'home-page-focus-left'],
-            showFeaturedOption: [ 'show-featured-articles', 'use-latest-articles' ]
+            highlightFeaturedArticles: [ 'highlight-featured-articles', 'standard-featured-articles' ]
         },
         post: {
             tableOfContentsOption: ['post-toc-full','post-toc-minified','post-toc-none'],

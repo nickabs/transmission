@@ -58,7 +58,7 @@
         {{~#match @custom.home_page_style "List"}} home-page-list{{/match~}}
         {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match~}}
         {{~#match @custom.home_page_style "Focus (left)"}} home-page-focus-left{{/match~}}
-        {{~#if @custom.show_featured_posts}} show-featured-articles{{/if~}}
+        {{~#if @custom.highlight_featured_articles}} highlight-featured-articles{{/if~}}
     {{/is~}}
     {{#is "post,page,author,tag"}}
         {{~#match @custom.post_table_of_contents "Full"}} post-toc-full{{/match~}}

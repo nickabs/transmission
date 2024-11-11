@@ -126,7 +126,7 @@
  * show first 6 featured articles in a horizontal format
  * Note if the user has chosen not to show featured articles, this format applies to the latest articles instead
 */
-.latest-articles:not(.show-featured-articles *),
+.latest-articles:not(.highlight-featured-articles *),
 .featured-articles {
     row-gap: 10px;
     .article-card {
@@ -187,7 +187,7 @@
         width: 300px;
     }
     /* when using featured articles on larger screens article-cards are 300px wide and feature cards are 25% larger so they stand out */
-    .show-featured-articles .article-card.featured { 
+    .highlight-featured-articles .article-card.featured { 
         width: calc(300px * 1.25);
         img {
             aspect-ratio: calc((16  * 1.25) / 9 );
@@ -195,7 +195,7 @@
         }
     }
     .home-page-focus-left, .home-page-focus-right {
-        .latest-articles:not(.show-featured-articles *),
+        .latest-articles:not(.highlight-featured-articles *),
         .featured-articles {
             align-self: flex-start;
             justify-content: flex-start;

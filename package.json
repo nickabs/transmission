@@ -146,7 +146,7 @@
                 "type": "text",
                 "description": "if you use google analytics, add your GA id here"
             },
-            "show_featured_posts": {
+            "highlight_featured_articles": {
                 "type": "boolean",
                 "default": false,
                 "group": "homepage"

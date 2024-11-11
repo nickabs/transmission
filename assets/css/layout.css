@@ -41,7 +41,7 @@
 /*---------------------------*/
 /* 1. home-page mobile view  */
 /*---------------------------*/
-.site.home-template:not(.show-featured-articles) {
+.site.home-template:not(.highlight-featured-articles) {
     .featured-articles {
         display: none;
     }
@@ -112,7 +112,7 @@
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
-    .home-template.home-page-focus-left.show-featured-articles {
+    .home-template.home-page-focus-left.highlight-featured-articles {
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader HeroHeader"
@@ -126,7 +126,7 @@
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
     }
-    .home-template.home-page-focus-right.show-featured-articles {
+    .home-template.home-page-focus-right.highlight-featured-articles {
         grid-template-areas:
             "SiteHeader SiteHeader SiteHeader SiteHeader"
             "HeroHeader HeroHeader HeroHeader HeroHeader"
