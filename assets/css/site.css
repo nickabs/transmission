@@ -217,14 +217,6 @@ li:not(.article li) {
   }
 }
 
-/* make room for share and toc icons - these move to the bottom of the screen on smaller screens*/
-@media (max-width: 760px) {
-  .post-template, .page-template {
-    .site-footer {
-        margin-bottom: 25px; 
-    }
-  }
-}
 .site-footer {
     line-height: 2.1rem;
     font-weight: 600;
@@ -247,22 +239,22 @@ li:not(.article li) {
     opacity: 0.8;
 }
 
-/* only show the link to the transmission github on larger screens */
 .footer-links {
-  display:none;
-  white-space: pre;
+  display:flex;
+  flex-direction: row;
+  gap: 2px;
 }
-@media (min-width:480px) {
-  .footer-links {
-    display: inline-flex;
-    .theme-link {
-      display: none;
-    }
+
+/* when showing all footer items on small screens, hide the transmission to make room */
+@media (max-width:480px) {
+  .footer-style-all .theme-link {
+    display: none
   }
 }
-@media (min-width:760px) {
-  .footer-links .theme-link {
-    display: inline-flex;
+/* raise footer above the toc background bar */
+@media (max-width:760px) {
+  .site-footer {
+    margin-bottom: 20px;
   }
 }
 
