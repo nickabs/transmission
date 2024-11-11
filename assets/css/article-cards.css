@@ -43,6 +43,11 @@
     }
 }
 
+.highlight-featured-articles .article-card.featured { 
+    .article-card-image img {
+        border: solid 1px var(--ghost-accent-color);
+    }
+}
 /* divider between article-cards */
 .site > * .article-card {
     padding-bottom: 10px; 
@@ -191,7 +196,6 @@
         width: calc(300px * 1.25);
         img {
             aspect-ratio: calc((16  * 1.25) / 9 );
-            border: solid 1px var(--ghost-accent-color);
         }
     }
     .home-page-focus-left, .home-page-focus-right {
