@@ -200,7 +200,10 @@
     height: 20px;
     width: 20px;
 }
-
+.sidebar-header {
+  display: flex;
+  align-items: center;
+}
 /* make the two character secondary link indicators look like an icon */
 .secondary-links  .sidebar-link-icon {
     display: inline-block;
