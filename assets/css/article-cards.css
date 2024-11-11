@@ -113,7 +113,7 @@
     border-radius: 10px;
 }
 
-/* custom options todo*/
+/* custom options */
 .site.show-author-names .author-profile-images {
     display: none;
 }
@@ -127,8 +127,8 @@
     }
 }
 
-/* todo move to layout.css?
- * show first 6 featured articles in a horizontal format
+/*
+ * show first  featured articles in a horizontal format
  * Note if the user has chosen not to show featured articles, this format applies to the latest articles instead
 */
 .latest-articles:not(.highlight-featured-articles *),
@@ -191,6 +191,9 @@
     .article-card {
         width: 300px;
     }
+    .home-template .main-article {
+        width: 65vw;
+    }
     /* when using featured articles on larger screens article-cards are 300px wide and feature cards are 25% larger so they stand out */
     .highlight-featured-articles .article-card.featured { 
         width: calc(300px * 1.25);
@@ -204,8 +207,7 @@
             align-self: flex-start;
             justify-content: flex-start;
             .article-card {
-                width: unset;
-                min-width: 300px;
+                min-width:375px; /* ?? todo */
                 max-width: 375px;
                 > * {
                     padding:0;
@@ -389,9 +391,4 @@
     font-weight: 550;
     letter-spacing: .025em;
     padding-top: var(--section-gap);
-    /* todo clamp */
-    @media (min-width:760px) {
-        font-size: 2rem;
-        width: 100%;
-    }
 }
