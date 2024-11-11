@@ -90,7 +90,7 @@ export function demoOptionsPicker() {
         downloadLink.classList.add('icon','download-link')
         downloadLink.innerHTML = `
             ${downloadIcon}
-            <div class="download-button-description">Download</div>
+            <div class="download-button-description">Download theme</div>
         `;
 
         //<a href="path/to/yourfile.pdf" download class="download-link">Download File</a>

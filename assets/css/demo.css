@@ -14,6 +14,7 @@
         border-radius: 10px;
         border:1px solid var(--ghost-accent-color);
         padding: 15px 0;
+        font-size:1.4rem;
 
         hr {
             border-color: var(--ghost-accent-color);
@@ -21,13 +22,13 @@
         display:flex;
         flex-direction: column;
         gap:15px; 
-        .options-picker-container {
-            font-size: 1.4rem; 
-        }
-        .options-picker-container summary {
-            font-size: var(--content-font-size);
+
+        .download-button-description {
+            text-align: center;
         }
     }
+
+
 
     .demo-options:not(.options-picker-closed) {
         position: fixed;
