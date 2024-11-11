@@ -182,10 +182,17 @@
     }
 }
 
-/* on larger screens article-cards are 300px wide and feature cards are 25% larger so they stand out */
 @media (min-width:760px) {
     .article-card {
         width: 300px;
+    }
+    /* when using featured articles on larger screens article-cards are 300px wide and feature cards are 25% larger so they stand out */
+    .show-featured-articles .article-card.featured { 
+        width: calc(300px * 1.25);
+        img {
+            aspect-ratio: calc((16  * 1.25) / 9 );
+            border: solid 1px var(--ghost-accent-color);
+        }
     }
     .home-page-focus-left, .home-page-focus-right {
         .latest-articles:not(.show-featured-articles *),
@@ -202,6 +209,7 @@
                 .article-card-image img { 
                     min-width: unset;
                     width: 90px;
+                    aspect-ratio: 1/1;
                 }
                 .author-profile-images {
                     margin: 0 0 5px 5px;
