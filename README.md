@@ -34,7 +34,7 @@ This theme is optimised for traditional blog sites, particularly sites with lots
 
 
 # For developers
-- straightforward package and build management controlled by npm and gulp
+- straightforward package and build management controlled by npm and esbuild
 - minimal dependencies
     - image gallery (photowsipe)
     - code syntax highlighting (prism)
