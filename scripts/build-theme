@@ -23,6 +23,16 @@ const buildOptions = {
   assetNames: 'fonts/[name]'
 }
 
+// zip config
+const fontsPath = 'assets/fonts';
+const fontsBuiltPath = 'assets/built/fonts';
+const zipIgnoreList =  [ 'node_modules/**',
+        'todo.md',
+        'package-lock.json',
+        'dist/**',
+        'scripts/**',
+        'changelogs/**' ] ;
+
 async function dev() {
   const context = await esbuild.context(buildOptions)
   console.log("Watching files");
@@ -30,7 +40,7 @@ async function dev() {
 }
 
 async function build() {
-  await cp('assets/fonts', 'assets/built/fonts/', { recursive: true })
+  await cp(fontsPath, fontsBuiltPath, { recursive: true })
   await esbuild.build(buildOptions);
   console.log('Build completed');
 }
@@ -57,16 +67,7 @@ async function zip() {
 
     archive.pipe(output);
 
-    archive.glob('**/*', {
-      ignore: [
-        'node_modules/**',
-        'todo.md',
-        'package-lock.json',
-        'dist/**',
-        'scripts/**',
-        'changelogs/**'
-      ]
-    });
+    archive.glob('**/*', { ignore: zipIgnoreList });
 
     console.log(`Creating ${filepath}`);
     archive.finalize();
