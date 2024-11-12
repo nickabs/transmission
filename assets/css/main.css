@@ -9,13 +9,13 @@
 @import "variables.css";
 @import "site.css";
 @import "fonts.css";
+@import "buttons.css";
 @import "layout.css";
 @import "icons.css";
 @import "article.css";
 @import "article-cards.css";
-@import "table-of-contents.css";
 @import "navigation.css";
-@import "buttons.css";
+@import "table-of-contents.css";
 @import "hero-header.css";
 @import "author.css";
 @import "enrol.css";

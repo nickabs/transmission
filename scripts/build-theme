@@ -34,9 +34,44 @@ const zipIgnoreList =  [ 'node_modules/**',
         'changelogs/**' ] ;
 
 async function dev() {
-  const context = await esbuild.context(buildOptions)
-  console.log("Watching files");
-  await context.watch()
+  const context = await esbuild.context({
+    ...buildOptions,
+    plugins: [{
+      name: 'rebuild-notify',
+      setup(build) {
+        build.onEnd(() => {
+          console.log(`[${new Date().toLocaleTimeString()}] Rebuild completed`);
+        });
+      }
+    }]
+  });
+
+  async function checkGhostRunning() {
+    try {
+      const response = await fetch('http://localhost:2368/');
+      return response.ok;
+    } catch (error) {
+      return false;
+    }
+  }
+  
+  await context.watch();
+}
+async function livereload() {
+  browserSync.init({
+    proxy: 'http://localhost:2368',
+    files: [
+      'assets/built/**',
+      '*.hbs',
+      'partials/**/*.hbs'
+    ],
+    port: 3000,
+    open: true,
+    notify: false,
+    ghostMode: false,
+    https: false,
+    ui: false
+  });
 }
 
 async function build() {
@@ -80,6 +115,10 @@ async function main() {
     if (process.argv.includes('--watch')) {
       await build();
       await dev();
+    } else if (process.argv.includes('--livereload')) {
+      await build();
+      await dev();
+      await livereload();
     } else if (process.argv.includes('--zip')) {
       await zip();
     } else {
