@@ -316,6 +316,9 @@
     .hero-header {
       margin-bottom: 60px;
     }
+    .sidebar-header {
+      margin-bottom: 10px;
+    }
     .sidebar-nav {
       flex-direction: column;
       align-content: flex-start;
