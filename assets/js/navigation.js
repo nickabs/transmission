@@ -158,7 +158,7 @@ export function mainNavMenuToggle() {
 export function sidebarSetup() {
     const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--icon-color').trim();
     const internalTags = document.querySelector('.internal-tags');
-    const internalTagItems = internalTags.querySelectorAll('.sidebar-link-item');
+    const internalTagItems = internalTags ? internalTags.querySelectorAll('.sidebar-link-item') : null;
     const regex = /^##[0-9]*-/;  // this is the pattern of internal nag names that are to be used for secondary navigation
     const containers = {
         share: document.querySelector('.share-links-container'),

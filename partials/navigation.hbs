@@ -95,24 +95,26 @@
 
 {{#match nav-type "sidebar-secondary-links"}}
     {{#if isSecondary}}
-      <div class="sidebar-links-container secondary-links-container">
-        <div class="sidebar-header secondary-links-header">
-          <button class="secondary-links-button icon" aria-label="secondary-links">
-              {{> "icons/categories"}} 
-              <span class="secondary-links-button-description sidebar-header-description">Sections</span>
-          </button>
+      {{#if @site.secondar_navigation}}
+        <div class="sidebar-links-container secondary-links-container">
+          <div class="sidebar-header secondary-links-header">
+            <button class="secondary-links-button icon" aria-label="secondary-links">
+                {{> "icons/categories"}} 
+                <span class="secondary-links-button-description sidebar-header-description">Sections</span>
+            </button>
+          </div>
+          <ul class="secondary-links sidebar-links">
+            {{#foreach navigation}}
+                <li class="sidebar-link-item" >
+                  <a class="sidebar-link" href="{{url absolute='true'}}">
+                    <span class="sidebar-link-description">{{label}}</span>
+                  </a>
+                </li>
+            {{/foreach}}
+          </ul>
         </div>
-        <ul class="secondary-links sidebar-links">
-          {{#foreach navigation}}
-              <li class="sidebar-link-item" >
-                <a class="sidebar-link" href="{{url absolute='true'}}">
-                  <span class="sidebar-link-description">{{label}}</span>
-                </a>
-              </li>
-          {{/foreach}}
-        </ul>
-      </div>
-      <hr>
+        <hr>
+      {{/if}}
     {{/if}}
 {{/match}}
 
