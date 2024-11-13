@@ -140,7 +140,7 @@
                     "Ghost",
                     "None"
                 ],
-                "default": "All"
+                "default": "Ghost"
             },
             "google_analytics_id": {
                 "type": "text",
@@ -158,7 +158,7 @@
                     "Focus (right)",
                     "Focus (left)"
                 ],
-                "default": "Focus (left)",
+                "default": "List",
                 "group": "homepage"
             },
             "post_table_of_contents": {
