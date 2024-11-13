@@ -170,6 +170,9 @@
   min-width: var(--sidebar-width);
 }
 
+.sidebar-none .sidebar {
+  display:none;
+}
 /* if there are standard internal tags, but no sidebar tags (prefixed by ##) we will end up with an empty ul elment.*/
 .internal-tags:not(:has(.sidebar-link-item)) {
   display: none;
