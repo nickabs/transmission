@@ -203,7 +203,7 @@
     .sidebar-right .sidebar { grid-area: SidebarRight; }
 
     .site:is(.post-template, .page-template):is(.sidebar-top, .sidebar-bottom) {
-        grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr 0;
+        grid-template-columns: 0.33fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr 0;
         &.post-toc-none,
         &:is(.post-toc-minified),
         &:has(.toc:empty) {

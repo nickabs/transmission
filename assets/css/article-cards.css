@@ -192,7 +192,7 @@
         width: 300px;
     }
     .home-template .main-article {
-        width: 65vw;
+        justify-self: center;
     }
     /* when using featured articles on larger screens article-cards are 300px wide and feature cards are 25% larger so they stand out */
     .highlight-featured-articles .article-card.featured { 
@@ -206,10 +206,10 @@
         .featured-articles {
             align-self: flex-start;
             justify-content: flex-start;
+            min-width: 250px;
+            max-width: 450px;
             .article-card {
                 grid-template-columns: 1fr;
-                min-width:375px; /* ?? todo */
-                max-width: 375px;
                 > * {
                     padding:0;
                 }
