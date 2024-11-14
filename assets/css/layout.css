@@ -98,6 +98,7 @@
             "SidebarLeft Pagination Pagination SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
+        grid-template-columns: auto 65vw auto auto ;
     }
     .home-template.home-page-focus-right {
         grid-template-areas:
@@ -111,6 +112,7 @@
             "SidebarLeft Pagination Pagination SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
+        grid-template-columns: auto auto 65vw auto ;
     }
     .home-template.home-page-focus-left.highlight-featured-articles {
         grid-template-areas:
@@ -125,6 +127,7 @@
             "SidebarLeft Pagination Pagination SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
+        grid-template-columns: auto 65vw auto auto ;
     }
     .home-template.home-page-focus-right.highlight-featured-articles {
         grid-template-areas:
@@ -139,15 +142,7 @@
             "SidebarLeft Pagination Pagination SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
-    }
-    .home-template .main-article {
-        width: 65vw;
-    }
-    .home-template:is(.sidebar-top, .sidebar-bottom) {
-        grid-template-columns: 0 auto auto 0 ;
-    }
-    .home-template:is(.sidebar-left,.sidebar-right) .main-article {
-        width: 50vw;
+        grid-template-columns: auto auto 65vw auto ;
     }
 }
 /*--------------------------*/

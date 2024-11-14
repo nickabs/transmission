@@ -209,7 +209,7 @@
             min-width: 250px;
             max-width: 450px;
             .article-card {
-                width: 300px;
+                width: 100%;
                 grid-template-columns: 1fr;
                 > * {
                     padding:0;
