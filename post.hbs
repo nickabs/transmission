@@ -12,10 +12,11 @@
     {{> "asides" aside-type="sidebar"}}
 {{/match}}
 
-
 {{!-- outputting post or page content --}}
 <main class="article">
-    {{content}}
+    <div class="article-container" >
+        {{content}}
+    </div>
 </main>
 
 {{#if @custom.show_one_time_payment_request}}

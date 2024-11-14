@@ -58,14 +58,8 @@ li:not(.article li) {
 /***************************/
 /* 2. default site margins */
 /***************************/
-.site > :not(.site-header, .hero-header, .site-footer) {
-  padding-left: var(--edge-padding);
-  padding-right: var(--edge-padding);
-}
-
 /*
-* header & footer items have a background that will fill the screen 
-* the contents are limited to max-container-with using padding
+* header, footer & kg-width-wide items stetch to fill the screen 
 */
 .hero-header,
 .main-nav,
@@ -73,36 +67,32 @@ li:not(.article li) {
   padding-left: var(--site-edge-padding);
   padding-right: var(--site-edge-padding);
 }
-
-.article {
-  justify-self: center;
+.article { 
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  align-items: center;
+  width: 100%;
 }
-.article > * {
-  max-width: var(--max-content-width);
-}
-
-/* images will use the editor 'full' and 'wide' settings when the selected post layout type does not use sidebars */
-.article .feature-image {
+.article-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
-/* todo  - wide screen images 
-.site:has(.footer-layout) {
-  .article .feature-image.kg-width-wide,
-  .kg-image-card.kg-width-wide,
-  .kg-gallery-card.kg-width-wide {
-    max-width: calc(var(--max-container-width) * 0.8);
-  }
-  .article .feature-image.kg-width-full,
-  .kg-image-card.kg-width-full,
-  .kg-gallery-card.kg-width-full {
-    max-width: var(--max-container-width);
-  }
+.article-container > *:not(.kg-width-full,.kg-width-wide ) {
+  max-width: min(90%, var(--max-content-width));
+  margin-left:auto;
+  margin-right:auto;
 }
-*/
+.article .kg-width-wide {
+  max-width: calc(min(70%, var(--max-content-width)) * 1.3);
+  margin-left:auto;
+  margin-right:auto;
+}
+.article .kg-width-full {
+  max-width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 /* ---------------------------------- */
 /* 2. photoswipe lightbox adjustments */
@@ -268,11 +258,6 @@ li:not(.article li) {
     height: auto;
   }
 
-  /* This keeps small images centered */
-  .kg-image,
-  .kg-image-card img {
-      margin: auto;
-  }
   .kg-product-card a.kg-product-card-btn-accent ,
   .kg-button-card a.kg-btn-accent ,
   .kg-callout-card-accent {

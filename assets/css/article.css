@@ -13,29 +13,29 @@
 }
 
 /* margin for headings*/
-.article > [id]:not(:first-child) {
+.article-container > [id]:not(:first-child) {
   margin-top: 56px;
 }
-.article > :first-child{
+.article-container > :first-child{
   margin-top:15px;
 }
 
 @media (min-width: 760px) {
-  .article :first-child{
+  .article-container :first-child{
     margin-top:0px;
   }
 }
-.article > * + * {
+.article-container > * + * {
   margin-top:var(--section-gap);
   letter-spacing: -0.01em;
 }
 
 
 /* drop cap on leading paragraph */
-.article > p:first-of-type {
+.article-container > p:first-of-type {
   font-size:2.5rem;
 }
-.article > p:first-of-type:first-letter {
+.article-container > p:first-of-type:first-letter {
   float: left;
   font-size: 8.0rem;
   font-weight: bold;
@@ -129,15 +129,17 @@ figcaption {
 /* code highlighting */
 /* ----------------- */
 /* enable scrolling */
+/*
 pre, code {
   overflow-x: auto;
   white-space: pre; 
   max-width: 100%;  
 }
-.article {
+.article-container {
   overflow-x: auto;
   max-width: 100%;
 }
+  */
 
 /* make output lines in code blocks not selectable */
 .command-line span.token.output {

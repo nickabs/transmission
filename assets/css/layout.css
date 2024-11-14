@@ -163,6 +163,7 @@
     "Pagination"
     "SidebarBottom"
     "SiteFooter";
+    grid-template-columns: 100vw; /* note that prisms seems to need an explicit column size to scroll within the container */
 }
 
 @media (min-width: 760px) { 
@@ -185,12 +186,15 @@
         * where is used below so that these settings can be overridden at larger screen sizes
         */
 
-        &:where(.post-toc-minified),
-        &:has(.toc:empty) {
-            grid-template-columns: auto 1fr 0 auto;
+        &:is(.sidebar-top, .sidebar-bottom) {
+            grid-template-columns: 0 minmax(0, min(75%, calc(var(--max-content-width) * 1.4))) 1fr 0;
+            &.post-toc-none,
+            &:where(.post-toc-minified),
+            &:has(.toc:empty) {
+                grid-template-columns: 0 1fr 0 0;
+            }
         }
     }
-
 }
 
 @media (min-width: 1300px) { 
@@ -199,22 +203,28 @@
     .sidebar-right .sidebar { grid-area: SidebarRight; }
 
     .site:is(.post-template, .page-template):is(.sidebar-top, .sidebar-bottom) {
-        grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr 0;
+        grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr 0;
+        &.post-toc-none,
+        &:is(.post-toc-minified),
+        &:has(.toc:empty) {
+            grid-template-columns: 0 1fr 0 0;
+        }
     }
     .site:is(.post-template, .page-template):is(.sidebar-right, .sidebar-left) {
         &.sidebar-left { 
-            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr 0;
+            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr 0;
         }
         &.sidebar-right { 
-            grid-template-columns: 0 minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 1fr fr;
+            grid-template-columns: 0 minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr fr;
         }
         &.sidebar-left .sidebar {
             justify-self: end;
             margin-left: auto;
         }
+        &.post-toc-none,
         &:is(.post-toc-minified),
         &:has(.toc:empty) {
-            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.2))) 0 1fr;
+            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 0 1fr;
         }
     }
 }
