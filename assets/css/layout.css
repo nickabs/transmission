@@ -143,6 +143,9 @@
     .home-template .main-article {
         width: 65vw;
     }
+    .home-template:is(.sidebar-top, .sidebar-bottom) {
+        grid-template-columns: 0 auto auto 0 ;
+    }
     .home-template:is(.sidebar-left,.sidebar-right) .main-article {
         width: 50vw;
     }

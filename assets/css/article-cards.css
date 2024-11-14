@@ -136,7 +136,7 @@
     row-gap: 10px;
     .article-card {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 0fr;
         grid-template-areas:
             "Title Image"
             "Metadata Image";
@@ -209,6 +209,7 @@
             min-width: 250px;
             max-width: 450px;
             .article-card {
+                width: 300px;
                 grid-template-columns: 1fr;
                 > * {
                     padding:0;
