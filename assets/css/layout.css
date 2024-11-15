@@ -179,6 +179,13 @@
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
 
+        grid-template-columns: 1fr 3fr 1fr 1fr;
+        &:is(.sidebar-none) {
+            grid-template-columns: 0 3fr 1fr 0;
+        }
+        &:is(.sidebar-none,.post-toc-none) {
+            grid-template-columns: 0 100% 0 0;
+        }
         /* 
         * toc can now be shown in the column on the right of the article  
         * where is used below so that these settings can be overridden at larger screen sizes
