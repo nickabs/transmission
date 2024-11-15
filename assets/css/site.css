@@ -45,6 +45,7 @@ iframe {
 a {
     color: var(--text-color);
     text-decoration: none;
+    word-wrap: break-word;
 }
 a:hover {
     opacity: 0.8;
@@ -65,6 +66,9 @@ li:not(.article li) {
   padding-left: var(--site-edge-padding);
   padding-right: var(--site-edge-padding);
 }
+.sidebar-left .sidebar {
+  padding-left: var(--site-edge-padding);
+}
 .article { 
   display: flex;
   flex-direction: column;
@@ -72,8 +76,6 @@ li:not(.article li) {
   width: 100%;
 }
 .article-container {
-  display: flex;
-  flex-direction: column;
   width: 100%;
 }
 .article-container > *:not(.kg-width-full,.kg-width-wide ) {

@@ -13,9 +13,11 @@
         {{> "asides" aside-type="sidebar"}}
     {{/match}}
     
-    {{!-- outputting post or page content --}}
+    {{!-- outputting page content --}}
     <main class="article">
-        {{content}}
+        <div class="article-container" >
+            {{content}}
+        </div>
     </main>
 
 {{/page}}
