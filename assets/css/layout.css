@@ -189,7 +189,7 @@
             &.post-toc-none,
             &:where(.post-toc-minified),
             &:has(.toc:empty) {
-                grid-template-columns: 0 1fr 0 0;
+                grid-template-columns: 0 100% 0 0;
             }
         }
         /* cenralize the excerpt/cta content when the user is accessing a post only avaliable with a tier upgrade */
@@ -209,7 +209,7 @@
         &.post-toc-none,
         &:is(.post-toc-minified),
         &:has(.toc:empty) {
-            grid-template-columns: 0 1fr 0 0;
+            grid-template-columns: 0 100% 0 0;
         }
     }
     .site:is(.post-template, .page-template):is(.sidebar-right, .sidebar-left) {
