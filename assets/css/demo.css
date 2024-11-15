@@ -8,7 +8,7 @@
 */
 [data-demo-site="true"] {
     /* options picker can be open or closed - open settings here */
-    .demo-options { 
+    .site .demo-options { 
         z-index: 2000;
         background-color: var(--secondary-background-color);
         border-radius: 10px;
@@ -40,12 +40,44 @@
         right: 40px;
         width: 90px;
         .download-link,
-        .demo-options-button {
+        .demo-options-button,
+        .hide-demo-options-button {
             display: flex;
             flex-direction: column;
         }
         .options-picker-container {
             display:none;
+        }
+    }
+    .site .demo-options.options-picker-hidden {
+        left:0px;
+        right:unset;
+        width: 30px;
+        .icon {
+            width: 20px;
+        };
+        gap:0;
+        padding-left:0;
+        padding-right:0;
+        align-items: center;
+        .options-picker-form {
+            display: none;
+        }
+        border-radius: 0% 5px 5px 0%;
+        border-left: none;
+        hr,
+        .download-button-description,
+        .hide-demo-options-button-description,
+        .demo-options-button {
+            display: none!important;
+        }
+        a,button { 
+            display: flex;
+            justify-content: center;
+            padding: 7px 0 7px 0;
+        }
+        .hide-demo-options-button svg {
+            transform: rotate(180deg);
         }
     }
     .demo-options:not(.options-picker-closed) {
