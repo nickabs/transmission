@@ -57,12 +57,11 @@ li:not(.article li) {
 /***************************/
 /* 2. default site margins */
 /***************************/
-/*
-* header, footer & kg-width-wide items stetch to fill the screen 
-*/
 .hero-header,
 .main-nav,
-.site-footer {
+.site-footer,
+.comments,
+.related-articles {
   padding-left: var(--site-edge-padding);
   padding-right: var(--site-edge-padding);
 }
