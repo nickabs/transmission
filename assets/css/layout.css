@@ -63,86 +63,86 @@
 }
 
 @media (min-width: 760px) { 
-    .home-template.home-page-list {
-        grid-template-areas:
-            "SiteHeader SiteHeader SiteHeader"
-            "HeroHeader HeroHeader HeroHeader"
-            "SidebarTop SidebarTop SidebarTop"
-            "SidebarLeft MainArticle SidebarRight"
-            "SidebarLeft FeaturedArticles SidebarRight"
-            "SidebarLeft LatestArticles SidebarRight"
-            "SidebarLeft Enrol SidebarRight"
-            "SidebarLeft RecentArticles SidebarRight"
-            "SidebarLeft PreviousArticles SidebarRight"
-            "SidebarLeft Pagination SidebarRight"
-            "SidebarBottom SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter Sitefooter";
-        &:is(.sidebar-top,.sidebar-bottom) {
-            grid-template-columns: 0 auto auto 0;
+    .home-template {
+        &.home-page-list {
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader"
+                "SidebarTop SidebarTop SidebarTop"
+                "SidebarLeft MainArticle SidebarRight"
+                "SidebarLeft FeaturedArticles SidebarRight"
+                "SidebarLeft LatestArticles SidebarRight"
+                "SidebarLeft Enrol SidebarRight"
+                "SidebarLeft RecentArticles SidebarRight"
+                "SidebarLeft PreviousArticles SidebarRight"
+                "SidebarLeft Pagination SidebarRight"
+                "SidebarBottom SidebarBottom SidebarBottom"
+                "SiteFooter SiteFooter Sitefooter";
+            &:is(.sidebar-top,.sidebar-bottom) {
+                grid-template-columns: 0 auto auto 0;
+            }
+            .main-article {
+                justify-self: center;
+            }
         }
-        .main-article {
-            justify-self: center;
+        &.home-page-focus-left {
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader HeroHeader"
+                "SidebarTop SidebarTop SidebarTop SidebarTop"
+                "SidebarLeft MainArticle LatestArticles SidebarRight"
+                "SidebarLeft RecentArticles RecentArticles SidebarRight"
+                "SidebarLeft Enrol Enrol SidebarRight"
+                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+                "SidebarLeft Pagination Pagination SidebarRight"
+                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+                "SiteFooter SiteFooter SiteFooter SiteFooter";
+            grid-template-columns: auto 65vw auto auto ;
         }
-    }
-}
-@media (min-width: 760px) { 
-    .home-template.home-page-focus-left {
-        grid-template-areas:
-            "SiteHeader SiteHeader SiteHeader SiteHeader"
-            "HeroHeader HeroHeader HeroHeader HeroHeader"
-            "SidebarTop SidebarTop SidebarTop SidebarTop"
-            "SidebarLeft MainArticle LatestArticles SidebarRight"
-            "SidebarLeft RecentArticles RecentArticles SidebarRight"
-            "SidebarLeft Enrol Enrol SidebarRight"
-            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
-            "SidebarLeft Pagination Pagination SidebarRight"
-            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter SiteFooter SiteFooter";
-        grid-template-columns: auto 65vw auto auto ;
-    }
-    .home-template.home-page-focus-right {
-        grid-template-areas:
-            "SiteHeader SiteHeader SiteHeader SiteHeader"
-            "HeroHeader HeroHeader HeroHeader HeroHeader"
-            "SidebarTop SidebarTop SidebarTop SidebarTop"
-            "SidebarLeft LatestArticles MainArticle SidebarRight"
-            "SidebarLeft RecentArticles RecentArticles SidebarRight"
-            "SidebarLeft Enrol Enrol SidebarRight"
-            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
-            "SidebarLeft Pagination Pagination SidebarRight"
-            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter SiteFooter SiteFooter";
-        grid-template-columns: auto auto 65vw auto ;
-    }
-    .home-template.home-page-focus-left.highlight-featured-articles {
-        grid-template-areas:
-            "SiteHeader SiteHeader SiteHeader SiteHeader"
-            "HeroHeader HeroHeader HeroHeader HeroHeader"
-            "SidebarTop SidebarTop SidebarTop SidebarTop"
-            "SidebarLeft MainArticle FeaturedArticles SidebarRight"
-            "SidebarLeft LatestArticles LatestArticles SidebarRight"
-            "SidebarLeft Enrol Enrol SidebarRight"
-            "SidebarLeft RecentArticles RecentArticles SidebarRight"
-            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
-            "SidebarLeft Pagination Pagination SidebarRight"
-            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter SiteFooter SiteFooter";
-        grid-template-columns: auto 65vw auto auto ;
-    }
-    .home-template.home-page-focus-right.highlight-featured-articles {
-        grid-template-areas:
-            "SiteHeader SiteHeader SiteHeader SiteHeader"
-            "HeroHeader HeroHeader HeroHeader HeroHeader"
-            "SidebarTop SidebarTop SidebarTop SidebarTop"
-            "SidebarLeft FeaturedArticles MainArticle SidebarRight"
-            "SidebarLeft LatestArticles LatestArticles SidebarRight"
-            "SidebarLeft Enrol Enrol SidebarRight"
-            "SidebarLeft RecentArticles RecentArticles SidebarRight"
-            "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
-            "SidebarLeft Pagination Pagination SidebarRight"
-            "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-            "SiteFooter SiteFooter SiteFooter SiteFooter";
-        grid-template-columns: auto auto 65vw auto ;
+        &.home-page-focus-right {
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader HeroHeader"
+                "SidebarTop SidebarTop SidebarTop SidebarTop"
+                "SidebarLeft LatestArticles MainArticle SidebarRight"
+                "SidebarLeft RecentArticles RecentArticles SidebarRight"
+                "SidebarLeft Enrol Enrol SidebarRight"
+                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+                "SidebarLeft Pagination Pagination SidebarRight"
+                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+                "SiteFooter SiteFooter SiteFooter SiteFooter";
+            grid-template-columns: auto auto 65vw auto ;
+        }
+        &.home-page-focus-left.highlight-featured-articles {
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader HeroHeader"
+                "SidebarTop SidebarTop SidebarTop SidebarTop"
+                "SidebarLeft MainArticle FeaturedArticles SidebarRight"
+                "SidebarLeft LatestArticles LatestArticles SidebarRight"
+                "SidebarLeft Enrol Enrol SidebarRight"
+                "SidebarLeft RecentArticles RecentArticles SidebarRight"
+                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+                "SidebarLeft Pagination Pagination SidebarRight"
+                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+                "SiteFooter SiteFooter SiteFooter SiteFooter";
+            grid-template-columns: auto 65vw auto auto ;
+        }
+        &.home-page-focus-right.highlight-featured-articles {
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader HeroHeader"
+                "SidebarTop SidebarTop SidebarTop SidebarTop"
+                "SidebarLeft FeaturedArticles MainArticle SidebarRight"
+                "SidebarLeft LatestArticles LatestArticles SidebarRight"
+                "SidebarLeft Enrol Enrol SidebarRight"
+                "SidebarLeft RecentArticles RecentArticles SidebarRight"
+                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
+                "SidebarLeft Pagination Pagination SidebarRight"
+                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+                "SiteFooter SiteFooter SiteFooter SiteFooter";
+            grid-template-columns: auto auto 65vw auto ;
+        }
     }
 }
 /*--------------------------*/
@@ -191,6 +191,10 @@
             &:has(.toc:empty) {
                 grid-template-columns: 0 1fr 0 0;
             }
+        }
+        /* cenralize the excerpt/cta content when the user is accessing a post only avaliable with a tier upgrade */
+        &:has(.gh-post-upgrade-cta) {
+            grid-template-columns: 1fr 3fr 0 1fr!important;
         }
     }
 }
