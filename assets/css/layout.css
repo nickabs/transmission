@@ -79,7 +79,7 @@
                 "SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter Sitefooter";
             &:is(.sidebar-top,.sidebar-bottom) {
-                grid-template-columns: 0 auto auto 0;
+                grid-template-columns: 0 100% 0;
             }
             .main-article {
                 justify-self: center;

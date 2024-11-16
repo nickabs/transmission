@@ -43,11 +43,6 @@
     }
 }
 
-.site.no-dates-on-article-cards {
-    .article-card-date {
-        display:none;
-    }
-}
 
 .highlight-featured-articles .article-card.featured { 
     .article-card-image img {
@@ -63,9 +58,10 @@
 /* ------------------------------ */
 /* 2. article-card content layout */
 /* ------------------------------ */
+
 .article-card-image { grid-area: Image; }
 .article-card-title { grid-area: Title; }
-.author-names { grid-area: Authors; }
+.author-names { grid-area: AuthorNames; }
 .article-card-excerpt { grid-area: Excerpt; }
 .article-card-metadata { grid-area: Metadata; }
 .author-profile-images { grid-area: Image; } /* overlay author profile pics on to the featured image for the card */
@@ -79,7 +75,7 @@
         "Title"
         "Excerpt"
         "Metadata"
-        "Authors";
+        "AuthorNames";
     align-items: center;
     align-content: space-between;
     grid-template-columns: auto;
@@ -102,9 +98,9 @@
             "Image"
             "Excerpt"
             "Metadata"
-            "AuthorProfileImages";
-        .article-card-excerpt,
-        .author-names {
+            "AuthorProfileImages"
+            "AuthorNames";
+        .article-card-excerpt { /* hide on small screens */
             display:none;
         }
     }
@@ -119,7 +115,9 @@
     border-radius: 10px;
 }
 
-/* custom options */
+/*
+ * custom options 
+*/
 .site.show-author-names .author-profile-images {
     display: none;
 }
@@ -130,6 +128,11 @@
     .author-profile-images,
     .author-names {
         display: none;
+    }
+}
+.site.no-dates-on-article-cards {
+    .article-card-date {
+        display:none;
     }
 }
 
@@ -146,7 +149,6 @@
         grid-template-areas:
             "Title Image"
             "Metadata Image";
-
         box-shadow: none;
     }
     .article-card-image {
@@ -164,29 +166,17 @@
     }
 }
 @media(min-width: 480px) {
-    .home-page-focus-left, .home-page-focus-right {
-        .main-article {
-            align-self: center;
+    .main-article {
+        width:100%;
+        row-gap: 7px;
+        border-radius: 15px;
 
-            .article-card {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                    "Title"
-                    "Excerpt"
-                    "Image"
-                    "Metadata"
-                    "AuthorProfileImages";
-
-                padding-bottom: 20px;
-
-                .author-profile-image {
-                    margin: 0 -10px 0 0;
-                    img, svg { 
-                        border: 3px solid var(--ghost-accent-color);
-                        height: 60px;
-                        width: 60px;
-                    }
+        .article-card {
+            width:100%;
+            .author-profile-image {
+                svg, img {
+                    width:70px;
+                    height:70px;
                 }
             }
         }
@@ -205,6 +195,21 @@
         width: calc(300px * 1.25);
         img {
             aspect-ratio: calc((16  * 1.25) / 9 );
+        }
+    }
+    .home-page-list {
+        .main-article .article-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+            "Title Image"
+            "Excerpt Image"
+            "Metadata Image"
+            "AuthorNames Image";
+            row-gap: 15px;
+            .article-card-metadata {
+                row-gap: 15px;
+            }
         }
     }
     .home-page-focus-left, .home-page-focus-right {
@@ -239,36 +244,12 @@
         }
     }
     .main-article .article-card {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "Title Image"
-            "Excerpt Image"
-            "Metadata Image"
-            "AuthorProfileImages Image";
-        .author-profile-images { grid-area: AuthorProfileImages; }
-
-        width:100%;
-        row-gap: 25px;
-        border-radius: 15px;
-        .author-names {
-            display: none;
-        }
         .article-card-title {
             font-size: clamp(2rem, 2.5vw, 3rem);
         }
         .article-card-excerpt {
             font-size: clamp(1.0rem, 1.5vw, 1.7rem);
         }
-        .article-card-image img {
-            width: 100%;
-            height: auto;
-            max-height: 25vw;
-            aspect-ratio: 1 /1 ;
-            object-fit: cover;
-            border-radius: 35px;
-        }
-        
     }
 }
 
@@ -318,17 +299,17 @@
         display:block;
     }
 }
-.featured-articles {
-    .article-card-date {
-        display:none;
-    }
-}
 .article-card-metadata {
     display: flex;
     gap: 6px;
     align-items: center;
     flex-wrap:wrap;
 }
+.main-article .article-card-metadata {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .article-card-tag  {
     background-color: var(--background-color);
     color: var(--title-color);
