@@ -8,6 +8,7 @@ import path from 'node:path';
   
 const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
             Options:
+                --build                build files 
                 --watch                start a file watcher to rebuild project
                 --livereload           start the file watcher and live reload site
                 --zip                  create the theme zip file`;
@@ -123,6 +124,8 @@ async function main() {
       await livereload();
     } else if (process.argv.includes('--zip')) {
       await zip();
+    } else if (process.argv.includes('--build')) {
+      await build();
     } else {
       console.log(usage);
       process.exit(1);
