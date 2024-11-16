@@ -1,0 +1,14 @@
+codeql-analysis:
+  name: "CodeQL"
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+     with:
+        config-file: .github/codeql/codeql-config.yml
+        languages: javascript
+        paths-ignore: |
+          '**/dist/**'
+          '**/built/**'
