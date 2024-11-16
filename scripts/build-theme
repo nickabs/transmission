@@ -5,6 +5,12 @@ import { createWriteStream } from 'node:fs';
 import { readFile, cp } from 'node:fs/promises';
 import archiver from 'archiver';
 import path from 'node:path';
+  
+const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
+            Options:
+                --watch                start a file watcher to rebuild project
+                --livereload           start the file watcher and live reload site
+                --zip                  create the theme zip file`;
 
 // Build configuration
 const buildOptions = {
@@ -46,20 +52,11 @@ async function dev() {
     }]
   });
 
-  async function checkGhostRunning() {
-    try {
-      const response = await fetch('http://localhost:2368/');
-      return response.ok;
-    } catch (error) {
-      return false;
-    }
-  }
-  
   await context.watch();
 }
 async function livereload() {
   browserSync.init({
-    proxy: 'http://localhost:2368',
+    proxy: 'http://127.0.0.1:2368', // note using locahost here caused intermitent issues with the live reload service - not sure why..
     files: [
       'assets/built/**',
       '*.hbs',
@@ -122,7 +119,8 @@ async function main() {
     } else if (process.argv.includes('--zip')) {
       await zip();
     } else {
-      await build();
+      console.log(usage);
+      process.exit(1);
     }
   } catch(error) {
     console.error('Error:', error.message);
