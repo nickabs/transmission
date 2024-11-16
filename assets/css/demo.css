@@ -50,8 +50,8 @@
         }
     }
     .site .demo-options.options-picker-hidden {
-        left:0px;
-        right:unset;
+        right:0px;
+        left:unset;
         width: 30px;
         .icon {
             width: 20px;
@@ -63,8 +63,8 @@
         .options-picker-form {
             display: none;
         }
-        border-radius: 0% 5px 5px 0%;
-        border-left: none;
+        border-radius: 5px 0px 0px 5px;
+        border-right: none;
         hr,
         .download-button-description,
         .hide-demo-options-button-description,
@@ -77,7 +77,7 @@
             padding: 7px 0 7px 0;
         }
         .hide-demo-options-button svg {
-            transform: rotate(180deg);
+            transform: rotate(90deg);
         }
     }
     .demo-options:not(.options-picker-closed) {
