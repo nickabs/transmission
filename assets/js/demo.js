@@ -75,7 +75,6 @@ export function demoOptionsPicker() {
         demoOptions.appendChild(hideDemoOptionsPickerButton);
 
         hideDemoOptionsPickerButton.addEventListener('click', () => {
-            console.log('click');
             demoOptions.classList.toggle('options-picker-hidden');
         });
 
@@ -92,7 +91,6 @@ export function demoOptionsPicker() {
         demoOptions.appendChild(demoOptionsButton);
 
         demoOptionsButton.addEventListener('click', () => {
-            console.log('click');
             demoOptions.classList.toggle('options-picker-closed');
         });
 

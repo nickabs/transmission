@@ -78,7 +78,6 @@ export function pagination(isInfinite, callback) {
         if (isInfinite) {
             imagesLoaded(currentArticleList, function () {
                 if (currentArticleList.getBoundingClientRect().bottom <= lastWindowHeight) {
-                    console.log(currentArticleList.getBoundingClientRect().bottom, lastWindowHeight)
                     requestTick();
                 }
             });

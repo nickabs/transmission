@@ -12,7 +12,6 @@ export function copyLink() {
       tooltip.className = 'tooltip';
       tooltip.textContent = 'Copied!';
       sidebar.appendChild(tooltip);
-      console.log(copyLinkElement);
       setTimeout(() => tooltip.remove(), 500);
     });
   };
