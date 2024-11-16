@@ -14,7 +14,12 @@ const usage = `Usage: node ${process.argv[1].split('/').pop()}  [OPTIONS]
 
 // Build configuration
 const buildOptions = {
-  entryPoints: ['assets/js/main.js', 'assets/css/main.css'],
+  entryPoints: [
+    'assets/js/vendor.js',
+    'assets/js/main.js',
+    'assets/css/vendor.css',
+    'assets/css/main.css'
+  ],
   bundle: true,
   minify: true,
   sourcemap: true,

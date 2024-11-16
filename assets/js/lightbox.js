@@ -1,4 +1,4 @@
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import { PhotoSwipeLightbox } from './vendor.js';
 
 export function lightbox() {
   const arrow =  ' <svg aria-hidden="true" class="pswp__icn" viewBox="0 0 32 30" width="32" height="30">\
