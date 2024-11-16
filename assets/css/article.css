@@ -90,6 +90,10 @@ figcaption {
     opacity: 0.8;
 }
 
+/* fade public preview text on posts requiring a subscription */
+.article-container:has(.gh-post-upgrade-cta)>p:last-of-type {
+  mask-image: linear-gradient(to bottom, var(--text-color) 30%, transparent 100%);
+}
 /*----------------------*/
 /* tables               */
 /*----------------------*/
