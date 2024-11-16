@@ -125,10 +125,6 @@
                 ],
                 "default": "None"
             },
-            "show_dates_on_article_cards": {
-                "type": "boolean",
-                "default": false
-            },
             "footer_style": {
                 "type": "select",
                 "options": [
@@ -145,6 +141,11 @@
             "google_analytics_id": {
                 "type": "text",
                 "description": "if you use google analytics, add your GA id here"
+            },
+            "show_dates_on_article_cards": {
+                "type": "boolean",
+                "default": false,
+                "group": "homepage"
             },
             "highlight_featured_articles": {
                 "type": "boolean",

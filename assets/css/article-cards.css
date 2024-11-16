@@ -43,6 +43,12 @@
     }
 }
 
+.site.no-dates-on-article-cards {
+    .article-card-date {
+        display:none;
+    }
+}
+
 .highlight-featured-articles .article-card.featured { 
     .article-card-image img {
         border: solid 1px var(--ghost-accent-color);

@@ -59,6 +59,7 @@
         {{~#match @custom.home_page_style "Focus (right)"}} home-page-focus-right{{/match~}}
         {{~#match @custom.home_page_style "Focus (left)"}} home-page-focus-left{{/match~}}
         {{~#if @custom.highlight_featured_articles}} highlight-featured-articles{{/if~}}
+        {{~#if @show_dates_on_article_cards}} show-dates-on-article-cards{{/if~}}
     {{/is~}}
     {{#is "post,page,author,tag"}}
         {{~#match @custom.post_table_of_contents "Full"}} post-toc-full{{/match~}}
