@@ -1,7 +1,6 @@
 import tocbot from 'tocbot';
-export default tocbot ;
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
-export { PhotoSwipeLightbox };
+export { tocbot, PhotoSwipeLightbox };
 import { Prism } from 'prismjs';
 import 'prismjs/components/prism-javascript.min.js';
 import 'prismjs/components/prism-nginx.js';

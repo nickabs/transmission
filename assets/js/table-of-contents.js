@@ -1,7 +1,7 @@
 /*
  * table of contents initialistation
 */
-import tocbot from './vendor.js';
+import { tocbot } from './vendor.js';
 
 export function initialiseTocbot() {
   tocbot.init({
