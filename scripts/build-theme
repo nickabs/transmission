@@ -35,6 +35,22 @@ const buildOptions = {
   assetNames: 'fonts/[name]'
 }
 
+// live reload configuration
+const browserSyncOptions = {
+  proxy: 'http://127.0.0.1:2368', 
+  files: [
+    'assets/built/**',
+    '*.hbs',
+    'partials/**/*.hbs'
+  ],
+  port: 3000,
+  open: true,
+  notify: false,
+  ghostMode: false,
+  https: false,
+  ui: false
+}
+
 // zip config
 const fontsPath = 'assets/fonts';
 const fontsBuiltPath = 'assets/built/fonts';
@@ -47,15 +63,6 @@ const zipIncludeList = [
   'LICENSE',
   'README.md'
 ]
-const zipIgnoreList =  [ 'node_modules/**',
-        'todo.md',
-        'package-lock.json',
-        'dist/**',
-        'scripts/**',
-        'assets/js/**',
-        'assets/fonts/**',
-        'assets/css/**',
-        'changelogs/**' ] ;
 
 async function dev() {
   const context = await esbuild.context({
@@ -74,18 +81,7 @@ async function dev() {
 }
 async function livereload() {
   browserSync.init({
-    proxy: 'http://127.0.0.1:2368', // note using locahost here caused intermitent issues with the live reload service - not sure why..
-    files: [
-      'assets/built/**',
-      '*.hbs',
-      'partials/**/*.hbs'
-    ],
-    port: 3000,
-    open: true,
-    notify: false,
-    ghostMode: false,
-    https: false,
-    ui: false
+    ...browserSyncOptions
   });
 }
 
