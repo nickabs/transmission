@@ -10,7 +10,6 @@
     <title>{{meta_title}}</title>
 
     {{!-- Theme and vendor css assets - the {asset} helper will handle caching and cache-busting automatically --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/css/vendor.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.css"}}">
 
      {{#if @custom.google_analytics_id}}
@@ -74,7 +73,6 @@
 
     {{> "site-footer"}}
    
-    <script  type='module' src='{{asset "built/js/vendor.js"}}'></script>
     <script  type='module' src='{{asset "built/js/main.js"}}'></script>
 
     {{ghost_foot}}
