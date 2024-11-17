@@ -43,6 +43,9 @@ const zipIgnoreList =  [ 'node_modules/**',
         'package-lock.json',
         'dist/**',
         'scripts/**',
+        'assets/js/**',
+        'assets/fonts/**',
+        'assets/css/**',
         'changelogs/**' ] ;
 
 async function dev() {
