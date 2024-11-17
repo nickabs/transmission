@@ -38,6 +38,15 @@ const buildOptions = {
 // zip config
 const fontsPath = 'assets/fonts';
 const fontsBuiltPath = 'assets/built/fonts';
+const zipIncludeList = [
+  '*.hbs',
+  'assets/built/**/*',
+  'partials/**/*',
+  'package.json',
+  'CONTRIBUTIONS.md',
+  'LICENSE',
+  'README.md'
+]
 const zipIgnoreList =  [ 'node_modules/**',
         'todo.md',
         'package-lock.json',
@@ -87,7 +96,7 @@ async function build() {
 }
 
 async function zip() {
-  const packageJSON = JSON.parse(await readFile('./package.json')); //importing json still experimental up to node v24)
+  const packageJSON = JSON.parse(await readFile('./package.json')); 
   const name = packageJSON.name;
   if (!name) throw new Error(`can't read name from package.json`)
   
@@ -108,7 +117,11 @@ async function zip() {
 
     archive.pipe(output);
 
-    archive.glob('**/*', { ignore: zipIgnoreList });
+    //archive.glob('**/*', { include: zipIncludeList });
+    //archive.glob(zipIncludeList.join(','));
+    zipIncludeList.forEach((pattern) => {
+      archive.glob(pattern);
+    });
 
     console.log(`Creating ${filepath}`);
     archive.finalize();
