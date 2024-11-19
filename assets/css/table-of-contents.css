@@ -12,7 +12,7 @@
     bottom: 7px;
     left:25px;
     position: fixed;
-    z-index: 1000;
+    z-index: 999;
 }
 /* block out the bottom part of the screen when the mini-toc is showing */
 @media (max-width: 760px) {
