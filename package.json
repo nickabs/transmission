@@ -26,21 +26,18 @@
         "posts_per_page": 16,
         "image_sizes": {
             "xs": {
-                "width": 160
+                "width": 200
             },
             "s": {
-                "width": 320
+                "width": 400
             },
             "m": {
-                "width": 600
+                "width": 800
             },
             "l": {
-                "width": 960
+                "width": 1600
             },
             "xl": {
-                "width": 1200
-            },
-            "xxl": {
                 "width": 2000
             }
         },
