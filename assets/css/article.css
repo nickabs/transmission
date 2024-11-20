@@ -32,7 +32,7 @@
 
 
 /* drop cap on leading paragraph */
-.article-container > p:first-of-type {
+.article-container > p:first-of-type::first-line {
   font-size:2.5rem;
 }
 .article-container > p:first-of-type:first-letter {
