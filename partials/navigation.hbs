@@ -159,21 +159,6 @@
           </li>
           <li class="sidebar-link-item">
             {{#is "home"}}
-              <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{encode @site.url absolute='true'}}"
-                  class="sidebar-link-icon icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
-                  {{> "icons/twitter"}}
-                  <p class="sidebar-link-description">Twitter</p>
-              </a>
-            {{else}}
-              <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{encode url absolute='true'}}"
-                  class="sidebar-link-icon icon share-link" aria-label="share on twitter" target="_blank" rel="noopener">
-                  {{> "icons/twitter"}}
-                  <p class="sidebar-link-description">Twitter</p>
-              </a>
-            {{/is}}
-          </li>
-          <li class="sidebar-link-item">
-            {{#is "home"}}
               <a href="whatsapp://send?text={{encode @site.url absolute=" true"}}"
                   class="sidebar-link-icon icon share-link" aria-label="share on whatsapp" target="_blank" rel="noopener">
                   {{> "icons/whatsapp"}}
