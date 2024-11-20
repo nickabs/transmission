@@ -2,8 +2,12 @@
 /* table of contents               */
 /* ------------------------------- */
 
-/* positon table of contents icon bottom left for mobile views */
+/* hide the toc toggle button if there is no toc */
+.table-of-contents:has(.toc:empty){
+    display:none!important;
+}
 
+/* positon table of contents icon bottom left for mobile views */
 @media (max-width: 760px) {
     .table-of-contents { grid-area: unset};
 }
@@ -14,6 +18,7 @@
     position: fixed;
     z-index: 999;
 }
+
 /* block out the bottom part of the screen when the mini-toc is showing */
 @media (max-width: 760px) {
     .table-of-contents::before {
@@ -136,6 +141,19 @@
 }
 
 @media (min-width: 760px) {
+    .table-of-contents {
+        bottom: 25px;
+        left: 40px;
+        .toc-toggle svg {
+            height: 60px;
+            width: 60px;
+        }
+        .toc-toggle:before {
+            height: 67px;
+            width: 67px;
+        }
+    }
+
     .post-toc-full .table-of-contents {
         inset: auto;
         position: relative;
@@ -158,8 +176,4 @@
             margin-left: 10px;
         }
     }
-}
-/* hide the toc toggle button if there is no toc */
-.table-of-contents:has(.toc:empty){
-    display:none!important;
 }
