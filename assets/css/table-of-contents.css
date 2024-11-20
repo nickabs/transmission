@@ -70,12 +70,12 @@
     border: 0.25px solid var(--border-color);
     border-radius: 10px;
     height:auto;
-    font-weight:200;
+    font-weight: 200;
     font-size: 1.4rem;
     h1.toc-title {
         margin:0;
         padding:5px 10px;
-        font-weight:800;
+        font-weight: bold;
         font-size: 1.4rem;
         border-bottom: 1px solid var(--border-color); 
     }
@@ -86,7 +86,7 @@
 
 /* override tocbot color defaults */
 .toc .is-active-link {
-    font-weight:400;
+    font-weight: normal;
     letter-spacing: -0.55px;
 }
 .toc-link:before {

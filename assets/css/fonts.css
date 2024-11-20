@@ -5,7 +5,6 @@
 /* 800	Extra Bold 
 /* -------------------------------------------------- */
 
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -13,7 +12,6 @@
   src: local(""), url("../fonts/Poppins-ExtraLight.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -21,7 +19,6 @@
   src: local(""), url("../fonts/Poppins-Light.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -29,7 +26,6 @@
   src: local(""), url("../fonts/Poppins-Regular.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -37,7 +33,6 @@
   src: local(""), url("../fonts/Poppins-Bold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
@@ -45,7 +40,6 @@
   src: local(""), url("../fonts/Poppins-ExtraBold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: italic;
@@ -53,7 +47,6 @@
   src: local(""), url("../fonts/Poppins-ItalicExtraLight.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: italic;
@@ -61,7 +54,6 @@
   src: local(""), url("../fonts/Poppins-ItalicLight.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: italic;
@@ -69,7 +61,6 @@
   src: local(""), url("../fonts/Poppins-ItalicRegular.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: italic;
@@ -77,7 +68,6 @@
   src: local(""), url("../fonts/Poppins-ItalicBold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Poppins';
   font-style: italic;
@@ -85,7 +75,6 @@
   src: local(""), url("../fonts/Poppins-ItalicExtraBold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -93,7 +82,6 @@
   src: local(""), url("../fonts/Inter-ExtraLight.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -101,7 +89,6 @@
   src: local(""), url("../fonts/Inter-Light.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -109,15 +96,13 @@
   src: local(""), url("../fonts/Inter-Regular.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   src: local(""), url("../fonts/Inter-Bold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin */
+} 
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -125,7 +110,6 @@
   src: local(""), url("../fonts/Inter-ExtraBold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -133,7 +117,6 @@
   src: local(""), url("../fonts/Inter-ItalicExtraLight.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -141,7 +124,6 @@
   src: local(""), url("../fonts/Inter-ItalicLight.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -149,7 +131,6 @@
   src: local(""), url("../fonts/Inter-ItalicRegular.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: italic;
@@ -157,7 +138,6 @@
   src: local(""), url("../fonts/Inter-ItalicBold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* latin */
 @font-face {
   font-family: 'Inter';
   font-style: italic;

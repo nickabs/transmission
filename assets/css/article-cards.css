@@ -258,7 +258,7 @@
 /* ------------------------------ */
 .article-card-title {
     color: var(--title-color); 
-    font-weight: 600;
+    font-weight: bold;
 }
 .main-article .article-card-title {
     text-transform: uppercase;
@@ -318,7 +318,7 @@
     cursor: pointer;
     display: inline-flex;
     font-size: 1.1rem;
-    font-weight: 800;
+    font-weight: bold;
     letter-spacing: .05rem;
     outline: none;
     text-transform: uppercase;
@@ -377,7 +377,7 @@
 .previous-articles-title {
     border-bottom: 1px solid var(--border-color);
     font-size: 1.2rem;
-    font-weight: 550;
+    font-weight: bold;
     letter-spacing: .025em;
     padding-top: var(--section-gap);
 }
