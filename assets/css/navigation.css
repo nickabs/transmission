@@ -57,7 +57,7 @@
   padding:6px 12px 6px 12px;
   border-bottom: 0.25px solid var(--border-color);
   color: var(--banner-title-color);
-  font-weight: bold;
+  font-weight:800;
 }
 
 /* toggle menus */
@@ -75,6 +75,7 @@
 }
 .submenu-links-container.submenu-links-active {
   visibility: visible;
+  z-index: 999;
   display: flex;
 }
 
@@ -260,8 +261,12 @@
 }
 .internal-tags .sidebar-link-description {
     display: none;
+
 }
 
+.sidebar-link-description {
+  font-size: var(--content-font-size);
+}
 /* show the descriptions below the icon on hover */
 .site:not(.sidebar-left):not(.sidebar-right) .internal-tags {
   .sidebar-link-item:hover {
