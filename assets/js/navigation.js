@@ -152,8 +152,8 @@ export function mainNavMenuToggle() {
 }
 
 /*
- * open/close nav link item menus when sidebar items are clicked 
- * note the user decides whether to include internal tags or secondary links on the sidebar
+ * set up the sidebar (user configured, based on use of internal tags and secondary navigation.  
+* The user can elect to not show the sidebar using a custom option
 */
 export function sidebarSetup() {
     const fillColor = getComputedStyle(document.documentElement).getPropertyValue('--icon-color').trim();
@@ -166,6 +166,8 @@ export function sidebarSetup() {
         sidebar: document.querySelector('.sidebar')
     };
 
+    // when shown on the left or right clicking the open/close icon expands/hides the icon descriptions
+    // when shown at the top of the screen, clicking the 'share' or 'secondary' headers opens a submenu
     function toggle(container) {
         container.classList.toggle('display-item-details');
     }

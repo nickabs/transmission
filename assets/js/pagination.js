@@ -1,5 +1,6 @@
 export function pagination(isInfinite, callback) {
     var buttonElement = document.querySelector('.pagination');
+    if (! buttonElement) return;
 
     // next link element
     var nextElement = document.querySelector('link[rel=next]');
