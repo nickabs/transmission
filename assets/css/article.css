@@ -76,7 +76,7 @@ figcaption {
 .article-card figcaption {
   display: none;
 }
-.article li + li {
+.todoarticle li + li {
     margin-top: 0.8rem;
 }
 .article a span,

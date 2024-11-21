@@ -1,0 +1,54 @@
+.recommendations-container {
+    width:100%;
+}
+.recommendations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items:center;
+    justify-self: center;
+    row-gap: 15px;
+    column-gap:7px;
+    padding-left: var(--site-edge-padding);
+    padding-right: var(--site-edge-padding);
+    list-style: none;
+}
+
+.recommendation a {
+    display: grid;
+    grid-template-areas:
+        "RecommendationFavicon RecommendationTitle"
+        "RecommendationDescription RecommendationDescription";
+        grid-auto-rows: min-content;
+        align-content: start;
+}
+.recommendation-url { display: none; }
+.recommendation-favicon { grid-area: RecommendationFavicon; }
+.recommendation-title { grid-area: RecommendationTitle; }
+.recommendation-description { grid-area: RecommendationDescription; }
+
+.recommendation a {
+    color: var(--text-color);
+    width:fit-content;
+    grid-template-columns: 30px auto;
+    padding: 15px;
+    margin: 0;
+    width: 300px;
+    row-gap: 10px;
+    border:1px solid var(--ghost-accent-color);
+    border-radius: 15px;
+    height:100%;
+}
+.recommendation-favicon {
+    width: 24px;
+}
+.recommendation-title {
+    font-size: 1.8rem;
+}
+.recommendation-description {
+    font-size: 1.4rem;
+}
+@media ( min-width: 480px ) {
+    .recommendations {
+        width: 85%;
+    }
+}

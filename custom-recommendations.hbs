@@ -1,0 +1,37 @@
+{{!< default}}
+
+{{^match @custom.post_table_of_contents "None"}}
+    {{> "asides" aside-type="toc"}}
+{{/match}}
+
+{{^match @custom.sidebar "None"}}
+    {{> "asides" aside-type="sidebar"}}
+{{/match}}
+
+{{#is "page"}}
+  {{#page}}
+    {{> "hero-header"}}
+    <main class="article">
+        <div class="article-container" >
+            {{content}}
+        </div>
+        <aside class="recommendations-container">
+          {{recommendations}}
+        </aside>
+    </main>
+  {{/page}}
+{{/is}}
+
+{{#is "post"}}
+  {{#post}}
+    {{> "hero-header"}}
+    <main class="article">
+        <div class="article-container" >
+            {{content}}
+        </div>
+        <aside class="recommendations-container">
+          {{recommendations}}
+        </aside>
+    </main>
+    {{/post}}
+{{/is}}
