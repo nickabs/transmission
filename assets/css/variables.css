@@ -76,6 +76,7 @@ html[data-color-scheme='light'] {
     --text-color: #333;
     --secondary-text-color: #5a5a5a;
     --border-color: #d1d2db;
+    --demo-border-color: rgb(60, 247, 60);
     --secondary-border-color: black;
     --box-shadow: 0 7px 7px rgba(0,0,0,.08);
     --box-shadow-hover: 0 4px 60px 0 rgba(0,0,0,.2);
@@ -114,6 +115,7 @@ html[data-color-scheme='dark'] {
     --text-color: rgb(240, 246, 252);
     --secondary-text-color:  #8b949e;
     --border-color: #323030;
+    --demo-border-color: rgb(60, 247, 60);
     --secondary-border-color: white;
     --box-shadow: 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966;
     --box-shadow-hover: 0px 3px 60px -3px #01040966, 0px 6px 18px 0px #01040966;

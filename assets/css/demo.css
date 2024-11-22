@@ -12,7 +12,7 @@
         z-index: 2000;
         background-color: var(--secondary-background-color);
         border-radius: 10px;
-        border:1px solid var(--ghost-accent-color);
+        border:1px solid var(--demo-border-color);
         font-size:1.4rem;
 
         display:flex;
@@ -21,8 +21,10 @@
         padding:7px 0;
 
         hr {
-            border-color: var(--ghost-accent-color);
+            border: none;
+            border-top: 1px solid  var(--demo-border-color);
         }
+
         .download-button-description {
             text-align: center;
         }
