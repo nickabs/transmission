@@ -14,7 +14,7 @@
 
 /* margin for headings*/
 .article-container > [id]:not(:first-child) {
-  margin-top: 56px;
+  margin-top: var(--heading-gap);
 }
 .article-container > :first-child{
   margin-top:15px;
@@ -132,22 +132,12 @@ figcaption {
 /* ----------------- */
 /* code highlighting */
 /* ----------------- */
-/* enable scrolling */
-/*
-pre, code {
-  overflow-x: auto;
-  white-space: pre; 
-  max-width: 100%;  
-}
-.article-container {
-  overflow-x: auto;
-  max-width: 100%;
-}
-  */
-
 /* make output lines in code blocks not selectable */
 .command-line span.token.output {
 	user-select: none;
+}
+pre[class*=language-] {
+  margin-top: var(--section-gap);
 }
 
 /* inline code */
