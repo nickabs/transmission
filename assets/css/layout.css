@@ -3,6 +3,7 @@
 /* 1. home-page mobile view                                         */
 /* 2. post/page mobile view                                         */
 /* 3. tag and author collection - all screen sizes view             */
+/* 4. z-index                                                       */
 /* ---------------------------------------------------------------- */
 
 /* 
@@ -264,4 +265,20 @@
             "SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SidebarFooter";
     }
+}
+
+/*---------------------------*/
+/* 4. z-index settings       */
+/*---------------------------*/
+.demo-options {
+    z-index: 3;
+}
+.site-header {
+    z-index: 2;
+}
+.table-of-contents,
+.sidebar,
+.hero-header > :not(.hero-image),
+.enrol > :not(.enrol-background) {
+    z-index: 1;
 }

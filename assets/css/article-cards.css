@@ -342,7 +342,6 @@
     align-self: end;
     justify-self: left;
     margin: 0  0 10px 10px;
-    z-index: 500;
 }
 .article-card .author-profile-image {
     margin: 0 -7px 0 0;

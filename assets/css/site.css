@@ -137,7 +137,6 @@ li:not(.article li) {
   }
 }
 .fixed-navigation-bar .site-header {
-  z-index: 1000;
   position: sticky;
   top:0;
   

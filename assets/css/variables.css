@@ -24,7 +24,7 @@
     --main-nav-height: 55px; 
     --announcement-bar-height:55px;
     --site-header-height: var(--main-nav-height);
-    --section-gap: 14px;
+    --section-gap: 16px;
     --heading-gap: 46px;
     --max-content-width: 720px;
     --max-container-width: 1300px; 

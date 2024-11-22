@@ -16,7 +16,6 @@
     bottom: 7px;
     left:25px;
     position: fixed;
-    z-index: 999;
 }
 
 /* block out the bottom part of the screen when the mini-toc is showing */
@@ -29,11 +28,9 @@
         bottom: -33px;
         left: -24px;
         position: relative;
-        z-index: 999;
     }
 }
 .toc-container {
-    z-index: 5;
     bottom: 40px;
     left: var(--site-edge-padding);
     position: fixed;
@@ -45,7 +42,6 @@
     left: calc(var(--site-edge-padding)+3px);
     bottom: 22px;
     transform: translateX(-50%) translateY(50%);
-    z-index: 1000;
 }
 
 .toc-toggle svg {

@@ -22,7 +22,6 @@
     align-self: end;
     min-width: 280px;
     min-height: 280px;
-    z-index: 1;
     &.newsletter, 
     &.subscription {
         padding-top:35px;

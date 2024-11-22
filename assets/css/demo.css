@@ -9,7 +9,6 @@
 [data-demo-site="true"] {
     /* options picker can be open or closed - open settings here */
     .site .demo-options { 
-        z-index: 2000;
         background-color: var(--secondary-background-color);
         border-radius: 10px;
         border:1px solid var(--demo-border-color);

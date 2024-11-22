@@ -41,7 +41,6 @@
 }
 .hero-title,
 .hero-description {
-    z-index: 3;
     font-family: var(--secondary-font-sans);
 }
 .home-template {
@@ -64,7 +63,6 @@ h1.hero-title {
 .hero-description {
     font-size: clamp(1rem, calc(1vw + 1.65vh), 3rem);
     color: var(--banner-description-color);
-    z-index: 2;
 }
 /* ------------------- */
 /* 2. plain hero style */
