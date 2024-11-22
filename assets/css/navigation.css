@@ -14,10 +14,12 @@
 }
 /* default display for mobile devices (hamburger nav) */
 .menu-links-container {
+  z-index: 1000;
   display: grid;
   grid-template-areas:
     "MenuLinksHeader" 
     "MenuLinks";
+  font-size: var(--small-font-size);
 }
 .submenu-links-container {
   display: grid;
@@ -220,6 +222,10 @@
     text-align: center; 
     font-size: 1rem;
 }
+.sidebar-header-description,
+.sidebar-link-description {
+  font-size: var(--small-font-size);
+}
 
 .sidebar-nav {
     display: flex;
@@ -262,10 +268,6 @@
 .internal-tags .sidebar-link-description {
     display: none;
 
-}
-
-.sidebar-link-description {
-  font-size: var(--content-font-size);
 }
 /* show the descriptions below the icon on hover */
 .site:not(.sidebar-left):not(.sidebar-right) .internal-tags {

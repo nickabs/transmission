@@ -317,7 +317,7 @@
     border-radius: 22px;
     cursor: pointer;
     display: inline-flex;
-    font-size: 1.1rem;
+    font-size: var(--small-font-size);
     font-weight: bold;
     letter-spacing: .05rem;
     outline: none;
