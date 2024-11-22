@@ -279,6 +279,7 @@
 .table-of-contents,
 .sidebar,
 .hero-header > :not(.hero-image),
-.enrol > :not(.enrol-background) {
+.enrol > :not(.enrol-background),
+.author-profile-images {
     z-index: 1;
 }
