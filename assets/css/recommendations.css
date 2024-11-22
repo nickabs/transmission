@@ -38,6 +38,13 @@
     border-radius: 15px;
     height:100%;
 }
+
+.recommendation a:hover {
+    text-decoration: none;
+    translate: 0 -10px;
+    box-shadow: var(--box-shadow-hover);
+    transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
+}
 .recommendation-favicon {
     width: 24px;
 }
