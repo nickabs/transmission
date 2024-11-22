@@ -255,6 +255,19 @@ li:not(.article li) {
 /* 6. Ghost cards and CTAs                */
 /* -------------------------------------- */
 .site {
+  .kg-signup-card-form,
+  .kg-signup-card-text {
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .kg-signup-fields {
+    align-items: center;
+  }
+  .kg-signup-card-button {
+    margin-right: 7px;
+    border-radius: 8px;
+  }
   .kg-embed-card iframe {
     aspect-ratio: 16 / 9;
     width: 100%;
