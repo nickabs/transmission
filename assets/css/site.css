@@ -144,20 +144,23 @@ li:not(.article li) {
 .signin, .signup, .account {
   font-size: var(--small-font-size);
   letter-spacing: -0.018rem;
-  font-weight: bold;
-  text-align: center;
   text-wrap: nowrap;
 }
+.signup,
 .signin {
-  font-weight: normal;
   width: fit-content;
-  padding-right: 3px;
+  height: 22px;
+  display:flex;
+  line-height: 20px;
+  align-items:center;
+  padding-right: 4px;
 }
-.signup {
-  width: fit-content;
-  height: 20px;
+.signup{
   border-radius: 6px;
   border: 1px solid var(--border-color);
+  padding-left:3px;
+  margin-left: 4px;
+  font-weight: bold;
 }
 /* dark/light mode icons */
 .dark-mode.icon,

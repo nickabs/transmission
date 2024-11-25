@@ -223,6 +223,7 @@
 .sidebar-header-description,
 .sidebar-link-description {
   font-size: var(--small-font-size);
+  padding-left: 3px;
 }
 
 .sidebar-nav {
