@@ -53,8 +53,8 @@
     {{#match banner-type "!=" "newsletter"}} 
         <div class="enrol-subscribe">
             {{!-- ideally this text should be specified as a custom option --}}
-            <p class="enrol-subscribe-text">Unlock exclusive content by signing-up for a subscription</p>
-            <a class="enrol-subscribe-button button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+            <p class="enrol-subscribe-text">{{t "Unlock access to all newsletters by becoming a paid subscriber."}}</p>
+            <a class="enrol-subscribe-button button" href="#/portal/signup" data-portal="signup">{{t "Subscribe"}}</a>
         </div>
     {{/match}}
 
@@ -69,9 +69,9 @@
             {{> "icons/envelope"}}
         </div>
 
-        <h2 class="enrol-dialog-title">Now check your email!</h2>
-        <p class="enrol-dialog-text">To complete signup, click the confirmation link in your inbox.  If it doesn't arrive within 3 minutes, check your spam folder!</p>  
-        <button class="enrol-dialog-button button">Close</button>
+        <h2 class="enrol-dialog-title">{{t "Now check your email!"}}</h2>
+        <p class="enrol-dialog-text">{{t "To complete signup, click the confirmation link in your inbox. If it doesn't arrive within 3 minutes, check your spam folder!"}}</p>
+        <button class="enrol-dialog-button button">{{t "Close"}}</button>
     </dialog>
 
 </aside>

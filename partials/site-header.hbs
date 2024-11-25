@@ -15,12 +15,12 @@
             {{#if @site.members_enabled}}
                 {{#unless @member}}
                     {{#unless @site.members_invite_only}}
-                        <a href="#/portal/signin" class="signin">Sign in</a>
+                        <a href="#/portal/signin" class="signin">{{t "Sign in"}}</a>
                         {{!-- only shows if one of the subscribe options is selected --}}
                         {{#match @custom.enrol_members_banner_type "!=" "None" }}
                         {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page only" }}
                         {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page & posts" }}
-                            <a class="signup" aria-label="sign up" href="#/portal/signup">Sign up</a>
+                            <a class="signup" aria-label="sign up" href="#/portal/signup">{{t "Sign up"}}</a>
                         {{/match}}
                         {{/match}}
                         {{/match}}

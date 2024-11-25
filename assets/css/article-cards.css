@@ -375,7 +375,7 @@
 .featured-articles-title,
 .previous-articles-title {
     border-bottom: 1px solid var(--border-color);
-    font-size: 1.2rem;
+    font-size: 3rem;
     font-weight: bold;
     letter-spacing: .025em;
     padding-top: var(--section-gap);

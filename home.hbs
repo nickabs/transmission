@@ -11,7 +11,7 @@
 </main>
 
 <aside class="featured-articles">
-    <h1 class="featured-articles-title" >FEATURED</h1>
+    <h1 class="featured-articles-title" >{{t "Featured"}}</h1>
     {{#get "posts" filter="featured:true" include="authors,tags,tiers" limit=6 as |featured|}}
         {{#foreach featured}}
             {{> "article-card" image_size="xs" }}
@@ -22,7 +22,7 @@
 
 {{#match posts.length ">" 1}}
     <aside class="latest-articles">
-        <h1 class="latest-articles-title" >LATEST</h1>
+        <h1 class="latest-articles-title" >{{t "Latest Posts"}}</h1>
         {{#foreach posts from=2 limit=6}}
             {{> "article-card" image_size="s" }}
         {{/foreach}}
@@ -31,7 +31,7 @@
 
 {{#match posts.length ">" 7}}
     <aside class="recent-articles">
-        <h1 class="recent-articles-title" >RECENT</h1>
+        <h1 class="recent-articles-title" >{{t "Recent articles"}}</h1>
         {{#foreach posts from=8 limit=4}}
             {{> "article-card" image_size="s" }}
         {{/foreach}}
@@ -40,7 +40,7 @@
 
 {{#match posts.length ">" 11}}
     <aside class="previous-articles paginated">
-        <h1 class="previous-articles-title" >YOU MIGHT ALSO LIKE</h1>
+        <h1 class="previous-articles-title">{{t "More like this"}}</h1>
         {{#get "posts" include="authors,tags,tiers" }}
             {{#foreach posts from=12 }}
                 {{> "article-card" image_size="s"}}

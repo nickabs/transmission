@@ -150,10 +150,11 @@ li:not(.article li) {
 }
 .signin {
   font-weight: normal;
-  width: 44px;
+  width: fit-content;
+  padding-right: 3px;
 }
 .signup {
-  width: 57px;
+  width: fit-content;
   height: 20px;
   border-radius: 6px;
   border: 1px solid var(--border-color);
