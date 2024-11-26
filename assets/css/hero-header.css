@@ -11,6 +11,12 @@
 .hero-header {
     margin-bottom: 60px;
 }
+.author-template .hero-header {
+    .author-profile-image {
+        align-self: center;
+        margin:0;
+    }
+}
 .hero-author-list {
     display: flex;
     align-items: center;

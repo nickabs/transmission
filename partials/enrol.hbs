@@ -30,7 +30,7 @@
     {{!-- newsletter section --}}
     {{#match banner-type "!=" "subscribe"}} 
         <form class="enrol-newsletter" data-members-form>
-            <input name="enrol-form" class="enrol-newsletter-input" type="email" placeholder="Enter your email address" required data-members-email>
+            <input name="enrol-form" class="enrol-newsletter-input" type="email" placeholder='{{t "Enter your email address"}}' required data-members-email>
             <button class="enrol-newsletter-button" type="submit" aria-label="newsletter enrollment">
                 <span class="submit-icon icon" >
                     {{> "icons/submit"}}
