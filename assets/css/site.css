@@ -29,7 +29,7 @@ body {
     margin:0;
     padding:0;
 }
-h1, h2, h3 {
+button, h1, h2, h3 {
   font-family: var(--secondary-font-sans);
   font-weight: bold;
 }
