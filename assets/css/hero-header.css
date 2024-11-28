@@ -45,10 +45,6 @@
         display: none;
     }
 }
-.hero-title,
-.hero-description {
-    font-family: var(--secondary-font-sans);
-}
 .home-template {
     .hero-title,
     .hero-description {

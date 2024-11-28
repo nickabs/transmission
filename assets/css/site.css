@@ -20,7 +20,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-family: var(--font-sans);
+    font-family: var(--gh-font-body, var(--font-sans));
     font-size: var(--content-font-size);
     letter-spacing: -0.018em;
     line-height: 1.5;
@@ -29,8 +29,12 @@ body {
     margin:0;
     padding:0;
 }
-button, h1, h2, h3 {
-  font-family: var(--secondary-font-sans);
+
+button, .hero-description {
+  font-family: var(--gh-font-heading, var(--secondary-font-sans));
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--gh-font-heading, var(--secondary-font-sans));
   font-weight: bold;
 }
 img {
