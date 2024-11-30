@@ -1,0 +1,46 @@
+/* --------- */
+/* tags page */
+/* --------- */
+
+.tags-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 30px;
+    justify-content: center; 
+    .tag-card-link {
+        display: grid;
+        grid-template-areas: 
+        "TagCardLink";
+        height: 270px;
+        width: 270px;
+        align-items: center;
+        justify-items: center;
+    }
+    .tag-card-link:hover {
+        text-decoration: none;
+        translate: 0 -10px;
+        box-shadow: var(--box-shadow-hover);
+        transition: opacity 1s cubic-bezier(.19,1,.22,1), translate 0.3s;
+    }
+
+    .tag-card-count {
+        display:none;
+    }
+    .tag-card-name,
+    .tag-card-image {
+        grid-area: TagCardLink;
+    }
+    .tag-card-name {
+        color: white;
+        font-size: 2.8rem;
+    }
+
+    .tag-card-image {
+        height:100%;
+        aspect-ratio: 1/1;
+        border-radius: 15px;
+    }
+    
+}
