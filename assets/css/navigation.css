@@ -239,8 +239,8 @@
 }
 .sidebar-nav { /*left right sidebars by default at top of small screens */
   flex-direction: row;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 23px;
+  padding-top: 17px;
 }
 .site:is(.sidebar-left,.sidebar-right,.sidebar-top) {
   .hero-header {
@@ -274,7 +274,7 @@
       .sidebar-link-description {
           display:inline-flex;
           position: absolute;
-          bottom: -30px;
+          bottom: -23px;
           left: 50%;
           transform: translateX(-50%); 
           white-space: nowrap;

@@ -1,0 +1,35 @@
+{{!< default}}
+
+{{^match @custom.post_table_of_contents "None"}}
+    {{> "asides" aside-type="toc"}}
+{{/match}}
+
+{{^match @custom.sidebar "None"}}
+    {{> "asides" aside-type="sidebar"}}
+{{/match}}
+
+{{#is "page"}}
+  {{#page}}
+    {{> "hero-header"}}
+    <main class="article">
+        <div class="article-container" >
+            {{content}}
+        </div>
+        <aside class="tags-container">
+            {{#get 'tags' limit='all' include='count.posts'}}
+            {{#foreach tags}}
+                <a href="{{url}}" class="tag-card-link" aria-label="{{name}}">
+                    {{#if feature_image}}
+                    <img class="tag-card-image" src="{{img_url feature_image size="s"}}" alt="{{name}}">
+                    {{/if}}
+                    <p class="tag-card-name">{{name}}</p>
+                    <span class="tag-card-count">
+                    {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                    </span>
+                </a>
+            {{/foreach}}
+            {{/get}}
+        </aside>
+    </main>
+  {{/page}}
+{{/is}}
