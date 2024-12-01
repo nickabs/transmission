@@ -17,10 +17,11 @@
 @import "navigation.css";
 @import "table-of-contents.css";
 @import "hero-header.css";
-@import "author.css";
+@import "author-card.css";
 @import "enrol.css";
 @import "comments.css";
 @import "one-time-payment.css";
 @import "recommendations.css";
 @import "demo.css";
-@import "tags.css";
+@import "tags-collection.css";
+@import "authors-collection.css";

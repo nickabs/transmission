@@ -1,0 +1,78 @@
+/* ----------------------------------------------------------- */
+/* author cards used on the author collection and author pages */
+/* ----------------------------------------------------------- */
+.author-card {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid var(--ghost-accent-color);
+    background-color: var(--banner-background-color);
+    border-radius: 15px;
+    max-width: min(700px,90vw);
+}
+.author-card a {
+    color: currentColor;
+}
+.author-card a:hover {
+    text-decoration: none;
+}
+
+.author-card-name {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.author-card-profile-image {
+    img, svg {
+        border-radius: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+    }
+}
+.author-card-links {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.author-card-link {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    gap:3px;
+    a, svg {
+        color: var(--banner-description-color);
+    }
+}
+@media (min-width: 480px) {
+    .author-card:has(.author-card-profile-image) {
+        display: grid;
+        grid-template-areas: 
+            "AuthorProfileImage AuthorName"
+            "AuthorProfileImage AuthorBio"
+            "AuthorLinks AuthorLinks";
+
+        grid-template-columns: 200px 1fr;
+        .author-card-bio { grid-area: AuthorBio;}
+        .author-card-name { grid-area: AuthorName;}
+        .author-card-links { grid-area: AuthorLinks;}
+        .author-card-profile-image { grid-area: AuthorProfileImage;}
+        justify-content: start;
+
+        .author-card-profile-image {
+            align-self: center;
+        }
+        .author-card-name {
+            align-self: end;
+        }
+        .author-card-bio {
+            align-self: start;
+            text-align: left;
+        }
+    }
+}

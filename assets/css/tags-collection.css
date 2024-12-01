@@ -2,7 +2,7 @@
 /* tags page */
 /* --------- */
 
-.tags-container {
+.tags-collection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

@@ -1,0 +1,37 @@
+<div class="author-card">
+        {{#if profile_image}}
+            <a class="author-card-profile-image" href="{{url}}">
+             <img src="{{img_url profile_image size="xs"}}" width="200" height="200" alt="{{name}}">
+        {{/if}}
+    </a>
+    <a class="author-card-name" href="{{url}}">{{name}}</a>
+    {{#if bio}}
+        <a class="author-card-bio" href="{{url}}">{{bio}}</a>
+    {{/if}}
+    <div class="author-card-links" >
+        {{#if location}}
+        <div class="author-card-link" >
+            <div class="icon location"> {{> "icons/location"}} </div>
+            <div class="author-card-location" >{{location}} </div>
+        </div>
+        {{/if}}
+        {{#if website}}
+        <div class="author-card-link" >
+            <div class="icon website"> {{> "icons/website"}} </div>
+            <a class="author-card-website-url" href="{{website}}" target="_blank" rel="noopener">{{website}} </a>
+        </div>
+        {{/if}}
+        {{#if facebook}}
+        <div class="author-card-link">
+            <div class="icon facebook"> {{> "icons/facebook"}} </div>
+            <a class="author-card-facebook-url" href="{{facebook_url}}" target="_blank" rel="noopener">{{facebook}} </a>
+        </div>
+        {{/if}}
+        {{#if twitter}}
+        <div class="author-card-link">
+            <div class="icon twitter"> {{> "icons/twitter"}} </div>
+            <a class="author-twitter-url" href="{{twitter_url}}" target="_blank" rel="noopener">{{twitter}} </a>
+        </div>
+        {{/if}}
+    </div>
+</div>

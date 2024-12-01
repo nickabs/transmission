@@ -280,6 +280,6 @@
 .sidebar,
 .hero-header > :not(.hero-image),
 .enrol > :not(.enrol-background),
-.author-profile-images {
+.article-card-author-profile-images {
     z-index: 1;
 }

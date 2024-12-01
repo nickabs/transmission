@@ -1,0 +1,27 @@
+{{!< default}}
+
+{{^match @custom.post_table_of_contents "None"}}
+    {{> "asides" aside-type="toc"}}
+{{/match}}
+
+{{^match @custom.sidebar "None"}}
+    {{> "asides" aside-type="sidebar"}}
+{{/match}}
+
+{{#is "page"}}
+  {{#page}}
+    {{> "hero-header"}}
+    <main class="article">
+        <div class="article-container" >
+            {{content}}
+        </div>
+        <aside class="authors-collection">
+            {{#get 'authors' limit='all' include='count.posts'}}
+            {{#foreach authors}}
+                {{> "author-card"}}
+            {{/foreach}}
+            {{/get}}
+        </aside>
+    </main>
+  {{/page}}
+{{/is}}

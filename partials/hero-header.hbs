@@ -37,7 +37,7 @@
         {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
         <ul class="hero-author-list">
             {{#foreach authors}}
-                <li class="author-profile-image">
+                <li class="article-card-author-profile-image">
                     {{#if profile_image}}
                         <a href="{{url}}">
                             <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
@@ -50,7 +50,7 @@
                 </li>
             {{/foreach}}
             {{#foreach authors}}
-                <li class="author-name">
+                <li class="article-card-author-name">
                     {{#if @first}}
                         <a href="{{url}}">{{name}}</a>
                     {{else}}
@@ -66,44 +66,10 @@
     {{/is}}
 
     {{#is "author"}}
-        <div class="author-title">
-            {{#if profile_image}}
-                <div class="author-profile-image" >
-                    <img src="{{img_url profile_image size="xs"}}" width="200" height="200" alt="{{name}}">
-                </div>
-            {{/if}}
-            <h1 class="author-name">
-                {{name}}
-            </h1>
-        </div>
-        {{#if bio}}
-            <p class="author-bio">{{bio}}</p>
+        {{#if cover_image}}
+            <img class="hero-image" src="{{img_url cover_image size="m"}}" alt="{{name}}">
         {{/if}}
-        <div class="author-links" >
-            {{#if location}}
-            <div class="author-location" >
-                <div class="icon location"> {{> "icons/location"}} </div>
-                <div class="author-location" >{{location}} </div>
-            </div>
-            {{/if}}
-            {{#if website}}
-            <div class="author-website" >
-                <div class="icon website"> {{> "icons/website"}} </div>
-                <a class="author-website-url" href="{{website}}" target="_blank" rel="noopener">{{website}} </a>
-            </div>
-            {{/if}}
-            {{#if facebook}}
-            <div class="author-facebook">
-                <div class="icon facebook"> {{> "icons/facebook"}} </div>
-                <a class="author-facebook-url" href="{{facebook_url}}" target="_blank" rel="noopener">{{facebook}} </a>
-            </div>
-            {{/if}}
-            {{#if twitter}}
-            <div class="author-twitter">
-                <div class="icon twitter"> {{> "icons/twitter"}} </div>
-                <a class="author-twitter-url" href="{{twitter_url}}" target="_blank" rel="noopener">{{twitter}} </a>
-            </div>
-            {{/if}}
-        </div>
+        {{> "author-card" }}
+       
     {{/is}}
 </aside>
