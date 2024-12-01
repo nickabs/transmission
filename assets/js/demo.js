@@ -30,7 +30,7 @@ export function demoOptionsPicker() {
             footerOption: [ 'footer-style-all', 'footer-style-copyright-privacy', 'footer-style-copyright', 'footer-style-privacy',
                 'footer-style-ghost-theme', 'footer-style-ghost', 'footer-style-none' ],
             enrolOption: ['newsletter','subscribe','newsletter-subscribe','enrol-none'],
-            authorOption: ['show-article-card-author-names', 'show-author-images', 'show-article-card-author-names-and-images', 
+            authorOption: ['show-author-names', 'show-author-images', 'show-author-names-and-images', 
                     'show-author-none']
         },
         homePage: {

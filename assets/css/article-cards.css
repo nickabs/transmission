@@ -119,7 +119,7 @@
 /*
  * custom options 
 */
-.site.show-article-card-author-names .article-card-author-profile-images {
+.site.show-author-names .article-card-author-profile-images {
     display: none;
 }
 .site.show-author-images .article-card-author-names {

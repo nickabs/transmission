@@ -33,7 +33,7 @@
 }
 
 /* custom options todo hero-header and article card should use the same compoonent for authors */
-.site.show-article-card-author-names .hero-header .article-card-author-profile-image {
+.site.show-author-names .hero-header .article-card-author-profile-image {
     display: none;
 }
 .site.show-author-images .hero-header .article-card-author-name {
