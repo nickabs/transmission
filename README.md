@@ -31,6 +31,8 @@ This theme is optimised for traditional blog sites, particularly sites with lots
 - modern Inter, Roboto and Menelo font families are installed with the theme
 - infinite pagination (will display a button to Load More posts)
 - configurable layouts: home page, post layout, headers and footers are all configurable
+- custom fonts
+- multiple languages supported
 
 
 # For developers
