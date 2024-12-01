@@ -164,15 +164,15 @@
     [data-demo-site="true"] {
         .demo-options.options-picker-closed{
             position:fixed;
-            top:110px;
-            left: 150px;
+            top: 65px;
+            left: 45px;
             bottom: auto;
         }
         .demo-options:not(.options-picker-closed) {
             bottom: auto;
-            left: 150px;
             position: fixed;
-            top: 110px;
+            top: 65px;
+            left: 45px;
         }
     }
 }
