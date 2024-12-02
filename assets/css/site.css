@@ -22,7 +22,6 @@ html {
 body {
     font-family: var(--gh-font-body, var(--font-sans));
     font-size: var(--content-font-size);
-    letter-spacing: -0.018em;
     line-height: 1.5;
     color: var(--text-color);
     background-color: var(--background-color);

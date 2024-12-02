@@ -29,7 +29,6 @@
 }
 .article-container > * + * {
   margin-top:var(--section-gap);
-  letter-spacing: -0.01em;
 }
 
 
