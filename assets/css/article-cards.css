@@ -335,9 +335,7 @@
 .article-card-author-names {
     display: flex;
     list-style: none;
-    * {
-        width:auto
-    }
+    width: fit-content;
 }
 .article-card-author-profile-images { 
     align-self: end;
