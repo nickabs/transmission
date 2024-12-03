@@ -217,6 +217,14 @@ li:not(.article li) {
   }
 }
 
+/* minimise the links display for small screens */
+@media (max-width: 480px) {
+  .footer-links >:not(.ghost-link) {
+    display:  none;
+  }
+}
+
+
 .site-footer {
     line-height: 2.1rem;
     font-weight: bold;
