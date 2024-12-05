@@ -6,7 +6,7 @@
     width: 100%;
     position: relative;
     border-top: 2px solid var(--secondary-border-color);
-    margin-top: var(--section-gap);
+    margin-top: 60px;
     padding-top: var(--section-gap);
 }
 /*
