@@ -27,16 +27,16 @@
     {{/is}}
 
     {{#is "post"}}
+        {{#if tags}}
+            <p class="hero-tags">
+                <span>{{t "Tags"}}:</span>
+                {{ tags seperator=" |" }}
+            </p>
+        {{/if}}
         <h1 class="hero-title">{{title}}</h1>
             <time class="hero-date" datetime="{{date format="YYYY-MM-DD"}}">
                 {{date published_at}}
             </time>
-        {{#if tags}}
-            <p class="hero-tags">
-                {{t "Tags"}}<span>:</span>
-                {{ tags seperator=" |" }}
-            </p>
-        {{/if}}
         {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
         <ul class="hero-author-list">
             {{#foreach authors}}

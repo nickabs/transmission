@@ -11,6 +11,10 @@
 .hero-header {
     margin-bottom: 60px;
 }
+.hero-header > :not(.hero-image) {
+    padding-left: var(--edge-padding);
+    padding-right: var(--edge-padding);
+}
 .author-template .hero-header {
     .article-card-author-profile-image {
         align-self: center;
@@ -32,7 +36,6 @@
     }
 }
 
-/* custom options todo hero-header and article card should use the same compoonent for authors */
 .site.show-author-names .hero-header .article-card-author-profile-image {
     display: none;
 }
@@ -65,6 +68,15 @@ h1.hero-title {
 .hero-description {
     font-size: clamp(1rem, calc(1vw + 1.65vh), 3rem);
     color: var(--banner-description-color);
+}
+.hero-tags {
+    padding-top: 10px;
+    span {
+        display: none;
+    }
+    a {
+        color: var(--ghost-accent-color);
+    }
 }
 /* ------------------- */
 /* 2. plain hero style */
@@ -99,7 +111,7 @@ h1.hero-title {
 /* 3. color/grayscale hero style */
 /* ----------------------------- */
 .home-template .hero-header {
-    grid-template-rows: min-content min-content 0 0;
+    todogrid-template-rows: min-content min-content 0 0;
 }
 .hero-style-color-image,
 .hero-style-grayscale-image{
@@ -145,7 +157,6 @@ h1.hero-title {
     .hero-description,
     .hero-date,
     .hero-tags,
-    .hero-tags a,
     .article-card-author-name a {
         color: var(--banner-title-color);
         font-weight: bold;
@@ -164,5 +175,80 @@ h1.hero-title {
     .author-card > a {
         pointer-events: none;
         cursor: not-allowed;
+    }
+}
+
+.hero-style-mega {
+    .hero-header {
+        background-color: var(--banner-background-color);
+        gap: 10px;
+        border-bottom: 0.25px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 35px;
+        padding: 0 0 35px 0;
+        width: 100%;
+    }
+    .hero-image {
+        height: 50vw;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+@media (min-width: 760px) {
+    .hero-style-mega:has(.hero-image) {
+        .hero-header {
+            > :not(.hero-image) {
+                margin-left: var(--site-edge-padding);
+            }
+            .hero-title,
+            .hero-description {
+                padding-right: var(--edge-padding);
+            }
+            padding-bottom: 0;
+            display: grid;
+            justify-items: left;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "HeroTags HeroImage"
+                "HeroTitle HeroImage"
+                "HeroDescription HeroImage"
+                "HeroDate HeroImage"
+                "HeroCustomExcerpt HeroImage"
+                "HeroAuthorList HeroImage";
+            grid-template-rows: 1fr auto auto auto auto 1fr;
+            gap: 0;
+            .hero-image { grid-area: HeroImage; }
+            .hero-title { grid-area: HeroTitle; } 
+            .hero-description { grid-area: HeroDescription; } 
+            .hero-date { grid-area: HeroDate; } 
+            .hero-tags { grid-area: HeroTags; } 
+            .hero-custom-excerpt { grid-area: HeroCustomExcerpt; } 
+            .hero-author-list { grid-area: HeroAuthorList; } 
+        }
+        .hero-image{
+            max-height: 600px;
+        }
+        .hero-tags {
+            align-self:flex-end;
+            border-radius: 15px;
+        }
+        .hero-author-list {
+            padding-top: 10px;
+            align-self:flex-start;
+        }
+        .todohero-tags a {
+            width:fit-content;
+            padding-left: 5px;
+            padding-right: 5px;
+            color: inherit;
+        }
+        .hero-title,
+        .hero-custom-excerpt {
+            text-align: left;
+        }
     }
 }

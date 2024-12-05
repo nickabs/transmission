@@ -62,7 +62,8 @@
                 "options": [
                     "plain",
                     "color",
-                    "grayscale"
+                    "grayscale",
+                    "mega"
                 ],
                 "default": "plain",
                 "description": "Note the color/greyscale options use the site publication cover image as a background"

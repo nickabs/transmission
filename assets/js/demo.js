@@ -25,7 +25,7 @@ export function demoOptionsPicker() {
         siteWide: {
             navBarStyle: ['expanded-nav', 'minified-nav'],
             navBarOption: ['fixed-navigation-bar' , 'scrolling-navigation-bar'],
-            heroStyle: ['hero-style-plain', 'hero-style-color-image', 'hero-style-grayscale-image'],
+            heroStyle: ['hero-style-plain', 'hero-style-color-image', 'hero-style-grayscale-image', 'hero-style-mega'],
             sidebarOption: ['sidebar-top','sidebar-left', 'sidebar-right', 'sidebar-bottom' , 'sidebar-none'],
             footerOption: [ 'footer-style-all', 'footer-style-copyright-privacy', 'footer-style-copyright', 'footer-style-privacy',
                 'footer-style-ghost-theme', 'footer-style-ghost', 'footer-style-none' ],
