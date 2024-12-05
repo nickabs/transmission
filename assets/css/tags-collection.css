@@ -9,16 +9,18 @@
     width: 100%;
     gap: 30px;
     justify-content: center; 
+    padding: var(--edge-padding);
     .tag-card-link {
+        flex: 0 1 30%;
+        min-width: 350px;
         display: grid;
         grid-template-areas: 
         "TagCardLink";
-        height: 270px;
-        width: 270px;
         align-items: center;
         justify-items: center;
         border: 1px solid var(--ghost-accent-color);
         border-radius: 15px;
+        margin: 10px;
     }
     .tag-card-link:hover {
         text-decoration: none;
@@ -38,12 +40,16 @@
         color: white;
         font-weight: 900;
         font-size: 3.4rem;
+        text-align: center;
     }
 
     .tag-card-image {
-        height:100%;
-        aspect-ratio: 1/1;
         border-radius: 15px;
+        width: 100%;
+        object-fit: cover;
+        opacity: .7;
+        aspect-ratio: 1/1;
+        z-index:0;
     }
     
 }

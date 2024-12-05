@@ -276,6 +276,7 @@
 .site-header {
     z-index: 2;
 }
+.tag-card-name,
 .table-of-contents,
 .sidebar,
 .hero-header > :not(.hero-image),
