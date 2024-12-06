@@ -10,7 +10,7 @@
 /* ------------------ */
 .hero-header {
     margin-bottom: 60px;
-    padding-top: 15px;
+    min-height: 340px;
 }
 .hero-header > :not(.hero-image) {
     padding-left: var(--edge-padding);
@@ -85,7 +85,6 @@ h1.hero-title {
 .hero-style-plain {
     .hero-header {
         background-color: var(--banner-background-color);
-        min-height: 190px;
         gap: 7px;
         display: flex;
         flex-direction: column;
@@ -111,9 +110,6 @@ h1.hero-title {
 /* ----------------------------- */
 /* 3. color/grayscale hero style */
 /* ----------------------------- */
-.home-template .hero-header {
-    todogrid-template-rows: min-content min-content 0 0;
-}
 .hero-style-color-image,
 .hero-style-grayscale-image{
     .hero-header {
@@ -204,6 +200,7 @@ h1.hero-title {
         .hero-header {
             > :not(.hero-image) {
                 margin-left: var(--site-edge-padding);
+                padding-top: 15px;
             }
             .hero-title,
             .hero-description {
@@ -240,12 +237,6 @@ h1.hero-title {
         .hero-author-list {
             padding-top: 10px;
             align-self:flex-start;
-        }
-        .todohero-tags a {
-            width:fit-content;
-            padding-left: 5px;
-            padding-right: 5px;
-            color: inherit;
         }
         .hero-title,
         .hero-custom-excerpt {
