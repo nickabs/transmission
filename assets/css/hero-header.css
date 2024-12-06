@@ -10,6 +10,7 @@
 /* ------------------ */
 .hero-header {
     margin-bottom: 60px;
+    padding-top: 15px;
 }
 .hero-header > :not(.hero-image) {
     padding-left: var(--edge-padding);
