@@ -218,7 +218,7 @@ li:not(.article li) {
 }
 
 /* minimise the links display for small screens */
-@media (max-width: 480px) {
+@media (max-width: 760px) {
   .footer-links >:not(.ghost-link) {
     display:  none;
   }
