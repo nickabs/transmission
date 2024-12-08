@@ -323,6 +323,7 @@
     letter-spacing: .05rem;
     outline: none;
     text-transform: uppercase;
+    text-align: center;
     padding: 0 5px;
 }
 .article-card-restricted-access {

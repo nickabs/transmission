@@ -95,7 +95,7 @@
                     "Both - posts only"
                 ],
                 "default": "None",
-                "description": "Add a banner to invite newsletter membership subscription to the home page."
+                "description": "Add newsletter sign-up banner and/or a subscription request banner"
             },
             "enrol_members_banner_heading": {
                 "type": "text",
