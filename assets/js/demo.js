@@ -20,8 +20,9 @@ export function demoOptionsPicker() {
         return false;
     }
 
+    // the classes that drive the theme customisation are on the .site element
+    // this a list of eacho of the custom options and their possible class mappings
     const classAlternatives = {
-        // list of the custom options 
         siteWide: {
             navBarStyle: ['expanded-nav', 'minified-nav'],
             navBarOption: ['fixed-navigation-bar' , 'scrolling-navigation-bar'],
@@ -44,24 +45,67 @@ export function demoOptionsPicker() {
             oneTimePaymentRequest: ['show-payment-request', 'hide-payment-request']
         }
     };
-    
-    function updateSiteClass(property, className) {
-        const section = Object.values(classAlternatives).find(section => property in section);
-        if (!section) return false;
-    
-        const validClasses = section[property];
-        if (!validClasses.includes(className)) {
-            console.error(`Invalid class name: ${className} for property: ${property}`);
-            return false;
+
+   /* 
+    * look up the alternative classes based on the supplied class 
+    */ 
+    function findClassAlternatives(currentClass) {
+        for (let section in classAlternatives) {
+            for (let property in classAlternatives[section]) {
+                if (classAlternatives[section][property].includes(currentClass)) {
+                    return { section, property, values: classAlternatives[section][property] };
+                }
+            }
         }
-    
-        //remove the class option previously selected and add the new one
-        validClasses.forEach(cls => demoSite.classList.remove(cls));
-        demoSite.classList.add(className);
-        return true;
+        return null;
     }
 
+    /*
+     * read all the 'demo-*' local storage keys and set the corresponding class on the site
+     * this is called on every page refresh so that custom options selected by the user are persisted
+    */
+    function applyLocalStorageClasses() {
+        Object.keys(localStorage)
+            .filter(key => { return key.startsWith('demo-')})
+            .forEach(key => {
+                let className=key.replace(/^demo-/,'');
+                let classAlternatives = findClassAlternatives(className)?.values ?? [];
 
+                classAlternatives.forEach(alternative => demoSite.classList.remove(alternative));
+                demoSite.classList.add(className);
+            });
+    }
+
+    /*
+     * toggles the customs option class in the .site element based on the user's selection
+     * ... and records the setting in local storage so it is persisted after a page refresh
+    */
+    function updateSiteClass(customOption, className) {
+        // look up the section based on the supplied custom option and get the list of valid classnaqmes
+        const section = Object.values(classAlternatives).find(section => customOption in section);
+    
+        if (!section)  {
+            console.error(`${customOption} is not a vaild option for the ${section} section`);
+            return false;
+        }
+        const alternatives = section[customOption];
+        if (!alternatives) {
+            console.error(`${className} is not a valid class for the ${customOption} custom option`);
+            return false;
+        }
+        alternatives.forEach(alternativeClass => {
+            // remove any alternative already set on .site
+            demoSite.classList.remove(alternativeClass);
+            // remove any alternative already stored in local storage
+            let key=`demo-${alternativeClass}`;
+            console.log("debug removing key from ls ",key);
+            localStorage.removeItem(`demo-${alternativeClass}`);
+        });
+        demoSite.classList.add(className);
+        localStorage.setItem(`demo-${className}`,true);
+
+    }
+    
     function createDemoOptions() {
         const demoOptions = document.createElement('aside');
         demoOptions.classList.add('demo-options','options-picker-closed');
@@ -206,6 +250,10 @@ export function demoOptionsPicker() {
         return container;
     }
     
-    const demoOptions = createDemoOptions();
-    demoSite.appendChild(demoOptions);
+    // create the html for the demo options picker 
+    const demoOptionsElement = createDemoOptions();
+    demoSite.appendChild(demoOptionsElement);
+
+    // if the user has previously selected any options, reapply them:
+    applyLocalStorageClasses();
 }
