@@ -23,7 +23,8 @@
     align-items: stretch;
     gap: 20px;
     width: 100%;
-    border: 1px solid var(--ghost-accent-color);
+    outline: 1px solid var(--ghost-accent-color);
+    outline-offset: -10px;
     border-radius: 15px;
     margin-bottom: 50px;
     padding-bottom: 30px;
@@ -74,12 +75,12 @@
     font-weight: bold;
     letter-spacing: .025em;
     padding-top: var(--section-gap);
-    transform: translateY(-22px);
+    transform: translateY(-11px);
     background: var(--background-color);
     height:max-content;
     margin-right: auto;
     padding: 2px 12px;
-    border: 1px solid var(--ghost-accent-color);
+    outline: 1px solid var(--ghost-accent-color);
     border-radius: 15px;
     text-align: center;
 }
