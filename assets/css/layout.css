@@ -28,7 +28,6 @@
 .main-article { grid-area: MainArticle; }
 .latest-articles { grid-area: LatestArticles; }
 .recent-articles { grid-area: RecentArticles; }
-.previous-articles { grid-area: PreviousArticles; }
 .related-articles { grid-area:RelatedArticles}
 .site-footer { grid-area: SiteFooter; }
 .pagination { grid-area: Pagination; }
@@ -57,7 +56,6 @@
         "LatestArticles"
         "Enrol"
         "RecentArticles"
-        "PreviousArticles"
         "Pagination"
         "SidebarBottom"
         "SiteFooter";
@@ -75,13 +73,9 @@
                 "SidebarLeft LatestArticles SidebarRight"
                 "SidebarLeft Enrol SidebarRight"
                 "SidebarLeft RecentArticles SidebarRight"
-                "SidebarLeft PreviousArticles SidebarRight"
                 "SidebarLeft Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter Sitefooter";
-            &:is(.sidebar-top,.sidebar-bottom) {
-                grid-template-columns: 0 100% 0;
-            }
             .main-article {
                 justify-self: center;
             }
@@ -94,7 +88,6 @@
                 "SidebarLeft MainArticle LatestArticles SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
-                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
@@ -108,7 +101,6 @@
                 "SidebarLeft LatestArticles MainArticle SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
-                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
@@ -123,7 +115,6 @@
                 "SidebarLeft LatestArticles LatestArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
-                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
@@ -138,7 +129,6 @@
                 "SidebarLeft LatestArticles LatestArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
-                "SidebarLeft PreviousArticles PreviousArticles SidebarRight"
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";

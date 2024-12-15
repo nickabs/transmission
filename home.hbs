@@ -32,20 +32,9 @@
 {{#match posts.length ">" 7}}
     <aside class="recent-articles">
         <h1 class="recent-articles-title" >{{t "Recent articles"}}</h1>
-        {{#foreach posts from=8 limit=4}}
+        {{#foreach posts from=8 }}
             {{> "article-card" image_size="s" }}
         {{/foreach}}
-    </aside>
-{{/match}}
-
-{{#match posts.length ">" 11}}
-    <aside class="previous-articles paginated">
-        <h1 class="previous-articles-title">{{t "More like this"}}</h1>
-        {{#get "posts" include="authors,tags,tiers" }}
-            {{#foreach posts from=12 }}
-                {{> "article-card" image_size="s"}}
-            {{/foreach}}
-        {{/get}}
     </aside>
 {{/match}}
 
