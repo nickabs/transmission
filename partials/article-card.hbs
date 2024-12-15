@@ -53,25 +53,23 @@
             </li>
         {{/foreach}}
     </ul>
-    <div class="article-card-metadata" >
-        {{#if @custom.show_dates_on_article_cards}}
-            <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM-YYYY"}}</time>
+
+    <time class="article-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD-MMM-YYYY"}}</time>
+
+    {{#if primary_tag}}
+        {{#if primary_tag.accent_color}}
+            <a class="article-card-primary-tag" href="{{primary_tag.url}}" style="outline: 1px solid {{ primary_tag.accent_color }}">{{primary_tag.name}}</a>
+        {{else}}
+            <a class="article-card-primary-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
         {{/if}}
-        {{#if primary_tag}}
-            {{#if primary_tag.accent_color}}
-                <a class="article-card-tag" href="{{primary_tag.url}}" style="border: 1px solid {{ primary_tag.accent_color }}">{{primary_tag.name}}</a>
-            {{else}}
-                <a class="article-card-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-            {{/if}}
-        {{/if}}
-        {{#unless access}}
-            {{^has visibility="public"}}
-                <a class="article-card-restricted-access icon" href="{{url}}">
-                    {{> "icons/lock"}}
-                    {{tiers}}
-                </a>
-            {{/has}}
-        {{/unless}}
-    </div>
+    {{/if}}
+    {{#unless access}}
+        {{^has visibility="public"}}
+            <a class="article-card-visibility-notice icon" href="{{url}}">
+                {{> "icons/lock"}}
+                {{tiers}}
+            </a>
+        {{/has}}
+    {{/unless}}
 
 </article>

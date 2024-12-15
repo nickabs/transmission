@@ -61,7 +61,7 @@
         "SiteFooter";
 }
 
-@media (min-width: 760px) { 
+@media (min-width: 1100px) { 
     .home-template {
         &.home-page-list {
             grid-template-areas:
@@ -91,7 +91,7 @@
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto 65vw auto auto ;
+            grid-template-columns: auto 60vw auto auto ;
         }
         &.home-page-focus-right {
             grid-template-areas:
@@ -104,7 +104,7 @@
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto auto 65vw auto ;
+            grid-template-columns: auto auto 60vw auto ;
         }
         &.home-page-focus-left.highlight-featured-articles {
             grid-template-areas:
@@ -118,7 +118,7 @@
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto 65vw auto auto ;
+            grid-template-columns: auto 60vw auto auto ;
         }
         &.home-page-focus-right.highlight-featured-articles {
             grid-template-areas:
@@ -132,7 +132,8 @@
                 "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto auto 65vw auto ;
+            grid-template-columns: auto auto 60vw auto ;
+            align-items: center;
         }
     }
 }

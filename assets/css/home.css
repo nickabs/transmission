@@ -11,30 +11,23 @@
 /* --------------------------- */
 /* 1. article-card collections */
 /* --------------------------- */
-.latest-articles,
-.featured-articles,
-.recent-articles,
-.related-articles,
-.author-articles,
-.tagged-articles  {
+.article-collection {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-    align-items: stretch;
-    gap: 20px;
-    width: 100%;
+    gap: 30px;
+    * {
+        width: 100%;
+    }
+}
+
+.todo-box-outline .article-collection {
     outline: 1px solid var(--ghost-accent-color);
     outline-offset: -10px;
     border-radius: 15px;
     margin-bottom: 50px;
     padding-bottom: 30px;
     margin-top: 30px;
-    * {
-        width: 100%;
-    }
-}
-.main-article {
-    margin-bottom: 50px;
 }
 
 /* bob article cards up and down on hover */
@@ -56,24 +49,18 @@
         border: solid 1px var(--ghost-accent-color);
     }
 }
-/* divider between article-cards */
-.site > * .article-card {
-    padding-bottom: 10px; 
-    border-bottom: 1px solid var(--border-color);
-}
 
 /* --------------------------------- */
 /* 2. article card collection titles */
 /* --------------------------------- */
-.related-articles-title,
-.recent-articles-title,
-.featured-articles-title,
-.latest-articles-title,
-.featured-articles-title {
+.article-collection-title {
     border-bottom: 1px solid var(--border-color);
     font-size: 2.5rem;
     font-weight: bold;
     letter-spacing: .025em;
+    margin-top: 40px;
+}
+.todo-box-outline .article-collection-title {
     padding-top: var(--section-gap);
     transform: translateY(-11px);
     background: var(--background-color);
@@ -84,16 +71,12 @@
     border-radius: 15px;
     text-align: center;
 }
-
 /* ------------------------ */
 /* 3. custom layout options *
 /* ------------------------ */
 @media (min-width:760px) {
     .article-card {
         width: 300px;
-    }
-    .home-template .main-article {
-        justify-self: center;
     }
     /* when using featured articles on larger screens article-cards are 300px wide and feature cards are 25% larger so they stand out */
     .highlight-featured-articles .article-card.featured { 
@@ -102,58 +85,16 @@
             aspect-ratio: calc((16  * 1.25) / 9 );
         }
     }
-    .home-page-list {
-        .main-article .article-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas:
-            "Title Image"
-            "Excerpt Image"
-            "Metadata Image"
-            "AuthorNames Image";
-            row-gap: 15px;
-            .article-card-metadata {
-                row-gap: 15px;
-            }
-        }
-    }
+}
+@media (min-width:1100px) {
     .home-page-focus-left, .home-page-focus-right {
         .latest-articles:not(.highlight-featured-articles *),
         .featured-articles {
-            align-self: flex-start;
-            justify-content: flex-start;
-            min-width: 250px;
-            max-width: 450px;
-            .article-card {
-                width: 100%;
-                grid-template-columns: 1fr;
-                > * {
-                    padding:0;
-                }
-                .article-card-image img { 
-                    min-width: unset;
-                    width: 90px;
-                    aspect-ratio: 1/1;
-                }
-                .article-card-author-profile-images {
-                    margin: 0 0 5px 5px;
-                    padding: 0;
-                }
-                .article-card-author-profile-image {
-                    svg, img {
-                        height: 24px;
-                        width: 24px;
-                    }
-                }
+            flex-direction: column;
+            align-items: center;
+            .article-collection-title {
+                text-align: center;
             }
-        }
-    }
-    .main-article .article-card {
-        .article-card-title {
-            font-size: clamp(2rem, 2.5vw, 3rem);
-        }
-        .article-card-excerpt {
-            font-size: clamp(1.0rem, 1.5vw, 1.7rem);
         }
     }
 }

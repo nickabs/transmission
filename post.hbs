@@ -56,8 +56,8 @@
 {{#if @custom.show_related_posts}}
     {{#get "posts" limit="6" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
     {{#if related}}
-        <aside class="related-articles">
-            <h3 class="related-articles-title">{{t "Read more"}}</h3>
+        <aside class="related-articles article-collection">
+            <h3 class="related-articles-title article-collection-title">{{t "Read more"}}</h3>
             {{#foreach related}}
                 {{> "article-card"}}
             {{/foreach}}

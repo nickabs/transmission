@@ -13,7 +13,9 @@
 .article-card-title { grid-area: Title; }
 .article-card-author-names { grid-area: AuthorNames; }
 .article-card-excerpt { grid-area: Excerpt; }
-.article-card-metadata { grid-area: Metadata; }
+.article-card-date { grid-area: Date; }
+.article-card-primary-tag { grid-area: PrimaryTag; }
+.article-card-visibility-notice { grid-area: VisibilityNotice }
 .article-card-author-profile-images { grid-area: Image; } /* overlay author profile pics on to the featured image for the card */
 
 .article-card {
@@ -24,45 +26,71 @@
         "Image"
         "Title"
         "Excerpt"
-        "Metadata"
-        "AuthorNames";
+        "Date"
+        "VisibilityNotice"
+        "AuthorNames"
+        "PrimaryTag";
     align-items: center;
-    align-content: space-between;
     grid-template-columns: auto;
-    grid-auto-rows: min-content; 
+    grid-template-rows: max-content repeat(5, minmax(0, auto)) 1fr;
+    grid-template-rows: repeat(6,auto) 1fr;
     box-shadow: var(--box-shadow);
 
-    /* padding on the default horizontal cards */
     > * {
-        padding: 10px 10px 0px 10px;
+        padding: 0;
+    }
+    > *:not(.article-card-image):not(.article-card-author-profile-images) {
+        margin-left: 10px;
+    }
+    padding-bottom: 25px; 
+    border-bottom: 1px solid var(--border-color);
+}
+.main-article .article-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "Image Image"
+    "Title Excerpt "
+    "Date Excerpt"
+    "VisibilityNotice Excerpt"
+    "AuthorNames Excerpt"
+    "PrimaryTag Excerpt";
+
+    .article-card-title {
+        font-size: 1.9rem;
+        font-weight: normal;
+    }
+    .article-card-excerpt {
+        align-self:flex-start;
+    }
+    .article-card-author-names {
+        padding-top: 0;
+        font-weight: normal;
     }
 }
-.main-article {
-    align-self: center;
-
-    .article-card {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "Title"
-            "Image"
-            "Excerpt"
-            "Metadata"
-            "AuthorProfileImages"
-            "AuthorNames";
-        .article-card-excerpt { /* hide on small screens */
-            display:none;
-        }
-    }
+.article-card-image {
+    align-self: flex-start;
 }
 .article-card-image img { 
     object-fit: cover;
     aspect-ratio: 16/9;
-    width: 100%;
     border-radius: 25px;
 }
 .main-article .article-card-image img {
     border-radius: 10px;
+}
+.article-card-title {
+    align-self:flex-end;
+    margin-top: 7px;
+}
+.article-card-excerpt,
+.article-card-date,
+.article-card-visibility-notice,
+.article-card-primary-tag,
+.article-card-author-names,
+.article-card-tag {
+    align-self: flex-start;
+    margin-top: 7px;
 }
 
 /*
@@ -80,7 +108,12 @@
         display: none;
     }
 }
-.site.no-dates-on-article-cards {
+.site:not(.tags-on-article-cards,.dates-and-tags-on-article-cards) {
+    .article-card-primary-tag {
+        display:none;
+    }
+}
+.site:not(.dates-on-article-cards,.dates-and-tags-on-article-cards) {
     .article-card-date {
         display:none;
     }
@@ -95,24 +128,37 @@
     row-gap: 10px;
     .article-card {
         display: grid;
-        grid-template-columns: 1fr 0fr;
+        grid-template-columns: 1fr 135px;
         grid-template-areas:
             "Title Image"
-            "Metadata Image";
+            "Date Image"
+            "VisibilityNotice Image"
+            "PrimaryTag Image";
         box-shadow: none;
+        column-gap: 2px;
+        grid-template-rows: auto auto auto 1fr;
+
+        padding-bottom: 10px;
     }
     .article-card-image {
-        padding:0 10px 0 0;
+        align-self: center;
     }
     .article-card-image img { 
         aspect-ratio: 1/1;
-        min-width: 110px;
-        max-width: 120px;
         border-radius: 5px;
     }
     .article-card-excerpt,
     .article-card-author-names {
         display: none;
+    }
+    .article-card-author-profile-images {
+        margin: 0 0 8px 8px; 
+    }
+    .article-card-author-profile-image {
+        img, svg { 
+            height: 25px;
+            width: 25px;
+        }
     }
 }
 @media(min-width: 480px) {
@@ -145,14 +191,15 @@
     display: block;
     content: '';
     width: 2em;
+    transform: translateY(-3px);
     border-bottom: 1px solid var(--ghost-accent-color)
 }
-.article-card-tag {
+.article-card-primary-tag {
     width:fit-content;
 
 }
 .article-card {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 .article-card h1 {
     font-size: 1.6rem;
@@ -175,34 +222,18 @@
         display:block;
     }
 }
-.article-card-metadata {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    flex-wrap:wrap;
-}
-.main-article .article-card-metadata {
-    flex-direction: column;
-    align-items: flex-start;
-}
 
-.article-card-tag  {
+.article-card-primary-tag  {
     background-color: var(--background-color);
     color: var(--title-color);
-    border: 1px solid var(--border-color);
-    border-radius: 22px;
+    border-radius: 5px;
     cursor: pointer;
-    display: inline-flex;
-    font-size: var(--small-font-size);
     font-weight: bold;
-    letter-spacing: .05rem;
-    outline: none;
-    text-transform: uppercase;
+    padding: 0 15px;
+    min-width: 100px;
     text-align: center;
-    padding: 0 5px;
 }
-.article-card-restricted-access {
-    display: flex;
+.article-card-visibility-notice {
     svg { 
         margin-right: 5px;
     }
@@ -213,28 +244,24 @@
     list-style: none;
     width: fit-content;
 }
+.article-card-author-name {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3px;
+}
 .article-card-author-profile-images { 
     align-self: end;
     justify-self: left;
     margin: 0  0 10px 10px;
+    padding: 0px;
 }
 .article-card .article-card-author-profile-image {
     margin: 0 -7px 0 0;
+    padding: 0;
     width: auto;
-    img, svg { 
-        border: 1px solid var(--ghost-accent-color);
-        height: 25px;
-        width: 25px;
-    }
-}
-.article-card-author-profile-images {
-    margin: 0 0 10px 10px;
-}
-
-.article-card-author-profile-image {
     img,svg {
-        height: 47px;
-        width: 47px;
+        height: 37px;
+        width: 37px;
         border: 1px solid var(--ghost-accent-color);
         border-radius: 50%;
         vertical-align: middle;  

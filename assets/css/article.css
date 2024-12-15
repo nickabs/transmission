@@ -77,9 +77,6 @@ figcaption {
 .article-card figcaption {
   display: none;
 }
-.todoarticle li + li {
-    margin-top: 0.8rem;
-}
 .article a span,
 .article a {
   color: var(--link-color);

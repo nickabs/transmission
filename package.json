@@ -140,9 +140,15 @@
                 "type": "text",
                 "description": "if you use google analytics, add your GA id here"
             },
-            "show_dates_on_article_cards": {
-                "type": "boolean",
-                "default": false,
+            "dates_and_tags_on_article_cards": {
+                "type": "select",
+                "options": [
+                    "Dates",
+                    "Tags",
+                    "Both",
+                    "None"
+                ],
+                "default": "Both",
                 "group": "homepage"
             },
             "highlight_featured_articles": {
@@ -217,6 +223,7 @@
         "esbuild": "^0.24.0"
     },
     "dependencies": {
+        "global": "^4.4.0",
         "photoswipe": "^5.4.4",
         "prism-components": "^1.0.0",
         "prism-themes": "^1.9.0",
