@@ -57,7 +57,7 @@
         "AuthorNames Excerpt"
         "PrimaryTag Excerpt";
         grid-template-columns: 1fr 2fr;
-        grid-template-rows: repeat(6,minmax(0,auto)) 1fr;
+        grid-template-rows: repeat(5,minmax(0,auto)) 1fr;
 
         .article-card-title {
             font-size: 2.1rem;
