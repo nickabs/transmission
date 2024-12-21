@@ -40,32 +40,38 @@
         padding: 0;
     }
     > *:not(.article-card-image):not(.article-card-author-profile-images) {
-        margin-left: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     padding-bottom: 25px; 
     border-bottom: 1px solid var(--border-color);
 }
-.main-article .article-card {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas:
-    "Image Image"
-    "Title Excerpt "
-    "Date Excerpt"
-    "VisibilityNotice Excerpt"
-    "AuthorNames Excerpt"
-    "PrimaryTag Excerpt";
+@media (min-width: 760px) {
+    .main-article .article-card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+        "Image Image"
+        "Title Excerpt "
+        "Date Excerpt"
+        "VisibilityNotice Excerpt"
+        "AuthorNames Excerpt"
+        "PrimaryTag Excerpt";
 
-    .article-card-title {
-        font-size: 1.9rem;
-        font-weight: normal;
-    }
-    .article-card-excerpt {
-        align-self:flex-start;
-    }
-    .article-card-author-names {
-        padding-top: 0;
-        font-weight: normal;
+        .article-card-title {
+            font-size: 1.9rem;
+            font-weight: normal;
+        }
+        .article-card-excerpt {
+            align-self:flex-start;
+        }
+        .article-card-author-names {
+            padding-top: 0;
+            font-weight: normal;
+        }
+        .article-card-image {
+            padding-bottom: 10px;
+        }
     }
 }
 .article-card-image {
@@ -75,6 +81,7 @@
     object-fit: cover;
     aspect-ratio: 16/9;
     border-radius: 25px;
+    width: 100%;
 }
 .main-article .article-card-image img {
     border-radius: 10px;

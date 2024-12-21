@@ -205,11 +205,12 @@ h1.hero-title {
             .hero-title,
             .hero-description {
                 padding-right: var(--edge-padding);
+                padding-left: var(--edge-padding);
+                text-align: center;
             }
-            padding-bottom: 0;
             display: grid;
             justify-items: left;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 0.75fr;
             grid-template-areas:
                 "HeroTags HeroImage"
                 "HeroTitle HeroImage"

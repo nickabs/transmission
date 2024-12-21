@@ -95,6 +95,9 @@
             .article-collection-title {
                 text-align: center;
             }
+            .article-card {
+                width: 100%;
+            }
         }
     }
 }
