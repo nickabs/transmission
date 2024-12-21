@@ -30,7 +30,7 @@
 {{/match}}
 
 {{#match posts.length ">" 7}}
-    <aside class="recent-articles article-collection">
+    <aside class="recent-articles article-collection paginated">
         <h1 class="recent-articles-title article-collection-title" >{{t "Recent articles"}}</h1>
         {{#foreach posts from=8 }}
             {{> "article-card" image_size="s" }}

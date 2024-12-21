@@ -237,6 +237,7 @@
     cursor: pointer;
     font-weight: bold;
     padding: 0 15px;
+    margin-left: 5px;
     min-width: 100px;
     text-align: center;
 }
