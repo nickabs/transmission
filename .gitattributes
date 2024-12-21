@@ -1,12 +1,3 @@
-assets/built/fonts.min.css merge=ours
-assets/built/fonts.min.css.map merge=ours
-assets/built/lib.min.css merge=ours
-assets/built/lib.min.css.map merge=ours
-assets/built/lib.min.js merge=ours
-assets/built/lib.min.js.map merge=ours
-assets/built/photoswipe-lightbox.esm.min.js merge=ours
-assets/built/photoswipe.esm.min.js merge=ours
-assets/built/theme.min.css merge=ours
-assets/built/theme.min.css.map merge=ours
-assets/built/theme.min.js merge=ours
-assets/built/theme.min.js.map merge=ours
+assets/built/js/* merge=keepMine
+assets/built/css/* merge=keepMine
+assets/built/font/* merge=keepMine
