@@ -41,7 +41,7 @@
         {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
         <ul class="hero-author-list">
             {{#foreach authors}}
-                <li class="article-card-author-profile-image">
+                <li class="hero-author-profile-image">
                     {{#if profile_image}}
                         <a href="{{url}}">
                             <img src="{{img_url profile_image size="xs"}}" alt="{{name}}">
@@ -54,7 +54,7 @@
                 </li>
             {{/foreach}}
             {{#foreach authors}}
-                <li class="article-card-author-name">
+                <li class="hero-author-name">
                     {{#if @first}}
                         <a href="{{url}}">{{name}}</a>
                     {{else}}

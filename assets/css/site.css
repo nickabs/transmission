@@ -64,8 +64,15 @@ li:not(.article li) {
 .hero-header,
 .main-nav,
 .site-footer,
+.site-header,
+.enrol,
 .comments,
 .related-articles {
+  width: 100%;
+}
+
+.site-footer,
+.main-nav {
   padding-left: var(--site-edge-padding);
   padding-right: var(--site-edge-padding);
 }
@@ -97,7 +104,7 @@ li:not(.article li) {
   margin-right:auto;
 }
 
-.site:not(.post-template,.page-template)>:not(.site-header,.hero-header,.site-footer) {
+.site:not(.post-template,.page-template)>:not(.site-header,.hero-header,.site-footer,.enrol) {
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
 }
@@ -139,10 +146,10 @@ li:not(.article li) {
     padding-left: 7px;
   }
 }
+
 .fixed-navigation-bar .site-header {
   position: sticky;
   top:0;
-  
 }
 .signin, .signup, .account {
   font-size: var(--small-font-size);

@@ -49,7 +49,6 @@
 @media (min-width: 760px) {
     .main-article .article-card {
         display: grid;
-        grid-template-columns: 1fr 2fr;
         grid-template-areas:
         "Image Image"
         "Title Excerpt "
@@ -57,20 +56,20 @@
         "VisibilityNotice Excerpt"
         "AuthorNames Excerpt"
         "PrimaryTag Excerpt";
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(6,minmax(0,auto)) 1fr;
 
         .article-card-title {
-            font-size: 1.9rem;
+            font-size: 2.1rem;
             font-weight: normal;
         }
         .article-card-excerpt {
+            font-size: 2.1rem;
             align-self:flex-start;
         }
         .article-card-author-names {
             padding-top: 0;
             font-weight: normal;
-        }
-        .article-card-image {
-            padding-bottom: 10px;
         }
     }
 }
