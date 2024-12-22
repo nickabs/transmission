@@ -213,7 +213,6 @@ h1.hero-title {
             .hero-description {
                 padding-right: var(--edge-padding);
                 padding-left: var(--edge-padding);
-                text-align: center;
             }
             display: grid;
             justify-items: left;

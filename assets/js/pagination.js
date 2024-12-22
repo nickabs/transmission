@@ -30,7 +30,7 @@ export function pagination() {
                 fragment.appendChild(importedItem);
             });
 
-            currentArticleList.appendChild(fragment);
+            currentArticleList.insertBefore(fragment,paginationButton);
             
             requestAnimationFrame(() => {
                 const newItems = currentArticleList.querySelectorAll('.fade-in');

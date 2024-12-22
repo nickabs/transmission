@@ -144,7 +144,7 @@
         line-height: 12px; /* fix misalignment caused by drop down nav symbol */
       }
     }
-    /* animate hover */
+    /* show a coloured bar on hovering over a menu item */
     .menu-link-item::after {
       content: '';
       position: absolute;
