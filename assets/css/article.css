@@ -28,7 +28,7 @@
   }
 }
 .article-container > * + * {
-  margin-top:var(--section-gap);
+  margin-top:var(--article-margin-gap);
 }
 
 
@@ -100,7 +100,7 @@ figcaption {
 .article table {
   table-layout:auto!important;
   border-collapse: collapse;
-  margin-top: var(--section-gap);
+  margin-top: var(--article-margin-gap);
   width: 100%!important;
   td {
     overflow-wrap:break-word!important;
@@ -135,7 +135,7 @@ figcaption {
 	user-select: none;
 }
 pre[class*=language-] {
-  margin-top: var(--section-gap);
+  margin-top: var(--article-margin-gap);
 }
 
 /* inline code */

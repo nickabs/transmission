@@ -11,10 +11,12 @@
 {{/match}}
 
 {{!-- a list of posts for this tag--}}
-<section class="tagged-articles article-collection paginated">
-    {{#foreach posts}}
-        {{> "article-card"}}
-    {{/foreach}}
-    {{pagination}}
+<section class="tagged-articles article-card-collection paginated">
+    <div class="article-card-container">
+        {{#foreach posts}}
+            {{> "article-card"}}
+        {{/foreach}}
+        {{pagination}}
+    </div>
 </section>
 

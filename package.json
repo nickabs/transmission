@@ -161,7 +161,8 @@
                 "options": [
                     "List",
                     "Focus (right)",
-                    "Focus (left)"
+                    "Focus (left)",
+                    "Bold"
                 ],
                 "default": "List",
                 "group": "homepage"

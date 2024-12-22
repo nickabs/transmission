@@ -10,32 +10,38 @@
     {{/foreach}}
 </main>
 
-<aside class="featured-articles article-collection">
-    <h1 class="featured-articles-title article-collection-title" >{{t "Featured"}}</h1>
-    {{#get "posts" filter="featured:true" include="authors,tags,tiers" limit=6 as |featured|}}
-        {{#foreach featured}}
-            {{> "article-card" image_size="xs" }}
-        {{/foreach}}
+<aside class="featured-articles article-card-collection">
+    <h1 class="featured-articles-title article-card-collection-title" >{{t "Featured"}}</h1>
+    {{#get "posts" filter="featured:true" include="authors,tags,tiers" limit=4 as |featured|}}
+        <div class="article-card-container">
+            {{#foreach featured}}
+                {{> "article-card" image_size="s" }}
+            {{/foreach}}
+        </div>
     {{/get}}
 </aside>
 
 
 {{#match posts.length ">" 1}}
-    <aside class="latest-articles article-collection">
-        <h1 class="latest-articles-title article-collection-title" >{{t "Latest Posts"}}</h1>
-        {{#foreach posts from=2 limit=6}}
-            {{> "article-card" image_size="s" }}
-        {{/foreach}}
+    <aside class="latest-articles article-card-collection">
+        <h1 class="latest-articles-title article-card-collection-title" >{{t "Latest Posts"}}</h1>
+        <div class="article-card-container">
+            {{#foreach posts from=2 limit=6}}
+                {{> "article-card" image_size="s" }}
+            {{/foreach}}
+        </div>
     </aside>
 {{/match}}
 
 {{#match posts.length ">" 7}}
-    <aside class="recent-articles article-collection paginated">
-        <h1 class="recent-articles-title article-collection-title" >{{t "Recent articles"}}</h1>
-        {{#foreach posts from=8 }}
-            {{> "article-card" image_size="s" }}
-        {{/foreach}}
+    <aside class="recent-articles article-card-collection paginated">
+        <h1 class="recent-articles-title article-card-collection-title" >{{t "Recent articles"}}</h1>
+        <div class="article-card-container">
+            {{#foreach posts from=8 }}
+                {{> "article-card" image_size="s" }}
+            {{/foreach}}
         {{pagination}}
+        </div>
     </aside>
 {{/match}}
 

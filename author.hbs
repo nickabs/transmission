@@ -9,9 +9,11 @@
     {{> "asides" aside-type="sidebar"}}
 {{/match}}
 
-<section class="author-articles article-collection paginated">
-    {{#foreach posts}}
-        {{> "article-card"}}
-    {{/foreach}}
-    {{pagination}}
+<section class="author-articles article-card-collection paginated">
+    <div class="article-card-container">
+        {{#foreach posts}}
+            {{> "article-card"}}
+        {{/foreach}}
+        {{pagination}}
+    </div>
 </section>

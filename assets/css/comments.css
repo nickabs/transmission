@@ -2,12 +2,13 @@
  * changes to the inline styles contained in the iframe have to be done with js */
 .comments {
     justify-self: center;
-    max-width: var(--max-content-width);
     width: 100%;
     position: relative;
-    border-top: 2px solid var(--secondary-border-color);
-    margin-top: 60px;
-    padding-top: var(--section-gap);
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding-top: var(--article-margin-gap);
 }
 /*
  hacky way to use cover the subscription CTA used in the comments iframe with the theme specified newsletter banner

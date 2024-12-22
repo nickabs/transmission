@@ -6,23 +6,12 @@
 /* 4. z-index                                                       */
 /* ---------------------------------------------------------------- */
 
-/* 
- * in page/post views the table-of-contents and share-link icons are fixed to the bottom of the viewport 
- * unless the site is being viewed on a large screen and the user selected a sidebar layout.
-*/
-.site {
-    display: grid;
-}
 
 /*
 /* map html elements to the grid areas used in the grids below 
 */
 .site-header { grid-area: SiteHeader; }
 .hero-header { grid-area: HeroHeader; }
-.sidebar-top .sidebar { grid-area: SidebarTop; }
-.sidebar-bottom .sidebar { grid-area: SidebarBottom; }
-.sidebar-left .sidebar { grid-area: SidebarTop; } /* default is mobile view - show sidebars at top when "left" or "right" option is selected */
-.sidebar-right .sidebar { grid-area: SidebarTop; }
 .featured-articles { grid-area: FeaturedArticles; }
 .table-of-contents { grid-area: TableOfContents; }
 .main-article { grid-area: MainArticle; }
@@ -36,6 +25,44 @@
 .comments { grid-area: Comments; }
 .one-time-payment { grid-area: OneTimePaymentRequest; }
 .article { grid-area: Article; }
+
+/* mobile view: sidebars are shown at top even if sidebar-right or sidebar-left were selected. 
+   They go to the left/righ position on screens larger than 1300px */
+.sidebar-top .sidebar { grid-area: SidebarTop; }
+.sidebar-bottom .sidebar { grid-area: SidebarBottom; }
+.sidebar-right .sidebar { grid-area: SidebarTop; }
+.sidebar-left .sidebar { grid-area: SidebarTop; } 
+
+/* these variables determine the width of the grid colums according to the user options selected */
+.site {
+    display: grid;
+    /* on small screens there is no room to show the toc and sidebars on the left or right of the screen, so the grid columns are set to 0 */
+    --sidebar-left-width: 0;
+    --sidebar-right-width: 0;
+    --table-of-contents-width: 0;
+}
+
+@media (min-width: 1100px) {
+    .home-page-focus-right {
+        --inner-left-column-width: 1fr;
+        --inner-right-column-width: 0.75fr;
+    }
+    .home-page-focus-left {
+        --inner-left-column-width: 0.75fr;
+        --inner-right-column-width: 1fr;
+    }
+}
+/* sidebar can now be shown on left or right */
+@media (min-width: 1300px) { 
+    .sidebar-left .sidebar { grid-area: SidebarLeft; }
+    .sidebar-right .sidebar { grid-area: SidebarRight; }
+    .sidebar-left {
+        --sidebar-left-width: auto;
+    }
+    .sidebar-right {
+        --sidebar-right-width: auto;
+    }
+}
 
 /*---------------------------*/
 /* 1. home-page mobile view  */
@@ -73,11 +100,12 @@
                 "SidebarLeft RecentArticles SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter Sitefooter";
+                grid-template-columns: var(--sidebar-left-width) 1fr var(--sidebar-right-width) ;
             .main-article {
                 justify-self: center;
             }
-            place-items:  center;
         }
+        &.home-page-focus-right,
         &.home-page-focus-left {
             grid-template-areas:
                 "SiteHeader SiteHeader SiteHeader SiteHeader"
@@ -88,23 +116,10 @@
                 "SidebarLeft Enrol Enrol SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto 60vw auto auto ;
-            place-items:  center;
+            grid-template-columns: var(--sidebar-left-width) var(--inner-left-column-width) var(--inner-right-column-width) var(--sidebar-right-width) ;
         }
-        &.home-page-focus-right {
-            grid-template-areas:
-                "SiteHeader SiteHeader SiteHeader SiteHeader"
-                "HeroHeader HeroHeader HeroHeader HeroHeader"
-                "SidebarTop SidebarTop SidebarTop SidebarTop"
-                "SidebarLeft LatestArticles MainArticle SidebarRight"
-                "SidebarLeft RecentArticles RecentArticles SidebarRight"
-                "SidebarLeft Enrol Enrol SidebarRight"
-                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-                "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto auto 60vw auto ;
-            place-items:  center;
-        }
-        &.home-page-focus-left.highlight-featured-articles {
+        &.home-page-focus-left.highlight-featured-articles,
+        &.home-page-focus-right.highlight-featured-articles {
             grid-template-areas:
                 "SiteHeader SiteHeader SiteHeader SiteHeader"
                 "HeroHeader HeroHeader HeroHeader HeroHeader"
@@ -115,22 +130,7 @@
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto 60vw auto auto ;
-            place-items:  center;
-        }
-        &.home-page-focus-right.highlight-featured-articles {
-            grid-template-areas:
-                "SiteHeader SiteHeader SiteHeader SiteHeader"
-                "HeroHeader HeroHeader HeroHeader HeroHeader"
-                "SidebarTop SidebarTop SidebarTop SidebarTop"
-                "SidebarLeft FeaturedArticles MainArticle SidebarRight"
-                "SidebarLeft LatestArticles LatestArticles SidebarRight"
-                "SidebarLeft Enrol Enrol SidebarRight"
-                "SidebarLeft RecentArticles RecentArticles SidebarRight"
-                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
-                "SiteFooter SiteFooter SiteFooter SiteFooter";
-            grid-template-columns: auto auto 60vw auto ;
-            place-items:  center;
+            grid-template-columns: var(--sidebar-left-width)  var(--inner-left-column-width) var(--inner-right-column-width) var(--sidebar-right-width) ;
         }
     }
 }
@@ -153,6 +153,10 @@
 }
 
 @media (min-width: 760px) { 
+    /* make room for table of contents */
+    .post-toc-full:not(:has(.toc:empty)) {
+        --table-of-contents-width: auto;
+    }
     .site:is(.post-template, .page-template) {
       grid-template-areas:
             "SiteHeader SiteHeader SiteHeader SiteHeader"
@@ -166,62 +170,7 @@
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
 
-        grid-template-columns: 1fr 3fr 1fr 1fr;
-        &:is(.sidebar-none) {
-            grid-template-columns: 0 3fr 1fr 0;
-        }
-        &:is(.sidebar-none,.post-toc-none) {
-            grid-template-columns: 0 100% 0 0;
-        }
-        /* 
-        * toc can now be shown in the column on the right of the article  
-        * where is used below so that these settings can be overridden at larger screen sizes
-        */
-
-        &:is(.sidebar-top, .sidebar-bottom) {
-            grid-template-columns: 0 minmax(0, min(75%, calc(var(--max-content-width) * 1.4))) 1fr 0;
-            &.post-toc-none,
-            &:where(.post-toc-minified),
-            &:has(.toc:empty) {
-                grid-template-columns: 0 100% 0 0;
-            }
-        }
-        /* cenralize the excerpt/cta content when the user is accessing a post only avaliable with a tier upgrade */
-        &:has(.gh-post-upgrade-cta) {
-            grid-template-columns: 1fr 3fr 0 1fr!important;
-        }
-    }
-}
-
-@media (min-width: 1300px) { 
-    /* sidebar can now be shown on left or right */
-    .sidebar-left .sidebar { grid-area: SidebarLeft; }
-    .sidebar-right .sidebar { grid-area: SidebarRight; }
-
-    .site:is(.post-template, .page-template):is(.sidebar-top, .sidebar-bottom) {
-        grid-template-columns: 0.33fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr 0;
-        &.post-toc-none,
-        &:is(.post-toc-minified),
-        &:has(.toc:empty) {
-            grid-template-columns: 0 100% 0 0;
-        }
-    }
-    .site:is(.post-template, .page-template):is(.sidebar-right, .sidebar-left) {
-        &.sidebar-left { 
-            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr 0;
-        }
-        &.sidebar-right { 
-            grid-template-columns: 0 minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 1fr fr;
-        }
-        &.sidebar-left .sidebar {
-            justify-self: end;
-            margin-left: auto;
-        }
-        &.post-toc-none,
-        &:is(.post-toc-minified),
-        &:has(.toc:empty) {
-            grid-template-columns: 1fr minmax(0, min(66%, calc(var(--max-content-width) * 1.4))) 0 1fr;
-        }
+        grid-template-columns: var(--sidebar-left-width) 1fr var(--table-of-contents-width) var(--sidebar-right-width) ;
     }
 }
 
@@ -248,6 +197,7 @@
             "SidebarLeft TaggedArticles SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SidebarFooter";
+         grid-template-columns: var(--sidebar-left-width) 1fr var(--sidebar-right-width) ;
     }
 }
 

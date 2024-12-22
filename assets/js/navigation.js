@@ -72,10 +72,6 @@ export function mainMenuSetup() {
                   anchor.classList.add('tabindex=0');
                   anchor.appendChild(document.createTextNode(menuName));
           
-                  const sup = document.createElement('sup');
-                  sup.appendChild(document.createTextNode(' ⌄'));
-                  anchor.appendChild(sup);
-
                   const div = createSubMenu(menuName);
                   menuItems[i].replaceChildren(anchor);
                   menuItems[i].appendChild(div);

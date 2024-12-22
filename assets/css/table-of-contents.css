@@ -149,7 +149,6 @@
             width: 67px;
         }
     }
-
     .post-toc-full .table-of-contents {
         inset: auto;
         position: relative;
@@ -169,7 +168,6 @@
             display:flex;
             flex-direction: column;
             background-color: var(--banner-background-color);
-            margin-left: 10px;
         }
     }
 }
