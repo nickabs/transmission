@@ -220,7 +220,7 @@ h1.hero-title {
                 "HeroDate HeroImage"
                 "HeroCustomExcerpt HeroImage"
                 "HeroAuthorList HeroImage";
-            grid-template-rows: 1fr repeat(4,minmax(0,auto)) 1fr;
+            grid-template-rows: 1fr repeat(4,auto) 1fr;
             gap: 0;
             .hero-image { grid-area: HeroImage; }
             .hero-title { grid-area: HeroTitle; } 

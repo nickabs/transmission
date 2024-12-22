@@ -32,13 +32,6 @@ export function pagination() {
 
             currentArticleList.insertBefore(fragment,paginationButton);
             
-            requestAnimationFrame(() => {
-                const newItems = currentArticleList.querySelectorAll('.fade-in');
-                newItems.forEach(item => {
-                    item.classList.remove('fade-in');
-                });
-            });
-
             const resNextElement = this.response.querySelector('link[rel=next]');
             if (resNextElement) {
                 nextElement.href = resNextElement.href;
