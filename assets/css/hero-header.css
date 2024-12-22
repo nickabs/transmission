@@ -172,10 +172,6 @@ h1.hero-title {
 
 .author-template .hero-header {
     max-height: unset;
-    .hero-image {
-       filter: unset; 
-       mask-image: unset;
-    }
     .author-card > a {
         pointer-events: none;
         cursor: not-allowed;
@@ -224,7 +220,7 @@ h1.hero-title {
                 "HeroDate HeroImage"
                 "HeroCustomExcerpt HeroImage"
                 "HeroAuthorList HeroImage";
-            grid-template-rows: 1fr auto auto auto auto 1fr;
+            grid-template-rows: 1fr repeat(4,minmax(0,auto)) 1fr;
             gap: 0;
             .hero-image { grid-area: HeroImage; }
             .hero-title { grid-area: HeroTitle; } 
@@ -248,6 +244,16 @@ h1.hero-title {
         .hero-title,
         .hero-custom-excerpt {
             text-align: left;
+        }
+    }
+    .author-template.hero-style-mega:has(.hero-image) {
+        .hero-header {
+            display: grid;
+            grid-template-columns: 1fr 0.75fr;
+            grid-template-areas:
+                "AuthorCard HeroImage";
+            .author-card { grid-area: AuthorCard}
+            grid-template-rows: auto;
         }
     }
 }

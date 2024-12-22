@@ -70,10 +70,10 @@
     {{/is}}
 
     {{#is "author"}}
+        {{> "author-card" }}
         {{#if cover_image}}
             <img class="hero-image" src="{{img_url cover_image size="m"}}" alt="{{name}}">
         {{/if}}
-        {{> "author-card" }}
        
     {{/is}}
 </aside>
