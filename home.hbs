@@ -35,10 +35,9 @@
         {{#foreach posts from=8 }}
             {{> "article-card" image_size="s" }}
         {{/foreach}}
+        {{pagination}}
     </aside>
 {{/match}}
-
-{{pagination}}
 
 {{#if @site.members_enabled}}
     {{#unless @member}}

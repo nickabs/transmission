@@ -33,7 +33,7 @@ initialiseTocbot();
 enrolDialogModal();
 lightbox();
 demoOptionsPicker(); // only runs on demo sites
-pagination(false);
+pagination();
 
 // event listenrs
 mainNavMenuToggle();

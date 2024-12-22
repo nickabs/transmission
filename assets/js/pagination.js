@@ -1,134 +1,55 @@
-export function pagination(isInfinite, callback) {
-    var buttonElement = document.querySelector('.pagination');
-    if (! buttonElement) return;
+/* append more articles to a paginated article list */
+export function pagination() {
+    const paginationButton = document.querySelector('.pagination');
+    const currentArticleList = document.querySelector('.paginated');
+    let nextElement = document.querySelector('link[rel=next]');
+    
+    if (!paginationButton || !currentArticleList) return;
 
-    // next link element
-    var nextElement = document.querySelector('link[rel=next]');
-    if (!nextElement && buttonElement) {
-        buttonElement.remove();
+    if (!nextElement) {
+        paginationButton.remove();
         return;
     }
 
-    // post list element
-    var currentArticleList = document.querySelector('.paginated');
-    if (!currentArticleList) {
-        return;
-    }
-
-    var buffer = 300;
-
-    var ticking = false;
-    var loading = false;
-
-    var lastScrollY = window.scrollY;
-    var lastWindowHeight = window.innerHeight;
-    var lastDocumentHeight = document.documentElement.scrollHeight;
-
-    function onPageLoad() {
-        if (this.status === 404) {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onResize);
-            buttonElement.remove();
-            return;
-        }
-
-        // append next page of article-cards
-        // the next elements are organized as per index.hbs
-        var nextPageArticleList = this.response.querySelectorAll('.article-card');
-        var fragment = document.createDocumentFragment();
-        var elems = [];
-        nextPageArticleList.forEach(function (item) {
-            // document.importNode is important, without it the item's owner
-            // document will be different which can break resizing of
-            // `object-fit: cover` images in Safari
-
-            var clonedItem = document.importNode(item, true);
-
-            if (callback) {
-                clonedItem.style.position = 'absolute';
-                clonedItem.style.visibility = 'hidden';
-                elems.push(clonedItem);
-            }
-
-            fragment.appendChild(clonedItem);
-        });
-
-        currentArticleList.appendChild(fragment);
-
-        if (callback) {
-            callback(elems);
-        }
-
-        // set next link
-        var resNextElement = this.response.querySelector('link[rel=next]');
-        if (resNextElement) {
-            nextElement.href = resNextElement.href;
-        } else {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('resize', onResize);
-            if (buttonElement) {
-                buttonElement.remove();
-            }
-        }
-
-        // sync status
-        lastDocumentHeight = document.documentElement.scrollHeight;
-        ticking = false;
-        loading = false;
-
-        if (isInfinite) {
-            imagesLoaded(currentArticleList, function () {
-                if (currentArticleList.getBoundingClientRect().bottom <= lastWindowHeight) {
-                    requestTick();
-                }
-            });
-        }
-    }
-
-    function onUpdate() {
-        // return if already loading
-        if (loading) {
-            return;
-        }
-
-        // return if not scroll to the bottom
-        if (isInfinite && lastScrollY + lastWindowHeight <= lastDocumentHeight - buffer) {
-            ticking = false;
-            return;
-        }
-
-        loading = true;
-
-        var xhr = new window.XMLHttpRequest();
+    function loadNextPage() {
+        const xhr = new XMLHttpRequest();
         xhr.responseType = 'document';
+        
+        xhr.addEventListener('load', function() {
+            if (this.status === 404) {
+                paginationButton.remove();
+                return;
+            }
 
-        xhr.addEventListener('load', onPageLoad);
+            const nextPageArticles = this.response.querySelectorAll('.article-card');
+            const fragment = document.createDocumentFragment();
+
+            nextPageArticles.forEach(item => {
+                const importedItem = document.importNode(item, true);
+                importedItem.classList.add('fade-in');
+                fragment.appendChild(importedItem);
+            });
+
+            currentArticleList.appendChild(fragment);
+            
+            requestAnimationFrame(() => {
+                const newItems = currentArticleList.querySelectorAll('.fade-in');
+                newItems.forEach(item => {
+                    item.classList.remove('fade-in');
+                });
+            });
+
+            const resNextElement = this.response.querySelector('link[rel=next]');
+            if (resNextElement) {
+                nextElement.href = resNextElement.href;
+            } else {
+                paginationButton.remove();
+            }
+        });
 
         xhr.open('GET', nextElement.href);
         xhr.send(null);
     }
 
-    function requestTick() {
-        ticking || window.requestAnimationFrame(onUpdate);
-        ticking = true;
-    }
-
-    function onScroll() {
-        lastScrollY = window.scrollY;
-        requestTick();
-    }
-
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = document.documentElement.scrollHeight;
-        requestTick();
-    }
-
-    if (isInfinite) {
-        window.addEventListener('scroll', onScroll, {passive: true});
-        window.addEventListener('resize', onResize);
-        requestTick();
-    } else {
-        buttonElement.addEventListener('click', requestTick);
-    }
+    paginationButton.addEventListener('click', loadNextPage);
 }

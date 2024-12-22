@@ -46,6 +46,16 @@
     padding-bottom: 25px; 
     border-bottom: 1px solid var(--border-color);
 }
+
+/* fade in cards after they are loaded with the 'load more' button */
+.article-card {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.article-card.fade-in {
+    opacity: 0;
+}
+
 @media (min-width: 760px) {
     .main-article .article-card {
         display: grid;

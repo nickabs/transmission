@@ -104,7 +104,7 @@ li:not(.article li) {
   margin-right:auto;
 }
 
-.site:not(.post-template,.page-template)>:not(.site-header,.hero-header,.site-footer,.enrol) {
+.site >:not(.article,.site-header,.hero-header,.site-footer,.enrol) {
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
 }

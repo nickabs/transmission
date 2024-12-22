@@ -30,7 +30,6 @@
 .recent-articles { grid-area: RecentArticles; }
 .related-articles { grid-area:RelatedArticles}
 .site-footer { grid-area: SiteFooter; }
-.pagination { grid-area: Pagination; }
 .tagged-articles { grid-area: TaggedArticles; }
 .author-articles { grid-area: TaggedArticles; }
 .enrol { grid-area: Enrol;}
@@ -56,7 +55,6 @@
         "LatestArticles"
         "Enrol"
         "RecentArticles"
-        "Pagination"
         "SidebarBottom"
         "SiteFooter";
 }
@@ -73,7 +71,6 @@
                 "SidebarLeft LatestArticles SidebarRight"
                 "SidebarLeft Enrol SidebarRight"
                 "SidebarLeft RecentArticles SidebarRight"
-                "SidebarLeft Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter Sitefooter";
             .main-article {
@@ -89,7 +86,6 @@
                 "SidebarLeft MainArticle LatestArticles SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
-                "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
             grid-template-columns: auto 60vw auto auto ;
@@ -103,7 +99,6 @@
                 "SidebarLeft LatestArticles MainArticle SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
-                "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
             grid-template-columns: auto auto 60vw auto ;
@@ -118,7 +113,6 @@
                 "SidebarLeft LatestArticles LatestArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
-                "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
             grid-template-columns: auto 60vw auto auto ;
@@ -133,7 +127,6 @@
                 "SidebarLeft LatestArticles LatestArticles SidebarRight"
                 "SidebarLeft Enrol Enrol SidebarRight"
                 "SidebarLeft RecentArticles RecentArticles SidebarRight"
-                "SidebarLeft Pagination Pagination SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
             grid-template-columns: auto auto 60vw auto ;
@@ -154,7 +147,6 @@
     "Comments"
     "Enrol"
     "RelatedArticles"
-    "Pagination"
     "SidebarBottom"
     "SiteFooter";
     grid-template-columns: 100vw; /* note that prisms seems to need an explicit column size to scroll within the container */
@@ -171,7 +163,6 @@
             "SidebarLeft Comments TableOfContents SidebarRight"
             "SidebarLeft Enrol TableOfContents SidebarRight"
             "SidebarLeft RelatedArticles TableOfContents SidebarRight"
-            "SidebarLeft Pagination TableOfContents SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
 
@@ -244,7 +235,6 @@
         "HeroHeader"
         "SidebarTop"
         "TaggedArticles"
-        "Pagination"
         "SidebarBottom"
         "SiteFooter";
 }
@@ -256,7 +246,6 @@
             "HeroHeader HeroHeader HeroHeader"
             "SidebarTop SidebarTop SidebarTop"
             "SidebarLeft TaggedArticles SidebarRight"
-            "SidebarLeft Pagination SidebarRight"
             "SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SidebarFooter";
     }
@@ -268,11 +257,11 @@
 .demo-options {
     z-index: 3;
 }
+.table-of-contents,
 .site-header {
     z-index: 2;
 }
 .tag-card-name,
-.table-of-contents,
 .sidebar,
 .hero-header > :not(.hero-image),
 .enrol > :not(.enrol-background),

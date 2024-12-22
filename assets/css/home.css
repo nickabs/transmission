@@ -106,8 +106,11 @@
 /* 4. pagination (load more articles) */
 /* ---------------------------------- */
 .pagination {
+    width: 100%;
     display:flex;
     justify-content: center;
-    padding-top: 35px;
     padding-bottom: 15px;
+    button {
+        width: min-content;
+    }
 }
