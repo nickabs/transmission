@@ -7,21 +7,22 @@
 /* -------------------------------------- */
 /* 1. main navigation                     */
 /* -------------------------------------- */
+.main-nav {
+  position: relative;
+}
 
 .main-nav-button-container {
   display: flex;
   align-items: center;
 }
- 
-
-  .sidebar-nav,
-  .main-nav-button-container,
-  .menu-links-container {
-      padding: 10px;
-      outline: 3px solid black;
-      border-radius: 15px;
-      font-weight: 900;
-  }
+.sidebar-nav,
+.main-nav-button-container,
+.menu-links-container {
+    padding: 10px;
+    outline: 3px solid black;
+    border-radius: 15px;
+    font-weight: 900;
+}
 /* default display for mobile devices (hamburger nav) */
 .menu-links-container {
   display: grid;
@@ -45,10 +46,15 @@
 .submenu-links-container {
   display: flex;
   flex-direction: column;
-  position:fixed;
+  position:absolute;
+  top: 0;
+  right: 15px;
   background-color: var(--secondary-background-color);
   border-radius: 10px;
   border: 0.25px solid var(--border-color);
+}
+.menu-links-container {
+  top: 85px;
 }
 .menu-links,
 .submenu-links {
@@ -63,14 +69,6 @@
   border-bottom: 0.25px solid var(--border-color);
   color: var(--banner-title-color);
   font-weight:800;
-}
-.menu-link-item:not(:first-child):before {
-  content: '/';
-  position: absolute;
-  left: -13px;
-  top: 0;
-  font-weight: 900;
-  color: var(--text-color);
 }
 
 /* toggle menus */
@@ -98,21 +96,30 @@
 .menu-links-container.menu-links-ready {
   opacity:1;
 }
+/* drop down menu */
+.menu-link-item.has-submenu > a:after {
+  content: '';
+  width: 6px;
+  height: 3px;
+  position: relative;
+  top: 10px;
+  right: -3px;
+  border-style: solid;
+  border-width: 6px 6px 0 6px;
+  border-color:  var(--text-color) transparent transparent transparent;
+}
 
 /* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
 @media (min-width: 760px) {
   .expanded-nav {
-    /* drop down menu */
-    .has-submenu a:after {
-        content: '';
-        width: 6px;
-        height: 3px;
-        position: relative;
-        top: 10px;
-        right: -3px;
-        border-style: solid;
-        border-width: 6px 6px 0 6px;
-        border-color:  var(--text-color) transparent transparent transparent;
+ 
+    .menu-link-item:not(:first-child):before {
+      content: '/';
+      position: absolute;
+      left: -13px;
+      top: 0;
+      font-weight: 900;
+      color: var(--text-color);
     }
     .menu-link-item {
       white-space: nowrap;
