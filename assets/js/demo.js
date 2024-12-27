@@ -35,7 +35,7 @@ export function demoOptionsPicker() {
                     'show-author-none']
         },
         homePage: {
-            focusPositionOption: ['home-page-list', 'home-page-focus-right', 'home-page-focus-left', 'home-page-bold'],
+            focusPositionOption: ['home-page-list', 'home-page-focus-right', 'home-page-focus-left'],
             featuredArticleOption: [ 'highlight-featured-articles', 'standard-featured-articles' ],
             metadataOption: [ 'dates-on-article-cards','tags-on-article-cards', 'dates-and-tags-on-article-cards', 
                 'neither-dates-or-tags-on-article-cards' ]
