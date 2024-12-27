@@ -35,6 +35,7 @@
     grid-template-rows: max-content repeat(5, minmax(0, auto)) 1fr;
     grid-template-rows: repeat(6,auto) 1fr;
     box-shadow: var(--box-shadow);
+    width: 350px;
 
     > * {
         padding: 0;
@@ -90,6 +91,10 @@
     border-radius: 25px;
     width: 100%;
     height: 100%;
+}
+.main-article {
+  display: flex;
+  justify-content: center;
 }
 .main-article .article-card-image img {
     border-radius: 10px;

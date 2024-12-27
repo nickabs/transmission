@@ -109,8 +109,7 @@ li:not(.article li) {
   padding-inline: var(--site-edge-padding);
 }
 
-.main-article ,
-.article-card-collection ,
+.todomain-article ,
 .sidebar {
   padding-inline: var(--edge-padding);
 }

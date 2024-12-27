@@ -43,11 +43,11 @@
 }
 
 @media (min-width: 1100px) {
-    .home-page-focus-right {
+    .home-page-focus-left {
         --inner-left-column-width: 1fr;
         --inner-right-column-width: 0.75fr;
     }
-    .home-page-focus-left {
+    .home-page-focus-right {
         --inner-left-column-width: 0.75fr;
         --inner-right-column-width: 1fr;
     }

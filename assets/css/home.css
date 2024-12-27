@@ -77,7 +77,7 @@
     }
     .article-card-collection-title {
         grid-column: span 2;
-        transform: translateX(-105%) rotate(-180deg);
+        transform: translateX(-45%) rotate(-180deg);
         writing-mode: vertical-lr;
         width: min-content;
         white-space:nowrap;
