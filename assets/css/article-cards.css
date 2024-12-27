@@ -214,6 +214,13 @@
             border: 3px black solid;
             background-color:aliceblue;
             border-radius: 15px;
+            > * ,
+            a {
+                color: black!important;
+            }
+            .article-card-primary-tag {
+                background-color: white;
+            }
         }
         .article-card-excerpt {
             grid-area: Image;
@@ -224,6 +231,9 @@
             align-self: flex-end;
             justify-self: end;
             transform: translate(var(--main-article-offset),35%);
+            a {
+                color: black;
+            }
         }
         .article-card-image img {
             aspect-ratio: 16/9;
