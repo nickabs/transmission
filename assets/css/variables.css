@@ -21,7 +21,7 @@
     --h1-font-size: 2.5rem;
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
-    --main-nav-height: 115px; 
+    --main-nav-height: 195px; 
     --announcement-bar-height:55px;
     --site-header-height: var(--main-nav-height);
     --article-margin-gap: 16px; /* gap between titles and text in articles */

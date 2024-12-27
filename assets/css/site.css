@@ -198,7 +198,7 @@ li:not(.article li) {
 .fixed-navigation-bar .site-header {
   position: sticky;
   top:0;
-  --main-nav-height: 65px;
+  --main-nav-height: 80px;
 }
 .signin, .signup, .account {
   font-size: var(--small-font-size);
