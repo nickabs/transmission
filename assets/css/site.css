@@ -274,6 +274,13 @@ li:not(.article li) {
 }
 
 /* minimise the links display for small screens */
+@media (max-width: 480px) {
+  .footer-style-all {
+    .footer-links {
+      display:  none;
+    }
+  }
+}
 @media (max-width: 760px) {
   .footer-style-all {
     .footer-links >:not(.ghost-link) {
@@ -290,15 +297,11 @@ li:not(.article li) {
     height: 150px;
     background-color: var(--ghost-accent-color);
     border-top: 3px solid black;
-    font-size: 2rem;
     color: black;
-    font-weight: 900;
 }
 .site-footer a {
   margin-inline: 3px;
-  font-size: 2rem;
   color: black;
-  font-weight: 900px;
 }
 .site-footer a:hover {
     text-decoration: underline;
@@ -319,10 +322,12 @@ li:not(.article li) {
     display: none
   }
 }
-/* raise footer above the toc background bar */
-@media (max-width:760px) {
+@media (min-width:480px) {
   .site-footer {
-    padding-bottom: 20px;
+    border: limegreen 3px solid;
+     * {
+      font-weight: 900;
+    }
   }
 }
 
