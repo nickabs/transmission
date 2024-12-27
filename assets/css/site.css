@@ -293,7 +293,7 @@ li:not(.article li) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 150px;
+    height: 55px;
     background-color: var(--ghost-accent-color);
     border-top: 3px solid black;
     color: black;
@@ -323,7 +323,7 @@ li:not(.article li) {
 }
 @media (min-width:480px) {
   .site-footer {
-    border: limegreen 3px solid;
+    height: 100px;
      * {
       font-weight: 900;
     }
