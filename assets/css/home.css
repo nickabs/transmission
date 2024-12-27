@@ -88,15 +88,11 @@
         display: flex;
         flex-direction: row;
     }
-    .latest-articles:not(.highlight-featured-articles *):is(.home-page-focus-right *),
-    .featured-articles:is(.highlight-featured-articles *):is(.home-page-focus-right *) {
-        margin-right: var(--edge-padding);
+    .latest-articles:not(.highlight-featured-articles *),
+    .featured-articles:is(.highlight-featured-articles *) {
+        margin-inline: var(--edge-padding);
     }
 
-    .latest-articles:not(.highlight-featured-articles *):is(.home-page-focus-left *),
-    .featured-articles:is(.highlight-featured-articles *):is(.home-page-focus-left *) {
-        margin-left: var(--edge-padding);
-    }
     .latest-articles:not(.highlight-featured-articles *),
     .featured-articles:is(.highlight-featured-articles *) {
         flex-direction: column;

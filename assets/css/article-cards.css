@@ -212,9 +212,9 @@
 /* offset main article elements */
 @media (min-width: 1100px) {
     .main-article {
-        transform: translate(calc (4.5 * var(--main-article-offset)));
         transform: translate(var(--main-article-offset), var(--main-article-offset));
         width: calc(100% - (1.5 * var(--main-article-offset)));
+        height: max-content;
         .article-card {
             border: 3px black solid;
             background-color:aliceblue;
