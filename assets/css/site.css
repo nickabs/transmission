@@ -71,6 +71,7 @@ li:not(.article li) {
   margin-bottom: calc(var(--section-margin-gap)/1.5);
 }
 
+
 /***************************/
 /* 2. default site margins */
 /***************************/
@@ -142,7 +143,13 @@ li:not(.article li) {
     margin-inline: 0;
     padding: 25px;
   }
+  .sidebar-left, .sidebar-right, .sidebar-bottom, .sidebar-none {
+    .hero-header {
+      margin-bottom: 40px;
+    }
+  }
 }
+
 .site:is(.post-template,.page-template) {
     .table-of-contents {
         margin-inline: 40px;
