@@ -16,9 +16,8 @@
   align-items: center;
 }
 .sidebar-nav,
-.main-nav-button-container,
-.menu-links-container {
-    padding: 10px;
+.main-nav-button-container {
+    padding: 3px 10px;
     outline: 3px solid black;
     border-radius: 15px;
     font-weight: 900;
@@ -47,14 +46,15 @@
   display: flex;
   flex-direction: column;
   position:absolute;
-  top: 0;
+  top: calc(100% + 15px);
   right: 15px;
   background-color: var(--secondary-background-color);
   border-radius: 10px;
-  border: 0.25px solid var(--border-color);
+  border: 3px solid black;
 }
-.menu-links-container {
-  top: 85px;
+.submenu-links-container {
+  top: 0;
+  right: 0;
 }
 .menu-links,
 .submenu-links {
@@ -112,7 +112,6 @@
 /* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
 @media (min-width: 760px) {
   .expanded-nav {
- 
     .menu-link-item:not(:first-child):before {
       content: '/';
       position: absolute;
@@ -133,8 +132,6 @@
       align-items: center;
       flex-wrap: wrap;
       font-size: 1.4rem;
-      margin: 0 15px;
-      max-width:unset;
     }
     .menu-links-header,
     .menu-links-toggle {

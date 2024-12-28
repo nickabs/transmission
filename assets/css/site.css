@@ -110,7 +110,6 @@ li:not(.article li) {
   padding-inline: var(--site-edge-padding);
 }
 
-.todomain-article ,
 .sidebar {
   padding-inline: var(--edge-padding);
 }
@@ -186,7 +185,8 @@ li:not(.article li) {
 .main-nav { 
   background-color: var(--ghost-accent-color);
   display: flex;
-  height:var(--main-nav-height); 
+  padding-top: 7px;
+  padding-bottom: 7px;
   flex-direction: row ;
   align-items: center;
   justify-content: space-between;

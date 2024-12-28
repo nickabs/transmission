@@ -154,7 +154,6 @@
         position: relative;
         display: flex;
         flex-direction: column; /* ensures the container scrolls vertically, needed by position sticky below */
-        height: unset;
         .toc-toggle {
             display: none;
         }
@@ -164,7 +163,7 @@
         .toc-container {
             width: max-content;
             position: sticky;
-            top: var(--site-header-height);
+            top: calc(var(--site-header-height) + 15px);
             display:flex;
             flex-direction: column;
             background-color: var(--banner-background-color);
