@@ -82,7 +82,7 @@
 }
 
 /* override tocbot color defaults */
-.toc .is-active-link {
+.todotoc .is-active-link {
     font-weight: normal;
     letter-spacing: -0.55px;
 }
@@ -160,11 +160,12 @@
         }
         .toc-container {
             animation: none;
+            border: 3px solid black;
+            font-weight: 900;
         }
         .toc-container {
             position: sticky;
             inset: auto;
-
             margin-right: 10vw;
             margin-left: 20px;
             top: calc(var(--site-header-height) + 15px);

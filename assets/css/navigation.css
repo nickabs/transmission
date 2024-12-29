@@ -29,6 +29,7 @@
     "MenuLinksHeader" 
     "MenuLinks";
   font-size: var(--small-font-size);
+  font-weight: 900;
 }
 .submenu-links-container {
   display: grid;
@@ -58,8 +59,8 @@
 }
 .menu-links,
 .submenu-links {
-  padding:6px 12px 6px 12px;
-  display:flex;
+  padding:6px 12px ;
+  display: flex;
   flex-direction: column;
   gap: 12px;
 }
@@ -195,6 +196,7 @@
 
 .sidebar {
   min-width: var(--sidebar-width);
+  margin-bottom: 40px;
 }
 
 .sidebar-none .sidebar {
