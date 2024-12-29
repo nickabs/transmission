@@ -345,6 +345,7 @@
     .sidebar {
       position: relative;
       height: 100%;
+      margin-bottom: 40px;
     }
     .sidebar-header {
       margin-bottom: 10px;
@@ -357,7 +358,7 @@
         display: flex;
         row-gap: 15px;
         position: sticky;
-        top: 10px;
+        top: calc(var(--site-header-height) + 15px);
     }
     .sidebar-links {
         display: flex;
