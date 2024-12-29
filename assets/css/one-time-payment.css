@@ -4,7 +4,7 @@
     min-height: 300px;
     align-content: center;
     justify-content: center;
-    border: 2px solid var(--secondary-border-color);
+    border: var(--nav-border);
     column-gap: 40px;
     row-gap: 10px;
     margin: 50px var(--edge-padding);

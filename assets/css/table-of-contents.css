@@ -72,7 +72,7 @@
     h1.toc-title {
         margin:0;
         padding:5px 10px;
-        font-weight: bold;
+        font-weight: 700;
         font-size: 1.4rem;
         border-bottom: 1px solid var(--border-color); 
     }
@@ -94,6 +94,10 @@
 }
 .toc .toc-list-item {
     padding-bottom: 3px;
+}
+.toc .is-active-link {
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 /* TOC toggle settingsa */
@@ -160,8 +164,8 @@
         }
         .toc-container {
             animation: none;
-            border: 3px solid black;
-            font-weight: 900;
+            border: var(--nav-border);
+            font-weight: var(--nav-font-weight);
         }
         .toc-container {
             position: sticky;

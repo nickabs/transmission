@@ -34,7 +34,7 @@ button, .hero-description {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--gh-font-heading, var(--secondary-font-sans));
-  font-weight: bold;
+  font-weight: 700;
 }
 img {
     height: auto;
@@ -177,7 +177,7 @@ li:not(.article li) {
 /* 4. site header/annoucmenent bar        */
 /* -------------------------------------- */
 .main-nav { 
-  background-color: var(--ghost-accent-color);
+  background-color: var(--header-footer-background-color);
   display: flex;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -187,11 +187,11 @@ li:not(.article li) {
   .icon:not(.logo) {
     padding-left: 7px;
   }
-  border-bottom: 3px solid black;
+  border-bottom: var(--nav-border);
 }
 .logo img {
   width: 30px;
-  outline: 3px solid black;
+  outline: var(--nav-border);
   border-radius: 50%;
 }
 
@@ -215,10 +215,10 @@ li:not(.article li) {
 }
 .signup{
   border-radius: 6px;
-  border: 1px solid var(--border-color);
+  border: var(--nav-border);
   padding-left:3px;
   margin-left: 4px;
-  font-weight: bold;
+  font-weight: 700;
 }
 /* dark/light mode icons */
 .dark-mode.icon,
@@ -294,13 +294,13 @@ li:not(.article li) {
     justify-content: space-between;
     align-items: center;
     height: 55px;
-    background-color: var(--ghost-accent-color);
-    border-top: 3px solid black;
-    color: black;
+    background-color: var(--header-footer-background-color);
+    border-top: var(--nav-border);
+    todocolor: black;
 }
 .site-footer a {
   margin-inline: 3px;
-  color: black;
+  todocolor: black;
 }
 .site-footer a:hover {
     text-decoration: underline;
@@ -325,7 +325,7 @@ li:not(.article li) {
   .site-footer {
     height: 100px;
      * {
-      font-weight: 900;
+      font-weight: var(--nav-font-weight);
     }
   }
 }
@@ -356,7 +356,7 @@ li:not(.article li) {
   .kg-product-card a.kg-product-card-btn-accent ,
   .kg-button-card a.kg-btn-accent ,
   .kg-callout-card-accent {
-    border: 2px solid var(--border-color);
+    border: var(--nav-border);
     font-size: 1.3rem;
     padding: .5rem 1rem ;
     font-weight: normal ;

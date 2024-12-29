@@ -4,8 +4,8 @@
     justify-self: center;
     width: 100%;
     position: relative;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: var(--nav-border);
+    border-bottom: var(--nav-border);
     margin-bottom: 40px;
     margin-top: 40px;
     padding-top: var(--article-margin-gap);

@@ -39,7 +39,7 @@
 .article-container > p:first-of-type:first-letter {
   float: left;
   font-size: 8.0rem;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1;
   margin: -5px 10px 0 -5px;
 }

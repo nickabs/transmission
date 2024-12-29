@@ -219,7 +219,7 @@
         width: calc(100% - (1.5 * var(--main-article-offset)));
         height: max-content;
         .article-card {
-            border: 3px black solid;
+            border: var(--nav-border);
             background-color:aliceblue;
             border-radius: 15px;
             > * ,
@@ -233,7 +233,7 @@
         .article-card-excerpt {
             grid-area: Image;
             width: 50%;
-            border: 3px solid black;
+            border: var(--nav-border);
             border-radius: 15px;
             background-color: white;
             align-self: flex-end;
@@ -246,10 +246,10 @@
         .article-card-image img {
             aspect-ratio: 16/9;
             transform: translate(calc( -1 * var(--main-article-offset)),calc( -1 * var(--main-article-offset)) );
-            border: 3px solid black;
+            border: var(--nav-border);
         }
         .article-card-author-profile-images {
-            border: 3px solid black;
+            border: var(--nav-border);
             width: fit-content;
             background: white;
             border-radius: 15px;
@@ -281,7 +281,7 @@
 /* ---------------------- */
 .article-card-title {
     color: var(--title-color); 
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* show short divider line under title */
@@ -326,7 +326,7 @@
     color: var(--title-color);
     border-radius: 5px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
     padding: 0 15px;
     margin-left: 5px;
     min-width: 100px;

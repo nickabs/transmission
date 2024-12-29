@@ -99,7 +99,7 @@
                 "SidebarLeft Enrol SidebarRight"
                 "SidebarLeft RecentArticles SidebarRight"
                 "SidebarBottom SidebarBottom SidebarBottom"
-                "SiteFooter SiteFooter Sitefooter";
+                "SiteFooter SiteFooter SiteFooter";
                 grid-template-columns: var(--sidebar-left-width) 1fr var(--sidebar-right-width) ;
             .main-article {
                 justify-self: center;

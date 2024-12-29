@@ -38,7 +38,7 @@
     }
     .tag-card-name {
         color: white;
-        font-weight: 900;
+        font-weight: var(--nav-font-weight);
         font-size: 3.4rem;
         text-align: center;
     }

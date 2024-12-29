@@ -45,8 +45,8 @@
     text-align: center;
     padding: 0;
     background-color: var(--banner-background-color);
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
+    border-top: var(--nav-border);
+    border-bottom: var(--nav-border);
     border-radius:5px;
 
     > *:not(.enrol-background):not(.enrol-dialog) {

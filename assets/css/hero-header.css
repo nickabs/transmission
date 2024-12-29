@@ -10,7 +10,7 @@
 /* ------------------ */
 .hero-header {
     min-height: 340px;
-    border-bottom: 3px solid black;
+    border-bottom: var(--nav-border);
 }
 .hero-header > :not(.hero-image) {
     padding-left: var(--edge-padding);
@@ -64,7 +64,7 @@
 h1.hero-title {
     font-size: clamp(3rem, calc(4vw + 2vh), 8rem);
     line-height: 1.3;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--banner-title-color);
 }
 .hero-date,
@@ -161,7 +161,7 @@ h1.hero-title {
     .hero-tags,
     .article-card-author-name a {
         color: var(--banner-title-color);
-        font-weight: bold;
+        font-weight: 700;
     }
 }
 .hero-style-grayscale-image .hero-image {

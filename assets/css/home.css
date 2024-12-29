@@ -12,7 +12,7 @@
 /* 1. article-card collections */
 /* --------------------------- */
 .article-card-collection {
-    border-top: 3px solid black;
+    border-top: var(--nav-border);
     display: flex;
     flex-direction: column;
 }
@@ -44,12 +44,12 @@
     display: flex;
     align-self: center;
     font-size: 2.5rem;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: .025em;
     transform: translateY(-25px);
     background: var(--background-color);
     padding: 2px 12px;
-    outline: 3px solid black;
+    outline: var(--nav-border);
     border-radius: 15px;
     width: fit-content;
     text-align: center;
@@ -70,7 +70,7 @@
         }
     }
     .article-card-collection {
-        border: 3px solid black;
+        border: var(--nav-border);
         border-radius: 15px;
         padding-top: 25px;
         padding-bottom: 25px;

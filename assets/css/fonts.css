@@ -1,9 +1,18 @@
 /* -------------------------------------------------- */
-/* provide local copies of the fonts used by the site */
-/* 300  Light
-/* 400	Normal
-/* 700	Bold
-/* 800	Extra Bold 
+/*
+  provide local copies of the fonts used by the site 
+
+  font-weight: 
+  100: Thin 
+  200: Extra Light 
+  300: Light 
+  400: Normal/Regular (default) 
+  500: Medium 
+  600: Semi Bold
+  700: Bold 
+  800: Extra Bold
+  900: Black 
+*/
 /* -------------------------------------------------- */
 
 /* latin-ext */
