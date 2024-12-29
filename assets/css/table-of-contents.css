@@ -12,22 +12,23 @@
     .table-of-contents { grid-area: unset};
 }
 .table-of-contents {
-    width: 100%;
-    bottom: 7px;
-    left:25px;
+    bottom: 5px;
+    left: 30px;
     position: fixed;
+    margin-inline: 0;
 }
 
 /* block out the bottom part of the screen when the mini-toc is showing */
 @media (max-width: 760px) {
-    .table-of-contents::before {
-        display: block;
+
+    body:is(.post-toc-full,.post-toc-minified)::after {
         content: '';
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 35px;
         background-color: var(--background-color);
-        height: 29px;
-        bottom: -33px;
-        left: -24px;
-        position: relative;
     }
 }
 .toc-container {
@@ -136,7 +137,7 @@
     }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 780px) {
     .table-of-contents {
         bottom: 25px;
         left: 40px;
@@ -161,9 +162,13 @@
             animation: none;
         }
         .toc-container {
-            width: max-content;
             position: sticky;
+            inset: auto;
+
+            margin-right: 10vw;
+            margin-left: 20px;
             top: calc(var(--site-header-height) + 15px);
+            left: 0;
             display:flex;
             flex-direction: column;
             background-color: var(--banner-background-color);
