@@ -58,7 +58,7 @@
 /* 3. custom layout options *
 /* ------------------------ */
 
-@media (min-width:1100px) {
+@media (min-width:1024px) {
     .home-page-focus-left, .home-page-focus-right {
         .latest-articles:not(.highlight-featured-articles *),
         .featured-articles:is(.highlight-featured-articles *) {

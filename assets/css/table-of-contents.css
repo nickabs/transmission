@@ -8,7 +8,7 @@
 }
 
 /* positon table of contents icon bottom left for mobile views */
-@media (max-width: 760px) {
+@media (max-width: 768px) {
     .table-of-contents { grid-area: unset};
 }
 .table-of-contents {
@@ -19,7 +19,7 @@
 }
 
 /* block out the bottom part of the screen when the mini-toc is showing */
-@media (max-width: 760px) {
+@media (max-width: 768px) {
 
     body:is(.post-toc-full,.post-toc-minified)::after {
         content: '';
@@ -141,7 +141,7 @@
     }
 }
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
     .table-of-contents {
         bottom: 25px;
         left: 40px;

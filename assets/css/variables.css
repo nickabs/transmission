@@ -4,10 +4,10 @@
 
 /* 
  nominal screen sizes:
- mobile: < 480px
- tablet: 480 - 760px
- laptop: 760 - 1100px
- large screens: > 1300px
+ mobile: < 640px
+ tablet: 640 - 768px
+ laptop: 768 - 1024px
+ large screens: > 1280px
 */
 
 :root {
@@ -29,7 +29,7 @@
     --main-article-offset: 20px; /* fancy offset main article layout */
     --heading-gap: 46px;
     --max-content-width: 720px;
-    --max-container-width: 1300px; 
+    --max-container-width: 1280px; 
     --edge-padding: max(3vmin, 20px); 
     --site-edge-padding: max(5vmin, 20px); 
     --nav-border: 1px solid var(--border-color);
@@ -48,7 +48,7 @@
 }
 
 /* font sizes on larger screens */
-@media (min-width: 480px) {
+@media (min-width: 640px) {
     :root {
         --content-font-size: 1.8rem;
         --content-sup-font-size: 1.3rem;
@@ -59,9 +59,9 @@
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1280px) {
     :root {
-        --site-edge-padding: calc((100vw - var(--max-container-width))/2); /* used for screens greater than 1300px */
+        --site-edge-padding: calc((100vw - var(--max-container-width))/2); /* used for screens greater than 1280px */
     }
 }
 

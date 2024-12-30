@@ -28,7 +28,7 @@
         padding-top:35px;
     }
 }
-@media (min-width: 480px) {
+@media (min-width: 640px) {
     .post-template.hide-comments-subscribe-cta > .enrol {
     min-width: 470px;
     }

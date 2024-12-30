@@ -195,7 +195,7 @@ h1.hero-title {
         width: 100%;
     }
 }
-@media (min-width: 760px) {
+@media (min-width: 768px) {
     .hero-style-mega:has(.hero-image) {
         .hero-header {
             > :not(.hero-image) {

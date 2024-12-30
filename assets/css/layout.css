@@ -27,7 +27,7 @@
 .article { grid-area: Article; }
 
 /* mobile view: sidebars are shown at top even if sidebar-right or sidebar-left were selected. 
-   They go to the left/righ position on screens larger than 1300px */
+   They go to the left/righ position on screens larger than 1280px */
 .sidebar-top .sidebar { grid-area: SidebarTop; }
 .sidebar-bottom .sidebar { grid-area: SidebarBottom; }
 .sidebar-right .sidebar { grid-area: SidebarTop; }
@@ -42,7 +42,7 @@
     --table-of-contents-width: 0;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1024px) {
     .home-page-focus-left {
         --inner-left-column-width: 1fr;
         --inner-right-column-width: 0.75fr;
@@ -53,7 +53,7 @@
     }
 }
 /* sidebar can now be shown on left or right */
-@media (min-width: 1300px) { 
+@media (min-width: 1280px) { 
     .sidebar-left .sidebar { grid-area: SidebarLeft; }
     .sidebar-right .sidebar { grid-area: SidebarRight; }
     .sidebar-left {
@@ -86,7 +86,7 @@
         "SiteFooter";
 }
 
-@media (min-width: 1100px) { 
+@media (min-width: 1024px) { 
     .home-template {
         &.home-page-list {
             grid-template-areas:
@@ -152,7 +152,7 @@
     grid-template-columns: 100vw; /* note that prisms seems to need an explicit column size to scroll within the container */
 }
 
-@media (min-width: 760px) { 
+@media (min-width: 768px) { 
     /* make room for table of contents */
     .post-toc-full:not(:has(.toc:empty)) {
         --table-of-contents-width: auto;
@@ -187,7 +187,7 @@
         "SidebarBottom"
         "SiteFooter";
 }
-@media (min-width: 760px) {
+@media (min-width: 768px) {
     .author-template,
     .tag-template {
         grid-template-areas:

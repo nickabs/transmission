@@ -111,7 +111,7 @@
 }
 
 /* larger screens - show nav in menu bar (assuming expanded nav option has been selected) */
-@media (min-width: 760px) {
+@media (min-width: 768px) {
   .expanded-nav {
     .menu-link-item:not(:first-child):before {
       content: '/';
@@ -342,7 +342,7 @@
 }
 
 /*.site:is(.home-template,.post-template,.page-template):is(.sidebar-left,.sidebar-right) { */
-@media (min-width: 1300px) {
+@media (min-width: 1280px) {
   .site:is(.sidebar-left,.sidebar-right) {
     .sidebar {
       position: relative;

@@ -22,7 +22,7 @@
   margin-top:15px;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
   .article-container :first-child{
     margin-top:0px;
   }
