@@ -91,11 +91,6 @@ li:not(.article li) {
 .main-article {
   margin-bottom: var(--section-margin-gap);
 }
-.todosidebar {
-  margin-top: calc(var(--section-margin-gap)/1.5);
-  margin-bottom: calc(var(--section-margin-gap)/1.5);
-}
-
 
 /***************************/
 /* 2. default site margins */

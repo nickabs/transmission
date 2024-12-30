@@ -213,6 +213,8 @@
 @media (min-width: 1024px) {
     .home-page-list .main-article {
         margin-inline: var(--edge-padding);
+        border: var(--site-default-border);
+        border-radius: 15px;
     }
     .site:not(:is(.home-page-list)) .main-article {
         transform: translate(var(--main-article-offset), var(--main-article-offset));
