@@ -11,25 +11,8 @@
     padding-top: var(--article-margin-gap);
 }
 /*
- hacky way to use cover the subscription CTA used in the comments iframe with the theme specified newsletter banner
-
  this is useful if your site is a standard blog and the only reason people register is to leave comments:
- e.g set the enrol name/description to something like 
-    "leave a comment/ add your email below and check your inbox"
 */
-
-.post-template.hide-comments-subscribe-cta > .enrol {
-    grid-area: Comments;
-    align-self: end;
-    min-width: 280px;
-    min-height: 280px;
-    &.newsletter, 
-    &.subscription {
-        padding-top:35px;
-    }
-}
-@media (min-width: 640px) {
-    .post-template.hide-comments-subscribe-cta > .enrol {
-    min-width: 470px;
-    }
+.post-template.hide-comments-subscribe-cta .comments {
+    display:none;
 }
