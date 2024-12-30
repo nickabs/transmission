@@ -219,7 +219,7 @@
         width: calc(100% - (1.5 * var(--main-article-offset)));
         height: max-content;
         .article-card {
-            border: var(--nav-border);
+            border: var(--site-default-border);
             background-color:aliceblue;
             border-radius: 15px;
             > * ,
@@ -233,7 +233,7 @@
         .article-card-excerpt {
             grid-area: Image;
             width: 50%;
-            border: var(--nav-border);
+            border: var(--site-default-border);
             border-radius: 15px;
             background-color: white;
             align-self: flex-end;
@@ -246,10 +246,10 @@
         .article-card-image img {
             aspect-ratio: 16/9;
             transform: translate(calc( -1 * var(--main-article-offset)),calc( -1 * var(--main-article-offset)) );
-            border: var(--nav-border);
+            border: var(--site-default-border);
         }
         .article-card-author-profile-images {
-            border: var(--nav-border);
+            border: var(--site-default-border);
             width: fit-content;
             background: white;
             border-radius: 15px;

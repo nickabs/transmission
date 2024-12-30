@@ -43,6 +43,16 @@
         },
         "card_assets": true,
         "custom": {
+            "site_style": {
+                "type": "select",
+                "options": [
+                    "Standard",
+                    "Bold",
+                    "Colorful"
+                ],
+                "default": "Standard",
+                "description": "Select your site style"
+            },
             "fixed_navigation_bar": {
                 "type": "boolean",
                 "default": false,
@@ -186,7 +196,7 @@
                 "type": "boolean",
                 "default": false,
                 "group": "post",
-                "description": "Can be used, example for 'buy me a coffee' requests"
+                "description": "'buy me a coffee' requests"
             },
             "one_time_payment_button_text": {
                 "type": "text",

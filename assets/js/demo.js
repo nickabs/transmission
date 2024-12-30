@@ -23,22 +23,25 @@ export function demoOptionsPicker() {
     // the classes that drive the theme customisation are on the .site element
     // this a list of eacho of the custom options and their possible class mappings
     const classAlternatives = {
-        siteWide: {
+        style: {
+            siteStyle: ['site-style-standard', 'site-style-bold', 'site-style-colorful'],
             navBarStyle: ['expanded-nav', 'minified-nav'],
             navBarOption: ['fixed-navigation-bar' , 'scrolling-navigation-bar'],
-            heroStyle: ['hero-style-plain', 'hero-style-color-image', 'hero-style-grayscale-image', 'hero-style-mega'],
+            heroStyle: ['hero-style-plain', 'hero-style-color-image', 'hero-style-grayscale-image', 'hero-style-mega']
+        },
+        navigation: {
             sidebarOption: ['sidebar-top','sidebar-left', 'sidebar-right', 'sidebar-bottom' , 'sidebar-none'],
-            footerOption: [ 'footer-style-all', 'footer-style-copyright-privacy', 'footer-style-copyright', 'footer-style-privacy',
-                'footer-style-ghost-theme', 'footer-style-ghost', 'footer-style-none' ],
             enrolOption: ['newsletter','subscribe','newsletter-subscribe','enrol-none'],
-            authorOption: ['show-author-names', 'show-author-images', 'show-author-names-and-images', 
-                    'show-author-none']
+            footerOption: [ 'footer-style-all', 'footer-style-copyright-privacy', 'footer-style-copyright', 'footer-style-privacy',
+                'footer-style-ghost-theme', 'footer-style-ghost', 'footer-style-none' ]
         },
         homePage: {
             focusPositionOption: ['home-page-list', 'home-page-focus-right', 'home-page-focus-left'],
             featuredArticleOption: [ 'highlight-featured-articles', 'standard-featured-articles' ],
             metadataOption: [ 'dates-on-article-cards','tags-on-article-cards', 'dates-and-tags-on-article-cards', 
-                'neither-dates-or-tags-on-article-cards' ]
+                'neither-dates-or-tags-on-article-cards' ],
+            authorOption: ['show-author-names', 'show-author-images', 'show-author-names-and-images', 
+                    'show-author-none']
         },
         post: {
             tableOfContentsOption: ['post-toc-full','post-toc-minified','post-toc-none'],

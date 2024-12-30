@@ -10,7 +10,7 @@
 /* ------------------ */
 .hero-header {
     min-height: 340px;
-    border-bottom: var(--nav-border);
+    border-bottom: var(--site-default-border);
 }
 .hero-header > :not(.hero-image) {
     padding-left: var(--edge-padding);

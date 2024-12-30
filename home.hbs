@@ -11,7 +11,7 @@
 </main>
 
 <aside class="featured-articles article-card-collection">
-    <h1 class="featured-articles-title article-card-collection-title" >{{t "Featured"}}</h1>
+    <p class="featured-articles-title article-card-collection-title" >{{t "Featured"}}</p>
     {{#get "posts" filter="featured:true" include="authors,tags,tiers" limit=4 as |featured|}}
         <div class="article-card-container">
             {{#foreach featured}}
@@ -24,7 +24,7 @@
 
 {{#match posts.length ">" 1}}
     <aside class="latest-articles article-card-collection">
-        <h1 class="latest-articles-title article-card-collection-title" >{{t "Latest Posts"}}</h1>
+        <p class="latest-articles-title article-card-collection-title" >{{t "Latest Posts"}}</p>
         <div class="article-card-container">
             {{#foreach posts from=2 limit=6}}
                 {{> "article-card" image_size="s" }}
@@ -35,7 +35,7 @@
 
 {{#match posts.length ">" 7}}
     <aside class="recent-articles article-card-collection paginated">
-        <h1 class="recent-articles-title article-card-collection-title" >{{t "Recent articles"}}</h1>
+        <p class="recent-articles-title article-card-collection-title" >{{t "Recent articles"}}</p>
         <div class="article-card-container">
             {{#foreach posts from=8 }}
                 {{> "article-card" image_size="s" }}

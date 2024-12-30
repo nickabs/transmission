@@ -23,7 +23,7 @@
     --h3-font-size: 1.8rem;
     --main-nav-height: 47px; 
     --announcement-bar-height:55px;
-    --site-header-height: var(--main-nav-height);
+    --site-header-height: minmax(var(--main-nav-height),auto);
     --article-margin-gap: 16px; /* gap between titles and text in articles */
     --section-margin-gap: 60px; /* gap between main page components like header, footer etc */
     --main-article-offset: 20px; /* fancy offset main article layout */
@@ -32,8 +32,8 @@
     --max-container-width: 1280px; 
     --edge-padding: max(3vmin, 20px); 
     --site-edge-padding: max(5vmin, 20px); 
-    --nav-border: 1px solid var(--border-color);
-    --nav-font-weight: 400;
+    --site-default-border: 1px solid var(--border-color);
+    --site-default-font-weight: 400;
     --header-footer-background-color: var(--background-color);
 }
 /* 

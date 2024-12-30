@@ -6,6 +6,31 @@
 /* 5. site footer                       */
 /* 6. Ghost cards                       */
 /*------------------------------------- */
+
+
+/* todo */
+.site-style-colorful,
+.site-style-bold {
+  --site-default-border: 3px solid black;
+  --site-default-font-weight: 800;
+  --main-nav-height: 110px;
+
+  .logo img {
+    height: 40px;
+    width: 40px;
+  }
+  .menu-links-container,
+  .main-nav-button-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.site-style-colorful {
+  .site-header .main-nav, 
+  .site-footer {
+    background-color: var(--ghost-accent-color);
+  }
+}
 /* -------------------------------*/
 /* 1. default styles for the site */
 /* -------------------------------*/
@@ -179,6 +204,7 @@ li:not(.article li) {
 .main-nav { 
   background-color: var(--header-footer-background-color);
   display: flex;
+  height: var(--main-nav-height);
   padding-top: 7px;
   padding-bottom: 7px;
   flex-direction: row ;
@@ -187,11 +213,11 @@ li:not(.article li) {
   .icon:not(.logo) {
     padding-left: 7px;
   }
-  border-bottom: var(--nav-border);
+  border-bottom: var(--site-default-border);
 }
 .logo img {
   width: 30px;
-  outline: var(--nav-border);
+  outline: var(--site-default-border);
   border-radius: 50%;
 }
 
@@ -215,7 +241,7 @@ li:not(.article li) {
 }
 .signup{
   border-radius: 6px;
-  border: var(--nav-border);
+  border: 1px solid black;
   padding-left:3px;
   margin-left: 4px;
   font-weight: 700;
@@ -295,12 +321,11 @@ li:not(.article li) {
     align-items: center;
     height: 95px;
     background-color: var(--header-footer-background-color);
-    border-top: var(--nav-border);
-    todocolor: black;
+    border-top: var(--site-default-border);
+    font-weight: var(--site-default-font-weight);
 }
 .site-footer a {
   margin-inline: 3px;
-  todocolor: black;
 }
 .site-footer a:hover {
     text-decoration: underline;
@@ -322,7 +347,7 @@ li:not(.article li) {
   }
   .site-footer {
      * {
-      font-weight: var(--nav-font-weight);
+      font-weight: var(--site-default-font-weight);
     }
   }
 }
@@ -353,7 +378,7 @@ li:not(.article li) {
   .kg-product-card a.kg-product-card-btn-accent ,
   .kg-button-card a.kg-btn-accent ,
   .kg-callout-card-accent {
-    border: var(--nav-border);
+    border: var(--site-default-border);
     font-size: 1.3rem;
     padding: .5rem 1rem ;
     font-weight: normal ;

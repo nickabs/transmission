@@ -82,10 +82,6 @@
 }
 
 /* override tocbot color defaults */
-.todotoc .is-active-link {
-    font-weight: normal;
-    letter-spacing: -0.55px;
-}
 .toc-link:before {
     background-color: var(--background-color);
 }
@@ -164,8 +160,8 @@
         }
         .toc-container {
             animation: none;
-            border: var(--nav-border);
-            font-weight: var(--nav-font-weight);
+            border: var(--site-default-border);
+            font-weight: var(--site-default-font-weight);
         }
         .toc-container {
             position: sticky;
