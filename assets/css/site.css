@@ -8,7 +8,10 @@
 /*------------------------------------- */
 
 
-/* todo */
+/* -------------------------------*/
+/* 1. default styles for the site */
+/* -------------------------------*/
+
 .site-style-colorful,
 .site-style-bold {
   --site-default-border: 3px solid black;
@@ -31,10 +34,6 @@
     background-color: var(--ghost-accent-color);
   }
 }
-/* -------------------------------*/
-/* 1. default styles for the site */
-/* -------------------------------*/
-
 /*
  * font sizes are expressed as rems (the pixel size are calculated relative to browser root font size, which can be set by the user)
  * by default 1rem = 16px.  
@@ -314,7 +313,7 @@ li:not(.article li) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 95px;
+    height: 55px;
     background-color: var(--header-footer-background-color);
     border-top: var(--site-default-border);
     font-weight: var(--site-default-font-weight);
