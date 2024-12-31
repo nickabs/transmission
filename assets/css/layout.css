@@ -105,7 +105,18 @@
                 justify-self: center;
             }
         }
-        &.home-page-focus-right,
+        &.home-page-focus-right {
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader HeroHeader"
+                "SidebarTop SidebarTop SidebarTop SidebarTop"
+                "SidebarLeft LatestArticles MainArticle SidebarRight"
+                "SidebarLeft RecentArticles RecentArticles SidebarRight"
+                "SidebarLeft Enrol Enrol SidebarRight"
+                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+                "SiteFooter SiteFooter SiteFooter SiteFooter";
+            grid-template-columns: var(--sidebar-left-width) var(--inner-left-column-width) var(--inner-right-column-width) var(--sidebar-right-width) ;
+        }
         &.home-page-focus-left {
             grid-template-areas:
                 "SiteHeader SiteHeader SiteHeader SiteHeader"
@@ -118,8 +129,20 @@
                 "SiteFooter SiteFooter SiteFooter SiteFooter";
             grid-template-columns: var(--sidebar-left-width) var(--inner-left-column-width) var(--inner-right-column-width) var(--sidebar-right-width) ;
         }
-        &.home-page-focus-left.highlight-featured-articles,
         &.home-page-focus-right.highlight-featured-articles {
+            grid-template-areas:
+                "SiteHeader SiteHeader SiteHeader SiteHeader"
+                "HeroHeader HeroHeader HeroHeader HeroHeader"
+                "SidebarTop SidebarTop SidebarTop SidebarTop"
+                "SidebarLeft FeaturedArticles MainArticle SidebarRight"
+                "SidebarLeft LatestArticles LatestArticles SidebarRight"
+                "SidebarLeft Enrol Enrol SidebarRight"
+                "SidebarLeft RecentArticles RecentArticles SidebarRight"
+                "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
+                "SiteFooter SiteFooter SiteFooter SiteFooter";
+            grid-template-columns: var(--sidebar-left-width)  var(--inner-left-column-width) var(--inner-right-column-width) var(--sidebar-right-width) ;
+        }
+        &.home-page-focus-left.highlight-featured-articles {
             grid-template-areas:
                 "SiteHeader SiteHeader SiteHeader SiteHeader"
                 "HeroHeader HeroHeader HeroHeader HeroHeader"

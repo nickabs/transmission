@@ -32,8 +32,8 @@
     --max-container-width: 1280px; 
     --edge-padding: max(3vmin, 20px); 
     --site-edge-padding: max(5vmin, 20px); 
-    --site-default-border: 1px solid var(--border-color);
-    --site-default-font-weight: 400;
+    --site-default-border: 2px solid var(--border-color);
+    --site-default-font-weight: 500;
     --header-footer-background-color: var(--background-color);
 }
 /* 

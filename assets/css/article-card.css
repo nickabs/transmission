@@ -218,7 +218,7 @@
     }
     .site:not(:is(.home-page-list)) .main-article {
         transform: translate(var(--main-article-offset), var(--main-article-offset));
-        width: calc(100% - (1.5 * var(--main-article-offset)));
+        width: calc(100% - (2 * var(--main-article-offset)));
         height: max-content;
         .article-card {
             border: var(--site-default-border);
@@ -257,6 +257,12 @@
             border-radius: 15px;
             padding: 2px 9px 2px 2px;
         }
+    }
+    .home-page-focus-right .main-article {
+        margin-right: 10px;
+    }
+    .home-page-focus-left .main-article {
+        margin-left: 10px;
     }
     .latest-articles:not(.highlight-featured-articles *),
     .featured-articles:is(.highlight-featured-articles *) {
