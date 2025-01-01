@@ -1,14 +1,52 @@
 /*
  * table of contents initialistation
 */
-import tocbot from 'tocbot';
+import tocbot from 'tocbot'
 
 export function initialiseTocbot() {
-  tocbot.init({
-    tocSelector: '.toc',
-    contentSelector: '.article',
-    hasInnerContainers: true
-  })
+  const siteElement = document.querySelector('.site');
+
+  /* scroll headers so they end up just below the site header */
+  function getScrollPosition() {
+    const siteHeader = document.querySelector('.site-header');
+    const scrollPosition = (siteHeader && siteHeader.offsetHeight) ? siteHeader.offsetHeight + 15 : 0; 
+    return scrollPosition;
+  }
+
+  let scrollPositon;
+
+  window.addEventListener('load', () => {
+
+    scrollPositon = getScrollPosition();
+    tocbot.init({
+      tocSelector: '.toc',
+      contentSelector: '.article',
+      hasInnerContainers: true,
+      headingsOffset: scrollPositon,
+      scrollSmoothOffset: -scrollPositon
+    })
+  });
+
+  /* refresh the toc with the new scroll position if the announcement bar gets added */
+  const announcementBarRoot = document.querySelector('#announcement-bar-root');
+  const observer = new MutationObserver(() => {
+    requestAnimationFrame(() => {
+      const newScrollPosition = getScrollPosition();
+      if ( newScrollPosition != scrollPositon) {
+        tocbot.refresh({
+          tocSelector: '.toc',
+          contentSelector: '.article',
+          hasInnerContainers: true,
+          headingsOffset: newScrollPosition,
+          scrollSmoothOffset: -newScrollPosition
+        })
+        scrollPositon=newScrollPosition;
+      }
+    });
+  });
+  observer.observe(announcementBarRoot, {
+    childList: true
+  });
 
   // safari fix  - toc not showing without a forced repaint - todo - retest
   window.onload = function() {

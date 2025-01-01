@@ -21,9 +21,6 @@
     --h1-font-size: 2.5rem;
     --h2-font-size: 2.0rem;
     --h3-font-size: 1.8rem;
-    --main-nav-height: 47px; 
-    --announcement-bar-height:55px;
-    --site-header-height: var(--main-nav-height); /* adjusted when there is an announcement bar */
     --article-margin-gap: 16px; /* gap between titles and text in articles */
     --section-margin-gap: 60px; /* gap between main page components like header, footer etc */
     --main-article-offset: 20px; /* fancy offset main article layout */
@@ -35,18 +32,23 @@
     --site-default-border: 2px solid var(--border-color);
     --site-default-font-weight: 500;
     --header-footer-background-color: var(--background-color);
+
 }
 /* 
-* it is necessary to specify the announcement bar height when the navigation bar is pinned to the top of the screen
-* this is so that the sticky elements below have the correct "top:" position
+    reduce the height of the header when there is no annoucement 
+    this height is used to determine the top of the sticky elements like the TOC 
 */
-.fixed-navigation-bar:has(#announcement-bar-root:not(:empty)) {
-    .gh-announcment-bar {
-        height: var(--announcement-bar-height); 
-    }
+.site {
+    --main-nav-height: 47px; 
+    --announcement-bar-height:0px;
     --site-header-height: calc(var(--main-nav-height) + var(--announcement-bar-height));
 }
 
+.site:has(.gh-announcement-bar) {
+    --main-nav-height: 47px; 
+    --announcement-bar-height:55px;
+    --site-header-height: calc(var(--main-nav-height) + var(--announcement-bar-height));
+}
 /* font sizes on larger screens */
 @media (min-width: 640px) {
     :root {

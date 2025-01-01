@@ -70,7 +70,7 @@
   padding:6px 12px 6px 12px;
   border-bottom: 0.25px solid var(--border-color);
   color: var(--banner-title-color);
-  font-weight:800;
+  font-weight:var(--site-default-font-weight);
 }
 
 /* toggle menus */

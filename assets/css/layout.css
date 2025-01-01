@@ -6,7 +6,6 @@
 /* 4. z-index                                                       */
 /* ---------------------------------------------------------------- */
 
-
 /*
 /* map html elements to the grid areas used in the grids below 
 */
@@ -228,10 +227,12 @@
 /* 4. z-index settings       */
 /*---------------------------*/
 .demo-options {
+    z-index: 4;
+}
+.site-header {
     z-index: 3;
 }
-.table-of-contents,
-.site-header {
+.table-of-contents {
     z-index: 2;
 }
 .tag-card-name,

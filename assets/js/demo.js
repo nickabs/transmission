@@ -102,7 +102,6 @@ export function demoOptionsPicker() {
             demoSite.classList.remove(alternativeClass);
             // remove any alternative already stored in local storage
             let key=`demo-${alternativeClass}`;
-            console.log("debug removing key from ls ",key);
             localStorage.removeItem(`demo-${alternativeClass}`);
         });
         demoSite.classList.add(className);

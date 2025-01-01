@@ -12,10 +12,10 @@
 /* 1. default styles for the site */
 /* -------------------------------*/
 
-.site-style-colorful,
-.site-style-bold {
+.site:is(.site-style-colorful,
+.site-style-bold) {
   --site-default-border: 3px solid black;
-  --site-default-font-weight: 800;
+  --site-default-font-weight: 700;
   --main-nav-height: 110px;
 
   .logo img {

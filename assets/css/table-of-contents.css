@@ -67,7 +67,6 @@
     border: 0.25px solid var(--border-color);
     border-radius: 10px;
     height:auto;
-    font-weight: 200;
     font-size: 1.4rem;
     h1.toc-title {
         margin:0;
@@ -91,9 +90,9 @@
 .toc .toc-list-item {
     padding-bottom: 3px;
 }
-.toc .is-active-link {
+:not(.site-style-bold).toc .is-active-li {
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.009em;
 }
 
 /* TOC toggle settingsa */
@@ -127,6 +126,7 @@
         flex-direction: column;
         animation: showToc 300ms ease-in-out both;
         background-color: var(--banner-background-color);
+        width: max-content;
     }
     /* toggle open/close icon */
     .toc-toggle .toc-close-icon {
