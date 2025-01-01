@@ -14,5 +14,5 @@
  this is useful if your site is a standard blog and the only reason people register is to leave comments:
 */
 .post-template.hide-comments-subscribe-cta .comments {
-    display:none;
+    tododisplay:none;
 }
