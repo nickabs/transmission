@@ -1,7 +1,7 @@
 /* append more articles to a paginated article list */
 export function pagination() {
     const paginationButton = document.querySelector('.pagination');
-    const currentArticleList = document.querySelector('.paginated');
+    const currentArticleList = document.querySelector('.paginated .article-card-container');
     let nextElement = document.querySelector('link[rel=next]');
     
     if (!paginationButton || !currentArticleList) return;
@@ -26,7 +26,6 @@ export function pagination() {
 
             nextPageArticles.forEach(item => {
                 const importedItem = document.importNode(item, true);
-                importedItem.classList.add('fade-in');
                 fragment.appendChild(importedItem);
             });
 
