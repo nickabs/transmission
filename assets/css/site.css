@@ -150,6 +150,9 @@ li:not(.article li) {
   .article-card-collection {
     margin-inline: var(--site-edge-padding);
   }
+  .related-articles {
+    margin-inline: var(--edge-padding);
+  }
   .article-card-container {
     margin:0;
     padding:0;
