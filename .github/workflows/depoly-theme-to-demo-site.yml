@@ -1,8 +1,5 @@
 name: Deploy Theme (demo)
 on:
-  push:
-    branches:
-      - main
   release:
     types:
       - created
