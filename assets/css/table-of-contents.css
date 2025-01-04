@@ -90,7 +90,8 @@
 .toc .toc-list-item {
     padding-bottom: 3px;
 }
-:not(.site-style-bold).toc .is-active-li {
+
+.site:not(.site-style-bold) .toc .is-active-li  {
     font-weight: 700;
     letter-spacing: -0.009em;
 }
