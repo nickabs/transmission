@@ -124,7 +124,6 @@ li:not(.article li) {
 .site-footer {
   width: 100%;
 }
-.related-articles,
 .comments {
   padding-inline: var(--site-edge-padding);
 }
