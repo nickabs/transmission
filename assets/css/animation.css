@@ -5,16 +5,16 @@
         animation-timeline: view();
         animation-range: entry;
     }
-    .hero-header >:not(.hero-image)  {
+    .hero-header *:not(.hero-image)  {
         animation: fade-out linear;
         animation-timeline: view();
-        animation-range: exit -150px;
+        animation-range: exit calc( -1 * (var(--site-header-height) + 250px));
     }
     @keyframes fade-in {
         to { scale: 1; opacity: 1; }
     }
     @keyframes fade-out {
-        to { opacity: 0 }
+        to { opacity: 0 ; transform:translateY(50%);}
     }
 }
 

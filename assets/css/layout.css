@@ -192,7 +192,7 @@
             "SidebarBottom SidebarBottom SidebarBottom SidebarBottom"
             "SiteFooter SiteFooter SiteFooter SiteFooter";
 
-        grid-template-columns: var(--sidebar-left-width) 1fr var(--table-of-contents-width) var(--sidebar-right-width) ;
+        grid-template-columns: var(--sidebar-left-width) minmax(var(--max-content-width),1fr) var(--table-of-contents-width) var(--sidebar-right-width) ;
     }
 }
 
