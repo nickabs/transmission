@@ -5,7 +5,7 @@
             <p class="hero-description">{{@site.description}}</p>
         {{/if}}
         {{#if @site.cover_image}}
-            <img alt="hero image" class="hero-image" src="{{@site.cover_image}}"/>
+            <img alt="hero image" class="hero-image" src="{{@site.cover_image}}">
         {{/if}}
     {{/is}}
 
@@ -15,14 +15,14 @@
             <p class="hero-description">{{description}}</p>
         {{/if}}
         {{#if feature_image }}
-            <img alt="hero image" class="hero-image" src='{{img_url feature_image size="m"}}'/>
+            <img alt="hero image" class="hero-image" src='{{img_url feature_image size="m"}}'>
         {{/if}}
     {{/is}}
 
     {{#is "page"}}
         <h1 class="hero-title">{{title}}</h1>
         {{#if feature_image }}
-            <img alt="hero image" class="hero-image" src='{{img_url feature_image size="m"}}'/>
+            <img alt="hero image" class="hero-image" src='{{img_url feature_image size="m"}}'>
         {{/if}}
         {{#if custom_excerpt}}<p class="hero-custom-excerpt">{{custom_excerpt}}</p>{{/if}}
     {{/is}}
@@ -65,7 +65,7 @@
             {{/foreach}}
         </ul>
         {{#if feature_image }}
-            <img alt="hero image" class="hero-image" src='{{img_url feature_image size="m"}}'/>
+            <img alt="hero image" class="hero-image" src='{{img_url feature_image size="m"}}'>
         {{/if}}
     {{/is}}
 

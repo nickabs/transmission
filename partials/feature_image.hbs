@@ -16,6 +16,9 @@
             srcset='{{img_url feature_image size="s"}} 400w,
             {{img_url feature_image size="m" }} 800w,
             {{img_url feature_image size="l" }} 1600w'
+            sizes="(min-width: 992px) 800px, 
+                    (min-width: 768px) 600px, 
+                    100vw"
         {{/match}}
         {{/match}}
         alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
