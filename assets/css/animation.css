@@ -1,0 +1,20 @@
+@media (prefers-reduced-motion: no-preference) {
+    .article img {
+        scale: 0.85; opacity: 0;
+        animation: fade-in linear  forwards;
+        animation-timeline: view();
+        animation-range: entry;
+    }
+    .hero-header >:not(.hero-image)  {
+        animation: fade-out linear;
+        animation-timeline: view();
+        animation-range: exit -150px;
+    }
+    @keyframes fade-in {
+        to { scale: 1; opacity: 1; }
+    }
+    @keyframes fade-out {
+        to { opacity: 0 }
+    }
+}
+
