@@ -142,12 +142,17 @@
                 display: none;
             }
         }
+        &.enrol-none,
+        &.newsletter {
+            .main-nav-button-container .signup {
+                display: none;
+            }
+        }
         &:not(.show-payment-request) {
             .one-time-payment {
                 display: none;
             }
         }
-       
         &.hide-related-posts {
             .related-articles {
                 display: none;

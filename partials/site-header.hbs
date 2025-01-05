@@ -17,9 +17,11 @@
                     {{#unless @site.members_invite_only}}
                         <a href="#/portal/signin" class="signin">{{t "Sign in"}}</a>
                         {{!-- only shows if one of the subscribe options is selected --}}
-                        {{#if @custom.enrol_members_banner_type "Subscribe" }}
+                        {{#match @custom.enrol_members_banner_type "!=" "None" }}
+                        {{#match @custom.enrol_members_banner_type "!=" "Newsletter" }}
                             <a class="signup" aria-label="sign up" href="#/portal/signup">{{t "Sign up"}}</a>
-                        {{/if}}
+                        {{/match}}
+                        {{/match}}
                     {{/unless}}
                 {{else}}
                     <a class="account-link icon" aria-label="account link" href="#/portal/account"> 

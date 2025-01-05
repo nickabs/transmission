@@ -45,10 +45,9 @@
     </aside>
 {{/match}}
 
-{{!-- 
 {{#if @site.members_enabled}}
     {{#unless @member}}
-        {{#match @custom.enrol_members_banner_location "!=" "Home Page"}}
+        {{#match @custom.enrol_members_banner_location "!=" "Home page"}}
             {{#match @custom.enrol_members_banner_type "Both" }}
                 {{> "enrol" banner-type="both" }}
             {{else match @custom.enrol_members_banner_type "Newsletter" }}
@@ -59,4 +58,3 @@
         {{/match}}
     {{/unless}}
 {{/if}}
---}}

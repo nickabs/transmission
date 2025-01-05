@@ -33,7 +33,6 @@
     </aside>
 {{/if}}
 
-{{!-- 
 {{#if @site.members_enabled}}
     {{#unless @member}}
         {{#match @custom.enrol_members_banner_location "!=" "Posts"}}
@@ -48,7 +47,6 @@
     {{/unless}}
 {{/if}}
 
---}}
 {{#if @custom.show_related_posts}}
     {{#get "posts" limit="6" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
     {{#if related}}
