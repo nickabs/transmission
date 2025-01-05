@@ -5,16 +5,29 @@
         animation-timeline: view();
         animation-range: entry;
     }
-    .hero-header *:not(.hero-image)  {
-        animation: fade-out linear;
-        animation-timeline: view();
-        animation-range: exit calc( -1 * (var(--site-header-height) + 250px));
+    .hero-header {
+        .hero-tags,
+        .hero-custom-excerpt,
+        .hero-author-list,
+        .hero-date,
+        .hero-title {
+            animation: fade-out linear;
+            animation-timeline: view();
+            animation-range-start: exit calc(-1 * (var(--site-header-height) + 150px)) ;
+            animation-range-end: exit;
+        }
+    }
+    .submenu-links-active,
+    .menu-links-active,
+    .toc-open .toc-container {
+        opacity: 0; scale: 0; 
+        animation: fade-in 300ms ease-in-out both;
     }
     @keyframes fade-in {
         to { scale: 1; opacity: 1; }
     }
     @keyframes fade-out {
-        to { opacity: 0 ; transform:translateY(50%);}
+        to { opacity: 0 ; transform:translateY(20%);}
     }
 }
 

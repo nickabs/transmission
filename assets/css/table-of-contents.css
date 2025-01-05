@@ -111,7 +111,7 @@
 }
 
 /* animate opening of TOC */
-@keyframes showToc {
+@keyframes todshowToc {
     from {
         opacity: 0; 
         scale: 0;
@@ -125,7 +125,7 @@
     .toc-container {
         display: flex;
         flex-direction: column;
-        animation: showToc 300ms ease-in-out both;
+        todoanimation: showToc 300ms ease-in-out both;
         background-color: var(--banner-background-color);
         width: max-content;
     }
