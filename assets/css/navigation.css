@@ -144,7 +144,7 @@
     .menu-links {
       display: flex;
       flex: 1 1 auto;
-      flex-wrap:wrap;
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: center;
       column-gap: 20px;
@@ -228,12 +228,12 @@
   display:flex;
   align-items: center;
   a {
-      height:20px;
+      height:25px;
   }
 }
 .sidebar-link-item object {
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
 }
 .sidebar-header {
   display: flex;
@@ -300,7 +300,7 @@
       .sidebar-link-description {
           display:inline-flex;
           position: absolute;
-          bottom: -23px;
+          bottom: -30px;
           left: 50%;
           transform: translateX(-50%); 
           white-space: nowrap;
@@ -308,7 +308,7 @@
   }
 }
 
-/* popup menus for sidebar links */
+/* popup descriptions for sidebar links */
 .sidebar-links-container {
     position:relative;
 }
@@ -351,14 +351,8 @@
       height: 100%;
       margin-bottom: 40px;
       margin-top: 0px;
-      &:is(.sidebar-right *) {
-        justify-self: left ;
-        margin-left: 20px;
-      }
-      &:is(.sidebar-left *) {
-        justify-self: right;
-        margin-right: 20px;
-      }
+      justify-self: left ;
+      margin-left: 40px;
     }
     
     .sidebar-header {
@@ -411,17 +405,25 @@
         .sidebar-show-descriptions-button {
           display: inline-flex;
         }
-        .sidebar-link-item:hover {
-          .sidebar-link-description {
-            display: inline-flex;
-          }
+        .sidebar-nav {
+          outline:none;
+        }
+        &:is(.sidebar-left *) {
+          todojustify-self: left;
+          tpodomargin-left: 40px;
+        }
+      }
+      
+      .sidebar-link-item:hover {
+        .sidebar-link-description {
+          display: inline-flex;
         }
       }
       .sidebar hr {
         width:20px;
       }
       .sidebar-link-item:hover {
-          opacity: 75%; 
+          opacity: 1; 
       }
       .share-links-button:hover,
       .secondary-links-button:hover {
