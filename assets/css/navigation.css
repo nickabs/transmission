@@ -344,7 +344,6 @@
   }
 }
 
-/*.site:is(.home-template,.post-template,.page-template):is(.sidebar-left,.sidebar-right) { */
 @media (min-width: 1280px) {
   .site:is(.sidebar-left,.sidebar-right) {
     .sidebar {
@@ -352,7 +351,11 @@
       height: 100%;
       margin-bottom: 40px;
       margin-top: 0px;
+      &:is(.sidebar-left *) {
+        margin-left: 60px;
+      }
     }
+    
     .sidebar-header {
       margin-bottom: 10px;
     }
