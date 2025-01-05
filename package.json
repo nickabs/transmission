@@ -117,12 +117,6 @@
                 "description": "Defaults to site description when empty",
                 "visibility": "enrol_members_banner_type:-None"
             },
-            "hide_comments_subscribe_cta": {
-                "type": "boolean",
-                "default": false,
-                "description": "this will hide the native ghost subscribe CTA that shows under   the comments section",
-                "visibility": "enrol_members_banner_type:-None"
-            },
             "show_authors": {
                 "type": "select",
                 "options": [
