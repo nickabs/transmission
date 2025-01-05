@@ -26,10 +26,10 @@ export function demoOptionsPicker() {
         style: {
             siteStyle: ['site-style-standard', 'site-style-bold', 'site-style-colorful'],
             navBarStyle: ['expanded-nav', 'minified-nav'],
-            navBarOption: ['fixed-navigation-bar' , 'scrolling-navigation-bar'],
             heroStyle: ['hero-style-plain', 'hero-style-color-image', 'hero-style-grayscale-image', 'hero-style-mega']
         },
-        navigation: {
+        site: {
+            navBarOption: ['fixed-navigation-bar' , 'scrolling-navigation-bar'],
             sidebarOption: ['sidebar-top','sidebar-left', 'sidebar-right', 'sidebar-bottom' , 'sidebar-none'],
             enrolOption: ['newsletter','subscribe','newsletter-subscribe','enrol-none'],
             footerOption: [ 'footer-style-all', 'footer-style-copyright-privacy', 'footer-style-copyright', 'footer-style-privacy',
