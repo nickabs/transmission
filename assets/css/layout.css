@@ -56,10 +56,11 @@
     .sidebar-left .sidebar { grid-area: SidebarLeft; }
     .sidebar-right .sidebar { grid-area: SidebarRight; }
     .sidebar-left {
-        --sidebar-left-width: auto;
+        --sidebar-left-width: minmax(280px, auto);
+
     }
     .sidebar-right {
-        --sidebar-right-width: auto;
+        --sidebar-right-width: minmax(280px, auto);
     }
 }
 

@@ -155,6 +155,8 @@
         position: relative;
         display: flex;
         flex-direction: column; /* ensures the container scrolls vertically, needed by position sticky below */
+        justify-self: center;
+        margin-inline: 20px;
         .toc-toggle {
             display: none;
         }
@@ -166,8 +168,6 @@
         .toc-container {
             position: sticky;
             inset: auto;
-            margin-right: 10vw;
-            margin-left: 20px;
             top: calc(var(--site-header-height) + 15px);
             left: 0;
             display:flex;

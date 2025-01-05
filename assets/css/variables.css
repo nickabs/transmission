@@ -49,6 +49,9 @@
     --announcement-bar-height:55px;
     --site-header-height: calc(var(--main-nav-height) + var(--announcement-bar-height));
 }
+.site:is(.scrolling-navigation-bar) {
+    --site-header-height: 30px;
+}
 /* font sizes on larger screens */
 @media (min-width: 640px) {
     :root {

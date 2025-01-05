@@ -351,8 +351,13 @@
       height: 100%;
       margin-bottom: 40px;
       margin-top: 0px;
+      &:is(.sidebar-right *) {
+        justify-self: left ;
+        margin-left: 20px;
+      }
       &:is(.sidebar-left *) {
-        margin-left: 60px;
+        justify-self: right;
+        margin-right: 20px;
       }
     }
     
