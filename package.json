@@ -3,7 +3,7 @@
     "description": "transmission Ghost theme",
     "type": "module",
     "demo": "https://demo.transmissionthemes.com",
-    "version": "2.20.1",
+    "version": "2.20.2",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -90,7 +90,7 @@
                 "default": "None",
                 "description": "Note the sidebar shows under the header on smaller screens, even if left/right is selected"
             },
-            "enrol_members_banner_type" : {
+            "enrol_members_banner_type": {
                 "type": "select",
                 "options": [
                     "Newsletter",
