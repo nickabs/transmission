@@ -17,13 +17,9 @@
                     {{#unless @site.members_invite_only}}
                         <a href="#/portal/signin" class="signin">{{t "Sign in"}}</a>
                         {{!-- only shows if one of the subscribe options is selected --}}
-                        {{#match @custom.enrol_members_banner_type "!=" "None" }}
-                        {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page only" }}
-                        {{#match @custom.enrol_members_banner_type "!=" "Newsletter - home page & posts" }}
+                        {{#if @custom.enrol_members_banner_type "Subscribe" }}
                             <a class="signup" aria-label="sign up" href="#/portal/signup">{{t "Sign up"}}</a>
-                        {{/match}}
-                        {{/match}}
-                        {{/match}}
+                        {{/if}}
                     {{/unless}}
                 {{else}}
                     <a class="account-link icon" aria-label="account link" href="#/portal/account"> 

@@ -33,26 +33,22 @@
     </aside>
 {{/if}}
 
+{{!-- 
 {{#if @site.members_enabled}}
     {{#unless @member}}
-
-        {{#match @custom.enrol_members_banner_type "Both - posts only" }}
-            {{> "enrol" banner-type="both" }}
-        {{else match @custom.enrol_members_banner_type "Both - home page & posts" }}
-            {{> "enrol" banner-type="both" }}
-        {{else match @custom.enrol_members_banner_type "Newsletter - posts only" }}
-            {{> "enrol" banner-type="newsletter" }}
-        {{else match @custom.enrol_members_banner_type "Newsletter - home page & posts" }}
-            {{> "enrol" banner-type="newsletter" }}
-        {{else match @custom.enrol_members_banner_type "Subscribe - posts only" }}
-            {{> "enrol" banner-type="subscribe" }}
-        {{else match @custom.enrol_members_banner_type "Subscribe - home page & posts" }}
-            {{> "enrol" banner-type="subscribe" }}
+        {{#match @custom.enrol_members_banner_location "!=" "Posts"}}
+            {{#match @custom.enrol_members_banner_type "Both" }}
+                {{> "enrol" banner-type="both" }}
+            {{else match @custom.enrol_members_banner_type "Newsletter" }}
+                {{> "enrol" banner-type="newsletter" }}
+            {{else match @custom.enrol_members_banner_type "Subscribe" }}
+                {{> "enrol" banner-type="subscribe" }}
+            {{/match}}
         {{/match}}
-
     {{/unless}}
 {{/if}}
 
+--}}
 {{#if @custom.show_related_posts}}
     {{#get "posts" limit="6" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
     {{#if related}}

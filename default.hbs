@@ -29,6 +29,9 @@
 
 </head>
 
+<body class='site {{body_class~}}'>
+
+{{!-- 
 <body class='site {{body_class~}}
     {{!-- set classes to reflect custom options selected by the site owner --}}
     {{~#match @custom.site_style "Standard"}} site-style-standard{{/match~}}
@@ -72,6 +75,7 @@
     {{/is}}
     '>
     {{> "site-header"}}
+--}}
 
     {{!-- hbs files with {{<default}} markup, e.g index.hbs, post.hbs, page.hbs etc, are inserted here --}}
     {{{body}}}

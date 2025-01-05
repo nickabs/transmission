@@ -90,22 +90,26 @@
                 "default": "None",
                 "description": "Note the sidebar shows under the header on smaller screens, even if left/right is selected"
             },
-            "enrol_members_banner_type": {
+            "enrol_members_banner_type" : {
                 "type": "select",
                 "options": [
-                    "None",
-                    "Newsletter - home page only",
-                    "Newsletter - home page & posts",
-                    "Newsletter - posts only",
-                    "Subscribe - home page only",
-                    "Subscribe - home page & posts",
-                    "Subscribe - posts only",
-                    "Both - home page only",
-                    "Both - home page & posts",
-                    "Both - posts only"
+                    "Newsletter",
+                    "Subscribe",
+                    "Both",
+                    "None"
                 ],
                 "default": "None",
-                "description": "Add newsletter sign-up banner and/or a subscription request banner"
+                "description": "Add a newsletter sign-up banner and/or a subscription request banner"
+            },
+            "enrol_members_banner_location": {
+                "type": "select",
+                "options": [
+                    "Home page",
+                    "Posts",
+                    "Both"
+                ],
+                "default": "Both",
+                "visibility": "enrol_members_banner_type:-None"
             },
             "enrol_members_banner_heading": {
                 "type": "text",
