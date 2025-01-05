@@ -125,7 +125,6 @@
     .toc-container {
         display: flex;
         flex-direction: column;
-        todoanimation: showToc 300ms ease-in-out both;
         background-color: var(--banner-background-color);
         width: max-content;
     }

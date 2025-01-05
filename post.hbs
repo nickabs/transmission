@@ -48,15 +48,16 @@
 {{/if}}
 
 {{#if @custom.show_related_posts}}
-    {{#get "posts" limit="6" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
+    {{#get "posts" limit="6" include="tags,tiers" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
     {{#if related}}
 
-        <aside class="related-articles article-card-collection">
+        <aside class="related-articles article-card-collection paginated">
             <h3 class="related-articles-title article-card-collection-title">{{t "Read more"}}</h3>
             <div class="article-card-container">
-                {{#foreach related}}
-                    {{> "article-card"}}
+                {{#foreach related }}
+                    {{> "article-card" image_size="s"}}
                 {{/foreach}}
+                {{pagination}}
             </div>
         </aside>
     {{/if}}
