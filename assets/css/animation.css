@@ -17,6 +17,7 @@
             animation-range-end: exit;
         }
     }
+    .article-card-collection img,
     .submenu-links-active,
     .menu-links-active,
     .toc-open .toc-container {
