@@ -211,9 +211,9 @@
         border-radius: 15px;
     }
     .site:not(:is(.home-page-list)) .main-article {
-        width: calc(100% - (2 * var(--main-article-offset)));
         height: max-content;
         .article-card {
+            margin-right: var(--edge-padding);
             border: var(--site-default-border);
             background-color:aliceblue;
             border-radius: 15px;
