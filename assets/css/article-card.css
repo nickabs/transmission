@@ -228,13 +228,13 @@
         }
         .article-card-title {
             grid-area: Image;
-            border: var(--site-default-border);
             border-radius: 15px;
             background-color: white;
             align-self: flex-start;
             justify-self: center;
             margin-top: 20px;
-            border: 1px solid orange;
+            border: 3px solid var(--ghost-accent-color);
+            outline: 1px solid black;
             font-weight: 700;
             z-index: 1;
         }
