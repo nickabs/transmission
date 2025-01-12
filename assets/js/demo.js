@@ -11,12 +11,11 @@
 */
 
 export function demoOptionsPicker() {
-    const demoSite = document.querySelector('[data-demo-site="true"] .site');
+    const demoSiteElement = document.querySelector('[data-demo-site="true"] .site');
     const downloadIcon =`<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="download"> <g> <path d="M3,12.3v7a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2v-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> <g> <polyline data-name="Right" fill="none" id="Right-2" points="7.9 12.3 12 16.3 16.1 12.3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline> <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="2.7" y2="14.2"></line> </g> </g> </g> </g> </g></svg>`;
     const gearIcon = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M19.19 3.757A1 1 0 0018.22 3h-4.44a1 1 0 00-.97.757l-.66 2.644a1 1 0 01-.47.623l-1.291.747a1 1 0 01-.776.095l-2.62-.75a1 1 0 00-1.142.462l-2.219 3.844a1 1 0 00.171 1.219l1.96 1.895a1 1 0 01.305.719v1.49a1 1 0 01-.305.72l-1.96 1.894a1 1 0 00-.17 1.22l2.218 3.843a1 1 0 001.141.461l2.61-.746a1 1 0 01.793.106l.963.584a1 1 0 01.43.54l.984 2.95a1 1 0 00.949.683h4.558a1 1 0 00.949-.684l.982-2.947a1 1 0 01.435-.542l.982-.587a1 1 0 01.79-.103l2.59.745a1 1 0 001.142-.461l2.222-3.848a1 1 0 00-.166-1.214l-1.933-1.896a1 1 0 01-.3-.713v-1.5a1 1 0 01.3-.713l1.933-1.896a1 1 0 00.166-1.214l-2.222-3.848a1 1 0 00-1.142-.46l-2.6.747a1 1 0 01-.774-.093l-1.31-.75a1 1 0 01-.474-.625l-.66-2.64z"></path> <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></circle> </g></svg>`;
     const downloadURL = `https://github.com/nickabs/transmission/releases/latest/download/transmission.zip`;
-    const hideIcon = `<svg viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11.5 4.25H6.5C5.43913 4.25 4.42178 4.67142 3.67163 5.42157C2.92149 6.17172 2.5 7.18913 2.5 8.25V18.25C2.5 19.3109 2.92149 20.3283 3.67163 21.0784C4.42178 21.8286 5.43913 22.25 6.5 22.25H16.5C17.5609 22.25 18.5783 21.8286 19.3284 21.0784C20.0786 20.3283 20.5 19.3109 20.5 18.25V13.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21.4998 3.28998L12.0098 12.78" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M17.1396 13.37H13.4297C12.8993 13.37 12.3905 13.1593 12.0154 12.7842C11.6404 12.4092 11.4297 11.9004 11.4297 11.37V7.65997" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>`
-    if (!demoSite) {
+    if (!demoSiteElement) {
         return false;
     }
 
@@ -75,8 +74,8 @@ export function demoOptionsPicker() {
                 let className=key.replace(/^demo-/,'');
                 let classAlternatives = findClassAlternatives(className)?.values ?? [];
 
-                classAlternatives.forEach(alternative => demoSite.classList.remove(alternative));
-                demoSite.classList.add(className);
+                classAlternatives.forEach(alternative => demoSiteElement.classList.remove(alternative));
+                demoSiteElement.classList.add(className);
             });
     }
 
@@ -99,32 +98,19 @@ export function demoOptionsPicker() {
         }
         alternatives.forEach(alternativeClass => {
             // remove any alternative already set on .site
-            demoSite.classList.remove(alternativeClass);
+            demoSiteElement.classList.remove(alternativeClass);
             // remove any alternative already stored in local storage
             let key=`demo-${alternativeClass}`;
             localStorage.removeItem(`demo-${alternativeClass}`);
         });
-        demoSite.classList.add(className);
+        demoSiteElement.classList.add(className);
         localStorage.setItem(`demo-${className}`,true);
 
     }
     
-    function createDemoOptions() {
-        const demoOptions = document.createElement('aside');
-        demoOptions.classList.add('demo-options','options-picker-closed');
-
-        const hideDemoOptionsPickerButton = document.createElement('button');
-        hideDemoOptionsPickerButton.innerHTML = `
-            ${hideIcon}
-            <div class="hide-demo-options-button-description">Hide</div>
-        `;
-
-        hideDemoOptionsPickerButton.classList.add('icon','hide-demo-options-button')
-        demoOptions.appendChild(hideDemoOptionsPickerButton);
-
-        hideDemoOptionsPickerButton.addEventListener('click', () => {
-            demoOptions.classList.toggle('options-picker-hidden');
-        });
+    function createDemoOptionsAside() {
+        const aside = document.createElement('aside');
+        aside.classList.add('demo-options');
 
         const demoOptionsButton = document.createElement('button');
         demoOptionsButton.innerHTML = `
@@ -132,42 +118,48 @@ export function demoOptionsPicker() {
             <div class="demo-options-button-description">Customise</div>
         `;
 
-        const hr = document.createElement('hr');
-        demoOptions.appendChild(hr);
-
         demoOptionsButton.classList.add('icon','demo-options-button')
-        demoOptions.appendChild(demoOptionsButton);
+        aside.appendChild(demoOptionsButton);
 
-        demoOptionsButton.addEventListener('click', () => {
-            demoOptions.classList.toggle('options-picker-closed');
-        });
-
-        const optionsPickerContainer = createOptionsPickerContainer();
-        demoOptions.appendChild(optionsPickerContainer);
-
-        const hr2 = document.createElement('hr');
-        demoOptions.appendChild(hr2);
+        const optionsPickerForm = createOptionsPickerForm();
+        aside.appendChild(optionsPickerForm);
 
         const downloadLink = document.createElement('a');
         downloadLink.href= `${downloadURL}`
         downloadLink.classList.add('icon','download-link')
         downloadLink.innerHTML = `
             ${downloadIcon}
-            <div class="download-button-description">Download theme</div>
+            <div class="download-button-description">Download</div>
         `;
 
         //<a href="path/to/yourfile.pdf" download class="download-link">Download File</a>
-        demoOptions.appendChild(downloadLink);
+        aside.appendChild(downloadLink);
 
-        return demoOptions;
+        return aside;
     }
 
-    function createOptionsPickerContainer() {
-        const container = document.createElement('div');
-        container.classList.add('options-picker-container');
-
+    function createOptionsPickerForm() {
         const form = document.createElement('form');
-        form.classList = 'options-picker-form';
+        form.classList = 'demo-form';
+
+        const formHeader = document.createElement('div');
+        formHeader.classList.add('demo-form-header');
+
+        const headerTitle = document.createElement('p')
+        headerTitle.classList.add('demo-form-header-description')
+        const text = document.createTextNode('Options');
+        headerTitle.appendChild(text);
+
+        formHeader.appendChild(headerTitle);
+
+        const closeButton = document.createElement('div');
+        const cross = document.createTextNode('×');
+        closeButton.appendChild(cross);
+        closeButton.classList.add('demo-form-header-button');
+
+        formHeader.appendChild(closeButton);
+
+        form.appendChild(formHeader);
     
         // Create fieldsets for each section (siteWide, home, page)
         Object.entries(classAlternatives).forEach(([sectionName, properties]) => {
@@ -249,14 +241,20 @@ export function demoOptionsPicker() {
 
         });
     
-        container.appendChild(form);
-        return container;
+        return form;
     }
     
     // create the html for the demo options picker 
-    const demoOptionsElement = createDemoOptions();
-    demoSite.appendChild(demoOptionsElement);
+    const demoOptionsAside = createDemoOptionsAside();
+    demoSiteElement.appendChild(demoOptionsAside);
 
+    demoOptionsAside.querySelector('.demo-options-button').addEventListener('click', () => {
+        demoOptionsAside.classList.toggle('demo-options-picker-open');
+    });
+
+    demoOptionsAside.querySelector('.demo-form-header').addEventListener('click', () => {
+        demoOptionsAside.classList.toggle('demo-options-picker-open');
+    });
     // if the user has previously selected any options, reapply them:
     applyLocalStorageClasses();
 }

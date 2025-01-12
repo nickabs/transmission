@@ -408,10 +408,6 @@
         .sidebar-nav {
           outline:none;
         }
-        &:is(.sidebar-left *) {
-          todojustify-self: left;
-          tpodomargin-left: 40px;
-        }
       }
       
       .sidebar-link-item:hover {

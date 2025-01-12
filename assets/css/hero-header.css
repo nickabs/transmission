@@ -186,8 +186,6 @@ h1.hero-title {
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding-bottom: 35px;
-        padding: 0 0 35px 0;
     }
     .hero-image {
         height: 50vw;

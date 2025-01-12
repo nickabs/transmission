@@ -8,103 +8,71 @@
 */
 [data-demo-site="true"] {
     /* options picker can be open or closed - open settings here */
-    .site .demo-options { 
-        background-color: var(--secondary-background-color);
-        border-radius: 10px;
-        border:1px solid var(--demo-border-color);
-        font-size:1.4rem;
+    .demo-options { 
+        position: fixed;
+        top: 15%;
+        right: 12px;
 
+        .demo-form {
+            display: none;
+        }
+
+        .download-link,
+        .demo-options-button {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.3rem;
+            svg {
+                background-color: var(--secondary-background-color);
+                border: 1px var(--demo-border-color) solid;
+                border-radius: 50%;
+                height: 35px;
+                width: 35px;
+                padding: 8px;
+
+            }
+        }
         display:flex;
         flex-direction: column;
         gap:7px; 
         padding:7px 0;
-
-        hr {
-            border: none;
-            border-top: 1px solid  var(--demo-border-color);
-        }
-
-        .download-button-description {
-            text-align: center;
-        }
     }
-
-    .demo-options:not(.options-picker-closed) {
-        position: fixed;
-        bottom: 20px;
-        right: 40px;
-    }
-    /* on refresh the pop-up options picker is closed */
-    .demo-options.options-picker-closed {
-        position:fixed;
-        bottom:20px;
-        right: 40px;
-        width: 90px;
-        .download-link,
-        .demo-options-button,
-        .hide-demo-options-button {
+    .demo-options.demo-options-picker-open {
+        .demo-form {
+            position: fixed;
+            top: 10%;
+            left: 12px;
+            width: max-content;
+            font-size: 1.3rem;
+            border: 1px solid var(--demo-border-color);
+            border-radius: 15px;
             display: flex;
             flex-direction: column;
+            gap: 15px;
+            background-color: var(--secondary-background-color);
+            &:not(.demo-form-header) > *{
+                padding: 0 10px;
+            }
+            padding-bottom: 10px;
         }
-        .options-picker-container {
-            display:none;
-        }
-    }
-    .site .demo-options.options-picker-hidden {
-        right:0px;
-        left:unset;
-        width: 30px;
-        .icon {
-            width: 20px;
-        };
-        gap:0;
-        padding-left:0;
-        padding-right:0;
-        align-items: center;
-        .options-picker-form {
-            display: none;
-        }
-        border-radius: 5px 0px 0px 5px;
-        border-right: none;
-        hr,
-        .download-button-description,
-        .hide-demo-options-button-description,
-        .demo-options-button {
-            display: none!important;
-        }
-        a,button { 
+        .demo-form-header {
             display: flex;
-            justify-content: center;
-            padding: 7px 0 7px 0;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 3px 10px;
+            font-weight: 700;
+            .demo-form-header-button {
+                font-size: 2rem;
+            }
+            border-bottom: 1px var(--demo-border-color) solid;
+            width: 100%;
         }
-        .hide-demo-options-button svg {
-            transform: rotate(90deg);
-        }
-    }
-    .demo-options:not(.options-picker-closed) {
-        > :not(hr) {
-            padding-left:15px;
-            padding-right: 15px;
-        }
-        width: 300px;
-        .download-link ,
-        .demo-options-button {
-            flex-direction: row;
-            column-gap: 15px;
-        }
-        .options-picker-form {
-            padding: 10px 0 10px 0;
-            display:flex;
-            flex-direction: column;
-            gap: 15px
-        };
         .form-fieldset {
             display:flex;
             flex-direction: column;
             row-gap: 10px;
             border-radius: 10px;
         }
-
         details[open] {
             summary {
                 color: transparent;
@@ -122,7 +90,6 @@
             padding: 5px;
             border-radius: 5px;
         }
-
     }
 
     /* these options are enabled by the handlebars logic - use css to hide/show the relevant html */
@@ -165,19 +132,21 @@
         }
     }
 }
-@media (min-width: 460px ) {
+@media (min-width: 480px) {
     [data-demo-site="true"] {
-        .demo-options.options-picker-closed{
-            position:fixed;
-            top: 65px;
-            left: 45px;
-            bottom: auto;
-        }
-        .demo-options:not(.options-picker-closed) {
-            bottom: auto;
+        .demo-options { 
             position: fixed;
-            top: 65px;
-            left: 45px;
+            top: 25%;
+            right: 12px;
+        }
+
+        .demo-options.demo-options-picker-open {
+            .demo-form {
+                position:fixed;
+                left: unset;
+                right: 100px;
+                top: 25%;
+            }
         }
     }
 }
