@@ -1,9 +1,6 @@
 /* 
- * utilty for use with demo version of transmission 
- * create a customs options picker and set class entries on the <site> element to reflect the picked option
+ * create a customs options picker and set class entries on the <site> element to reflect the selected option
  *
- * the behaviour of the options is determined by demo.js
- * 
  * to enable this functionality, use code injection to insert a data-demo-site attribute to root of the doc
  *      <script>
  *          document.documentElement.setAttribute('data-demo-site', 'true');
@@ -20,7 +17,7 @@ export function demoOptionsPicker() {
     }
 
     // the classes that drive the theme customisation are on the .site element
-    // this a list of eacho of the custom options and their possible class mappings
+    // this a list of each of the custom options and their possible class values
     const classAlternatives = {
         style: {
             siteStyle: ['site-style-standard', 'site-style-bold', 'site-style-colorful'],
@@ -50,7 +47,7 @@ export function demoOptionsPicker() {
     };
 
    /* 
-    * look up the alternative classes based on the supplied class 
+    * look up the available alternative class values based on the supplied class 
     */ 
     function findClassAlternatives(currentClass) {
         for (let section in classAlternatives) {
@@ -80,8 +77,8 @@ export function demoOptionsPicker() {
     }
 
     /*
-     * toggles the customs option class in the .site element based on the user's selection
-     * ... and records the setting in local storage so it is persisted after a page refresh
+     * toggle the customs option class in the .site element based on the user's selection
+     * ... and record the setting in local storage so it is persisted after a page refresh
     */
     function updateSiteClass(customOption, className) {
         // look up the section based on the supplied custom option and get the list of valid classnaqmes
