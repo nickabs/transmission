@@ -228,7 +228,7 @@
     "devDependencies": {
         "archiver": "^7.0.1",
         "browser-sync": "^3.0.3",
-        "esbuild": "^0.24.2"
+        "esbuild": "^0.25.0"
     },
     "dependencies": {
         "global": "^4.4.0",
