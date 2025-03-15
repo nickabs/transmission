@@ -235,7 +235,7 @@
         "photoswipe": "^5.4.4",
         "prism-components": "^1.0.0",
         "prism-themes": "^1.9.0",
-        "prismjs": "^1.29.0",
+        "prismjs": "^1.30.0",
         "tocbot": "^4.28.2"
     }
 }
