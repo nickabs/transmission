@@ -9,7 +9,7 @@ export function lightbox() {
     arrowPrevSVG: arrow,
     arrowNextSVG: arrow,
     zoom: false,
-    gallery: '.kg-image-card, .kg-gallery-card',
+    gallery: '.kg-image-card:not(:has(>a)), .kg-gallery-card',
     children: 'img',
     bgOpacity: 0.8,
     closeOnScroll: true,
