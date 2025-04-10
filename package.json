@@ -211,6 +211,7 @@
         }
     },
     "scripts": {
+        "build": "scripts/build-theme --build",
         "dev": "scripts/build-theme --livereload",
         "watch": "scripts/build-theme --watch",
         "zip": "scripts/build-theme --zip",
