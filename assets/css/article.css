@@ -33,15 +33,9 @@
 
 
 /* drop cap on leading paragraph */
-.article-container > p:first-of-type::first-line {
-  font-size:2.5rem;
-}
 .article-container > p:first-of-type:first-letter {
-  float: left;
-  font-size: 8.0rem;
-  font-weight: 700;
-  line-height: 1;
-  margin: -5px 10px 0 -5px;
+  initial-letter: 3;
+  margin: 0px 6px 0 0px;
 }
 
 h1 { font-size: var(--h1-font-size); }
