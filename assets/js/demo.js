@@ -20,7 +20,7 @@ export function demoOptionsPicker() {
     // this a list of each of the custom options and their possible class values
     const classAlternatives = {
         style: {
-            siteStyle: ['site-style-standard', 'site-style-bold', 'site-style-colorful'],
+            siteStyle: ['site-style-standard', 'site-style-bold', 'site-style-subtle'],
             navBarStyle: ['expanded-nav', 'minified-nav'],
             heroStyle: ['hero-style-plain', 'hero-style-color-image', 'hero-style-grayscale-image', 'hero-style-mega']
         },

@@ -12,8 +12,7 @@
 /* 1. default styles for the site */
 /* -------------------------------*/
 
-.site:is(.site-style-colorful,
-.site-style-bold) {
+.site:is(.site-style-bold) {
   --site-default-border: 3px solid black;
   --site-default-font-weight: 700;
   --main-nav-height: 110px;
@@ -28,11 +27,21 @@
     padding-bottom: 10px;
   }
 }
-.site-style-colorful {
-  .site-header .main-nav, 
-  .site-footer {
-    background-color: var(--ghost-accent-color);
+.site:is(.site-style-subtle) {
+  --main-nav-height: 90px;
+  --site-default-border: 0.2px solid var(--border-color);
+  .button {
+    background-color: var(--background-color);
+    color: var(--icon-color);
   }
+  .hero-tags a {
+    color: var(--title-color);
+  }
+  .menu-links-container {
+    border: var(--site-default-border);
+    padding: 15px;
+  }
+
 }
 /*
  * font sizes are expressed as rems (the pixel size are calculated relative to browser root font size, which can be set by the user)
