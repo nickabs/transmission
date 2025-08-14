@@ -232,7 +232,6 @@
         "esbuild": "^0.25.0"
     },
     "dependencies": {
-        "global": "^4.4.0",
         "photoswipe": "^5.4.4",
         "prism-components": "^1.0.0",
         "prism-themes": "^1.9.0",
