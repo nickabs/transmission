@@ -1,7 +1,6 @@
 yarn.lock
 todo.md
 npm-debug.log
-package-lock.json
 .DS_Store
 .idea
 *.gz
