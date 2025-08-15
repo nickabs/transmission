@@ -16,7 +16,7 @@
             {{content}}
         </div>
         <aside class="tags-collection">
-            {{#get 'tags' limit='all' include='count.posts'}}
+            {{#get 'tags' limit='100' include='count.posts'}}
             {{#foreach tags}}
                 <a href="{{url}}" class="tag-card-link" aria-label="{{name}}">
                     {{#if feature_image}}

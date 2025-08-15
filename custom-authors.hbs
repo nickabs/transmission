@@ -16,7 +16,7 @@
             {{content}}
         </div>
         <aside class="authors-collection">
-            {{#get 'authors' limit='all' include='count.posts'}}
+            {{#get 'authors' limit='100' include='count.posts'}}
             {{#foreach authors}}
                 {{> "author-card"}}
             {{/foreach}}
