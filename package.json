@@ -229,7 +229,7 @@
     "devDependencies": {
         "archiver": "^7.0.1",
         "browser-sync": "^3.0.3",
-        "esbuild": "^0.25.0"
+        "esbuild": "^0.25.10"
     },
     "dependencies": {
         "photoswipe": "^5.4.4",
