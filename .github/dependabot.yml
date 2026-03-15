@@ -9,6 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
+    rebase-strategy: "auto" 
     allow:
       # Allow both direct and indirect updates for all packages
       - dependency-type: "all"
