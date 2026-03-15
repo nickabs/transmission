@@ -278,25 +278,25 @@
     src: local(""), url("../fonts/menlo-regular.woff2") format("woff2")
 }
 
+
 @font-face {
   font-family: 'Inter Fallback';
   font-style: normal;
   font-weight: 400;
   src: local('Arial');
-  ascent-override: 96.88%;
-  descent-override: 24.12%;
+  ascent-override: 89.79%;
+  descent-override: 22.36%;
   line-gap-override: 0.00%;
-  size-adjust: 100.00%;
+  size-adjust: 107.89%;
 }
 
 @font-face {
   font-family: 'Poppins Fallback';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   src: local('Arial');
-  ascent-override: 105.00%;
-  descent-override: 35.00%;
-  line-gap-override: 10.00%;
-  size-adjust: 100.00%;
+  ascent-override: 89.77%;
+  descent-override: 29.92%;
+  line-gap-override: 8.55%;
+  size-adjust: 116.97%;
 }
-
