@@ -24,13 +24,13 @@
         {{#if facebook}}
         <div class="author-card-link">
             <div class="icon facebook"> {{> "icons/facebook"}} </div>
-            <a class="author-card-facebook-url" href="{{facebook_url}}" target="_blank" rel="noopener">{{facebook}} </a>
+            <a class="author-card-facebook-url" href="{{social_url type="facebook"}}" target="_blank" rel="noopener">{{facebook}} </a>
         </div>
         {{/if}}
         {{#if twitter}}
         <div class="author-card-link">
             <div class="icon twitter"> {{> "icons/twitter"}} </div>
-            <a class="author-twitter-url" href="{{twitter_url}}" target="_blank" rel="noopener">{{twitter}} </a>
+            <a class="author-twitter-url" href="{{social_url type="twitter"}}" target="_blank" rel="noopener">{{twitter}} </a>
         </div>
         {{/if}}
     </div>
