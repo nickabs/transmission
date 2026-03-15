@@ -279,9 +279,24 @@
 }
 
 @font-face {
-    font-family: 'Inter-fallback';
-    letter-spacing: 0.3px;
-    word-spacing: -0.1px;
-    size-adjust: 104.04%;
-    src: local("Arial");
+  font-family: 'Inter Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 96.88%;
+  descent-override: 24.12%;
+  line-gap-override: 0.00%;
+  size-adjust: 100.00%;
 }
+
+@font-face {
+  font-family: 'Poppins Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 105.00%;
+  descent-override: 35.00%;
+  line-gap-override: 10.00%;
+  size-adjust: 100.00%;
+}
+
