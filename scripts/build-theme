@@ -35,7 +35,7 @@ const buildOptions = {
 
 // live reload configuration
 const browserSyncOptions = {
-  proxy: 'http://127.0.0.1:2368', 
+  proxy: process.env.GHOST_URL || 'http://127.0.0.1:2368', 
   files: [
     'assets/built/**',
     '*.hbs',
