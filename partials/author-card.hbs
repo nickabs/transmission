@@ -1,9 +1,9 @@
 <div class="author-card">
-        {{#if profile_image}}
-            <a class="author-card-profile-image" href="{{url}}">
-             <img src="{{img_url profile_image size="xs"}}" width="200" height="200" alt="{{name}}">
-        {{/if}}
-    </a>
+    {{#if profile_image}}
+        <a class="author-card-profile-image" href="{{url}}">
+            <img src="{{img_url profile_image size="xs"}}" width="200" height="200" alt="{{name}}">
+        </a>
+    {{/if}}
     <a class="author-card-name" href="{{url}}">{{name}}</a>
     {{#if bio}}
         <a class="author-card-bio" href="{{url}}">{{bio}}</a>
