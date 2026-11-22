@@ -7,7 +7,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{meta_title}}</title>
+    <title>{{meta_title}}{{#is "post, page"}} - {{@site.title}}{{/is}}</title>
 
     {{!-- Theme and vendor css assets - the {asset} helper will handle caching and cache-busting automatically --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/css/main.css"}}">
