@@ -3,7 +3,7 @@
     "description": "transmission Ghost theme",
     "type": "module",
     "demo": "https://demo.transmissionthemes.com",
-    "version": "2.23.12",
+    "version": "2.23.13",
     "engines": {
         "ghost": ">=5.0.0"
     },
