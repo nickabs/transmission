@@ -227,7 +227,7 @@
         "draft-full-release": "gscan . && scripts/release-theme --create-changelog && scripts/release-theme --create-release draft"
     },
     "devDependencies": {
-        "archiver": "^7.0.1",
+        "archiver": "^8.0.0",
         "browser-sync": "^3.0.3",
         "esbuild": "^0.28.1",
         "gscan": "^6.7.0"
