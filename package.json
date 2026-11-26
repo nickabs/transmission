@@ -229,7 +229,7 @@
     "devDependencies": {
         "archiver": "^8.0.0",
         "browser-sync": "^3.0.3",
-        "esbuild": "^0.28.1",
+        "esbuild": "^0.28.2",
         "gscan": "^6.7.0"
     },
     "dependencies": {
@@ -237,6 +237,6 @@
         "prism-components": "^1.0.0",
         "prism-themes": "^1.9.0",
         "prismjs": "^1.30.0",
-        "tocbot": "^4.28.2"
+        "tocbot": "^4.36.8"
     }
 }
